@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Ottica Visione — Occhiali e Lenti a Contatto | Vicenza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DEMO BANNER ── */
+    #demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: #111827; color: #e5e7eb;
+      font-family: Inter, sans-serif; font-size: 0.78rem; font-weight: 500;
+      text-align: center; padding: 9px 1rem;
+      letter-spacing: 0.02em;
+    }
+    #demo-bar a { color: #fbbf24; text-decoration: none; font-weight: 600; }
+    #demo-bar a:hover { text-decoration: underline; }
+    body { padding-top: 38px; }
+
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0a0a0a;
+      --dark:    #1a1a1a;
+      --teal:    #0d9488;
+      --teal2:   #14b8a6;
+      --light:   #f5f5f0;
+      --muted:   #737373;
+      --border:  #e5e5e0;
+      --white:   #ffffff;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6; overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--black); color: rgba(255,255,255,0.6);
+      font-size: 0.75rem; letter-spacing: 0.06em;
+      padding: 8px 5%;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .topbar a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .topbar span { color: rgba(255,255,255,0.9); }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 38px; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      color: var(--black); letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; font-size: 0.87rem; font-weight: 500;
+      color: var(--black); transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-actions { display: flex; gap: 1rem; align-items: center; }
+    .nav-btn {
+      background: var(--teal); color: var(--white);
+      padding: 9px 20px; font-size: 0.82rem;
+      font-weight: 600; border: none; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: background .2s;
+    }
+    .nav-btn:hover { background: var(--black); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid; grid-template-columns: 55% 45%;
+      min-height: 85vh;
+    }
+    .hero-left {
+      background: var(--black);
+      padding: 6rem 5% 6rem 8%;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-left::after {
+      content: 'VISIONE';
+      position: absolute; bottom: -20px; left: -10px;
+      font-family: 'Syne', sans-serif;
+      font-size: 8rem; font-weight: 800;
+      color: rgba(255,255,255,0.04); white-space: nowrap;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--teal); color: var(--white);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 5px 12px; margin-bottom: 2rem;
+      align-self: flex-start;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 800; line-height: 1.1;
+      color: var(--white); margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .hero h1 span { color: var(--teal2); }
+    .hero-desc {
+      font-size: 1rem; color: rgba(255,255,255,0.55);
+      max-width: 380px; line-height: 1.7; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-teal {
+      background: var(--teal); color: var(--white);
+      padding: 14px 30px; font-size: 0.85rem;
+      font-weight: 600; text-decoration: none;
+      transition: background .2s; display: inline-block;
+    }
+    .btn-teal:hover { background: var(--teal2); }
+    .btn-white-outline {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      padding: 13px 28px; font-size: 0.85rem;
+      font-weight: 500; text-decoration: none;
+      transition: all .2s; display: inline-block;
+    }
+    .btn-white-outline:hover { border-color: var(--white); }
+    .hero-right {
+      display: grid; grid-template-rows: 1fr 1fr;
+    }
+    .hero-img-top {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; padding: 2rem;
+    }
+    .hero-img-bottom {
+      background: var(--light);
+      padding: 2.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-trust { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .trust-item { text-align: center; }
+    .trust-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem; font-weight: 800; color: var(--black);
+      display: block;
+    }
+    .trust-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── STRIP PROMO ── */
+    .promo-strip {
+      background: var(--teal);
+      padding: 1rem 5%;
+      display: flex; align-items: center; justify-content: center; gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .promo-strip span { font-size: 0.85rem; font-weight: 600; color: var(--white); letter-spacing: 0.04em; }
+    .promo-strip span::before { content: '✓  '; }
+
+    /* ── CATEGORIE ── */
+    .categories { padding: 5rem 5%; background: var(--white); }
+    .cat-header { text-align: center; margin-bottom: 3rem; }
+    .section-tag {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal);
+      display: block; margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 700; color: var(--black); letter-spacing: -0.03em;
+    }
+    .cat-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    }
+    .cat-card {
+      aspect-ratio: 3/4;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .cat-bg {
+      position: absolute; inset: 0;
+      transition: transform .4s ease;
+    }
+    .cat-card:hover .cat-bg { transform: scale(1.05); }
+    .cat-bg-1 { background: linear-gradient(160deg, #134e4a, #0f766e); }
+    .cat-bg-2 { background: linear-gradient(160deg, #1e1b4b, #312e81); }
+    .cat-bg-3 { background: linear-gradient(160deg, #7c2d12, #c2410c); }
+    .cat-bg-4 { background: linear-gradient(160deg, #14532d, #15803d); }
+    .cat-emoji {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%);
+      font-size: 3.5rem; z-index: 1;
+    }
+    .cat-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      padding: 2rem 1.5rem 1.5rem;
+      z-index: 2;
+    }
+    .cat-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+    }
+    .cat-count { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+    /* ── PRODOTTI IN EVIDENZA ── */
+    .products { padding: 5rem 5%; background: var(--light); }
+    .products-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .products-header a {
+      font-size: 0.85rem; color: var(--teal); font-weight: 600;
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    .products-header a:hover { text-decoration: underline; }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--white); cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .product-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .product-img {
+      height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative;
+    }
+    .product-img-1 { background: #e0f2f1; }
+    .product-img-2 { background: #ede9fe; }
+    .product-img-3 { background: #fef3c7; }
+    .product-img-4 { background: #fce7f3; }
+    .product-img-5 { background: #e0f2f1; }
+    .product-img-6 { background: #f0fdf4; }
+    .product-img-7 { background: #fff7ed; }
+    .product-img-8 { background: #ede9fe; }
+    .product-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--teal); color: var(--white);
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 8px;
+    }
+    .product-badge.sale { background: #dc2626; }
+    .product-info { padding: 1.2rem; }
+    .product-brand { font-size: 0.7rem; color: var(--teal); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .product-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 600; color: var(--black);
+      margin: 4px 0; line-height: 1.2;
+    }
+    .product-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.8rem; line-height: 1.4; }
+    .product-price-row { display: flex; align-items: center; justify-content: space-between; }
+    .product-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--black);
+    }
+    .product-price .old {
+      font-size: 0.85rem; font-weight: 400;
+      color: var(--muted); text-decoration: line-through; margin-right: 6px;
+    }
+    .add-to-cart {
+      background: var(--black); color: var(--white);
+      border: none; padding: 8px 14px; font-size: 0.8rem;
+      font-weight: 600; cursor: pointer; font-family: Inter, sans-serif;
+      transition: background .2s;
+    }
+    .add-to-cart:hover { background: var(--teal); }
+
+    /* ── SERVIZI NEGOZIO ── */
+    .servizi { padding: 5rem 5%; background: var(--white); }
+    .servizi-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--border); margin-top: 3rem;
+    }
+    .servizio-card {
+      background: var(--white); padding: 2.5rem 1.8rem;
+      text-align: center; transition: background .2s;
+    }
+    .servizio-card:hover { background: var(--light); }
+    .servizio-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .servizio-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 0.5rem;
+    }
+    .servizio-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── OFFERTA SPECIALE ── */
+    .special {
+      padding: 5rem 5%;
+      background: var(--black);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .special-text h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; color: var(--white);
+      line-height: 1.1; margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .special-text h2 span { color: var(--teal2); }
+    .special-text p { color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem; }
+    .special-text .btn-teal { display: inline-block; }
+    .special-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .special-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem; text-align: center;
+    }
+    .special-card .s-emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+    .special-card .s-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
+    .special-card .s-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--white); margin: 4px 0;
+    }
+
+    /* ── BRAND ── */
+    .brands { padding: 3.5rem 5%; border-top: 1px solid var(--border); }
+    .brands-title { font-size: 0.7rem; color: var(--muted); text-align: center; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; }
+    .brands-list {
+      display: flex; justify-content: center; align-items: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .brand-item {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: #c0c0b8; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: color .2s;
+    }
+    .brand-item:hover { color: var(--black); }
+
+    /* ── RECENSIONI ── */
+    .reviews { padding: 5rem 5%; background: var(--light); }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .review-card { background: var(--white); padding: 1.8rem; }
+    .stars { color: #f59e0b; font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.88rem; color: #374151; line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { font-size: 0.82rem; }
+    .review-author strong { color: var(--black); display: block; font-weight: 600; }
+    .review-author span { color: var(--muted); font-size: 0.78rem; }
+    .review-platform { font-size: 0.7rem; color: var(--teal); font-weight: 700; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* ── CTA APPUNTAMENTO ── */
+    .appointment {
+      padding: 5rem 5%; background: var(--teal);
+      text-align: center;
+    }
+    .appointment h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800; color: var(--white);
+      margin-bottom: 1rem; letter-spacing: -0.03em;
+    }
+    .appointment p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; }
+    .appointment .btn-white {
+      background: var(--white); color: var(--teal);
+      padding: 15px 36px; font-size: 0.9rem;
+      font-weight: 700; text-decoration: none;
+      display: inline-block; transition: all .2s;
+    }
+    .appointment .btn-white:hover { background: var(--black); color: var(--white); }
+
+    /* ── FOOTER ── */
+    .footer-top {
+      background: var(--dark); padding: 4rem 5%;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    }
+    .footer-brand-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem; font-weight: 800; color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-brand-name span { color: var(--teal2); }
+    .footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .footer-col h4 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.85rem; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--teal2); }
+    .footer-bottom {
+      background: var(--black); padding: 1.2rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .footer-credit-link { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .footer-credit-link a { color: var(--teal2); text-decoration: none; }
+    .footer-credit-link a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .servizi-grid { grid-template-columns: repeat(2, 1fr); }
+      .special { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .btn-nav-btn { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0; z-index: 999;
+        background: #fff; padding: 1.2rem 6%; gap: 1rem;
+        border-top: 1px solid rgba(128,128,128,.15);
+        list-style: none;
+      }
+      .nav-links.open a { color: var(--text, #1a1a1a); }
+
+    }
+  
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text, #1a1a1a); border-radius: 2px; }
+  
+    @media (max-width: 600px) {
+      section { padding: 50px 5%; }
+      nav { padding: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO BANNER -->
+  <div id="demo-bar">
+    ⚠️ Questo è un sito dimostrativo — <a href="index.html">Studio Digital Italia</a> realizza siti come questo per la tua attività
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <span>📍 Solo pagina demo &nbsp;|&nbsp; ☎ Solo pagina demo</span>
+    <span>Aperto Lun–Sab: 9:00–19:30</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">OTTICA <span>VISIONE</span></div>
+    <ul class="nav-links">
+      <li><a href="#occhiali">Occhiali</a></li>
+      <li><a href="#lenti">Lenti a Contatto</a></li>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#brand-section">Brand</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#appuntamento" class="nav-btn">Prenota visita</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Nuova collezione 2026</div>
+      <h1>Vedi il mondo<br>con <span>chiarezza</span><br>e stile</h1>
+      <p class="hero-desc">
+        Montature di design, lenti su misura e controllo visivo professionale. Il tuo ottico di fiducia a Vicenza dal 1998.
+      </p>
+      <div class="hero-btns">
+        <a href="#occhiali" class="btn-teal">Scopri la collezione</a>
+        <a href="#appuntamento" class="btn-white-outline">Prenota esame visivo</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-top">👓</div>
+      <div class="hero-img-bottom">
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-num">26+</span>
+            <span class="trust-label">Anni di esperienza</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num">4.9★</span>
+            <span class="trust-label">Media recensioni</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num">3.500+</span>
+            <span class="trust-label">Clienti soddisfatti</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP PROMO -->
+  <div class="promo-strip">
+    <span>Spedizione gratuita da €80</span>
+    <span>Prova montatura gratuita</span>
+    <span>Garanzia 2 anni</span>
+    <span>Convenzionato SSN</span>
+  </div>
+
+  <!-- CATEGORIE -->
+  <section class="categories" id="occhiali">
+    <div class="cat-header">
+      <span class="section-tag">Scopri il catalogo</span>
+      <h2 class="section-title">Cosa trovi da noi</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-1"></div>
+        <div class="cat-emoji">🕶️</div>
+        <div class="cat-info">
+          <div class="cat-name">Occhiali da Sole</div>
+          <div class="cat-count">Oltre 200 modelli</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-2"></div>
+        <div class="cat-emoji">👓</div>
+        <div class="cat-info">
+          <div class="cat-name">Occhiali da Vista</div>
+          <div class="cat-count">Montature uomo e donna</div>
+        </div>
+      </div>
+      <div class="cat-card" id="lenti">
+        <div class="cat-bg cat-bg-3"></div>
+        <div class="cat-emoji">🔍</div>
+        <div class="cat-info">
+          <div class="cat-name">Lenti a Contatto</div>
+          <div class="cat-count">Giornaliere, mensili, torica</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-4"></div>
+        <div class="cat-emoji">🧒</div>
+        <div class="cat-info">
+          <div class="cat-name">Occhiali Junior</div>
+          <div class="cat-count">Collezione bambini</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODOTTI IN EVIDENZA -->
+  <section class="products">
+    <div class="products-header">
+      <div>
+        <span class="section-tag">Selezione del mese</span>
+        <h2 class="section-title">Prodotti in evidenza</h2>
+      </div>
+      <a href="#occhiali">Vedi tutto il catalogo →</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img product-img-1">
+          <span class="product-badge">Nuovo</span>
+          👓
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Ray-Ban</div>
+          <div class="product-name">Clubmaster Classic</div>
+          <div class="product-desc">Montatura acetato oro/havana, lente B-15</div>
+          <div class="product-price-row">
+            <div class="product-price">€189</div>
+            <button class="add-to-cart" onclick="addCart(this)">+ Info</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img product-img-2">
+          <span class="product-badge sale">–20%</span>
+          🕶️
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Oakley</div>
+          <div class="product-name">Holbrook XL</div>
+          <div class="product-desc">Lente polarizzata, protezione UV 400</div>
+          <div class="product-price-row">
+            <div class="product-price"><span class="old">€175</span>€140</div>
+            <button class="add-to-cart" onclick="addCart(this)">+ Info</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img product-img-3">
+          <span class="product-badge">Top seller</span>
+          👁️
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Acuvue</div>
+          <div class="product-name">Oasys 1-Day</div>
+          <div class="product-desc">Lenti giornaliere, 90 pz, HydraLuxe</div>
+          <div class="product-price-row">
+            <div class="product-price">€68</div>
+            <button class="add-to-cart" onclick="addCart(this)">+ Info</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img product-img-4">
+          🕶️
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Gucci</div>
+          <div class="product-name">GG0396S</div>
+          <div class="product-desc">Montatura rettangolare, aste metallo</div>
+          <div class="product-price-row">
+            <div class="product-price">€310</div>
+            <button class="add-to-cart" onclick="addCart(this)">+ Info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI NEGOZIO -->
+  <section class="servizi" id="servizi">
+    <div style="text-align:center; margin-bottom:0.5rem;">
+      <span class="section-tag">Cosa offriamo</span>
+      <h2 class="section-title">I nostri servizi</h2>
+    </div>
+    <div class="servizi-grid">
+      <div class="servizio-card">
+        <div class="servizio-icon">👁️</div>
+        <div class="servizio-title">Esame della vista</div>
+        <p class="servizio-desc">Esame visivo completo con strumentazione digitale. Prenotazione online disponibile.</p>
+      </div>
+      <div class="servizio-card">
+        <div class="servizio-icon">🔧</div>
+        <div class="servizio-title">Riparazione</div>
+        <p class="servizio-desc">Riparazioni rapide in negozio: saldatura, sostituzione naselli, aggiustamento aste.</p>
+      </div>
+      <div class="servizio-card">
+        <div class="servizio-icon">🏥</div>
+        <div class="servizio-title">Convenzione SSN</div>
+        <p class="servizio-desc">Occhiali con prescrizione medica in convenzione con il Servizio Sanitario Nazionale.</p>
+      </div>
+      <div class="servizio-card">
+        <div class="servizio-icon">🏠</div>
+        <div class="servizio-title">Servizio a domicilio</div>
+        <p class="servizio-desc">Visita domiciliare per anziani e soggetti con difficoltà di mobilità. Su appuntamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERTA SPECIALE -->
+  <section class="special">
+    <div class="special-text">
+      <h2>Promo estate:<br><span>2× lenti</span><br>al prezzo di 1</h2>
+      <p>Con l'acquisto di qualsiasi montatura, ricevi un secondo paio di lenti (sole o vista) in omaggio. Offerta valida fino al 30 giugno 2026.</p>
+      <a href="#appuntamento" class="btn-teal">Approfitta ora →</a>
+    </div>
+    <div class="special-visual">
+      <div class="special-card">
+        <div class="s-emoji">🛡️</div>
+        <div class="s-label">Garanzia</div>
+        <div class="s-val">2 anni</div>
+      </div>
+      <div class="special-card">
+        <div class="s-emoji">🔄</div>
+        <div class="s-label">Reso gratuito</div>
+        <div class="s-val">30 giorni</div>
+      </div>
+      <div class="special-card">
+        <div class="s-emoji">📦</div>
+        <div class="s-label">Spedizione</div>
+        <div class="s-val">Gratuita</div>
+      </div>
+      <div class="special-card">
+        <div class="s-emoji">💳</div>
+        <div class="s-label">Pagamento</div>
+        <div class="s-val">Rate 0%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND -->
+  <section class="brands" id="brand-section">
+    <div class="brands-title">I marchi che trattiamo</div>
+    <div class="brands-list">
+      <span class="brand-item">Ray-Ban</span>
+      <span class="brand-item">Oakley</span>
+      <span class="brand-item">Gucci</span>
+      <span class="brand-item">Prada</span>
+      <span class="brand-item">Tom Ford</span>
+      <span class="brand-item">Acuvue</span>
+      <span class="brand-item">Silhouette</span>
+      <span class="brand-item">Persol</span>
+    </div>
+  </section>
+
+  <!-- RECENSIONI -->
+  <section class="reviews">
+    <div style="text-align:center; margin-bottom: 0.5rem;">
+      <span class="section-tag">Dicono di noi</span>
+      <h2 class="section-title">Recensioni Google ★★★★★</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Ottima esperienza! L'ottico è stato paziente, professionale e mi ha aiutato a scegliere la montatura giusta senza fretta. Lenti di qualità eccellente e prezzi onesti.</p>
+        <div class="review-author">
+          <strong>Francesca M.</strong>
+          <span>Cliente da 5 anni</span>
+        </div>
+        <div class="review-platform">★ Google Reviews</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Ho sempre avuto problemi a trovare montature per la mia vista forte. Qui in 20 minuti mi hanno trovato la soluzione perfetta. Consigliatissimo per chi ha prescizioni complesse!</p>
+        <div class="review-author">
+          <strong>Marco D.</strong>
+          <span>Recensione Google</span>
+        </div>
+        <div class="review-platform">★ Google Reviews</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Ho portato i miei figli per la prima volta. Personale gentilissimo, spiegazioni chiare. I bambini erano tranquilli e hanno scelto da soli i loro occhialini. Torneremo!</p>
+        <div class="review-author">
+          <strong>Elena V.</strong>
+          <span>Mamma di 2 bambini</span>
+        </div>
+        <div class="review-platform">★ Google Reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA APPUNTAMENTO -->
+  <section class="appointment" id="appuntamento">
+    <h2>Prenota il tuo esame visivo gratuito</h2>
+    <p>Disponibile dal lunedì al sabato. Chiamaci o lascia i tuoi dati qui sotto.</p>
+    <a href="#" class="btn-white">📞 Solo pagina demo</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">OTTICA <span>VISIONE</span></div>
+        <p class="footer-desc">Il tuo ottico di fiducia a Vicenza dal 1998. Montature di qualità, servizi professionali e personale specializzato al tuo servizio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Prodotti</h4>
+        <ul>
+          <li><a href="#">Occhiali da sole</a></li>
+          <li><a href="#">Occhiali da vista</a></li>
+          <li><a href="#">Lenti a contatto</a></li>
+          <li><a href="#">Occhiali junior</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="#">Esame della vista</a></li>
+          <li><a href="#">Riparazioni</a></li>
+          <li><a href="#">Convenzione SSN</a></li>
+          <li><a href="#">Servizio a domicilio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">Solo pagina demo</a></li>
+          <li><a href="#">Solo pagina demo</a></li>
+          <li><a href="#">Lun–Sab: 9–19:30</a></li>
+          <li><a href="#">Solo pagina demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Ottica Visione — Solo pagina demo</div>
+      <div class="footer-credit-link">Sito realizzato da <a href="index.html">Studio Digital Italia</a></div>
+    </div>
+  </footer>
+
+  <script>
+    function addCart(btn) {
+      btn.textContent = '✓ Aggiunto';
+      btn.style.background = '#0d9488';
+      setTimeout(() => {
+        btn.textContent = '+ Info';
+        btn.style.background = '';
+      }, 1500);
+    }
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.product-card, .servizio-card, .review-card, .cat-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      observer.observe(el);
+    });
+  
+  // Hamburger menu
+  const ham = document.querySelector('.hamburger');
+  const nl = document.querySelector('.nav-links');
+  if (ham && nl) {
+    ham.addEventListener('click', () => nl.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!ham.contains(e.target) && !nl.contains(e.target)) nl.classList.remove('open');
+    });
+  }
+
+</script>
+</body>
+</html>

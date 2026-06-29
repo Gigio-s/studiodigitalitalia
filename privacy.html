@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy & Cookie Policy — Studio Digital Italia</title>
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta name="description" content="Informativa sulla privacy e sui cookie di Studio Digital Italia, ai sensi del GDPR (Reg. UE 2016/679)." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.studiodigitalitalia.it/privacy.html" />
+  <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:   #1E1F24;
+      --gold:   #B8966A;
+      --cream:  #F8F5EE;
+      --white:  #FFFFFF;
+      --text:   #1A1C22;
+      --muted:  #6E6860;
+      --border: #DDD8CE;
+      --radius: 6px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+    .logo img { height: 38px; width: auto; }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: .3px; }
+    .logo-text span { color: var(--gold); }
+    .btn-nav {
+      border: 1px solid rgba(184,150,106,.5); color: var(--gold);
+      padding: .5rem 1.2rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .85rem;
+      text-decoration: none; transition: all .2s;
+    }
+    .btn-nav:hover { background: var(--gold); color: var(--dark); }
+
+    /* CONTENT */
+    .page-wrap {
+      max-width: 800px; margin: 0 auto;
+      padding: 110px 6% 80px;
+    }
+
+    .page-label {
+      font-size: .72rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 1.8px; text-transform: uppercase;
+      display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem;
+    }
+    .page-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+
+    h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: .5rem; line-height: 1.2; }
+
+    .last-update {
+      font-size: .82rem; color: var(--muted); margin-bottom: 3rem;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-section { margin-bottom: 2.5rem; }
+    .privacy-section h2 {
+      font-size: 1.25rem; margin-bottom: .8rem;
+      padding-bottom: .5rem; border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .privacy-section h3 { font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 700; margin: 1.2rem 0 .4rem; }
+    .privacy-section p { font-size: .93rem; color: var(--text); margin-bottom: .8rem; }
+    .privacy-section ul { padding-left: 1.2rem; margin-bottom: .8rem; }
+    .privacy-section ul li { font-size: .93rem; color: var(--text); margin-bottom: .3rem; }
+    .privacy-section a { color: var(--gold); text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold);
+      border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 1rem;
+      font-size: .9rem;
+    }
+    .highlight-box strong { color: var(--dark); }
+
+    table.privacy-table {
+      width: 100%; border-collapse: collapse; font-size: .88rem; margin: 1rem 0;
+    }
+    table.privacy-table th {
+      background: var(--dark); color: rgba(255,255,255,.8);
+      padding: .7rem 1rem; text-align: left; font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+    table.privacy-table td {
+      padding: .7rem 1rem; border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    table.privacy-table tr:last-child td { border-bottom: none; }
+    table.privacy-table tr:nth-child(even) { background: var(--white); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 32px 6%; text-align: center; }
+    footer p { color: rgba(255,255,255,.3); font-size: .8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .page-wrap { padding: 90px 5% 60px; }
+      nav { padding: 0 5%; }
+      table.privacy-table { font-size: .78rem; }
+      table.privacy-table th, table.privacy-table td { padding: .5rem .6rem; }
+    }
+  
+    /* ── COOKIE NOTICE ── */
+    #cookie-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
+      padding: 1rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
+    }
+    #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
+    #cookie-bar a { color: #B8966A; text-decoration: underline; }
+    #cookie-bar .cookie-btn {
+      background: #B8966A; color: #1E1F24;
+      border: none; padding: .55rem 1.4rem; border-radius: 6px;
+      font-family: inherit; font-size: .83rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: background .2s;
+    }
+    #cookie-bar .cookie-btn:hover { background: #9D7D57; }
+    @media (max-width: 600px) {
+      #cookie-bar { padding: 1rem 5%; flex-direction: column; align-items: stretch; }
+      #cookie-bar .cookie-btn { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo-solo-foto.jpg" alt="Studio Digital Italia" />
+    <span class="logo-text">Studio<span> Digital</span></span>
+  </a>
+  <a href="index.html" class="btn-nav">← Torna al sito</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-label">Informativa legale</div>
+  <h1>Privacy Policy<br/>& Cookie Policy</h1>
+  <p class="last-update">Ultimo aggiornamento: 15 maggio 2026 — ai sensi del Reg. UE 2016/679 (GDPR) e del D.Lgs. 196/2003 (Codice Privacy)</p>
+
+  <!-- 1. TITOLARE -->
+  <div class="privacy-section">
+    <h2>1. Titolare del trattamento</h2>
+    <div class="highlight-box">
+      <strong>Studio Digital Italia</strong><br/>
+      Titolare: Luca Ramacciato<br/>
+      P.IVA: 04400570240<br/>
+      Sede operativa: Provincia di Vicenza, Italia<br/>
+      Email: <a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a><br/>
+      Telefono: <a href="tel:+393277737115">327 773 7115</a>
+    </div>
+    <p>Per qualsiasi questione relativa al trattamento dei tuoi dati personali puoi contattarci all'indirizzo email indicato sopra.</p>
+  </div>
+
+  <!-- 2. DATI RACCOLTI -->
+  <div class="privacy-section">
+    <h2>2. Dati personali raccolti</h2>
+    <p>Il sito raccoglie i seguenti dati personali, esclusivamente su base volontaria tramite il modulo di contatto:</p>
+    <table class="privacy-table">
+      <thead>
+        <tr><th>Tipo di dato</th><th>Come viene raccolto</th><th>Finalità</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nome e cognome</td><td>Form di contatto</td><td>Rispondere alla richiesta</td></tr>
+        <tr><td>Indirizzo email</td><td>Form di contatto</td><td>Rispondere alla richiesta</td></tr>
+        <tr><td>Numero di telefono</td><td>Form di contatto (opzionale)</td><td>Contatto diretto su richiesta</td></tr>
+        <tr><td>Nome attività</td><td>Form di contatto (opzionale)</td><td>Personalizzare la proposta</td></tr>
+        <tr><td>Messaggio libero</td><td>Form di contatto</td><td>Valutare la richiesta</td></tr>
+        <tr><td>Indirizzo IP</td><td>Automaticamente dal server</td><td>Sicurezza e prevenzione abusi</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Non raccogliamo</strong> dati sensibili, non creiamo profili utente, non utilizziamo strumenti di tracciamento comportamentale o remarketing.</p>
+  </div>
+
+  <!-- 3. FINALITÀ E BASE GIURIDICA -->
+  <div class="privacy-section">
+    <h2>3. Finalità e base giuridica del trattamento</h2>
+    <p>I dati raccolti tramite il modulo di contatto vengono trattati per:</p>
+    <ul>
+      <li><strong>Rispondere alle richieste di preventivo e informazioni</strong> — base giuridica: esecuzione di misure precontrattuali (art. 6.1.b GDPR)</li>
+      <li><strong>Adempimenti fiscali e amministrativi</strong> in caso di instaurazione del rapporto commerciale — base giuridica: obbligo legale (art. 6.1.c GDPR)</li>
+    </ul>
+    <p>Non utilizziamo i dati per finalità di marketing senza il tuo esplicito consenso aggiuntivo.</p>
+  </div>
+
+  <!-- 4. CONSERVAZIONE -->
+  <div class="privacy-section">
+    <h2>4. Periodo di conservazione</h2>
+    <p>I dati contenuti nelle richieste di contatto vengono conservati per il tempo necessario a gestire la richiesta e, in caso di rapporto commerciale, per 10 anni ai sensi degli obblighi di conservazione fiscale previsti dalla legge italiana. In assenza di rapporto commerciale, i dati vengono eliminati entro 12 mesi dalla ricezione.</p>
+  </div>
+
+  <!-- 5. CONDIVISIONE -->
+  <div class="privacy-section">
+    <h2>5. Comunicazione e condivisione dei dati</h2>
+    <p>I tuoi dati <strong>non vengono venduti né ceduti a terzi</strong> per finalità commerciali. Possono essere condivisi esclusivamente con:</p>
+    <ul>
+      <li>Fornitori di servizi tecnici (hosting, email) strettamente necessari all'erogazione del servizio, vincolati da accordi di riservatezza</li>
+      <li>Autorità pubbliche, nei casi previsti dalla legge</li>
+    </ul>
+  </div>
+
+  <!-- 6. SERVIZI TERZE PARTI -->
+  <div class="privacy-section">
+    <h2>6. Servizi di terze parti</h2>
+    <p>Questo sito utilizza i seguenti servizi esterni che possono trattare dati tecnici (incluso l'indirizzo IP del visitatore):</p>
+
+    <h3>Google Fonts</h3>
+    <p>Per la visualizzazione dei caratteri tipografici, il sito carica font dalla rete CDN di Google LLC (USA). Questo comporta una connessione ai server Google che può registrare l'indirizzo IP del visitatore. Si tratta di un cookie tecnico necessario alla corretta visualizzazione del sito.<br/>
+    Privacy Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+
+    <h3>Hosting del sito</h3>
+    <p>Il sito è ospitato su infrastrutture di hosting che raccolgono automaticamente dati tecnici di accesso (IP, browser, timestamp) nei log di sistema per finalità di sicurezza. Questi dati non vengono utilizzati per profilazione.</p>
+  </div>
+
+  <!-- 7. COOKIE -->
+  <div class="privacy-section">
+    <h2>7. Cookie Policy</h2>
+    <p>I cookie sono piccoli file di testo che i siti web salvano nel browser dell'utente. Questo sito utilizza <strong>esclusivamente cookie tecnici</strong>, necessari al funzionamento del sito.</p>
+
+    <h3>Cookie tecnici utilizzati</h3>
+    <table class="privacy-table">
+      <thead>
+        <tr><th>Nome</th><th>Tipo</th><th>Durata</th><th>Finalità</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>sdi_cookie_notice</td><td>Tecnico / Preferenza</td><td>6 mesi</td><td>Memorizza che l'utente ha preso visione del cookie notice</td></tr>
+      </tbody>
+    </table>
+
+    <p>Questo sito <strong>non utilizza</strong> cookie di profilazione, cookie analytics (es. Google Analytics), cookie di marketing o remarketing. Non è pertanto richiesto il consenso per l'uso dei cookie.</p>
+
+    <h3>Come disabilitare i cookie</h3>
+    <p>Puoi disabilitare i cookie dal tuo browser in qualsiasi momento. Consulta le istruzioni del tuo browser:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+  </div>
+
+  <!-- 8. DIRITTI -->
+  <div class="privacy-section">
+    <h2>8. I tuoi diritti</h2>
+    <p>Ai sensi del GDPR (artt. 15–22) hai il diritto di:</p>
+    <ul>
+      <li><strong>Accedere</strong> ai tuoi dati personali in nostro possesso</li>
+      <li><strong>Rettificare</strong> dati inesatti o incompleti</li>
+      <li><strong>Cancellare</strong> i tuoi dati ("diritto all'oblio")</li>
+      <li><strong>Limitare</strong> il trattamento in determinati casi</li>
+      <li><strong>Opporti</strong> al trattamento per motivi legittimi</li>
+      <li><strong>Portabilità</strong> dei dati in formato strutturato</li>
+    </ul>
+    <p>Per esercitare i tuoi diritti, scrivi a: <a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a>. Risponderemo entro 30 giorni.</p>
+    <p>Hai inoltre il diritto di proporre reclamo al <strong>Garante per la Protezione dei Dati Personali</strong>: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a></p>
+  </div>
+
+  <!-- 9. MODIFICHE -->
+  <div class="privacy-section">
+    <h2>9. Modifiche alla presente informativa</h2>
+    <p>Ci riserviamo il diritto di aggiornare questa informativa in qualsiasi momento. La data dell'ultimo aggiornamento è indicata in cima alla pagina. In caso di modifiche sostanziali,  In caso di modifiche sostanziali, provvederemo a darne comunicazione tramite avviso sul sito.</p>
+  </div>
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 Studio Digital Italia &mdash;
+    <a href="index.html">Home</a> &middot;
+    <a href="pacchetti.html">Formule</a> &middot;
+    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="termini.html">Termini di Servizio</a>
+  </p>
+</footer>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-bar">
+  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
+    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
+</div>
+<script>
+  // Cookie banner
+  function dismissCookieBar() {
+    document.getElementById('cookie-bar').style.display = 'none';
+    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+  }
+  (function() {
+    try {
+      if (sessionStorage.getItem('sdi_cookie_ok')) {
+        var b = document.getElementById('cookie-bar');
+        if (b) b.style.display = 'none';
+      }
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

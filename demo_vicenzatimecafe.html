@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicenza Time Café — Circolo Culturale, Corsi ed Eventi a Vicenza</title>
+  <meta name="description" content="Il Vicenza Time Café è un circolo culturale ARCI nel centro di Vicenza. Corsi, laboratori, eventi, spazio prove musicali, coworking e una comunità viva tutto l'anno. Scopri come diventare socio.">
+  <meta name="keywords" content="circolo culturale Vicenza, associazione culturale Vicenza, eventi Vicenza, corsi Vicenza, ARCI Vicenza">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===========================
+       VARIABILI — identità ViTC
+    =========================== */
+    :root {
+      --cream:       #F5F0E6;
+      --cream-light: #FBF8F2;
+      --terracotta:  #B5522A;
+      --terra-soft:  #C96840;
+      --terra-pale:  #EDD5C5;
+      --sage:        #6E8C6B;
+      --sage-light:  #D4E3D2;
+      --brown-dark:  #2A1A10;
+      --brown-mid:   #5C4030;
+      --brown-soft:  #8C6B54;
+      --text:        #2A1A10;
+      --text-mid:    #5C4030;
+      --text-light:  #9A7A64;
+      --border:      #E0D4C4;
+      --white:       #FFFEF9;
+      --shadow:      0 2px 16px rgba(42,26,16,0.07);
+      --shadow-md:   0 6px 28px rgba(42,26,16,0.12);
+      --radius:      8px;
+      --radius-lg:   14px;
+      --max-w:       1160px;
+      --font-title:  'Playfair Display', Georgia, serif;
+      --font-body:   'Inter', system-ui, sans-serif;
+      --ease:        all 0.28s ease;
+    }
+
+    /* ===========================
+       RESET
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===========================
+       TIPOGRAFIA
+    =========================== */
+    h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.25; color: var(--text); }
+    h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 600; }
+    h3 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 600; }
+    p  { font-family: var(--font-body); color: var(--text-mid); line-height: 1.8; }
+
+    /* ===========================
+       LAYOUT
+    =========================== */
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+
+    /* ===========================
+       PULSANTI — tono culturale
+    =========================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
+      padding: 12px 24px; border-radius: 4px; border: 1.5px solid transparent;
+      cursor: pointer; transition: var(--ease);
+    }
+    .btn-fill { background: var(--terracotta); color: var(--white); border-color: var(--terracotta); }
+    .btn-fill:hover { background: var(--brown-mid); border-color: var(--brown-mid); }
+    .btn-line { background: transparent; color: var(--terracotta); border-color: var(--terracotta); }
+    .btn-line:hover { background: var(--terracotta); color: var(--white); }
+    .btn-line-dark { background: transparent; color: var(--text); border-color: var(--text); }
+    .btn-line-dark:hover { background: var(--text); color: var(--white); }
+    .btn-line-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.6); }
+    .btn-line-white:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .link-arrow {
+      font-family: var(--font-body); font-size: 0.85rem; font-weight: 500;
+      color: var(--terracotta); display: inline-flex; align-items: center;
+      gap: 6px; transition: var(--ease);
+    }
+    .link-arrow:hover { gap: 10px; }
+
+    /* ===========================
+       PASSWORD OVERLAY
+    =========================== */
+    #pw-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--brown-dark);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 20px; padding: 24px;
+    }
+    #pw-overlay .pw-name {
+      font-family: var(--font-title); font-size: 1.5rem;
+      color: rgba(255,255,255,0.9); letter-spacing: 0.5px;
+    }
+    #pw-overlay p { color: rgba(255,255,255,0.45); font-size: 0.85rem; text-align: center; }
+    #pw-overlay .pw-label { font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; }
+    #pw-overlay .pw-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    #pw-overlay input {
+      padding: 12px 18px; border-radius: 4px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07); color: var(--white);
+      font-family: var(--font-body); font-size: 0.9rem; outline: none;
+      width: 240px; transition: var(--ease);
+    }
+    #pw-overlay input:focus { border-color: var(--terra-soft); }
+    #pw-overlay input::placeholder { color: rgba(255,255,255,0.3); }
+    #pw-error { color: #e07050; font-size: 0.82rem; display: none; }
+    #pw-hint { font-size: 0.7rem; color: rgba(255,255,255,0.18); }
+    #pw-hint code { color: rgba(255,255,255,0.3); }
+    #site { display: none; }
+
+    /* ===========================
+       NAVBAR
+    =========================== */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0; transition: var(--ease);
+    }
+    #nav.solid {
+      background: rgba(251,248,242,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand {
+      font-family: var(--font-title); font-size: 1.05rem; font-weight: 700;
+      color: var(--white); letter-spacing: 0.2px; line-height: 1.2;
+    }
+    .nav-brand small {
+      display: block; font-family: var(--font-body); font-size: 0.65rem;
+      font-weight: 400; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-top: 1px;
+    }
+    #nav.solid .nav-brand { color: var(--text); }
+    #nav.solid .nav-brand small { color: var(--text-light); }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links a {
+      font-family: var(--font-body); font-size: 0.85rem; font-weight: 400;
+      padding: 7px 14px; border-radius: 3px; color: rgba(255,255,255,0.8);
+      transition: var(--ease);
+    }
+    #nav.solid .nav-links a { color: var(--text-mid); }
+    .nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+    #nav.solid .nav-links a:hover { background: var(--terra-pale); color: var(--terracotta); }
+    .nav-links .nav-join {
+      background: var(--terracotta); color: var(--white) !important;
+      padding: 8px 18px; margin-left: 8px;
+    }
+    .nav-links .nav-join:hover { background: var(--brown-mid) !important; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .burger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: var(--ease); }
+    #nav.solid .burger span { background: var(--text); }
+    .mob-nav {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--cream-light); flex-direction: column;
+      align-items: center; justify-content: center; gap: 4px;
+    }
+    .mob-nav.on { display: flex; }
+    .mob-nav a { font-family: var(--font-title); font-size: 1.7rem; color: var(--text); padding: 10px; }
+    .mob-nav a:hover { color: var(--terracotta); }
+    .mob-close { position: absolute; top: 22px; right: 22px; font-size: 1.3rem; cursor: pointer; color: var(--text-mid); }
+
+    /* ===========================
+       HERO — caldo, culturale
+    =========================== */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: var(--brown-dark); position: relative; overflow: hidden;
+    }
+    .hero-texture {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px);
+    }
+    .hero-glow {
+      position: absolute; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(181,82,42,0.18) 0%, transparent 70%);
+      top: -100px; right: -100px; pointer-events: none;
+    }
+    .hero-body { position: relative; z-index: 2; padding: 130px 0 80px; }
+    .hero-arci {
+      display: inline-flex; align-items: center; gap: 6px; margin-bottom: 28px;
+      color: rgba(255,255,255,0.35); font-size: 0.72rem;
+      font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .hero-arci span { display: inline-block; width: 16px; height: 1px; background: rgba(255,255,255,0.25); }
+    #hero h1 { color: var(--white); margin-bottom: 10px; max-width: 720px; }
+    #hero h1 em { font-style: italic; color: var(--terra-soft); }
+    .hero-tagline {
+      font-family: var(--font-title); font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: rgba(255,255,255,0.45);
+      margin-bottom: 24px; letter-spacing: 0.3px;
+    }
+    #hero p {
+      color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 520px;
+      margin-bottom: 40px; line-height: 1.85;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .hero-loc {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.3); font-size: 0.8rem;
+      padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .hero-loc i { color: var(--terra-soft); }
+    .hero-scroll {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.2); font-size: 0.7rem;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+    /* ===========================
+       DIVISORE DECORATIVO
+    =========================== */
+    .divider {
+      display: flex; align-items: center; gap: 16px; margin: 0 0 48px;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .divider span { font-family: var(--font-title); font-style: italic; font-size: 0.85rem; color: var(--text-light); white-space: nowrap; }
+
+    /* ===========================
+       CHI SIAMO
+    =========================== */
+    #chi-siamo { background: var(--white); }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-kicker {
+      font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; display: block;
+    }
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p { margin-bottom: 16px; }
+    .about-text p:last-of-type { margin-bottom: 28px; }
+    .about-pills { margin: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 24px 0; display: flex; flex-direction: column; gap: 16px; }
+    .a-pill { display: flex; align-items: center; gap: 14px; font-size: 0.88rem; color: var(--text-mid); }
+    .a-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
+    .about-img-col { position: relative; }
+    .about-img {
+      width: 100%; aspect-ratio: 5/6; border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, var(--sage) 0%, #3d5c3a 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.25); font-style: italic; font-size: 0.8rem;
+      flex-direction: column; gap: 8px;
+    }
+    .about-img i { font-size: 2rem; }
+    .about-note {
+      position: absolute; bottom: -20px; left: -20px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 20px;
+      box-shadow: var(--shadow-md); max-width: 200px;
+    }
+    .about-note strong { display: block; font-family: var(--font-title); font-size: 1rem; color: var(--text); }
+    .about-note span { font-size: 0.75rem; color: var(--text-light); }
+
+    /* ===========================
+       EVENTI
+    =========================== */
+    #eventi { background: var(--cream); }
+    .eventi-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
+    .eventi-head h2 { margin-bottom: 0; }
+    .eventi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 36px; }
+    .ev-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; border: 1px solid var(--border);
+      transition: var(--ease); display: flex; flex-direction: column;
+    }
+    .ev-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .ev-thumb {
+      height: 160px; position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ev-thumb i { font-size: 2.2rem; opacity: 0.25; color: var(--white); }
+    .ev-cat {
+      position: absolute; top: 12px; left: 12px;
+      font-family: var(--font-body); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      background: rgba(255,255,255,0.9); color: var(--text);
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .ev-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .ev-date { font-size: 0.78rem; color: var(--terracotta); font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .ev-body h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .ev-body p { font-size: 0.84rem; line-height: 1.65; flex: 1; margin-bottom: 18px; }
+    .eventi-footer { text-align: center; }
+
+    /* ===========================
+       ATTIVITÀ
+    =========================== */
+    #attivita { background: var(--white); }
+    .att-intro { max-width: 580px; margin-bottom: 48px; }
+    .att-intro h2 { margin-bottom: 14px; }
+    .att-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .att-card {
+      border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px 24px; transition: var(--ease); background: var(--cream-light);
+    }
+    .att-card:hover { border-color: var(--terracotta); background: var(--white); box-shadow: var(--shadow); }
+    .att-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+    .att-card h3 { font-size: 1rem; margin-bottom: 9px; }
+    .att-card p { font-size: 0.83rem; line-height: 1.7; margin-bottom: 16px; }
+
+    /* ===========================
+       SEZIONE NARRATIVA / SPAZIO
+    =========================== */
+    #spazio { background: var(--sage); position: relative; overflow: hidden; }
+    .spazio-texture {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+      background-size: 20px 20px;
+    }
+    #spazio .wrap { position: relative; z-index: 1; }
+    .spazio-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    #spazio h2 { color: var(--white); margin-bottom: 20px; }
+    #spazio p { color: rgba(255,255,255,0.75); line-height: 1.85; margin-bottom: 16px; }
+    .spazio-quote {
+      border-left: 3px solid rgba(255,255,255,0.35);
+      padding: 20px 0 20px 24px; margin: 24px 0;
+    }
+    .spazio-quote blockquote {
+      font-family: var(--font-title); font-style: italic;
+      font-size: 1.25rem; color: rgba(255,255,255,0.9); line-height: 1.6;
+    }
+    .spazio-quote cite { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+    .spazio-list { display: flex; flex-direction: column; gap: 14px; }
+    .spazio-item {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.1); border-radius: var(--radius);
+      padding: 14px 18px; color: rgba(255,255,255,0.85); font-size: 0.88rem;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .spazio-item i { color: rgba(255,255,255,0.5); width: 16px; text-align: center; }
+
+    /* ===========================
+       DIVENTA SOCIO
+    =========================== */
+    #socio { background: var(--cream); }
+    .socio-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .socio-left h2 { margin-bottom: 16px; }
+    .socio-left p { margin-bottom: 14px; }
+    .socio-benefits { margin: 28px 0; display: flex; flex-direction: column; gap: 10px; }
+    .soc-b { display: flex; align-items: flex-start; gap: 10px; font-size: 0.87rem; color: var(--text-mid); }
+    .soc-b i { color: var(--sage); margin-top: 2px; flex-shrink: 0; }
+    .socio-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px;
+      border-top: 3px solid var(--terracotta);
+    }
+    .socio-card h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .socio-price { margin: 16px 0 4px; }
+    .socio-price .amt { font-family: var(--font-title); font-size: 2.4rem; color: var(--terracotta); font-weight: 700; }
+    .socio-price .per { font-size: 0.85rem; color: var(--text-light); }
+    .socio-note { font-size: 0.78rem; color: var(--text-light); margin-bottom: 24px; line-height: 1.7; }
+    .socio-form { display: flex; flex-direction: column; gap: 12px; }
+    .socio-form input, .socio-form select {
+      width: 100%; padding: 12px 14px; font-family: var(--font-body);
+      font-size: 0.875rem; color: var(--text);
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      background: var(--cream-light); outline: none; transition: var(--ease);
+    }
+    .socio-form input:focus, .socio-form select:focus { border-color: var(--terracotta); background: var(--white); }
+    .socio-form input::placeholder { color: var(--text-light); }
+    .form-note { font-size: 0.72rem; color: var(--text-light); line-height: 1.6; }
+    .form-note a { color: var(--terracotta); text-decoration: underline; }
+
+    /* ===========================
+       GALLERIA
+    =========================== */
+    #galleria { background: var(--white); }
+    .gal-head { margin-bottom: 36px; }
+    .gal-head h2 { margin-bottom: 8px; }
+    .gal-head p { font-size: 0.9rem; }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: 200px 200px;
+      gap: 14px;
+    }
+    .gal-item {
+      border-radius: var(--radius); overflow: hidden;
+      position: relative; cursor: pointer; transition: var(--ease);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px;
+    }
+    .gal-item:first-child { grid-row: 1 / 3; }
+    .gal-item:nth-child(4) { grid-column: 2 / 4; }
+    .gal-item i { font-size: 1.6rem; color: rgba(255,255,255,0.2); }
+    .gal-item span { font-size: 0.72rem; color: rgba(255,255,255,0.25); font-style: italic; }
+    .gal-hover {
+      position: absolute; inset: 0; background: rgba(181,82,42,0.65);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: var(--ease);
+    }
+    .gal-hover i { font-size: 1.3rem; color: white; }
+    .gal-item:hover .gal-hover { opacity: 1; }
+    .gal-item:hover { transform: scale(1.02); }
+    .gal-foot { margin-top: 28px; }
+
+    /* ===========================
+       NEWSLETTER
+    =========================== */
+    #newsletter { background: var(--cream); }
+    .news-box {
+      background: var(--brown-dark); border-radius: var(--radius-lg);
+      padding: 56px 48px; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .news-text .kicker { font-size: 0.7rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 12px; display: block; }
+    .news-text h2 { color: var(--white); margin-bottom: 12px; }
+    .news-text p { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.8; }
+    .news-form { display: flex; flex-direction: column; gap: 12px; }
+    .news-form input {
+      padding: 13px 16px; border-radius: var(--radius);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06); color: var(--white);
+      font-family: var(--font-body); font-size: 0.875rem; outline: none;
+      transition: var(--ease);
+    }
+    .news-form input:focus { border-color: var(--terra-soft); }
+    .news-form input::placeholder { color: rgba(255,255,255,0.25); }
+    .news-form .btn { justify-content: center; }
+    .news-priv { font-size: 0.7rem; color: rgba(255,255,255,0.2); margin-top: 4px; }
+
+    /* ===========================
+       CONTATTI
+    =========================== */
+    #contatti { background: var(--white); }
+    .cont-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; }
+    .map-box {
+      border-radius: var(--radius-lg); overflow: hidden;
+      height: 400px; border: 1px solid var(--border);
+      background: var(--cream); display: flex; align-items: center;
+      justify-content: center; flex-direction: column; gap: 10px;
+      color: var(--text-light);
+    }
+    .map-box i { font-size: 2rem; color: var(--terracotta); opacity: 0.4; }
+    .map-box iframe { width: 100%; height: 100%; border: none; }
+    .cont-info { display: flex; flex-direction: column; }
+    .c-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .c-item:last-child { border-bottom: none; }
+    .c-ico {
+      width: 36px; height: 36px; border-radius: var(--radius);
+      background: var(--terra-pale); display: flex; align-items: center;
+      justify-content: center; color: var(--terracotta); font-size: 0.85rem; flex-shrink: 0;
+    }
+    .c-txt strong { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); font-family: var(--font-body); font-weight: 600; margin-bottom: 4px; }
+    .c-txt span, .c-txt a { display: block; font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+    .c-txt a:hover { color: var(--terracotta); }
+    .social-strip { display: flex; gap: 8px; margin-top: 24px; }
+    .soc-link {
+      width: 38px; height: 38px; border-radius: var(--radius); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid); font-size: 0.9rem; transition: var(--ease);
+    }
+    .soc-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer { background: var(--brown-dark); padding: 52px 0 0; }
+    .foot-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; padding-bottom: 44px; }
+    .foot-brand { font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+    .foot-brand small { display: block; font-family: var(--font-body); font-size: 0.65rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 2px; }
+    .foot-about { color: rgba(255,255,255,0.35); font-size: 0.82rem; line-height: 1.8; margin: 12px 0 20px; }
+    .foot-arci { font-size: 0.72rem; color: rgba(255,255,255,0.25); display: flex; align-items: center; gap: 6px; }
+    .foot-col h4 { font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 600; margin-bottom: 16px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .foot-col ul a { font-size: 0.84rem; color: rgba(255,255,255,0.35); transition: var(--ease); }
+    .foot-col ul a:hover { color: rgba(255,255,255,0.7); }
+    .foot-bar {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 0; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .foot-bar p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+    .foot-bar-links { display: flex; gap: 18px; }
+    .foot-bar-links a { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+    .foot-bar-links a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ===========================
+       DEMO NOTA
+    =========================== */
+    .demo-ribbon {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(42,26,16,0.92); backdrop-filter: blur(6px);
+      padding: 10px 20px; display: flex; align-items: center;
+      justify-content: center; gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .demo-ribbon span { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+    .demo-ribbon strong { color: rgba(255,255,255,0.7); }
+    .demo-pill { background: var(--terracotta); color: white; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 2px; }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media(max-width:1024px){
+      .about-layout,.spazio-layout,.socio-layout,.news-box,.cont-layout { grid-template-columns:1fr; gap:40px; }
+      .about-img-col { display:none; }
+      .spazio-layout { direction: ltr; }
+      .foot-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:768px){
+      .section { padding:60px 0; }
+      .nav-links { display:none; }
+      .burger { display:flex; }
+      .eventi-grid,.att-grid { grid-template-columns:1fr; }
+      .gal-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+      .gal-item:first-child { grid-row:auto; }
+      .gal-item:nth-child(4) { grid-column:auto; }
+      .news-box { padding:36px 24px; grid-template-columns:1fr; }
+      .foot-grid { grid-template-columns:1fr; gap:32px; }
+      .foot-bar { flex-direction:column; text-align:center; }
+    }
+    @media(max-width:480px){
+      .hero-btns { flex-direction:column; }
+      .hero-btns .btn { justify-content:center; }
+      .gal-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SCHERMATA PASSWORD ===== -->
+<div id="pw-overlay">
+  <div class="pw-name">Vicenza Time Café</div>
+  <div class="pw-label">Anteprima riservata — Studio Digital Italia</div>
+  <p>Inserisci la password per visualizzare la demo del nuovo sito.</p>
+  <div class="pw-row">
+    <input type="password" id="pw-in" placeholder="Password…" autocomplete="off">
+    <button class="btn btn-fill" onclick="checkPw()">
+      <i class="fas fa-unlock-alt"></i> Accedi
+    </button>
+  </div>
+  <p id="pw-error">Password errata, riprova.</p>
+  <p id="pw-hint">Password di demo: <code>vitc2026</code></p>
+</div>
+
+<!-- ===== CONTENUTO SITO ===== -->
+<div id="site">
+
+  <!-- NOTA DEMO -->
+  <div class="demo-ribbon">
+    <span class="demo-pill">Demo</span>
+    <span>Anteprima del nuovo sito — proposta di <strong>Studio Digital Italia</strong></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <a href="#hero" class="nav-brand">
+        Vicenza Time Café
+        <small>Circolo Culturale · Vicenza</small>
+      </a>
+      <div class="nav-links">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#eventi">Eventi</a>
+        <a href="#attivita">Attività</a>
+        <a href="#contatti">Contatti</a>
+        <a href="#socio" class="nav-join">Diventa socio</a>
+      </div>
+      <div class="burger" onclick="togMob()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU MOBILE -->
+  <div class="mob-nav" id="mob">
+    <span class="mob-close" onclick="togMob()"><i class="fas fa-times"></i></span>
+    <a href="#chi-siamo" onclick="togMob()">Chi siamo</a>
+    <a href="#eventi" onclick="togMob()">Eventi</a>
+    <a href="#attivita" onclick="togMob()">Attività</a>
+    <a href="#socio" onclick="togMob()">Diventa socio</a>
+    <a href="#contatti" onclick="togMob()">Contatti</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-texture"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-body">
+        <div class="hero-arci">
+          <span></span> Circolo ARCI · Vicenza dal 2012 <span></span>
+        </div>
+        <h1>Il tuo spazio di <em>cultura, musica</em><br>e comunità a Vicenza</h1>
+        <div class="hero-tagline">"Ho bisogno di spazio… mi prendo del tempo"</div>
+        <p>Un luogo dove incontrarsi, creare, imparare e condividere — nel centro di Vicenza, a tre minuti da Corso Palladio.</p>
+        <div class="hero-btns">
+          <a href="#eventi" class="btn btn-fill">
+            <i class="fas fa-calendar-alt"></i> Prossimi eventi
+          </a>
+          <a href="#socio" class="btn btn-line-white">
+            Diventa socio
+          </a>
+        </div>
+        <div class="hero-loc">
+          <i class="fas fa-map-marker-alt"></i>
+          Contrà Mure Porta Nova, 28 — dietro ai Giardini Salvi, 5 min dalla stazione
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- CHI SIAMO -->
+  <section id="chi-siamo" class="section">
+    <div class="wrap">
+      <div class="about-layout">
+        <div class="about-text">
+          <span class="about-kicker">Chi siamo</span>
+          <h2>Uno spazio vivo nel cuore di Vicenza</h2>
+          <p>Il <strong>Vicenza Time Café</strong> è un circolo culturale associativo, affiliato alla rete ARCI, che dal 2012 anima un angolo del centro storico di Vicenza con cultura, musica, teatro, lettura e molto altro.</p>
+          <p>Non siamo un locale, non siamo una palestra, non siamo uno studio. Siamo uno spazio aperto: ci vieni per seguire un corso, per provare con la tua band, per partecipare a uno spettacolo, per lavorare in compagnia o semplicemente per stare bene.</p>
+          <div class="about-pills">
+            <div class="a-pill"><span class="dot"></span> Affiliato alla rete ARCI — tessera valida in tutta Italia</div>
+            <div class="a-pill"><span class="dot"></span> Corsi, laboratori ed eventi tutto l'anno</div>
+            <div class="a-pill"><span class="dot"></span> Spazio prove, coworking, sala eventi</div>
+            <div class="a-pill"><span class="dot"></span> Iscrizione annuale da settembre a settembre</div>
+          </div>
+          <a href="#socio" class="btn btn-line">Scopri come aderire</a>
+        </div>
+        <div class="about-img-col">
+          <div class="about-img">
+            <i class="fas fa-image"></i>
+            <span>Foto dello spazio ViTC</span>
+          </div>
+          <div class="about-note">
+            <strong>Centro storico</strong>
+            <span>3 min da Corso Palladio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTI -->
+  <section id="eventi" class="section">
+    <div class="wrap">
+      <div class="eventi-head">
+        <div>
+          <span class="about-kicker" style="margin-bottom:8px">Agenda</span>
+          <h2>Prossimi appuntamenti</h2>
+        </div>
+        <a href="#" class="btn btn-line-dark">Tutto il programma</a>
+      </div>
+      <div class="eventi-grid">
+
+        <div class="ev-card">
+          <div class="ev-thumb" style="background:linear-gradient(150deg,#2d4a3a,#1a2e22)">
+            <i class="fas fa-music"></i>
+            <span class="ev-cat">Musica</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-date"><i class="far fa-calendar"></i> Venerdì 14 Giugno · 20:30</div>
+            <h3>Serata di musica dal vivo</h3>
+            <p>I gruppi del nostro spazio prove salgono sul palco. Una serata di condivisione musicale aperta ai soci.</p>
+            <a href="#contatti" class="link-arrow">Info e prenotazione <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-thumb" style="background:linear-gradient(150deg,#3a2018,#221008)">
+            <i class="fas fa-theater-masks"></i>
+            <span class="ev-cat">Teatro</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-date"><i class="far fa-calendar"></i> Sabato 21 Giugno · 18:00</div>
+            <h3>Saggio del Laboratorio Teatrale</h3>
+            <p>Il gruppo di teatro del ViTC presenta i lavori del corso annuale. Un momento di condivisione aperto a tutti.</p>
+            <a href="#contatti" class="link-arrow">Info e prenotazione <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-thumb" style="background:linear-gradient(150deg,#1e2e3a,#101820)">
+            <i class="fas fa-book-open"></i>
+            <span class="ev-cat">Lettura</span>
+          </div>
+          <div class="ev-body">
+            <div class="ev-date"><i class="far fa-calendar"></i> Giovedì 26 Giugno · 19:00</div>
+            <h3>ViLeggo — Incontro del club del libro</h3>
+            <p>Un pomeriggio per parlare di libri, storie e lettura in gruppo. Aperto ai soci del club.</p>
+            <a href="#contatti" class="link-arrow">Info e prenotazione <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="eventi-footer">
+        <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:14px;">Il programma completo viene aggiornato ogni settimana — iscriviti alla newsletter per riceverlo.</p>
+        <a href="#newsletter" class="link-arrow">Iscriviti agli aggiornamenti <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTIVITÀ -->
+  <section id="attivita" class="section">
+    <div class="wrap">
+      <div class="att-intro">
+        <span class="about-kicker">Corsi e laboratori</span>
+        <h2>Le attività continuative</h2>
+        <p>Gruppi che si incontrano ogni settimana, laboratori che si rinnovano ogni stagione. Unisciti a una delle nostre attività — o proponi la tua.</p>
+      </div>
+      <div class="att-grid">
+
+        <div class="att-card">
+          <span class="att-icon">🎤</span>
+          <h3>Laboratorio di Vocalità</h3>
+          <p>Esplorare la propria voce attraverso respiro, ascolto e corpo. Per chi vuole cantare meglio o semplicemente mettersi in gioco.</p>
+          <a href="#contatti" class="link-arrow">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="att-card">
+          <span class="att-icon">🎭</span>
+          <h3>Laboratorio Teatrale</h3>
+          <p>Percorso annuale che unisce espressione emotiva, movimento e scena. Nessuna esperienza richiesta — solo voglia di esserci.</p>
+          <a href="#contatti" class="link-arrow">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="att-card">
+          <span class="att-icon">📚</span>
+          <h3>ViLeggo — Club del Libro</h3>
+          <p>Un gruppo che ogni mese legge, discute e si confronta sui libri. Un modo diverso di vivere la lettura: insieme.</p>
+          <a href="#contatti" class="link-arrow">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="att-card">
+          <span class="att-icon">🌍</span>
+          <h3>Conversazioni con Madrelingua</h3>
+          <p>Pratica linguistica in un contesto informale e stimolante. Inglese, spagnolo, francese e altre lingue, con parlanti nativi.</p>
+          <a href="#contatti" class="link-arrow">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="att-card">
+          <span class="att-icon">🎵</span>
+          <h3>Coro del ViTC</h3>
+          <p>Il coro del circolo esplora repertori diversi in un clima di leggerezza e inclusività. Nessuna audizione, porte aperte.</p>
+          <a href="#contatti" class="link-arrow">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="att-card">
+          <span class="att-icon">🎸</span>
+          <h3>Spazio Prove Musicali</h3>
+          <p>Impianto audio, piccolo palco e videocamera per prove, jam e concerti interni. Prenotabile dai soci.</p>
+          <a href="#contatti" class="link-arrow">Prenota lo spazio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE NARRATIVA SPAZIO -->
+  <section id="spazio" class="section">
+    <div class="spazio-texture"></div>
+    <div class="wrap">
+      <div class="spazio-layout">
+        <div>
+          <span class="about-kicker" style="color:rgba(255,255,255,0.45)">Il nostro spazio</span>
+          <h2>Un posto per fare, non solo per guardare</h2>
+          <p>Al ViTC non vieni solo ad assistere. Vieni a partecipare — a provare, a proporre, a creare qualcosa insieme ad altre persone.</p>
+          <div class="spazio-quote">
+            <blockquote>"Ho bisogno di spazio… mi prendo del tempo."</blockquote>
+            <cite>— Il motto del Vicenza Time Café</cite>
+          </div>
+          <a href="#socio" class="btn btn-line-white">Entra nella comunità</a>
+        </div>
+        <div class="spazio-list">
+          <div class="spazio-item"><i class="fas fa-wifi"></i> WiFi veloce e postazioni di lavoro</div>
+          <div class="spazio-item"><i class="fas fa-music"></i> Spazio prove con impianto audio</div>
+          <div class="spazio-item"><i class="fas fa-chalkboard"></i> Sala per seminari, riunioni e conferenze</div>
+          <div class="spazio-item"><i class="fas fa-child"></i> Angolo bambini con giochi e tappetoni</div>
+          <div class="spazio-item"><i class="fas fa-birthday-cake"></i> Spazio per feste e ricorrenze</div>
+          <div class="spazio-item"><i class="fas fa-camera"></i> Possibilità di mostre fotografiche e artistiche</div>
+          <div class="spazio-item"><i class="fas fa-utensils"></i> Forno, caffè, tè e snack — porta il tuo pranzo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVENTA SOCIO -->
+  <section id="socio" class="section">
+    <div class="wrap">
+      <div class="socio-layout">
+        <div class="socio-left">
+          <span class="about-kicker">Associati</span>
+          <h2>Entra a far parte del ViTC</h2>
+          <p>L'iscrizione al Vicenza Time Café vale da settembre a settembre ed è valida su tutta la rete dei circoli ARCI d'Italia. Diventare socio significa fare parte di una comunità — e avere accesso a tutto ciò che offriamo.</p>
+          <div class="socio-benefits">
+            <div class="soc-b"><i class="fas fa-check"></i> Accesso a tutti gli spazi del circolo</div>
+            <div class="soc-b"><i class="fas fa-check"></i> Partecipazione a eventi, corsi e laboratori</div>
+            <div class="soc-b"><i class="fas fa-check"></i> Tessera ARCI valida in oltre 4.000 circoli in Italia</div>
+            <div class="soc-b"><i class="fas fa-check"></i> WiFi, stampante, tavoli, videoproiettore</div>
+            <div class="soc-b"><i class="fas fa-check"></i> Prenotazione sala per eventi, riunioni e prove</div>
+            <div class="soc-b"><i class="fas fa-check"></i> Spazio per bambini e possibilità di organizzare feste</div>
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-light);">Hai dubbi? Scrivi a <a href="mailto:qui@vicenzatimecafe.it" style="color:var(--terracotta)">qui@vicenzatimecafe.it</a> o passa al Front Desk il martedì dalle 10:30 alle 12:00.</p>
+        </div>
+        <div class="socio-card">
+          <h3>Quota associativa</h3>
+          <div class="socio-price">
+            <span class="amt">€ 35</span>
+            <span class="per"> / anno</span>
+          </div>
+          <p class="socio-note">Validità da settembre a settembre. Tessera ARCI inclusa, riconosciuta in tutta Italia.</p>
+          <form class="socio-form" onsubmit="return doForm(event)">
+            <input type="text" placeholder="Nome e cognome" required>
+            <input type="email" placeholder="Indirizzo email" required>
+            <input type="tel" placeholder="Telefono (facoltativo)">
+            <select>
+              <option value="" disabled selected>Come ci hai conosciuto?</option>
+              <option>Passaparola</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google</option>
+              <option>Altro</option>
+            </select>
+            <button type="submit" class="btn btn-fill" style="justify-content:center; margin-top:4px;">
+              Invia richiesta
+            </button>
+            <p class="form-note">Inviando accetti la nostra <a href="#">Privacy Policy</a>. Nessun dato ceduto a terzi.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section id="galleria" class="section">
+    <div class="wrap">
+      <div class="gal-head">
+        <span class="about-kicker">Immagini</span>
+        <h2>La vita al ViTC</h2>
+        <p>Uno sguardo ai nostri spazi, alle persone e agli eventi.</p>
+      </div>
+      <div class="gal-grid">
+        <div class="gal-item" style="background:linear-gradient(150deg,#2d3d2a,#1a2618)">
+          <i class="fas fa-image"></i><span>Spazio principale</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gal-item" style="background:linear-gradient(150deg,#3d2010,#2d1808)">
+          <i class="fas fa-music"></i><span>Concerto live</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gal-item" style="background:linear-gradient(150deg,#1a2d3d,#101e2d)">
+          <i class="fas fa-theater-masks"></i><span>Laboratorio teatrale</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gal-item" style="background:linear-gradient(150deg,#3d3010,#2d2208)">
+          <i class="fas fa-users"></i><span>Evento culturale</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gal-item" style="background:linear-gradient(150deg,#2a1a3d,#1a0f28)">
+          <i class="fas fa-book"></i><span>Club del libro</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gal-item" style="background:linear-gradient(150deg,#1a3d2a,#0f2618)">
+          <i class="fas fa-coffee"></i><span>Comunità</span>
+          <div class="gal-hover"><i class="fas fa-expand-alt"></i></div>
+        </div>
+      </div>
+      <div class="gal-foot">
+        <a href="https://www.instagram.com/vicenzatimecafe/" target="_blank" class="link-arrow">
+          <i class="fab fa-instagram"></i> Seguici su Instagram per altre foto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section">
+    <div class="wrap">
+      <div class="news-box">
+        <div class="news-text">
+          <span class="kicker">Newsletter settimanale</span>
+          <h2>Resta nel giro</h2>
+          <p>Ogni settimana il programma delle attività, le novità e gli appuntamenti del ViTC direttamente nella tua email. Niente spam — solo quello che succede qui.</p>
+        </div>
+        <form class="news-form" onsubmit="return doNews(event)">
+          <input type="text" placeholder="Il tuo nome">
+          <input type="email" placeholder="La tua email" required>
+          <button type="submit" class="btn btn-fill">
+            <i class="fas fa-paper-plane"></i> Iscriviti
+          </button>
+          <p class="news-priv">Puoi disiscriverti in qualsiasi momento. Privacy Policy rispettata.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="section">
+    <div class="wrap">
+      <span class="about-kicker">Dove siamo</span>
+      <h2 style="margin-bottom:40px;">Vieni a trovarci</h2>
+      <div class="cont-layout">
+        <div>
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1401.1!2d11.5454!3d45.5477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ef5b02ba35f67%3A0x0!2zQ29udHLDoCBNdXJlIFBvcnRhIE5vdmEgMjggVmljZW56YQ!5e0!3m2!1sit!2sit!4v1234"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mappa ViTC">
+            </iframe>
+          </div>
+          <a href="https://maps.google.com/?q=Contrà+Mure+Porta+Nova+28+Vicenza" target="_blank" class="link-arrow" style="margin-top:14px;display:inline-flex;">
+            <i class="fas fa-map-marker-alt"></i> Apri in Google Maps
+          </a>
+        </div>
+        <div class="cont-info">
+          <div class="c-item">
+            <div class="c-ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="c-txt">
+              <strong>Indirizzo</strong>
+              <span>Contrà Mure Porta Nova, 28 — Vicenza</span>
+              <span style="font-size:0.78rem; color:var(--text-light); margin-top:3px;">Dietro ai Giardini Salvi · 3 min da Corso Palladio</span>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i class="fas fa-clock"></i></div>
+            <div class="c-txt">
+              <strong>Front Desk</strong>
+              <span>Martedì 10:30 – 12:00</span>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i class="fas fa-phone"></i></div>
+            <div class="c-txt">
+              <strong>Telefono</strong>
+              <a href="tel:+393331036178">Alberto — 333 103 6178</a>
+              <a href="tel:+393494472177">Fiorella — 349 447 2177</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico"><i class="fas fa-envelope"></i></div>
+            <div class="c-txt">
+              <strong>Email</strong>
+              <a href="mailto:qui@vicenzatimecafe.it">qui@vicenzatimecafe.it</a>
+            </div>
+          </div>
+          <div class="social-strip">
+            <a href="https://www.facebook.com/vicenzatimecafe/" target="_blank" class="soc-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vicenzatimecafe/" target="_blank" class="soc-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/c/VicenzatimecafeIt" target="_blank" class="soc-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            Vicenza Time Café
+            <small>Circolo Culturale ARCI · Vicenza</small>
+          </div>
+          <p class="foot-about">Uno spazio di cultura, musica e comunità nel centro storico di Vicenza. Aperto a tutti, gestito dai soci.</p>
+          <div class="foot-arci">
+            <i class="fas fa-award"></i> Affiliato Rete ARCI
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="#chi-siamo">Chi siamo</a></li>
+            <li><a href="#eventi">Prossimi eventi</a></li>
+            <li><a href="#attivita">Corsi e laboratori</a></li>
+            <li><a href="#socio">Diventa socio</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#">Contrà Mure Porta Nova, 28</a></li>
+            <li><a href="#">36100 Vicenza</a></li>
+            <li><a href="mailto:qui@vicenzatimecafe.it">qui@vicenzatimecafe.it</a></li>
+            <li><a href="tel:+393331036178">333 103 6178</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <p>© 2026 Vicenza Time Café · C.F. 94015200242</p>
+        <div class="foot-bar-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Statuto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- fine #site -->
+
+<script>
+  /* ---- PASSWORD ---- */
+  function checkPw() {
+    if (document.getElementById('pw-in').value === 'vitc2026') {
+      document.getElementById('pw-overlay').style.display = 'none';
+      document.getElementById('site').style.display = 'block';
+      sessionStorage.setItem('ok','1');
+    } else {
+      document.getElementById('pw-error').style.display = 'block';
+      document.getElementById('pw-in').value = '';
+      document.getElementById('pw-in').focus();
+    }
+  }
+  document.getElementById('pw-in').addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
+  if (sessionStorage.getItem('ok')==='1') {
+    document.getElementById('pw-overlay').style.display = 'none';
+    document.getElementById('site').style.display = 'block';
+  }
+
+  /* ---- NAVBAR ---- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 50);
+  });
+
+  /* ---- MOBILE MENU ---- */
+  function togMob() {
+    document.getElementById('mob').classList.toggle('on');
+    document.body.style.overflow = document.getElementById('mob').classList.contains('on') ? 'hidden' : '';
+  }
+
+  /* ---- FORMS ---- */
+  function doForm(e) {
+    e.preventDefault();
+    alert('Richiesta inviata!\n\nTi contatteremo presto per completare l\'iscrizione.\n\n(Demo — in produzione il form invia una email al ViTC.)');
+    return false;
+  }
+  function doNews(e) {
+    e.preventDefault();
+    alert('Iscrizione completata!\n\nRiceverai il programma settimanale del ViTC.\n\n(Demo — in produzione collegato a sistema di newsletter.)');
+    return false;
+  }
+
+  /* ---- ANIMAZIONE ENTRATA ---- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.style.opacity = '1';
+        en.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.ev-card, .att-card, .gal-item, .soc-b, .spazio-item, .c-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>

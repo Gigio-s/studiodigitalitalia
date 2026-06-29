@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Palladio — Appartamento turistico Vicenza</title>
+  <meta name="description" content="Casa Palladio, appartamento turistico nel centro storico di Vicenza. Prenota direttamente senza commissioni. Wi-Fi, cucina attrezzata, posizione perfetta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Casa Palladio",
+    "description": "Appartamento turistico nel centro storico di Vicenza. 2 camere, 4 posti letto.",
+    "telephone": "+393456789012",
+    "email": "info@casapalladiovicenza.it",
+    "address": { "@type": "PostalAddress", "streetAddress": "Via Palladio 8", "addressLocality": "Vicenza", "postalCode": "36100", "addressCountry": "IT" },
+    "priceRange": "€€"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #5C4A8A; --purple-light: #F2EFFA; --purple-dark: #3D2F6B;
+      --gold: #C8A84B; --white: #FFFFFF; --cream: #FAFAF8;
+      --text: #1A1720; --muted: #6B6280; --border: #DDD8E8; --radius: 8px;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+    nav {
+      position: fixed; top: 36px; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 64px;
+    }
+    .logo { text-decoration: none; }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--purple-dark); }
+    .logo-text small { display: block; font-family: 'Inter', sans-serif; font-size: .7rem; color: var(--muted); font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a { color: var(--muted); font-size: .88rem; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--purple); }
+    .btn-book { background: var(--purple); color: #fff; padding: .55rem 1.3rem; border-radius: var(--radius); font-weight: 700; font-size: .87rem; text-decoration: none; transition: background .2s; }
+    .btn-book:hover { background: var(--purple-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    .hero {
+      padding-top: 100px;
+      min-height: 100vh;
+      position: relative; overflow: hidden;
+    }
+    .hero-gallery { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: 1fr 1fr; height: calc(100vh - 100px); min-height: 500px; }
+    .hero-main-photo { grid-row: 1 / -1; background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; }
+    .hero-photo-sm { background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .hero-photo-sm:first-of-type { border-bottom: 3px solid var(--white); }
+    .hero-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,23,32,.85));
+      padding: 60px 6% 40px;
+    }
+    .hero-badge { display: inline-block; background: var(--gold); color: var(--text); font-size: .72rem; font-weight: 700; padding: .3rem .9rem; border-radius: 3px; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); color: #fff; line-height: 1.15; margin-bottom: .8rem; }
+    .hero-sub { font-size: .95rem; color: rgba(255,255,255,.75); margin-bottom: 1.5rem; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .pill { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); padding: .3rem .8rem; border-radius: 20px; font-size: .8rem; }
+
+    /* BOOKING CARD */
+    .booking-section { padding: 0 6% 60px; background: var(--cream); }
+    .booking-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; box-shadow: 0 8px 32px rgba(92,74,138,.12);
+      max-width: 900px; margin: -40px auto 0; position: relative; z-index: 10;
+    }
+    .booking-card h3 { font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 1rem; align-items: end; }
+    .fg label { display: block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: .4rem; }
+    .fg input, .fg select { width: 100%; padding: .7rem .85rem; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: .88rem; color: var(--text); }
+    .btn-book-big { background: var(--purple); color: #fff; border: none; padding: .75rem 1.8rem; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: .9rem; cursor: pointer; white-space: nowrap; transition: background .2s; height: 42px; }
+    .btn-book-big:hover { background: var(--purple-dark); }
+    .no-commission { text-align: center; font-size: .78rem; color: var(--muted); margin-top: .8rem; }
+    .no-commission strong { color: var(--purple); }
+
+    section { padding: 80px 6%; }
+    .section-label { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin-bottom: .8rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { font-size: 1rem; color: var(--muted); }
+
+    .features { background: var(--cream); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 18px; text-align: center; }
+    .feature-icon { font-size: 1.8rem; margin-bottom: .6rem; }
+    .feature-card h3 { font-size: .92rem; margin-bottom: .3rem; }
+    .feature-card p { font-size: .8rem; color: var(--muted); }
+
+    .location { }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem; }
+    .loc-list { list-style: none; margin-top: 1rem; }
+    .loc-list li { display: flex; align-items: center; gap: .8rem; padding: .6rem 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
+    .loc-list li::before { content: '📍'; font-size: .8rem; }
+    .loc-list .dist { margin-left: auto; font-size: .78rem; color: var(--muted); font-weight: 600; }
+    .map-placeholder { height: 260px; background: var(--purple-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: .9rem; color: var(--muted); border: 1px solid var(--border); }
+
+    .reviews { background: var(--cream); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+    .review-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: .6rem; }
+    .review-text { font-size: .88rem; color: var(--muted); line-height: 1.6; margin-bottom: .8rem; font-style: italic; }
+    .reviewer { font-size: .82rem; font-weight: 600; color: var(--text); }
+    .review-source { font-size: .75rem; color: var(--muted); }
+
+    .contact-section { background: var(--purple-dark); padding: 70px 6%; text-align: center; }
+    .contact-section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: #fff; margin-bottom: 1rem; }
+    .contact-section p { color: rgba(255,255,255,.6); margin-bottom: 2rem; }
+    .contact-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+    .btn-white { background: #fff; color: var(--purple-dark); padding: .9rem 2rem; border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-decoration: none; transition: opacity .2s; }
+    .btn-white:hover { opacity: .9; }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); padding: .9rem 2rem; border-radius: var(--radius); font-weight: 600; font-size: .95rem; text-decoration: none; transition: border-color .2s; }
+    .btn-outline:hover { border-color: #fff; }
+
+    footer { background: #0F0D18; padding: 24px 6%; text-align: center; }
+    footer p { color: rgba(255,255,255,.3); font-size: .78rem; }
+    footer a { color: rgba(255,255,255,.45); text-decoration: none; }
+
+    .demo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: #1A1C22; color: rgba(255,255,255,.8); text-align: center; padding: 8px 16px; font-size: .78rem; }
+    .demo-banner strong { color: #B8966A; }
+    .demo-banner a { color: #B8966A; text-decoration: none; font-weight: 600; }
+    .wa-btn { position: fixed; bottom: 24px; right: 24px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: #25D366; box-shadow: 0 4px 16px rgba(37,211,102,.4); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; transition: transform .2s; }
+    .wa-btn:hover { transform: scale(1.1); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .btn-book { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0; z-index: 999;
+        background: #fff; padding: 1.2rem 6%; gap: 1rem;
+        border-top: 1px solid rgba(128,128,128,.15);
+        list-style: none;
+      }
+      .nav-links.open a { color: var(--text, #1a1a1a); }
+
+      .hero-gallery { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; min-height: 60vw; }
+      .hero-photo-sm { display: none; }
+      .hero-main-photo { height: 60vw; grid-row: 1; }
+      .booking-grid { grid-template-columns: 1fr 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+    }
+  
+    @media (max-width: 600px) {
+      section { padding: 50px 5%; }
+      nav { padding: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">⚡ <strong>Demo</strong> — Esempio sito realizzato da <a href="https://www.studiodigitalitalia.it">Studio Digital Italia</a>. Vuoi un sito così? <a href="https://www.studiodigitalitalia.it#contatti">Contattaci →</a></div>
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-text">Casa Palladio <small>Appartamento turistico — Vicenza centro</small></div>
+  </a>
+  <div class="nav-links">
+    <a href="#dotazioni">Dotazioni</a>
+    <a href="#posizione">Posizione</a>
+    <a href="#recensioni">Recensioni</a>
+    <a href="#contatti">Contatti</a>
+    <a href="#prenota" class="btn-book">Prenota ora</a>
+  </div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="hero">
+  <div class="hero-gallery">
+    <div class="hero-main-photo">🏠</div>
+    <div class="hero-photo-sm">🛋️</div>
+    <div class="hero-photo-sm">🍳</div>
+  </div>
+  <div class="hero-overlay">
+    <div class="hero-badge">⭐ 4.9 su Airbnb · 120+ recensioni</div>
+    <h1>Casa Palladio<br/>Vicenza centro</h1>
+    <p class="hero-sub">Appartamento elegante nel cuore del centro storico · 2 camere · 4 posti letto</p>
+    <div class="hero-pills">
+      <div class="pill">📶 Wi-Fi ultra veloce</div>
+      <div class="pill">🍳 Cucina attrezzata</div>
+      <div class="pill">❄️ Aria condizionata</div>
+      <div class="pill">🅿️ Parcheggio vicino</div>
+      <div class="pill">🏛️ 5 min dal centro</div>
+    </div>
+  </div>
+</div>
+
+<div class="booking-section" id="prenota">
+  <div class="booking-card">
+    <h3>Prenota direttamente — senza commissioni Airbnb</h3>
+    <div class="booking-grid">
+      <div class="fg"><label>Check-in</label><input type="date" /></div>
+      <div class="fg"><label>Check-out</label><input type="date" /></div>
+      <div class="fg"><label>Ospiti</label><select><option>1 ospite</option><option>2 ospiti</option><option>3 ospiti</option><option>4 ospiti</option></select></div>
+      <button class="btn-book-big">Verifica disponibilità</button>
+    </div>
+    <p class="no-commission">✅ Prenotando direttamente risparmi fino al <strong>15% sulle commissioni</strong> delle piattaforme</p>
+  </div>
+</div>
+
+<section id="dotazioni" class="features">
+  <div class="section-label">Dotazioni</div>
+  <h2 class="section-title">Tutto quello che ti serve<br/>per un soggiorno perfetto</h2>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon">🛏️</div><h3>2 camere da letto</h3><p>Letto matrimoniale + camera con due letti singoli</p></div>
+    <div class="feature-card"><div class="feature-icon">📶</div><h3>Wi-Fi ultra veloce</h3><p>Fibra 1Gbps — ideale per smart working e streaming</p></div>
+    <div class="feature-card"><div class="feature-icon">🍳</div><h3>Cucina completa</h3><p>Piano cottura, forno, frigorifero, lavastoviglie, Nespresso</p></div>
+    <div class="feature-card"><div class="feature-icon">❄️</div><h3>Aria condizionata</h3><p>Climatizzazione in ogni stanza, riscaldamento incluso</p></div>
+    <div class="feature-card"><div class="feature-icon">📺</div><h3>Smart TV 55"</h3><p>Netflix, Prime Video e app principali preinstallate</p></div>
+    <div class="feature-card"><div class="feature-icon">🧺</div><h3>Lavatrice</h3><p>Lavatrice e asciugamani e lenzuola incluse nel soggiorno</p></div>
+    <div class="feature-card"><div class="feature-icon">🚪</div><h3>Check-in autonomo</h3><p>Key box digitale — arrivi quando vuoi, senza attese</p></div>
+    <div class="feature-card"><div class="feature-icon">🐕</div><h3>Pet friendly</h3><p>Animali domestici ammessi su richiesta</p></div>
+  </div>
+</section>
+
+<section id="posizione" class="location">
+  <div class="section-label">Posizione</div>
+  <h2 class="section-title">Nel cuore del centro storico</h2>
+  <p class="section-sub">Via Palladio 8, 36100 Vicenza — a 5 minuti a piedi da Piazza dei Signori.</p>
+  <div class="location-grid">
+    <div>
+      <ul class="loc-list">
+        <li>Piazza dei Signori (centro storico) <span class="dist">5 min a piedi</span></li>
+        <li>Basilica Palladiana <span class="dist">6 min a piedi</span></li>
+        <li>Teatro Olimpico <span class="dist">10 min a piedi</span></li>
+        <li>Stazione ferroviaria <span class="dist">15 min a piedi</span></li>
+        <li>Supermercato Coop <span class="dist">3 min a piedi</span></li>
+        <li>Ristoranti e bar <span class="dist">1-2 min a piedi</span></li>
+        <li>Parcheggio pubblico <span class="dist">2 min a piedi</span></li>
+        <li>Aeroporto Verona <span class="dist">35 min in auto</span></li>
+      </ul>
+    </div>
+    <div class="map-placeholder">🗺️ Mappa Google — Via Palladio 8, Vicenza</div>
+  </div>
+</section>
+
+<section id="recensioni" class="reviews">
+  <div class="section-label">Recensioni</div>
+  <h2 class="section-title">Cosa dicono i nostri ospiti</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Appartamento bellissimo, pulitissimo e con tutto il necessario. Posizione perfetta per visitare Vicenza. Torneremo sicuramente!"</p>
+      <div class="reviewer">Marco e Giulia</div>
+      <div class="review-source">Airbnb · Aprile 2026</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Check-in autonomo comodissimo. L'appartamento è esattamente come in foto, anzi ancora meglio. Cucina super attrezzata."</p>
+      <div class="reviewer">Sophie L.</div>
+      <div class="review-source">Booking.com · Marzo 2026</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Ottima posizione nel centro storico, a pochi passi da tutto. Appartamento molto spazioso e ben arredato. Host disponibile e gentile."</p>
+      <div class="reviewer">Famiglia Bianchi</div>
+      <div class="review-source">Airbnb · Febbraio 2026</div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti" class="contact-section">
+  <h2>Domande o richieste speciali?</h2>
+  <p>Contattaci direttamente — rispondiamo entro poche ore.</p>
+  <div class="contact-btns">
+    <a href="https://wa.me/393456789012" class="btn-white">💬 Scrivici su WhatsApp</a>
+    <a href="mailto:info@casapalladiovicenza.it" class="btn-outline">📧 info@casapalladiovicenza.it</a>
+    <a href="tel:+393456789012" class="btn-outline">📞 345 678 9012</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Casa Palladio — Via Palladio 8, Vicenza · <a href="#">Privacy Policy</a></p>
+  <p style="margin-top:.4rem; font-size:.72rem;">Sito realizzato da <a href="https://www.studiodigitalitalia.it">Studio Digital Italia</a></p>
+</footer>
+
+<a href="https://wa.me/393456789012?text=Ciao,%20vorrei%20informazioni%20su%20Casa%20Palladio" class="wa-btn" target="_blank" rel="noopener">💬</a>
+
+<script>
+  // Hamburger menu
+  const ham = document.querySelector('.hamburger');
+  const nl = document.querySelector('.nav-links');
+  if (ham && nl) {
+    ham.addEventListener('click', () => nl.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!ham.contains(e.target) && !nl.contains(e.target)) nl.classList.remove('open');
+    });
+  }
+</script>
+</body>
+</html>

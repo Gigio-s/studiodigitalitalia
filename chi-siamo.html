@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Siamo — Studio Digital Italia | Il nostro metodo</title>
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta name="description" content="Studio Digital Italia: chi siamo, perché esiste questo progetto e come lavoriamo. Un partner tecnico concreto per imprese, artigiani e attività locali." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.studiodigitalitalia.it/chi-siamo.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.studiodigitalitalia.it/chi-siamo.html" />
+  <meta property="og:title" content="Chi Siamo — Studio Digital Italia" />
+  <meta property="og:description" content="Studio Digital Italia: chi siamo, perché esiste questo progetto e come lavoriamo. Un partner tecnico concreto per imprese, artigiani e attività locali." />
+  <meta property="og:image" content="https://www.studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:site_name" content="Studio Digital Italia" />
+  <meta property="og:locale" content="it_IT" />
+  <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://www.studiodigitalitalia.it/chi-siamo.html",
+    "name": "Chi siamo — Studio Digital Italia",
+    "description": "Studio Digital Italia è uno studio operativo che costruisce presenze digitali concrete per imprese, artigiani e attività locali.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Studio Digital Italia",
+      "founder": { "@type": "Person", "name": "Luca Ramacciato" },
+      "url": "https://www.studiodigitalitalia.it"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:   #1E1F24;
+      --gold:   #B8966A;
+      --gold-d: #9a7a52;
+      --cream:  #F8F5EE;
+      --white:  #FFFFFF;
+      --text:   #1A1C22;
+      --muted:  #6E6860;
+      --border: #DDD8CE;
+      --radius: 6px;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+    a { color: inherit; }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+    .logo img { height: 38px; width: auto; }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: .3px; }
+    .logo-text span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { list-style: none; }
+    .nav-links li { display: inline; }
+    .nav-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-nav {
+      border: 1px solid rgba(184,150,106,.5); color: var(--gold);
+      padding: .5rem 1.2rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .85rem;
+      text-decoration: none; transition: all .2s;
+    }
+    .btn-nav:hover { background: var(--gold); color: var(--dark); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--dark); padding: 130px 6% 90px;
+      text-align: center;
+    }
+    .page-hero-inner { max-width: 720px; margin: 0 auto; }
+    .hero-eyebrow {
+      font-size: .72rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem;
+      display: flex; align-items: center; justify-content: center; gap: .8rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--white);
+      line-height: 1.15; letter-spacing: -.3px; margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { color: var(--gold); font-style: italic; }
+    .page-hero p { color: rgba(255,255,255,.5); font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.75; }
+
+    /* SECTIONS */
+    section { padding: 90px 6%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .label-line { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
+    .label-line::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    .label-text { font-size: .72rem; font-weight: 700; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.8rem, 2.8vw, 2.6rem); line-height: 1.2; letter-spacing: -.2px; margin-bottom: 1rem; }
+    .section-sub { font-size: .97rem; color: var(--muted); max-width: 540px; line-height: 1.75; }
+
+    /* INTRO 2-COL */
+    .intro-section { background: var(--white); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .intro-text p { font-size: .95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text strong { color: var(--text); }
+    .intro-stat-box {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: .3rem; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: .85rem; color: var(--muted); }
+
+    /* PERCHÉ */
+    .perche-section { background: var(--dark); }
+    .perche-section .section-title { color: var(--white); }
+    .perche-section .section-sub { color: rgba(255,255,255,.45); }
+    .perche-section .label-text { color: var(--gold); }
+    .perche-section .label-line::before { background: var(--gold); }
+    .motivi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+    .motivo-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px; padding: 2rem;
+    }
+    .motivo-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--gold); opacity: .4; margin-bottom: .8rem; }
+    .motivo-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--white); margin-bottom: .7rem; }
+    .motivo-card p { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.7; }
+
+    /* DIFFERENZA */
+    .differenza-section { background: var(--cream); }
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3.5rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .diff-col { padding: 2.5rem; }
+    .diff-col.non { background: var(--white); }
+    .diff-col.si { background: var(--dark); }
+    .diff-col-title {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 1.8rem; display: flex; align-items: center; gap: .6rem;
+    }
+    .diff-col.non .diff-col-title { color: var(--muted); }
+    .diff-col.si .diff-col-title { color: var(--gold); }
+    .diff-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    .diff-list li { display: flex; align-items: flex-start; gap: .8rem; font-size: .92rem; line-height: 1.6; }
+    .diff-col.non .diff-list li { color: var(--muted); }
+    .diff-col.si .diff-list li { color: rgba(255,255,255,.75); }
+    .diff-icon { font-size: .8rem; margin-top: .2rem; flex-shrink: 0; }
+
+    /* METODO */
+    .metodo-section { background: var(--white); }
+    .metodo-steps { display: flex; flex-direction: column; gap: 0; margin-top: 4rem; max-width: 720px; }
+    .metodo-step { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; padding: 2.2rem 0; border-bottom: 1px solid var(--border); }
+    .metodo-step:last-child { border-bottom: none; }
+    .metodo-n {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--dark); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .metodo-content h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; margin-bottom: .5rem; color: var(--dark); }
+    .metodo-content p { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    /* VALORI */
+    .valori-section { background: var(--cream); }
+    .valori-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .valore-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; }
+    .valore-icon { font-size: 1.5rem; margin-bottom: .8rem; }
+    .valore-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; margin-bottom: .5rem; color: var(--dark); }
+    .valore-card p { font-size: .87rem; color: var(--muted); line-height: 1.7; }
+
+    /* CTA */
+    .cta-section { background: var(--gold); text-align: center; padding: 80px 6%; }
+    .cta-section h2 { font-size: clamp(1.8rem, 2.8vw, 2.4rem); color: var(--dark); margin-bottom: 1rem; }
+    .cta-section p { color: rgba(26,28,34,.6); font-size: .97rem; margin-bottom: 2rem; }
+    .btn-cta-dark {
+      display: inline-block; background: var(--dark); color: var(--white);
+      padding: .9rem 2.4rem; border-radius: var(--radius);
+      font-weight: 700; font-size: .92rem; text-decoration: none; letter-spacing: .3px;
+      transition: opacity .2s;
+    }
+    .btn-cta-dark:hover { opacity: .85; }
+    .btn-cta-ghost {
+      display: inline-block; border: 2px solid rgba(26,28,34,.3); color: var(--dark);
+      padding: .9rem 2rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .92rem; text-decoration: none; margin-left: 1rem;
+      transition: all .2s;
+    }
+    .btn-cta-ghost:hover { border-color: var(--dark); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 48px 6% 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .footer-logo img { height: 48px; width: auto; margin-bottom: .7rem; }
+    .footer-tagline { font-size: .82rem; color: rgba(255,255,255,.3); line-height: 1.7; }
+    .footer-col h4 { font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-col ul a, .footer-col ul span { color: rgba(255,255,255,.45); text-decoration: none; font-size: .84rem; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom span { color: rgba(255,255,255,.25); font-size: .78rem; }
+    .footer-bottom a { color: rgba(255,255,255,.35); text-decoration: none; font-size: .78rem; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: #fff; border-radius: 2px; }
+    @media (max-width: 900px) {
+      .intro-grid, .motivi-grid, .valori-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.open {
+        display: flex; position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--dark); padding: 1.5rem 6%; gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,.06); z-index: 999;
+      }
+      .hamburger { display: flex; }
+      .btn-nav { display: none; }
+    }
+    @media (max-width: 600px) {
+      .metodo-step { grid-template-columns: 44px 1fr; gap: 1rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .btn-cta-ghost { margin-left: 0; margin-top: .8rem; display: block; width: 100%; text-align: center; }
+      section { padding: 60px 5%; }
+      nav { padding: 0 5%; }
+      .page-hero { padding: 90px 5% 60px; }
+    }
+  
+    /* ── COOKIE NOTICE ── */
+    #cookie-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
+      padding: 1rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
+    }
+    #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
+    #cookie-bar a { color: #B8966A; text-decoration: underline; }
+    #cookie-bar .cookie-btn {
+      background: #B8966A; color: #1E1F24;
+      border: none; padding: .55rem 1.4rem; border-radius: 6px;
+      font-family: inherit; font-size: .83rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: background .2s;
+    }
+    #cookie-bar .cookie-btn:hover { background: #9D7D57; }
+    @media (max-width: 600px) {
+      #cookie-bar { padding: 1rem 5%; flex-direction: column; align-items: stretch; }
+      #cookie-bar .cookie-btn { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo-solo-foto.jpg" alt="Studio Digital Italia" />
+    <span class="logo-text">Studio<span> Digital</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#problema">Il problema</a></li>
+    <li><a href="index.html#come-funziona">Come funziona</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="pacchetti.html">Pacchetti &amp; Prezzi</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="index.html#contatti" class="btn-nav">Preventivo gratuito</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Chi siamo</div>
+    <h1>Non un'agenzia.<br/>Un partner <em>concreto.</em></h1>
+    <p>Studio Digital Italia nasce per costruire una presenza digitale reale per imprese, artigiani e attività locali. Senza promesse irreali, senza tecnicismi inutili.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div class="intro-text fade-in">
+        <div class="label-line"><span class="label-text">Il progetto</span></div>
+        <h2 class="section-title">Studio Digital Italia</h2>
+        <p>Studio Digital Italia è uno studio operativo fondato da <strong>Luca Ramacciato</strong>, con sede operativa in provincia di Vicenza. Lavoriamo con imprese, artigiani, attività locali e professionisti che hanno bisogno di una presenza digitale ordinata, professionale e facilmente trovabile online.</p>
+        <p>Non siamo una grande agenzia. Non abbiamo decine di dipendenti e non promettiamo miracoli. Siamo uno studio tecnico operativo: costruiamo siti web, ottimizziamo la presenza Google, sistemiamo i social — e lo facciamo bene, con serietà, in italiano.</p>
+        <p>Il nostro approccio è semplice: <strong>capire cosa serve davvero, costruirlo, consegnarlo.</strong> Senza giri di parole, senza costi nascosti, senza sorprese.</p>
+      </div>
+      <div class="fade-in">
+        <div class="intro-stat-box">
+          <div class="stat-item">
+            <div class="stat-num">7</div>
+            <div class="stat-label">giorni per andare online — dalla raccolta materiali</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24h</div>
+            <div class="stat-label">tempo massimo di risposta garantito</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">0</div>
+            <div class="stat-label">promesse di clienti garantiti, risultati miracolosi o metodi segreti</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">comunicazione in italiano, chiara e comprensibile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCHÉ ESISTE -->
+<section class="perche-section">
+  <div class="section-inner">
+    <div class="fade-in text-center" style="text-align:center;">
+      <div class="label-line" style="justify-content:center;"><span class="label-text">Il motivo</span></div>
+      <h2 class="section-title">Perché esiste Studio Digital Italia</h2>
+      <p class="section-sub" style="margin:0 auto;">Molte attività lavorano bene nel mondo reale ma comunicano male online. Studio Digital nasce per risolvere questo problema.</p>
+    </div>
+    <div class="motivi-grid fade-in">
+      <div class="motivo-card">
+        <div class="motivo-num">01</div>
+        <h3>Il problema è reale</h3>
+        <p>Ogni giorno artigiani e piccole imprese perdono clienti perché online non si trovano, appaiono poco professionali o hanno siti vecchi del 2012. Non per colpa loro — semplicemente nessuno li ha aiutati davvero.</p>
+      </div>
+      <div class="motivo-card">
+        <div class="motivo-num">02</div>
+        <h3>Le agenzie non fanno per tutti</h3>
+        <p>Le grandi agenzie costano troppo, parlano in gergo incomprensibile e pensano in termini di "campagne" e "funnel". Un idraulico o un ristorante locale non ha bisogno di tutto questo. Ha bisogno di un sito che funziona.</p>
+      </div>
+      <div class="motivo-card">
+        <div class="motivo-num">03</div>
+        <h3>Il fai-da-te non basta</h3>
+        <p>Wix e Squarespace sembrano facili ma il risultato spesso non è professionale, la SEO è assente, e nessuno ti supporta quando hai problemi. La presenza digitale è uno strumento di lavoro, non un hobby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENZA DALLE AGENZIE -->
+<section class="differenza-section">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">La differenza</span></div>
+      <h2 class="section-title">Non siamo un'agenzia di marketing</h2>
+      <p class="section-sub">Il posizionamento di Studio Digital è chiaro e deliberato. Ecco cosa ci distingue.</p>
+    </div>
+    <div class="diff-grid fade-in">
+      <div class="diff-col non">
+        <div class="diff-col-title">Le agenzie di marketing…</div>
+        <ul class="diff-list">
+          <li><span class="diff-icon">✕</span>Promettono crescita di fatturato garantita</li>
+          <li><span class="diff-icon">✕</span>Vendono campagne pubblicitarie a pagamento</li>
+          <li><span class="diff-icon">✕</span>Usano termini come "funnel", "lead generation", "growth hacking"</li>
+          <li><span class="diff-icon">✕</span>Presentano report pieni di numeri gonfiati</li>
+          <li><span class="diff-icon">✕</span>Costano migliaia di euro al mese</li>
+          <li><span class="diff-icon">✕</span>Rispondono lentamente attraverso ticket e assistenti</li>
+          <li><span class="diff-icon">✕</span>Propongono contratti lunghi e vincolanti</li>
+        </ul>
+      </div>
+      <div class="diff-col si">
+        <div class="diff-col-title">Studio Digital Italia…</div>
+        <ul class="diff-list">
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Costruisce strumenti digitali concreti e misurabili</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Realizza siti web professionali, ottimizza Google, sistema i social</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Parla in italiano semplice, senza tecnicismi inutili</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Non promette miracoli — promette lavoro ben fatto</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Prezzi chiari e accessibili per PMI e artigiani</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Risponde entro 24 ore, sempre</li>
+          <li><span class="diff-icon" style="color:var(--gold);">✓</span>Formule semplici: consegniamo o gestiamo, senza vincoli</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODO -->
+<section class="metodo-section">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">Come lavoriamo</span></div>
+      <h2 class="section-title">Il nostro metodo operativo</h2>
+      <p class="section-sub">Un processo semplice, trasparente e senza sorprese. Dal primo contatto alla consegna.</p>
+    </div>
+    <div class="metodo-steps fade-in">
+      <div class="metodo-step">
+        <div class="metodo-n">1</div>
+        <div class="metodo-content">
+          <h3>Ascoltiamo</h3>
+          <p>Prima chiamata o messaggio gratuito. Capiamo cosa fa la tua attività, cosa ti serve e cosa non ti serve. Nessun tentativo di venderti più del necessario.</p>
+        </div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-n">2</div>
+        <div class="metodo-content">
+          <h3>Proponiamo</h3>
+          <p>Preventivo scritto entro 24 ore: cosa facciamo, quanto costa, in quanto tempo. Tutto nero su bianco, senza costi nascosti.</p>
+        </div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-n">3</div>
+        <div class="metodo-content">
+          <h3>Raccogliamo i materiali</h3>
+          <p>Ti mandiamo una checklist semplice: logo, foto, testi, informazioni sull'attività. Ti guidiamo passo passo — anche se non sai da dove cominciare.</p>
+        </div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-n">4</div>
+        <div class="metodo-content">
+          <h3>Costruiamo</h3>
+          <p>Realizziamo il sito, configuriamo dominio e hosting, ottimizziamo SEO base, integriamo WhatsApp e Google Maps. In 7 giorni dalla raccolta materiali.</p>
+        </div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-n">5</div>
+        <div class="metodo-content">
+          <h3>Consegniamo</h3>
+          <p>Ti mostriamo il risultato, raccogliamo le tue correzioni e pubblichiamo online. Consegniamo tutti gli accessi. Se hai scelto la Formula Autonoma, sei indipendente da subito.</p>
+        </div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-n">6</div>
+        <div class="metodo-content">
+          <h3>Restiamo (se vuoi)</h3>
+          <p>Con la Formula Presenza Digitale continuiamo a seguirti nel tempo: aggiornamenti, manutenzione, supporto. Un unico referente per tutta la tua presenza online.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORI -->
+<section class="valori-section">
+  <div class="section-inner">
+    <div class="fade-in text-center" style="text-align:center;">
+      <div class="label-line" style="justify-content:center;"><span class="label-text">I nostri valori</span></div>
+      <h2 class="section-title">Come ci piace lavorare</h2>
+    </div>
+    <div class="valori-grid fade-in">
+      <div class="valore-card">
+        <div class="valore-icon">🎯</div>
+        <h3>Concretezza</h3>
+        <p>Niente teorie, niente strategia astratta. Consegniamo strumenti digitali che funzionano: siti, schede Google, social ordinati. Cose reali.</p>
+      </div>
+      <div class="valore-card">
+        <div class="valore-icon">💬</div>
+        <h3>Chiarezza</h3>
+        <p>Parliamo in modo comprensibile anche a chi non sa nulla di tecnologia. Prezzi trasparenti, processi spiegati, nessuna sorpresa.</p>
+      </div>
+      <div class="valore-card">
+        <div class="valore-icon">🤝</div>
+        <h3>Onestà</h3>
+        <p>Non promettiamo cose che non possiamo garantire. Se un servizio non fa al caso tuo, te lo diciamo. Preferiamo un cliente soddisfatto a lungo a uno ingannato nel breve.</p>
+      </div>
+      <div class="valore-card">
+        <div class="valore-icon">⚡</div>
+        <h3>Velocità</h3>
+        <p>Risposta garantita entro 24 ore. Sito online in 7 giorni. Non facciamo aspettare — il tuo tempo è prezioso quanto il nostro.</p>
+      </div>
+      <div class="valore-card">
+        <div class="valore-icon">🔧</div>
+        <h3>Cura tecnica</h3>
+        <p>Ogni sito che consegniamo è ottimizzato per velocità, mobile e SEO base. Non facciamo "siti a caso" — ogni dettaglio ha una ragione.</p>
+      </div>
+      <div class="valore-card">
+        <div class="valore-icon">📍</div>
+        <h3>Radicamento locale</h3>
+        <p>Operiamo in tutta Italia ma siamo radicati nel Veneto. Conosciamo la mentalità dell'imprenditore locale e parliamo la stessa lingua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2>Hai un progetto in mente?<br/>Parlaci.</h2>
+    <p>Preventivo gratuito entro 24 ore. Nessun impegno, nessun costo.</p>
+    <a href="index.html#contatti" class="btn-cta-dark">Richiedi preventivo gratuito →</a>
+    <a href="pacchetti.html" class="btn-cta-ghost">Vedi le formule</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><img src="logo-completo.jpg" alt="Studio Digital Italia" /></div>
+      <div class="footer-tagline">Aiutiamo le piccole imprese italiane<br/>a presentarsi online in modo professionale.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Servizi</h4>
+      <ul>
+        <li><a href="pacchetti.html">Siti web</a></li>
+        <li><a href="pacchetti.html">Google Business</a></li>
+        <li><a href="pacchetti.html">Gestione sito</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="termini.html">Termini di Servizio</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
+        <li><a href="tel:+393277737115">327 773 7115</a></li>
+        <li><span style="color:rgba(255,255,255,.45);font-size:.85rem;">Provincia di Vicenza, Italia</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Studio Digital Italia — Titolare: Luca Ramacciato</span>
+    <span><a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Privacy Policy</a> · <a href="termini.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Termini di Servizio</a> · Fatto con cura in Italia</span>
+  </div>
+</footer>
+
+<script>
+  // Cookie banner
+  function dismissCookieBar() {
+    document.getElementById('cookie-bar').style.display = 'none';
+    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+  }
+  (function() {
+    try {
+      if (sessionStorage.getItem('sdi_cookie_ok')) {
+        var b = document.getElementById('cookie-bar');
+        if (b) b.style.display = 'none';
+      }
+    } catch(e) {}
+  })();
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
+    });
+  }
+
+  // Fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-bar">
+  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
+    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
+</div>
+</body>
+</html>

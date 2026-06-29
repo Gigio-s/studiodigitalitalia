@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Siti Web — Studio Digital Italia | Esempi per Ogni Settore</title>
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
+  <!-- ── SEO ── -->
+  <meta name="description" content="Guarda i siti web che abbiamo realizzato: ristoranti, idraulici, dentisti, barbieri, studi professionali, negozi e molto altro. Demo navigabili e siti reali online." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author" content="Studio Digital Italia" />
+  <meta name="keywords" content="portfolio siti web, esempi siti web piccole imprese, sito web ristorante esempio, sito web idraulico, sito web dentista, sito web barbiere, sito web artigiano, creazione siti web Vicenza, siti web Italia" />
+  <link rel="canonical" href="https://www.studiodigitalitalia.it/portfolio.html" />
+
+  <!-- ── GEO ── -->
+  <meta name="geo.region" content="IT" />
+  <meta name="geo.placename" content="Vicenza, Italia" />
+  <meta name="language" content="Italian" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.studiodigitalitalia.it/portfolio.html" />
+  <meta property="og:title" content="Portfolio Siti Web — Studio Digital Italia" />
+  <meta property="og:description" content="Esempi reali di siti web per ogni settore: ristoranti, artigiani, dentisti, negozi, studi professionali. Naviga i demo e scopri come potrebbe essere il tuo sito." />
+  <meta property="og:image" content="https://www.studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:site_name" content="Studio Digital Italia" />
+  <meta property="og:locale" content="it_IT" />
+
+  <!-- ── SCHEMA.ORG ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.studiodigitalitalia.it/portfolio.html",
+    "name": "Portfolio Siti Web — Studio Digital Italia",
+    "description": "Raccolta di siti web realizzati da Studio Digital Italia per piccole imprese italiane: ristoranti, artigiani, dentisti, barbieri, studi professionali e negozi.",
+    "url": "https://www.studiodigitalitalia.it/portfolio.html",
+    "inLanguage": "it-IT",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Studio Digital Italia",
+      "url": "https://www.studiodigitalitalia.it"
+    },
+    "publisher": {
+      "@type": "ProfessionalService",
+      "name": "Studio Digital Italia",
+      "url": "https://www.studiodigitalitalia.it",
+      "telephone": "+393277737115",
+      "email": "info@studiodigitalitalia.it",
+      "areaServed": { "@type": "Country", "name": "Italy" }
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #1E1F24;
+      --dark-2:  #272829;
+      --gold:    #B8966A;
+      --gold-d:  #9D7D57;
+      --gold-l:  #D4B48A;
+      --cream:   #F8F5EE;
+      --cream-d: #F0ECE3;
+      --white:   #FFFFFF;
+      --text:    #1A1C22;
+      --muted:   #6E6860;
+      --border:  #DDD8CE;
+      --radius:  6px;
+      --shadow:  0 2px 24px rgba(26,28,34,.07);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+    .logo img { height: 38px; width: auto; }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); letter-spacing: .3px; }
+    .logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links { list-style: none; }
+    .nav-links li { display: inline; }
+    .nav-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .btn-nav {
+      border: 1px solid rgba(184,150,106,.5); color: var(--gold);
+      padding: .5rem 1.2rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .85rem; text-decoration: none; transition: all .2s;
+    }
+    .btn-nav:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero-port {
+      background: var(--dark);
+      padding: 120px 6% 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-port::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(184,150,106,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-port-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      color: var(--gold); font-size: .78rem; font-weight: 600;
+      letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 1.4rem;
+    }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    .hero-port h1 {
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      color: var(--white); line-height: 1.15; margin-bottom: 1.2rem;
+    }
+    .hero-port h1 em { font-style: italic; color: var(--gold); }
+    .hero-port p {
+      font-size: 1rem; color: rgba(255,255,255,.5);
+      max-width: 560px; line-height: 1.75; margin-bottom: 2rem;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 2rem;
+    }
+    .hero-stat strong { display: block; font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--white); line-height: 1; }
+    .hero-stat span { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: .2rem; display: block; }
+
+    /* ── SEO INTRO ── */
+    .seo-intro {
+      background: var(--white);
+      padding: 60px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+    .seo-intro-inner { max-width: 1160px; margin: 0 auto; }
+    .seo-intro h2 { font-size: 1.4rem; margin-bottom: .8rem; }
+    .seo-intro p { font-size: .93rem; color: var(--muted); line-height: 1.8; max-width: 780px; }
+
+    /* ── SECTION ── */
+    section { padding: 80px 6%; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .label-line { display: flex; align-items: center; gap: .8rem; margin-bottom: .8rem; }
+    .label-line::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    .label-text { font-size: .72rem; font-weight: 700; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.2; margin-bottom: .8rem; }
+    .section-sub { font-size: .95rem; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 3rem; }
+
+    /* ── FILTRO SETTORI ── */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-size: .8rem; font-weight: 600;
+      padding: .4rem 1rem; border-radius: 50px; cursor: pointer;
+      transition: all .2s; font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold); border-color: var(--gold);
+      color: var(--dark);
+    }
+
+    /* ── CARD GRIGLIA ── */
+    .port-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .port-card {
+      border-radius: 12px; overflow: hidden;
+      background: var(--dark-2);
+      transition: transform .3s ease, box-shadow .3s ease;
+      text-decoration: none; display: block;
+    }
+    .port-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+    .port-thumb {
+      height: 220px;
+      position: relative;
+      background-size: cover;
+      background-position: top center;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.2rem;
+    }
+    .port-thumb .overlay {
+      position: absolute; inset: 0;
+      background: rgba(184,150,106,.15);
+      opacity: 0; transition: opacity .3s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .port-card:hover .overlay { opacity: 1; }
+    .overlay-cta {
+      background: var(--gold); color: var(--dark);
+      font-size: .8rem; font-weight: 700; padding: .5rem 1.2rem;
+      border-radius: 4px; letter-spacing: .2px;
+    }
+    .port-badge-real {
+      position: absolute; top: .9rem; right: .9rem;
+      background: var(--gold); color: var(--dark);
+      font-size: .62rem; font-weight: 800; padding: .2rem .6rem;
+      border-radius: 3px; letter-spacing: .5px; text-transform: uppercase;
+    }
+    .port-badge-demo {
+      position: absolute; top: .9rem; right: .9rem;
+      background: rgba(255,255,255,.12); color: rgba(255,255,255,.7);
+      font-size: .62rem; font-weight: 700; padding: .2rem .6rem;
+      border-radius: 3px; letter-spacing: .5px; text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .port-tag {
+      display: inline-block; background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.7); font-size: .62rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: .18rem .5rem; border-radius: 3px; margin-bottom: .35rem;
+    }
+    .port-name { color: var(--white); font-size: 1rem; font-weight: 600; }
+    .port-sub { color: rgba(255,255,255,.4); font-size: .78rem; margin-top: .1rem; }
+    .port-foot {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .9rem 1.2rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .port-foot-tech { font-size: .78rem; color: rgba(255,255,255,.3); }
+    .port-foot-link { font-size: .8rem; color: var(--gold); font-weight: 600; }
+
+    /* Colori thumb */
+    .rist   { background: linear-gradient(160deg, #2d1b69, #0f0a1e); }
+    .idraul { background: linear-gradient(160deg, #0c3547, #061520); }
+    .salon  { background: linear-gradient(160deg, #3d0922, #1a0410); }
+    .artig  { background: linear-gradient(160deg, #0a2e1c, #041208); }
+    .dent   { background: linear-gradient(160deg, #0c2e2b, #041514); }
+    .edil   { background: linear-gradient(160deg, #1a1f0a, #080a03); }
+    .barb   { background: linear-gradient(160deg, #1a1005, #080500); }
+    .affitti{ background: linear-gradient(160deg, #0a1a2e, #030810); }
+    .trasl  { background: linear-gradient(160deg, #0d2137, #050e1a); }
+    .assoc  { background: linear-gradient(160deg, #0a2414, #030d07); }
+
+    /* ── SETTORI CTA ── */
+    .settori-section { background: var(--cream-d); }
+    .settori-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin-top: 3rem;
+    }
+    .settore-chip {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1rem 1.2rem;
+      font-size: .88rem; font-weight: 600; color: var(--text);
+      text-align: center; transition: all .2s; cursor: default;
+    }
+    .settore-chip:hover { border-color: var(--gold); color: var(--gold-d); }
+    .settore-chip span { display: block; font-size: 1.3rem; margin-bottom: .3rem; }
+
+    /* ── PERCHE SECTION ── */
+    .perche-strip {
+      background: var(--dark);
+      padding: 70px 6%;
+    }
+    .perche-strip-inner { max-width: 1160px; margin: 0 auto; }
+    .perche-strip .section-title { color: var(--white); }
+    .perche-strip .section-sub { color: rgba(255,255,255,.45); }
+    .perche-cols {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem; margin-top: 3rem;
+    }
+    .perche-item { }
+    .perche-num { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: rgba(255,255,255,.1); line-height: 1; margin-bottom: .8rem; }
+    .perche-item h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: .4rem; font-family: 'Inter', sans-serif; }
+    .perche-item p { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.7; }
+
+    /* ── CTA FINALE ── */
+    .cta-section {
+      background: var(--gold);
+      padding: 80px 6%; text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(1.6rem, 2.5vw, 2.4rem); color: var(--dark); margin-bottom: 1rem; }
+    .cta-section p { font-size: .97rem; color: rgba(26,28,34,.65); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-dark {
+      background: var(--dark); color: var(--white);
+      padding: .9rem 2.2rem; border-radius: var(--radius);
+      font-weight: 700; font-size: .95rem; text-decoration: none;
+      display: inline-block; transition: all .2s; margin: .3rem;
+    }
+    .btn-dark:hover { background: #000; transform: translateY(-1px); }
+    .btn-outline-dark {
+      border: 2px solid rgba(26,28,34,.3); color: var(--dark);
+      padding: .9rem 2.2rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .95rem; text-decoration: none;
+      display: inline-block; transition: all .2s; margin: .3rem;
+    }
+    .btn-outline-dark:hover { border-color: var(--dark); background: rgba(26,28,34,.08); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 50px 6% 30px;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .footer-logo img { height: 36px; filter: brightness(0) invert(1) opacity(.6); margin-bottom: .5rem; }
+    .footer-tagline { font-size: .83rem; color: rgba(255,255,255,.3); line-height: 1.6; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: .82rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.2); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .port-grid { grid-template-columns: repeat(2, 1fr); }
+      .settori-grid { grid-template-columns: repeat(2, 1fr); }
+      .perche-cols { grid-template-columns: 1fr; gap: 2rem; }
+      .btn-nav { display: none; }
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.open {
+        display: flex; position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--dark); padding: 1.5rem 6%; gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,.06); z-index: 999;
+        list-style: none;
+      }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .port-grid { grid-template-columns: 1fr; }
+      .settori-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+      section { padding: 60px 5%; }
+      nav { padding: 0 5%; }
+      .hero-port { padding: 90px 5% 50px; }
+      .seo-intro { padding: 40px 5%; }
+      .cta-section .btn-wrap { flex-direction: column; align-items: stretch; gap: .8rem; }
+    }
+  
+    /* ── COOKIE NOTICE ── */
+    #cookie-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
+      padding: 1rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
+    }
+    #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
+    #cookie-bar a { color: #B8966A; text-decoration: underline; }
+    #cookie-bar .cookie-btn {
+      background: #B8966A; color: #1E1F24;
+      border: none; padding: .55rem 1.4rem; border-radius: 6px;
+      font-family: inherit; font-size: .83rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: background .2s;
+    }
+    #cookie-bar .cookie-btn:hover { background: #9D7D57; }
+    @media (max-width: 600px) {
+      #cookie-bar { padding: 1rem 5%; flex-direction: column; align-items: stretch; }
+      #cookie-bar .cookie-btn { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo-solo-foto.jpg" alt="Studio Digital Italia" />
+    <span class="logo-text">Studio<span> Digital</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#problema">Il problema</a></li>
+    <li><a href="index.html#come-funziona">Come funziona</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="pacchetti.html">Pacchetti &amp; Prezzi</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="index.html#contatti" class="btn-nav">Preventivo gratuito</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero-port">
+  <div class="hero-port-inner">
+    <div class="hero-eyebrow">Portfolio</div>
+    <h1>Siti web realizzati<br/>per ogni <em>settore</em></h1>
+    <p>Ogni attività è diversa — e ogni sito che realizziamo è su misura. Naviga gli esempi, esplora i siti reali dei nostri clienti, e scopri come potrebbe essere il tuo.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>8+</strong>
+        <span>demo navigabili</span>
+      </div>
+      <div class="hero-stat">
+        <strong>2</strong>
+        <span>siti reali online</span>
+      </div>
+      <div class="hero-stat">
+        <strong>7</strong>
+        <span>giorni di consegna</span>
+      </div>
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>made in Italia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO INTRO (nascosto visivamente ma utile per Google) -->
+<div class="seo-intro">
+  <div class="seo-intro-inner">
+    <h2>Esempi reali di siti web per piccole imprese italiane</h2>
+    <p>
+      Studio Digital Italia realizza siti web professionali per artigiani, ristoranti, studi medici, negozi, barbieri, imprese edili, affitti brevi e molto altro. Ogni demo qui sotto è un esempio navigabile e realistico di come potrebbe apparire il sito della tua attività. Lavoriamo con imprese di Vicenza, Padova, Verona e tutta Italia — online in 7 giorni lavorativi, SEO incluso.
+    </p>
+  </div>
+</div>
+
+<!-- SITI REALI -->
+<section style="background: var(--dark); padding: 80px 6%;">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">Clienti reali</span></div>
+      <h2 class="section-title" style="color:var(--white);">Siti attivi e online</h2>
+      <p class="section-sub">Clienti che ci hanno affidato la loro presenza digitale. Siti funzionanti, indicizzati su Google e aggiornati.</p>
+    </div>
+    <div class="port-grid">
+      <!-- L2 Traslochi -->
+      <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card fade-in">
+        <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
+          <div class="port-badge-real">✦ Sito reale</div>
+          <span class="port-tag">Servizi</span>
+          <div class="port-name">L2 Traslochi</div>
+          <div class="port-sub">Traslochi &amp; Sgomberi — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">WordPress + preventivo online</span>
+          <span class="port-foot-link">Visita il sito →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO NAVIGABILI -->
+<section style="background: var(--cream); padding: 80px 6%;">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">Demo navigabili</span></div>
+      <h2 class="section-title">Esplora gli esempi per settore</h2>
+      <p class="section-sub">Ogni demo è un sito completo e navigabile — clicca per vedere come apparirebbe il sito della tua attività.</p>
+    </div>
+
+    <!-- FILTRO -->
+    <div class="filter-bar fade-in">
+      <button class="filter-btn active" onclick="filterCards('all', this)">Tutti</button>
+      <button class="filter-btn" onclick="filterCards('ristorazione', this)">Ristorazione</button>
+      <button class="filter-btn" onclick="filterCards('artigianato', this)">Artigianato</button>
+      <button class="filter-btn" onclick="filterCards('professionisti', this)">Professionisti</button>
+      <button class="filter-btn" onclick="filterCards('salute', this)">Salute</button>
+      <button class="filter-btn" onclick="filterCards('retail', this)">Negozi</button>
+      <button class="filter-btn" onclick="filterCards('turismo', this)">Turismo &amp; B&amp;B</button>
+    </div>
+
+    <div class="port-grid" id="demo-grid">
+
+      <!-- Ristorante -->
+      <a href="demo-ristorante.html" target="_blank" class="port-card fade-in" data-cat="ristorazione">
+        <div class="port-thumb rist" style="background-image: linear-gradient(to bottom, rgba(20,5,5,.1) 0%, rgba(20,5,5,.78) 60%, rgba(20,5,5,.96) 100%), url('preview%20da%20mario.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Ristorazione</span>
+          <div class="port-name">Ristorante Da Mario</div>
+          <div class="port-sub">Trattoria — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Landing + prenotazione tavoli</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Idraulico -->
+      <a href="demo-idraulico.html" target="_blank" class="port-card fade-in" data-cat="artigianato">
+        <div class="port-thumb idraul" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20idraulico.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Artigianato</span>
+          <div class="port-name">Idraulico Bianchi</div>
+          <div class="port-sub">Impianti &amp; Caldaie — Padova</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Sito vetrina + Google Maps</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Studio Commercialisti -->
+      <a href="demo-studio.html" target="_blank" class="port-card fade-in" data-cat="professionisti">
+        <div class="port-thumb salon" style="background-image: linear-gradient(to bottom, rgba(10,8,20,.1) 0%, rgba(10,8,20,.78) 60%, rgba(10,8,20,.96) 100%), url('preview%20ferretti.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Professionisti</span>
+          <div class="port-name">Ferretti &amp; Associati</div>
+          <div class="port-sub">Studio Commercialisti — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Sito corporate + contatti</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Ottica / Negozio -->
+      <a href="demo-negozio.html" target="_blank" class="port-card fade-in" data-cat="retail">
+        <div class="port-thumb artig" style="background-image: linear-gradient(to bottom, rgba(5,20,18,.1) 0%, rgba(5,20,18,.78) 60%, rgba(5,20,18,.96) 100%), url('preview%20ottica.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Retail &amp; Negozi</span>
+          <div class="port-name">Ottica Visione</div>
+          <div class="port-sub">Ottica — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Catalogo + prenotazione esame</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Dentista -->
+      <a href="demo-dentista.html" target="_blank" class="port-card fade-in" data-cat="salute">
+        <div class="port-thumb dent">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Salute</span>
+          <div class="port-name">Studio Dentistico</div>
+          <div class="port-sub">Odontoiatria — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Sito medico + prenotazione online</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Edilizia -->
+      <a href="demo-edilizia.html" target="_blank" class="port-card fade-in" data-cat="artigianato">
+        <div class="port-thumb edil">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Edilizia</span>
+          <div class="port-name">Impresa Edile</div>
+          <div class="port-sub">Costruzioni &amp; Ristrutturazioni</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Portfolio lavori + preventivo</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Barbiere -->
+      <a href="demo-barbiere.html" target="_blank" class="port-card fade-in" data-cat="professionisti">
+        <div class="port-thumb barb">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Benessere</span>
+          <div class="port-name">Barbiere &amp; Grooming</div>
+          <div class="port-sub">Barbershop — Centro città</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Landing + prenotazione appuntamento</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+      <!-- Affitti brevi -->
+      <a href="demo-affitti-brevi.html" target="_blank" class="port-card fade-in" data-cat="turismo">
+        <div class="port-thumb affitti">
+          <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
+          <div class="port-badge-demo">Demo</div>
+          <span class="port-tag">Turismo &amp; B&amp;B</span>
+          <div class="port-name">Affitti Brevi</div>
+          <div class="port-sub">B&amp;B / Appartamento vacanze</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Sito vetrina + disponibilità</span>
+          <span class="port-foot-link">Vedi demo →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SETTORI COPERTI -->
+<section class="settori-section" style="padding: 80px 6%;">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">Settori</span></div>
+      <h2 class="section-title">Realizziamo siti per ogni tipo di attività</h2>
+      <p class="section-sub">Non hai trovato il tuo settore? Non importa — lavoriamo con qualsiasi tipo di impresa. Contattaci per un preventivo su misura.</p>
+    </div>
+    <div class="settori-grid fade-in">
+      <div class="settore-chip"><span>🍕</span>Ristoranti &amp; Bar</div>
+      <div class="settore-chip"><span>🔧</span>Artigiani &amp; Idraulici</div>
+      <div class="settore-chip"><span>🏗️</span>Imprese Edili</div>
+      <div class="settore-chip"><span>🦷</span>Studi Medici</div>
+      <div class="settore-chip"><span>✂️</span>Barbieri &amp; Parrucchieri</div>
+      <div class="settore-chip"><span>🛍️</span>Negozi &amp; Retail</div>
+      <div class="settore-chip"><span>🏠</span>Affitti Brevi &amp; B&amp;B</div>
+      <div class="settore-chip"><span>📊</span>Professionisti &amp; Studi</div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCHE NOI -->
+<section class="perche-strip">
+  <div class="perche-strip-inner">
+    <div class="fade-in">
+      <div class="label-line"><span class="label-text">Perché sceglierci</span></div>
+      <h2 class="section-title">Quello che trovi in ogni sito che realizziamo</h2>
+    </div>
+    <div class="perche-cols">
+      <div class="perche-item fade-in">
+        <div class="perche-num">01</div>
+        <h3>Design su misura per il settore</h3>
+        <p>Non usiamo template generici. Ogni sito è progettato per comunicare nel modo giusto ai clienti di quella specifica attività.</p>
+      </div>
+      <div class="perche-item fade-in">
+        <div class="perche-num">02</div>
+        <h3>SEO locale incluso</h3>
+        <p>Ogni sito è ottimizzato per comparire su Google nelle ricerche locali. Dal titolo al codice, tutto è pensato per essere trovato.</p>
+      </div>
+      <div class="perche-item fade-in">
+        <div class="perche-num">03</div>
+        <h3>Online in 7 giorni</h3>
+        <p>Dalla firma del preventivo al go-live: 7 giorni lavorativi. Nessuna attesa, nessun ritardo senza motivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VS BUILDER -->
+<section style="background:#16171b; padding:80px 6%;">
+  <div class="section-inner">
+    <div class="fade-in" style="text-align:center; margin-bottom:3.5rem;">
+      <div style="display:flex;align-items:center;gap:.8rem;justify-content:center;margin-bottom:.8rem;">
+        <span style="font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:1.8px;text-transform:uppercase;">La verità sui builder</span>
+      </div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--white);line-height:1.2;margin-bottom:.9rem;">"Faccio il sito da solo<br/>con uno di quei costruttori online"</h2>
+      <p style="font-size:.95rem;color:rgba(255,255,255,.45);max-width:540px;margin:0 auto;line-height:1.75;">Ci siamo passati tutti. Ma c'è qualcosa che le piattaforme fai-da-te non ti dicono prima di iniziare.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;">
+      <!-- Colonna BAD -->
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:2rem;" class="fade-in">
+        <div style="display:flex;align-items:center;gap:.7rem;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08);">
+          <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.25);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:rgba(255,100,100,.7);flex-shrink:0;">✕</span>
+          Costruttore automatico
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:1.2rem;">
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Sembra gratis, non lo è.</strong> Abbonamento mensile, dominio, plugin premium, app extra: alla fine si spende più di un sito professionale — ogni anno.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Il tuo sito è uguale a mille altri.</strong> I template sono condivisi. Il tuo concorrente usa lo stesso layout, gli stessi colori, la stessa struttura.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Google non ti trova.</strong> Il codice automatico è pesante e mal strutturato. Le piattaforme fai-da-te sono penalizzate nei risultati di ricerca locali.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Non è tuo.</strong> Se smetti di pagare l'abbonamento, il sito sparisce. Stai affittando, non comprando.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Ci perdi settimane.</strong> Tra layout, testi, immagini e configurazioni — è un lavoro vero. E il risultato finale si vede.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
+            <div><strong style="color:rgba(255,255,255,.6);">Nessuno ti aiuta davvero.</strong> Il supporto è automatizzato, lento e spesso in inglese. Sei solo davanti a un problema tecnico.</div>
+          </li>
+        </ul>
+      </div>
+      <!-- Colonna GOOD -->
+      <div style="background:rgba(184,150,106,.06);border:1px solid rgba(184,150,106,.25);border-radius:12px;padding:2rem;" class="fade-in">
+        <div style="display:flex;align-items:center;gap:.7rem;font-size:.82rem;font-weight:700;color:var(--gold);letter-spacing:.5px;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(184,150,106,.15);">
+          <span style="width:28px;height:28px;border-radius:50%;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.4);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold);flex-shrink:0;">✦</span>
+          Studio Digital Italia
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:1.2rem;">
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">Prezzo unico e trasparente.</strong> Sai esattamente quanto spendi. Nessun abbonamento a sorpresa, nessun costo nascosto dopo la consegna.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">Sito su misura per la tua attività.</strong> Design, testi e struttura pensati per il tuo settore e i tuoi clienti — non un template uguale a tutti.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">SEO locale incluso fin da subito.</strong> Ottimizziamo ogni pagina per farti trovare su Google nelle ricerche della tua zona e del tuo settore.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">Il sito è tuo, per sempre.</strong> Ti consegniamo tutti gli accessi. Puoi tenerlo con noi o gestirlo in autonomia — senza dipendere da nessuna piattaforma.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">Online in 7 giorni lavorativi.</strong> Tu ci mandi i materiali, noi facciamo tutto il resto. Zero tutorial, zero perdita di tempo.</div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
+            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
+            <div><strong style="color:var(--white);">Una persona reale sempre disponibile.</strong> Risposta entro 24 ore, supporto in italiano, qualcuno che conosce già la tua attività.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="fade-in" style="text-align:center;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);">
+      <p style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:1.5rem;">La differenza tra un sito che lavora per te e uno che esiste soltanto.</p>
+      <a href="index.html#contatti" style="background:var(--gold);color:var(--dark);padding:.85rem 2rem;border-radius:6px;font-weight:700;font-size:.9rem;text-decoration:none;">Richiedi il tuo preventivo gratuito →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-section">
+  <h2>Il tuo settore non c'è ancora?<br/>Crealo insieme a noi.</h2>
+  <p>Ogni sito è realizzato su misura. Raccontaci la tua attività e ti mostreremo come potrebbe apparire online.</p>
+  <a href="index.html#contatti" class="btn-dark">Richiedi preventivo gratuito →</a>
+  <a href="pacchetti.html" class="btn-outline-dark">Vedi i pacchetti</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><img src="logo-completo.jpg" alt="Studio Digital Italia" /></div>
+      <div class="footer-tagline">Siti web professionali per piccole imprese italiane.<br/>Online in 7 giorni, SEO incluso.</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pacchetti.html">Pacchetti</a>
+      <a href="index.html#contatti">Contatti</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © 2025 Studio Digital Italia — P.IVA 04400570240 — info@studiodigitalitalia.it — 327 773 7115
+  </div>
+</footer>
+
+<script>
+  // Cookie banner
+  function dismissCookieBar() {
+    document.getElementById('cookie-bar').style.display = 'none';
+    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+  }
+  (function() {
+    try {
+      if (sessionStorage.getItem('sdi_cookie_ok')) {
+        var b = document.getElementById('cookie-bar');
+        if (b) b.style.display = 'none';
+      }
+    } catch(e) {}
+  })();
+// Hamburger menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
+  });
+}
+// Fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+// Filter
+function filterPortfolio(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.port-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-bar">
+  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
+    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
+</div>
+</body>
+</html>

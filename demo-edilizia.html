@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costruzioni Ferretti — Impresa Edile Vicenza</title>
+  <meta name="description" content="Costruzioni Ferretti, impresa edile a Vicenza. Ristrutturazioni, nuove costruzioni, cappotto termico, bagni e cucine. Preventivo gratuito." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Costruzioni Ferretti",
+    "description": "Impresa edile a Vicenza specializzata in ristrutturazioni e nuove costruzioni.",
+    "telephone": "+393334567890",
+    "email": "info@costruzioniferretti.it",
+    "address": { "@type": "PostalAddress", "addressLocality": "Vicenza", "addressCountry": "IT" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #D4631A; --orange-dark: #A34810; --orange-light: #FFF4EE;
+      --dark: #1A1510; --white: #FFFFFF; --cream: #FAFAF8;
+      --text: #1E1A16; --muted: #6B5E52; --border: #E0D8D0; --radius: 6px;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+    nav {
+      position: fixed; top: 36px; left: 0; right: 0; z-index: 100;
+      background: rgba(26,21,16,.96); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 68px; border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .logo { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: #fff; line-height: 1.2; }
+    .logo-text small { display: block; font-family: 'Inter', sans-serif; font-size: .7rem; color: rgba(255,255,255,.45); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,.65); font-size: .88rem; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-preventivo { background: var(--orange); color: #fff; padding: .55rem 1.3rem; border-radius: var(--radius); font-weight: 700; font-size: .87rem; text-decoration: none; transition: background .2s; }
+    .btn-preventivo:hover { background: var(--orange-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #1A1510 0%, #2A1E14 50%, #3A2510 100%);
+      display: flex; align-items: center; padding: 140px 6% 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute; right: -2%; bottom: 5%;
+      font-family: 'DM Serif Display', serif; font-size: 16vw; color: rgba(255,255,255,.025);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .hero-content { max-width: 600px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; background: var(--orange); color: #fff;
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: .3rem .9rem; border-radius: 3px; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); color: #fff; line-height: 1.1; margin-bottom: 1.2rem; }
+    .hero h1 em { font-style: italic; color: var(--orange); }
+    .hero p { font-size: 1rem; color: rgba(255,255,255,.65); margin-bottom: 2.2rem; max-width: 480px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+    .btn-orange { background: var(--orange); color: #fff; padding: .9rem 2rem; border-radius: var(--radius); font-weight: 700; font-size: .95rem; text-decoration: none; transition: background .2s; }
+    .btn-orange:hover { background: var(--orange-dark); }
+    .btn-ghost { background: transparent; color: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.25); padding: .9rem 2rem; border-radius: var(--radius); font-weight: 600; font-size: .95rem; text-decoration: none; transition: all .2s; }
+    .btn-ghost:hover { border-color: #fff; color: #fff; }
+    .hero-nums { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .hero-num-item .num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--orange); }
+    .hero-num-item .label { font-size: .78rem; color: rgba(255,255,255,.45); }
+
+    .strip { background: var(--orange); padding: 14px 6%; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem; }
+    .strip-item { color: rgba(255,255,255,.9); font-size: .85rem; display: flex; align-items: center; gap: .5rem; }
+    .strip-item strong { color: #fff; }
+
+    section { padding: 80px 6%; }
+    .section-label { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: .8rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; }
+
+    .services { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+    .service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 22px; position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(212,99,26,.1); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+    .service-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+    .service-card h3 { font-size: 1rem; margin-bottom: .4rem; }
+    .service-card p { font-size: .85rem; color: var(--muted); }
+
+    .portfolio { }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
+    .portfolio-item { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--orange-light); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); position: relative; }
+    .portfolio-item .emoji { font-size: 2.5rem; }
+    .portfolio-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(26,21,16,.8); color: #fff; padding: 10px 14px; font-size: .8rem; font-weight: 600; }
+
+    .bonus { background: var(--dark); padding: 60px 6%; }
+    .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .bonus-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 24px 20px; }
+    .bonus-card h3 { color: #fff; font-size: 1rem; margin-bottom: .5rem; }
+    .bonus-card p { color: rgba(255,255,255,.5); font-size: .85rem; }
+    .bonus-badge { display: inline-block; background: var(--orange); color: #fff; font-size: .65rem; font-weight: 700; padding: .15rem .6rem; border-radius: 3px; margin-bottom: .8rem; letter-spacing: .5px; }
+
+    .contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: start; }
+    .contact-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .ci-icon { width: 42px; height: 42px; background: var(--orange-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .ci-text .lbl { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: .15rem; }
+    .ci-text a, .ci-text p { font-size: .9rem; color: var(--text); text-decoration: none; }
+    .form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 16px rgba(0,0,0,.05); }
+    .form-card h3 { font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .fg { margin-bottom: .9rem; }
+    .fg label { display: block; font-size: .78rem; font-weight: 600; color: var(--muted); margin-bottom: .35rem; }
+    .fg input, .fg select, .fg textarea { width: 100%; padding: .65rem .85rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: .88rem; color: var(--text); background: var(--cream); transition: border-color .2s; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--orange); }
+    .fg textarea { min-height: 80px; resize: vertical; }
+    .btn-submit { width: 100%; background: var(--orange); color: #fff; border: none; padding: .85rem; border-radius: var(--radius); font-family: 'Inter', sans-serif; font-weight: 700; font-size: .95rem; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--orange-dark); }
+    .form-note { font-size: .75rem; color: var(--muted); margin-top: .6rem; text-align: center; }
+
+    footer { background: var(--dark); padding: 28px 6%; text-align: center; }
+    footer p { color: rgba(255,255,255,.3); font-size: .78rem; }
+    footer a { color: rgba(255,255,255,.45); text-decoration: none; }
+
+    .demo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: #1A1C22; color: rgba(255,255,255,.8); text-align: center; padding: 8px 16px; font-size: .78rem; }
+    .demo-banner strong { color: #B8966A; }
+    .demo-banner a { color: #B8966A; text-decoration: none; font-weight: 600; }
+    .wa-btn { position: fixed; bottom: 24px; right: 24px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: #25D366; box-shadow: 0 4px 16px rgba(37,211,102,.4); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; transition: transform .2s; }
+    .wa-btn:hover { transform: scale(1.1); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .btn-preventivo { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #1a1a1a); padding: 1.2rem 6%; gap: 1rem;
+        border-top: 1px solid rgba(128,128,128,.15);
+        list-style: none;
+      }
+      .nav-links.open a { color: rgba(255,255,255,.7); }
+
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  
+    @media (max-width: 600px) {
+      section { padding: 50px 5%; }
+      nav { padding: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  ⚡ <strong>Demo</strong> — Esempio sito realizzato da <a href="https://www.studiodigitalitalia.it">Studio Digital Italia</a>. Vuoi un sito così? <a href="https://www.studiodigitalitalia.it#contatti">Contattaci →</a>
+</div>
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">🏗️</div>
+    <div class="logo-text">Costruzioni Ferretti <small>Impresa edile — Vicenza dal 1995</small></div>
+  </a>
+  <div class="nav-links">
+    <a href="#servizi">Servizi</a>
+    <a href="#lavori">I nostri lavori</a>
+    <a href="#bonus">Bonus fiscali</a>
+    <a href="#contatti">Preventivo</a>
+    <a href="#contatti" class="btn-preventivo">Preventivo gratuito</a>
+  </div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-text">EDILIZIA</div>
+  <div class="hero-content">
+    <div class="hero-badge">🏆 30 anni di esperienza</div>
+    <h1>Costruiamo<br/><em>la tua casa</em><br/>come fosse la nostra</h1>
+    <p>Ristrutturazioni, nuove costruzioni e interventi di efficienza energetica a Vicenza e provincia. Preventivo gratuito in 48 ore.</p>
+    <div class="hero-actions">
+      <a href="#contatti" class="btn-orange">Richiedi preventivo gratuito</a>
+      <a href="tel:+393334567890" class="btn-ghost">📞 333 456 7890</a>
+    </div>
+    <div class="hero-nums">
+      <div class="hero-num-item"><div class="num">300+</div><div class="label">Cantieri completati</div></div>
+      <div class="hero-num-item"><div class="num">30</div><div class="label">Anni di attività</div></div>
+      <div class="hero-num-item"><div class="num">48h</div><div class="label">Risposta preventivo</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-item">✅ Iscritti alla CCIAA di Vicenza</div>
+  <div class="strip-item">✅ Certificati per Superbonus e Ecobonus</div>
+  <div class="strip-item">✅ Garanzia lavori 10 anni</div>
+</div>
+
+<section id="servizi" class="services">
+  <div class="section-label">Cosa facciamo</div>
+  <h2 class="section-title">Ogni intervento,<br/>fatto come si deve</h2>
+  <p class="section-sub">Dalla piccola ristrutturazione al cantiere completo, con la stessa cura e professionalità.</p>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">🏠</div><h3>Ristrutturazioni complete</h3><p>Appartamenti, ville e locali commerciali. Progettazione, direzione lavori e cantiere tutto in un unico interlocutore.</p></div>
+    <div class="service-card"><div class="service-icon">🚿</div><h3>Bagni e cucine</h3><p>Rifacimento completo con demolizione, impianti, pavimenti e rivestimenti. Risultato garantito nei tempi concordati.</p></div>
+    <div class="service-card"><div class="service-icon">🧱</div><h3>Cappotto termico</h3><p>Isolamento a cappotto per ridurre i consumi e aumentare il valore dell'immobile. Certificazione energetica inclusa.</p></div>
+    <div class="service-card"><div class="service-icon">🏗️</div><h3>Nuove costruzioni</h3><p>Dalla posa delle fondamenta alle finiture. Realizzazione di abitazioni in classe A con materiali di qualità.</p></div>
+    <div class="service-card"><div class="service-icon">🪟</div><h3>Serramenti e infissi</h3><p>Sostituzione finestre e porte esterne per il massimo risparmio energetico. Fornitura e posa incluse.</p></div>
+    <div class="service-card"><div class="service-icon">🏢</div><h3>Manutenzione condominiale</h3><p>Accordi annuali per condomini e proprietari: tinteggiatura, impermeabilizzazioni, piccoli interventi urgenti.</p></div>
+  </div>
+</section>
+
+<section id="lavori" class="portfolio">
+  <div class="section-label">I nostri lavori</div>
+  <h2 class="section-title">Alcuni dei cantieri<br/>completati di recente</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item"><div class="emoji">🏠</div><div class="caption">Ristrutturazione villa — Caldogno</div></div>
+    <div class="portfolio-item"><div class="emoji">🚿</div><div class="caption">Rifacimento 3 bagni — Vicenza centro</div></div>
+    <div class="portfolio-item"><div class="emoji">🧱</div><div class="caption">Cappotto termico — Condominio Schio</div></div>
+    <div class="portfolio-item"><div class="emoji">🏗️</div><div class="caption">Nuova costruzione bifamiliare — Thiene</div></div>
+    <div class="portfolio-item"><div class="emoji">🏢</div><div class="caption">Ristrutturazione uffici — Vicenza</div></div>
+    <div class="portfolio-item"><div class="emoji">🪟</div><div class="caption">Sostituzione infissi — Bassano del Grappa</div></div>
+  </div>
+</section>
+
+<section id="bonus" class="bonus">
+  <div class="section-label" style="color:rgba(212,99,26,.8);">Incentivi e bonus fiscali</div>
+  <h2 class="section-title" style="color:#fff;">Ristrutturate spendendo meno<br/>grazie ai bonus fiscali</h2>
+  <p class="section-sub" style="color:rgba(255,255,255,.5);">Siamo certificati per gestire le pratiche di Superbonus, Ecobonus e Bonus Ristrutturazioni. Ti seguiamo dalla pratica alla fine dei lavori.</p>
+  <div class="bonus-grid">
+    <div class="bonus-card"><div class="bonus-badge">65%</div><h3>Ecobonus</h3><p>Detrazioni fiscali per interventi di efficienza energetica: cappotto, caldaia, pannelli solari.</p></div>
+    <div class="bonus-card"><div class="bonus-badge">50%</div><h3>Bonus Ristrutturazioni</h3><p>Detrazione IRPEF per ristrutturazioni di abitazioni e condomini. Fino a 96.000€ per unità.</p></div>
+    <div class="bonus-card"><div class="bonus-badge">50%</div><h3>Bonus Barriere Arch.</h3><p>Per interventi di eliminazione delle barriere architettoniche: ascensori, rampe, montascale.</p></div>
+    <div class="bonus-card"><div class="bonus-badge">Ti guidiamo</div><h3>Pratiche incluse</h3><p>Gestiamo noi tutto il processo burocratico: SAL, asseverazioni, CILAS e cessione del credito.</p></div>
+  </div>
+</section>
+
+<section id="contatti" class="contact">
+  <div class="section-label">Preventivo gratuito</div>
+  <h2 class="section-title">Dicci di cosa hai bisogno</h2>
+  <p class="section-sub">Sopralluogo gratuito e preventivo dettagliato entro 48 ore. Nessun impegno.</p>
+  <div class="contact-grid">
+    <div class="contact-list">
+      <div class="contact-item"><div class="ci-icon">📞</div><div class="ci-text"><div class="lbl">Telefono / WhatsApp</div><a href="tel:+393334567890">333 456 7890</a></div></div>
+      <div class="contact-item"><div class="ci-icon">📧</div><div class="ci-text"><div class="lbl">Email</div><a href="mailto:info@costruzioniferretti.it">info@costruzioniferretti.it</a></div></div>
+      <div class="contact-item"><div class="ci-icon">📍</div><div class="ci-text"><div class="lbl">Sede operativa</div><p>Vicenza e provincia (VI)</p></div></div>
+      <div class="contact-item"><div class="ci-icon">🕐</div><div class="ci-text"><div class="lbl">Orari ufficio</div><p>Lun–Ven: 8:00–18:00</p></div></div>
+      <div style="background:var(--orange-light); border:1px solid var(--border); border-radius:var(--radius); padding:18px; margin-top:1rem;">
+        <p style="font-size:.85rem; color:var(--muted);"><strong style="color:var(--text);">Sopralluogo gratuito</strong><br/>Veniamo da te per valutare i lavori senza impegno. Chiamaci o compila il form.</p>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Richiedi un preventivo</h3>
+      <div class="fg"><label>Nome e cognome *</label><input type="text" placeholder="Mario Rossi" /></div>
+      <div class="fg"><label>Telefono *</label><input type="tel" placeholder="333 456 7890" /></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="mario@email.it" /></div>
+      <div class="fg"><label>Tipo di intervento</label>
+        <select>
+          <option>Ristrutturazione completa</option>
+          <option>Bagno / Cucina</option>
+          <option>Cappotto termico</option>
+          <option>Nuova costruzione</option>
+          <option>Infissi e serramenti</option>
+          <option>Altro</option>
+        </select>
+      </div>
+      <div class="fg"><label>Descrivi brevemente il lavoro</label><textarea placeholder="Es: ristrutturazione appartamento 80mq a Vicenza, bagno e cucina..."></textarea></div>
+      <button class="btn-submit">Richiedi preventivo gratuito →</button>
+      <p class="form-note">Risposta entro 48 ore. Nessun impegno.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Costruzioni Ferretti — P.IVA 03456789012 — Vicenza (VI) · <a href="#">Privacy</a></p>
+  <p style="margin-top:.4rem; font-size:.72rem;">Sito realizzato da <a href="https://www.studiodigitalitalia.it">Studio Digital Italia</a></p>
+</footer>
+
+<a href="https://wa.me/393334567890?text=Ciao,%20vorrei%20un%20preventivo" class="wa-btn" target="_blank" rel="noopener">💬</a>
+
+<script>
+  // Hamburger menu
+  const ham = document.querySelector('.hamburger');
+  const nl = document.querySelector('.nav-links');
+  if (ham && nl) {
+    ham.addEventListener('click', () => nl.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!ham.contains(e.target) && !nl.contains(e.target)) nl.classList.remove('open');
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Studio Ferretti & Associati — Commercialisti e Consulenti d'Impresa | Vicenza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DEMO BANNER ── */
+    #demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: #111827; color: #e5e7eb;
+      font-family: Inter, sans-serif; font-size: 0.78rem; font-weight: 500;
+      text-align: center; padding: 9px 1rem;
+      letter-spacing: 0.02em;
+    }
+    #demo-bar a { color: #fbbf24; text-decoration: none; font-weight: 600; }
+    #demo-bar a:hover { text-decoration: underline; }
+    body { padding-top: 38px; }
+
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0d1b2a;
+      --navy2:   #1a2e45;
+      --gold:    #b8963e;
+      --gold2:   #d4a853;
+      --light:   #f8f7f4;
+      --muted:   #6b7280;
+      --border:  #e5e2da;
+      --white:   #ffffff;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.65; overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 38px; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo-icon {
+      width: 38px; height: 38px;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--gold);
+    }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    .nav-logo-sub {
+      font-size: 0.65rem; font-weight: 500; color: var(--muted);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      color: var(--navy); letter-spacing: 0.03em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--navy); color: var(--white) !important;
+      padding: 9px 20px; font-size: 0.82rem !important;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88vh;
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      padding: 5% 5% 5% 8%;
+      gap: 4rem;
+      background: var(--light);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: var(--navy);
+      z-index: 0;
+    }
+    .hero-text { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 30px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 600; line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-desc {
+      font-size: 1rem; color: #4b5563; line-height: 1.7;
+      max-width: 440px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--navy); color: var(--white);
+      padding: 14px 32px; font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--gold); color: var(--navy); }
+    .btn-outline {
+      background: transparent; color: var(--navy);
+      padding: 13px 30px; font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.08em;
+      text-decoration: none; border: 1.5px solid var(--navy);
+      transition: all .2s;
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .hero-visual {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 1rem;
+      padding-left: 2rem;
+    }
+    .hero-stat-card {
+      background: var(--white);
+      padding: 1.5rem 2rem;
+      border-left: 3px solid var(--gold);
+    }
+    .hero-stat-card .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem; font-weight: 700; color: var(--navy);
+      line-height: 1;
+    }
+    .hero-stat-card .stat-label {
+      font-size: 0.8rem; color: var(--muted); margin-top: 4px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ── STRIP NUMERI ── */
+    .strip {
+      background: var(--navy);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 3rem 5%;
+    }
+    .strip-item {
+      text-align: center; padding: 1rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 700; color: var(--gold);
+      display: block; line-height: 1;
+    }
+    .strip-label {
+      font-size: 0.78rem; color: rgba(255,255,255,0.6);
+      margin-top: 6px; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── SERVIZI ── */
+    .services { padding: 6rem 5%; background: var(--white); }
+    .section-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem; display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 600; color: var(--navy); margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 0.97rem; color: var(--muted);
+      max-width: 540px; line-height: 1.7;
+    }
+    .services-header { margin-bottom: 4rem; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--border);
+    }
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      transition: background .2s;
+    }
+    .service-card:hover { background: var(--light); }
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--navy); margin-bottom: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+    .service-desc {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+    }
+    .service-list {
+      list-style: none; margin-top: 1.2rem;
+    }
+    .service-list li {
+      font-size: 0.83rem; color: #374151;
+      padding: 4px 0; display: flex; align-items: flex-start; gap: 8px;
+    }
+    .service-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+    /* ── CHI SIAMO ── */
+    .about {
+      padding: 6rem 5%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+      background: var(--light);
+    }
+    .about-img {
+      background: var(--navy2);
+      height: 480px; position: relative;
+      display: flex; align-items: flex-end;
+    }
+    .about-img-inner {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1a2e45 0%, #0d1b2a 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.5rem;
+    }
+    .about-img-inner .big-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem; font-weight: 700; color: rgba(184,150,62,0.15);
+      line-height: 1;
+    }
+    .about-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--gold);
+      width: 110px; height: 110px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; text-align: center;
+    }
+    .about-badge .badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--navy);
+      line-height: 1;
+    }
+    .about-badge .badge-txt {
+      font-size: 0.65rem; font-weight: 600; color: var(--navy);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .about-text .section-sub { max-width: 100%; margin-bottom: 2rem; }
+    .about-partner {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .partner-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .partner-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--navy);
+    }
+    .partner-info p {
+      font-size: 0.82rem; color: var(--muted); margin-top: 2px;
+    }
+
+    /* ── PROCESS ── */
+    .process { padding: 6rem 5%; background: var(--white); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 4rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: 12.5%; right: 12.5%;
+      height: 1px; background: var(--gold);
+      z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 1rem; }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--white); border: 1px solid var(--gold);
+      margin: 0 auto 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .process-step:hover .step-num { background: var(--navy); border-color: var(--navy); color: var(--white); }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .step-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── TEAM ── */
+    .team { padding: 6rem 5%; background: var(--light); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; margin-top: 4rem;
+    }
+    .team-card { background: var(--white); }
+    .team-photo {
+      height: 260px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; font-weight: 700; color: rgba(184,150,62,0.3);
+    }
+    .team-info { padding: 1.5rem; }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600; color: var(--navy);
+    }
+    .team-role {
+      font-size: 0.75rem; color: var(--gold); font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; margin: 4px 0 8px;
+    }
+    .team-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── TESTIMONIANZE ── */
+    .testimonials { padding: 6rem 5%; background: var(--navy); }
+    .testimonials .section-tag { color: var(--gold2); }
+    .testimonials .section-title { color: var(--white); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .testi-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
+    }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--gold); line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .testi-text {
+      font-size: 0.9rem; color: rgba(255,255,255,0.75);
+      line-height: 1.7; margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testi-author { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .testi-author strong { color: var(--white); display: block; font-style: normal; }
+
+    /* ── CTA CONTATTO ── */
+    .contact { padding: 7rem 5%; background: var(--light); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .contact-info .section-sub { max-width: 100%; margin-bottom: 2.5rem; }
+    .contact-detail {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .contact-detail-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .contact-detail-text h4 {
+      font-size: 0.78rem; font-weight: 600; color: var(--gold);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px;
+    }
+    .contact-detail-text p { font-size: 0.9rem; color: var(--navy); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%; padding: 12px 16px;
+      font-family: Inter, sans-serif; font-size: 0.88rem;
+      background: var(--white); border: 1px solid var(--border);
+      color: var(--navy); outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form .btn-primary { align-self: flex-start; cursor: pointer; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 3rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--white);
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-credit {
+      font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    }
+    .footer-credit a { color: var(--gold2); text-decoration: none; }
+    .footer-credit a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 4rem 5%; }
+      .hero::before { display: none; }
+      .hero-visual { padding-left: 0; flex-direction: row; }
+      .strip { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .about-img { height: 300px; }
+      .about-badge { bottom: -15px; right: -10px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .process-steps::before { display: none; }
+      .team-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .btn-nav-cta { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0; z-index: 999;
+        background: var(--dark, #1a1a1a); padding: 1.2rem 6%; gap: 1rem;
+        border-top: 1px solid rgba(128,128,128,.15);
+        list-style: none;
+      }
+      .nav-links.open a { color: rgba(255,255,255,.7); }
+
+      footer { flex-direction: column; text-align: center; }
+    }
+  
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+  
+    @media (max-width: 600px) {
+      section { padding: 50px 5%; }
+      nav { padding: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO BANNER -->
+  <div id="demo-bar">
+    ⚠️ Questo è un sito dimostrativo — <a href="index.html">Studio Digital Italia</a> realizza siti come questo per la tua attività
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">F</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Ferretti & Associati</span>
+        <span class="nav-logo-sub">Commercialisti · Consulenti</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#studio">Lo Studio</a></li>
+      <li><a href="#team">Il Team</a></li>
+      <li><a href="#contatto" class="nav-cta">Consulenza gratuita</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Dottori Commercialisti</div>
+      <h1>La tua impresa merita una <em>guida esperta</em></h1>
+      <p class="hero-desc">
+        Assistenza fiscale, societaria e consulenza strategica per PMI e professionisti.
+        Da Vicenza, al fianco delle imprese del Nord-Est dal 1991.
+      </p>
+      <div class="hero-btns">
+        <a href="#contatto" class="btn-primary">Richiedi consulenza</a>
+        <a href="#servizi" class="btn-outline">I nostri servizi</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stat-card">
+        <div class="stat-num">33+</div>
+        <div class="stat-label">Anni di attività</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">280+</div>
+        <div class="stat-label">Clienti assistiti</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Clienti soddisfatti</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP NUMERI -->
+  <div class="strip">
+    <div class="strip-item">
+      <span class="strip-num">1991</span>
+      <span class="strip-label">Anno di fondazione</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-num">5</span>
+      <span class="strip-label">Professionisti nel team</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-num">280+</span>
+      <span class="strip-label">Aziende clienti</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-num">48h</span>
+      <span class="strip-label">Tempo di risposta</span>
+    </div>
+  </div>
+
+  <!-- SERVIZI -->
+  <section class="services" id="servizi">
+    <div class="services-header">
+      <span class="section-tag">Cosa facciamo</span>
+      <h2 class="section-title">Servizi professionali<br>per ogni esigenza</h2>
+      <p class="section-sub">Dalla contabilità ordinaria alla pianificazione strategica, offriamo una gamma completa di servizi per supportare la crescita della tua attività.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-name">Fiscalità & Contabilità</div>
+        <p class="service-desc">Gestione completa della contabilità aziendale e adempimenti fiscali con massima precisione.</p>
+        <ul class="service-list">
+          <li>Dichiarazioni fiscali e IVA</li>
+          <li>Bilancio d'esercizio e deposito</li>
+          <li>Contabilità semplificata e ordinaria</li>
+          <li>Ravvedimento operoso</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <div class="service-name">Consulenza Societaria</div>
+        <p class="service-desc">Costituzione, gestione e ristrutturazione di società in ogni forma giuridica.</p>
+        <ul class="service-list">
+          <li>Costituzione di imprese</li>
+          <li>Fusioni e scissioni</li>
+          <li>Passaggi generazionali</li>
+          <li>Trasformazioni societarie</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <div class="service-name">Pianificazione Strategica</div>
+        <p class="service-desc">Business plan, analisi finanziaria e supporto alle decisioni strategiche di impresa.</p>
+        <ul class="service-list">
+          <li>Business plan e forecast</li>
+          <li>Analisi di bilancio avanzata</li>
+          <li>Controllo di gestione</li>
+          <li>Due diligence</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👷</div>
+        <div class="service-name">Lavoro & Paghe</div>
+        <p class="service-desc">Elaborazione cedolini, gestione del personale e adempimenti contributivi.</p>
+        <ul class="service-list">
+          <li>Elaborazione cedolini paga</li>
+          <li>Assunzioni e cessazioni</li>
+          <li>INPS e INAIL</li>
+          <li>CUD e certificazioni</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <div class="service-name">Contenzioso Tributario</div>
+        <p class="service-desc">Assistenza in caso di accertamenti, verifiche fiscali e ricorsi tributari.</p>
+        <ul class="service-list">
+          <li>Gestione accertamenti</li>
+          <li>Ricorsi alla CTP/CTR</li>
+          <li>Adesioni e mediazioni</li>
+          <li>Autotutela fiscale</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-name">Finanza Agevolata</div>
+        <p class="service-desc">Accesso a bandi, contributi e incentivi fiscali nazionali ed europei.</p>
+        <ul class="service-list">
+          <li>Bandi Regione Veneto</li>
+          <li>PNRR e fondi UE</li>
+          <li>Credito d'imposta R&S</li>
+          <li>Nuova Sabatini</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SIAMO -->
+  <section class="about" id="studio">
+    <div class="about-img">
+      <div class="about-img-inner">
+        <div class="big-letter">F</div>
+      </div>
+      <div class="about-badge">
+        <div class="badge-num">33</div>
+        <div class="badge-txt">anni di<br>fiducia</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="section-tag">Lo studio</span>
+      <h2 class="section-title">Una storia di<br>professionalità</h2>
+      <p class="section-sub">
+        Fondato nel 1991 dal Dott. Marco Ferretti, lo studio ha accompagnato la crescita di centinaia di imprese vicentine. Oggi, con un team di cinque professionisti, offriamo un approccio integrato che unisce competenza tecnica e visione strategica.
+      </p>
+      <p class="section-sub" style="margin-top:1rem;">
+        Crediamo nel valore del rapporto personale: ogni cliente ha un referente dedicato che conosce la sua storia e le sue esigenze.
+      </p>
+      <div class="about-partner">
+        <div class="partner-icon">🏆</div>
+        <div class="partner-info">
+          <h4>Ordine dei Dottori Commercialisti</h4>
+          <p>Iscritti all'Ordine ODCEC di Vicenza n. 0347</p>
+        </div>
+      </div>
+      <div class="about-partner">
+        <div class="partner-icon">🔒</div>
+        <div class="partner-info">
+          <h4>Riservatezza garantita</h4>
+          <p>Totale tutela dei dati aziendali e segreto professionale</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div style="text-align:center; margin-bottom: 1rem;">
+      <span class="section-tag">Come lavoriamo</span>
+      <h2 class="section-title">Il nostro metodo</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Prima consulenza</div>
+        <p class="step-desc">Incontro gratuito per analizzare la situazione e definire le esigenze dello studio</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Analisi &amp; Piano</div>
+        <p class="step-desc">Valutiamo la situazione fiscale e societaria, definiamo obiettivi e proposta operativa</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Operatività</div>
+        <p class="step-desc">Gestione sistematica degli adempimenti con aggiornamenti costanti al cliente</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Monitoraggio</div>
+        <p class="step-desc">Revisioni periodiche della situazione e pianificazione fiscale prospettica</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div style="text-align:center; margin-bottom: 1rem;">
+      <span class="section-tag">I professionisti</span>
+      <h2 class="section-title">Il nostro team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">MF</div>
+        <div class="team-info">
+          <div class="team-name">Dott. Marco Ferretti</div>
+          <div class="team-role">Socio fondatore · Commercialista</div>
+          <p class="team-desc">Esperto in pianificazione fiscale internazionale e ristrutturazioni aziendali. Revisore legale iscritto al MEF.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">SR</div>
+        <div class="team-info">
+          <div class="team-name">Dott.ssa Sara Rossi</div>
+          <div class="team-role">Socio · Diritto del lavoro</div>
+          <p class="team-desc">Specializzata in diritto del lavoro, paghe e previdenza. Consulente del lavoro abilitata dal 2008.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">LB</div>
+        <div class="team-info">
+          <div class="team-name">Dott. Luca Bonato</div>
+          <div class="team-role">Associato · Finanza aziendale</div>
+          <p class="team-desc">Controller e analista finanziario. Specializzato in finanza agevolata, bandi europei e controllo di gestione.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="testimonials">
+    <span class="section-tag">Cosa dicono di noi</span>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">La fiducia dei nostri clienti</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Lavoriamo con lo Studio Ferretti da quindici anni. La loro competenza ci ha permesso di affrontare due ristrutturazioni aziendali con serenità e ottimizzare significativamente il carico fiscale.</p>
+        <div class="testi-author">
+          <strong>Roberto Marzotto</strong>
+          Amministratore, Marzotto Impianti Srl
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Ho aperto la mia attività di consulenza con il loro supporto. Dalla scelta della forma giuridica alla prima dichiarazione IVA, sempre presenti e chiari. Consigliatissimi per i giovani professionisti.</p>
+        <div class="testi-author">
+          <strong>Chiara Valentini</strong>
+          Consulente HR freelance, Vicenza
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Grazie alla loro assistenza abbiamo ottenuto un contributo PNRR di €180.000 per i nostri investimenti. Professionali, precisi e sempre aggiornati sulle novità normative.</p>
+        <div class="testi-author">
+          <strong>Andrea Pavan</strong>
+          Titolare, Pavan Serramenti Srl
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTO -->
+  <section class="contact" id="contatto">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <span class="section-tag">Contatti</span>
+        <h2 class="section-title">Iniziamo a parlare<br>del tuo futuro</h2>
+        <p class="section-sub">La prima consulenza è gratuita e senza impegno. Analizziamo insieme la tua situazione e ti diciamo subito come possiamo aiutarti.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <h4>Sede</h4>
+            <p>Solo pagina demo</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <h4>Telefono</h4>
+            <p>Solo pagina demo</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <p>Solo pagina demo</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <h4>Orari</h4>
+            <p>Lun–Ven 9:00–13:00 / 14:30–18:00</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Nome e Cognome *" required />
+          <input type="text" placeholder="Azienda / P.IVA" />
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email *" required />
+          <input type="tel" placeholder="Telefono" />
+        </div>
+        <select>
+          <option value="">— Tipo di richiesta —</option>
+          <option>Fiscalità e dichiarazioni</option>
+          <option>Consulenza societaria</option>
+          <option>Buste paga e lavoro</option>
+          <option>Pianificazione strategica</option>
+          <option>Finanza agevolata</option>
+          <option>Altro</option>
+        </select>
+        <textarea placeholder="Descriva brevemente la sua situazione e la richiesta..."></textarea>
+        <button type="submit" class="btn-primary">Invia richiesta →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Ferretti <span>&</span> Associati</div>
+    <div class="footer-links">
+      <a href="#servizi">Servizi</a>
+      <a href="#studio">Studio</a>
+      <a href="#team">Team</a>
+      <a href="#contatto">Contatti</a>
+    </div>
+    <div class="footer-credit">
+      Sito realizzato da <a href="index.html">Studio Digital Italia</a> · © 2026 Ferretti & Associati
+    </div>
+  </footer>
+
+  <script>
+    function handleContact(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '✓ Richiesta inviata';
+      btn.style.background = '#059669';
+      btn.disabled = true;
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.style.opacity = '1';
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .team-card, .testi-card, .process-step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.5s ease';
+      observer.observe(el);
+    });
+  
+  // Hamburger menu
+  const ham = document.querySelector('.hamburger');
+  const nl = document.querySelector('.nav-links');
+  if (ham && nl) {
+    ham.addEventListener('click', () => nl.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!ham.contains(e.target) && !nl.contains(e.target)) nl.classList.remove('open');
+    });
+  }
+
+</script>
+</body>
+</html>
