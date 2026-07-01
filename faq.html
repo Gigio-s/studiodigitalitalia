@@ -399,11 +399,12 @@
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Offriamo tre formule:<br/><br/>
+          Offriamo quattro formule:<br/><br/>
           <ul>
             <li><strong>Formula Essenziale</strong> — 600€ una tantum + 25€/mese (assistenza). Sito base fino a 4 pagine, ideale per chi parte da zero.</li>
             <li><strong>Formula Autonoma</strong> — da 800€ una tantum. Sito completo con consegna totale, WordPress o HTML, SEO base inclusa.</li>
             <li><strong>Formula Presenza Digitale</strong> — da 1.200€ + 45€/mese. Include gestione continua, aggiornamenti, assistenza e monitoraggio.</li>
+            <li><strong>Pacchetto Personalizzato</strong> — su preventivo. Per aziende medio-grandi ed enti con progetti importanti e strutturati (portali complessi, integrazioni gestionali/CRM, eventuale e-commerce). Analisi gratuita e preventivo su misura entro 48h.</li>
           </ul>
           <br/>Tutti i prezzi sono fissi e concordati in anticipo. Zero costi nascosti.
         </div>
@@ -805,11 +806,11 @@
   // Cookie banner
   function dismissCookieBar() {
     document.getElementById('cookie-bar').style.display = 'none';
-    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
   (function() {
     try {
-      if (sessionStorage.getItem('sdi_cookie_ok')) {
+      if (localStorage.getItem('sdi_cookie_ok')) {
         var b = document.getElementById('cookie-bar');
         if (b) b.style.display = 'none';
       }

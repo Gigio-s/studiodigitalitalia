@@ -445,6 +445,21 @@
       <p class="section-sub">Clienti che ci hanno affidato la loro presenza digitale. Siti funzionanti, indicizzati su Google e aggiornati.</p>
     </div>
     <div class="port-grid">
+      <!-- Rete Parco Pace -->
+      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card fade-in">
+        <div class="port-thumb assoc" style="background-image: linear-gradient(to bottom, rgba(10,36,20,.1) 0%, rgba(10,36,20,.78) 60%, rgba(10,36,20,.96) 100%), url('preview%20reteparcopace.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
+          <div class="port-badge-real">✦ Sito reale</div>
+          <span class="port-tag">Associazioni</span>
+          <div class="port-name">Rete Parco Pace</div>
+          <div class="port-sub">Associazione culturale — Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Gestione sito + aggiornamenti contenuti</span>
+          <span class="port-foot-link">Visita il sito →</span>
+        </div>
+      </a>
+
       <!-- L2 Traslochi -->
       <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card fade-in">
         <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
@@ -790,11 +805,11 @@
   // Cookie banner
   function dismissCookieBar() {
     document.getElementById('cookie-bar').style.display = 'none';
-    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
   (function() {
     try {
-      if (sessionStorage.getItem('sdi_cookie_ok')) {
+      if (localStorage.getItem('sdi_cookie_ok')) {
         var b = document.getElementById('cookie-bar');
         if (b) b.style.display = 'none';
       }
@@ -809,27 +824,4 @@ if (hamburger && navLinks) {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
   });
 }
-// Fade-in
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-// Filter
-function filterPortfolio(btn, cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.port-card').forEach(card => {
-    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-  });
-}
-</script>
-
-<!-- COOKIE NOTICE -->
-<div id="cookie-bar">
-  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
-    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
-  </p>
-  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
-</div>
-</body>
-</html>
+// 

@@ -138,6 +138,16 @@
               },
               "provider": { "@id": "https://www.studiodigitalitalia.it/#business" }
             }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "name": "Pacchetto Personalizzato",
+              "description": "Siti web su misura per aziende medio-grandi ed enti con progetti importanti e strutturati: portali complessi, aree riservate, multilingua, integrazioni con gestionali e CRM, ed eventualmente e-commerce. Preventivo su misura dopo analisi gratuita.",
+              "provider": { "@id": "https://www.studiodigitalitalia.it/#business" }
+            }
           }
         ]
       },
@@ -335,6 +345,24 @@
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem; margin-top: 3rem;
     }
+    .packs-grid-4 {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.1rem; margin-top: 3rem; align-items: stretch;
+    }
+    .pack-card.compact { padding: 1.5rem 1.2rem; }
+    .pack-card.compact .pack-top { margin-bottom: 1.1rem; }
+    .pack-card.compact .pack-tech-badge { font-size: .6rem; padding: .15rem .55rem; margin-bottom: .6rem; }
+    .pack-card.compact .pack-name { font-size: 1.05rem; margin-bottom: .4rem; }
+    .pack-card.compact .pack-sub { font-size: .78rem; line-height: 1.5; }
+    .pack-card.compact .pack-price { padding: .75rem .9rem; margin-bottom: 1.1rem; }
+    .pack-card.compact .pack-price-main { font-size: 1.05rem; }
+    .pack-card.compact .pack-price-extra { font-size: .74rem; }
+    .pack-card.compact .pack-price-note { font-size: .68rem; }
+    .pack-card.compact .pack-target { font-size: .72rem; padding: .5rem .7rem; margin-bottom: 1.1rem; }
+    .pack-card.compact .pack-features { margin-bottom: 1.2rem; }
+    .pack-card.compact .pack-features li { font-size: .78rem; padding: .4rem 0; gap: .5rem; }
+    .pack-card.compact .btn-pack-cta { padding: .7rem; font-size: .82rem; }
+    .pack-card.compact .pack-ribbon { font-size: .62rem; padding: .25rem .8rem; top: -11px; }
     .pack-card {
       background: var(--cream); border-radius: 10px;
       border: 1px solid var(--border);
@@ -674,6 +702,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       .packs-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .packs-grid-4 { grid-template-columns: repeat(2,1fr); max-width: 640px; margin-left: auto; margin-right: auto; }
       .servizi-grid { grid-template-columns: repeat(2,1fr); }
       .bundle-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -706,6 +735,7 @@
       .page-hero { padding: 90px 5% 60px; }
       .strip { flex-direction: column; text-align: center; gap: .5rem; }
       .pack-card { padding: 1.5rem 1.2rem; }
+      .packs-grid-4 { grid-template-columns: 1fr; max-width: 480px; }
     }
 
     /* Fade in */
@@ -819,97 +849,126 @@
   <div class="section-inner">
     <div class="fade-in text-center">
       <div class="label-line"><span class="label-text">Le nostre formule</span></div>
-      <h2 class="section-title">Tre formule. Una scelta semplice.</h2>
-      <p class="section-sub">Parte da zero con il minimo, oppure vai direttamente online con tutto in ordine. Nessun pacchetto complicato, nessuna sorpresa.</p>
+      <h2 class="section-title">Quattro formule. Una scelta semplice.</h2>
+      <p class="section-sub">Parti da zero con il minimo, vai online con tutto in ordine, o costruiamo insieme qualcosa su misura. Nessun pacchetto complicato, nessuna sorpresa.</p>
     </div>
 
-    <!-- FORMULA ESSENZIALE (entry-level) -->
-    <div style="max-width:480px;margin:3.5rem auto 1.5rem;">
-      <div class="pack-card fade-in" style="border:2px dashed var(--border);">
+    <div class="packs-grid-4">
+
+      <!-- FORMULA ESSENZIALE (entry-level) -->
+      <div class="pack-card compact fade-in" style="border:2px dashed var(--border);">
         <div class="pack-top">
           <span class="pack-tech-badge" style="background:#eef5ee;color:#3a7a3a;border:1px solid #b3d9b3;">Formula Essenziale</span>
-          <div class="pack-name">L'inizio.<br/>Semplice e professionale.</div>
-          <div class="pack-sub">Per chi parte da zero con budget ridotto e ha bisogno di una presenza online base, ordinata e professionale. Sito one-page o 3 pagine, nient'altro.</div>
+          <div class="pack-name">L'inizio semplice</div>
+          <div class="pack-sub">Presenza online base, ordinata e professionale. Per chi parte da zero.</div>
         </div>
         <div class="pack-price">
-          <div class="pack-price-main">A partire da 600 €</div>
+          <div class="pack-price-main">Da 600 €</div>
           <div class="pack-price-extra">+ 25 €/mese</div>
-          <div class="pack-price-note">Canone mensile · hosting e dominio a carico del cliente</div>
         </div>
-        <div class="pack-target">👥 Artigiani, professionisti, attività che non hanno ancora nulla online</div>
+        <div class="pack-target">👥 Chi non ha ancora nulla online</div>
         <ul class="pack-features">
-          <li><span class="check-ico">✦</span>Sito one-page o fino a 3 pagine</li>
-          <li><span class="check-ico">✦</span>Dominio e hosting configurati (a carico del cliente)</li>
-          <li><span class="check-ico">✦</span>Contatti, WhatsApp e Google Maps</li>
+          <li><span class="check-ico">✦</span>Sito 1–3 pagine</li>
+          <li><span class="check-ico">✦</span>WhatsApp + Google Maps</li>
           <li><span class="check-ico">✦</span>SEO base incluso</li>
-          <li><span class="check-ico">✦</span>Backup mensile</li>
         </ul>
-        <div style="padding:.8rem 1rem;background:var(--cream);border-radius:6px;font-size:.82rem;color:var(--muted);margin-bottom:1.4rem;">
-          Vuoi crescere? Puoi passare alle formule superiori in qualsiasi momento, senza ripartire da zero.
-        </div>
         <a href="index.html#contatti" class="btn-pack-cta btn-pack-default">Richiedi preventivo →</a>
       </div>
-    </div>
-
-    <div class="grid-2col" style="max-width:960px;margin:0 auto;">
 
       <!-- FORMULA AUTONOMA -->
-      <div class="pack-card fade-in">
+      <div class="pack-card compact fade-in">
         <div class="pack-top">
           <span class="pack-tech-badge badge-wp">Formula Autonoma</span>
-          <div class="pack-name">Sito consegnato.<br/>Tu lo gestisci.</div>
-          <div class="pack-sub">Realizziamo il sito completo e te lo consegniamo pronto all'uso. Dopo la consegna sei indipendente: gestione e aggiornamenti sono tuoi.</div>
+          <div class="pack-name">Sito consegnato</div>
+          <div class="pack-sub">Lo realizziamo completo, poi sei indipendente: nessun canone.</div>
         </div>
         <div class="pack-price">
-          <div class="pack-price-main">A partire da 800 €</div>
-          <div class="pack-price-note">Pagamento unico · nessun canone obbligatorio</div>
+          <div class="pack-price-main">Da 800 €</div>
+          <div class="pack-price-note">Pagamento unico</div>
         </div>
-        <div class="pack-target">👥 Ideale per chi vuole indipendenza e nessun costo fisso</div>
+        <div class="pack-target">👥 Chi vuole indipendenza, zero canoni</div>
         <ul class="pack-features">
-          <li><span class="check-ico">✦</span>Sito professionale responsive (1–6 pagine)</li>
-          <li><span class="check-ico">✦</span>Dominio e hosting configurati</li>
-          <li><span class="check-ico">✦</span>Contatti, WhatsApp e Google Maps</li>
-          <li><span class="check-ico">✦</span>SEO base incluso</li>
-          <li><span class="check-ico">✦</span>Consegna completa con accessi</li>
-          <li><span class="check-ico">✦</span>Formazione all'utilizzo</li>
-          <li><span class="check-ico">✦</span>Tecnologia: WordPress <em>o</em> HTML (scegliamo insieme)</li>
+          <li><span class="check-ico">✦</span>1–6 pagine responsive</li>
+          <li><span class="check-ico">✦</span>Consegna completa + accessi</li>
+          <li><span class="check-ico">✦</span>Formazione inclusa</li>
         </ul>
-        <div style="padding:.8rem 1rem;background:var(--cream);border-radius:6px;font-size:.82rem;color:var(--muted);margin-bottom:1.4rem;">
-          <strong style="color:var(--dark);">WordPress</strong> → facile da gestire autonomamente.<br/>
-          <strong style="color:var(--dark);">HTML statico</strong> → velocissimo, gestito centralmente da Studio Digital.
-        </div>
         <a href="index.html#contatti" class="btn-pack-cta btn-pack-default">Richiedi preventivo →</a>
       </div>
 
       <!-- FORMULA PRESENZA DIGITALE -->
-      <div class="pack-card featured fade-in">
+      <div class="pack-card compact featured fade-in">
         <div class="pack-ribbon">✦ Più scelto</div>
         <div class="pack-top">
           <span class="pack-tech-badge badge-managed">Formula Presenza Digitale</span>
-          <div class="pack-name">Sito gestito.<br/>Ci pensiamo noi.</div>
-          <div class="pack-sub">Realizziamo il sito e continuiamo a seguirlo nel tempo. Aggiornamenti, manutenzione, contenuti e supporto: hai un unico referente per tutta la tua presenza online.</div>
+          <div class="pack-name">Sito gestito</div>
+          <div class="pack-sub">Lo seguiamo noi nel tempo: aggiornamenti e supporto inclusi.</div>
         </div>
         <div class="pack-price">
-          <div class="pack-price-main">A partire da 1.200 €</div>
-          <div class="pack-price-extra">+ canone mensile da 45 €</div>
-          <div class="pack-price-note">Setup iniziale + gestione mensile continuativa</div>
+          <div class="pack-price-main">Da 1.200 €</div>
+          <div class="pack-price-extra">+ 45 €/mese</div>
         </div>
-        <div class="pack-target">👥 Ideale per artigiani, attività locali e chi vuole delegare tutto</div>
+        <div class="pack-target">👥 Chi vuole delegare tutto</div>
         <ul class="pack-features">
-          <li><span class="check-ico">✦</span>Tutto incluso della Formula Autonoma</li>
-          <li><span class="check-ico">✦</span>Aggiornamenti e modifiche mensili incluse</li>
-          <li><span class="check-ico">✦</span>Backup automatico settimanale</li>
-          <li><span class="check-ico">✦</span>Sicurezza e monitoraggio attivo</li>
-          <li><span class="check-ico">✦</span>Supporto tecnico prioritario</li>
-          <li><span class="check-ico">✦</span>Gestione Google Business (opzionale)</li>
-          <li><span class="check-ico">✦</span>Gestione social base (opzionale)</li>
+          <li><span class="check-ico">✦</span>Tutto della Formula Autonoma</li>
+          <li><span class="check-ico">✦</span>Aggiornamenti mensili inclusi</li>
+          <li><span class="check-ico">✦</span>Supporto prioritario</li>
         </ul>
-        <div style="padding:.8rem 1rem;background:rgba(184,150,106,.1);border-radius:6px;font-size:.82rem;color:rgba(26,28,34,.6);margin-bottom:1.4rem;">
-          Zero pensieri tecnici. Tu ti occupi del tuo lavoro, noi teniamo la tua presenza digitale aggiornata e funzionante.
-        </div>
         <a href="index.html#contatti" class="btn-pack-cta btn-pack-featured">Richiedi preventivo →</a>
       </div>
 
+      <!-- PACCHETTO PERSONALIZZATO (teaser) -->
+      <div class="pack-card compact fade-in" style="border:2px solid var(--gold); background: linear-gradient(135deg, var(--cream) 0%, rgba(184,150,106,.08) 100%);">
+        <div class="pack-top">
+          <span class="pack-tech-badge" style="background:rgba(184,150,106,.18);color:var(--gold-d);border:1px solid rgba(184,150,106,.4);">Pacchetto Personalizzato</span>
+          <div class="pack-name">Progetti importanti</div>
+          <div class="pack-sub">Per aziende medio-grandi: portali complessi, integrazioni, eventuale e-commerce.</div>
+        </div>
+        <div class="pack-price">
+          <div class="pack-price-main">Su preventivo</div>
+          <div class="pack-price-note">Analisi gratuita in 48h</div>
+        </div>
+        <div class="pack-target">👥 Aziende medio-grandi, enti, progetti strutturati</div>
+        <ul class="pack-features">
+          <li><span class="check-ico">✦</span>Portali complessi su misura</li>
+          <li><span class="check-ico">✦</span>Integrazioni gestionali/CRM</li>
+          <li><span class="check-ico">✦</span>Preventivo gratuito</li>
+        </ul>
+        <a href="#personalizzato" class="btn-pack-cta" style="background:var(--gold);color:var(--dark);">Scopri di più ↓</a>
+      </div>
+
+    </div>
+
+    <!-- PACCHETTO PERSONALIZZATO -->
+    <div class="packs-divider" style="margin-top:3.5rem;">
+      <span>Il tuo progetto è diverso?</span>
+    </div>
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="pack-card fade-in" id="personalizzato" style="border:2px solid var(--gold); background: linear-gradient(135deg, var(--cream) 0%, rgba(184,150,106,.08) 100%); scroll-margin-top:80px;">
+        <div class="pack-top">
+          <span class="pack-tech-badge" style="background:rgba(184,150,106,.18);color:var(--gold-d);border:1px solid rgba(184,150,106,.4);">Pacchetto Personalizzato</span>
+          <div class="pack-name">Progetti importanti?<br/>Li costruiamo su misura.</div>
+          <div class="pack-sub">Pensato per aziende medio-grandi ed enti con progetti web importanti e strutturati: portali multipagina complessi, aree riservate, multilingua, integrazioni con gestionali o CRM — ed eventualmente anche e-commerce, se serve. Analizziamo il progetto insieme e costruiamo un preventivo su misura, senza pacchetti forzati.</div>
+        </div>
+        <div class="pack-price">
+          <div style="font-size:.72rem;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem;">🏢 Progetto su misura</div>
+          <div class="pack-price-note" style="font-size:.85rem;">Portali complessi, multi-sede, aree riservate, multilingua, integrazioni gestionali/CRM ed eventuale e-commerce. Prezzo definito dopo un'analisi gratuita delle esigenze del progetto.</div>
+        </div>
+        <div class="pack-target">👥 Aziende medio-grandi, enti e realtà strutturate con progetti importanti fuori dagli schemi standard</div>
+        <ul class="pack-features">
+          <li><span class="check-ico">✦</span>Analisi gratuita delle esigenze + preventivo dettagliato entro 48h</li>
+          <li><span class="check-ico">✦</span>Design 100% su misura, nessun limite di pagine</li>
+          <li><span class="check-ico">✦</span>Portali complessi, aree riservate, form e flussi avanzati</li>
+          <li><span class="check-ico">✦</span>Integrazioni con gestionali, CRM, sistemi di pagamento</li>
+          <li><span class="check-ico">✦</span>Multilingua, se necessario</li>
+          <li><span class="check-ico">✦</span>E-commerce, se il progetto lo richiede</li>
+          <li><span class="check-ico">✦</span>SEO avanzato e struttura contenuti pensata per il tuo settore</li>
+          <li><span class="check-ico">✦</span>Possibilità di abbinare gestione mensile continuativa</li>
+        </ul>
+        <div style="padding:.8rem 1rem;background:rgba(184,150,106,.1);border-radius:6px;font-size:.82rem;color:rgba(26,28,34,.6);margin-bottom:1.4rem;">
+          Niente prezzo fisso perché ogni progetto di questo tipo è diverso — ma ogni preventivo resta scritto, chiaro e senza costi nascosti, come per le altre formule.
+        </div>
+        <a href="index.html#contatti" class="btn-pack-cta" style="background:var(--gold);color:var(--dark);">Prenota una consulenza gratuita →</a>
+      </div>
     </div>
 
     <!-- NOTE TECNOLOGIA -->
@@ -1165,6 +1224,10 @@
         <button class="faq-q" onclick="toggleFaq(this)">Posso passare dalla Formula Autonoma a quella con gestione? <span class="arrow">▼</span></button>
         <div class="faq-a">Sì. Puoi partire con la Formula Autonoma e aggiungere la gestione continuativa in qualsiasi momento. Il sito cresce con te, senza ripartire da zero.</div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Perché il Pacchetto Personalizzato non ha un prezzo indicato? <span class="arrow">▼</span></button>
+        <div class="faq-a">Perché progetti importanti e strutturati — portali complessi, aree riservate, integrazioni con gestionali, eventuale e-commerce — variano troppo da caso a caso per un prezzo fisso onesto. Facciamo un'analisi gratuita delle tue esigenze e ti inviamo un preventivo scritto entro 48 ore, con lo stesso principio delle altre formule: chiaro, dettagliato, senza costi nascosti.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1371,11 +1434,11 @@
   // Cookie banner
   function dismissCookieBar() {
     document.getElementById('cookie-bar').style.display = 'none';
-    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
   (function() {
     try {
-      if (sessionStorage.getItem('sdi_cookie_ok')) {
+      if (localStorage.getItem('sdi_cookie_ok')) {
         var b = document.getElementById('cookie-bar');
         if (b) b.style.display = 'none';
       }
@@ -1526,3 +1589,4 @@ document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </div>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                  

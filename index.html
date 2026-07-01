@@ -702,6 +702,19 @@
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem; margin-top: 3.5rem;
     }
+    .packs-grid-4 {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.1rem; margin-top: 3.5rem; align-items: stretch;
+    }
+    .pack-card.compact { padding: 1.5rem 1.2rem; }
+    .pack-card.compact .pack-name { font-size: 1.05rem; margin-bottom: .3rem; }
+    .pack-card.compact .pack-desc { font-size: .78rem; margin-bottom: 1.1rem; line-height: 1.5; }
+    .pack-card.compact .pack-price-line { font-size: .92rem; }
+    .pack-card.compact .pack-price-extra { font-size: .72rem; margin-bottom: 1rem; }
+    .pack-card.compact .pack-features { margin-bottom: 1.2rem; }
+    .pack-card.compact .pack-features li { font-size: .78rem; padding: .35rem 0; gap: .45rem; }
+    .pack-card.compact .btn-pack { padding: .65rem; font-size: .82rem; }
+    .pack-card.compact .pack-badge { font-size: .6rem; padding: .2rem .65rem; top: -10px; }
     .pack-card {
       background: var(--white); border-radius: var(--radius);
       border: 1px solid var(--border);
@@ -852,6 +865,7 @@
       .portfolio-sub-desc { display: none; }
       .perche-grid { grid-template-columns: repeat(2,1fr); }
       .packs-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+      .packs-grid-4 { grid-template-columns: repeat(2,1fr); max-width: 620px; margin-left: auto; margin-right: auto; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
@@ -885,6 +899,7 @@
       .hp-value { font-size: .75rem; max-width: 100%; }
       .section-inner { padding-left: 0; padding-right: 0; }
       .pack-card { padding: 1.5rem 1.2rem; }
+      .packs-grid-4 { grid-template-columns: 1fr; max-width: 460px; }
       .motto-section { padding: 60px 5%; }
     }
     @media (max-width: 400px) {
@@ -1142,6 +1157,20 @@
     </div>
     <div class="portfolio-grid">
       <div class="portfolio-card fade-in">
+        <div class="portfolio-thumb assoc"
+             style="background-image: linear-gradient(to bottom, rgba(10,36,20,0.15) 0%, rgba(10,36,20,0.82) 65%, rgba(10,36,20,0.95) 100%), url('preview%20reteparcopace.png'); background-size: cover; background-position: top center; position: relative;">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-real-badge">✦ Sito reale</div>
+          <span class="tag">Associazioni</span>
+          <div class="name">Rete Parco Pace</div>
+          <div class="sub">Associazione culturale — Vicenza</div>
+        </div>
+        <div class="portfolio-foot">
+          <span>Gestione sito + aggiornamenti contenuti</span>
+          <a href="https://www.reteparcopace.it" target="_blank" rel="noopener">Visita il sito →</a>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
         <div class="portfolio-thumb trasl"
              style="background-image: linear-gradient(to bottom, rgba(5,14,26,0.15) 0%, rgba(5,14,26,0.82) 65%, rgba(5,14,26,0.95) 100%), url('preview%20l2%20traslochi.png'); background-size: cover; background-position: top center; position: relative;">
           <div class="portfolio-overlay"></div>
@@ -1316,50 +1345,59 @@
       <h2 class="section-title">Una soluzione per ogni esigenza</h2>
       <p class="section-sub">Prezzi chiari, nessun costo nascosto. Dal sito base al pacchetto gestito completo — scegli quello che fa per te.</p>
     </div>
-    <div class="packs-grid">
-      <div class="pack-card fade-in">
+    <div class="packs-grid-4">
+      <div class="pack-card compact fade-in">
         <div class="pack-name">Formula Essenziale</div>
-        <div class="pack-desc">Per chi parte da zero. Sito base professionale, presenza online ordinata e veloce da avere.</div>
-        <div class="pack-price-line">A partire da 600 €</div>
+        <div class="pack-desc">Per chi parte da zero. Sito base, presenza online ordinata e veloce da avere.</div>
+        <div class="pack-price-line">Da 600 €</div>
         <div class="pack-price-extra">+ 25 €/mese</div>
         <ul class="pack-features">
-          <li><span class="pack-check">✦</span>Sito one-page o fino a 3 pagine</li>
+          <li><span class="pack-check">✦</span>Sito 1–3 pagine</li>
           <li><span class="pack-check">✦</span>WhatsApp + Google Maps</li>
           <li><span class="pack-check">✦</span>SEO base incluso</li>
-          <li><span class="pack-check">✦</span>Backup mensile</li>
         </ul>
         <a href="pacchetti.html" class="btn-pack">Scopri i dettagli →</a>
       </div>
-      <div class="pack-card fade-in">
+      <div class="pack-card compact fade-in">
         <div class="pack-name">Formula Autonoma</div>
-        <div class="pack-desc">Sito completo consegnato pronto all'uso. Dopo sei indipendente, nessun costo fisso mensile.</div>
-        <div class="pack-price-line">A partire da 800 €</div>
-        <div class="pack-price-extra" style="color:var(--muted);">Pagamento unico — nessun canone</div>
+        <div class="pack-desc">Sito completo consegnato pronto all'uso. Dopo sei indipendente, zero canoni.</div>
+        <div class="pack-price-line">Da 800 €</div>
+        <div class="pack-price-extra" style="color:var(--muted);">Pagamento unico</div>
         <ul class="pack-features">
-          <li><span class="pack-check">✦</span>Sito responsive (1–6 pagine)</li>
-          <li><span class="pack-check">✦</span>WhatsApp + Google Maps</li>
-          <li><span class="pack-check">✦</span>SEO base + consegna accessi</li>
-          <li><span class="pack-check">✦</span>Formazione all'utilizzo</li>
+          <li><span class="pack-check">✦</span>1–6 pagine responsive</li>
+          <li><span class="pack-check">✦</span>Consegna completa + accessi</li>
+          <li><span class="pack-check">✦</span>Formazione inclusa</li>
         </ul>
         <a href="pacchetti.html" class="btn-pack">Scopri i dettagli →</a>
       </div>
-      <div class="pack-card featured fade-in">
+      <div class="pack-card compact featured fade-in">
         <div class="pack-badge">Più scelto</div>
         <div class="pack-name">Formula Presenza Digitale</div>
-        <div class="pack-desc">Sito realizzato e gestito da noi nel tempo. Aggiornamenti, sicurezza e supporto: zero pensieri.</div>
-        <div class="pack-price-line">A partire da 1.200 €</div>
-        <div class="pack-price-extra">+ canone mensile da 45 €</div>
+        <div class="pack-desc">Realizzato e gestito da noi nel tempo. Aggiornamenti e supporto: zero pensieri.</div>
+        <div class="pack-price-line">Da 1.200 €</div>
+        <div class="pack-price-extra">+ 45 €/mese</div>
         <ul class="pack-features">
           <li><span class="pack-check">✦</span>Tutto della Formula Autonoma</li>
           <li><span class="pack-check">✦</span>Aggiornamenti mensili inclusi</li>
-          <li><span class="pack-check">✦</span>Backup + sicurezza attiva</li>
           <li><span class="pack-check">✦</span>Supporto prioritario</li>
         </ul>
         <a href="pacchetti.html" class="btn-pack">Scopri i dettagli →</a>
       </div>
+      <div class="pack-card compact fade-in" style="border:2px solid var(--gold); background: linear-gradient(135deg, var(--white) 0%, rgba(184,150,106,.06) 100%);">
+        <div class="pack-name">Pacchetto Personalizzato</div>
+        <div class="pack-desc">Per aziende medio-grandi: progetti importanti, portali complessi, eventuale e-commerce.</div>
+        <div class="pack-price-line">Su preventivo</div>
+        <div class="pack-price-extra">Analisi gratuita in 48h</div>
+        <ul class="pack-features">
+          <li><span class="pack-check">✦</span>Portali complessi su misura</li>
+          <li><span class="pack-check">✦</span>Integrazioni gestionali/CRM</li>
+          <li><span class="pack-check">✦</span>Preventivo gratuito</li>
+        </ul>
+        <a href="pacchetti.html#personalizzato" class="btn-pack" style="border-color:var(--gold);color:var(--gold-d);">Scopri di più →</a>
+      </div>
     </div>
     <div class="packs-more fade-in">
-      <p>Hai esigenze diverse? Offriamo anche siti personalizzati ad alte prestazioni, servizi social, SEO locale, Google Business e molto altro.</p>
+      <p>Offriamo anche servizi social, SEO locale, Google Business e molto altro — vedi tutti i dettagli e i pacchetti extra.</p>
       <a href="pacchetti.html" class="btn-primary">Vedi tutti i pacchetti e prezzi →</a>
     </div>
   </div>
@@ -1505,66 +1543,4 @@
 
 <!-- COOKIE NOTICE -->
 <div id="cookie-bar">
-  <p>Questo sito utilizza cookie tecnici e carica font da Google Fonts. Nessun cookie di profilazione o tracciamento.
-    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
-  </p>
-  <button class="cookie-btn" onclick="dismissCookieBar()">Ho capito</button>
-</div>
-
-<script>
-  function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
-    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
-  }
-  if (sessionStorage.getItem('sdi_cookie_ok')) {
-    document.getElementById('cookie-bar').style.display = 'none';
-  }
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    document.addEventListener('click', e => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
-    });
-  }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    // Controlla validità HTML5 (required, email, checkbox)
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    const btn = form.querySelector('.btn-submit');
-    btn.textContent = 'Invio in corso...';
-    btn.disabled = true;
-    const json = Object.fromEntries(new FormData(form).entries());
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(json)
-      });
-      const result = await res.json();
-      if (result.success) {
-        btn.textContent = '✓ Richiesta inviata — ti rispondiamo presto.';
-        btn.style.background = '#2a5c3a';
-        form.reset();
-      } else {
-        btn.textContent = "Errore nell'invio. Riprova o scrivici via WhatsApp.";
-        btn.style.background = '#8b1a1a';
-        btn.disabled = false;
-      }
-    } catch (err) {
-      btn.textContent = 'Errore di connessione. Riprova.';
-      btn.style.background = '#8b1a1a';
-      btn.disabled = false;
-    }
-  }
-</script>
-</body>
-</html>
+  <p>Questo sito utili

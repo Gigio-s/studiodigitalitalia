@@ -303,11 +303,11 @@
   // Cookie banner
   function dismissCookieBar() {
     document.getElementById('cookie-bar').style.display = 'none';
-    try { sessionStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
   (function() {
     try {
-      if (sessionStorage.getItem('sdi_cookie_ok')) {
+      if (localStorage.getItem('sdi_cookie_ok')) {
         var b = document.getElementById('cookie-bar');
         if (b) b.style.display = 'none';
       }
