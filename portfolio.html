@@ -824,4 +824,27 @@ if (hamburger && navLinks) {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
   });
 }
-// 
+// Fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+// Filter
+function filterPortfolio(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.port-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-bar">
+  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
+    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
+</div>
+</body>
+</html>

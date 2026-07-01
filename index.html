@@ -1543,4 +1543,66 @@
 
 <!-- COOKIE NOTICE -->
 <div id="cookie-bar">
-  <p>Questo sito utili
+  <p>Questo sito utilizza cookie tecnici e carica font da Google Fonts. Nessun cookie di profilazione o tracciamento.
+    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookieBar()">Ho capito</button>
+</div>
+
+<script>
+  function dismissCookieBar() {
+    document.getElementById('cookie-bar').style.display = 'none';
+    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
+  }
+  if (localStorage.getItem('sdi_cookie_ok')) {
+    document.getElementById('cookie-bar').style.display = 'none';
+  }
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
+    });
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    // Controlla validità HTML5 (required, email, checkbox)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Invio in corso...';
+    btn.disabled = true;
+    const json = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(json)
+      });
+      const result = await res.json();
+      if (result.success) {
+        btn.textContent = '✓ Richiesta inviata — ti rispondiamo presto.';
+        btn.style.background = '#2a5c3a';
+        form.reset();
+      } else {
+        btn.textContent = "Errore nell'invio. Riprova o scrivici via WhatsApp.";
+        btn.style.background = '#8b1a1a';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Errore di connessione. Riprova.';
+      btn.style.background = '#8b1a1a';
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>
