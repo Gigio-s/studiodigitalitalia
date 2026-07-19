@@ -1,30 +1,51 @@
-# File interni - non pubblicare
+# ══════════════════════════════════════════════
+#  .gitignore — studiodigitalitalia.it
+#  Tutto ciò che NON è escluso qui finisce online
+#  ed è accessibile pubblicamente da chiunque.
+# ══════════════════════════════════════════════
+
+# ── Documenti interni di lavoro ──
 contratto-*.html
 checklist-operativa.html
 gestione-operativa-studiodigital.html
 guida-operativa.html
-guida-search-console.md
 previsione-studio-digital-2026-2028.html
 template-preventivo.html
-Analisi_*.md
 
-# Script e automazioni
+# ── Note, guide e analisi interne ──
+*.md
+*.rtf
+
+# ── Script e automazioni ──
 *.py
 *.bat
 
-# Documenti PDF e Office
+# ── Documenti e fogli di lavoro (lead, preventivi, PDF) ──
 *.pdf
 *.xlsx
+Lead_*.xlsx
 
-# Log
+# ── Log e file di testo interni ──
+# ATTENZIONE: robots.txt DEVE restare pubblicato,
+# altrimenti Google non trova la sitemap.
 *.txt
+!robots.txt
 
-# Video
+# ── Video e materiali pesanti ──
 *.mp4
 webdesign/
 
-# Progetti clienti interni
+# ── Progetti clienti interni ──
 reteparcopace/
 
-# Preview immagini interne
-Lead_*.xlsx
+# ── Demo di proposta non ancora presentate ──
+# Restano in locale, si pubblicano solo quando servono al pitch.
+lavigna-redesign.html
+
+# ══════════════════════════════════════════════
+#  File che DEVONO essere pubblicati (non toccare):
+#  index.html, pacchetti.html, portfolio.html, faq.html,
+#  privacy.html, termini.html, chi-siamo.html,
+#  demo-*.html (non lavigna), sitemap.xml, robots.txt, CNAME,
+#  logo-*.jpg/png, preview*.png, anteprima*.png
+# ══════════════════════════════════════════════

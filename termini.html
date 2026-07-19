@@ -11,7 +11,7 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
   <meta name="description" content="Termini e condizioni di servizio di Studio Digital Italia. Scopri come lavoriamo, cosa offriamo e cosa non promettiamo." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://www.studiodigitalitalia.it/termini.html" />
+  <link rel="canonical" href="https://studiodigitalitalia.it/termini.html" />
   <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -123,14 +123,17 @@
     }
   
     /* ── COOKIE NOTICE ── */
+    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
+       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
     #cookie-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
       padding: 1rem 6%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: none; align-items: center; justify-content: space-between;
       gap: 1.5rem; flex-wrap: wrap;
       box-shadow: 0 -4px 24px rgba(0,0,0,.3);
     }
+    #cookie-bar.show { display: flex; }
     #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
     #cookie-bar a { color: #B8966A; text-decoration: underline; }
     #cookie-bar .cookie-btn {
@@ -171,7 +174,7 @@
       <li><a href="#avvio">Avvio del progetto e materiali</a></li>
       <li><a href="#pagamenti">Pagamenti e prezzi</a></li>
       <li><a href="#consegna">Consegna e proprietà del sito</a></li>
-      <li><a href="#gestione">Gestione continuativa (Formula Presenza Digitale)</a></li>
+      <li><a href="#gestione">Gestione continuativa e manutenzione mensile</a></li>
       <li><a href="#responsabilita">Responsabilità e limitazioni</a></li>
       <li><a href="#disdetta">Disdetta e recesso</a></li>
       <li><a href="#proprieta">Proprietà intellettuale</a></li>
@@ -226,17 +229,23 @@
 
   <!-- 3. FORMULE -->
   <div class="terms-section" id="formule">
-    <h2>3. Le formule di servizio</h2>
-    <p>Studio Digital Italia opera attraverso due modalità principali:</p>
+    <h2>3. I pacchetti di servizio</h2>
+    <p>Studio Digital Italia opera attraverso tre pacchetti di realizzazione, tutti a corrispettivo una tantum:</p>
 
-    <h3>Formula Autonoma</h3>
-    <p>Studio Digital Italia realizza il sito web, configura dominio e hosting, imposta struttura e pagine e consegna il progetto completo pronto all'utilizzo. Dopo la consegna, il sito rimane nella piena disponibilità del cliente. Gestione, aggiornamenti e manutenzione sono a carico esclusivo del cliente. Eventuali interventi futuri da parte di Studio Digital Italia verranno concordati e fatturati separatamente.</p>
+    <h3>Sito Base</h3>
+    <p>Studio Digital Italia realizza un sito web da 1 a 4 pagine, imposta struttura e contenuti, include l'ottimizzazione SEO locale di base e il collegamento a Google Maps e WhatsApp, e consegna il progetto completo pronto all'utilizzo insieme a tutti gli accessi. Corrispettivo: 900 € una tantum, salvo diverso preventivo scritto.</p>
 
-    <h3>Formula Presenza Digitale</h3>
-    <p>Studio Digital Italia realizza il sito e fornisce un servizio di gestione continuativa mensile. Il servizio include: aggiornamenti ordinari dei contenuti, manutenzione tecnica, backup, monitoraggio e supporto. Il canone mensile è dovuto a partire dalla data di pubblicazione del sito online (go-live). Il servizio è rinnovabile automaticamente di mese in mese salvo disdetta con preavviso scritto di 30 giorni.</p>
+    <h3>Sito Pro</h3>
+    <p>Comprende quanto previsto dal Sito Base ed estende il progetto fino a 8 pagine con design realizzato su misura, ottimizzazione SEO locale avanzata, configurazione del profilo Google Business e flussi di contatto avanzati. Corrispettivo: 1.800 € una tantum, salvo diverso preventivo scritto.</p>
 
-    <h3>Servizi aggiuntivi</h3>
-    <p>Entrambe le formule possono essere integrate con servizi opzionali (Google Business, gestione social, SEO locale, landing page, restyling). Ogni servizio aggiuntivo è regolato da preventivo scritto separato accettato dal cliente.</p>
+    <h3>Su misura</h3>
+    <p>Progetti destinati ad aziende medio-grandi ed enti: portali complessi, aree riservate, versioni multilingua, integrazioni con gestionali o CRM ed eventuale e-commerce. Il corrispettivo è definito da preventivo scritto specifico, redatto dopo un'analisi gratuita delle esigenze e accettato dal cliente.</p>
+
+    <h3>Consegna e disponibilità del sito</h3>
+    <p>In tutti i pacchetti, dopo la consegna il sito rimane nella piena disponibilità del cliente, che ne riceve file e accessi. Gestione, aggiornamenti e manutenzione successivi sono a carico del cliente, salvo sottoscrizione di un pacchetto di manutenzione mensile.</p>
+
+    <h3>Servizi aggiuntivi e manutenzione</h3>
+    <p>Tutti i pacchetti possono essere integrati con servizi opzionali (manutenzione e gestione mensile, Google Business, gestione social, SEO locale, landing page, restyling). Ogni servizio aggiuntivo è regolato da preventivo scritto separato accettato dal cliente. I servizi a canone mensile sono dovuti a partire dalla data di pubblicazione del sito online (go-live), sono rinnovabili automaticamente di mese in mese e disdicibili con preavviso scritto di 30 giorni.</p>
   </div>
 
   <!-- 4. AVVIO -->
@@ -264,9 +273,9 @@
       <li><strong>50% saldo</strong> alla consegna del sito ultimato, prima del go-live</li>
     </ul>
 
-    <h3>Formula Presenza Digitale</h3>
+    <h3>Servizi a canone mensile (manutenzione e gestione)</h3>
     <ul>
-      <li>Quota di setup iniziale secondo preventivo accettato</li>
+      <li>Quota di setup iniziale, se prevista dal preventivo accettato</li>
       <li>Canone mensile a partire dalla data di pubblicazione del sito</li>
       <li>Fatturazione mensile anticipata, salvo diverso accordo scritto</li>
     </ul>
@@ -281,7 +290,7 @@
   <!-- 6. CONSEGNA -->
   <div class="terms-section" id="consegna">
     <h2>6. Consegna e proprietà del sito</h2>
-    <p>Alla consegna del sito (Formula Autonoma) o al termine del rapporto (Formula Presenza Digitale), Studio Digital Italia consegna al cliente tutti gli accessi necessari: pannello di controllo, credenziali hosting, accesso al dominio.</p>
+    <p>Alla consegna del sito, e in ogni caso al termine di un eventuale rapporto di gestione continuativa, Studio Digital Italia consegna al cliente tutti gli accessi necessari: pannello di controllo, credenziali hosting, accesso al dominio.</p>
 
     <h3>Proprietà del sito</h3>
     <p>Dopo il saldo completo del corrispettivo, il sito web realizzato è di proprietà esclusiva del cliente. Studio Digital Italia cede al cliente tutti i diritti d'uso sul sito consegnato, nei limiti di quanto di seguito specificato.</p>
@@ -295,7 +304,7 @@
 
   <!-- 7. GESTIONE -->
   <div class="terms-section" id="gestione">
-    <h2>7. Gestione continuativa (Formula Presenza Digitale)</h2>
+    <h2>7. Gestione continuativa e manutenzione mensile</h2>
     <p>Il servizio di gestione mensile include le attività ordinarie indicate nel preventivo (aggiornamenti contenuti, manutenzione, backup, supporto). Non include:</p>
     <ul>
       <li>Riprogettazione grafica o strutturale del sito</li>
@@ -334,10 +343,10 @@
   <div class="terms-section" id="disdetta">
     <h2>9. Disdetta e recesso</h2>
 
-    <h3>Formula Autonoma — Recesso prima della consegna</h3>
+    <h3>Realizzazione sito — Recesso prima della consegna</h3>
     <p>Il cliente può recedere in qualsiasi momento comunicandolo per iscritto. In tal caso, l'acconto versato non è rimborsabile se i lavori sono già stati avviati. Studio Digital Italia addebiterà le attività svolte fino alla data di recesso in proporzione al corrispettivo totale concordato.</p>
 
-    <h3>Formula Presenza Digitale — Disdetta del canone mensile</h3>
+    <h3>Manutenzione mensile — Disdetta del canone</h3>
     <p>Il cliente può disdire il canone mensile in qualsiasi momento con preavviso scritto di 30 giorni. Studio Digital Italia consegnerà tutti gli accessi al sito entro 15 giorni dalla disdetta effettiva, previo saldo di eventuali importi dovuti.</p>
 
     <h3>Disdetta da parte di Studio Digital Italia</h3>
@@ -390,19 +399,20 @@
   <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
 </div>
 <script>
-  // Cookie banner
+  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
+    var b = document.getElementById('cookie-bar');
+    if (b) b.classList.remove('show');
     try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
-  (function() {
-    try {
-      if (localStorage.getItem('sdi_cookie_ok')) {
-        var b = document.getElementById('cookie-bar');
-        if (b) b.style.display = 'none';
-      }
-    } catch(e) {}
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    var accettato = false;
+    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
+    if (!accettato) {
+      var b = document.getElementById('cookie-bar');
+      if (b) b.classList.add('show');
+    }
+  });
 </script>
 </body>
 </html>

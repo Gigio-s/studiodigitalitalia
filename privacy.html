@@ -11,7 +11,7 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
   <meta name="description" content="Informativa sulla privacy e sui cookie di Studio Digital Italia, ai sensi del GDPR (Reg. UE 2016/679)." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://www.studiodigitalitalia.it/privacy.html" />
+  <link rel="canonical" href="https://studiodigitalitalia.it/privacy.html" />
   <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -120,14 +120,17 @@
     }
   
     /* ── COOKIE NOTICE ── */
+    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
+       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
     #cookie-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
       padding: 1rem 6%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: none; align-items: center; justify-content: space-between;
       gap: 1.5rem; flex-wrap: wrap;
       box-shadow: 0 -4px 24px rgba(0,0,0,.3);
     }
+    #cookie-bar.show { display: flex; }
     #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
     #cookie-bar a { color: #B8966A; text-decoration: underline; }
     #cookie-bar .cookie-btn {
@@ -300,19 +303,20 @@
   <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
 </div>
 <script>
-  // Cookie banner
+  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
+    var b = document.getElementById('cookie-bar');
+    if (b) b.classList.remove('show');
     try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
-  (function() {
-    try {
-      if (localStorage.getItem('sdi_cookie_ok')) {
-        var b = document.getElementById('cookie-bar');
-        if (b) b.style.display = 'none';
-      }
-    } catch(e) {}
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    var accettato = false;
+    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
+    if (!accettato) {
+      var b = document.getElementById('cookie-bar');
+      if (b) b.classList.add('show');
+    }
+  });
 </script>
 </body>
 </html>

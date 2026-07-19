@@ -15,7 +15,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="author" content="Studio Digital Italia" />
   <meta name="keywords" content="portfolio siti web, esempi siti web piccole imprese, sito web ristorante esempio, sito web idraulico, sito web dentista, sito web barbiere, sito web artigiano, creazione siti web Vicenza, siti web Italia" />
-  <link rel="canonical" href="https://www.studiodigitalitalia.it/portfolio.html" />
+  <link rel="canonical" href="https://studiodigitalitalia.it/portfolio.html" />
 
   <!-- ── GEO ── -->
   <meta name="geo.region" content="IT" />
@@ -24,10 +24,10 @@
 
   <!-- ── OPEN GRAPH ── -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.studiodigitalitalia.it/portfolio.html" />
+  <meta property="og:url" content="https://studiodigitalitalia.it/portfolio.html" />
   <meta property="og:title" content="Portfolio Siti Web — Studio Digital Italia" />
   <meta property="og:description" content="Esempi reali di siti web per ogni settore: ristoranti, artigiani, dentisti, negozi, studi professionali. Naviga i demo e scopri come potrebbe essere il tuo sito." />
-  <meta property="og:image" content="https://www.studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:image" content="https://studiodigitalitalia.it/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
   <meta property="og:locale" content="it_IT" />
 
@@ -36,20 +36,20 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://www.studiodigitalitalia.it/portfolio.html",
+    "@id": "https://studiodigitalitalia.it/portfolio.html",
     "name": "Portfolio Siti Web — Studio Digital Italia",
     "description": "Raccolta di siti web realizzati da Studio Digital Italia per piccole imprese italiane: ristoranti, artigiani, dentisti, barbieri, studi professionali e negozi.",
-    "url": "https://www.studiodigitalitalia.it/portfolio.html",
+    "url": "https://studiodigitalitalia.it/portfolio.html",
     "inLanguage": "it-IT",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Studio Digital Italia",
-      "url": "https://www.studiodigitalitalia.it"
+      "url": "https://studiodigitalitalia.it"
     },
     "publisher": {
       "@type": "ProfessionalService",
       "name": "Studio Digital Italia",
-      "url": "https://www.studiodigitalitalia.it",
+      "url": "https://studiodigitalitalia.it",
       "telephone": "+393277737115",
       "email": "info@studiodigitalitalia.it",
       "areaServed": { "@type": "Country", "name": "Italy" }
@@ -357,14 +357,17 @@
     }
   
     /* ── COOKIE NOTICE ── */
+    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
+       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
     #cookie-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
       padding: 1rem 6%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: none; align-items: center; justify-content: space-between;
       gap: 1.5rem; flex-wrap: wrap;
       box-shadow: 0 -4px 24px rgba(0,0,0,.3);
     }
+    #cookie-bar.show { display: flex; }
     #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
     #cookie-bar a { color: #B8966A; text-decoration: underline; }
     #cookie-bar .cookie-btn {
@@ -802,19 +805,20 @@
 </footer>
 
 <script>
-  // Cookie banner
+  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
+    var b = document.getElementById('cookie-bar');
+    if (b) b.classList.remove('show');
     try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
-  (function() {
-    try {
-      if (localStorage.getItem('sdi_cookie_ok')) {
-        var b = document.getElementById('cookie-bar');
-        if (b) b.style.display = 'none';
-      }
-    } catch(e) {}
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    var accettato = false;
+    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
+    if (!accettato) {
+      var b = document.getElementById('cookie-bar');
+      if (b) b.classList.add('show');
+    }
+  });
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');

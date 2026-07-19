@@ -10,13 +10,13 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
   <meta name="description" content="Tutte le domande frequenti su siti web, costi, tempi, hosting, SEO, Google Maps e gestione mensile. Risposte chiare, senza giri di parole." />
-  <link rel="canonical" href="https://www.studiodigitalitalia.it/faq.html" />
+  <link rel="canonical" href="https://studiodigitalitalia.it/faq.html" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.studiodigitalitalia.it/faq.html" />
+  <meta property="og:url" content="https://studiodigitalitalia.it/faq.html" />
   <meta property="og:title" content="FAQ — Studio Digital Italia" />
   <meta property="og:description" content="Tutte le domande frequenti su siti web, costi, tempi, hosting, SEO e gestione mensile. Risposte chiare, senza giri di parole." />
-  <meta property="og:image" content="https://www.studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:image" content="https://studiodigitalitalia.it/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
   <meta property="og:locale" content="it_IT" />
   <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
@@ -34,7 +34,7 @@
         "name": "Quanto costa un sito web?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Partiamo da 600€ per la Formula Essenziale (sito base fino a 4 pagine). La Formula Autonoma parte da 800€ per siti più strutturati con consegna completa. La Formula Presenza Digitale parte da 1.200€ + 45€/mese e include gestione continua, aggiornamenti e supporto. Tutti i prezzi sono trasparenti, senza sorprese."
+          "text": "Il Sito Base costa 900 € una tantum: sito 1-4 pagine, SEO locale di base, Google Maps e WhatsApp, consegna completa con accessi. Il Sito Pro costa 1.800 € una tantum: fino a 8 pagine, design su misura, SEO locale avanzato e Google Business Profile configurato. Per progetti più strutturati facciamo un preventivo su misura dopo un'analisi gratuita. In tutti i casi paghi una volta sola e il sito è tuo, senza canoni obbligatori."
         }
       },
       {
@@ -50,7 +50,7 @@
         "name": "Posso modificare il sito da solo dopo la consegna?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dipende dalla formula scelta. Con la Formula Autonoma consegniamo il codice completo e puoi fare quello che vuoi. Se hai scelto WordPress, potrai modificare testi e immagini facilmente anche senza competenze tecniche. Con la Formula Presenza Digitale ci occupiamo noi di tutte le modifiche incluse nel canone mensile."
+          "text": "Sì. In entrambi i pacchetti consegniamo tutti i file e gli accessi: il sito è tuo e puoi farne quello che vuoi. Se hai scelto WordPress potrai modificare testi e immagini facilmente anche senza competenze tecniche, e la formazione è inclusa. Se preferisci non occupartene, puoi attivare un pacchetto di manutenzione mensile e alle modifiche pensiamo noi."
         }
       },
       {
@@ -90,7 +90,7 @@
         "name": "Come funziona la manutenzione del sito?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Con la Formula Presenza Digitale la manutenzione è inclusa nel canone mensile: aggiornamenti tecnici, piccole modifiche ai contenuti, monitoraggio e supporto. Con la Formula Autonoma puoi richiedere aggiornamenti extra a pagamento, con tariffe chiare comunicate in anticipo."
+          "text": "La manutenzione non è obbligatoria: dopo la consegna il sito è tuo e continua a funzionare. Se vuoi delegarla, offriamo tre piani mensili con hosting, dominio e SSL già inclusi. Manutenzione Base 59 €/mese: aggiornamenti, backup, monitoraggio, report e risposta entro 48h. Manutenzione Pro 119 €/mese: tutto il Base più 1 ora di modifiche inclusa ogni mese, security scan, staging e risposta entro 24h. Manutenzione Su misura 199 €/mese: tutto il Pro più 3 ore di modifiche incluse, audit semestrale, analytics e risposta entro 12h. In alternativa puoi richiedere interventi singoli a 60 €/h, concordati in anticipo."
         }
       }
     ]
@@ -321,14 +321,17 @@
     }
   
     /* ── COOKIE NOTICE ── */
+    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
+       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
     #cookie-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
       padding: 1rem 6%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: none; align-items: center; justify-content: space-between;
       gap: 1.5rem; flex-wrap: wrap;
       box-shadow: 0 -4px 24px rgba(0,0,0,.3);
     }
+    #cookie-bar.show { display: flex; }
     #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
     #cookie-bar a { color: #B8966A; text-decoration: underline; }
     #cookie-bar .cookie-btn {
@@ -399,14 +402,13 @@
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Offriamo quattro formule:<br/><br/>
+          Offriamo tre pacchetti:<br/><br/>
           <ul>
-            <li><strong>Formula Essenziale</strong> — 600€ una tantum + 25€/mese (assistenza). Sito base fino a 4 pagine, ideale per chi parte da zero.</li>
-            <li><strong>Formula Autonoma</strong> — da 800€ una tantum. Sito completo con consegna totale, WordPress o HTML, SEO base inclusa.</li>
-            <li><strong>Formula Presenza Digitale</strong> — da 1.200€ + 45€/mese. Include gestione continua, aggiornamenti, assistenza e monitoraggio.</li>
-            <li><strong>Pacchetto Personalizzato</strong> — su preventivo. Per aziende medio-grandi ed enti con progetti importanti e strutturati (portali complessi, integrazioni gestionali/CRM, eventuale e-commerce). Analisi gratuita e preventivo su misura entro 48h.</li>
+            <li><strong>Sito Base</strong> — 900 € una tantum. Sito 1–4 pagine responsive, SEO locale di base, WhatsApp e Google Maps, consegna completa con accessi e formazione.</li>
+            <li><strong>Sito Pro</strong> — 1.800 € una tantum. Tutto del Sito Base, più: fino a 8 pagine con design su misura, SEO locale avanzato, Google Business Profile configurato e flussi di contatto avanzati.</li>
+            <li><strong>Su misura</strong> — su preventivo. Per aziende medio-grandi ed enti con progetti importanti e strutturati (portali complessi, aree riservate, multilingua, integrazioni gestionali/CRM, eventuale e-commerce). Analisi gratuita e preventivo entro 48h.</li>
           </ul>
-          <br/>Tutti i prezzi sono fissi e concordati in anticipo. Zero costi nascosti.
+          <br/>Tutti i prezzi sono fissi e concordati in anticipo. Paghi una volta sola e il sito è tuo: nessun canone obbligatorio, zero costi nascosti. Se poi vuoi delegare la manutenzione, abbiamo pacchetti mensili dedicati.
         </div>
       </div>
     </div>
@@ -443,8 +445,8 @@
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Per le formule una tantum (Essenziale e Autonoma): <strong>50% all'inizio</strong> del progetto e <strong>50% alla consegna</strong>. Nessun saldo prima che tu abbia visto e approvato il risultato.<br/><br/>
-          Per la Formula Presenza Digitale: acconto iniziale al via, poi canone mensile con pagamento anticipato. Disdetta possibile in qualsiasi momento con 30 giorni di preavviso.
+          Per Sito Base e Sito Pro: <strong>50% all'inizio</strong> del progetto e <strong>50% alla consegna</strong>. Nessun saldo prima che tu abbia visto e approvato il risultato.<br/><br/>
+          Se aggiungi un pacchetto di manutenzione mensile: il canone parte dalla data di go-live, con pagamento anticipato. Disdetta possibile in qualsiasi momento con 30 giorni di preavviso.
         </div>
       </div>
     </div>
@@ -530,9 +532,9 @@
           Dipende dalla tecnologia scelta:<br/><br/>
           <ul>
             <li><strong>WordPress</strong>: puoi modificare testi, immagini e contenuti in autonomia tramite pannello amministrativo, senza competenze tecniche.</li>
-            <li><strong>HTML statico</strong>: richiede conoscenze di base di HTML. Se non le hai, ti consigliamo la Formula Presenza Digitale dove ci occupiamo noi di tutte le modifiche.</li>
+            <li><strong>HTML statico</strong>: richiede conoscenze di base di HTML. Se non le hai, ti consigliamo di aggiungere un pacchetto di manutenzione mensile: alle modifiche pensiamo noi.</li>
           </ul>
-          <br/>Con la Formula Autonoma consegniamo tutti i file e gli accessi al sito.
+          <br/>In entrambi i pacchetti consegniamo tutti i file e gli accessi al sito.
         </div>
       </div>
     </div>
@@ -570,7 +572,7 @@
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Il sito rimane tuo. Con la Formula Autonoma ricevi tutti i file dalla prima consegna. Con la Formula Presenza Digitale, in caso di disdetta (30 giorni di preavviso), ti consegniamo tutti i file e gli accessi. Non teniamo "in ostaggio" nessun sito.
+          Il sito rimane tuo. Ricevi tutti i file e gli accessi già dalla prima consegna, con qualsiasi pacchetto. Se hai attivo un pacchetto di manutenzione e decidi di disdirlo (30 giorni di preavviso), il sito resta comunque tuo e funzionante. Non teniamo "in ostaggio" nessun sito.
         </div>
       </div>
     </div>
@@ -658,14 +660,15 @@
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Con la <strong>Formula Presenza Digitale</strong> (45€/mese) il canone mensile include:<br/><br/>
+          La manutenzione <strong>non è obbligatoria</strong>: dopo la consegna il sito è tuo e continua a funzionare senza che tu debba pagare nulla.<br/><br/>
+          Se preferisci non occupartene, abbiamo tre piani mensili. In tutti e tre <strong>hosting, dominio e SSL sono già inclusi nel canone</strong> — voci che comprate separatamente costano 270–530 € l'anno.<br/><br/>
           <ul>
-            <li>Aggiornamenti tecnici del sito</li>
-            <li>Piccole modifiche ai contenuti (testi, immagini, orari, servizi)</li>
-            <li>Monitoraggio del funzionamento</li>
-            <li>Supporto via email/WhatsApp</li>
+            <li><strong>Manutenzione Base — 59 €/mese.</strong> Aggiornamenti CMS e plugin, backup automatici, monitoraggio continuo, report mensile. Risposta entro 48h lavorative.</li>
+            <li><strong>Manutenzione Pro — 119 €/mese.</strong> Tutto il Base più <strong>1 ora di modifiche inclusa ogni mese</strong>, scansione sicurezza, ambiente di staging e report con dati di performance. Risposta entro 24h lavorative.</li>
+            <li><strong>Manutenzione Su misura — 199 €/mese.</strong> Tutto il Pro più <strong>3 ore di modifiche incluse ogni mese</strong>, audit di sicurezza semestrale e report con analytics. Risposta entro 12h lavorative.</li>
           </ul>
-          <br/>Con la <strong>Formula Essenziale</strong> (25€/mese) il canone include assistenza base e piccole correzioni. Modifiche più sostanziali sono a pagamento separato.
+          <br/>Ogni sito ha il suo piano consigliato e puoi passare a uno superiore quando vuoi. Le ore incluse valgono nel mese e non si accumulano; le ore extra sono a 60 €/h, sempre concordate prima.
+          <br/><br/>Se disdici (30 giorni di preavviso) ti consegniamo file e accessi: il sito resta tuo.
         </div>
       </div>
     </div>
@@ -803,19 +806,20 @@
 </footer>
 
 <script>
-  // Cookie banner
+  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
+    var b = document.getElementById('cookie-bar');
+    if (b) b.classList.remove('show');
     try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
-  (function() {
-    try {
-      if (localStorage.getItem('sdi_cookie_ok')) {
-        var b = document.getElementById('cookie-bar');
-        if (b) b.style.display = 'none';
-      }
-    } catch(e) {}
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    var accettato = false;
+    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
+    if (!accettato) {
+      var b = document.getElementById('cookie-bar');
+      if (b) b.classList.add('show');
+    }
+  });
   // Hamburger
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');

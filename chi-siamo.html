@@ -10,14 +10,14 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
   <meta name="description" content="Studio Digital Italia: chi siamo, perché esiste questo progetto e come lavoriamo. Un partner tecnico concreto per imprese, artigiani e attività locali." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.studiodigitalitalia.it/chi-siamo.html" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://studiodigitalitalia.it/chi-siamo.html" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.studiodigitalitalia.it/chi-siamo.html" />
+  <meta property="og:url" content="https://studiodigitalitalia.it/chi-siamo.html" />
   <meta property="og:title" content="Chi Siamo — Studio Digital Italia" />
   <meta property="og:description" content="Studio Digital Italia: chi siamo, perché esiste questo progetto e come lavoriamo. Un partner tecnico concreto per imprese, artigiani e attività locali." />
-  <meta property="og:image" content="https://www.studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:image" content="https://studiodigitalitalia.it/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
   <meta property="og:locale" content="it_IT" />
   <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
@@ -29,14 +29,14 @@
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "url": "https://www.studiodigitalitalia.it/chi-siamo.html",
+    "url": "https://studiodigitalitalia.it/chi-siamo.html",
     "name": "Chi siamo — Studio Digital Italia",
     "description": "Studio Digital Italia è uno studio operativo che costruisce presenze digitali concrete per imprese, artigiani e attività locali.",
     "mainEntity": {
       "@type": "ProfessionalService",
       "name": "Studio Digital Italia",
       "founder": { "@type": "Person", "name": "Luca Ramacciato" },
-      "url": "https://www.studiodigitalitalia.it"
+      "url": "https://studiodigitalitalia.it"
     }
   }
   </script>
@@ -244,14 +244,17 @@
     }
   
     /* ── COOKIE NOTICE ── */
+    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
+       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
     #cookie-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
       padding: 1rem 6%;
-      display: flex; align-items: center; justify-content: space-between;
+      display: none; align-items: center; justify-content: space-between;
       gap: 1.5rem; flex-wrap: wrap;
       box-shadow: 0 -4px 24px rgba(0,0,0,.3);
     }
+    #cookie-bar.show { display: flex; }
     #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
     #cookie-bar a { color: #B8966A; text-decoration: underline; }
     #cookie-bar .cookie-btn {
@@ -435,14 +438,14 @@
         <div class="metodo-n">5</div>
         <div class="metodo-content">
           <h3>Consegniamo</h3>
-          <p>Ti mostriamo il risultato, raccogliamo le tue correzioni e pubblichiamo online. Consegniamo tutti gli accessi. Se hai scelto la Formula Autonoma, sei indipendente da subito.</p>
+          <p>Ti mostriamo il risultato, raccogliamo le tue correzioni e pubblichiamo online. Consegniamo tutti gli accessi: il sito è tuo e sei indipendente da subito.</p>
         </div>
       </div>
       <div class="metodo-step">
         <div class="metodo-n">6</div>
         <div class="metodo-content">
           <h3>Restiamo (se vuoi)</h3>
-          <p>Con la Formula Presenza Digitale continuiamo a seguirti nel tempo: aggiornamenti, manutenzione, supporto. Un unico referente per tutta la tua presenza online.</p>
+          <p>Con un pacchetto di manutenzione mensile continuiamo a seguirti nel tempo: aggiornamenti, manutenzione, supporto. Un unico referente per tutta la tua presenza online.</p>
         </div>
       </div>
     </div>
@@ -541,19 +544,20 @@
 </footer>
 
 <script>
-  // Cookie banner
+  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
-    document.getElementById('cookie-bar').style.display = 'none';
+    var b = document.getElementById('cookie-bar');
+    if (b) b.classList.remove('show');
     try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
   }
-  (function() {
-    try {
-      if (localStorage.getItem('sdi_cookie_ok')) {
-        var b = document.getElementById('cookie-bar');
-        if (b) b.style.display = 'none';
-      }
-    } catch(e) {}
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    var accettato = false;
+    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
+    if (!accettato) {
+      var b = document.getElementById('cookie-bar');
+      if (b) b.classList.add('show');
+    }
+  });
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
