@@ -1,0 +1,14 @@
+# robots.txt — Dimora dei Colli (demo navigabile pubblica)
+# Questa demo è pubblica e indicizzabile: serve come esempio di portfolio
+# per Studio Digital Italia. Sostituire il dominio con quello reale se pubblicata a sé.
+
+User-agent: *
+Allow: /
+
+# Pagine senza valore per la ricerca organica (parametri / contenuti legali):
+Disallow: /prenota.html
+Disallow: /privacy.html
+Disallow: /cookie-policy.html
+Disallow: /termini-prenotazione.html
+
+Sitemap: https://studiodigitalitalia.it/dimora-dei-colli-demo/sitemap.xml

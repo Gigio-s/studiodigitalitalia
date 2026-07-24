@@ -1,0 +1,20 @@
+{
+  "name": "Dimora dei Colli — Boutique B&B nei Colli Berici",
+  "short_name": "Dimora dei Colli",
+  "description": "Boutique B&B con quattro camere nei Colli Berici, a venti minuti da Vicenza.",
+  "lang": "it-IT",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f1e8",
+  "theme_color": "#26382d",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

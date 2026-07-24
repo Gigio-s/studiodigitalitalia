@@ -1,0 +1,98 @@
+[
+  {
+    "id": "olivo",
+    "name": "Camera Olivo",
+    "url": "camera-olivo.html",
+    "image": "assets/img/camera-olivo.svg",
+    "alt": "Camera Olivo: letto matrimoniale con testiera in legno e finestra sul giardino",
+    "teaser": "La camera più tranquilla della casa, affacciata sul giardino e sugli ulivi che il nonno di Anna piantò negli anni Sessanta.",
+    "guests": 2,
+    "bed": "Matrimoniale 160×200",
+    "size": 22,
+    "view": "Giardino e uliveto",
+    "floor": "Piano terra",
+    "bathroom": "Bagno privato con doccia",
+    "features": [
+      "Ingresso indipendente dal giardino",
+      "Scrittoio in noce",
+      "Bollitore e tè sfusi",
+      "Aria condizionata"
+    ],
+    "basePrice": 135,
+    "weekendSupplement": 25,
+    "minNights": 1,
+    "cancellation": "Cancellazione gratuita fino a 7 giorni prima dell’arrivo."
+  },
+  {
+    "id": "vigna",
+    "name": "Camera Vigna",
+    "url": "camera-vigna.html",
+    "image": "assets/img/camera-vigna.svg",
+    "alt": "Camera Vigna: letto queen size e piccolo balcone affacciato sui filari",
+    "teaser": "Un piccolo balcone sui filari: al mattino si fa colazione guardando il lavoro nei vigneti, in autunno si sente la vendemmia.",
+    "guests": 2,
+    "bed": "Queen size 180×200",
+    "size": 24,
+    "view": "Vigneti a sud",
+    "floor": "Primo piano",
+    "bathroom": "Bagno privato con doccia a filo pavimento",
+    "features": [
+      "Balcone con due sedute",
+      "Armadio a muro restaurato",
+      "Tende oscuranti",
+      "Aria condizionata"
+    ],
+    "basePrice": 149,
+    "weekendSupplement": 25,
+    "minNights": 1,
+    "cancellation": "Cancellazione gratuita fino a 7 giorni prima dell’arrivo."
+  },
+  {
+    "id": "lavanda",
+    "name": "Camera Lavanda",
+    "url": "camera-lavanda.html",
+    "image": "assets/img/camera-lavanda.svg",
+    "alt": "Camera Lavanda: ambiente romantico con doccia ampia e tessuti chiari",
+    "teaser": "La più raccolta e la più richiesta dalle coppie: tessuti chiari, luce calda e una doccia ampia in pietra di Vicenza.",
+    "guests": 2,
+    "bed": "Matrimoniale 160×200",
+    "size": 20,
+    "view": "Corte interna e colli",
+    "floor": "Primo piano",
+    "bathroom": "Bagno privato con doccia ampia in pietra",
+    "features": [
+      "Illuminazione regolabile",
+      "Poltroncina di lettura",
+      "Set cortesia artigianale",
+      "Aria condizionata"
+    ],
+    "basePrice": 129,
+    "weekendSupplement": 20,
+    "minNights": 1,
+    "cancellation": "Cancellazione gratuita fino a 7 giorni prima dell’arrivo."
+  },
+  {
+    "id": "belvedere",
+    "name": "Suite Belvedere",
+    "url": "suite-belvedere.html",
+    "image": "assets/img/suite-belvedere.svg",
+    "alt": "Suite Belvedere: zona soggiorno e terrazza privata con vista sui Colli Berici",
+    "teaser": "Trentacinque metri quadrati con zona soggiorno e terrazza privata: la stanza da cui si vedono i Berici cambiare colore.",
+    "guests": 2,
+    "bed": "Matrimoniale 180×200",
+    "size": 35,
+    "view": "Panoramica sui Colli Berici",
+    "floor": "Secondo piano",
+    "bathroom": "Bagno privato con vasca freestanding e doccia",
+    "features": [
+      "Terrazza privata 12 m²",
+      "Zona soggiorno con divano",
+      "Macchina da caffè",
+      "Aria condizionata e travi a vista"
+    ],
+    "basePrice": 210,
+    "weekendSupplement": 35,
+    "minNights": 2,
+    "cancellation": "Cancellazione gratuita fino a 14 giorni prima dell’arrivo."
+  }
+]

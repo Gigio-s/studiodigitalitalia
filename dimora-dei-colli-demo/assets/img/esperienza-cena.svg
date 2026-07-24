@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="t">
+  <title id="t">Placeholder: tavolo apparecchiato per due con candela</title>
+  <rect width="800" height="600" fill="#2f2b26"/>
+  <circle cx="400" cy="230" r="220" fill="#4a4038" opacity="0.55"/>
+  <rect x="0" y="380" width="800" height="220" fill="#8a6a4a"/>
+  <rect x="0" y="380" width="800" height="20" fill="#a8845f" opacity="0.7"/>
+  <g>
+    <rect x="376" y="180" width="48" height="140" rx="8" fill="#f3ece0"/>
+    <ellipse cx="400" cy="322" rx="40" ry="12" fill="#d8cdbd"/>
+    <path d="M400 130 q22 34 0 52 q-22 -18 0 -52" fill="#e8a54c"/>
+    <circle cx="400" cy="168" r="42" fill="#f0c583" opacity="0.28"/>
+  </g>
+  <g fill="#f6f1e8">
+    <ellipse cx="180" cy="450" rx="86" ry="26"/>
+    <ellipse cx="620" cy="450" rx="86" ry="26"/>
+  </g>
+  <g fill="#e2d8c6">
+    <ellipse cx="180" cy="446" rx="58" ry="17"/><ellipse cx="620" cy="446" rx="58" ry="17"/>
+  </g>
+  <g fill="none" stroke="#d8cdbd" stroke-width="4">
+    <path d="M96 424 v52"/><path d="M264 424 v52"/><path d="M536 424 v52"/><path d="M704 424 v52"/>
+  </g>
+  <g stroke="#f6f1e8" stroke-width="4" fill="none">
+    <path d="M300 380 h48 v22 a24 24 0 0 1 -48 0 Z" fill="#a8684b"/>
+    <line x1="324" y1="426" x2="324" y2="462"/><line x1="306" y1="464" x2="342" y2="464"/>
+    <path d="M452 380 h48 v22 a24 24 0 0 1 -48 0 Z" fill="#a8684b"/>
+    <line x1="476" y1="426" x2="476" y2="462"/><line x1="458" y1="464" x2="494" y2="464"/>
+  </g>
+  <g fill="#536b56" opacity="0.8">
+    <circle cx="250" cy="530" r="12"/><circle cx="276" cy="546" r="10"/><circle cx="540" cy="536" r="12"/>
+  </g>
+</svg>

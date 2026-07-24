@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="t">
+  <title id="t">Placeholder: tavolo della colazione con torte e prodotti locali</title>
+  <defs>
+    <linearGradient id="tb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b08a63"/><stop offset="100%" stop-color="#8a6a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#f6f1e8"/>
+  <rect x="0" y="300" width="1200" height="500" fill="url(#tb)"/>
+  <rect x="0" y="300" width="1200" height="26" fill="#c49a70" opacity="0.5"/>
+  <rect x="90" y="340" width="1020" height="420" rx="6" fill="#f3ece0" opacity="0.92"/>
+  <g>
+    <circle cx="330" cy="500" r="98" fill="#ffffff"/>
+    <circle cx="330" cy="500" r="70" fill="#e8dcc6"/>
+    <path d="M330 430 A70 70 0 0 1 396 480 L330 500 Z" fill="#a8684b" opacity="0.7"/>
+    <circle cx="330" cy="500" r="98" fill="none" stroke="#d8cdbd" stroke-width="4"/>
+  </g>
+  <g>
+    <ellipse cx="620" cy="520" rx="86" ry="30" fill="#ffffff"/>
+    <path d="M534 520 Q620 420 706 520 Z" fill="#c98f5f"/>
+    <path d="M560 500 Q620 450 680 500" stroke="#f6f1e8" stroke-width="6" fill="none" opacity="0.7"/>
+  </g>
+  <g>
+    <rect x="820" y="430" width="110" height="130" rx="10" fill="#ffffff"/>
+    <rect x="820" y="430" width="110" height="40" rx="10" fill="#9aa88f"/>
+    <path d="M930 470 q40 30 0 60" stroke="#ffffff" stroke-width="12" fill="none"/>
+  </g>
+  <g fill="#a8684b" opacity="0.85">
+    <circle cx="1010" cy="600" r="24"/><circle cx="1052" cy="618" r="20"/><circle cx="990" cy="640" r="18"/>
+  </g>
+  <g fill="#536b56">
+    <ellipse cx="180" cy="640" rx="26" ry="14"/><ellipse cx="216" cy="656" rx="22" ry="12"/>
+  </g>
+  <rect x="700" y="620" width="220" height="14" rx="4" fill="#d8cdbd"/>
+  <rect x="700" y="644" width="160" height="14" rx="4" fill="#d8cdbd" opacity="0.7"/>
+</svg>

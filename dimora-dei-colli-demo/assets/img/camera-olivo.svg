@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="t">
+  <title id="t">Placeholder: Camera Olivo, letto matrimoniale e finestra sul giardino</title>
+  <defs>
+    <linearGradient id="w" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f1e8"/><stop offset="100%" stop-color="#e6ddcd"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfd8c4"/><stop offset="100%" stop-color="#7d8f7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#w)"/>
+  <rect x="470" y="90" width="250" height="270" rx="4" fill="url(#g)"/>
+  <rect x="470" y="90" width="250" height="270" rx="4" fill="none" stroke="#a8684b" stroke-width="6"/>
+  <line x1="595" y1="90" x2="595" y2="360" stroke="#a8684b" stroke-width="5"/>
+  <g fill="#536b56" opacity="0.7">
+    <ellipse cx="540" cy="250" rx="34" ry="42"/><ellipse cx="660" cy="270" rx="28" ry="36"/>
+  </g>
+  <rect x="60" y="300" width="360" height="30" rx="6" fill="#8a6a4a"/>
+  <rect x="70" y="150" width="340" height="155" rx="8" fill="#a8845f"/>
+  <rect x="60" y="325" width="360" height="130" rx="8" fill="#ffffff"/>
+  <rect x="60" y="325" width="360" height="46" rx="8" fill="#f0e9dc"/>
+  <rect x="96" y="290" width="120" height="52" rx="10" fill="#ffffff"/>
+  <rect x="252" y="290" width="120" height="52" rx="10" fill="#ffffff"/>
+  <rect x="60" y="455" width="360" height="22" rx="4" fill="#d8cdbd"/>
+  <rect x="430" y="400" width="90" height="10" rx="3" fill="#8a6a4a"/>
+  <rect x="452" y="410" width="8" height="70" fill="#8a6a4a"/>
+  <rect x="470" y="410" width="8" height="70" fill="#8a6a4a"/>
+  <circle cx="475" cy="378" r="26" fill="#9aa88f" opacity="0.6"/>
+  <rect x="0" y="520" width="800" height="80" fill="#d8cdbd" opacity="0.55"/>
+</svg>

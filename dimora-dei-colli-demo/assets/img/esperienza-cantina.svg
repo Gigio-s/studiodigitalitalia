@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="t">
+  <title id="t">Placeholder: degustazione in cantina, bicchieri e bottiglie</title>
+  <rect width="800" height="600" fill="#e7ddcb"/>
+  <path d="M0 0 h800 v380 a400 120 0 0 1 -800 0 Z" fill="#c9b9a1" opacity="0.55"/>
+  <rect x="0" y="430" width="800" height="170" fill="#8a6a4a"/>
+  <g fill="#26382d">
+    <rect x="300" y="180" width="54" height="250" rx="8"/>
+    <rect x="316" y="120" width="22" height="70" rx="4"/>
+    <rect x="300" y="270" width="54" height="86" fill="#a8684b"/>
+  </g>
+  <g fill="#3a5040" opacity="0.9">
+    <rect x="380" y="210" width="48" height="220" rx="8"/>
+    <rect x="394" y="158" width="20" height="60" rx="4"/>
+  </g>
+  <g fill="none" stroke="#f6f1e8" stroke-width="5">
+    <path d="M500 250 h90 v40 a45 45 0 0 1 -90 0 Z" fill="#a8684b" opacity="0.85"/>
+    <line x1="545" y1="335" x2="545" y2="400"/>
+    <line x1="512" y1="402" x2="578" y2="402"/>
+  </g>
+  <g fill="none" stroke="#f6f1e8" stroke-width="5">
+    <path d="M620 270 h76 v34 a38 38 0 0 1 -76 0 Z" fill="#a8684b" opacity="0.6"/>
+    <line x1="658" y1="342" x2="658" y2="400"/>
+    <line x1="630" y1="402" x2="686" y2="402"/>
+  </g>
+  <g stroke="#6f5236" stroke-width="3" opacity="0.6">
+    <line x1="0" y1="480" x2="800" y2="480"/><line x1="0" y1="540" x2="800" y2="540"/>
+  </g>
+</svg>

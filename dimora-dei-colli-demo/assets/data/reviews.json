@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Elena e Marco",
+    "from": "Milano",
+    "trip": "Weekend di coppia",
+    "rating": 5,
+    "text": "Siamo arrivati tardi, di venerdì, e ci hanno lasciato la luce accesa e due bicchieri sul tavolo della cucina. La mattina dopo la torta era ancora calda. Non serve altro.",
+    "source": "Recensione dimostrativa"
+  },
+  {
+    "name": "Familie Berger",
+    "from": "Monaco di Baviera",
+    "trip": "Vacanza in bicicletta",
+    "rating": 5,
+    "text": "Le e-bike erano già cariche e la traccia GPS pronta sul telefono. Ci hanno consigliato una strada che non avremmo mai trovato da soli.",
+    "source": "Recensione dimostrativa"
+  },
+  {
+    "name": "Giulia R.",
+    "from": "Bologna",
+    "trip": "Anniversario",
+    "rating": 5,
+    "text": "La Suite Belvedere vale il supplemento: la terrazza al tramonto è il motivo per cui siamo rimasti una notte in più.",
+    "source": "Recensione dimostrativa"
+  },
+  {
+    "name": "Pierre & Camille",
+    "from": "Lione",
+    "trip": "Viaggio enogastronomico",
+    "rating": 4,
+    "text": "Colazione eccellente e cantine consigliate perfette. Unica nota: la strada di accesso è stretta, meglio arrivare con luce.",
+    "source": "Recensione dimostrativa"
+  },
+  {
+    "name": "Stefano D.",
+    "from": "Padova",
+    "trip": "Fuga infrasettimanale",
+    "rating": 5,
+    "text": "A quaranta minuti da casa e sembrava di essere altrove. Silenzio vero la sera, solo grilli e qualche campana.",
+    "source": "Recensione dimostrativa"
+  },
+  {
+    "name": "Anna e Luca",
+    "from": "Trieste",
+    "trip": "Weekend lento",
+    "rating": 5,
+    "text": "Ci hanno preparato un itinerario su misura, con orari e parcheggi. Abbiamo visto tre ville senza mai fare una coda.",
+    "source": "Recensione dimostrativa"
+  }
+]

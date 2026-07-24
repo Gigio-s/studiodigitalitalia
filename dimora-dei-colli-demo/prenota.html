@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Prenota il tuo soggiorno — Dimora dei Colli, Colli Berici</title>
+<meta name="description" content="Verifica disponibilità e prenota direttamente le camere della Dimora dei Colli: condizioni più flessibili, esperienze incluse e contatto diretto con la struttura.">
+
+<link rel="canonical" href="https://studiodigitalitalia.it/dimora-dei-colli-demo/prenota.html">
+<!-- La pagina di prenotazione non porta traffico organico: si evita che generi
+     contenuti duplicati con parametri di query nell'indice. -->
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Dimora dei Colli">
+<meta property="og:title" content="Prenota — Dimora dei Colli">
+<meta property="og:description" content="Verifica disponibilità e prenota direttamente nei Colli Berici.">
+<meta property="og:url" content="https://studiodigitalitalia.it/dimora-dei-colli-demo/prenota.html">
+<meta property="og:image" content="https://studiodigitalitalia.it/dimora-dei-colli-demo/assets/img/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prenota — Dimora dei Colli">
+<meta name="twitter:description" content="Verifica disponibilità e prenota direttamente nei Colli Berici.">
+<meta name="twitter:image" content="https://studiodigitalitalia.it/dimora-dei-colli-demo/assets/img/og-image.svg">
+
+<meta name="theme-color" content="#26382d">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Salta al contenuto principale</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand__name">Dimora dei Colli</span>
+      <span class="brand__tag">Colli Berici · Vicenza</span>
+    </a>
+    <nav class="nav" aria-label="Navigazione principale">
+      <ul class="nav__list" id="menu-principale">
+        <li><a class="nav__link" href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a class="nav__link" href="camere.html" data-i18n="nav.rooms">Camere</a></li>
+        <li><a class="nav__link" href="esperienze.html" data-i18n="nav.experiences">Esperienze</a></li>
+        <li><a class="nav__link" href="offerte.html" data-i18n="nav.offers">Offerte</a></li>
+        <li><a class="nav__link" href="territorio.html" data-i18n="nav.area">Il territorio</a></li>
+        <li><a class="nav__link" href="chi-siamo.html" data-i18n="nav.about">La dimora</a></li>
+        <li><a class="nav__link" href="contatti.html" data-i18n="nav.contact">Contatti</a></li>
+      </ul>
+      <div class="lang-switch" role="group" aria-label="Lingua del sito">
+        <button type="button" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm btn--header" href="prenota.html" aria-current="page" data-i18n="nav.book">Prenota</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principale" aria-label="Apri il menu">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Percorso di navigazione">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Prenota</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-intro">
+        <p class="eyebrow">Prenotazione diretta</p>
+        <h1>Prenota il tuo soggiorno</h1>
+        <p class="lead">Quattro passaggi: date, camera, eventuali extra e riepilogo. Nessun pagamento viene richiesto online — la richiesta arriva a noi e rispondiamo entro poche ore.</p>
+      </div>
+
+      <p class="demo-note" style="max-width:70ch">
+        <strong>Questa è una demo.</strong> Le disponibilità sono simulate con regole fisse, i prezzi sono dimostrativi e nessun dato viene inviato o memorizzato su un server. In un sito reale questo flusso è collegato al channel manager della struttura.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="container">
+
+      <div id="booking-app" class="booking-layout">
+
+        <div>
+          <!-- Indicatore dei passaggi -->
+          <ol class="steps" aria-label="Avanzamento della prenotazione">
+            <li data-step="1" aria-current="step"><span class="steps__num">1</span> <span data-i18n="book.step1">Date e ospiti</span></li>
+            <li data-step="2" aria-current="false"><span class="steps__num">2</span> <span data-i18n="book.step2">Camera</span></li>
+            <li data-step="3" aria-current="false"><span class="steps__num">3</span> <span data-i18n="book.step3">Extra</span></li>
+            <li data-step="4" aria-current="false"><span class="steps__num">4</span> <span data-i18n="book.step4">Riepilogo</span></li>
+          </ol>
+
+          <!-- ============ PASSAGGIO 1 ============ -->
+          <div class="step-panel is-active" data-step="1">
+            <h2>Quando vuoi venire</h2>
+            <p class="lead">Il check-in è dalle 15 alle 20, il check-out entro le 10:30. Se arrivi più tardi scrivilo nelle note: non è un problema.</p>
+
+            <form id="step1-form" novalidate style="margin-top:1.8rem">
+              <div class="grid grid-2">
+                <div class="field">
+                  <label for="bk-checkin">Data di arrivo</label>
+                  <input type="date" id="bk-checkin" name="checkin" required>
+                </div>
+                <div class="field">
+                  <label for="bk-checkout">Data di partenza</label>
+                  <input type="date" id="bk-checkout" name="checkout" required>
+                </div>
+              </div>
+
+              <div class="grid grid-2" style="margin-top:1rem">
+                <div class="field">
+                  <label for="bk-guests">Numero di ospiti</label>
+                  <select id="bk-guests" name="guests">
+                    <option value="1">1 ospite</option>
+                    <option value="2" selected>2 ospiti</option>
+                  </select>
+                  <p class="field__hint">Tutte le camere sono doppie. Per gruppi più numerosi si prenotano più camere: scrivici e ci organizziamo.</p>
+                </div>
+                <div class="field">
+                  <label for="bk-notes">Preferenze o richieste</label>
+                  <textarea id="bk-notes" name="notes" rows="4" placeholder="Arrivo previsto, intolleranze alimentari, occasioni speciali, esigenze di accessibilità…"></textarea>
+                </div>
+              </div>
+
+              <p class="form-status" id="step1-status" role="alert" aria-live="assertive"></p>
+
+              <div class="btn-row" style="margin-top:1.4rem">
+                <button class="btn btn--primary" type="submit" data-track="booking_step1_next" data-i18n="book.next">Vedi le camere disponibili</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ============ PASSAGGIO 2 ============ -->
+          <div class="step-panel" data-step="2">
+            <h2>Scegli la camera</h2>
+            <p class="lead">Prezzi calcolati sulle date che hai indicato. Colazione sempre inclusa, tassa di soggiorno esclusa.</p>
+
+            <div id="rooms-list" style="margin-top:1.6rem" aria-live="polite"></div>
+
+            <div class="btn-row" style="margin-top:1.4rem">
+              <button class="btn btn--outline" type="button" data-goto="1" data-i18n="book.back">Torna alle date</button>
+              <button class="btn btn--primary" type="button" id="to-step3" data-goto="3" disabled data-i18n="book.next">Continua con gli extra</button>
+            </div>
+          </div>
+
+          <!-- ============ PASSAGGIO 3 ============ -->
+          <div class="step-panel" data-step="3">
+            <h2>Vuoi aggiungere qualcosa?</h2>
+            <p class="lead">Tutto facoltativo e tutto annullabile fino a 48 ore prima dell’arrivo. Gli extra si pagano in struttura insieme al soggiorno.</p>
+
+            <div class="extras" id="extras-list" style="margin-top:1.6rem"></div>
+
+            <div class="btn-row" style="margin-top:1.6rem">
+              <button class="btn btn--outline" type="button" data-goto="2" data-i18n="book.back">Torna alle camere</button>
+              <button class="btn btn--primary" type="button" data-goto="4" data-i18n="book.next">Vai al riepilogo</button>
+            </div>
+          </div>
+
+          <!-- ============ PASSAGGIO 4 ============ -->
+          <div class="step-panel" data-step="4">
+            <h2>Riepilogo della richiesta</h2>
+            <p class="lead">Controlla che sia tutto giusto. Da qui non parte nessun pagamento.</p>
+
+            <div id="recap-body" style="margin-top:1.6rem"></div>
+
+            <div class="demo-note" style="margin-top:1.6rem">
+              <strong data-i18n="book.demo">Questa è una demo. Nessun pagamento verrà effettuato.</strong><br>
+              In un sito reale, a questo punto ci sono due strade: la richiesta arriva via email alla struttura che conferma manualmente, oppure il visitatore prosegue sul booking engine collegato, che gestisce disponibilità reali e incasso della caparra.
+            </div>
+
+            <p class="form-status" id="final-status" role="status" aria-live="polite" tabindex="-1"></p>
+
+            <div class="btn-row" style="margin-top:1.4rem">
+              <button class="btn btn--outline" type="button" data-goto="3" data-i18n="book.back">Torna agli extra</button>
+              <button class="btn btn--terracotta" type="button" id="send-request" data-track="booking_invia_richiesta">Invia richiesta di prenotazione</button>
+              <button class="btn btn--primary" type="button" id="go-engine" data-track="booking_vai_engine">Continua sul booking engine</button>
+            </div>
+
+            <p class="note" style="margin-top:1.2rem">
+              Inviando una richiesta reale, i dati verrebbero trattati secondo la
+              <a href="privacy.html">privacy policy</a> e le
+              <a href="termini-prenotazione.html">condizioni di prenotazione</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ RIEPILOGO LATERALE (sticky su desktop) ============ -->
+        <aside class="summary" aria-label="Riepilogo della prenotazione">
+          <h3 data-i18n="book.total">Il tuo soggiorno</h3>
+          <div id="summary-body"></div>
+          <hr class="divider" style="margin-block:1.2rem">
+          <p class="note">
+            <strong>Prenotando direttamente:</strong> cancellazione più flessibile, bottiglia dei Berici in camera all’arrivo, orari di colazione concordati e nessuna commissione di intermediazione a carico della struttura.
+          </p>
+          <p class="note" style="margin-top:.8rem">
+            Dubbi? <a href="tel:+390444000000">+39 0444 000000</a> · <a href="mailto:info@dimoradeicolli.it">info@dimoradeicolli.it</a><br>
+            <span style="opacity:.75">Contatti dimostrativi.</span>
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Come funziona la logica demo: trasparenza verso il cliente che guarda la demo -->
+  <section class="section section--cream">
+    <div class="container container--narrow">
+      <h2>Come funziona questa simulazione</h2>
+      <p>Perché la demo sia credibile ma non ingannevole, le regole di prezzo e disponibilità sono fisse e documentate. Sono scritte in <code>assets/js/booking.js</code> e commentate riga per riga.</p>
+      <div class="table-wrap" style="margin-top:1.4rem">
+        <table class="spec-table">
+          <tr><th scope="row">Supplemento weekend</th><td>Le notti di venerdì e sabato costano da 20 a 35 € in più, secondo la camera.</td></tr>
+          <tr><th scope="row">Alta stagione</th><td>+18% da giugno a settembre e dal 20 al 31 dicembre.</td></tr>
+          <tr><th scope="row">Soggiorno minimo</th><td>Due notti per la Suite Belvedere, una per le altre camere.</td></tr>
+          <tr><th scope="row">Camera Vigna</th><td>Risulta occupata se l’arrivo cade di martedì.</td></tr>
+          <tr><th scope="row">Suite Belvedere</th><td>Risulta occupata se il giorno di arrivo è il 9, il 18 o il 27 del mese.</td></tr>
+        </table>
+      </div>
+      <p class="note" style="margin-top:1rem">Le ultime due regole servono solo a mostrare come si comporta l’interfaccia quando una camera non è disponibile. In produzione le disponibilità arrivano dal channel manager.</p>
+
+      <h3 style="margin-top:2.4rem">Cosa serve per renderlo reale</h3>
+      <p>Il flusso che hai appena provato è il livello di presentazione. Per farlo funzionare davvero serve un motore di prenotazione collegato al calendario della struttura. I sistemi più usati in Italia per strutture di queste dimensioni sono Cloudbeds, Beds24, Lodgify, Amenitiz, WuBook, Vertical Booking e Booking Expert.</p>
+      <p>L’integrazione può essere di due tipi: un <strong>deep link</strong> che passa date e camera già selezionate al motore esterno — veloce da fare, l’ospite cambia dominio nell’ultimo passaggio — oppure un <strong>widget incorporato</strong>, che tiene tutto sul sito ma costa di più e dipende dal fornitore. Il punto di aggancio è già predisposto nel codice, nella funzione <code>buildEngineUrl()</code>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid footer">
+      <div>
+        <span class="footer__brand">Dimora dei Colli</span>
+        <p>Boutique B&amp;B con quattro camere nei Colli Berici, a venti minuti da Vicenza.</p>
+        <p style="margin-top:1rem">
+          <a href="tel:+390444000000">+39 0444 000000</a><br>
+          <a href="mailto:info@dimoradeicolli.it">info@dimoradeicolli.it</a>
+        </p>
+      </div>
+      <div>
+        <h3>Struttura</h3>
+        <ul class="footer-list">
+          <li><a href="camere.html">Camere</a></li>
+          <li><a href="offerte.html">Offerte e pacchetti</a></li>
+          <li><a href="esperienze.html">Esperienze</a></li>
+          <li><a href="chi-siamo.html">La dimora</a></li>
+          <li><a href="faq.html">Domande frequenti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Informazioni</h3>
+        <ul class="footer-list">
+          <li><a href="territorio.html">Il territorio</a></li>
+          <li><a href="contatti.html">Contatti e come arrivare</a></li>
+          <li><a href="prenota.html">Prenota</a></li>
+          <li><a href="termini-prenotazione.html">Condizioni di prenotazione</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Dati della struttura</h3>
+        <p>
+          Dimora dei Colli di Rossi Anna &amp; C. s.a.s.<br>
+          Via dei Colli 12 — 36021 Barbarano Mossano (VI)<br>
+          P. IVA 00000000000<br>
+          CIN IT024000B4XXXXXXXX
+        </p>
+        <p class="note" style="color:rgba(246,241,232,.55);margin-top:.6rem">Dati placeholder da sostituire.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span data-year>2026</span> Dimora dei Colli</span>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="cookie-policy.html">Cookie policy</a>
+      <a href="termini-prenotazione.html">Condizioni di prenotazione</a>
+      <a href="faq.html#accessibilita">Accessibilità</a>
+      <span>Sito realizzato da Studio Digital Italia</span>
+    </div>
+  </div>
+</footer>
+
+<p class="footer-demo-banner">
+  <strong>Sito dimostrativo.</strong> Nessuna prenotazione è possibile e nessun pagamento viene elaborato.
+</p>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/rooms.js" defer></script>
+<script src="assets/js/booking.js" defer></script>
+</body>
+</html>
