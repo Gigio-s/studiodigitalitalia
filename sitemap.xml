@@ -27,6 +27,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ══ HUB SETTORI ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/settori.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ══ LANDING SETTORE — SITI WEB PER B&B ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/siti-web-bnb.html</loc>
