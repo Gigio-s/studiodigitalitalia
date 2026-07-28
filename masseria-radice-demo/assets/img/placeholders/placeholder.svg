@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Immagine dimostrativa">
+  <rect width="800" height="600" fill="#a9ae96"/>
+  <path d="M0 430 Q200 360 400 430 T800 430 V600 H0 Z" fill="#66705a"/>
+  <path d="M0 500 Q200 440 400 500 T800 500 V600 H0 Z" fill="#2f3a2e"/>
+  <circle cx="640" cy="140" r="54" fill="#f5f0e6" opacity="0.8"/>
+  <g stroke="#2f3a2e" stroke-width="4" fill="none" opacity="0.5">
+    <path d="M150 430 V330 M150 360 q-30 -20 -55 -10 M150 380 q30 -20 55 -10"/>
+  </g>
+  <text x="400" y="310" font-family="Georgia, serif" font-size="34" fill="#24251f" text-anchor="middle" opacity="0.7">Immagine dimostrativa</text>
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="18" fill="#24251f" text-anchor="middle" opacity="0.55">Sostituire con foto reale · vedi IMAGE-MANIFEST.md</text>
+</svg>

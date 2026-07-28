@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camere e appartamenti — Masseria Radice</title>
+<meta name="description" content="Otto alloggi tra camere, suite e case indipendenti nella Valle d'Itria. Prezzi indicativi e disponibilità dimostrativa. Prenota direttamente.">
+<link rel="canonical" href="https://www.masseriaradice.example/camere.html">
+<meta property="og:title" content="Camere e appartamenti — Masseria Radice">
+<meta property="og:description" content="Otto alloggi tra pietra e ulivi nella Valle d'Itria.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/booking.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Camere e appartamenti</li></ol></nav>
+    <p class="eyebrow">Dove dormire</p>
+    <h1>Otto alloggi, non uno di più</h1>
+    <p>Camere doppie, suite in edifici recuperati e case indipendenti con cucina. Ognuna affacciata sulla campagna, tutte con colazione contadina inclusa.</p>
+  </div></section>
+
+  <section class="section">
+    <div class="wrap">
+      <form class="booking-bar" data-booking-bar aria-label="Verifica disponibilità" style="margin-bottom:2rem">
+        <div class="field"><label for="ci">Check-in</label><input id="ci" type="date" name="checkin" required></div>
+        <div class="field"><label for="co">Check-out</label><input id="co" type="date" name="checkout" required></div>
+        <div class="field"><label for="ad">Adulti</label><select id="ad" name="adulti"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+        <div class="field"><label for="bm">Bambini</label><select id="bm" name="bambini"><option selected>0</option><option>1</option><option>2</option></select></div>
+        <div class="field"><label for="pt">Animali</label><select id="pt" name="animali"><option value="no" selected>No</option><option value="si">Sì</option></select></div>
+        <button class="btn btn--primary" type="submit">Cerca</button>
+      </form>
+      <div class="grid grid-3" data-accommodations-list></div>
+      <p class="note-demo">Prezzi indicativi e disponibilità dimostrativi. Tariffe, regole e politiche vanno confermate con la struttura prima della pubblicazione.</p>
+    </div>
+  </section>
+
+  <section class="section bg-alt"><div class="wrap center">
+    <h2>Prenota direttamente e ottieni il pacchetto migliore</h2>
+    <p class="lead" style="margin-inline:auto">Sul sito ufficiale trovi il miglior pacchetto disponibile, con la possibilità di aggiungere esperienze e comunicarci ogni esigenza.</p>
+    <p style="margin-top:1rem"><a class="btn btn--primary" href="prenota.html">Verifica disponibilità</a> <a class="btn btn--ghost" href="offerte.html">Vedi le offerte</a></p>
+  </div></section>
+</main>
+<div class="mobile-cta"><a class="btn btn--primary btn--block" href="prenota.html">Verifica disponibilità</a></div>
+<div id="site-footer-mount"></div>
+<script src="assets/data/accommodations-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/accommodations.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

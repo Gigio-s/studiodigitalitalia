@@ -1,0 +1,78 @@
+/* =====================================================================
+   booking.css — booking bar, motore prenotazione simulato, stepper
+   ===================================================================== */
+
+.booking-bar {
+  background: var(--warm-white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow); padding: 1rem; display: grid;
+  grid-template-columns: repeat(5, 1fr) auto; gap: .8rem; align-items: end;
+}
+.booking-bar .field { margin: 0; }
+@media (max-width: 900px) { .booking-bar { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .booking-bar { grid-template-columns: 1fr; } }
+.booking-bar .btn { height: 46px; }
+
+/* Hero variant sits on olive */
+.hero .booking-bar { margin-top: 2rem; }
+
+/* Stepper */
+.stepper { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: 0 0 1.6rem; counter-reset: step; }
+.stepper li {
+  flex: 1 1 auto; display: flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600;
+  color: var(--ink-soft); padding: .5rem .7rem; border-bottom: 3px solid var(--line);
+}
+.stepper li::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--stone); color: #fff; font-size: .78rem; }
+.stepper li[aria-current="step"] { color: var(--olive-dark); border-bottom-color: var(--accent); }
+.stepper li[aria-current="step"]::before { background: var(--accent); }
+.stepper li.done { color: var(--olive-dark); border-bottom-color: var(--olive); }
+.stepper li.done::before { background: var(--olive); content: "✓"; }
+
+.step-panel { display: none; }
+.step-panel.active { display: block; animation: fade .25s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px);} to {opacity:1; transform:none;} }
+
+.step-actions { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.6rem; flex-wrap: wrap; }
+
+/* Selectable option cards */
+.option-list { display: grid; gap: .8rem; }
+.option {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center;
+  border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1rem 1.1rem; background: var(--warm-white);
+  cursor: pointer; transition: border-color .18s, background .18s;
+}
+.option:hover { border-color: var(--olive); }
+.option input { margin: 0; width: 20px; height: 20px; accent-color: var(--accent); }
+.option.is-selected { border-color: var(--accent); background: rgba(155,92,67,.06); }
+.option.is-unavailable { opacity: .55; cursor: not-allowed; }
+.option .opt-title { font-family: var(--serif); font-size: 1.25rem; color: var(--olive-dark); }
+.option .opt-meta { font-size: .82rem; color: var(--ink-soft); }
+.option .opt-price { text-align: right; font-family: var(--serif); font-size: 1.2rem; color: var(--accent); }
+.option .opt-price small { display: block; font-family: var(--sans); font-size: .7rem; color: var(--ink-soft); }
+
+/* Summary */
+.summary { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.2rem 1.3rem; background: var(--bg-alt); position: sticky; top: calc(var(--header-h) + 12px); }
+.summary h3 { font-size: 1.3rem; }
+.summary-lines { list-style: none; margin: 1rem 0; padding: 0; }
+.summary-lines li { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px dashed var(--line); font-size: .9rem; }
+.summary-lines li.total { border-bottom: none; border-top: 2px solid var(--olive-dark); margin-top: .4rem; padding-top: .7rem; font-family: var(--serif); font-size: 1.3rem; color: var(--olive-dark); }
+.summary-lines .muted { color: var(--ink-soft); }
+
+.booking-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(1.4rem,3vw,2.4rem); align-items: start; }
+@media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } .summary { position: static; } }
+
+.availability-note { font-size: .82rem; color: var(--ink-soft); margin-top: .4rem; }
+.badge-avail { font-size: .72rem; font-weight: 700; padding: .2rem .55rem; border-radius: 100px; }
+.badge-avail.ok { background: rgba(102,112,90,.18); color: var(--olive-dark); }
+.badge-avail.low { background: rgba(211,183,123,.3); color: #7a5a15; }
+.badge-avail.none { background: rgba(155,92,67,.16); color: var(--red-earth); }
+
+/* meal / extra chips */
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: .7rem; }
+.pick {
+  border: 1px solid var(--line); border-radius: var(--radius-lg); padding: .9rem 1rem; background: var(--warm-white);
+  display: flex; flex-direction: column; gap: .3rem; cursor: pointer;
+}
+.pick.is-selected { border-color: var(--accent); background: rgba(155,92,67,.06); }
+.pick b { font-family: var(--serif); font-size: 1.1rem; color: var(--olive-dark); }
+.pick span { font-size: .8rem; color: var(--ink-soft); }
+.pick .p { font-weight: 700; color: var(--accent); font-size: .9rem; }

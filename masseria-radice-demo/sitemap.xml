@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DEMO: sostituire il dominio e le date <lastmod> prima della pubblicazione -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.masseriaradice.example/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.masseriaradice.example/soggiorna.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.masseriaradice.example/camere.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/camera-ulivo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/camera-grano.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/camera-carrubo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/camera-fico.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/suite-lamia.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/suite-trullo.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/appartamento-corte.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/alloggi/casa-frantoio.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/ristorante.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.masseriaradice.example/menu-stagionale.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/azienda-agricola.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/degustazione-olio.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/corso-cucina.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/visita-fattoria.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/raccolta-olive.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/picnic-ulivi.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/e-bike.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/esperienza-famiglia.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/esperienze/produttori-locali.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/stagioni.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/prodotti.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.masseriaradice.example/territorio.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.masseriaradice.example/offerte.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.masseriaradice.example/eventi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/matrimoni.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/ritiri.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/gift-card.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/componi-soggiorno.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/diario.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/quando-visitare-valle-ditria.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/raccolta-olive.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/cosa-significa-agriturismo.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/weekend-enogastronomico-puglia.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/cosa-fare-con-bambini.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/articoli/guida-borghi-valle-ditria.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.masseriaradice.example/chi-siamo.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/faq.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.masseriaradice.example/contatti.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.masseriaradice.example/en/index.html</loc><priority>0.6</priority></url>
+</urlset>

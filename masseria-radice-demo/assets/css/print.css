@@ -1,0 +1,12 @@
+/* print.css — stampa pulita (menu, riepilogo prenotazione, itinerario) */
+@media print {
+  .site-header, .site-footer, .mobile-cta, .nav-backdrop, .demo-flag,
+  .booking-bar, .hero__actions, .btn, .newsletter, .step-actions { display: none !important; }
+  body { color: #000; background: #fff; font-size: 12pt; padding: 0; }
+  a { text-decoration: none; color: #000; }
+  .section { padding-block: 1rem; }
+  .placeholder { border: 1px solid #ccc; background: #f4f4f4 !important; }
+  .placeholder[data-label]::after { color: #555; text-shadow: none; }
+  h1, h2, h3 { color: #000; }
+  .wrap { max-width: 100%; }
+}

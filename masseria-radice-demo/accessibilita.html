@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibilità — Masseria Radice</title>
+<meta name="description" content="Dichiarazione di accessibilità dimostrativa: obiettivi WCAG 2.1 AA, funzioni implementate e come segnalare problemi.">
+<link rel="canonical" href="https://www.masseriaradice.example/accessibilita.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Accessibilità</li></ol></nav>
+    <h1>Accessibilità</h1>
+  </div></section>
+  <section class="section"><div class="wrap prose">
+    <p>Vogliamo che il sito sia usabile da tutti. La demo punta agli standard <b>WCAG 2.1 livello AA</b>.</p>
+    <h2>Cosa abbiamo implementato</h2>
+    <ul>
+      <li>Skip link e struttura semantica con landmark</li>
+      <li>Navigazione completa da tastiera, focus visibile e focus trap nel menu mobile</li>
+      <li>Chiusura con Escape, <code>aria-expanded</code> e blocco dello scroll quando il menu è aperto</li>
+      <li>Etichette sui campi, errori associati e messaggi con <code>aria-live</code></li>
+      <li>Alternativa testuale alla mappa illustrata e alla mappa statica</li>
+      <li>Tabelle responsive, accordion accessibili e nessuna informazione affidata al solo colore</li>
+      <li>Rispetto di <code>prefers-reduced-motion</code> e target touch adeguati</li>
+    </ul>
+    <h2>Segnala un problema</h2>
+    <p>Se incontri una barriera, scrivici a <a href="mailto:ciao@masseriaradice.example">ciao@masseriaradice.example</a>: interverremo il prima possibile.</p>
+    <p class="mono-note">Dichiarazione dimostrativa, da adattare al sito reale.</p>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

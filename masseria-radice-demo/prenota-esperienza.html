@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prenota un'esperienza — Masseria Radice</title>
+<meta name="description" content="Richiedi un'esperienza in masseria: scegli attività, data e partecipanti. Gestione di stagionalità, capienza, età minima e meteo. Nessun invio reale.">
+<link rel="canonical" href="https://www.masseriaradice.example/prenota-esperienza.html">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li><a href="esperienze.html">Esperienze</a></li><li>Prenota</li></ol></nav>
+    <p class="eyebrow">Esperienze su prenotazione</p>
+    <h1>Prenota un'esperienza</h1>
+    <p>Scegli l'attività e dicci quando. Alcune dipendono dalla stagione e dal meteo: te lo confermiamo noi.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap" style="max-width:760px">
+    <form data-lead-form="esperienza" novalidate>
+      <div class="field"><label for="e-sel">Esperienza</label><select id="e-sel" name="esperienza" data-exp-select required></select><span class="error-msg" aria-live="polite"></span></div>
+      <div class="field-row">
+        <div class="field"><label for="e-data">Data preferita</label><input id="e-data" name="data" type="date" required><span class="error-msg" aria-live="polite"></span></div>
+        <div class="field"><label for="e-part">Partecipanti</label><input id="e-part" name="partecipanti" type="number" min="1" value="2" required></div>
+      </div>
+      <div class="field"><label for="e-tipo">Sei ospite della masseria?</label><select id="e-tipo" name="tipo"><option>Ospite interno</option><option>Esterno</option></select></div>
+      <div class="field"><label for="e-req">Requisiti particolari (età bambini, accessibilità, lingua…)</label><textarea id="e-req" name="requisiti"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label for="e-nome">Nome</label><input id="e-nome" name="nome" type="text" required><span class="error-msg" aria-live="polite"></span></div>
+        <div class="field"><label for="e-email">Email</label><input id="e-email" name="email" type="email" required data-error="Inserisci un'email valida."><span class="error-msg" aria-live="polite"></span></div>
+      </div>
+      <label class="check"><input type="checkbox" name="consenso" required><span>Acconsento al trattamento dei dati (<a href="privacy.html">privacy</a>).</span></label>
+      <button class="btn btn--primary" type="submit" style="margin-top:1rem">Invia richiesta</button>
+      <p class="form-status" data-form-status role="status"></p>
+      <div class="note-demo">Alcune esperienze sono “su richiesta” o soggette a lista d'attesa. Questa è una demo: la richiesta non viene trasmessa.</div>
+    </form>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/data/experiences-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/experiences.js"></script>
+<script src="assets/js/forms.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

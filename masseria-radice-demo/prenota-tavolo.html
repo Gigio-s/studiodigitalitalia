@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prenota un tavolo — Masseria Radice</title>
+<meta name="description" content="Prenota la cena al ristorante agricolo: disponibilità dimostrativa, allergeni, ospiti interni ed esterni. Nessun invio reale.">
+<link rel="canonical" href="https://www.masseriaradice.example/prenota-tavolo.html">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li><a href="ristorante.html">Ristorante</a></li><li>Prenota un tavolo</li></ol></nav>
+    <p class="eyebrow">Cena su prenotazione</p>
+    <h1>Prenota un tavolo</h1>
+    <p>Pochi coperti, sempre su prenotazione. Nel demo il ristorante è chiuso lunedì e martedì.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap" style="max-width:760px">
+    <form data-table-form novalidate>
+      <div class="field-row">
+        <div class="field"><label for="t-data">Data</label><input id="t-data" name="data" type="date" required><span class="error-msg" aria-live="polite"></span></div>
+        <div class="field"><label for="t-ora">Orario</label><select id="t-ora" name="orario"><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="t-pers">Persone</label><select id="t-pers" name="persone"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+        <div class="field"><label for="t-tipo">Sei ospite della masseria?</label><select id="t-tipo" name="tipo"><option>Ospite interno</option><option>Esterno</option></select></div>
+      </div>
+      <p class="availability-note" data-table-availability aria-live="polite"></p>
+      <div class="field"><label for="t-bimbi">Bambini</label><select id="t-bimbi" name="bambini"><option>No</option><option>Sì</option></select></div>
+      <div class="field"><label for="t-all">Allergie o intolleranze</label><input id="t-all" name="allergie" type="text" placeholder="Indicaci tutto ciò che dobbiamo sapere"></div>
+      <div class="field"><label for="t-acc">Esigenze di accessibilità</label><input id="t-acc" name="accessibilita" type="text"></div>
+      <div class="field-row">
+        <div class="field"><label for="t-nome">Nome</label><input id="t-nome" name="nome" type="text" required><span class="error-msg" aria-live="polite"></span></div>
+        <div class="field"><label for="t-tel">Telefono</label><input id="t-tel" name="telefono" type="tel"></div>
+      </div>
+      <label class="check"><input type="checkbox" name="consenso" required><span>Acconsento al trattamento dei dati (<a href="privacy.html">privacy</a>).</span></label>
+      <button class="btn btn--primary" type="submit" style="margin-top:1rem">Richiedi tavolo</button>
+      <p class="form-status" data-table-status role="status"></p>
+      <div class="note-demo">Le informazioni sugli allergeni vanno confermate direttamente con la struttura. Questa è una demo: la richiesta non viene trasmessa.</div>
+      <p class="mono-note">Integrazioni future: TheFork, OpenTable, Quandoo, Superb, sistema proprietario o email/CRM (vedi README).</p>
+    </form>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/data/seasons-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/restaurant.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Masseria Radice">
+  <rect width="64" height="64" rx="10" fill="#2f3a2e"/>
+  <path d="M14 46 Q32 14 50 46" fill="none" stroke="#f5f0e6" stroke-width="3"/>
+  <line x1="32" y1="28" x2="32" y2="50" stroke="#f5f0e6" stroke-width="3"/>
+  <path d="M32 42 C25 42 22 47 18 52 M32 36 C39 36 42 43 46 50 M32 46 C29 49 28 51 26 54 M32 46 C35 49 36 51 38 54" fill="none" stroke="#d3b77b" stroke-width="2" stroke-linecap="round"/>
+</svg>

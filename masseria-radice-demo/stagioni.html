@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le stagioni in masseria — Masseria Radice</title>
+<meta name="description" content="Cosa cambia in masseria durante l'anno: paesaggio, lavori agricoli, prodotti, menu, esperienze e pacchetti. Un calendario stagionale accessibile.">
+<link rel="canonical" href="https://www.masseriaradice.example/stagioni.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Le stagioni</li></ol></nav>
+    <p class="eyebrow">Il ritmo dell'anno</p>
+    <h1>Quattro stagioni, quattro masserie</h1>
+    <p>La stessa campagna cambia volto ogni pochi mesi. Ecco cosa aspettarti, stagione per stagione.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap" data-seasons-detail></div></section>
+
+  <section class="section bg-alt" id="matrice"><div class="wrap">
+    <p class="eyebrow">Calendario</p>
+    <h2>Quale esperienza in quale mese</h2>
+    <p class="lead">Matrice accessibile: quando è disponibile ogni esperienza, se dipende dal meteo e se è adatta ai bambini.</p>
+    <div class="table-wrap" style="margin-top:1rem" data-season-matrix></div>
+    <p class="mono-note">Disponibilità dimostrative. La raccolta delle olive dipende dal raccolto reale.</p>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/data/seasons-data.js"></script>
+<script src="assets/data/experiences-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/seasonal.js"></script>
+<script src="assets/js/analytics.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var mount = document.querySelector("[data-seasons-detail]");
+  var order = ["primavera","estate","autunno","inverno"];
+  var ph = { primavera:"ph-sage", estate:"ph-wheat", autunno:"ph-earth", inverno:"ph-stone" };
+  mount.innerHTML = order.map(function (k, i) {
+    var s = window.MR.seasons[k];
+    var media = '<div class="split__media"><span class="placeholder ' + ph[k] + '" data-label="' + s.label + ' in campagna (foto da inserire)"></span></div>';
+    var body = '<div><p class="eyebrow">' + s.label + '</p><h2>' + s.label + '</h2>' +
+      '<ul class="spec"><li><span>Clima</span><b>' + s.climate + '</b></li>' +
+      '<li><span>Cosa cresce</span><b>' + s.growing + '</b></li>' +
+      '<li><span>Si raccoglie</span><b>' + s.harvest + '</b></li>' +
+      '<li><span>In cucina</span><b>' + s.dish + '</b></li>' +
+      '<li><span>Esperienza</span><b>' + s.experience + '</b></li>' +
+      '<li><span>Pacchetto</span><b>' + s.package + '</b></li></ul>' +
+      '<p class="small muted"><b>Cosa mettere in valigia:</b> ' + s.pack.join(", ") + '.</p>' +
+      '<a class="btn btn--ghost" href="offerte.html">Vedi il pacchetto</a></div>';
+    var reverse = i % 2 === 1 ? " split--reverse" : "";
+    return '<div class="split' + reverse + '" style="margin-bottom:3rem">' + (reverse ? body + media : media + body) + '</div>';
+  }).join("");
+});
+</script>
+</body>
+</html>

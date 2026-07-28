@@ -1,0 +1,10 @@
+# Masseria Radice — robots.txt (DEMO)
+# SOSTITUIRE il dominio prima della pubblicazione.
+User-agent: *
+Allow: /
+Disallow: /prenota.html
+Disallow: /prenota-tavolo.html
+Disallow: /prenota-esperienza.html
+Disallow: /carrello.html
+
+Sitemap: https://www.masseriaradice.example/sitemap.xml

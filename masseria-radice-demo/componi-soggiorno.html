@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Componi il tuo soggiorno — Masseria Radice</title>
+<meta name="description" content="Rispondi a poche domande e ricevi un itinerario dimostrativo con alloggio, esperienze e un pasto, su misura per il tuo viaggio in Valle d'Itria.">
+<link rel="canonical" href="https://www.masseriaradice.example/componi-soggiorno.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/booking.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+<style>
+  .chips-choice { display:flex; flex-wrap:wrap; gap:.5rem; margin:.6rem 0 1.2rem; }
+  .chips-choice button { border:1px solid var(--line); background:var(--warm-white); border-radius:100px; padding:.5rem 1rem; font-weight:600; color:var(--ink-soft); font-size:.9rem; }
+  .chips-choice button[aria-pressed="true"] { background:var(--olive-dark); color:#fff; border-color:var(--olive-dark); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Componi il soggiorno</li></ol></nav>
+    <p class="eyebrow">Su misura</p>
+    <h1>Componi il tuo soggiorno</h1>
+    <p>Sei passaggi veloci. Alla fine ti proponiamo un itinerario con alloggio, due esperienze e un pasto.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap" style="max-width:880px" data-stay-builder>
+    <ol class="stepper">
+      <li aria-current="step">Chi viaggia</li><li>Ritmo</li><li>Interessi</li><li>Periodo</li><li>Esigenze</li><li>Risultato</li>
+    </ol>
+
+    <div class="step-panel active">
+      <h2>1 · Chi viaggia?</h2>
+      <div class="chips-choice" role="group" aria-label="Chi viaggia">
+        <button data-single="who" data-val="coppia" aria-pressed="true">Coppia</button>
+        <button data-single="who" data-val="famiglia" aria-pressed="false">Famiglia</button>
+        <button data-single="who" data-val="amici" aria-pressed="false">Amici</button>
+        <button data-single="who" data-val="solo" aria-pressed="false">Solo traveller</button>
+        <button data-single="who" data-val="gruppo" aria-pressed="false">Piccolo gruppo</button>
+      </div>
+      <div class="step-actions"><span></span><button class="btn btn--primary" data-next>Continua</button></div>
+    </div>
+
+    <div class="step-panel">
+      <h2>2 · Che ritmo cerchi?</h2>
+      <div class="chips-choice" role="group" aria-label="Ritmo (più scelte)">
+        <button data-multi="rhythm" data-val="riposo" aria-pressed="false">Riposo</button>
+        <button data-multi="rhythm" data-val="gastronomia" aria-pressed="false">Gastronomia</button>
+        <button data-multi="rhythm" data-val="campagna" aria-pressed="false">Campagna</button>
+        <button data-multi="rhythm" data-val="borghi" aria-pressed="false">Borghi</button>
+        <button data-multi="rhythm" data-val="mare" aria-pressed="false">Mare</button>
+        <button data-multi="rhythm" data-val="attivita" aria-pressed="false">Attività</button>
+      </div>
+      <div class="step-actions"><button class="btn btn--ghost" data-back>Indietro</button><button class="btn btn--primary" data-next>Continua</button></div>
+    </div>
+
+    <div class="step-panel">
+      <h2>3 · I tuoi interessi</h2>
+      <div class="chips-choice" role="group" aria-label="Interessi (più scelte)">
+        <button data-multi="interests" data-val="cucina" aria-pressed="false">Cucina</button>
+        <button data-multi="interests" data-val="olio" aria-pressed="false">Olio</button>
+        <button data-multi="interests" data-val="vino" aria-pressed="false">Vino</button>
+        <button data-multi="interests" data-val="bicicletta" aria-pressed="false">Bicicletta</button>
+        <button data-multi="interests" data-val="animali" aria-pressed="false">Animali</button>
+        <button data-multi="interests" data-val="artigianato" aria-pressed="false">Artigianato</button>
+        <button data-multi="interests" data-val="wellness" aria-pressed="false">Wellness</button>
+        <button data-multi="interests" data-val="fotografia" aria-pressed="false">Fotografia</button>
+      </div>
+      <div class="step-actions"><button class="btn btn--ghost" data-back>Indietro</button><button class="btn btn--primary" data-next>Continua</button></div>
+    </div>
+
+    <div class="step-panel">
+      <h2>4 · Quando?</h2>
+      <div class="chips-choice" role="group" aria-label="Periodo">
+        <button data-single="season" data-val="primavera" aria-pressed="false">Primavera</button>
+        <button data-single="season" data-val="estate" aria-pressed="false">Estate</button>
+        <button data-single="season" data-val="autunno" aria-pressed="false">Autunno</button>
+        <button data-single="season" data-val="inverno" aria-pressed="false">Inverno</button>
+      </div>
+      <p class="small muted">Se non scegli, usiamo la stagione in corso.</p>
+      <div class="step-actions"><button class="btn btn--ghost" data-back>Indietro</button><button class="btn btn--primary" data-next>Continua</button></div>
+    </div>
+
+    <div class="step-panel">
+      <h2>5 · Esigenze</h2>
+      <div class="chips-choice" role="group" aria-label="Esigenze (più scelte)">
+        <button data-multi="needs" data-val="dieta" aria-pressed="false">Dieta particolare</button>
+        <button data-multi="needs" data-val="bambini" aria-pressed="false">Bambini</button>
+        <button data-multi="needs" data-val="animali" aria-pressed="false">Animali</button>
+        <button data-multi="needs" data-val="accessibilita" aria-pressed="false">Accessibilità</button>
+        <button data-multi="needs" data-val="transfer" aria-pressed="false">Transfer</button>
+        <button data-multi="needs" data-val="celebrazione" aria-pressed="false">Celebrazione</button>
+      </div>
+      <div class="step-actions"><button class="btn btn--ghost" data-back>Indietro</button><button class="btn btn--primary" data-next>Vedi il risultato</button></div>
+    </div>
+
+    <div class="step-panel">
+      <div data-builder-result></div>
+      <div class="step-actions"><button class="btn btn--ghost" data-back>Modifica risposte</button><span></span></div>
+    </div>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/data/accommodations-data.js"></script>
+<script src="assets/data/experiences-data.js"></script>
+<script src="assets/data/seasons-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/stay-builder.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

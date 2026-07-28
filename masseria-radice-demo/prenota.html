@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prenota il tuo soggiorno — Masseria Radice</title>
+<meta name="description" content="Motore di prenotazione dimostrativo in cinque passaggi: date, alloggio, pasti, esperienze e riepilogo. Nessun pagamento reale.">
+<link rel="canonical" href="https://www.masseriaradice.example/prenota.html">
+<meta name="robots" content="noindex"><!-- flusso di prenotazione: fuori dall'indice -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/booking.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Prenota</li></ol></nav>
+    <p class="eyebrow">Prenotazione diretta</p>
+    <h1>Costruisci il tuo soggiorno</h1>
+    <p>Cinque passaggi, nessun pagamento. Alla fine puoi inviare una richiesta o continuare sul booking engine.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap booking-grid">
+    <div data-booking-engine>
+      <ol class="stepper">
+        <li aria-current="step">Date e ospiti</li><li>Alloggio</li><li>Pasti</li><li>Esperienze</li><li>Riepilogo</li>
+      </ol>
+
+      <!-- STEP 1 -->
+      <div class="step-panel active" data-step="1">
+        <h2>1 · Date e ospiti</h2>
+        <form data-step1>
+          <div class="field-row">
+            <div class="field"><label for="ci">Check-in</label><input id="ci" type="date" name="checkin" required></div>
+            <div class="field"><label for="co">Check-out</label><input id="co" type="date" name="checkout" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="ad">Adulti</label><select id="ad" name="adulti"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+            <div class="field"><label for="bm">Bambini</label><select id="bm" name="bambini"><option selected>0</option><option>1</option><option>2</option></select></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="pt">Animali</label><select id="pt" name="animali"><option value="no" selected>No</option><option value="si">Sì</option></select></div>
+            <div class="field"><label for="pref">Preferenze</label><input id="pref" name="preferenze" type="text" placeholder="Es. vicino piscina, piano terra…"></div>
+          </div>
+          <div class="step-actions"><span></span><button class="btn btn--primary" type="submit">Continua</button></div>
+        </form>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-panel" data-step="2" data-step2>
+        <h2>2 · Scegli l'alloggio</h2>
+        <p class="availability-note">Prezzi calcolati sulle tue date (logica dimostrativa: weekend +20%, alta stagione +30%, 7+ notti −10%).</p>
+        <div class="option-list" data-step2-list></div>
+        <div class="step-actions"><button class="btn btn--ghost" data-step2-back>Indietro</button><button class="btn btn--primary" data-step2-next>Continua</button></div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-panel" data-step="3">
+        <h2>3 · Piano pasti</h2>
+        <p class="muted">Scegli come vuoi mangiare. Non chiamiamo “tutto incluso” ciò che non lo è.</p>
+        <div class="pick-grid">
+          <div class="pick is-selected" data-meal="colazione" data-price="0"><b>Colazione inclusa</b><span>Già compresa nel soggiorno</span><span class="p">incluso</span></div>
+          <div class="pick" data-meal="cena" data-price="35"><b>Cena una sera</b><span>Menu stagionale, una serata</span><span class="p">€35 / notte</span></div>
+          <div class="pick" data-meal="mezza" data-price="45"><b>Mezza pensione</b><span>Colazione + cena</span><span class="p">€45 / notte</span></div>
+          <div class="pick" data-meal="picnic" data-price="30"><b>Picnic</b><span>Cestino tra gli ulivi</span><span class="p">€30 / notte</span></div>
+          <div class="pick" data-meal="nessuno" data-price="0"><b>Nessun extra</b><span>Solo colazione inclusa</span><span class="p">—</span></div>
+        </div>
+        <div class="step-actions"><button class="btn btn--ghost" data-step3-back>Indietro</button><button class="btn btn--primary" data-step3-next>Continua</button></div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step-panel" data-step="4">
+        <h2>4 · Esperienze ed extra</h2>
+        <p class="muted">Aggiungi ciò che vuoi vivere. Puoi selezionare più voci.</p>
+        <div class="pick-grid">
+          <div class="pick" data-extra="Degustazione olio" data-price="25"><b>Degustazione olio</b><span class="p">€25</span></div>
+          <div class="pick" data-extra="Corso di cucina" data-price="75"><b>Corso di cucina</b><span class="p">€75</span></div>
+          <div class="pick" data-extra="Visita alla fattoria" data-price="15"><b>Visita alla fattoria</b><span class="p">€15</span></div>
+          <div class="pick" data-extra="E-bike" data-price="35"><b>E-bike</b><span class="p">€35</span></div>
+          <div class="pick" data-extra="Picnic tra gli ulivi" data-price="30"><b>Picnic</b><span class="p">€30</span></div>
+          <div class="pick" data-extra="Transfer" data-price="40"><b>Transfer</b><span class="p">€40</span></div>
+          <div class="pick" data-extra="Culla" data-price="10"><b>Culla</b><span class="p">€10</span></div>
+          <div class="pick" data-extra="Pet kit" data-price="15"><b>Pet kit</b><span class="p">€15</span></div>
+          <div class="pick" data-extra="Allestimento romantico" data-price="45"><b>Allestimento romantico</b><span class="p">€45</span></div>
+        </div>
+        <div class="step-actions"><button class="btn btn--ghost" data-step4-back>Indietro</button><button class="btn btn--primary" data-step4-next>Vedi riepilogo</button></div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step-panel" data-step="5">
+        <h2>5 · Riepilogo</h2>
+        <ul class="summary-lines" data-summary-lines></ul>
+        <div class="note-demo">Questa è una demo. Nessun pagamento verrà effettuato.</div>
+        <form data-step5-form>
+          <div class="field-row">
+            <div class="field"><label for="s-nome">Nome</label><input id="s-nome" name="nome" required></div>
+            <div class="field"><label for="s-email">Email</label><input id="s-email" name="email" type="email" required></div>
+          </div>
+          <label class="check"><input type="checkbox" required><span>Accetto i <a href="termini-prenotazione.html">termini di prenotazione</a> e la <a href="privacy.html">privacy</a>.</span></label>
+          <div class="step-actions" style="margin-top:1rem">
+            <button class="btn btn--ghost" type="button" data-step5-back>Indietro</button>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+              <button class="btn btn--primary" type="submit">Invia richiesta (demo)</button>
+              <a class="btn btn--dark" href="#" onclick="return false" title="Placeholder booking engine">Continua sul booking engine</a>
+            </div>
+          </div>
+          <p class="form-status" data-final-status role="status"></p>
+        </form>
+      </div>
+    </div>
+
+    <aside class="summary">
+      <h3>Perché prenotare qui</h3>
+      <ul class="stack small" style="padding-left:1.1rem;margin-top:.6rem">
+        <li>Contatto diretto con chi gestisce</li>
+        <li>Pacchetti non presenti sulle OTA</li>
+        <li>Possibilità di aggiungere esperienze</li>
+        <li>Condizioni più flessibili quando disponibili</li>
+        <li>Un piccolo prodotto di benvenuto</li>
+        <li>Richieste alimentari comunicate direttamente</li>
+      </ul>
+      <p class="small muted" style="margin-top:.8rem"><b>Il miglior pacchetto disponibile sul sito ufficiale.</b> Non promettiamo sempre la tariffa più bassa: promettiamo il pacchetto migliore.</p>
+      <p class="mono-note">Integrazioni future: Octorate, WuBook, Vertical Booking, Beds24, Amenitiz, Cloudbeds, Lodgify (vedi README).</p>
+    </aside>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/data/accommodations-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Masseria Radice — campagna della Valle d'Itria">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0ead8"/>
+      <stop offset="1" stop-color="#e7ddc4"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9ae96"/>
+      <stop offset="1" stop-color="#66705a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- cielo caldo -->
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="930" cy="180" r="90" fill="#f5f0e6" opacity="0.85"/>
+
+  <!-- colline lontane -->
+  <path d="M0 430 Q300 360 620 420 T1200 400 V500 H0 Z" fill="#c9c0b0"/>
+  <path d="M0 470 Q350 410 700 460 T1200 450 V560 H0 Z" fill="#a9ae96"/>
+
+  <!-- campo -->
+  <rect y="520" width="1200" height="280" fill="url(#field)"/>
+  <path d="M0 520 Q300 560 600 525 T1200 520 V560 H0 Z" fill="#66705a" opacity="0.6"/>
+
+  <!-- masseria bianca -->
+  <g>
+    <rect x="150" y="360" width="230" height="165" fill="#fcfaf5"/>
+    <rect x="150" y="360" width="230" height="18" fill="#e7ddc4"/>
+    <path d="M150 360 L265 300 L380 360 Z" fill="#f5f0e6"/>
+    <path d="M150 360 L265 300 L380 360" fill="none" stroke="#c9c0b0" stroke-width="3"/>
+    <!-- trullo accanto -->
+    <rect x="392" y="430" width="70" height="95" fill="#fcfaf5"/>
+    <path d="M392 430 L427 372 L462 430 Z" fill="#9b5c43"/>
+    <rect x="180" y="430" width="34" height="60" fill="#66705a"/>
+    <rect x="245" y="435" width="28" height="40" fill="#d3b77b" opacity="0.7"/>
+    <rect x="305" y="435" width="28" height="40" fill="#d3b77b" opacity="0.7"/>
+  </g>
+
+  <!-- ulivi -->
+  <g fill="#66705a">
+    <g transform="translate(560,470)"><rect x="-4" y="0" width="8" height="55" fill="#7a6a4f"/><circle cx="0" cy="-8" r="42" fill="#8a9472"/><circle cx="-24" cy="6" r="30" fill="#a9ae96"/><circle cx="24" cy="6" r="30" fill="#7a8468"/></g>
+    <g transform="translate(720,500)"><rect x="-4" y="0" width="8" height="55" fill="#7a6a4f"/><circle cx="0" cy="-8" r="46" fill="#8a9472"/><circle cx="-26" cy="8" r="32" fill="#a9ae96"/><circle cx="26" cy="8" r="32" fill="#7a8468"/></g>
+    <g transform="translate(900,480)"><rect x="-4" y="0" width="8" height="55" fill="#7a6a4f"/><circle cx="0" cy="-8" r="42" fill="#8a9472"/><circle cx="-24" cy="6" r="30" fill="#a9ae96"/><circle cx="24" cy="6" r="30" fill="#7a8468"/></g>
+    <g transform="translate(1060,505)"><rect x="-4" y="0" width="8" height="55" fill="#7a6a4f"/><circle cx="0" cy="-8" r="40" fill="#8a9472"/><circle cx="-22" cy="6" r="28" fill="#a9ae96"/><circle cx="22" cy="6" r="28" fill="#7a8468"/></g>
+  </g>
+
+  <!-- muretto a secco -->
+  <rect x="0" y="640" width="1200" height="26" fill="#c9c0b0" opacity="0.7"/>
+
+  <!-- marchio -->
+  <g transform="translate(600,700)" opacity="0.92">
+    <path d="M-26 26 Q0 -18 26 26" fill="none" stroke="#2f3a2e" stroke-width="4"/>
+    <line x1="0" y1="4" x2="0" y2="34" stroke="#2f3a2e" stroke-width="4"/>
+    <text x="46" y="18" font-family="Georgia, serif" font-size="34" fill="#2f3a2e" font-weight="bold">Masseria Radice</text>
+    <text x="46" y="42" font-family="Arial, sans-serif" font-size="15" fill="#66705a" letter-spacing="3">VALLE D'ITRIA · PUGLIA</text>
+  </g>
+</svg>

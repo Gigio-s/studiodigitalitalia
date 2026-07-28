@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gift card — Masseria Radice</title>
+<meta name="description" content="Regala un soggiorno, una cena o un'esperienza in masseria. Gift card digitale con messaggio personalizzato. Demo: nessun pagamento reale.">
+<link rel="canonical" href="https://www.masseriaradice.example/gift-card.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/shop.css">
+<link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+<main id="main">
+  <section class="page-hero"><div class="wrap page-hero__inner">
+    <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li>Gift card</li></ol></nav>
+    <p class="eyebrow">Un'idea regalo</p>
+    <h1>Regala un pezzo di masseria</h1>
+    <p>Un soggiorno, una cena o un'esperienza, in una gift card digitale con il tuo messaggio.</p>
+  </div></section>
+
+  <section class="section"><div class="wrap detail-layout">
+    <form data-giftcard-form data-lead-form="giftcard" novalidate>
+      <div class="field"><label for="g-tipo">Tipo di gift card</label>
+        <select id="g-tipo" name="tipo" data-gc-type-src>
+          <option>Soggiorno</option><option>Cena</option><option>Esperienza</option><option>Importo libero</option>
+        </select></div>
+      <div class="field"><label for="g-val">Valore (€)</label><input id="g-val" name="importo" type="number" min="20" step="10" value="150" required><span class="error-msg" aria-live="polite"></span></div>
+      <div class="field-row">
+        <div class="field"><label for="g-to">Destinatario</label><input id="g-to" name="destinatario" type="text" placeholder="A chi è destinata" required><span class="error-msg" aria-live="polite"></span></div>
+        <div class="field"><label for="g-from">Mittente</label><input id="g-from" name="mittente" type="text" placeholder="Da parte di"></div>
+      </div>
+      <div class="field"><label for="g-msg">Messaggio</label><textarea id="g-msg" name="messaggio" placeholder="Un pensiero per chi la riceve"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label for="g-data">Data di consegna</label><input id="g-data" name="consegna" type="date"></div>
+        <div class="field"><label for="g-email">La tua email</label><input id="g-email" name="email" type="email" required data-error="Inserisci un'email valida."><span class="error-msg" aria-live="polite"></span></div>
+      </div>
+      <p class="small muted">Formato: digitale (PDF/email).</p>
+      <label class="check"><input type="checkbox" name="consenso" required><span>Acconsento al trattamento dei dati (<a href="privacy.html">privacy</a>).</span></label>
+      <button class="btn btn--primary" type="submit" style="margin-top:1rem">Crea gift card (demo)</button>
+      <p class="form-status" data-form-status role="status"></p>
+      <div class="note-demo">Nessun pagamento reale. La gift card non viene emessa: è una dimostrazione.</div>
+      <p class="mono-note">Integrazioni future: Stripe Payment Links, WooCommerce, sistema proprietario (vedi README).</p>
+    </form>
+
+    <aside>
+      <div class="gift-preview">
+        <div class="gc-brand">Masseria Radice</div>
+        <p class="small muted" style="margin:.2rem 0"><span data-gc-type>Soggiorno</span> · Gift card</p>
+        <div class="gc-value" data-gc-value>€150</div>
+        <p class="small"><b>Per:</b> <span data-gc-to>Per…</span><br><b>Da:</b> <span data-gc-from>Da…</span></p>
+        <p class="gc-msg" data-gc-msg>Il tuo messaggio apparirà qui.</p>
+      </div>
+      <p class="mono-note" style="margin-top:.6rem">Anteprima live. Grafica finale da realizzare.</p>
+    </aside>
+  </div></section>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/forms.js"></script>
+<script src="assets/js/analytics.js"></script>
+</body>
+</html>
