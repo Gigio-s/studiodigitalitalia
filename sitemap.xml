@@ -43,6 +43,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ══ LANDING SETTORE — SITI WEB PER ONORANZE FUNEBRI ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/siti-web-onoranze-funebri.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ══ FAQ ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/faq.html</loc>
@@ -55,6 +63,14 @@
   <url>
     <loc>https://studiodigitalitalia.it/dimora-dei-colli-demo/</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══ DEMO PUBBLICA — Onoranze Funebri Serafin (esempio di portfolio) ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/onoranze-funebri-serafin-demo/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

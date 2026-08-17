@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Gestionale necrologi - Onoranze Funebri Serafin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .gest{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .gest h3{font-size:1.1rem;margin:26px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .gest h3:first-child{margin-top:0}
+  .grow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fam-row{display:flex;gap:8px;margin-bottom:8px}
+  .fam-row input{flex:1;font-family:var(--body);font-size:1rem;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--text)}
+  .fam-row input:focus{outline:2px solid var(--bronze);border-color:var(--bronze)}
+  .fam-row button{flex:none;width:44px;border:1px solid var(--line);background:#fff;border-radius:4px;cursor:pointer;color:var(--text-soft);font-size:1.2rem;line-height:1}
+  .preset{display:flex;gap:8px}
+  .preset select{flex:none;width:44%}
+  .preset input{flex:1}
+  .preview-wrap{position:sticky;top:100px}
+  .preview-hint{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze-d);margin-bottom:12px;text-align:center}
+  .gest-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .gest-note{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--bronze);border-radius:4px;padding:14px 18px;font-size:.9rem;color:var(--text-soft);margin-bottom:30px}
+  @media(max-width:900px){ .gest{grid-template-columns:1fr} .preview-wrap{position:static} }
+</style>
+</head>
+<body data-page="">
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+
+<main id="main">
+  <div class="page-head"><div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> - Area gestione</div>
+    <h1>Gestionale necrologi</h1>
+    <p>Compila i dati: crei il PDF e pubblichi il necrologio online in un minuto.</p>
+  </div></div>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="gest-note">
+        <strong>Come funziona:</strong> compila il modulo a sinistra, controlla l'anteprima a destra, poi <strong>Genera PDF</strong> (manifesto da stampare) e/o <strong>Pubblica online</strong> (compare subito nella pagina Necrologi). Demo: i dati restano salvati in questo browser.
+      </div>
+
+      <div class="gest">
+        <!-- FORM -->
+        <form class="gest__form" id="form" autocomplete="off">
+          <h3>Dati del defunto</h3>
+          <div class="field"><label for="nome">Nome e cognome *</label><input id="nome" type="text" required placeholder="es. Maria Bianchi"></div>
+          <div class="grow">
+            <div class="field"><label for="nascita">Anno / data di nascita</label><input id="nascita" type="text" placeholder="es. 1941"></div>
+            <div class="field"><label for="morte">Anno / data di morte</label><input id="morte" type="text" placeholder="es. 2026"></div>
+          </div>
+          <div class="grow">
+            <div class="field"><label for="citta">Citta</label><input id="citta" type="text" placeholder="es. Vicenza"></div>
+            <div class="field"><label for="rito">Simbolo / rito</label>
+              <select id="rito"><option value="croce">Croce (cattolico)</option><option value="neutro">Neutro</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="foto">Foto (opzionale)</label><input id="foto" type="file" accept="image/*"></div>
+
+          <h3>Testo dell'annuncio</h3>
+          <div class="field"><label for="apertura">Frase di apertura</label>
+            <div class="preset">
+              <select id="apertura-sel">
+                <option value="E mancato all'affetto dei suoi cari">E mancato...</option>
+                <option value="E mancata all'affetto dei suoi cari">E mancata...</option>
+                <option value="Serenamente si e spento">Serenamente si e spento</option>
+                <option value="Serenamente si e spenta">Serenamente si e spenta</option>
+                <option value="Dopo lunga malattia si e spento">Dopo lunga malattia (uomo)</option>
+                <option value="Dopo lunga malattia si e spenta">Dopo lunga malattia (donna)</option>
+              </select>
+              <input id="apertura" type="text" value="E mancata all'affetto dei suoi cari">
+            </div>
+          </div>
+
+          <h3>Familiari che salutano</h3>
+          <div id="familiari"></div>
+          <button type="button" class="btn btn--ghost btn--sm" id="add-fam">Aggiungi familiare</button>
+
+          <div class="field" style="margin-top:18px"><label for="commiato">Frase di commiato</label>
+            <div class="preset">
+              <select id="commiato-sel">
+                <option value="ne danno il triste annuncio">ne danno il triste annuncio</option>
+                <option value="lo annunciano con dolore">lo annunciano con dolore</option>
+                <option value="la annunciano con dolore">la annunciano con dolore</option>
+                <option value="ne da il triste annuncio">ne da il triste annuncio</option>
+              </select>
+              <input id="commiato" type="text" value="ne danno il triste annuncio">
+            </div>
+          </div>
+
+          <h3>Esequie</h3>
+          <div class="grow">
+            <div class="field"><label for="esGiorno">Giorno</label><input id="esGiorno" type="text" placeholder="es. giovedi"></div>
+            <div class="field"><label for="esOra">Ora</label><input id="esOra" type="text" placeholder="es. 10.00"></div>
+          </div>
+          <div class="field"><label for="esLuogo">Luogo</label><input id="esLuogo" type="text" placeholder="es. Chiesa di S. Marco, Vicenza"></div>
+
+          <h3>Note (opzionale)</h3>
+          <div class="field"><label for="note">Nota finale</label>
+            <div class="preset">
+              <select id="note-sel">
+                <option value="">Nessuna</option>
+                <option value="Non fiori ma opere di bene">Non fiori ma opere di bene</option>
+                <option value="La famiglia ringrazia quanti parteciperanno al lutto">Ringraziamento famiglia</option>
+              </select>
+              <input id="note" type="text" value="" placeholder="Testo libero">
+            </div>
+          </div>
+
+          <div class="gest-actions">
+            <button type="button" class="btn btn--ghost" id="btn-pdf">Genera PDF</button>
+            <button type="submit" class="btn btn--primary" id="btn-pub">Pubblica online</button>
+          </div>
+        </form>
+
+        <!-- ANTEPRIMA -->
+        <div class="preview-wrap">
+          <div class="preview-hint">Anteprima dal vivo</div>
+          <div id="preview"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-mount"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/necrologi-store.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var fotoData = "";
+  var famWrap = $("familiari");
+
+  function addFam(val){
+    var row = document.createElement("div");
+    row.className = "fam-row";
+    row.innerHTML = '<input type="text" placeholder="es. la moglie Elena" value="' + (val||"").replace(/"/g,"&quot;") + '">' +
+      '<button type="button" aria-label="Rimuovi">&times;</button>';
+    row.querySelector("button").addEventListener("click", function(){ row.remove(); render(); });
+    row.querySelector("input").addEventListener("input", render);
+    famWrap.appendChild(row);
+  }
+
+  // collega select -> input (preset), mantiene modificabile
+  function linkPreset(selId, inId){
+    $(selId).addEventListener("change", function(){ $(inId).value = this.value; render(); });
+  }
+  linkPreset("apertura-sel","apertura");
+  linkPreset("commiato-sel","commiato");
+  linkPreset("note-sel","note");
+
+  function collect(){
+    var fam = Array.prototype.map.call(famWrap.querySelectorAll("input"), function(i){ return i.value.trim(); }).filter(Boolean);
+    var nascita = $("nascita").value.trim(), morte = $("morte").value.trim();
+    var anni = [nascita, morte].filter(Boolean).join(" - ");
+    return {
+      id: "preview",
+      nome: $("nome").value.trim() || "Nome Cognome",
+      anni: anni,
+      citta: $("citta").value.trim(),
+      rito: $("rito").value,
+      apertura: $("apertura").value.trim(),
+      familiari: fam,
+      commiato: $("commiato").value.trim(),
+      esGiorno: $("esGiorno").value.trim(),
+      esOra: $("esOra").value.trim(),
+      esLuogo: $("esLuogo").value.trim(),
+      note: $("note").value.trim(),
+      foto: fotoData
+    };
+  }
+
+  function render(){ $("preview").innerHTML = NECRO.annuncioHTML(collect()); }
+
+  // aggiorna anteprima su ogni modifica
+  document.getElementById("form").addEventListener("input", render);
+
+  // foto: ridimensiona e converte in dataURL (per PDF e salvataggio leggero)
+  $("foto").addEventListener("change", function(){
+    var file = this.files && this.files[0];
+    if(!file){ fotoData=""; render(); return; }
+    var reader = new FileReader();
+    reader.onload = function(e){
+      var img = new Image();
+      img.onload = function(){
+        var max = 600, w = img.width, h = img.height;
+        if(w>h && w>max){ h = h*max/w; w = max; } else if(h>max){ w = w*max/h; h = max; }
+        var c = document.createElement("canvas"); c.width=w; c.height=h;
+        c.getContext("2d").drawImage(img,0,0,w,h);
+        fotoData = c.toDataURL("image/jpeg", 0.82);
+        render();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Genera PDF
+  $("btn-pdf").addEventListener("click", function(){
+    var o = collect();
+    if(!$("nome").value.trim()){ alert("Inserisci almeno il nome del defunto."); return; }
+    NECRO.makePDF(o);
+  });
+
+  // Pubblica online
+  document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    var o = collect();
+    if(!o.nome || o.nome==="Nome Cognome"){ alert("Inserisci il nome del defunto."); return; }
+    delete o.id;
+    var id = NECRO.add(o);
+    location.href = "necrologio.html?id=" + encodeURIComponent(id);
+  });
+
+  // start
+  addFam("i figli e i nipoti");
+  render();
+})();
+</script>
+</body>
+</html>

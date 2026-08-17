@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://studiodigitalitalia.it/onoranze-funebri-serafin-demo/necrologi.html">
+<title>Necrologi - Onoranze Funebri Serafin</title>
+<meta name="description" content="Annunci funebri: luogo e orario delle esequie e messaggi di cordoglio alle famiglie. (Sito dimostrativo, nominativi inventati.)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* impostazione pagina necrologi (griglia schede, come Magnani, senza foto) */
+  .necro-search{max-width:560px;margin:0 auto 18px;display:flex;gap:10px}
+  .necro-search input{flex:1;font-family:var(--body);font-size:1rem;padding:14px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--text)}
+  .necro-search input:focus{outline:2px solid var(--bronze);border-color:var(--bronze)}
+  .demo-notice{max-width:760px;margin:0 auto 44px;background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--bronze);
+    border-radius:4px;padding:16px 22px;text-align:center;font-size:.92rem;color:var(--text-soft)}
+  .demo-notice strong{color:var(--dark)}
+  .necro-grid .card__body{text-align:center;padding:36px 26px}
+  .necro-grid .n-sym{width:38px;height:38px;color:var(--bronze);margin:0 auto 16px;display:block}
+  .necro-grid .n-name{font-family:var(--display);font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dark);margin:0 0 6px}
+  .necro-grid .n-dates{font-size:.95rem;color:var(--text-soft)}
+  .necro-grid .n-town{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-d);margin:12px 0 4px}
+  .necro-grid .n-when{font-size:.88rem;color:var(--text-soft);margin-top:6px}
+  .necro-grid .card__body .btn{margin-top:20px}
+  .necro-empty{display:none;text-align:center;color:var(--text-soft);margin-top:24px}
+</style>
+</head>
+<body data-page="necrologi">
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+
+<main id="main">
+  <div class="page-head"><div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> - Necrologi</div>
+    <h1>Necrologi</h1>
+    <p>Entra nella scheda per conoscere luogo e orario delle esequie e lasciare un messaggio di cordoglio.</p>
+  </div></div>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="demo-notice">
+        <strong>Avviso:</strong> i nominativi, le date e i luoghi riportati in questa pagina sono <strong>tutti esempi inventati</strong>, senza alcun riferimento a persone reali. Contenuto puramente dimostrativo.
+      </div>
+
+      <div class="necro-search">
+        <input type="search" id="necro-q" placeholder="Cerca un necrologio per nome..." aria-label="Cerca un necrologio per nome">
+      </div>
+
+      <div class="grid grid-3 necro-grid" id="necro-grid"></div>
+      <p class="necro-empty" id="necro-empty">Nessun necrologio corrisponde alla ricerca.</p>
+
+      <p class="center" style="margin-top:44px;color:var(--text-soft)">Per pubblicare un annuncio o lasciare un messaggio di cordoglio, <a href="contatti.html">contattateci</a>.</p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-mount"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/necrologi-store.js"></script>
+<script>
+  (function(){
+    var q = document.getElementById("necro-q");
+    var grid = document.getElementById("necro-grid");
+    var empty = document.getElementById("necro-empty");
+    if(!grid || !window.NECRO) return;
+    grid.innerHTML = NECRO.all().map(NECRO.renderCard).join("");
+    if(q) q.addEventListener("input", function(){
+      var v = q.value.trim().toLowerCase();
+      var shown = 0;
+      Array.prototype.forEach.call(grid.querySelectorAll(".card"), function(c){
+        var match = c.getAttribute("data-name").indexOf(v) !== -1;
+        c.style.display = match ? "" : "none";
+        if(match) shown++;
+      });
+      empty.style.display = shown ? "none" : "block";
+    });
+  })();
+</script>
+</body>
+</html>

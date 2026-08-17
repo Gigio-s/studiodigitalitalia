@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Necrologio - Onoranze Funebri Serafin</title>
+<meta name="description" content="Necrologio. (Sito dimostrativo.)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="necrologi">
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<div id="site-header-mount"></div>
+
+<main id="main">
+  <div class="page-head"><div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> - <a href="necrologi.html">Necrologi</a> - Necrologio</div>
+    <h1>Necrologio</h1>
+    <p>In memoria e vicinanza alla famiglia.</p>
+  </div></div>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div id="annuncio-mount"></div>
+
+      <div class="center" style="margin-top:32px" id="azioni" hidden>
+        <a class="btn btn--primary" id="btn-pdf">Scarica il PDF</a>
+        <a class="btn btn--ghost" href="contatti.html">Lascia un messaggio di cordoglio</a>
+      </div>
+
+      <p class="center" id="notfound" hidden style="color:var(--text-soft)">
+        Necrologio non trovato. Torna a <a href="necrologi.html">tutti i necrologi</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-mount"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/necrologi-store.js"></script>
+<script>
+  (function(){
+    function param(k){ return new URLSearchParams(location.search).get(k); }
+    var id = param("id");
+    var o = id && window.NECRO ? NECRO.get(id) : null;
+    var mount = document.getElementById("annuncio-mount");
+    if(!o){
+      document.getElementById("notfound").hidden = false;
+      return;
+    }
+    document.title = o.nome + " - Necrologio - Onoranze Funebri Serafin";
+    mount.innerHTML = NECRO.annuncioHTML(o);
+    document.getElementById("azioni").hidden = false;
+    document.getElementById("btn-pdf").addEventListener("click", function(e){
+      e.preventDefault();
+      NECRO.makePDF(o);
+    });
+  })();
+</script>
+</body>
+</html>
