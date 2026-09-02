@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Siti Web — Studio Digital Italia | Esempi per Ogni Settore</title>
+  <title>Portfolio Siti Web - Studio Digital Italia | Esempi per Ogni Settore</title>
   <!-- Security -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -25,7 +25,7 @@
   <!-- ── OPEN GRAPH ── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://studiodigitalitalia.it/portfolio.html" />
-  <meta property="og:title" content="Portfolio Siti Web — Studio Digital Italia" />
+  <meta property="og:title" content="Portfolio Siti Web - Studio Digital Italia" />
   <meta property="og:description" content="Esempi reali di siti web per ogni settore: ristoranti, artigiani, dentisti, negozi, studi professionali. Naviga i demo e scopri come potrebbe essere il tuo sito." />
   <meta property="og:image" content="https://studiodigitalitalia.it/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
@@ -37,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": "https://studiodigitalitalia.it/portfolio.html",
-    "name": "Portfolio Siti Web — Studio Digital Italia",
+    "name": "Portfolio Siti Web - Studio Digital Italia",
     "description": "Raccolta di siti web realizzati da Studio Digital Italia per piccole imprese italiane: ristoranti, artigiani, dentisti, barbieri, studi professionali e negozi.",
     "url": "https://studiodigitalitalia.it/portfolio.html",
     "inLanguage": "it-IT",
@@ -194,6 +194,42 @@
       text-decoration: none; display: block;
     }
     .port-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+
+    /* ── CAROSELLO SITI ONLINE ── */
+    .siti-carousel { position: relative; margin-top: 2.2rem; }
+    .siti-track {
+      display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth; padding: 1rem max(1rem, calc((100% - 360px) / 2));
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .siti-track::-webkit-scrollbar { display: none; }
+    .siti-track > * {
+      flex: 0 0 360px; max-width: 360px; scroll-snap-align: center;
+      border-radius: 12px; overflow: hidden;
+      transition: transform .45s ease, opacity .45s ease, box-shadow .45s ease;
+      transform: scale(.86); opacity: .4;
+    }
+    .siti-track > *.is-active {
+      transform: scale(1); opacity: 1; box-shadow: 0 18px 50px rgba(0,0,0,.4);
+    }
+    .siti-nav {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 6;
+      width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
+      background: var(--gold); color: #fff; font-size: 1.7rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center; padding-bottom: 3px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.35); transition: transform .15s, background .15s;
+    }
+    .siti-nav:hover { transform: translateY(-50%) scale(1.08); background: #9D7D57; }
+    .siti-nav.prev { left: 4px; }
+    .siti-nav.next { right: 4px; }
+    .siti-dots { display: flex; gap: .5rem; justify-content: center; margin-top: 1.4rem; }
+    .siti-dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: rgba(255,255,255,.25); transition: all .2s; }
+    .siti-dot.active { background: var(--gold); width: 22px; border-radius: 5px; }
+    @media (max-width: 760px) {
+      .siti-track > * { flex-basis: 80vw; max-width: 80vw; }
+      .siti-track { padding-inline: 10vw; }
+      .siti-nav { display: none; }
+    }
     .port-thumb {
       height: 220px;
       position: relative;
@@ -319,7 +355,7 @@
       display: flex; justify-content: space-between; align-items: flex-start;
       flex-wrap: wrap; gap: 2rem;
     }
-    .footer-logo img { height: 36px; filter: brightness(0) invert(1) opacity(.6); margin-bottom: .5rem; }
+    .footer-logo img { height: 48px; width: auto; margin-bottom: .5rem; }
     .footer-tagline { font-size: .83rem; color: rgba(255,255,255,.3); line-height: 1.6; }
     .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .footer-links a { font-size: .82rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
@@ -382,6 +418,33 @@
       #cookie-bar .cookie-btn { text-align: center; }
     }
   </style>
+<style id="sdi-footer-standard">
+  footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
+  footer .footer-inner {
+    max-width: 1160px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
+  }
+  footer .footer-brand { min-width: 0; }
+  footer .footer-logo { margin-bottom: .8rem; }
+  footer .footer-logo img { height: 56px; width: auto; filter: none; opacity: 1; }
+  footer .footer-tagline { font-size: .84rem; color: rgba(255,255,255,.35); line-height: 1.7; margin: 0; }
+  footer .footer-col h4 { font-family: inherit; font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 1.2rem; }
+  footer .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
+  footer .footer-col ul li { margin: 0; }
+  footer .footer-col ul a { color: rgba(255,255,255,.45); text-decoration: none; font-size: .85rem; transition: color .2s; }
+  footer .footer-col ul a:hover { color: #fff; }
+  footer .footer-muted { color: rgba(255,255,255,.45); font-size: .85rem; }
+  footer .footer-bottom {
+    max-width: 1160px; margin: 0 auto; padding-top: 1.5rem;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    font-size: .78rem; color: rgba(255,255,255,.2);
+  }
+  footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+  footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
+  @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
+</style>
 </head>
 <body>
 
@@ -408,7 +471,7 @@
   <div class="hero-port-inner">
     <div class="hero-eyebrow">Portfolio</div>
     <h1>Siti web realizzati<br/>per ogni <em>settore</em></h1>
-    <p>Ogni attività è diversa — e ogni sito che realizziamo è su misura. Naviga gli esempi, esplora i siti reali dei nostri clienti, e scopri come potrebbe essere il tuo.</p>
+    <p>Ogni attività è diversa - e ogni sito che realizziamo è su misura. Naviga gli esempi, esplora i siti reali dei nostri clienti, e scopri come potrebbe essere il tuo.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <strong>8+</strong>
@@ -435,7 +498,7 @@
   <div class="seo-intro-inner">
     <h2>Esempi reali di siti web per piccole imprese italiane</h2>
     <p>
-      Studio Digital Italia realizza siti web professionali per artigiani, ristoranti, studi medici, negozi, barbieri, imprese edili, affitti brevi e molto altro. Ogni demo qui sotto è un esempio navigabile e realistico di come potrebbe apparire il sito della tua attività. Lavoriamo con imprese di Vicenza, Padova, Verona e tutta Italia — online in 7 giorni lavorativi, SEO incluso.
+      Studio Digital Italia realizza siti web professionali per artigiani, ristoranti, studi medici, negozi, barbieri, imprese edili, affitti brevi e molto altro. Ogni demo qui sotto è un esempio navigabile e realistico di come potrebbe apparire il sito della tua attività. Lavoriamo con imprese di Vicenza, Padova, Verona e tutta Italia - online in 7 giorni lavorativi, SEO incluso.
     </p>
   </div>
 </div>
@@ -448,15 +511,17 @@
       <h2 class="section-title" style="color:var(--white);">Siti attivi e online</h2>
       <p class="section-sub">Clienti che ci hanno affidato la loro presenza digitale. Siti funzionanti, indicizzati su Google e aggiornati.</p>
     </div>
-    <div class="port-grid">
+    <div class="siti-carousel">
+      <button class="siti-nav prev" aria-label="Sito precedente">‹</button>
+      <div class="siti-track" id="sitiTrack">
       <!-- Rete Parco Pace -->
-      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card fade-in">
+      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card is-active">
         <div class="port-thumb assoc" style="background-image: linear-gradient(to bottom, rgba(10,36,20,.1) 0%, rgba(10,36,20,.78) 60%, rgba(10,36,20,.96) 100%), url('preview%20reteparcopace.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Associazioni</span>
           <div class="port-name">Rete Parco Pace</div>
-          <div class="port-sub">Associazione culturale — Vicenza</div>
+          <div class="port-sub">Associazione culturale - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Gestione sito + aggiornamenti contenuti</span>
@@ -465,13 +530,13 @@
       </a>
 
       <!-- L2 Traslochi -->
-      <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card fade-in">
+      <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card">
         <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Servizi</span>
           <div class="port-name">L2 Traslochi</div>
-          <div class="port-sub">Traslochi &amp; Sgomberi — Vicenza</div>
+          <div class="port-sub">Traslochi &amp; Sgomberi - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">WordPress + preventivo online</span>
@@ -480,7 +545,7 @@
       </a>
 
       <!-- Ramacciato Vintage -->
-      <a href="https://www.ramacciatovintage.it" target="_blank" rel="noopener" class="port-card fade-in">
+      <a href="https://www.ramacciatovintage.it" target="_blank" rel="noopener" class="port-card">
         <div class="port-thumb vintage" style="background-image: linear-gradient(to bottom, rgba(26,18,8,.1) 0%, rgba(26,18,8,.78) 60%, rgba(26,18,8,.96) 100%), url('anteprima%20ramacciato%20vintage.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
@@ -493,6 +558,22 @@
           <span class="port-foot-link">Visita il sito →</span>
         </div>
       </a>
+      <a href="https://deadpeopleactivity.com" target="_blank" rel="noopener" class="port-card">
+        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(12,6,10,.1) 0%, rgba(12,6,10,.78) 60%, rgba(12,6,10,.96) 100%), url('Anteprima%20Deadpeopleactivity.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
+          <div class="port-badge-real">✦ Sito reale</div>
+          <span class="port-tag">Musica</span>
+          <div class="port-name">Dead People Activity</div>
+          <div class="port-sub">Network musicale europeo</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Piattaforma multilingua + store + community</span>
+          <span class="port-foot-link">Visita il sito →</span>
+        </div>
+      </a>
+      </div>
+      <button class="siti-nav next" aria-label="Sito successivo">›</button>
+      <div class="siti-dots"></div>
     </div>
   </div>
 </section>
@@ -503,31 +584,21 @@
     <div class="fade-in">
       <div class="label-line"><span class="label-text">Demo navigabili</span></div>
       <h2 class="section-title">Esplora gli esempi per settore</h2>
-      <p class="section-sub">Ogni demo è un sito completo e navigabile — clicca per vedere come apparirebbe il sito della tua attività.</p>
+      <p class="section-sub">Ogni demo è un sito completo e navigabile - clicca per vedere come apparirebbe il sito della tua attività.</p>
     </div>
 
-    <!-- FILTRO -->
-    <div class="filter-bar fade-in">
-      <button class="filter-btn active" onclick="filterCards('all', this)">Tutti</button>
-      <button class="filter-btn" onclick="filterCards('ristorazione', this)">Ristorazione</button>
-      <button class="filter-btn" onclick="filterCards('artigianato', this)">Artigianato</button>
-      <button class="filter-btn" onclick="filterCards('professionisti', this)">Professionisti</button>
-      <button class="filter-btn" onclick="filterCards('salute', this)">Salute</button>
-      <button class="filter-btn" onclick="filterCards('retail', this)">Negozi</button>
-      <button class="filter-btn" onclick="filterCards('turismo', this)">Turismo &amp; B&amp;B</button>
-      <button class="filter-btn" onclick="filterCards('onoranze', this)">Onoranze funebri</button>
-    </div>
+    <div class="siti-carousel">
+      <button class="siti-nav prev" aria-label="Demo precedente">‹</button>
+      <div class="siti-track" id="demo-grid">
 
-    <div class="port-grid" id="demo-grid">
-
-      <!-- Dimora dei Colli — B&B (demo navigabile completa) -->
-      <a href="dimora-dei-colli-demo/index.html" target="_blank" class="port-card fade-in" data-cat="turismo">
+      <!-- Dimora dei Colli - B&B (demo navigabile completa) -->
+      <a href="dimora-dei-colli-demo/index.html" target="_blank" class="port-card is-active" data-cat="turismo">
         <div class="port-thumb bnb" style="background-image: linear-gradient(to bottom, rgba(20,30,24,.05) 0%, rgba(20,30,24,.6) 58%, rgba(20,30,24,.95) 100%), url('dimora-dei-colli-demo/assets/img/hero-dimora.svg'); background-size: cover; background-position: center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Turismo &amp; B&amp;B</span>
           <div class="port-name">Dimora dei Colli</div>
-          <div class="port-sub">Boutique B&amp;B — Colli Berici, Vicenza</div>
+          <div class="port-sub">Boutique B&amp;B - Colli Berici, Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito multi-pagina + prenotazione diretta</span>
@@ -535,14 +606,14 @@
         </div>
       </a>
 
-      <!-- Masseria Radice — Agriturismo (demo navigabile completa) -->
-      <a href="masseria-radice-demo/index.html" target="_blank" class="port-card fade-in" data-cat="turismo">
+      <!-- Masseria Radice - Agriturismo (demo navigabile completa) -->
+      <a href="masseria-radice-demo/index.html" target="_blank" class="port-card" data-cat="turismo">
         <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(24,25,20,.05) 0%, rgba(24,25,20,.6) 58%, rgba(24,25,20,.95) 100%), url('masseria-radice-demo/assets/img/hero-masseria.svg'); background-size: cover; background-position: center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Turismo &amp; Agriturismo</span>
           <div class="port-name">Masseria Radice</div>
-          <div class="port-sub">Agriturismo biologico — Valle d'Itria, Puglia</div>
+          <div class="port-sub">Agriturismo biologico - Valle d'Itria, Puglia</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito multi-pagina + prenotazione, ristorante, esperienze &amp; shop</span>
@@ -550,14 +621,14 @@
         </div>
       </a>
 
-      <!-- Onoranze Funebri Serafin — Onoranze funebri (demo navigabile completa) -->
-      <a href="onoranze-funebri-serafin-demo/index.html" target="_blank" class="port-card fade-in" data-cat="onoranze">
+      <!-- Onoranze Funebri Serafin - Onoranze funebri (demo navigabile completa) -->
+      <a href="onoranze-funebri-serafin-demo/index.html" target="_blank" class="port-card" data-cat="onoranze">
         <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(44,40,35,.05) 0%, rgba(44,40,35,.6) 58%, rgba(44,40,35,.95) 100%), url('onoranze-funebri-serafin-demo/assets/img/hero-serafin.svg'); background-size: cover; background-position: center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Onoranze funebri</span>
           <div class="port-name">Onoranze Funebri Serafin</div>
-          <div class="port-sub">Impresa funebre familiare — Vicenza</div>
+          <div class="port-sub">Impresa funebre familiare - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito multi-pagina + necrologi online &amp; gestionale</span>
@@ -566,13 +637,13 @@
       </a>
 
       <!-- Ristorante -->
-      <a href="demo-ristorante.html" target="_blank" class="port-card fade-in" data-cat="ristorazione">
+      <a href="demo-ristorante.html" target="_blank" class="port-card" data-cat="ristorazione">
         <div class="port-thumb rist" style="background-image: linear-gradient(to bottom, rgba(20,5,5,.1) 0%, rgba(20,5,5,.78) 60%, rgba(20,5,5,.96) 100%), url('preview%20da%20mario.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Ristorazione</span>
           <div class="port-name">Ristorante Da Mario</div>
-          <div class="port-sub">Trattoria — Vicenza</div>
+          <div class="port-sub">Trattoria - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Landing + prenotazione tavoli</span>
@@ -581,13 +652,13 @@
       </a>
 
       <!-- Idraulico -->
-      <a href="demo-idraulico.html" target="_blank" class="port-card fade-in" data-cat="artigianato">
+      <a href="demo-idraulico.html" target="_blank" class="port-card" data-cat="artigianato">
         <div class="port-thumb idraul" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20idraulico.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Artigianato</span>
           <div class="port-name">Idraulico Bianchi</div>
-          <div class="port-sub">Impianti &amp; Caldaie — Padova</div>
+          <div class="port-sub">Impianti &amp; Caldaie - Padova</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito vetrina + Google Maps</span>
@@ -596,13 +667,13 @@
       </a>
 
       <!-- Studio Commercialisti -->
-      <a href="demo-studio.html" target="_blank" class="port-card fade-in" data-cat="professionisti">
+      <a href="demo-studio.html" target="_blank" class="port-card" data-cat="professionisti">
         <div class="port-thumb salon" style="background-image: linear-gradient(to bottom, rgba(10,8,20,.1) 0%, rgba(10,8,20,.78) 60%, rgba(10,8,20,.96) 100%), url('preview%20ferretti.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Professionisti</span>
           <div class="port-name">Ferretti &amp; Associati</div>
-          <div class="port-sub">Studio Commercialisti — Vicenza</div>
+          <div class="port-sub">Studio Commercialisti - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito corporate + contatti</span>
@@ -611,13 +682,13 @@
       </a>
 
       <!-- Ottica / Negozio -->
-      <a href="demo-negozio.html" target="_blank" class="port-card fade-in" data-cat="retail">
+      <a href="demo-negozio.html" target="_blank" class="port-card" data-cat="retail">
         <div class="port-thumb artig" style="background-image: linear-gradient(to bottom, rgba(5,20,18,.1) 0%, rgba(5,20,18,.78) 60%, rgba(5,20,18,.96) 100%), url('preview%20ottica.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Retail &amp; Negozi</span>
           <div class="port-name">Ottica Visione</div>
-          <div class="port-sub">Ottica — Vicenza</div>
+          <div class="port-sub">Ottica - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Catalogo + prenotazione esame</span>
@@ -626,13 +697,13 @@
       </a>
 
       <!-- Dentista -->
-      <a href="demo-dentista.html" target="_blank" class="port-card fade-in" data-cat="salute">
+      <a href="demo-dentista.html" target="_blank" class="port-card" data-cat="salute">
         <div class="port-thumb dent">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Salute</span>
           <div class="port-name">Studio Dentistico</div>
-          <div class="port-sub">Odontoiatria — Vicenza</div>
+          <div class="port-sub">Odontoiatria - Vicenza</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Sito medico + prenotazione online</span>
@@ -641,7 +712,7 @@
       </a>
 
       <!-- Edilizia -->
-      <a href="demo-edilizia.html" target="_blank" class="port-card fade-in" data-cat="artigianato">
+      <a href="demo-edilizia.html" target="_blank" class="port-card" data-cat="artigianato">
         <div class="port-thumb edil">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
@@ -656,13 +727,13 @@
       </a>
 
       <!-- Barbiere -->
-      <a href="demo-barbiere.html" target="_blank" class="port-card fade-in" data-cat="professionisti">
+      <a href="demo-barbiere.html" target="_blank" class="port-card" data-cat="professionisti">
         <div class="port-thumb barb">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Benessere</span>
           <div class="port-name">Barbiere &amp; Grooming</div>
-          <div class="port-sub">Barbershop — Centro città</div>
+          <div class="port-sub">Barbershop - Centro città</div>
         </div>
         <div class="port-foot">
           <span class="port-foot-tech">Landing + prenotazione appuntamento</span>
@@ -671,6 +742,9 @@
       </a>
 
 
+      </div>
+      <button class="siti-nav next" aria-label="Demo successiva">›</button>
+      <div class="siti-dots"></div>
     </div>
   </div>
 </section>
@@ -681,7 +755,7 @@
     <div class="fade-in">
       <div class="label-line"><span class="label-text">Settori</span></div>
       <h2 class="section-title">Realizziamo siti per ogni tipo di attività</h2>
-      <p class="section-sub">Non hai trovato il tuo settore? Non importa — lavoriamo con qualsiasi tipo di impresa. Contattaci per un preventivo su misura.</p>
+      <p class="section-sub">Non hai trovato il tuo settore? Non importa - lavoriamo con qualsiasi tipo di impresa. Contattaci per un preventivo su misura.</p>
     </div>
     <div class="settori-grid fade-in">
       <div class="settore-chip"><span>🍕</span>Ristoranti &amp; Bar</div>
@@ -744,7 +818,7 @@
         <ul style="list-style:none;display:flex;flex-direction:column;gap:1.2rem;">
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Sembra gratis, non lo è.</strong> Abbonamento mensile, dominio, plugin premium, app extra: alla fine si spende più di un sito professionale — ogni anno.</div>
+            <div><strong style="color:rgba(255,255,255,.6);">Sembra gratis, non lo è.</strong> Abbonamento mensile, dominio, plugin premium, app extra: alla fine si spende più di un sito professionale - ogni anno.</div>
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
@@ -760,7 +834,7 @@
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Ci perdi settimane.</strong> Tra layout, testi, immagini e configurazioni — è un lavoro vero. E il risultato finale si vede.</div>
+            <div><strong style="color:rgba(255,255,255,.6);">Ci perdi settimane.</strong> Tra layout, testi, immagini e configurazioni - è un lavoro vero. E il risultato finale si vede.</div>
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
@@ -781,7 +855,7 @@
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Sito su misura per la tua attività.</strong> Design, testi e struttura pensati per il tuo settore e i tuoi clienti — non un template uguale a tutti.</div>
+            <div><strong style="color:var(--white);">Sito su misura per la tua attività.</strong> Design, testi e struttura pensati per il tuo settore e i tuoi clienti - non un template uguale a tutti.</div>
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
@@ -789,7 +863,7 @@
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Il sito è tuo, per sempre.</strong> Ti consegniamo tutti gli accessi. Puoi tenerlo con noi o gestirlo in autonomia — senza dipendere da nessuna piattaforma.</div>
+            <div><strong style="color:var(--white);">Il sito è tuo, per sempre.</strong> Ti consegniamo tutti gli accessi. Puoi tenerlo con noi o gestirlo in autonomia - senza dipendere da nessuna piattaforma.</div>
           </li>
           <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
             <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
@@ -820,26 +894,47 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="footer-logo"><img src="logo-completo.jpg" alt="Studio Digital Italia" /></div>
-      <div class="footer-tagline">Siti web professionali per piccole imprese italiane.<br/>Online in 7 giorni, SEO incluso.</div>
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
+      <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="pacchetti.html">Pacchetti</a>
-      <a href="index.html#contatti">Contatti</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="termini.html">Termini</a>
+    <div class="footer-col">
+      <h4>Servizi</h4>
+      <ul>
+        <li><a href="pacchetti.html">Siti web</a></li>
+        <li><a href="pacchetti.html">Google Business</a></li>
+        <li><a href="pacchetti.html">Gestione sito</a></li>
+        <li><a href="settori.html">Siti per settore</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="index.html#come-funziona">Come funziona</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="termini.html">Termini di Servizio</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
+        <li><a href="tel:+393277737115">327 773 7115</a></li>
+        <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
+        <li><span class="footer-muted">P.IVA 04400570240</span></li>
+      </ul>
     </div>
   </div>
-  <div class="footer-copy">
-    © 2025 Studio Digital Italia — P.IVA 04400570240 — info@studiodigitalitalia.it — 327 773 7115
+  <div class="footer-bottom">
+    <span>© 2026 Studio Digital Italia - Titolare: Luca Ramacciato</span>
+    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a> · Fatto con cura a Vicenza</span>
   </div>
 </footer>
 
 <script>
-  // Cookie banner — il consenso vale per tutto il sito (chiave sdi_cookie_ok)
+  // Cookie banner - il consenso vale per tutto il sito (chiave sdi_cookie_ok)
   function dismissCookieBar() {
     var b = document.getElementById('cookie-bar');
     if (b) b.classList.remove('show');
@@ -884,6 +979,45 @@ function filterPortfolio(btn, cat) {
   </p>
   <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
 </div>
+<!-- Caroselli (siti online + demo) -->
+<script>
+(function(){
+  function setup(carousel){
+    var track=carousel.querySelector('.siti-track'); if(!track) return;
+    var all=[].slice.call(track.children);
+    var dotsWrap=carousel.querySelector('.siti-dots');
+    var prev=carousel.querySelector('.siti-nav.prev');
+    var next=carousel.querySelector('.siti-nav.next');
+    var dots=[], timer=null, paused=false, pt=null;
+    function visible(){ return all.filter(function(c){ return c.offsetParent!==null; }); }
+    function buildDots(){
+      if(!dotsWrap) return; dotsWrap.innerHTML=''; dots=[];
+      visible().forEach(function(_,i){ var d=document.createElement('button'); d.type='button'; d.className='siti-dot'; d.setAttribute('aria-label','Vai a '+(i+1)); d.addEventListener('click',function(){ pauseFor(); goTo(i); }); dotsWrap.appendChild(d); dots.push(d); });
+    }
+    function centerActive(){
+      var vis=visible(); if(!vis.length) return 0;
+      var mid=track.scrollLeft+track.clientWidth/2, best=0, bd=Infinity;
+      vis.forEach(function(c,i){ var cc=c.offsetLeft+c.offsetWidth/2, dd=Math.abs(cc-mid); if(dd<bd){bd=dd;best=i;} });
+      all.forEach(function(c){ c.classList.remove('is-active'); });
+      vis[best].classList.add('is-active');
+      dots.forEach(function(d,i){ d.classList.toggle('active', i===best); });
+      return best;
+    }
+    function goTo(i){ var vis=visible(); if(!vis.length) return; i=(i+vis.length)%vis.length; var c=vis[i]; track.scrollTo({ left:c.offsetLeft-(track.clientWidth-c.offsetWidth)/2, behavior:'smooth' }); }
+    function play(){ if(timer) return; timer=setInterval(function(){ if(paused||document.hidden) return; goTo(centerActive()+1); }, 4200); }
+    function pauseFor(){ paused=true; clearTimeout(pt); pt=setTimeout(function(){ paused=false; }, 8000); }
+    prev&&prev.addEventListener('click',function(){ pauseFor(); goTo(centerActive()-1); });
+    next&&next.addEventListener('click',function(){ pauseFor(); goTo(centerActive()+1); });
+    var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(centerActive); },{passive:true});
+    carousel.addEventListener('mouseenter',function(){ paused=true; });
+    carousel.addEventListener('mouseleave',function(){ paused=false; });
+    track.addEventListener('touchstart',function(){ pauseFor(); },{passive:true});
+    buildDots(); centerActive(); goTo(0); play();
+  }
+  function init(){ document.querySelectorAll('.siti-carousel').forEach(setup); }
+  if(document.readyState!=='loading') init(); else window.addEventListener('DOMContentLoaded', init);
+})();
+</script>
 <script src="chat-widget.js" defer></script>
 </body>
 </html>

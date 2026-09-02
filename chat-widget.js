@@ -1,5 +1,5 @@
 /* =====================================================================
-   Studio Digital Italia — Widget WhatsApp + Chatbot guidato
+   Studio Digital Italia - Widget WhatsApp + Chatbot guidato
    - Un solo file, incluso in ogni pagina con <script src="chat-widget.js" defer></script>
    - Bot "guidato" (nessun server, nessun costo): risposte predefinite + WhatsApp
    - La conversazione RESTA anche cambiando pagina (salvata in localStorage)
@@ -10,31 +10,47 @@
   var PHONE = '393277737115';                 // numero WhatsApp (formato internazionale, senza + e spazi)
   var WA_TEXT = 'Ciao! Vorrei informazioni su un sito web.';
   var WA_URL = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(WA_TEXT);
-  var STORE = 'sdi_chat_v2';
+  var STORE = 'sdi_chat_v3';
 
   /* ---------- Stato persistente ---------- */
+  // Memoria di SESSIONE: la conversazione resta finche' il visitatore naviga nel sito,
+  // ma riparte da zero a ogni nuova apertura del sito (nuova sessione).
   function loadState() {
-    try { return JSON.parse(localStorage.getItem(STORE)) || { msgs: [], open: false }; }
+    try { return JSON.parse(sessionStorage.getItem(STORE)) || { msgs: [], open: false }; }
     catch (e) { return { msgs: [], open: false }; }
   }
   function saveState() {
-    try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {}
+    try { sessionStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {}
   }
+  // Pulizia una tantum delle vecchie conversazioni salvate in modo permanente (bug memoria).
+  try { localStorage.removeItem('sdi_chat_v2'); localStorage.removeItem('sdi_chat_v3'); } catch (e) {}
   var state = loadState();
 
   /* ---------- Logica del bot (guidato) ---------- */
   var CHIPS = [
-    { key: 'costo',      label: 'Quanto costa un sito?' },
-    { key: 'tempi',      label: 'Quanto tempo serve?' },
-    { key: 'settori',    label: 'Che siti fate?' },
-    { key: 'preventivo', label: 'Voglio un preventivo' }
+    { key: 'comefunziona', label: 'Come funziona?' },
+    { key: 'costo',        label: 'Quanto costa un sito?' },
+    { key: 'tempi',        label: 'Quanto tempo serve?' },
+    { key: 'settori',      label: 'Che siti fate?' },
+    { key: 'preventivo',   label: 'Voglio un preventivo' }
   ];
 
   var REPLIES = {
-    costo: 'I nostri pacchetti sono chiari: Sito Base a 900 €, Sito Pro a 1.800 €, e preventivo su misura per progetti particolari. La gestione mensile (hosting, dominio e aggiornamenti) parte da 59 €/mese.',
+    comefunziona: 'Semplice, in 3 passi: 1) ci racconti la tua attività e ci mandi testi e foto; 2) realizziamo il sito su misura e configuriamo Google Maps; 3) va online in circa 7 giorni. Tu non devi fare quasi nulla: pensiamo noi a hosting, sicurezza e aggiornamenti.',
+    costo: 'I pacchetti sono chiari: Sito Base a 900 €, Sito Pro a 1.800 €, e preventivo su misura per progetti particolari. La gestione mensile (hosting, dominio e aggiornamenti) parte da 59 €/mese. Paghi una volta e il sito è tuo, senza canoni obbligatori.',
     tempi: 'Il tuo sito è online in circa 7 giorni lavorativi da quando riceviamo testi e foto. Per progetti più grandi (e-commerce o molte pagine) può servire qualche giorno in più: te lo indichiamo sempre nel preventivo, senza sorprese.',
-    settori: 'Realizziamo siti su misura per piccole imprese: B&B e strutture ricettive, ristoranti e bar, artigiani (idraulici, elettricisti, imprese edili), studi professionali e medici, negozi e attività locali. Ogni sito include versione mobile, SEO di base e Google Maps. Nella pagina “Settori” trovi gli esempi navigabili per categoria.',
-    preventivo: 'Perfetto! Il modo più veloce è scriverci su WhatsApp con il pulsante verde qui sotto: ti rispondiamo noi. In alternativa usa il modulo nella sezione Contatti.',
+    settori: 'Realizziamo siti su misura per attività di Vicenza e provincia: B&B e strutture ricettive, ristoranti e bar, artigiani (idraulici, elettricisti, imprese edili), studi professionali e medici, negozi, onoranze funebri e attività locali. Ogni sito include versione mobile, SEO di base e Google Maps. Nella pagina "Settori" trovi gli esempi navigabili.',
+    dove: 'Siamo di Vicenza e lavoriamo con imprese, artigiani e professionisti di Vicenza e di tutta la provincia. Possiamo incontrarti di persona in zona; se sei fuori provincia lavoriamo comunque da remoto, in tutto il Veneto e in Italia.',
+    gestione: 'Se vuoi, ci occupiamo noi di tutto: hosting, dominio, aggiornamenti e piccole modifiche, a partire da 59 €/mese. Non è obbligatorio: dopo la consegna il sito è tuo e puoi gestirlo anche da solo.',
+    ecommerce: 'Sì, realizziamo anche e-commerce e cataloghi prodotti: schede, carrello, pagamenti e gestione ordini. Tempi e prezzo dipendono dal numero di prodotti: ti prepariamo un preventivo su misura.',
+    modifiche: 'Come preferisci: possiamo consegnarti un sito in WordPress che aggiorni facilmente da solo, oppure gestire noi ogni modifica al posto tuo. Il sito, in ogni caso, resta di tua proprietà.',
+    tecnologia: 'Lavoriamo sia in WordPress (più facile da aggiornare in autonomia) sia in HTML su misura (più leggero, veloce e sicuro). Ti consigliamo la soluzione giusta in base alla tua attività e a quanto vuoi metterci mano tu.',
+    seo: 'Ogni sito include la SEO locale di base e la configurazione di Google Maps, così ti trovano quando cercano la tua attività nella tua zona. Su richiesta curiamo un posizionamento più avanzato.',
+    pagamento: 'Il pagamento del sito è unico, senza canoni obbligatori. Per gli importi possiamo trovare la formula più comoda: scrivici su WhatsApp e ne parliamo.',
+    social: 'Sì, possiamo curare anche la presenza social (Instagram e Facebook): impostazione dei profili e, su richiesta, gestione dei contenuti coordinata con il sito. Dimmi di che attività ti occupi e ti preparo una proposta.',
+    grafica: 'Possiamo aiutarti anche con logo e immagine coordinata, così sito e materiali hanno uno stile uniforme. Scrivici su WhatsApp e ti diciamo come procedere.',
+    saluto: 'Ciao! Dimmi pure cosa ti serve: costi, tempi, che tipo di siti facciamo o un preventivo. Puoi usare i pulsanti qui sotto o scrivermi.',
+    preventivo: 'Perfetto! Il modo più veloce è scriverci su WhatsApp con il pulsante verde qui sotto: ti rispondiamo noi. In alternativa usa il modulo nella sezione Contatti del sito.',
     fallback: 'Non sono sicuro di aver capito bene. Per una risposta precisa scrivici su WhatsApp con il pulsante verde qui sotto, oppure scegli una delle domande rapide qui sopra.'
   };
 
@@ -42,10 +58,21 @@
   // NB: "tempi" viene controllato PRIMA di "costo", così "quanto tempo" non finisce sui prezzi.
   function classify(text) {
     var t = (text || '').toLowerCase();
+    if (/come funziona|come fate|come si fa|come procede|primo passo|come inizi|come avvi/.test(t)) return 'comefunziona';
+    if (/dove siete|dove siamo|dove vi trov|sede|zona|vicenza|provincia|indirizzo|di persona/.test(t)) return 'dove';
+    if (/social|instagram|facebook|\bfb\b|profili social/.test(t)) return 'social';
+    if (/logo|marchio|immagine coordinata|brand|grafica/.test(t)) return 'grafica';
+    if (/e-?commerce|negozio online|shop online|vendere online|vendita online|carrello|prodotti online|catalogo/.test(t)) return 'ecommerce';
+    if (/modific|aggiorn|gestirlo|autonom|da solo|posso cambiare|farlo da me/.test(t)) return 'modifiche';
+    if (/wordpress|html|tecnolog|piattaforma|con cosa lo fate|che sistema/.test(t)) return 'tecnologia';
+    if (/hosting|dominio|manutenzion|gestione mensile|canone|abbonamento|mensile/.test(t)) return 'gestione';
+    if (/\bseo\b|google|posiziona|indicizz|maps|trovare su/.test(t)) return 'seo';
+    if (/rate|rateizz|pagament|pagare|acconto|fattur|bonifico|paga a/.test(t)) return 'pagamento';
     if (/tempo|temp|giorn|quando|quanto ci|pront|consegn|veloc/.test(t)) return 'tempi';
     if (/prevent|contatt|chiam|parl|person|uman|whatsapp|telefon/.test(t)) return 'preventivo';
-    if (/che sit|che tipo|cosa fat|che fat|servizi|b&b|bnb|airbnb|booking|ricettiv|affitt|ristorant|bar|idraul|elettric|edil|artigian|dentist|medic|studio|negozi|ottic|barbier|parrucch|settor|attivit/.test(t)) return 'settori';
+    if (/che sit|che tipo|cosa fat|che fat|servizi|b&b|bnb|airbnb|booking|ricettiv|affitt|ristorant|bar|idraul|elettric|edil|artigian|dentist|medic|studio|negozi|ottic|barbier|parrucch|onoranz|funebr|settor|attivit/.test(t)) return 'settori';
     if (/cost|prezz|tarif|euro|budget|€|quanto/.test(t)) return 'costo';
+    if (/^(ciao|salve|buongiorno|buonasera|hey|ehi|buond)/.test(t)) return 'saluto';
     return 'fallback';
   }
 
@@ -135,7 +162,7 @@
 
   function seedIfEmpty() {
     if (!state.msgs.length) {
-      state.msgs.push({ who: 'bot', text: 'Ciao! 👋 Sono l’assistente di Studio Digital Italia. Come posso aiutarti? Scegli una domanda qui sotto o scrivimi.' });
+      state.msgs.push({ who: 'bot', text: 'Ciao! 👋 Sono l’assistente di Studio Digital Italia, siti web per attività di Vicenza e provincia. Dimmi come posso aiutarti: scegli una domanda qui sotto o scrivimi.' });
       saveState();
     }
   }
