@@ -27,7 +27,7 @@
   <meta property="og:url" content="https://studiodigitalitalia.it/portfolio.html" />
   <meta property="og:title" content="Portfolio Siti Web - Studio Digital Italia" />
   <meta property="og:description" content="Esempi reali di siti web per ogni settore: ristoranti, artigiani, dentisti, negozi, studi professionali. Naviga i demo e scopri come potrebbe essere il tuo sito." />
-  <meta property="og:image" content="https://studiodigitalitalia.it/logo-completo.jpg" />
+  <meta property="og:image" content="https://studiodigitalitalia.it/assets/loghi/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
   <meta property="og:locale" content="it_IT" />
 
@@ -57,7 +57,7 @@
   }
   </script>
 
-  <link rel="icon" type="image/jpeg" href="logo-solo-foto.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/loghi/logo-solo-foto.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -451,7 +451,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="logo">
-    <img src="logo-solo-foto.jpg" alt="Studio Digital Italia" />
+    <img src="assets/loghi/logo-solo-foto.jpg" alt="Studio Digital Italia" />
     <span class="logo-text">Studio<span> Digital</span> Italia</span>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -474,11 +474,11 @@
     <p>Ogni attività è diversa - e ogni sito che realizziamo è su misura. Naviga gli esempi, esplora i siti reali dei nostri clienti, e scopri come potrebbe essere il tuo.</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <strong>8+</strong>
+        <strong>10+</strong>
         <span>demo navigabili</span>
       </div>
       <div class="hero-stat">
-        <strong>2</strong>
+        <strong>5</strong>
         <span>siti reali online</span>
       </div>
       <div class="hero-stat">
@@ -511,12 +511,9 @@
       <h2 class="section-title" style="color:var(--white);">Siti attivi e online</h2>
       <p class="section-sub">Clienti che ci hanno affidato la loro presenza digitale. Siti funzionanti, indicizzati su Google e aggiornati.</p>
     </div>
-    <div class="siti-carousel">
-      <button class="siti-nav prev" aria-label="Sito precedente">‹</button>
-      <div class="siti-track" id="sitiTrack">
-      <!-- Rete Parco Pace -->
-      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card is-active">
-        <div class="port-thumb assoc" style="background-image: linear-gradient(to bottom, rgba(10,36,20,.1) 0%, rgba(10,36,20,.78) 60%, rgba(10,36,20,.96) 100%), url('preview%20reteparcopace.png'); background-size: cover; background-position: top center;">
+    <div class="port-grid">
+      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card">
+        <div class="port-thumb assoc" style="background-image: linear-gradient(to bottom, rgba(10,36,20,.1) 0%, rgba(10,36,20,.78) 60%, rgba(10,36,20,.96) 100%), url('assets/anteprime/preview%20reteparcopace.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Associazioni</span>
@@ -528,10 +525,21 @@
           <span class="port-foot-link">Visita il sito →</span>
         </div>
       </a>
-
-      <!-- L2 Traslochi -->
+      <a href="https://autoscuolegasparellavicenza.it" target="_blank" rel="noopener" class="port-card">
+        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(8,16,28,.1) 0%, rgba(8,16,28,.78) 60%, rgba(8,16,28,.96) 100%), url('assets/anteprime/Anteprima%20Autoscuole%20Gasparella.png'); background-size: cover; background-position: top center;">
+          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
+          <div class="port-badge-real">✦ Sito reale</div>
+          <span class="port-tag">Autoscuola</span>
+          <div class="port-name">Autoscuole Gasparella</div>
+          <div class="port-sub">Patenti e formazione - Vicenza</div>
+        </div>
+        <div class="port-foot">
+          <span class="port-foot-tech">Sito web + prenotazione online</span>
+          <span class="port-foot-link">Visita il sito →</span>
+        </div>
+      </a>
       <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('assets/anteprime/preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Servizi</span>
@@ -543,10 +551,8 @@
           <span class="port-foot-link">Visita il sito →</span>
         </div>
       </a>
-
-      <!-- Ramacciato Vintage -->
       <a href="https://www.ramacciatovintage.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb vintage" style="background-image: linear-gradient(to bottom, rgba(26,18,8,.1) 0%, rgba(26,18,8,.78) 60%, rgba(26,18,8,.96) 100%), url('anteprima%20ramacciato%20vintage.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb vintage" style="background-image: linear-gradient(to bottom, rgba(26,18,8,.1) 0%, rgba(26,18,8,.78) 60%, rgba(26,18,8,.96) 100%), url('assets/anteprime/anteprima%20ramacciato%20vintage.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Vintage &amp; Usato</span>
@@ -559,7 +565,7 @@
         </div>
       </a>
       <a href="https://deadpeopleactivity.com" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(12,6,10,.1) 0%, rgba(12,6,10,.78) 60%, rgba(12,6,10,.96) 100%), url('Anteprima%20Deadpeopleactivity.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(12,6,10,.1) 0%, rgba(12,6,10,.78) 60%, rgba(12,6,10,.96) 100%), url('assets/anteprime/Anteprima%20Deadpeopleactivity.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
           <div class="port-badge-real">✦ Sito reale</div>
           <span class="port-tag">Musica</span>
@@ -571,9 +577,6 @@
           <span class="port-foot-link">Visita il sito →</span>
         </div>
       </a>
-      </div>
-      <button class="siti-nav next" aria-label="Sito successivo">›</button>
-      <div class="siti-dots"></div>
     </div>
   </div>
 </section>
@@ -638,7 +641,7 @@
 
       <!-- Ristorante -->
       <a href="demo-ristorante.html" target="_blank" class="port-card" data-cat="ristorazione">
-        <div class="port-thumb rist" style="background-image: linear-gradient(to bottom, rgba(20,5,5,.1) 0%, rgba(20,5,5,.78) 60%, rgba(20,5,5,.96) 100%), url('preview%20da%20mario.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb rist" style="background-image: linear-gradient(to bottom, rgba(20,5,5,.1) 0%, rgba(20,5,5,.78) 60%, rgba(20,5,5,.96) 100%), url('assets/anteprime/preview%20da%20mario.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Ristorazione</span>
@@ -653,7 +656,7 @@
 
       <!-- Idraulico -->
       <a href="demo-idraulico.html" target="_blank" class="port-card" data-cat="artigianato">
-        <div class="port-thumb idraul" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('preview%20idraulico.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb idraul" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('assets/anteprime/preview%20idraulico.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Artigianato</span>
@@ -668,7 +671,7 @@
 
       <!-- Studio Commercialisti -->
       <a href="demo-studio.html" target="_blank" class="port-card" data-cat="professionisti">
-        <div class="port-thumb salon" style="background-image: linear-gradient(to bottom, rgba(10,8,20,.1) 0%, rgba(10,8,20,.78) 60%, rgba(10,8,20,.96) 100%), url('preview%20ferretti.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb salon" style="background-image: linear-gradient(to bottom, rgba(10,8,20,.1) 0%, rgba(10,8,20,.78) 60%, rgba(10,8,20,.96) 100%), url('assets/anteprime/preview%20ferretti.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Professionisti</span>
@@ -683,7 +686,7 @@
 
       <!-- Ottica / Negozio -->
       <a href="demo-negozio.html" target="_blank" class="port-card" data-cat="retail">
-        <div class="port-thumb artig" style="background-image: linear-gradient(to bottom, rgba(5,20,18,.1) 0%, rgba(5,20,18,.78) 60%, rgba(5,20,18,.96) 100%), url('preview%20ottica.png'); background-size: cover; background-position: top center;">
+        <div class="port-thumb artig" style="background-image: linear-gradient(to bottom, rgba(5,20,18,.1) 0%, rgba(5,20,18,.78) 60%, rgba(5,20,18,.96) 100%), url('assets/anteprime/preview%20ottica.png'); background-size: cover; background-position: top center;">
           <div class="overlay"><span class="overlay-cta">Vedi demo →</span></div>
           <div class="port-badge-demo">Demo</div>
           <span class="port-tag">Retail &amp; Negozi</span>
@@ -895,7 +898,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
+      <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
       <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
     </div>
     <div class="footer-col">

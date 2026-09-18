@@ -49,3 +49,11 @@ lavigna-redesign.html
 #  demo-*.html (non lavigna), sitemap.xml, robots.txt, CNAME,
 #  logo-*.jpg/png, preview*.png, anteprima*.png
 # ══════════════════════════════════════════════
+
+# ── Cartella materiali interni + export dati (mai pubblicare) ──
+_materiali/
+*.csv
+analisi search console*/
+
+# ── File temporanei ──
+*.tmp
