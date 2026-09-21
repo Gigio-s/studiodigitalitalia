@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Autofficina Meridiana - Officina, Gommista, Moto e Revisioni</title>
+<meta name="description" content="Autofficina Meridiana dal 1985: officina meccanica, gommista, reparto moto, revisioni e centro pneumatici. Multimarca a Vicenza. Prenota online.">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=barlow:400,500,600,700|barlow-semi-condensed:600,700,800" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --soft:#f4f6f9;
+    --soft-2:#eef1f6;
+    --ink:#161c26;
+    --muted:#5c6673;
+    --line:#e2e7ee;
+    --brand:#0e5bd8;
+    --brand-dk:#0a47ab;
+    --accent:#ffb300;
+    --green:#25d366;
+    --radius:12px;
+    --maxw:1180px;
+    --font:'Barlow',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --head:'Barlow Semi Condensed','Barlow',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{padding:64px 0}
+  h1,h2,h3,h4{font-family:var(--head)}
+  h2{font-size:clamp(1.55rem,3.6vw,2.15rem);line-height:1.15;letter-spacing:-.5px}
+  h2 .thin{font-weight:400;color:var(--muted)}
+  .lead{color:var(--muted);max-width:640px;font-size:1.04rem;margin-top:10px}
+  .eyebrow{color:var(--brand);font-weight:700;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+  .center{text-align:center}
+  .center .lead{margin-left:auto;margin-right:auto}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.95rem;padding:12px 20px;border-radius:9px;border:1.5px solid transparent;cursor:pointer;transition:transform .12s,filter .12s,background .12s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-brand{background:var(--brand);color:#fff}
+  .btn-brand:hover{background:var(--brand-dk)}
+  .btn-out{background:#fff;border-color:var(--line);color:var(--ink)}
+  .btn-out:hover{border-color:var(--brand);color:var(--brand)}
+  .btn-wa{background:var(--green);color:#052e15}
+  .btn-lg{padding:15px 26px;font-size:1.02rem}
+
+  /* Topbar */
+  .topbar{background:var(--ink);color:#c9d2de;font-size:.83rem}
+  .topbar .wrap{display:flex;align-items:center;gap:20px;height:40px}
+  .topbar .sep{margin-left:auto}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar .tb-hide{color:#c9d2de}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:16px;height:74px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.22rem;letter-spacing:-.5px}
+  .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-dk));display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.1rem}
+  .logo small{display:block;font-size:.6rem;font-weight:700;color:var(--accent);letter-spacing:2px;margin-top:1px}
+  .menu{display:flex;gap:4px;margin-left:14px}
+  .menu>li{list-style:none;position:relative}
+  .menu>li>a{display:flex;align-items:center;gap:5px;padding:12px 13px;color:var(--ink);font-weight:600;font-size:.94rem;border-radius:8px}
+  .menu>li>a:hover{background:var(--soft);color:var(--brand)}
+  .menu>li>a .car{width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px}
+  .submenu{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 40px -18px rgba(20,28,38,.25);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+  .menu>li:hover .submenu{opacity:1;visibility:visible;transform:translateY(0)}
+  .submenu a{display:block;padding:9px 12px;border-radius:7px;font-size:.9rem;color:var(--muted)}
+  .submenu a:hover{background:var(--soft);color:var(--brand)}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+  .hamburger{display:none;background:#fff;border:1px solid var(--line);border-radius:9px;width:46px;height:46px;color:var(--ink);cursor:pointer}
+
+  /* Hero catalog */
+  .hero{background:
+    radial-gradient(700px 380px at 88% -5%,rgba(14,91,216,.08),transparent 60%),
+    var(--soft)}
+  .hero-top{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:52px 0 30px}
+  .hero-top h1{font-size:clamp(2rem,4.8vw,3rem);line-height:1.08;letter-spacing:-1.2px}
+  .hero-top h1 span{color:var(--brand)}
+  .hero-top p{color:var(--muted);font-size:1.1rem;margin:16px 0 24px;max-width:500px}
+  .hero-cta{display:flex;gap:11px;flex-wrap:wrap}
+  .hero-since{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:18px}
+  .hero-since b{color:var(--brand)}
+  .hero-photo{aspect-ratio:4/3;border-radius:16px;border:1px solid var(--line);background:
+    linear-gradient(135deg,rgba(14,91,216,.14),rgba(14,91,216,0)),
+    repeating-linear-gradient(45deg,#e7ecf4 0 14px,#eef2f8 14px 28px);
+    display:grid;place-items:center;color:#9aa7b8;font-weight:600;position:relative;overflow:hidden}
+  .hero-photo .tag{position:absolute;bottom:14px;left:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:7px}
+
+  /* 6 service cards */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:56px}
+  .cat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;transition:transform .14s,box-shadow .14s,border-color .14s;display:flex;flex-direction:column}
+  .cat:hover{transform:translateY(-5px);box-shadow:0 24px 40px -24px rgba(20,28,38,.3);border-color:#cdd8ea}
+  .cat .ci{width:54px;height:54px;border-radius:13px;background:var(--soft);display:grid;place-items:center;color:var(--brand);margin-bottom:15px}
+  .cat h3{font-size:1.16rem;margin-bottom:6px}
+  .cat p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:16px}
+  .cat .clink{display:inline-flex;align-items:center;gap:7px;color:var(--brand);font-weight:700;font-size:.85rem;letter-spacing:.4px;text-transform:uppercase}
+  .cat .clink svg{transition:transform .12s}
+  .cat:hover .clink svg{transform:translateX(4px)}
+
+  /* Heritage strip */
+  .heritage{background:var(--ink);color:#fff}
+  .heritage .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .heritage h2{color:#fff}
+  .heritage p{color:#aab4c2;margin-top:14px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .stat{background:#20293580;border:1px solid #2c3746;border-radius:12px;padding:20px}
+  .stat b{display:block;font-size:2rem;color:var(--accent);line-height:1}
+  .stat span{color:#aab4c2;font-size:.85rem}
+
+  /* Detailed services */
+  .svc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc-col{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .svc-col .head{padding:20px 22px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);background:var(--soft)}
+  .svc-col .head svg{color:var(--brand)}
+  .svc-col .head h3{font-size:1.12rem}
+  .svc-col ul{list-style:none;padding:16px 22px 22px}
+  .svc-col li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;color:var(--muted);font-size:.93rem;border-bottom:1px solid var(--soft-2)}
+  .svc-col li:last-child{border-bottom:none}
+  .svc-col li svg{color:var(--green);flex-shrink:0;margin-top:3px}
+
+  /* Brands */
+  .brands{background:var(--soft)}
+  .photo-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+  .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--line);transition:transform .2s;display:block}
+  .photo-strip img:hover{transform:scale(1.03)}
+  @media(max-width:920px){.photo-strip{grid-template-columns:1fr 1fr}}
+  .brand-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px}
+  .brand-chip{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 26px;font-weight:800;letter-spacing:1px;color:#8b96a6;font-size:1.05rem}
+
+  /* Articles */
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .art{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .14s,box-shadow .14s}
+  .art:hover{transform:translateY(-4px);box-shadow:0 22px 38px -24px rgba(20,28,38,.3)}
+  .art .thumb{aspect-ratio:16/10;background:
+    linear-gradient(135deg,rgba(14,91,216,.13),rgba(255,179,0,.1)),
+    repeating-linear-gradient(45deg,#e7ecf4 0 12px,#eef2f8 12px 24px);
+    display:grid;place-items:center;color:#9aa7b8;font-size:.82rem;font-weight:600}
+  .art .body{padding:20px 22px}
+  .art .cat-tag{color:var(--brand);font-weight:700;font-size:.74rem;letter-spacing:1.2px;text-transform:uppercase}
+  .art h3{font-size:1.08rem;margin:8px 0 8px}
+  .art p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+  .art .more{color:var(--brand);font-weight:700;font-size:.86rem}
+
+  /* Booking + contact */
+  .bc-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:24px}
+  .book{background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:.83rem;font-weight:600;margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px 13px;color:var(--ink);font-family:inherit;font-size:.95rem}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;color:var(--muted);margin:4px 0 16px}
+  .consent input{margin-top:3px;flex-shrink:0}
+  .consent a{color:var(--brand);text-decoration:underline}
+  .form-note{font-size:.78rem;color:var(--muted);margin-top:11px;text-align:center}
+  .side-card{background:var(--ink);color:#fff;border-radius:16px;padding:30px}
+  .side-card h3{font-size:1.15rem;margin-bottom:6px}
+  .side-card .sub{color:#aab4c2;font-size:.9rem;margin-bottom:18px}
+  .side-row{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #2c3746}
+  .side-row:last-of-type{border-bottom:none}
+  .side-row svg{color:var(--accent);flex-shrink:0;margin-top:2px}
+  .side-row b{display:block;font-size:.92rem}
+  .side-row span{color:#aab4c2;font-size:.85rem}
+  .hours{list-style:none;margin-top:16px;background:#20293580;border:1px solid #2c3746;border-radius:11px;padding:8px 16px}
+  .hours li{display:flex;justify-content:space-between;padding:8px 0;font-size:.87rem;border-bottom:1px solid #2c3746}
+  .hours li:last-child{border-bottom:none}
+  .hours .day{color:#aab4c2}
+  .hours .cl{color:#ff8a8a}
+  .side-card .wa-btn{display:flex;justify-content:center;margin-top:16px}
+
+  /* Newsletter */
+  .news{background:linear-gradient(135deg,var(--brand),var(--brand-dk));color:#fff;border-radius:18px;padding:44px;text-align:center}
+  .news h2{color:#fff}
+  .news p{color:#d3e0fb;margin:10px auto 22px;max-width:480px}
+  .news form{display:flex;gap:10px;max-width:460px;margin:0 auto}
+  .news input{flex:1;border:none;border-radius:9px;padding:14px 16px;font-size:.95rem;font-family:inherit}
+  .news .btn-accent{background:var(--accent);color:#241a00}
+
+  /* Footer */
+  footer{background:var(--ink);color:#aab4c2;padding:56px 0 26px;margin-top:8px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px;margin-bottom:34px}
+  .foot-grid .logo{color:#fff}
+  .foot-grid p{font-size:.88rem;margin-top:14px;max-width:280px}
+  .foot-col h4{color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:13px}
+  .foot-col a{display:block;font-size:.9rem;padding:5px 0}
+  .foot-col a:hover{color:#fff}
+  .socials{display:flex;gap:10px;margin-top:16px}
+  .socials a{width:38px;height:38px;border-radius:9px;background:#20293580;border:1px solid #2c3746;display:grid;place-items:center;color:#fff}
+  .socials a:hover{background:var(--brand)}
+  .foot-bottom{border-top:1px solid #2c3746;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem}
+  .foot-bottom a{text-decoration:underline}
+
+  .float{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;flex-direction:column;gap:12px}
+  .float a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.4);color:#fff}
+  .float .wa{background:var(--green)}
+  .float .call{background:var(--brand)}
+
+  .demo-flag{background:#fff7e6;border-bottom:1px solid #ffe4a1;color:#9a6b00;text-align:center;font-size:.8rem;padding:7px 14px;font-weight:600}
+
+  @media(max-width:920px){
+    .menu,.topbar .tb-hide{display:none}
+    .hamburger{display:grid;place-items:center}
+    .hero-top{grid-template-columns:1fr;gap:28px}
+    .hero-photo{order:-1}
+    .cat-grid,.art-grid,.svc-cols{grid-template-columns:1fr 1fr}
+    .heritage .wrap{grid-template-columns:1fr;gap:26px}
+    .bc-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:600px){
+    section{padding:48px 0}
+    .cat-grid,.art-grid,.svc-cols{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .field-row{grid-template-columns:1fr}
+    .news form{flex-direction:column}
+    .foot-grid{grid-template-columns:1fr}
+    .hero-cta .btn{flex:1;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-flag">DEMO dimostrativa - struttura di esempio - foto, testi e contatti sono placeholder - Be Digital / Studio Digital Italia</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="tb-hide">Officina - Gommista - Moto - Revisioni dal 1985</span>
+    <span class="sep"></span>
+    <span class="tb-hide">Via dell'Artigianato 00, Vicenza</span>
+    <a href="tel:+390444000000">☎ 0444 000 000</a>
+    <a href="https://wa.me/390444000000">WhatsApp</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_193832_6a3ee88f-07bf-40ca-b62d-9f0ab124fb30.png" alt="Autofficina Meridiana" style="height:60px;width:auto"></a>
+    <ul class="menu">
+      <li><a href="#servizi">Autofficina <i class="car"></i></a>
+        <div class="submenu">
+          <a href="#servizi">Tagliando e manutenzione</a>
+          <a href="#servizi">Climatizzazione</a>
+          <a href="#servizi">Diagnosi elettronica</a>
+          <a href="#servizi">Freni e sospensioni</a>
+          <a href="#servizi">Batterie ed elettrauto</a>
+          <a href="#servizi">Filtri antiparticolato FAP/DPF</a>
+        </div>
+      </li>
+      <li><a href="#servizi">Gommista <i class="car"></i></a>
+        <div class="submenu">
+          <a href="#servizi">Pneumatici auto</a>
+          <a href="#servizi">Cerchi in lega</a>
+          <a href="#servizi">Equilibratura e assetto</a>
+          <a href="#servizi">Cambio stagionale e custodia</a>
+        </div>
+      </li>
+      <li><a href="#servizi">Revisioni</a></li>
+      <li><a href="#moto">Moto <i class="car"></i></a>
+        <div class="submenu">
+          <a href="#moto">Officina moto e scooter</a>
+          <a href="#moto">Pneumatici moto</a>
+          <a href="#moto">Rimessaggio invernale</a>
+        </div>
+      </li>
+      <li><a href="#articoli">Consigli</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#prenota" class="btn btn-brand">Prenota online</a>
+      <button class="hamburger" aria-label="Menu" onclick="var m=document.getElementById('mnav');m.hidden=!m.hidden">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mnav" hidden style="border-top:1px solid var(--line);background:#fff">
+    <div class="wrap" style="display:flex;flex-direction:column;padding:8px 22px">
+      <a href="#servizi" style="padding:11px 0;color:var(--muted)">Autofficina</a>
+      <a href="#servizi" style="padding:11px 0;color:var(--muted)">Gommista</a>
+      <a href="#servizi" style="padding:11px 0;color:var(--muted)">Revisioni</a>
+      <a href="#moto" style="padding:11px 0;color:var(--muted)">Moto</a>
+      <a href="#articoli" style="padding:11px 0;color:var(--muted)">Consigli</a>
+      <a href="#contatti" style="padding:11px 0;color:var(--muted)">Contatti</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <span class="hero-since">⚙ Un punto unico <b>dal 1985</b></span>
+        <h1>La tua auto e la tua moto, <span>seguite da chi le conosce</span>.</h1>
+        <p>Officina, gommista, reparto moto e centro revisioni sotto lo stesso tetto. Multimarca, preventivi chiari e prenotazione online in due minuti.</p>
+        <div class="hero-cta">
+          <a href="#prenota" class="btn btn-brand btn-lg">Prenota un intervento</a>
+          <a href="https://wa.me/390444000000" class="btn btn-wa btn-lg">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.1 8.7 9.6 7.3 9.4 6.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo" style="overflow:hidden">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_193832_9ef7b010-c757-4afb-803b-73dfcf6899dd.png" alt="Officina Autofficina Meridiana" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+
+    <!-- 6 SERVICE CARDS -->
+    <div class="cat-grid">
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a5 5 0 0 0-6.6 6.6l-5.1 5.1 2 2 5.1-5.1a5 5 0 0 0 6.6-6.6l-2.9 2.9-2-2 2.9-2.9z"/></svg></div>
+        <h3>Officina</h3>
+        <p>Tagliando, meccanica generale, freni, distribuzione e riparazioni multimarca.</p>
+        <a href="#servizi" class="clink">I nostri servizi <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+        <h3>Gommista</h3>
+        <p>Vendita, montaggio ed equilibratura pneumatici, cerchi e assetto.</p>
+        <a href="#servizi" class="clink">I nostri servizi <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h6l3-6h4M9 11l3 6M12 8h4"/></svg></div>
+        <h3>Moto e scooter</h3>
+        <p>Reparto dedicato alle due ruote: tagliando, gomme e messa a punto.</p>
+        <a href="#moto" class="clink">I nostri servizi <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <h3>Revisioni</h3>
+        <p>Centro revisioni per auto e moto: prenoti e pensiamo noi alla pratica.</p>
+        <a href="#servizi" class="clink">I nostri servizi <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h3M8 18h6"/></svg></div>
+        <h3>Prenotazione</h3>
+        <p>Scegli servizio e orario online, ricevi conferma senza attese al telefono.</p>
+        <a href="#prenota" class="clink">Prenota ora <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="cat">
+        <div class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 12.6l-8-8A2 2 0 0 0 11.2 4H5a1 1 0 0 0-1 1v6.2a2 2 0 0 0 .6 1.4l8 8a2 2 0 0 0 2.8 0l5.2-5.2a2 2 0 0 0 0-2.8z"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/></svg></div>
+        <h3>Pneumatici usati</h3>
+        <p>Gomme usate selezionate e garantite, per spendere il giusto in sicurezza.</p>
+        <a href="#servizi" class="clink">Scopri di più <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERITAGE -->
+<section class="heritage">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--accent)">Chi siamo</div>
+      <h2>Quarant'anni di mani in pasta, <span class="thin" style="color:#aab4c2">un solo obiettivo: la tua fiducia</span></h2>
+      <p>Dal 1985 la famiglia porta avanti l'officina di quartiere diventata punto di riferimento per auto e moto. Attrezzature aggiornate, meccanici che ti spiegano cosa fanno e preventivi senza sorprese.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>40</b><span>anni di attività</span></div>
+      <div class="stat"><b>12k+</b><span>veicoli seguiti</span></div>
+      <div class="stat"><b>4,9</b><span>media recensioni</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED SERVICES -->
+<section id="servizi">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px">
+      <div class="eyebrow">I nostri servizi</div>
+      <h2>Un'officina, tanti servizi</h2>
+      <p class="lead">Tutto quello che serve ad auto e moto, senza rimbalzare da un fornitore all'altro.</p>
+    </div>
+    <div class="svc-cols">
+      <div class="svc-col">
+        <div class="head"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a5 5 0 0 0-6.6 6.6l-5.1 5.1 2 2 5.1-5.1a5 5 0 0 0 6.6-6.6l-2.9 2.9-2-2 2.9-2.9z"/></svg><h3>Autofficina</h3></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Tagliando e manutenzione programmata</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Diagnosi elettronica e ricerca guasti</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Freni, sospensioni e distribuzione</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Climatizzazione e ricarica clima</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Batterie, elettrauto e ricambi</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Pulizia filtri antiparticolato FAP/DPF</li>
+        </ul>
+      </div>
+      <div class="svc-col">
+        <div class="head"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><h3>Gommista</h3></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Vendita e montaggio pneumatici</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Equilibratura e convergenza (assetto)</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Cerchi in lega e riparazione</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Cambio stagionale e custodia gomme</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Pneumatici usati garantiti</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Riparazione forature</li>
+        </ul>
+      </div>
+      <div class="svc-col">
+        <div class="head"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg><h3>Revisioni e altro</h3></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Revisione ministeriale auto</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Revisione moto e scooter</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Impianti GPL e metano</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Pre-controllo prima della revisione</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Auto sostitutiva su richiesta</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Preventivi gratuiti in giornata</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="wrap center">
+    <div class="eyebrow">La nostra officina</div>
+    <h2>Dai un'occhiata a come lavoriamo</h2>
+    <p class="lead" style="margin:10px auto 0">Attrezzature aggiornate e mani esperte: dal gommista alla diagnosi elettronica, dai freni all'accoglienza.</p>
+    <div class="photo-strip">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_195933_d49f2b46-e64a-46d2-adaf-fa84fef8b442.png" alt="Gommista al lavoro">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_195933_23a749cd-6dc1-433e-b1cf-361020446d86.png" alt="Diagnosi elettronica">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_195934_8cdca53d-f3e5-4fb9-922b-966d7170f34a.png" alt="Sostituzione freni">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_195934_a320df28-59c3-417e-b269-01e1b341f8e7.png" alt="Accoglienza officina">
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articoli">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <div class="eyebrow">Consigli utili</div>
+      <h2>Dal nostro blog</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Piccoli consigli per prenderti cura di auto e moto e spendere meno nel tempo.</p>
+    </div>
+    <div class="art-grid">
+      <div class="art">
+        <div class="thumb"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_193832_2198eea6-4824-4032-a267-90e50c221665.png" alt="Manutenzione" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="body">
+          <span class="cat-tag">Manutenzione</span>
+          <h3>Ogni quanto va fatto il tagliando?</h3>
+          <p>Chilometri, tempo e spie: come capire quando è il momento senza rischiare la garanzia.</p>
+          <a href="#" class="more">Leggi di più →</a>
+        </div>
+      </div>
+      <div class="art">
+        <div class="thumb"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_193832_9d18ef27-2e3d-493c-b8f9-00186f6d24d7.png" alt="Gomme" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="body">
+          <span class="cat-tag">Gomme</span>
+          <h3>Gomme estive o invernali: quando cambiare</h3>
+          <p>Date, temperature e obblighi di legge per viaggiare sicuro in ogni stagione.</p>
+          <a href="#" class="more">Leggi di più →</a>
+        </div>
+      </div>
+      <div class="art">
+        <div class="thumb"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260914_193832_6ec28474-21f4-48aa-ab85-59f1f0bc158d.png" alt="Moto" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="body">
+          <span class="cat-tag">Moto</span>
+          <h3>Rimessaggio invernale della moto</h3>
+          <p>Come conservarla bene d'inverno per ritrovarla pronta a primavera.</p>
+          <a href="#" class="more">Leggi di più →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTO band -->
+<section id="moto" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <div class="eyebrow">Reparto moto</div>
+      <h2>Anche la tua due ruote è di casa</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Meccanici che le moto le capiscono davvero: tagliando, gomme, revisione e messa a punto stagionale.</p>
+    </div>
+    <div class="cat-grid" style="padding-bottom:0;grid-template-columns:repeat(3,1fr)">
+      <div class="cat"><div class="ci"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a5 5 0 0 0-6.6 6.6l-5.1 5.1 2 2 5.1-5.1a5 5 0 0 0 6.6-6.6l-2.9 2.9-2-2 2.9-2.9z"/></svg></div><h3>Tagliando moto e scooter</h3><p>Olio, filtri, candele e controllo completo per ogni cilindrata.</p></div>
+      <div class="cat"><div class="ci"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Pneumatici moto</h3><p>Vendita e montaggio con preventivo su misura per il tuo modello.</p></div>
+      <div class="cat"><div class="ci"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2-8 4 16 2-8h6"/></svg></div><h3>Diagnosi e messa a punto</h3><p>Elettronica, carburazione e preparazione stagionale della moto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING + CONTACT -->
+<section id="prenota">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <div class="eyebrow">Prenotazione e contatti</div>
+      <h2>Prenota il tuo intervento</h2>
+    </div>
+    <div class="bc-grid">
+      <form class="book" onsubmit="event.preventDefault();var n=this.querySelector('.form-note');n.textContent='Demo: in un sito reale la richiesta arriva all\'officina con conferma automatica (Calendly o gestionale).';n.style.color='var(--brand)'">
+        <div class="field-row">
+          <div class="field"><label>Nome e cognome</label><input required placeholder="Mario Rossi"></div>
+          <div class="field"><label>Telefono</label><input required type="tel" placeholder="333 000 0000"></div>
+        </div>
+        <div class="field"><label>Email</label><input required type="email" placeholder="mario.rossi@email.it"></div>
+        <div class="field-row">
+          <div class="field"><label>Reparto</label>
+            <select><option>Officina auto</option><option>Gommista</option><option>Moto / Scooter</option><option>Revisione</option></select>
+          </div>
+          <div class="field"><label>Servizio</label>
+            <select><option>Tagliando</option><option>Cambio gomme</option><option>Diagnosi</option><option>Revisione</option><option>Freni</option><option>Clima</option><option>Altro</option></select>
+          </div>
+        </div>
+        <div class="field"><label>Data preferita</label><input type="date"></div>
+        <div class="field"><label>Note (marca, modello, problema)</label><textarea rows="2" placeholder="Es. Panda 1.2, tagliando + gomme invernali"></textarea></div>
+        <label class="consent"><input type="checkbox" required><span>Ho letto l'<a href="legale/privacy-policy.html">Informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato (art. 6.1.b GDPR).</span></label>
+        <button type="submit" class="btn btn-brand btn-lg" style="width:100%;justify-content:center">Invia richiesta</button>
+        <div class="form-note">Ti rispondiamo entro poche ore negli orari di apertura.</div>
+      </form>
+
+      <div class="side-card">
+        <h3>Autofficina Meridiana</h3>
+        <div class="sub">Officina, gommista, moto e revisioni</div>
+        <div class="side-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Indirizzo</b><span>Via dell'Artigianato 00, 36100 Vicenza (VI)</span></div></div>
+        <div class="side-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><b>Telefono</b><span>0444 000 000</span></div></div>
+        <div class="side-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg><div><b>Email</b><span>info@autofficinameridiana.it</span></div></div>
+        <ul class="hours">
+          <li><span class="day">Lun - Ven</span><span>08:00-12:30 / 14:00-18:30</span></li>
+          <li><span class="day">Sabato</span><span>08:30-12:30</span></li>
+          <li><span class="day">Domenica</span><span class="cl">Chiuso</span></li>
+        </ul>
+        <div class="wa-btn"><a href="https://wa.me/390444000000" class="btn btn-wa" style="width:100%;justify-content:center">Scrivici su WhatsApp</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="news">
+      <h2>Promo gomme e tagliandi, prima degli altri</h2>
+      <p>Iscriviti e ricevi le offerte di stagione e i promemoria per revisione e cambio gomme.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Iscrizione demo registrata ✓'">
+        <input type="email" required placeholder="La tua email">
+        <button class="btn btn-accent btn-lg" type="submit">Iscrivimi</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo"><span class="mark">AM</span><span style="color:#fff">Autofficina Meridiana<small>DAL 1985</small></span></a>
+        <p>Officina meccanica, gommista, reparto moto e centro revisioni a Vicenza. Multimarca, dal 1985.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/390444000000" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Autofficina</h4>
+        <a href="#servizi">Tagliando</a>
+        <a href="#servizi">Diagnosi</a>
+        <a href="#servizi">Freni e clima</a>
+        <a href="#servizi">Revisioni</a>
+      </div>
+      <div class="foot-col">
+        <h4>Gommista e moto</h4>
+        <a href="#servizi">Pneumatici</a>
+        <a href="#servizi">Assetto</a>
+        <a href="#moto">Reparto moto</a>
+        <a href="#servizi">Gomme usate</a>
+      </div>
+      <div class="foot-col">
+        <h4>Note legali</h4>
+        <a href="legale/privacy-policy.html">Privacy Policy</a>
+        <a href="legale/cookie-policy.html">Cookie Policy</a>
+        <a href="legale/termini-servizi.html">Termini di servizio</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>Autofficina Meridiana di [Nome Cognome] - P.IVA 00000000000 - Via dell'Artigianato 00, Vicenza (VI)</div>
+      <div>Sito realizzato da <a href="https://www.studiodigitalitalia.it">Studio Digital Italia</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT + WHATSAPP -->
+<style>
+  .mchat{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-family:var(--font)}
+  .mchat-launchers{display:flex;flex-direction:column;gap:12px}
+  .mchat-btn{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;border:none;cursor:pointer;box-shadow:0 12px 26px -8px rgba(0,0,0,.45);color:#fff;position:relative;transition:transform .12s}
+  .mchat-btn:hover{transform:translateY(-3px)}
+  .mchat-btn.wa{background:var(--green)}
+  .mchat-btn.bot{background:var(--brand)}
+  .mchat-btn .ping{position:absolute;top:2px;right:2px;width:14px;height:14px;background:var(--accent);border:2px solid #fff;border-radius:50%}
+  .mchat-panel{position:fixed;right:18px;bottom:92px;width:350px;max-width:calc(100vw - 32px);height:460px;max-height:calc(100vh - 110px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -24px rgba(20,28,38,.4);display:flex;flex-direction:column;overflow:hidden}
+  .mchat-panel[hidden]{display:none!important}
+  .mchat-head{background:linear-gradient(135deg,var(--brand),var(--brand-dk));color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .mchat-ava{width:42px;height:42px;border-radius:12px;background:#ffffff22;border:1px solid #ffffff44;display:grid;place-items:center;font-weight:800;font-size:.95rem}
+  .mchat-head b{display:block;font-size:.98rem}
+  .mchat-head span{font-size:.76rem;color:#d3e0fb;display:flex;align-items:center;gap:6px}
+  .mchat-head span i{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block}
+  .mchat-close{margin-left:auto;background:none;border:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;opacity:.85}
+  .mchat-close:hover{opacity:1}
+  .mchat-body{flex:1;overflow-y:auto;padding:18px;background:var(--soft);display:flex;flex-direction:column;gap:10px}
+  .bub{max-width:82%;padding:10px 13px;border-radius:14px;font-size:.9rem;line-height:1.45;white-space:pre-line}
+  .bub.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start;color:var(--ink)}
+  .bub.user{background:var(--brand);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+  .mchat-quick{padding:12px;display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);background:#fff}
+  .qbtn{background:#fff;border:1.5px solid var(--brand);color:var(--brand);border-radius:99px;padding:8px 13px;font-size:.83rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .12s,color .12s}
+  .qbtn:hover{background:var(--brand);color:#fff}
+  .qbtn.wa{border-color:var(--green);color:#0b7a37}
+  .qbtn.wa:hover{background:var(--green);color:#052e15}
+  .mchat-foot{padding:8px;text-align:center;font-size:.68rem;color:var(--muted);background:#fff;border-top:1px solid var(--soft-2)}
+  @media(max-width:600px){.mchat-panel{height:70vh}}
+</style>
+<div class="mchat">
+  <div class="mchat-panel" id="mchatPanel" hidden>
+    <div class="mchat-head">
+      <div class="mchat-ava">AM</div>
+      <div><b>Autofficina Meridiana</b><span><i></i> Assistente - risponde subito</span></div>
+      <button class="mchat-close" id="mchatClose" aria-label="Chiudi">&times;</button>
+    </div>
+    <div class="mchat-body" id="mchatBody"></div>
+    <div class="mchat-quick" id="mchatQuick"></div>
+    <div class="mchat-foot">Assistente dimostrativo a risposte guidate</div>
+  </div>
+  <div class="mchat-launchers">
+    <a class="mchat-btn wa" href="https://wa.me/390444000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.1 8.7 9.6 7.3 9.4 6.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/></svg>
+    </a>
+    <button class="mchat-btn bot" id="mchatToggle" aria-label="Apri chat">
+      <span class="ping" id="mchatPing"></span>
+      <svg id="mchatIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  var panel=document.getElementById('mchatPanel'),body=document.getElementById('mchatBody'),
+      quick=document.getElementById('mchatQuick'),toggle=document.getElementById('mchatToggle'),
+      icon=document.getElementById('mchatIcon'),ping=document.getElementById('mchatPing'),
+      opened=false,WA='https://wa.me/390444000000';
+  function scroll(){body.scrollTop=body.scrollHeight;}
+  function bot(t){var d=document.createElement('div');d.className='bub bot';d.textContent=t;body.appendChild(d);scroll();}
+  function user(t){var d=document.createElement('div');d.className='bub user';d.textContent=t;body.appendChild(d);scroll();}
+  function setQuick(opts){quick.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.className='qbtn'+(o.wa?' wa':'');b.textContent=o.label;b.onclick=o.act;quick.appendChild(b);});}
+  var HOME=[
+    {label:'Che servizi offrite?',act:function(){user('Che servizi offrite?');setTimeout(function(){bot('Sotto lo stesso tetto trovi:\n🔧 Officina e tagliando\n🛞 Gommista, assetto e pneumatici\n🏍️ Reparto moto e scooter\n✅ Revisioni auto e moto\n❄️ Climatizzazione e altro.\n\nVuoi prenotare o un preventivo?');servQuick();},250);}},
+    {label:'Prenota un intervento',act:doPrenota},
+    {label:'Orari e dove siete',act:doOrari},
+    {label:'Preventivo',act:doPrev},
+    {label:'WhatsApp',wa:true,act:doWa}
+  ];
+  function servQuick(){setQuick([{label:'Prenota',act:doPrenota},{label:'Preventivo',act:doPrev},{label:'Orari e sede',act:doOrari},{label:'WhatsApp',wa:true,act:doWa}]);}
+  function endQuick(){setQuick([{label:'Prenota',act:doPrenota},{label:'WhatsApp',wa:true,act:doWa},{label:'↩ Inizio',act:home}]);}
+  function doPrenota(){user('Voglio prenotare');setTimeout(function(){bot('Perfetto! Prenoti in un minuto dal modulo qui sul sito: scegli reparto, servizio e data e ti ricontattiamo per la conferma.');setQuick([{label:'Vai al modulo',act:function(){panel.hidden=true;setIcon(false);location.hash='#prenota';}},{label:'WhatsApp',wa:true,act:doWa},{label:'↩ Inizio',act:home}]);},250);}
+  function doOrari(){user('Orari e dove siete');setTimeout(function(){bot('📍 Via dell\'Artigianato 00, Vicenza (VI)\n🕗 Lun-Ven 08:00-12:30 / 14:00-18:30\n🕗 Sabato 08:30-12:30\n🚫 Domenica chiuso\n☎ 0444 000 000');endQuick();},250);}
+  function doPrev(){user('Vorrei un preventivo');setTimeout(function(){bot('Volentieri! Dicci: veicolo (auto o moto), marca e modello, e cosa ti serve (tagliando, gomme, freni...). Ti diamo un preventivo gratuito in giornata.');endQuick();},250);}
+  function doWa(){user('Scrivimi su WhatsApp');setTimeout(function(){bot('Ti apro WhatsApp, ti rispondiamo negli orari di apertura. 👋');window.open(WA,'_blank');endQuick();},250);}
+  function home(){user('Torna all\'inizio');setTimeout(function(){bot('Come posso aiutarti?');setQuick(HOME);},200);}
+  function setIcon(open){icon.innerHTML=open?'<path d="M18 6 6 18M6 6l12 12"/>':'<path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/>';}
+  toggle.onclick=function(){panel.hidden=!panel.hidden;setIcon(!panel.hidden);ping.style.display='none';if(!panel.hidden&&!opened){opened=true;bot('Ciao! 👋 Sono l\'assistente di Autofficina Meridiana. Officina, gommista, moto e revisioni dal 1985. Come posso aiutarti?');setQuick(HOME);}};
+  document.getElementById('mchatClose').onclick=function(){panel.hidden=true;setIcon(false);};
+})();
+</script>
+
+</body>
+</html>
