@@ -109,7 +109,7 @@ p{margin:0 0 1em}
 .brand-name small{font-family:var(--body);font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:10px}
 
 .header-right{display:flex;align-items:center;gap:26px}
-.primary-nav{display:flex;gap:4px;align-items:center}
+.primary-nav{display:flex;gap:4px;align-items:center;flex:1;justify-content:center}
 .primary-nav a{color:#fff;font-family:var(--body);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 11px;white-space:nowrap;position:relative}
 .primary-nav a:hover{color:var(--bronze)}
 .primary-nav a.current::after{content:"";position:absolute;left:11px;right:11px;bottom:2px;height:1px;background:var(--bronze)}

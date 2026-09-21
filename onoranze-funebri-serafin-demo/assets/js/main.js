@@ -52,8 +52,8 @@
     '<header class="site-header"><div class="wrap header-inner">' +
       '<a class="brand" href="index.html" aria-label="Onoranze Funebri Serafin - home">' + LOGO +
         '<span class="brand-name"><b>Serafin</b><small>Onoranze Funebri dal 1962</small></span></a>' +
+      '<nav class="primary-nav" aria-label="Navigazione principale">' + navLinks + '</nav>' +
       '<div class="header-right">' +
-        '<nav class="primary-nav" aria-label="Navigazione principale">' + navLinks + '</nav>' +
         '<div class="social">' + SOCIAL + '</div>' +
         '<button class="nav-toggle" id="nav-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-overlay"><span></span><span></span><span></span></button>' +
       '</div>' +
