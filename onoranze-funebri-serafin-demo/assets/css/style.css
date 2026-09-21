@@ -100,7 +100,7 @@ p{margin:0 0 1em}
 #site-header-mount{position:absolute;top:0;left:0;right:0;z-index:80}
 .demo-flag{border-top:3px solid #5f2a44}
 .site-header{background:transparent;border:none}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:22px 30px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:22px 24px;max-width:var(--wrap);margin:0 auto}
 .brand{display:flex;align-items:center;gap:14px;color:#fff}
 .brand svg{width:38px;height:46px;flex:none;color:#fff}
 .brand-name{display:flex;flex-direction:column;line-height:1}
