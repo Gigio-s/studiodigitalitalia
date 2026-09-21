@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var PHONE = '393277737115';                 // numero WhatsApp (formato internazionale, senza + e spazi)
+  var PHONE = '393515854466';                 // numero WhatsApp (formato internazionale, senza + e spazi)
   var WA_TEXT = 'Ciao! Vorrei informazioni su un sito web.';
   var WA_URL = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(WA_TEXT);
   var STORE = 'sdi_chat_v3';

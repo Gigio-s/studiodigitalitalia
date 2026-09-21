@@ -1000,7 +1000,7 @@
   footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
   footer .footer-inner {
     max-width: 1160px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 2.5rem;
     padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
   }
   footer .footer-brand { min-width: 0; }
@@ -1020,6 +1020,9 @@
   }
   footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
   footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
+  footer .footer-cta { display: inline-block; margin-top: 1.3rem; color: var(--gold, #B8966A); text-decoration: none; font-size: .82rem; font-weight: 600; transition: color .2s; }
+  footer .footer-cta:hover { color: #fff; }
+  footer .footer-role { display: block; font-size: .7rem; color: rgba(255,255,255,.3); margin-top: .1rem; }
   @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
   @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
 </style>
@@ -1342,38 +1345,6 @@
           <div class="sub">Impresa funebre familiare - Vicenza</div>
         </div>
       </a>
-      <a href="demo-ristorante.html" target="_blank" class="portfolio-card-mini">
-        <div class="portfolio-thumb-mini rist" style="background-image: linear-gradient(to bottom, rgba(20,5,5,0.1) 0%, rgba(20,5,5,0.78) 60%, rgba(20,5,5,0.96) 100%), url('assets/anteprime/preview%20da%20mario.png');">
-          <div class="mini-overlay"><span class="mini-overlay-btn">Vedi demo →</span></div>
-          <span class="tag">Ristorazione</span>
-          <div class="name">Da Mario</div>
-          <div class="sub">Trattoria - Vicenza</div>
-        </div>
-      </a>
-      <a href="demo-idraulico.html" target="_blank" class="portfolio-card-mini">
-        <div class="portfolio-thumb-mini idraul" style="background-image: linear-gradient(to bottom, rgba(5,14,26,0.1) 0%, rgba(5,14,26,0.78) 60%, rgba(5,14,26,0.96) 100%), url('assets/anteprime/preview%20idraulico.png');">
-          <div class="mini-overlay"><span class="mini-overlay-btn">Vedi demo →</span></div>
-          <span class="tag">Artigianato</span>
-          <div class="name">Idraulico Bianchi</div>
-          <div class="sub">Impianti - Padova</div>
-        </div>
-      </a>
-      <a href="demo-studio.html" target="_blank" class="portfolio-card-mini">
-        <div class="portfolio-thumb-mini salon" style="background-image: linear-gradient(to bottom, rgba(10,8,20,0.1) 0%, rgba(10,8,20,0.78) 60%, rgba(10,8,20,0.96) 100%), url('assets/anteprime/preview%20ferretti.png');">
-          <div class="mini-overlay"><span class="mini-overlay-btn">Vedi demo →</span></div>
-          <span class="tag">Professionisti</span>
-          <div class="name">Ferretti &amp; Associati</div>
-          <div class="sub">Studio - Vicenza</div>
-        </div>
-      </a>
-      <a href="demo-negozio.html" target="_blank" class="portfolio-card-mini">
-        <div class="portfolio-thumb-mini artig" style="background-image: linear-gradient(to bottom, rgba(5,20,18,0.1) 0%, rgba(5,20,18,0.78) 60%, rgba(5,20,18,0.96) 100%), url('assets/anteprime/preview%20ottica.png');">
-          <div class="mini-overlay"><span class="mini-overlay-btn">Vedi demo →</span></div>
-          <span class="tag">Retail</span>
-          <div class="name">Ottica Visione</div>
-          <div class="sub">Negozio - Vicenza</div>
-        </div>
-      </a>
       </div>
       <button class="siti-nav next" aria-label="Demo successiva">›</button>
       <div class="siti-dots"></div>
@@ -1587,7 +1558,17 @@
           </div>
           <div class="contact-info-item">
             <div class="info-icon">📞</div>
-            <a href="tel:+393277737115" style="color:inherit;text-decoration:none;">327 773 7115</a>
+            <div>
+              <div style="font-size:.72rem;color:var(--muted);letter-spacing:.3px;text-transform:uppercase;">Lorenzo · Preventivi e nuovi progetti</div>
+              <a href="tel:+393515854466" style="color:inherit;text-decoration:none;font-weight:600;">351 585 4466</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <div style="font-size:.72rem;color:var(--muted);letter-spacing:.3px;text-transform:uppercase;">Luca · Assistenza e gestione siti</div>
+              <a href="tel:+393277737115" style="color:inherit;text-decoration:none;font-weight:600;">327 773 7115</a>
+            </div>
           </div>
           <div class="contact-info-item">
             <div class="info-icon">📍</div>
@@ -1598,7 +1579,7 @@
             <span>Risposta garantita entro 24h</span>
           </div>
         </div>
-        <a href="https://wa.me/393277737115?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20sito%20web%20per%20la%20mia%20attività." target="_blank" rel="noopener" class="btn-whatsapp">
+        <a href="https://wa.me/393515854466?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20sito%20web%20per%20la%20mia%20attività." target="_blank" rel="noopener" class="btn-whatsapp">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.998l6.306-1.451A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.366l-.36-.213-3.72.855.884-3.617-.234-.372A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
           Scrivici su WhatsApp
         </a>
@@ -1664,6 +1645,7 @@
     <div class="footer-brand">
       <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
       <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
+      <a href="index.html#contatti" class="footer-cta">Richiedi un preventivo gratuito &rarr;</a>
     </div>
     <div class="footer-col">
       <h4>Servizi</h4>
@@ -1688,15 +1670,16 @@
       <h4>Contatti</h4>
       <ul>
         <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
-        <li><a href="tel:+393277737115">327 773 7115</a></li>
+        <li><a href="tel:+393515854466">351 585 4466</a><span class="footer-role">Lorenzo &middot; preventivi e nuovi progetti</span></li>
+        <li><a href="tel:+393277737115">327 773 7115</a><span class="footer-role">Luca &middot; assistenza clienti</span></li>
         <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
         <li><span class="footer-muted">P.IVA 04400570240</span></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Studio Digital Italia - Titolare: Luca Ramacciato</span>
-    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a> · Fatto con cura a Vicenza</span>
+    <span>© 2026 Studio Digital Italia</span>
+    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a></span>
   </div>
 </footer>
 

@@ -273,7 +273,7 @@
   footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
   footer .footer-inner {
     max-width: 1160px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 2.5rem;
     padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
   }
   footer .footer-brand { min-width: 0; }
@@ -293,6 +293,9 @@
   }
   footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
   footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
+  footer .footer-cta { display: inline-block; margin-top: 1.3rem; color: var(--gold, #B8966A); text-decoration: none; font-size: .82rem; font-weight: 600; transition: color .2s; }
+  footer .footer-cta:hover { color: #fff; }
+  footer .footer-role { display: block; font-size: .7rem; color: rgba(255,255,255,.3); margin-top: .1rem; }
   @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
   @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
 </style>
@@ -538,6 +541,7 @@
     <div class="footer-brand">
       <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
       <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
+      <a href="index.html#contatti" class="footer-cta">Richiedi un preventivo gratuito &rarr;</a>
     </div>
     <div class="footer-col">
       <h4>Servizi</h4>
@@ -562,15 +566,16 @@
       <h4>Contatti</h4>
       <ul>
         <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
-        <li><a href="tel:+393277737115">327 773 7115</a></li>
+        <li><a href="tel:+393515854466">351 585 4466</a><span class="footer-role">Lorenzo &middot; preventivi e nuovi progetti</span></li>
+        <li><a href="tel:+393277737115">327 773 7115</a><span class="footer-role">Luca &middot; assistenza clienti</span></li>
         <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
         <li><span class="footer-muted">P.IVA 04400570240</span></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Studio Digital Italia - Titolare: Luca Ramacciato</span>
-    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a> · Fatto con cura a Vicenza</span>
+    <span>© 2026 Studio Digital Italia</span>
+    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a></span>
   </div>
 </footer>
 

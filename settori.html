@@ -139,7 +139,7 @@
   footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
   footer .footer-inner {
     max-width: 1160px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 2.5rem;
     padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
   }
   footer .footer-brand { min-width: 0; }
@@ -159,6 +159,9 @@
   }
   footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
   footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
+  footer .footer-cta { display: inline-block; margin-top: 1.3rem; color: var(--gold, #B8966A); text-decoration: none; font-size: .82rem; font-weight: 600; transition: color .2s; }
+  footer .footer-cta:hover { color: #fff; }
+  footer .footer-role { display: block; font-size: .7rem; color: rgba(255,255,255,.3); margin-top: .1rem; }
   @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
   @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
 </style>
@@ -225,56 +228,12 @@
       </a>
 
       <!-- Ristorazione -->
-      <a href="demo-ristorante.html" target="_blank" rel="noopener" class="sect-card">
-        <div class="sect-thumb" style="background-image: linear-gradient(to bottom, rgba(20,5,5,.05) 0%, rgba(20,5,5,.5) 60%, rgba(20,5,5,.92) 100%), url('assets/anteprime/preview%20da%20mario.png');">
-          <span class="badge">Demo</span>
-          <span class="cat">Ristorazione</span>
-        </div>
-        <div class="sect-body">
-          <h3>Ristoranti, bar e trattorie</h3>
-          <p>Menù sempre aggiornato, prenotazione tavoli e Google Maps: farsi trovare da chi cerca dove mangiare.</p>
-          <span class="sect-link">Vedi la demo →</span>
-        </div>
-      </a>
 
       <!-- Artigiani & edili -->
-      <a href="demo-idraulico.html" target="_blank" rel="noopener" class="sect-card">
-        <div class="sect-thumb" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.05) 0%, rgba(5,14,26,.5) 60%, rgba(5,14,26,.92) 100%), url('assets/anteprime/preview%20idraulico.png');">
-          <span class="badge">Demo</span>
-          <span class="cat">Artigiani &amp; edili</span>
-        </div>
-        <div class="sect-body">
-          <h3>Idraulici, elettricisti, imprese edili</h3>
-          <p>Sito vetrina con richiesta preventivo e recensioni: la fiducia che convince chi ha un problema urgente.</p>
-          <span class="sect-link">Vedi la demo →</span>
-        </div>
-      </a>
 
       <!-- Salute & professionisti -->
-      <a href="demo-studio.html" target="_blank" rel="noopener" class="sect-card">
-        <div class="sect-thumb" style="background-image: linear-gradient(to bottom, rgba(10,8,20,.05) 0%, rgba(10,8,20,.5) 60%, rgba(10,8,20,.92) 100%), url('assets/anteprime/preview%20ferretti.png');">
-          <span class="badge">Demo</span>
-          <span class="cat">Salute &amp; professionisti</span>
-        </div>
-        <div class="sect-body">
-          <h3>Dentisti, studi medici e professionisti</h3>
-          <p>Sito autorevole con prenotazione online e presentazione del team: credibilità prima del primo contatto.</p>
-          <span class="sect-link">Vedi la demo →</span>
-        </div>
-      </a>
 
       <!-- Retail & benessere -->
-      <a href="demo-negozio.html" target="_blank" rel="noopener" class="sect-card">
-        <div class="sect-thumb" style="background-image: linear-gradient(to bottom, rgba(5,20,18,.05) 0%, rgba(5,20,18,.5) 60%, rgba(5,20,18,.92) 100%), url('assets/anteprime/preview%20ottica.png');">
-          <span class="badge">Demo</span>
-          <span class="cat">Retail &amp; benessere</span>
-        </div>
-        <div class="sect-body">
-          <h3>Negozi, ottica, barbieri e parrucchieri</h3>
-          <p>Catalogo, prenotazione appuntamento e vetrina locale per portare in negozio chi cerca vicino a te.</p>
-          <span class="sect-link">Vedi la demo →</span>
-        </div>
-      </a>
 
     </div>
 
@@ -295,6 +254,7 @@
     <div class="footer-brand">
       <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
       <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
+      <a href="index.html#contatti" class="footer-cta">Richiedi un preventivo gratuito &rarr;</a>
     </div>
     <div class="footer-col">
       <h4>Servizi</h4>
@@ -319,15 +279,16 @@
       <h4>Contatti</h4>
       <ul>
         <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
-        <li><a href="tel:+393277737115">327 773 7115</a></li>
+        <li><a href="tel:+393515854466">351 585 4466</a><span class="footer-role">Lorenzo &middot; preventivi e nuovi progetti</span></li>
+        <li><a href="tel:+393277737115">327 773 7115</a><span class="footer-role">Luca &middot; assistenza clienti</span></li>
         <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
         <li><span class="footer-muted">P.IVA 04400570240</span></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Studio Digital Italia - Titolare: Luca Ramacciato</span>
-    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a> · Fatto con cura a Vicenza</span>
+    <span>© 2026 Studio Digital Italia</span>
+    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a></span>
   </div>
 </footer>
 

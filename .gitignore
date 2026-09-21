@@ -46,7 +46,7 @@ lavigna-redesign.html
 #  File che DEVONO essere pubblicati (non toccare):
 #  index.html, pacchetti.html, portfolio.html, faq.html,
 #  privacy.html, termini.html, chi-siamo.html,
-#  demo-*.html (non lavigna), sitemap.xml, robots.txt, CNAME,
+#  sitemap.xml, robots.txt, CNAME,
 #  logo-*.jpg/png, preview*.png, anteprima*.png
 # ══════════════════════════════════════════════
 
@@ -57,3 +57,7 @@ analisi search console*/
 
 # ── File temporanei ──
 *.tmp
+
+# ── Demo di bassa qualita archiviate (rimosse dal sito) ──
+# Spostate qui, non vanno piu pubblicate.
+pagine non usate - archiviate/
