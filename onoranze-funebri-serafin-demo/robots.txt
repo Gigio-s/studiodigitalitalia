@@ -1,9 +1,4 @@
-# Onoranze Funebri Serafin - demo pubblica (showcase) di Studio Digital Italia
+# Onoranze Funebri Serafin - SITO DIMOSTRATIVO
+# La demo non deve essere indicizzata finché è in valutazione.
 User-agent: *
-Allow: /
-Disallow: /privacy.html
-Disallow: /cookie-policy.html
-Disallow: /gestionale-necrologi.html
-Disallow: /necrologio.html
-
-Sitemap: https://studiodigitalitalia.it/sitemap.xml
+Disallow: /

@@ -43,10 +43,10 @@ window.CATALOGO = {
     titolo: "Composizioni floreali",
     intro: "Composizioni realizzate su misura con fiori freschi di stagione, per ogni tipo di cerimonia.",
     items: [
-      { nome: "Cuscino di commiato", tag: "Fiori freschi", desc: "Composizione da appoggio, elegante e raccolta, in tonalita chiare.", prezzo: "da 120 euro", img: "273941" },
-      { nome: "Corona classica", tag: "Rose e lilium", desc: "Corona tradizionale con rose bianche e lilium, con nastro personalizzabile.", prezzo: "da 160 euro", img: "30325205" },
-      { nome: "Copri-feretro", tag: "Composizione lunga", desc: "Manto floreale che riveste il cofano, su misura per la cerimonia.", prezzo: "da 220 euro", img: "1033141" },
-      { nome: "Mazzo di saluto", tag: "Bouquet", desc: "Bouquet raccolto da portare con se al momento del commiato.", prezzo: "da 45 euro", img: "6794613" }
+      { nome: "Cuscino di commiato", tag: "Fiori freschi", desc: "Composizione da appoggio, elegante e raccolta, in tonalita chiare.", prezzo: "da 120 euro", img: "https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260916_203808_f1601d33-dbb9-4c5c-985e-d318444e0066_min.webp" },
+      { nome: "Corona classica", tag: "Rose e lilium", desc: "Corona tradizionale con rose bianche e lilium, con nastro personalizzabile.", prezzo: "da 160 euro", img: "https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260916_203853_edd540c0-a57c-4dc7-b30e-a01421e228e5_min.webp" },
+      { nome: "Copri-feretro", tag: "Composizione lunga", desc: "Manto floreale che riveste il cofano, su misura per la cerimonia.", prezzo: "da 220 euro", img: "https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260916_203808_7d2992f1-dbc8-4714-ad0c-a93a11bb3d63_min.webp" },
+      { nome: "Mazzo di saluto", tag: "Bouquet", desc: "Bouquet raccolto da portare con se al momento del commiato.", prezzo: "da 45 euro", img: "https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/hf_20260916_203853_fb3cfc8f-a027-4b0a-bde1-66887eb4f62e_min.webp" }
     ]
   },
   imbottiture: {
@@ -66,7 +66,7 @@ window.CATALOGO = {
   var root = document.getElementById("catalogo-root");
   if (!root || !window.CATALOGO) return;
   var order = ["cofani", "urne", "auto", "fiori", "imbottiture"];
-  function pexels(id){ return "https://images.pexels.com/photos/" + id + "/pexels-photo-" + id + ".jpeg?auto=compress&cs=tinysrgb&w=640"; }
+  function pexels(id){ return /^https?:/.test(id) ? id : ("https://images.pexels.com/photos/" + id + "/pexels-photo-" + id + ".jpeg?auto=compress&cs=tinysrgb&w=640"); }
   var html = order.map(function (key) {
     var c = window.CATALOGO[key];
     var cards = c.items.map(function (it) {
@@ -78,9 +78,12 @@ window.CATALOGO = {
           '<div class="card__price">' + it.prezzo + '</div>' +
         '</div></article>';
     }).join("");
+    var extra = (key === "fiori")
+      ? '<p class="center" style="margin-top:40px"><a class="btn btn--bronze" href="fiori.html">Ordina i fiori online</a></p>'
+      : "";
     return '<section class="section ' + (order.indexOf(key)%2 ? "section--cream2":"section--paper") + '" id="' + key + '"><div class="wrap">' +
       '<div class="center narrow"><p class="eyebrow">Catalogo</p><h2>' + c.titolo + '</h2><p class="lead">' + c.intro + '</p></div>' +
-      '<div class="grid grid-3" style="margin-top:44px">' + cards + '</div>' +
+      '<div class="grid grid-3" style="margin-top:44px">' + cards + '</div>' + extra +
       '</div></section>';
   }).join("");
   root.innerHTML = html;

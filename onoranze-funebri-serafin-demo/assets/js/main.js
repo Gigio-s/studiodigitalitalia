@@ -28,6 +28,7 @@
     { label: "Servizi", href: "servizi.html", key: "servizi" },
     { label: "Casa Funeraria", href: "casa-funeraria.html", key: "casa-funeraria" },
     { label: "Catalogo", href: "catalogo.html", key: "catalogo" },
+    { label: "Fiori", href: "fiori.html", key: "fiori" },
     { label: "In caso di lutto", href: "cosa-fare.html", key: "cosa-fare" },
     { label: "Necrologi", href: "necrologi.html", key: "necrologi" },
     { label: "Contatti", href: "contatti.html", key: "contatti" }
@@ -77,7 +78,7 @@
           '<p>Un\'impresa a conduzione familiare che dal 1962 accompagna le famiglie con discrezione, rispetto e attenzione, sette giorni su sette.</p>' +
           '<p style="margin-top:16px"><a class="btn btn--bronze btn--sm" href="' + TEL_HREF + '">Reperibilita 24h: ' + TEL + '</a></p>' +
         '</div>' +
-        col("Onoranze", [["Chi siamo","chi-siamo.html"],["I nostri servizi","servizi.html"],["Casa Funeraria","casa-funeraria.html"],["Catalogo","catalogo.html"]]) +
+        col("Onoranze", [["Chi siamo","chi-siamo.html"],["I nostri servizi","servizi.html"],["Casa Funeraria","casa-funeraria.html"],["Catalogo","catalogo.html"],["Fiori","fiori.html"]]) +
         col("Assistenza", [["In caso di lutto","cosa-fare.html"],["Necrologi","necrologi.html"],["Cremazione","servizi.html#cremazione"],["Contatti","contatti.html"]]) +
         col("Contatti", [["Tel: " + TEL, TEL_HREF],["WhatsApp", WA],["Scrivici","mailto:" + MAIL],["Dove siamo","contatti.html"]]) +
       '</div>' +
@@ -234,4 +235,7 @@
   }
   buildWidgets();
 
+  /* ---- protezione leggera anti-copia ---- */
+  document.addEventListener("contextmenu", function (e) { if (e.target && e.target.tagName === "IMG") e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { if (e.target && e.target.tagName === "IMG") e.preventDefault(); });
 })();
