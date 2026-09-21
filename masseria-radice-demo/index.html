@@ -25,6 +25,10 @@
 }
 <!-- SOSTITUIRE coordinate e dati reali PRIMA DELLA PUBBLICAZIONE. Nessun rating falso. -->
 </script>
+<style>
+  img.ph-real{display:block;width:100%;object-fit:cover;aspect-ratio:4/3;border-radius:var(--radius-lg,14px);}
+  .hero__media img.ph-real{height:100%;width:100%;aspect-ratio:auto;border-radius:0;}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Salta al contenuto</a>
@@ -34,7 +38,7 @@
 
   <!-- 14.1 HERO -->
   <section class="hero">
-    <div class="hero__media"><span class="placeholder ph-olive" data-label="Esterno della masseria tra gli ulivi (foto da inserire)"></span></div>
+    <div class="hero__media"><img class="ph-real" src="assets/img/home-hero.jpg" alt="Esterno di Masseria Radice tra gli ulivi" fetchpriority="high" decoding="async"></div>
     <div class="wrap hero__inner">
       <p class="eyebrow">Agriturismo biologico · Valle d'Itria · Puglia</p>
       <h1>Qui il soggiorno comincia dalla terra.</h1>
@@ -118,7 +122,7 @@
   <!-- 14.7 LA STAGIONE ADESSO -->
   <section class="section bg-olive" data-season-now>
     <div class="wrap season-panel">
-      <div><span class="placeholder ph-wheat" data-label="La campagna nella stagione in corso (foto da inserire)"></span></div>
+      <div><img class="ph-real" src="assets/img/home-season.jpg" alt="La campagna della masseria in stagione" loading="lazy" decoding="async"></div>
       <div>
         <p class="eyebrow" style="color:var(--wheat)">La stagione adesso</p>
         <h2 data-season-title>La masseria in questa stagione</h2>
@@ -138,7 +142,7 @@
   <!-- 14.8 CUCINA -->
   <section class="section">
     <div class="wrap split split--reverse">
-      <div class="split__media"><span class="placeholder ph-earth" data-label="Piatto stagionale del ristorante (foto da inserire)"></span></div>
+      <div class="split__media"><img class="ph-real" src="assets/img/home-food.jpg" alt="Piatto stagionale del ristorante" loading="lazy" decoding="async"></div>
       <div>
         <p class="eyebrow">Il ristorante agricolo</p>
         <h2>Il menu cambia quando cambia il campo.</h2>

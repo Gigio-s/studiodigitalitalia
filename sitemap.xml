@@ -51,6 +51,22 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ══ LANDING SETTORE - SITI WEB PER AGENZIE IMMOBILIARI ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/siti-web-agenzie-immobiliari.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══ LANDING SETTORE - SITI WEB PER AUTOFFICINE ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/siti-web-autofficine.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ══ FAQ ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/faq.html</loc>
@@ -79,6 +95,22 @@
   <url>
     <loc>https://studiodigitalitalia.it/onoranze-funebri-serafin-demo/</loc>
     <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══ DEMO PUBBLICA - Casaviva Immobiliare (esempio di portfolio) ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/casaviva-immobiliare-demo/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══ DEMO PUBBLICA - Autofficina Meridiana (esempio di portfolio) ══ -->
+  <url>
+    <loc>https://studiodigitalitalia.it/officina-meridiana-demo/</loc>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
