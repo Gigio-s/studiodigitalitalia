@@ -6,6 +6,9 @@ var L = window.LELLO = window.LELLO || {};
 
 /* Demo privata: protezione anti-copia attiva. Mettere false quando diventa il sito reale. */
 L.protect = true;
+/* Strumenti sviluppatore (F12, Ctrl+Shift+I, tasto destro > Ispeziona) sbloccati per i test mobile.
+   Rimettere false prima di mandare la demo al cliente. */
+L.devtools = true;
 
 L.info = {
   nome:'Pizzeria da Lello - Le Fornaci',
@@ -24,6 +27,7 @@ var I = {
   pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
   ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
   fb:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+  menu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg>',
   cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
   down:'<svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg>'
 };
@@ -60,6 +64,11 @@ function footer(){
   '</div>'+
   '<div class="ftr-bot"><span>&copy; '+new Date().getFullYear()+' '+L.info.societa+' - P.IVA '+L.info.piva+'</span><span><a href="privacy.html">Privacy e cookie</a> - Sito realizzato da <a href="https://studiodigitalitalia.it" target="_blank" rel="noopener">Studio Digital Italia</a></span></div>'+
   '</div></footer>'+
+  '<nav class="mbar" aria-label="Azioni rapide">'+
+    '<a href="tel:'+L.info.telLink+'">'+I.phone+'Chiama</a>'+
+    '<a href="menu.html">'+I.menu+'Menu</a>'+
+    '<a class="go" href="'+L.info.prenota+'" target="_blank" rel="noopener">'+I.cal+'Prenota</a>'+
+  '</nav>'+
   '<div class="demo-bar">Demo riservata - anteprima</div>';
 }
 
@@ -134,11 +143,11 @@ function reveal(){
 function protezioneDemo(){
   if(!L.protect) return;
   var stop=function(e){ e.preventDefault(); return false; };
-  document.addEventListener('contextmenu',stop);
+  if(!L.devtools) document.addEventListener('contextmenu',stop);
   document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });
   document.addEventListener('copy',stop);
   document.addEventListener('selectstart',function(e){ if(!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) e.preventDefault(); });
-  document.addEventListener('keydown',function(e){
+  if(!L.devtools) document.addEventListener('keydown',function(e){
     var k=(e.key||'').toLowerCase();
     if(e.key==='F12' || ((e.ctrlKey||e.metaKey) && (k==='u'||k==='s'||k==='p')) || ((e.ctrlKey||e.metaKey) && e.shiftKey && (k==='i'||k==='j'||k==='c'))){ e.preventDefault(); }
   });
@@ -150,8 +159,8 @@ document.addEventListener('DOMContentLoaded',function(){
   var h=document.getElementById('site-header'); if(h) h.outerHTML=header();
   var f=document.getElementById('site-footer'); if(f) f.outerHTML=footer();
   var b=document.querySelector('.burger');
-  if(b) b.addEventListener('click',function(){ var o=document.body.classList.toggle('nav-open'); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu'); });
-  document.querySelectorAll('.nav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); }); });
+  if(b) b.addEventListener('click',function(){ var o=document.body.classList.toggle('nav-open'); document.documentElement.classList.toggle('nav-open',o); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu'); });
+  document.querySelectorAll('.nav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); document.documentElement.classList.remove('nav-open'); }); });
   document.querySelectorAll('[data-icon]').forEach(function(el){ el.innerHTML=I[el.getAttribute('data-icon')]||''; });
   forms(); renderMenu(); reveal(); protezioneDemo();
 });

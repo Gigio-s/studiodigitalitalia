@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Area Clienti - Studio Digital Italia</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="Area clienti Studio Digital Italia: la demo del tuo sito e il tuo preventivo." />
   <link rel="canonical" href="https://studiodigitalitalia.it/area-plus.html" />
@@ -463,7 +464,7 @@
 const CFG = {
   // Codici di accesso per i clienti (maiuscole/minuscole indifferenti)
   // Stessi codici dell'area riservata: servono per verificare l'accesso iniziale
-  codici: ['BD2026', 'DEMO2026', 'VICENZA26'],
+  codiciHash: ['5f72adb6849aa13b942b4a5d10f1d1ac318ec25fcdeb78bd941296032d9dac59', '4aa05c62bc51969c5466a0bd884105fa76e806b034362effd5439368446aacba', '7cce91099bab353b605daef67c2901a097b469897a6e24b8aff362ef5674722e'],
   // Codice interno: entra senza dati e senza inviare lead. Impronta SHA-256, non leggibile.
   adminHash: 'd05367c30c87df158ba4ff11cc2250092212d6bbf2f8c4c4ce9715259ea04a10',
 
@@ -672,7 +673,10 @@ $('#unlockForm').addEventListener('submit', async e => {
   document.getElementById('vetrina').scrollIntoView({ behavior:'smooth' });
 });
 
-function lockOut(){ store.del('sdi_area_plus'); UNLOCK = {}; CLIENTE = ''; state.model = null; renderAll(); }
+function lockOut(){
+  if (USER.plus) { store.del('sdi_area_plus'); store.del('sdi_area_user'); location.href = 'area-riservata.html'; return; }
+  store.del('sdi_area_plus'); UNLOCK = {}; CLIENTE = ''; state.model = null; renderAll();
+}
 
 /* ---------- VETRINA ---------- */
 const LOCK_SVG = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4B48A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
@@ -875,7 +879,7 @@ $('#genBtn').addEventListener('click', async () => {
   const exist = Array.from(document.querySelectorAll('#gen_exist input:checked')).map(i => UNLOCK[i.value]).filter(Boolean);
   const rows = $('#gen_demo').value.split('\n').filter(r => r.trim());
   if (!code || !cli || (!exist.length && !rows.length)) { out.value = 'Compila codice, nome del cliente e almeno una demo (esistente o nuova).'; return; }
-  if (CFG.codici.map(normCode).includes(code) || (await isAdmin(code))) { out.value = 'Codice già usato: scegline un altro.'; return; }
+  if (CFG.codiciHash.includes(await sha(code)) || (await isAdmin(code))) { out.value = 'Codice già usato: scegline un altro.'; return; }
   const k = (store.get('sdi_area_user') || {}).k;
   if (!k || !(await isAdmin(k))) { out.value = 'Serve l\'accesso interno.'; return; }
   const enc = p => encodeURI(p.trim());
@@ -895,16 +899,35 @@ $('#genBtn').addEventListener('click', async () => {
 /* ---------- AVVIO ---------- */
 (async () => {
   const saved = store.get('sdi_area_user');
-  const valid = saved && ((saved.admin && saved.k && await isAdmin(saved.k)) || (saved.nome && CFG.codici.map(normCode).includes(normCode(saved.codice))));
+  const qs = new URLSearchParams(location.search);
+  let valid = false;
+  if (saved && saved.admin && saved.k) valid = await isAdmin(saved.k);
+  else if (saved && saved.plus && saved.k) { const h = await sha(saved.k); valid = CFG.plus.some(x => x.h === h); }
+  else if (saved && saved.nome) valid = CFG.codiciHash.includes(await sha(saved.codice || ''));
   if (!valid) { $('#needLogin').hidden = false; return; }
   USER = saved;
   if (USER.admin) await applyCode(USER.k, true);
-  else { const sp = store.get('sdi_area_plus'); if (sp && sp.k) await applyCode(sp.k, true); }
+  else if (USER.plus) {
+    await applyCode(USER.k, !qs.get('benvenuto'));
+    if (qs.get('benvenuto')) history.replaceState(null, '', location.pathname);
+    USER.attivita = CLIENTE; store.set('sdi_area_user', USER);
+  } else { const sp = store.get('sdi_area_plus'); if (sp && sp.k) await applyCode(sp.k, true); }
   const first = PERS()[0];
   if (first) { state.model = first.id; state.pack = first.pacchetto; state.items = (first.servizi || []).slice(); }
   openArea();
-  const qc = new URLSearchParams(location.search).get('codice');
+  if (USER.plus) { $('#heroEyebrow').textContent = 'Area clienti'; }
+  const qc = qs.get('codice');
   if (qc && !Object.keys(UNLOCK).length) $('#u_code').value = qc;
+})();
+</script>
+<script>
+/* Protezione base: blocca tasto destro, visualizza sorgente, salva e strumenti sviluppatore */
+(function(){
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  document.addEventListener('keydown', function(e){
+    var k = (e.key || '').toLowerCase();
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i','j','c'].indexOf(k) > -1) || ((e.ctrlKey || e.metaKey) && ['u','s'].indexOf(k) > -1)) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
 })();
 </script>
 </body>

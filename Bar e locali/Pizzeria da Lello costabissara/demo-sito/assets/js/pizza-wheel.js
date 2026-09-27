@@ -124,7 +124,8 @@ Wheel.prototype.open=function(i){
   this.root.classList.add('is-open');
   this.stage.setAttribute('aria-hidden','false');
   this.fill(p,i);
-  var sec=this.root.closest('section'); if(sec && sec.getBoundingClientRect().top<-40) sec.scrollIntoView({behavior:'smooth'});
+  var sec=this.root.closest('section'), mob=window.matchMedia('(max-width:980px)').matches;
+  if(sec && (mob || sec.getBoundingClientRect().top<-40)) window.scrollTo({top:sec.getBoundingClientRect().top+window.pageYOffset,behavior:mob?'auto':'smooth'});
   var dst=this.move.getBoundingClientRect();
   var dx=(src.left+src.width/2)-(dst.left+dst.width/2), dy=(src.top+src.height/2)-(dst.top+dst.height/2), s=src.width/dst.width;
   if(reduced()){ this.busy=false; return; }

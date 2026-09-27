@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Area Demo Riservata - Studio Digital Italia</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="Area riservata Studio Digital Italia: tutte le demo per settore e preventivo automatico del tuo sito web." />
   <link rel="canonical" href="https://studiodigitalitalia.it/area-riservata.html" />
@@ -464,9 +465,12 @@
    ===================================================================== */
 const CFG = {
   // Codici di accesso per i clienti (maiuscole/minuscole indifferenti)
-  codici: ['BD2026', 'DEMO2026', 'VICENZA26'],
+  // Codici generici di accesso, salvati come impronta SHA-256 (non leggibili). Per cambiarli chiedi di rigenerarli.
+  codiciHash: ['5f72adb6849aa13b942b4a5d10f1d1ac318ec25fcdeb78bd941296032d9dac59', '4aa05c62bc51969c5466a0bd884105fa76e806b034362effd5439368446aacba', '7cce91099bab353b605daef67c2901a097b469897a6e24b8aff362ef5674722e'],
   // Codice interno: entra senza dati e senza inviare lead. Impronta SHA-256, non leggibile.
   adminHash: 'd05367c30c87df158ba4ff11cc2250092212d6bbf2f8c4c4ce9715259ea04a10',
+  // Codici dei clienti dell'area clienti (impronte): entrano senza dati e vanno dritti alle loro demo
+  clientiHash: ['37db4e2b5347c7f2eceb73327c5bd37bbc5da37e4fc638b6aacd3236e30e69f1', '48e17a5f6f9f0c9cfd8b8d9c1d8984329214fa036d3887b926692e804cd54bb5'],
 
   web3formsKey: '914e01eb-8c00-4420-9d4e-87762a6558c6',
   whatsapp: '393515854466',
@@ -579,12 +583,14 @@ async function sendW3F(data){
 }
 
 /* ---------- GATE ---------- */
-async function isAdmin(v){
+async function hashOf(v){
   try {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(v).trim().toUpperCase()));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('') === CFG.adminHash;
-  } catch(e){ return false; }
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  } catch(e){ return ''; }
 }
+async function isAdmin(v){ return (await hashOf(v)) === CFG.adminHash; }
+async function isCliente(v){ return CFG.clientiHash.includes(await hashOf(v)); }
 function initGate(){
   const sel = $('#g_settore');
   sel.innerHTML = '<option value="">Seleziona...</option>' + CFG.settori.map(s => `<option value="${s.id}">${esc(s.nome)}</option>`).join('');
@@ -593,10 +599,13 @@ function initGate(){
   if (qs.get('settore')) sel.value = qs.get('settore');
 
   const syncAdmin = async () => {
-    const ok = await isAdmin($('#g_code').value);
+    const adm = await isAdmin($('#g_code').value);
+    const cli = !adm && await isCliente($('#g_code').value);
+    const ok = adm || cli;
     document.querySelector('.gate-card').classList.toggle('admin-mode', ok);
     $('#adminBadge').hidden = !ok;
-    $('#gateBtn').textContent = ok ? 'Entra (accesso interno)' : "Entra nell'area demo";
+    $('#adminBadge').textContent = adm ? 'Accesso interno riconosciuto' : 'Codice cliente riconosciuto';
+    $('#gateBtn').textContent = adm ? 'Entra (accesso interno)' : cli ? 'Entra nella tua area' : "Entra nell'area demo";
   };
   $('#g_code').addEventListener('input', syncAdmin);
   if ($('#g_code').value) syncAdmin();
@@ -609,8 +618,14 @@ function initGate(){
       USER = { nome:'Luca', attivita:'Accesso interno', admin:true, codice:'INTERNO', settore:'', k: String($('#g_code').value).trim().toUpperCase() };
       store.set('sdi_area_user', USER); openArea(); return;
     }
+    if (await isCliente($('#g_code').value)) {
+      const k = String($('#g_code').value).trim().toUpperCase();
+      store.set('sdi_area_user', { nome:'', attivita:'', plus:true, codice:'CLIENTE', settore:'', k });
+      store.set('sdi_area_plus', { k });
+      location.href = 'area-plus.html?benvenuto=1'; return;
+    }
     const code = $('#g_code').value.trim().toUpperCase();
-    if (!CFG.codici.map(c => c.toUpperCase()).includes(code)) {
+    if (!CFG.codiciHash.includes(await hashOf(code))) {
       msg.className = 'form-msg err'; msg.textContent = 'Codice non valido. Controlla il messaggio che hai ricevuto o richiedilo su WhatsApp.';
       $('#g_code').focus(); return;
     }
@@ -817,12 +832,24 @@ $('#againBtn').addEventListener('click', () => {
 initGate();
 let saved = store.get('sdi_area_user');
 const qsModel = new URLSearchParams(location.search).get('modello');
-if (saved && (saved.admin || (saved.nome && CFG.codici.map(c => c.toUpperCase()).includes(String(saved.codice || '').toUpperCase())))) {
+(async () => {
+if (saved && (saved.admin || (saved.plus && saved.k) || (saved.nome && CFG.codiciHash.includes(await hashOf(saved.codice || ''))))) {
   USER = saved; openArea(); if (qsModel) pickModel(qsModel);
 } else if (qsModel && CFG.modelli.some(x => x.id === qsModel)) {
   const m = CFG.modelli.find(x => x.id === qsModel);
   state.model = m.id; state.pack = m.pacchetto; state.items = m.servizi.slice();
 }
+})();
+</script>
+<script>
+/* Protezione base: blocca tasto destro, visualizza sorgente, salva e strumenti sviluppatore */
+(function(){
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  document.addEventListener('keydown', function(e){
+    var k = (e.key || '').toLowerCase();
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i','j','c'].indexOf(k) > -1) || ((e.ctrlKey || e.metaKey) && ['u','s'].indexOf(k) > -1)) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+})();
 </script>
 </body>
 </html>
