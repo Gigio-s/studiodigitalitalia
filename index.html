@@ -218,6 +218,7 @@
     .btn-nav:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
 
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-links li.nav-mobile-only { display: none; }
     .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); border-radius: 2px; }
 
     /* ── HERO ── */
@@ -926,6 +927,9 @@
         list-style: none;
       }
       .hamburger { display: flex; }
+      .nav-links.open .nav-mobile-only { display: block; padding-top: .4rem; border-top: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open .nav-area-btn { display: block; text-align: center; padding: .8rem 1rem; border: 1px solid rgba(184,150,106,.6); border-radius: var(--radius); color: var(--gold) !important; font-weight: 600; margin-top: .6rem; }
+      .nav-links.open .nav-area-btn:active { background: var(--gold); color: var(--dark) !important; }
     }
     @media (max-width: 600px) {
       html, body { overflow-x: hidden; }
@@ -1042,6 +1046,7 @@
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="pacchetti.html">Pacchetti &amp; Prezzi</a></li>
     <li><a href="faq.html">FAQ</a></li>
+    <li class="nav-mobile-only"><a href="area-riservata.html" class="nav-area-btn">Accedi all'area riservata</a></li>
   </ul>
   <a href="area-riservata.html" class="btn-nav">Area riservata</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
