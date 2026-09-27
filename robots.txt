@@ -6,6 +6,8 @@ Allow: /
 
 # Blocca file interni non pubblici
 Disallow: /gestione-operativa-studiodigital.html
+Disallow: /area-riservata.html
+Disallow: /area-plus.html
 
 # Sitemap
 Sitemap: https://studiodigitalitalia.it/sitemap.xml

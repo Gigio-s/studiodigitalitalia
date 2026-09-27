@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventi | Classico Vicenza - Aperitivo della domenica e DJ set</title>
+<meta name="description" content="Eventi a Classico Vicenza, Costabissara: Classica, l'aperitivo della domenica con DJ set, serate nel weekend e feste private.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#23261C">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="eventi">
+<div id="site-header"></div>
+<main id="main">
+  <section class="hero page-hero">
+    <img src="assets/img/evento.jpg" alt="Aperitivo con DJ set in giardino" fetchpriority="high">
+    <div class="hero-in"><div class="kicker">Eventi</div><h1>Musica, amici <em>e spritz</em></h1></div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="poster rv">
+        <div class="poster-t">
+          <div class="top"><span class="payoff" style="font-size:11px;letter-spacing:2px"><span>Food</span><span>Drink</span><span>Friends</span></span><span>Est. sempre</span></div>
+          <h2>classic<em>a</em></h2>
+          <h3>L'aperitivo della domenica.</h3>
+          <p>La domenica da Classico si allunga: spritz, cicchetti e un DJ set che accompagna il tramonto. Il modo giusto per chiudere la settimana, tutti insieme.</p>
+          <div class="when">Domenica - dalle 18:00 - DJ set</div>
+        </div>
+        <img src="assets/img/evento.jpg" alt="Folla all'aperitivo della domenica con DJ" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <div class="center rv"><span class="eyebrow">In calendario</span><h2 class="h2">Le prossime <em>date</em></h2></div>
+      <div class="ev-list" id="ev-list"></div>
+      <p class="note" style="color:var(--cream)">Segui <a href="https://www.instagram.com/classico.vicenza/" target="_blank" rel="noopener" style="text-decoration:underline">@classico.vicenza</a> per ospiti e novità di ogni settimana.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap split">
+      <div class="split-media rv"><img src="assets/img/amici.jpg" alt="Gruppo di amici che festeggia" loading="lazy"><span class="tag">Feste su misura</span></div>
+      <div class="rv">
+        <span class="eyebrow">Eventi privati</span>
+        <h2 class="h2">Il tuo compleanno <em>da Classico</em></h2>
+        <p>Compleanni, lauree, addii al celibato o semplicemente una serata con tutta la compagnia. Pensiamo noi a drink, caraffe da condividere e taglieri, tu pensa solo a divertirti.</p>
+        <ul class="checks"><li>Tavoli riservati dentro o nel dehors</li><li>Caraffe di spritz, birra e cocktail da condividere</li><li>Buffet di bruschette, cicchetti e tramezzini</li><li>Musica e DJ su richiesta</li></ul>
+        <a class="btn btn-rust" href="index.html#prenota">Chiedi un preventivo</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var host=document.getElementById('ev-list'); if(!host) return;
+  var mesi=['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+  var d=new Date(); d.setHours(12); var out=[];
+  while(out.length<6){ d.setDate(d.getDate()+1); var g=d.getDay();
+    if(g===0) out.push([new Date(d),'Classica, l\'aperitivo della domenica','Spritz, cicchetti e DJ set al tramonto, dalle 18:00','DJ set']);
+    else if(g===5 && out.length<5) out.push([new Date(d),'Venerdì da Classico','Cocktail e musica fino all\'una: il weekend inizia qui','Aperti fino all\'1:00']);
+  }
+  host.innerHTML=out.map(function(e){return '<article class="ev rv in"><div class="ev-date"><b>'+e[0].getDate()+'</b><span>'+mesi[e[0].getMonth()]+'</span></div><div><h3>'+e[1]+'</h3><p>'+e[2]+'</p></div><span class="pill">'+e[3]+'</span></article>';}).join('');
+});
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
