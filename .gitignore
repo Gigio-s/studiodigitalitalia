@@ -33,6 +33,9 @@ Lead_*.xlsx
 
 # ── Video e materiali pesanti ──
 *.mp4
+# Eccezione: i video della demo Casaviva servono online (effetto 'esplora casa')
+!casaviva-immobiliare-demo/*.mp4
+!casaviva-immobiliare-demo/**/*.mp4
 webdesign/
 
 # ── Progetti clienti interni ──
