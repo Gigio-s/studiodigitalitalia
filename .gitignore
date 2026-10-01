@@ -36,6 +36,9 @@ Lead_*.xlsx
 # Eccezione: i video della demo Casaviva servono online (effetto 'esplora casa')
 !casaviva-immobiliare-demo/*.mp4
 !casaviva-immobiliare-demo/**/*.mp4
+# Eccezione: i video della demo VINCI servono online
+!vinci-vicenza-demo/assets/*.mp4
+!vinci-vicenza-demo/foto e video insta/hf_20261001_102510_48e886c4-79fc-4c6f-a8b0-32506fb8e7c4.mp4
 webdesign/
 
 # ── Progetti clienti interni ──
