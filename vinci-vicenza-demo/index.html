@@ -1,70 +1,499 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <title>VINCI — Demo</title>
-  <meta name="description" content="Demo di VINCI, pasticceria e panetteria in Corso Fogazzaro a Vicenza.">
-  <link rel="stylesheet" href="style.css?v=13"><script src="script.js?v=7" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>VINCI - Vicenza | Demo v5</title>
+<script>
+/* ingresso: solo alla prima visita della sessione, mai con "riduci movimento" */
+(function(){var si=true;try{si=!sessionStorage.getItem('vinciIntro')}catch(e){}
+if(si&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('intro-on');})();
+</script>
+<meta name="description" content="VINCI, pasticceria e panetteria in Corso Fogazzaro 142 a Vicenza: lievitati, sfoglie e pane esposti come opere in una galleria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* palette VINCI: calce, pietra, sabbia, ambra della sfoglia */
+  --calce:#f4f2ed; --carta:#fbfaf6; --pietra:#2b2924; --testo:#57554f;
+  --sabbia:#ded6c5; --ambra:#a86a28; --caramello:#d9a45c; --linea:#d4cfc3; --tenue:#777369;
+  --serif:"Fraunces",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+  --max:1180px; --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);color:var(--testo);background:var(--calce);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--ambra);outline-offset:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--pietra);line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,min(6.4vw,10.5vh),5rem);font-weight:300}
+h1 em{font-style:italic;color:var(--ambra)}
+h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:300}
+h2 em{font-style:italic;color:var(--ambra)}
+h3{font-size:1.35rem}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ambra);font-weight:600;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.25s;border:1.5px solid var(--pietra);color:var(--pietra)}
+.btn-full{background:var(--pietra);color:var(--carta)}
+.btn-full:hover{background:var(--ambra);border-color:var(--ambra)}
+.btn-line:hover{background:var(--pietra);color:var(--carta)}
+
+/* scena 3D: canvas fisso, non intercetta i clic */
+#scena3d{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}
+.ancora{pointer-events:none}
+
+/* ingresso: il negozio che si accende. Due pannelli neri, una linea LED nel mezzo, poi si aprono */
+#intro{display:none;position:fixed;inset:0;z-index:60;cursor:pointer}
+.intro-on #intro{display:block}
+#intro .su,#intro .giu{position:absolute;left:0;right:0;background:#000;transition:transform 1s cubic-bezier(.65,0,.2,1)}
+#intro .su{top:0;height:62%}
+#intro .giu{top:62%;bottom:0}
+#intro img{position:absolute;left:50%;top:50vh;width:min(46vw,230px);height:auto;transform:translate(-50%,-50%);transition:opacity .5s}
+#intro .led{position:absolute;left:0;right:0;top:62%;height:2px;margin-top:-1px;background:#fff6e4;box-shadow:0 0 14px 2px rgba(255,236,200,.75),0 0 60px 8px rgba(255,220,170,.35);
+  transform:scaleX(0);transition:transform .6s cubic-bezier(.3,0,.2,1),opacity .6s .5s}
+#intro.accesa .led{transform:scaleX(1)}
+#intro.aperta .su{transform:translateY(-101%)}
+#intro.aperta .giu{transform:translateY(101%)}
+#intro.aperta .led{opacity:0}
+#intro.aperta img{opacity:0}
+#intro.salta .su,#intro.salta .giu,#intro.salta .led{transition:opacity .25s;opacity:0}
+.intro-on #scena3d{z-index:70}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:#000;border-bottom:1px solid #1d1c19}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:52px;width:auto}
+.menu{display:flex;gap:34px;font-size:.92rem;font-weight:500;color:#f4f2ed}
+.menu a:hover{color:var(--caramello)}
+.nav .btn{padding:11px 22px;font-size:.86rem;background:#f4f2ed;border-color:#f4f2ed;color:#000}
+.nav .btn:hover{background:var(--caramello);border-color:var(--caramello);color:#000}
+header a:focus-visible{outline-color:var(--caramello)}
+.burger{display:none;background:none;border:0;font-size:1.6rem;color:#f4f2ed;cursor:pointer}
+
+/* hero */
+.hero{padding:clamp(28px,7vh,70px) 0 clamp(50px,10vh,100px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero p.lead{font-size:1.13rem;max-width:480px;margin:26px 0 34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-fig-wrap{position:relative;width:100%;max-width:calc((100vh - 150px) * .8);margin:0 auto}   /* l'arco non supera mai l'altezza dello schermo */
+.hero-fig{position:relative;aspect-ratio:4/5;border-radius:220px 220px var(--r) var(--r);overflow:hidden;background:var(--sabbia)}
+img{height:auto}
+.hero-fig img,.hero-fig video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;right:-14px;top:8%;z-index:41;background:var(--carta);border:1px solid var(--linea);border-radius:var(--r);padding:16px 20px;box-shadow:0 18px 40px -22px rgba(43,41,36,.5);max-width:210px}
+.badge b{font-family:var(--serif);font-size:1.05rem;color:var(--pietra);display:block;font-weight:500}
+.badge small{color:var(--tenue);font-size:.8rem}
+/* il Sole sta sul bancone della foto: l'ancora e centrata e appoggiata alla linea del piano (57% dell'altezza) */
+.ancora-hero{position:absolute;left:50%;top:18%;width:56%;aspect-ratio:1;transform:translateX(-50%)}
+.hero-fig .ombra{position:absolute;left:50%;top:57%;width:54%;height:7%;transform:translate(-50%,-10%);border-radius:50%;background:radial-gradient(closest-side,rgba(60,40,20,.42),rgba(60,40,20,0));filter:blur(3px)}
+.no-3d .hero-fig .ombra{display:none}
+.hint{display:flex;align-items:center;gap:10px;margin-top:38px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+.hint::before{content:"";width:34px;height:1px;background:var(--tenue)}
+
+/* fascia */
+.strip{background:var(--pietra);color:var(--caramello);padding:18px 0;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase}
+.strip .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+section{padding:96px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.head p{max-width:420px;color:var(--tenue)}
+
+/* collezione */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;display:block;background:var(--sabbia)}
+.cat:nth-child(1),.cat:nth-child(6),.cat:nth-child(7),.cat:nth-child(8){grid-column:span 2;aspect-ratio:auto;min-height:340px}
+.cat .ph{position:absolute;inset:0;transition:transform .6s}
+.cat:hover .ph{transform:scale(1.05)}
+.cat .lbl{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(30,28,24,.82));color:var(--carta)}
+.cat .lbl h3{color:var(--carta)}
+.cat .lbl span{font-size:.82rem;opacity:.85}
+.cat .num{position:absolute;left:18px;top:14px;font-family:var(--serif);font-style:italic;color:var(--carta);font-size:1.1rem;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+
+/* ---------- palco della collezione: versione statica (senza JS o con "riduci movimento") ---------- */
+.palco{padding:80px 0;background:var(--calce)}
+.palco-testa p:last-child{max-width:380px;color:var(--tenue);margin-top:14px}
+.palco-led,.palco-bancone,.palco-testa.t2,.pane-pezzo,.ancora-lato{display:none}
+.palco-fila{max-width:var(--max);margin:40px auto 0;padding:0 24px;display:flex;flex-wrap:wrap;gap:34px 26px;justify-content:center;align-items:flex-end}
+.pezzo{width:200px;text-align:center}
+.pezzo-foto{position:relative;height:170px}
+.pezzo-foto img{position:absolute;left:0;right:0;bottom:0;margin:0 auto;max-width:100%;max-height:100%;width:auto;height:auto;filter:drop-shadow(0 14px 10px rgba(60,40,20,.28))}
+.pezzo-foto .dentro,.lato.dentro{display:none}
+.palco-sole{width:230px;text-align:center;position:relative}
+.palco-sole .ancora{display:none}
+.palco-sole .statica{width:170px;height:170px;border-radius:50%;object-fit:cover;margin:0 auto}
+/* cartellino in plexi */
+.cartellino{display:inline-block;margin-top:16px;padding:9px 14px 10px;min-width:124px;text-align:center;border-radius:6px;
+  background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,.2));border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 18px -14px rgba(43,41,36,.7),inset 0 0 0 1px rgba(43,41,36,.05);backdrop-filter:blur(5px)}
+.cartellino b{display:block;font-family:var(--serif);font-weight:500;font-size:1.02rem;color:var(--pietra);line-height:1.2}
+.cartellino .lato{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);margin-top:3px}
+.cartellino .bozza{display:block;font-style:normal;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ambra);margin-top:2px}
+.pani{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.pani img{width:100%;height:340px;object-fit:cover;border-radius:var(--r)}
+
+/* ---------- palco attivo: resta fermo a schermo, lo scroll lo comanda (classe messa da js/palco.js) ---------- */
+.palco.palco-on{padding:0;height:700vh}
+.palco-on ~ #panificati{display:none}          /* il pane e dentro il palco: la sezione statica serve solo senza animazioni */
+.palco-on .palco-fisso{position:sticky;top:74px;height:calc(100vh - 74px);overflow:hidden}
+.palco-on .palco-led{display:block;position:absolute;left:8%;right:8%;top:7%;height:1px;background:#fffaf0;box-shadow:0 0 12px 1px rgba(255,238,205,.9),0 0 46px 6px rgba(255,226,180,.45)}
+.palco-on .palco-testa{position:absolute;left:0;right:0;top:clamp(26px,9vh,96px);opacity:var(--a,0);transform:translateY(calc((1 - var(--a,0)) * 12px))}
+.palco-on .palco-bancone{display:block;position:absolute;left:0;right:0;top:64%;bottom:0;
+  background:linear-gradient(#efe9dc,#e3dccb 38%,#d8cfbc);box-shadow:inset 0 1px 0 #fffdf6,inset 0 14px 22px -16px rgba(255,255,255,.9)}
+.palco-on .palco-fila{position:absolute;left:0;right:0;bottom:36%;margin:0 auto;padding:0 24px;flex-wrap:nowrap;gap:0;justify-content:space-between}
+.palco-on .pezzo{position:relative;width:15%;max-width:190px;opacity:var(--a,0);transform:translateY(calc((1 - var(--a,0)) * 14px))}
+.palco-on .pezzo-foto{height:min(21vh,170px)}
+.palco-on .pezzo-foto .fuori{opacity:calc(1 - var(--d,0))}
+.palco-on .pezzo-foto .dentro{display:block;opacity:var(--d,0)}
+.palco-on .cartellino{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:22px;white-space:nowrap}
+.palco-on .lato.fuori{opacity:calc(1 - var(--d,0))}
+.palco-on .lato.dentro{display:block;position:absolute;left:0;right:0;bottom:10px;margin:0;opacity:var(--d,0)}
+.palco-on .palco-sole{width:min(34%,420px,58vh)}
+.con-3d .palco-on .palco-sole .ancora{display:block;position:static;width:100%;aspect-ratio:8/5;margin-bottom:-16px}
+.con-3d .palco-on .palco-sole .statica{display:none}
+.palco-on .cart-sole{opacity:var(--a,0)}
+.palco-on .palco-testa.t2{display:block}
+.palco-on .palco-testa .eyebrow{margin-bottom:clamp(6px,1.4vh,14px)}
+.palco-on .palco-testa h2{font-size:clamp(1.45rem,1.2vw + 2.6vh,3rem);max-width:min(430px,34vw)}
+.palco-on .palco-testa p:last-child{font-size:clamp(.8rem,.3vw + 1.5vh,1rem);max-width:min(380px,30vw);margin-top:clamp(6px,1.4vh,14px)}
+/* panificati: dove va il Sole richiuso (in fondo al bancone) e il pane al centro */
+.palco-on .ancora-lato{display:block;position:absolute;right:4%;bottom:36%;width:min(13vw,170px,24vh);aspect-ratio:1;margin-bottom:calc(min(13vw,170px,24vh) * -.17)}
+.palco-on .pane-pezzo{display:block;position:absolute;left:58%;bottom:36%;margin:0;text-align:center;
+  opacity:var(--a,0);transform:translateX(-50%) translateY(calc((1 - var(--a,0)) * 14px))}
+.pane-foto{position:relative;display:inline-block;transform-origin:72% 100%;transform:scale(calc(1 + var(--l,0) * .2))}
+.pane-foto img{display:block;width:auto;max-width:none;height:min(34vh,21vw,320px);filter:drop-shadow(0 16px 12px rgba(60,40,20,.3))}
+/* didascalia da museo sull'incisione: un punto, una linea, una scritta */
+.lama{position:absolute;left:77%;top:24%;opacity:var(--l,0)}
+.lama::before{content:"";position:absolute;left:-6px;top:-6px;width:11px;height:11px;border-radius:50%;border:1px solid var(--pietra);background:rgba(255,255,255,.6)}
+.lama i{position:absolute;left:5px;top:-1px;height:1px;width:calc(var(--l,0) * 74px);background:var(--pietra);transform:rotate(-24deg);transform-origin:0 50%}
+.lama b{position:absolute;left:76px;top:-44px;white-space:nowrap;font-weight:500;font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pietra)}
+.palco-on .pane-pezzo .cartellino{opacity:calc(1 - var(--l,0))}
+
+/* pezzo della casa */
+.feat{overflow:clip;background:var(--carta);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.feat-fig{aspect-ratio:1;border-radius:50%;position:relative;max-width:480px;width:100%;
+  background:radial-gradient(circle at 50% 46%,#fffdf8 0%,#efe9dc 46%,#ded6c5 100%);box-shadow:inset 0 0 0 1px var(--linea),0 40px 70px -50px rgba(43,41,36,.55)}
+.feat-fig::after{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px dashed var(--linea);animation:ruota 60s linear infinite}
+.feat-fig .ancora{position:absolute;inset:11%}
+.feat-fig .statica{position:absolute;inset:0;border-radius:50%;object-fit:cover;width:100%;height:100%}
+.feat p{margin:20px 0 30px;font-size:1.05rem}
+.nums{display:flex;gap:40px;margin-bottom:34px;flex-wrap:wrap}
+.nums b{font-family:var(--serif);font-size:2.2rem;color:var(--ambra);font-weight:500;display:block;line-height:1}
+.nums small{font-size:.8rem;color:var(--tenue);letter-spacing:.08em;text-transform:uppercase}
+@keyframes ruota{to{transform:rotate(360deg)}}
+.feat.posato .feat-fig{animation:posa 1s cubic-bezier(.2,.8,.2,1)}
+@keyframes posa{0%{transform:scale(.94);box-shadow:inset 0 0 0 1px var(--linea),0 0 0 0 rgba(168,106,40,.35)}60%{transform:scale(1.02)}100%{transform:scale(1);box-shadow:inset 0 0 0 1px var(--linea),0 0 0 46px rgba(168,106,40,0),0 40px 70px -50px rgba(43,41,36,.55)}}
+
+/* mostra */
+.mostra-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.mostra-fig{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.mostra-fig>img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.ira-slot{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;
+  background:radial-gradient(circle at 50% 50%,#e9e2d3,#d8cfbd);box-shadow:inset 0 0 0 1px var(--linea)}
+.ira-slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:circle(calc(var(--apri,1)*78%) at 50% 50%)}
+.ira-slot small{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue);transition:opacity .4s}
+.mostra.aperta .ira-slot small{opacity:0}
+.con-3d .mostra-fig>img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1),box-shadow 1.1s}
+.con-3d .mostra.aperta .mostra-fig>img{transform:translateY(10px) rotate(-1.5deg);box-shadow:0 30px 50px -34px rgba(43,41,36,.6)}
+.mostra p{margin:18px 0}
+.mostra-fig{position:relative;padding-bottom:20%;margin-bottom:70px}
+.mostra-dolce{position:absolute;left:50%;bottom:0;width:34%;transform:translateX(-50%);text-align:center}
+.mostra-dolce .ancora{width:100%;aspect-ratio:1}
+.mostra-dolce .statica{display:none;position:absolute;left:0;top:0;width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 6px var(--calce)}
+.no-3d .mostra-dolce .statica,html:not(.con-3d) .mostra-dolce .statica{display:block}
+.mostra-dolce .ombra{position:absolute;left:10%;right:10%;top:calc(100% - 68px);height:16px;border-radius:50%;background:radial-gradient(closest-side,rgba(30,20,12,.4),rgba(30,20,12,0));filter:blur(3px);z-index:-1}
+.mostra-dolce .cartellino{margin-top:10px;white-space:nowrap}
+.mostra .eyebrow .stato{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:99px;border:1px solid currentColor;font-size:.6rem;letter-spacing:.16em;vertical-align:1px}
+.mostra .stato-conclusa{color:var(--tenue)}
+.scheda{display:grid;grid-template-columns:90px 1fr;gap:6px 14px;margin-top:22px;padding-top:18px;border-top:1px solid var(--linea);font-size:.92rem}
+.scheda dt{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
+.scheda dd{color:var(--pietra)}
+.da-conf{color:var(--ambra);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* la visita */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--carta);border:1px solid var(--linea);border-radius:var(--r);padding:34px 30px}
+.step i{font-family:var(--serif);font-style:italic;font-size:2.4rem;color:var(--caramello);display:block;margin-bottom:10px}
+.step p{color:var(--tenue);margin-top:10px;font-size:.96rem}
+
+/* dove siamo */
+.shops{background:var(--pietra);color:#e3ddd0}
+.shops h2,.shops h3{color:var(--carta)}
+.shops .eyebrow{color:var(--caramello)}
+.shop-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px}
+.shop{border:1px solid rgba(217,164,92,.28);border-radius:var(--r);padding:36px}
+.shop dl{margin:18px 0 26px;display:grid;grid-template-columns:90px 1fr;gap:8px 14px;font-size:.96rem}
+.shop dt{color:var(--caramello);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding-top:4px}
+.shop .btn{border-color:var(--caramello);color:var(--caramello)}
+.shop .btn:hover{background:var(--caramello);color:var(--pietra)}
+.mappa{border-radius:var(--r);overflow:hidden;min-height:360px;border:1px solid rgba(217,164,92,.28)}
+.mappa iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.5) sepia(.15)}
+
+/* cta finale */
+.final{text-align:center}
+.ancora-finale{width:84px;aspect-ratio:1;margin:0 auto 22px}
+.final h2{max-width:720px;margin:0 auto 18px}
+.final p{max-width:520px;margin:0 auto 32px;color:var(--tenue)}
+.final .cta{justify-content:center}
+
+footer{border-top:1px solid var(--linea);padding:40px 0;font-size:.86rem;color:var(--tenue)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu,.nav .btn{display:none}
+  .burger{display:block}
+  .menu.open{display:flex;flex-direction:column;gap:0;position:absolute;top:74px;left:0;right:0;background:#000;border-bottom:1px solid #1d1c19}
+  .menu.open a{padding:16px 24px;border-top:1px solid #1d1c19}
+  .hero{padding:40px 0 80px}
+  .hero-grid,.feat-grid,.shop-grid,.mostra-grid{grid-template-columns:1fr;gap:40px}
+  .hero-fig{aspect-ratio:1}
+  .badge{right:10px;top:auto;bottom:14px}
+  .ancora-hero{top:13%;width:50%}
+  .cats{grid-template-columns:1fr 1fr}
+  .cat:nth-child(1),.cat:nth-child(6),.cat:nth-child(7),.cat:nth-child(8){min-height:240px}
+  .steps{grid-template-columns:1fr}
+  .pani{grid-template-columns:1fr}.pani img{height:240px}
+  /* palco su telefono: Sole in alto sul bancone, sotto un pezzo alla volta */
+  .palco-on .palco-testa h2{font-size:1.7rem}
+  .palco-on .palco-testa p:last-child{font-size:.9rem;margin-top:8px}
+  .palco-on .palco-bancone{top:50%}
+  .palco-on .palco-fila{bottom:50%;justify-content:center}
+  .palco-on .palco-sole{width:86%;max-width:340px}
+  .palco-on .pezzo{position:absolute;left:50%;top:100%;width:56%;max-width:230px;margin:104px 0 0 -28%;transform:none}
+  .palco-on .pezzo:nth-of-type(n){margin-left:0;transform:translateX(-50%)}
+  .palco-on .pezzo-foto{height:19vh}
+  .palco-on .ancora-lato{left:50%;right:auto;bottom:50%;width:44vw;margin:0 0 -8vw -22vw}
+  .palco-on .pane-pezzo{left:50%;bottom:auto;top:calc(50% + 62px)}
+  .pane-foto img{height:min(26vh,46vw)}
+  .palco-on .palco-testa{top:4%}
+  .palco-on .palco-testa h2,.palco-on .palco-testa p:last-child{max-width:none}
+  .lama i{transform:rotate(-150deg)}
+  .lama b{left:auto;right:64px;top:-52px}
+  .pane-foto{transform-origin:72% 60%;transform:scale(calc(1 + var(--l,0) * .22))}
+  section{padding:64px 0}
+  .feat-fig{margin:0 auto;max-width:340px}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.feat-fig::after{animation:none}}
+</style>
 </head>
 <body>
-  <div class="studio-banner"><a href="../area-plus.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">← Torna all'area clienti</a> &nbsp;&middot;&nbsp; demo progettata da Studio Digital Italia</div>
-  <a class="skip" href="#collezione">Vai alla collezione</a>
-  <header class="header"><a class="wordmark" href="#ingresso" aria-label="VINCI, ingresso"><img class="brand-logo" src="assets/logo.webp" width="600" height="600" alt="VINCI"></a><nav aria-label="Navigazione principale"><a href="#collezione">Collezione</a><a href="#visita">La visita</a></nav></header>
-  <main>
-    <section class="hero" id="ingresso" aria-labelledby="hero-title">
-      <div class="hero-media placeholder has-media" data-asset="hero"><img src="assets/bancone.webp" width="1080" height="875" alt="Lievitati e pane distanziati sul bancone in intonaco di VINCI, sotto una linea luminosa" fetchpriority="high"><video class="hero-video" autoplay loop muted playsinline preload="auto" poster="assets/bancone.webp" aria-label="Animazione del bancone VINCI generata con Kling"><source src="foto%20e%20video%20insta/hf_20261001_102510_48e886c4-79fc-4c6f-a8b0-32506fb8e7c4.mp4" type="video/mp4"></video></div>
-      <div class="hero-copy"><p class="eyebrow">Quando la lievitazione incontra il design</p><h1 id="hero-title">VINCI</h1><div class="hero-bottom"><p>Centro storico - Vicenza</p><a class="text-link" href="#collezione">La collezione</a></div></div>
-      <span class="demo-label">Demo · contenuti da verificare</span>
-    </section>
-    <section class="section collection" id="collezione" aria-labelledby="collection-title">
-      <div class="section-head reveal"><h2 id="collection-title">In mostra.</h2></div>
-      <div class="gallery">
-        <figure class="work reveal"><div class="product placeholder" data-asset="product-01"><img src="assets/pane.webp" width="1200" height="1600" alt="Due pani con incisioni decorative esposti su supporti in legno" loading="lazy"></div><figcaption><span class="number">01</span><div><h3>Pane</h3></div></figcaption></figure>
-        <figure class="work reveal"><div class="product placeholder" data-asset="product-02"><img src="assets/sfoglia.webp" width="1200" height="1600" alt="Dettaglio di un lievitato rotondo con strati di sfoglia, tenuto in mano" loading="lazy"></div><figcaption><span class="number">02</span><div><h3>Sole</h3></div></figcaption></figure>
-        <figure class="work reveal"><div class="product placeholder" data-asset="product-03"><video autoplay loop muted playsinline preload="metadata" aria-label="Clip Instagram: lievitato ricurvo sul piatto"><source src="assets/collezione-03.mp4" type="video/mp4"></video></div><figcaption><span class="number">03</span><div><h3>Luna</h3></div></figcaption></figure>
-        <figure class="work reveal"><div class="product placeholder" data-asset="product-04"><video autoplay loop muted playsinline preload="metadata" aria-label="Clip Instagram: lievitato conico sul piano"><source src="assets/collezione-04.mp4" type="video/mp4"></video></div><figcaption><span class="number">04</span><div><h3>Monte</h3></div></figcaption></figure>
-<figure class="work reveal"><div class="product placeholder" data-asset="product-05"><video autoplay loop muted playsinline preload="metadata" aria-label="Sole: lievitato tagliato con caramello salato"><source src="assets/sole.mp4" type="video/mp4"></video></div><figcaption><span class="number">05</span><div><h3>Sole</h3></div></figcaption></figure>
-<figure class="work reveal"><div class="product placeholder" data-asset="product-06"><video autoplay loop muted playsinline preload="metadata" aria-label="Preparazione del Papillon"><source src="assets/papillon.mp4" type="video/mp4"></video></div><figcaption><span class="number">06</span><div><h3>Papillon</h3></div></figcaption></figure>
-<figure class="work reveal"><div class="product placeholder" data-asset="product-07"><video autoplay loop muted playsinline preload="metadata" aria-label="Lavorazione e presentazione del pane VINCI"><source src="assets/pane.mp4" type="video/mp4"></video></div><figcaption><span class="number">07</span><div><h3>Pane</h3></div></figcaption></figure>
+
+<div id="intro" aria-hidden="true">
+  <div class="su"><img src="assets/logo-chiaro.png" alt=""></div>
+  <div class="giu"></div>
+  <div class="led"></div>
+</div>
+
+<canvas id="scena3d" aria-hidden="true"></canvas>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="VINCI, inizio pagina"><img src="assets/logo-chiaro.png" alt="VINCI"></a>
+    <nav class="menu" id="menu">
+      <a href="#collezione">Collezione</a>
+      <a href="#mostra">La mostra</a>
+      <a href="#visita">Dove siamo</a>
+    </nav>
+    <a class="btn btn-full" href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Antonio+Fogazzaro%2C+142%2C+36100+Vicenza+VI%2C+Italia" target="_blank" rel="noopener">Indicazioni</a>
+    <button class="burger" aria-label="Apri il menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <p class="eyebrow">Pasticceria e panetteria · Centro storico di Vicenza</p>
+      <h1>Quando la lievitazione <em>incontra il design</em>.</h1>
+      <p class="lead">Lievitati, sfoglie e pane esposti uno a uno, come opere in una galleria. In Corso Fogazzaro 142, nel cuore di Vicenza.</p>
+      <div class="cta">
+        <a class="btn btn-full" href="#collezione">Guarda la collezione</a>
+        <a class="btn btn-line" href="#visita">Dove siamo</a>
       </div>
-    </section>
-    <section class="section exhibition reveal" id="mostra" aria-labelledby="exhibition-title">
-      <div class="rule" aria-hidden="true"></div>
-      <div class="section-head"><h2 id="exhibition-title">IRA.</h2></div>
-      <div class="exhibition-grid">
-        <img class="exhibition-poster" src="assets/ira-poster.jpg" width="3023" height="3782" loading="lazy" alt="Prima mostra IRA — locandina VINCI">
-        <div class="exhibition-player" role="region" aria-label="Video della mostra IRA" aria-roledescription="carosello" tabindex="0">
-          <div class="exhibition-stage">
-<video class="exhibition-slide" data-slide="0" muted playsinline preload="metadata" aria-label="Video IRA 1 di 4"><source src="assets/ira-1.mp4" type="video/mp4"></video>
-<video class="exhibition-slide" data-slide="1" muted playsinline preload="metadata" aria-label="Video IRA 2 di 4" hidden><source src="assets/ira-2.mp4" type="video/mp4"></video>
-<video class="exhibition-slide" data-slide="2" muted playsinline preload="metadata" aria-label="Video IRA 3 di 4" hidden><source src="assets/ira-3.mp4" type="video/mp4"></video>
-<video class="exhibition-slide" data-slide="3" muted playsinline preload="metadata" aria-label="Video IRA 4 di 4" hidden><source src="assets/ira-4.mp4" type="video/mp4"></video>
-          </div>
-          <div class="exhibition-controls"><button type="button" data-previous aria-label="Video precedente">←</button><span data-slide-count aria-live="polite">1 / 4</span><button type="button" data-next aria-label="Video successivo">→</button></div>
+    </div>
+    <div class="hero-fig-wrap rv">
+      <div class="hero-fig">
+        <img src="assets/bancone.webp" width="1080" height="875" alt="Lievitati e pane distanziati sul bancone in intonaco di VINCI, sotto una linea luminosa" fetchpriority="high">
+        <span class="ombra" aria-hidden="true"></span>
+      </div>
+      <div class="badge"><b>Aperti da martedì a domenica</b><small>Dalle 9:00 alle 13:00</small></div>
+      <div class="ancora ancora-hero" data-ancora-3d="ingresso"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <span>Lievitati d'autore</span><span>Sfoglia</span><span>Pane</span><span>Mostra in corso: IRA</span>
+</div></div>
+
+<section id="collezione" class="palco" aria-labelledby="titolo-collezione">
+  <div class="palco-fisso">
+    <span class="palco-led" aria-hidden="true"></span>
+    <div class="wrap palco-testa t2">
+      <p class="eyebrow">Il fondamento</p>
+      <h2>Il pane: stessa tecnica, <em>tempi più lunghi</em></h2>
+      <p>Chiude la collezione. L'impasto riposa più a lungo, poi la lama lo incide a mano.</p>
+    </div>
+    <div class="wrap palco-testa t1">
+      <p class="eyebrow">La collezione</p>
+      <h2 id="titolo-collezione">Da fuori e <em>da dentro</em></h2>
+      <p>Ogni pezzo si guarda due volte: intero, poi al taglio. Scorri con calma.</p>
+    </div>
+    <div class="palco-bancone" aria-hidden="true"></div>
+    <div class="ancora ancora-lato" data-ancora-3d="palco-lato"></div>
+    <figure class="pane-pezzo">
+      <div class="pane-foto">
+        <img src="assets/c-pane.webp" alt="Due pani incisi a lama, esposti su supporti in legno" loading="lazy">
+        <span class="lama" aria-hidden="true"><i></i><b>Il taglio della lama</b></span>
+      </div>
+      <figcaption class="cartellino"><b>Pane</b><span class="lato">Inciso a mano</span></figcaption>
+    </figure>
+    <div class="palco-fila">
+        <figure class="pezzo" data-pezzo="luna">
+          <div class="pezzo-foto"><img class="fuori" src="assets/c-luna.webp" alt="Luna: lievitato ricurvo a mezzaluna, intero" loading="lazy"><img class="dentro" src="assets/c-luna-dentro.webp" alt="Luna tagliata a metà: si vede il ripieno" loading="lazy"></div>
+          <figcaption class="cartellino"><b>Luna</b><i class="bozza">nome da confermare</i><span class="lato fuori">Da fuori</span><span class="lato dentro">Da dentro</span></figcaption>
+        </figure>
+        <figure class="pezzo" data-pezzo="monte">
+          <div class="pezzo-foto"><img class="fuori" src="assets/c-monte.webp" alt="Monte: lievitato conico a strati, intero" loading="lazy"><img class="dentro" src="assets/c-monte-dentro.webp" alt="Monte tagliato a metà: alveoli e crema" loading="lazy"></div>
+          <figcaption class="cartellino"><b>Monte</b><i class="bozza">nome da confermare</i><span class="lato fuori">Da fuori</span><span class="lato dentro">Da dentro</span></figcaption>
+        </figure>
+        <div class="palco-sole">
+          <div class="ancora" data-ancora-3d="palco" data-scala="1.2"></div>
+          <img class="statica" src="assets/sfoglia.webp" alt="Sole: lievitato rotondo con sfoglia a spirale e caramello" loading="lazy">
+          <div class="cartellino cart-sole"><b>Sole</b><span class="lato">Sfoglia a spirale, caramello salato</span></div>
         </div>
+        <figure class="pezzo" data-pezzo="sole-dentro">
+          <div class="pezzo-foto"><img class="fuori" src="assets/c-sole-dentro.webp" alt="Sole tagliato a metà con il caramello salato che cola" loading="lazy"></div>
+          <figcaption class="cartellino"><b>Sole, al taglio</b><span class="lato fuori">Foto vera</span></figcaption>
+        </figure>
+        <figure class="pezzo" data-pezzo="papillon">
+          <div class="pezzo-foto"><img class="fuori" src="assets/c-papillon.webp" alt="Papillon: sfoglia a righe annodata, appena formata" loading="lazy"></div>
+          <figcaption class="cartellino"><b>Papillon</b><i class="bozza">nome da confermare</i><span class="lato fuori">Dal laboratorio</span></figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section id="panificati">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Il fondamento</p><h2>Il pane</h2></div>
+      <p>Stessa tecnica, tempi più lunghi. [Sezione provvisoria: la regia del pane arriva nella fase 3.]</p>
+    </div>
+    <div class="pani rv">
+      <img src="assets/pane.webp" alt="Due pani con incisioni decorative esposti su supporti in legno" loading="lazy">
+      <img src="assets/pane-mano.webp" alt="Pagnotta con incisioni a spiga tenuta in mano" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="mostra" id="mostra">
+  <div class="wrap mostra-grid">
+    <div class="rv">
+      <p class="eyebrow">Prima mostra</p>
+      <h2>IRA: un'opera in acciaio, <em>un dolce che le risponde</em></h2>
+      <p>VINCI ospita IRA, un'opera di design in acciaio di Superfine, marchio specializzato in arredi di lusso per animali domestici.</p>
+      <p>Alla mostra si accompagna il dolce IRA, ispirato all'opera: cioccolato, praliné di mandorle e crema alle nocciole.</p>
+      <div class="cta" style="margin-top:28px"><a class="btn btn-line" href="https://www.instagram.com/superfinepetluxury/" target="_blank" rel="noopener">Scopri Superfine</a></div>
+    </div>
+    <div class="mostra-fig rv">
+      <img src="assets/ira-poster.webp" loading="lazy" alt="Locandina della prima mostra IRA da VINCI">
+      <div class="ira-slot">
+        <video autoplay loop muted playsinline preload="metadata" poster="assets/ira-2-poster.jpg" aria-label="Il dolce IRA e l'opera in acciaio"><source src="assets/ira-2.mp4" type="video/mp4"></video>
       </div>
-      <div class="exhibition-copy"><p>VINCI ospita IRA, un’opera di design in acciaio di Superfine, marchio specializzato in arredi di lusso per animali domestici.</p><p>Alla mostra si accompagna il dolce IRA, ispirato all’opera: cioccolato, praliné di mandorle e crema alle nocciole.</p><a class="text-link" href="https://www.instagram.com/superfinepetluxury/" target="_blank" rel="noopener noreferrer">Superfine</a></div>
-    </section>
-    <section class="section space reveal" id="spazio" aria-labelledby="space-title"><div class="rule" aria-hidden="true"></div><div class="section-head"><h2 id="space-title">Corso Fogazzaro.</h2></div><div class="space-image placeholder" data-asset="space"><img src="assets/bancone.webp" width="1080" height="875" alt="Il bancone espositivo di VINCI e le pareti in intonaco stratificato" loading="lazy"></div><p class="space-caption">Vicenza <span>[Descrizione dello spazio da fornire]</span></p></section>
-    <section class="section visit reveal" id="visita" aria-labelledby="visit-title"><div class="rule" aria-hidden="true"></div><h2 id="visit-title">Ci trovi qui.</h2><div class="visit-grid"><div><h3>Indirizzo</h3><p>Corso Antonio Fogazzaro, 142<br>36100 Vicenza VI, Italia</p><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Antonio+Fogazzaro%2C+142%2C+36100+Vicenza+VI%2C+Italia" target="_blank" rel="noopener noreferrer">Indicazioni</a></div><div><h3>Orari</h3><p>Mar–Dom 9:00–13:00<br>Ven–Sab 17:00–20:00</p></div><div><h3>Instagram</h3><a class="text-link" href="https://www.instagram.com/vinci_vicenza/" target="_blank" rel="noopener noreferrer">@vinci_vicenza</a></div></div><div class="visit-map"><iframe title="Google Maps — Corso Antonio Fogazzaro 142, Vicenza" src="https://www.google.com/maps?q=Corso%20Antonio%20Fogazzaro%2C%20142%2C%2036100%20Vicenza%20VI%2C%20Italia&amp;z=17&amp;output=embed" width="100%" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>
-  </main>
-  <footer><img class="brand-logo" src="assets/logo.webp" width="600" height="600" alt="VINCI"><p>Demo di progetto · contenuti da verificare</p><a href="#ingresso">Torna all’ingresso</a></footer>
-  <div class="studio-banner studio-banner-bottom">demo progettata da Studio Digital Italia</div>
+    </div>
+  </div>
+</section>
+
+<section id="come" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">La visita</p><h2>Tre tempi, senza fretta</h2></div>
+      <p>Da VINCI si entra come in una galleria e si esce con il sacchetto del pane.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><i>01</i><h3>Entra</h3><p>Pareti in calce, una linea di luce, un bancone lungo. I prodotti sono esposti uno a uno, ben distanziati.</p></div>
+      <div class="step rv"><i>02</i><h3>Scegli</h3><p>Guarda da vicino, chiedi cosa c'è dentro. Ogni creazione ha un nome e una storia breve.</p></div>
+      <div class="step rv"><i>03</i><h3>Porta con te</h3><p>Per la colazione, per la tavola o per un regalo. La mostra, invece, resta in negozio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="shops" id="visita">
+  <div class="wrap">
+    <div class="head rv"><div><p class="eyebrow">Dove siamo</p><h2>Ti aspettiamo in centro a Vicenza</h2></div></div>
+    <div class="shop-grid">
+      <div class="shop rv">
+        <h3>VINCI</h3>
+        <dl>
+          <dt>Indirizzo</dt><dd>Corso Antonio Fogazzaro, 142<br>36100 Vicenza VI</dd>
+          <dt>Orari</dt><dd>Mar - Dom 9:00 - 13:00<br>Ven - Sab anche 17:00 - 20:00</dd>
+          <dt>Instagram</dt><dd><a href="https://www.instagram.com/vinci_vicenza/" target="_blank" rel="noopener">@vinci_vicenza</a></dd>
+        </dl>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Antonio+Fogazzaro%2C+142%2C+36100+Vicenza+VI%2C+Italia" target="_blank" rel="noopener">Come arrivare</a>
+      </div>
+      <div class="mappa rv"><iframe title="Mappa: Corso Antonio Fogazzaro 142, Vicenza" src="https://www.google.com/maps?q=Corso%20Antonio%20Fogazzaro%2C%20142%2C%2036100%20Vicenza%20VI%2C%20Italia&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap rv">
+    <div class="ancora ancora-finale" data-ancora-3d="finale"></div>
+    <p class="eyebrow">A presto</p>
+    <h2>Una colazione, un regalo o solo curiosità?</h2>
+    <p>Passa in Corso Fogazzaro: il bancone è allestito ogni mattina.</p>
+    <div class="cta">
+      <a class="btn btn-full" href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Antonio+Fogazzaro%2C+142%2C+36100+Vicenza+VI%2C+Italia" target="_blank" rel="noopener">Portami da VINCI</a>
+      <a class="btn btn-line" href="https://www.instagram.com/vinci_vicenza/" target="_blank" rel="noopener">Scrivici su Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© VINCI · Corso Fogazzaro 142, Vicenza · Demo di progetto Be Digital, contenuti da verificare</span>
+    <nav>
+      <a href="https://www.instagram.com/vinci_vicenza/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Note legali</a><a href="#">Privacy</a><a href="#">Cookie</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/mostre.js"></script>
+<script>
+/* Ingresso (2,2 s): linea LED, il Sole nasce dal rombo del logo, i pannelli si aprono, il Sole va sul bancone.
+   Clic, tocco, scroll o tasto la saltano. I tempi del Sole (in secondi) li legge js/scena3d.js da window.vinciIntro. */
+(function(){
+  const radice=document.documentElement, intro=document.getElementById('intro');
+  if(!radice.classList.contains('intro-on')||!intro) return;
+  try{sessionStorage.setItem('vinciIntro','1')}catch(e){}
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.scrollTo(0,0);
+  const I=window.vinciIntro={attiva:true,t0:performance.now(),nasce:[0.35,1.0],posa:[1.0,2.1]};
+  const timer=[];
+  const fine=()=>{I.attiva=false;intro.style.display='none';radice.classList.remove('intro-on');
+    ['wheel','touchstart','keydown','pointerdown'].forEach(ev=>window.removeEventListener(ev,salta,true));};
+  function salta(){timer.forEach(clearTimeout);I.t0=performance.now()-I.posa[1]*1000;intro.classList.add('salta');setTimeout(fine,260);}
+  ['wheel','touchstart','keydown','pointerdown'].forEach(ev=>window.addEventListener(ev,salta,{capture:true,passive:true}));
+  timer.push(setTimeout(()=>intro.classList.add('accesa'),60));
+  timer.push(setTimeout(()=>intro.classList.add('aperta'),1000));
+  timer.push(setTimeout(fine,2200));
+})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+<script src="js/palco.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/scena3d.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
