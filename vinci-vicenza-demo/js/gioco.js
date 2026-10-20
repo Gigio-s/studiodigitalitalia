@@ -8,7 +8,7 @@
   var g = cv.getContext('2d'), punti = document.getElementById('punti'), titolo = piede.querySelector('.gioco-tit');
   var FOTO = ['c-cassis.webp', 'c-sole.webp', 'c-luna.webp', 'c-monte.webp', 'c-papillon-cotta.webp', 'c-pane-primo.webp', 'c-ira.webp', 'c-cacao.webp', 'c-treccia.webp'].map(function (f) { var im = new Image(); im.src = 'assets/' + f; return im; });
   var W = 0, H = 0, dpr = 1, pezzi = [], meta = [], briciole = [], scia = [], conta = 0, attivo = false, ultimo = 0, prossimo = 0;
-  var tocco = matchMedia('(hover: none)').matches, giocando = !tocco;
+  var modoTel = matchMedia('(hover: none), (pointer: coarse), (max-width: 900px)'), tocco = false, giocando = true;   // telefono o finestra stretta
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   function misura() { var r = piede.getBoundingClientRect(); dpr = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); }
@@ -16,21 +16,28 @@
   new IntersectionObserver(function (es) { attivo = es[0].isIntersecting; if (attivo) { ultimo = performance.now(); requestAnimationFrame(passo); } }, { threshold: 0.15 }).observe(piede);
 
   var bott = piede.querySelector('.interruttore'), nomeT = bott && bott.querySelector('.tit'), notaT = bott && bott.querySelector('.solo-tocco');
-  function imposta(si) {
+  var radice = document.documentElement;
+  function imposta(si) {                     // solo in modalita telefono: acceso = pagina ferma sul piede
     giocando = si; piede.classList.toggle('giocando', si);
-    document.documentElement.classList.toggle('gioco-fermo', si);           // finche si gioca la pagina non scorre
+    radice.classList.toggle('gioco-fermo', si);
     if (bott) bott.setAttribute('aria-pressed', si);
     if (nomeT) nomeT.textContent = si ? 'Taglio attivato' : 'Taglio disattivato';
     if (notaT) notaT.textContent = si ? 'trascina il dito · tocca per uscire' : 'tocca per giocare';
     if (si) { var r = piede.getBoundingClientRect(); scrollTo(0, scrollY + r.bottom - innerHeight); misura(); }
     if (titolo) titolo.style.opacity = 1;
   }
-  if (tocco && bott) {
-    imposta(false);
-    bott.addEventListener('click', function () { imposta(!giocando); });
-    cv.addEventListener('touchmove', function (e) { if (giocando) e.preventDefault(); }, { passive: false });
-    new IntersectionObserver(function (es) { if (!es[0].isIntersecting && giocando) imposta(false); }).observe(piede);
+  function modo() {
+    tocco = modoTel.matches; radice.classList.toggle('tocco', tocco);
+    if (tocco) imposta(false);
+    else { giocando = true; piede.classList.remove('giocando'); radice.classList.remove('gioco-fermo'); if (nomeT) nomeT.textContent = 'Taglio attivato'; }
   }
+  modo();
+  if (modoTel.addEventListener) modoTel.addEventListener('change', modo); else modoTel.addListener(modo);
+  if (bott) bott.addEventListener('click', function () { if (tocco) imposta(!giocando); });
+  function fermo(e) { if (tocco && giocando && e.cancelable) e.preventDefault(); }      // niente scroll mentre si gioca
+  addEventListener('touchmove', fermo, { passive: false });
+  addEventListener('wheel', fermo, { passive: false });
+  addEventListener('keydown', function (e) { if (tocco && giocando && /^(ArrowUp|ArrowDown|PageUp|PageDown|Home|End| )$/.test(e.key)) e.preventDefault(); });
 
   function lancia() {
     var im = FOTO[(Math.random() * FOTO.length) | 0], dim = Math.min(W, H) * (0.1 + Math.random() * 0.05) + 40;

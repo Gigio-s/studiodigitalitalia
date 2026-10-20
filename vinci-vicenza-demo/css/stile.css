@@ -126,8 +126,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- strato su strato ---------- */
 .strato{position:relative;height:110vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .strato h2{white-space:nowrap;font-size:clamp(3rem,9vw,10rem)}
-.strato h2 span{display:inline-block;width:min(24vw,44vh)}
-.strato .ancora-strato{position:absolute;left:50%;top:50%;width:min(28vw,50vh);aspect-ratio:1;transform:translate(-50%,-50%)}
+.strato h2 .vuoto-strato{display:inline-block;position:relative;width:min(24vw,44vh);height:1em;vertical-align:middle}
+.strato .ancora-strato{position:absolute;left:50%;top:50%;width:86%;aspect-ratio:1;transform:translate(-50%,-50%)}
 
 /* ---------- frase su fondo scuro ---------- */
 .frase{padding:22vh 0 14vh;text-align:center;position:relative;overflow:hidden}
@@ -212,6 +212,82 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mostra .polaroid .p1{left:0;top:4%;width:58%;height:82%}
 .mostra .polaroid .p3{left:44%;top:30%;width:52%;height:66%}
 
+/* ---------- prenota ---------- */
+.prenota-pill{background:var(--burro);color:var(--scuro)}
+.testata.chiara .prenota-pill{background:var(--crema)}
+.card .scheda .prenota-link{display:inline-block;margin-top:10px;font-family:var(--mano);font-size:1.15rem;border-bottom:1.5px solid currentColor;line-height:1.1}
+.prenota-apertura{padding-bottom:6vh}
+.prenota-apertura .come{list-style:none;display:flex;justify-content:center;gap:clamp(14px,3vw,40px);flex-wrap:wrap;margin-top:30px;font-weight:600;font-size:.9rem}
+.prenota-apertura .come b{font-family:var(--titolo);font-weight:800;color:var(--caramello);margin-right:8px;letter-spacing:.06em}
+.prenota{padding:2vh 0 14vh;position:relative}
+.prenota>.wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:start}
+.prenota .int{color:var(--tenue);font-weight:500;margin:8px 0 20px}
+.scelte{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.4vw,18px)}
+.scegli{border:1.5px solid var(--scuro);border-radius:14px;background:var(--carta);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.scegli.scelto{box-shadow:0 0 0 3px var(--burro);transform:translateY(-2px)}
+.scegli .vetrina{background:var(--c);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.scegli .vetrina img{width:70%;height:78%;object-fit:contain}
+.scegli .t{padding:10px 12px 0}
+.scegli b{font-family:var(--mano);font-size:1.4rem;font-weight:600;display:block;line-height:1}
+.scegli small{font-size:.68rem;color:var(--tenue)}
+.passo{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 12px;margin-top:auto}
+.passo button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--scuro);font-size:1.25rem;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.passo .piu-q{background:var(--scuro);color:var(--crema)}
+.passo button:active{transform:scale(.92)}
+.passo output{font-family:var(--titolo);font-weight:800;font-size:1.5rem;min-width:2ch;text-align:center}
+.colonna-vassoio{position:sticky;top:76px}
+.pannello{border:1.5px solid var(--scuro);border-radius:18px;background:var(--carta);padding:clamp(16px,2vw,24px)}
+.testa-vassoio{display:flex;justify-content:space-between;align-items:baseline}
+.testa-vassoio h2{font-size:clamp(1.8rem,2.6vw,2.6rem)}
+.conto{font-family:var(--titolo);font-weight:800;letter-spacing:.08em;background:var(--burro);border-radius:999px;padding:4px 12px}
+.scatola-wrap{position:relative;margin:12px 0 6px;border-radius:12px;background:radial-gradient(120% 90% at 50% 30%,#fbf6ec,#ece3d3);overflow:hidden}
+#scatola{display:block;width:100%;height:clamp(220px,30vh,320px);touch-action:pan-y;cursor:grab}
+#scatola-foto{display:none}
+.vassoio-piatto #scatola{display:none}
+.vassoio-piatto #scatola-foto{display:flex;flex-wrap:wrap;gap:6px;padding:14px;min-height:160px;align-content:flex-start}
+#scatola-foto img{width:56px;height:56px;object-fit:contain}
+.gira{position:absolute;right:10px;bottom:8px;font-family:var(--mano);font-size:1rem;color:var(--tenue);pointer-events:none}
+.vuoto{color:var(--tenue);font-weight:500;font-size:.9rem;padding:6px 0}
+.righe{list-style:none;margin:4px 0 6px}
+.righe li{display:grid;grid-template-columns:38px 1fr 30px 2.4ch 30px;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--linea);font-weight:600}
+.righe img{width:38px;height:38px;object-fit:contain}
+.righe button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--scuro);line-height:1}
+.righe b{text-align:center;font-family:var(--titolo);font-size:1.2rem}
+#modulo fieldset{border:0;margin-top:18px;min-width:0}
+#modulo legend{font-family:var(--titolo);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:1.05rem;margin-bottom:10px}
+.giorni{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 6px;scroll-snap-type:x mandatory}
+.giorni::-webkit-scrollbar{display:none}
+.giorno{flex:0 0 58px;scroll-snap-align:start;border:1.5px solid var(--scuro);border-radius:12px;padding:7px 0 6px;display:flex;flex-direction:column;align-items:center;gap:1px;background:var(--crema);transition:background .2s,color .2s}
+.giorno b{font-family:var(--titolo);font-weight:800;font-size:1.5rem;line-height:1}
+.giorno small{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em}
+.giorno[aria-pressed="true"]{background:var(--scuro);color:var(--burro)}
+.ora{font-size:.82rem;color:var(--tenue);margin-top:6px;font-weight:500}
+.dati label{display:block;font-size:.78rem;font-weight:600;margin-bottom:10px}
+.dati small{color:var(--tenue);font-weight:500}
+.dati input,.dati textarea{display:block;width:100%;margin-top:5px;font:inherit;font-size:16px;font-weight:500;border:1.5px solid var(--scuro);border-radius:10px;padding:11px 12px;background:var(--crema);color:var(--scuro)}
+.dati input:focus,.dati textarea:focus{outline:3px solid var(--burro);outline-offset:1px}
+.paga{display:flex;flex-direction:column;gap:2px;background:var(--burro);border-radius:12px;padding:12px 14px;margin:6px 0 12px}
+.paga span{font-size:.82rem;font-weight:500}
+.ok{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;font-weight:500;margin-bottom:12px}
+.ok input{width:18px;height:18px;margin-top:1px;accent-color:var(--scuro);flex:0 0 auto}
+.avviso{background:#f6dcd2;color:#7a2a12;border-radius:10px;padding:10px 12px;font-size:.84rem;font-weight:600;margin-bottom:12px}
+.invia{width:100%;background:var(--scuro);color:var(--crema);border-radius:12px;padding:16px;font-family:var(--titolo);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:1.05rem;transition:transform .2s}
+.invia:active{transform:scale(.98)}
+.barra-vassoio{display:none}
+.conferma{position:fixed;inset:0;z-index:120;background:rgba(42,31,24,.6);display:flex;align-items:center;justify-content:center;padding:var(--gut)}
+.conferma[hidden]{display:none}
+.scheda-conferma{position:relative;background:var(--burro);border:1.5px solid var(--scuro);border-radius:20px;padding:clamp(24px,4vw,44px);max-width:520px;width:100%;max-height:90vh;overflow:auto}
+.scheda-conferma h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:6px 0 14px}
+.scheda-conferma p{margin-bottom:10px;font-weight:500}
+.scheda-conferma ul{list-style:none;margin:0 0 14px}
+.scheda-conferma li{padding:6px 0;border-bottom:1px solid rgba(42,31,24,.2);font-weight:600}
+.scheda-conferma li b{font-family:var(--titolo);font-size:1.2rem;margin-right:8px}
+.nota-demo{font-size:.75rem;opacity:.75}
+.solo-esempio{display:none}
+.di-esempio .solo-esempio{display:block;opacity:1;font-weight:700}
+.chiudi-conferma{margin-top:8px;background:var(--scuro);color:var(--crema);border-radius:10px;padding:12px 22px;font-family:var(--titolo);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.dialogo-aperto,.dialogo-aperto body{overflow:hidden}
+
 /* ---------- instagram ---------- */
 .insta{padding:12vh 0}
 .insta .testa{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
@@ -233,8 +309,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .box{position:relative;border-radius:var(--r);border:2px solid var(--scuro);min-height:min(62vh,520px);padding:clamp(24px,3vw,44px);overflow:hidden}
 .box::before,.box::after{content:"";position:absolute;bottom:16px;width:8px;height:8px;border-radius:50%;background:var(--scuro)}
 .box::before{left:16px}.box::after{right:16px}
-.box .borchie::before,.box .borchie::after{content:"";position:absolute;top:16px;width:8px;height:8px;border-radius:50%;background:var(--scuro)}
-.box .borchie::before{left:16px}.box .borchie::after{right:16px}
+.box .borchie::before,.box .borchie::after,.scheda-conferma .borchie::before,.scheda-conferma .borchie::after{content:"";position:absolute;top:16px;width:8px;height:8px;border-radius:50%;background:var(--scuro)}
+.box .borchie::before,.scheda-conferma .borchie::before{left:16px}.box .borchie::after,.scheda-conferma .borchie::after{right:16px}
 .box.oro{background:var(--burro);display:flex;flex-direction:column;justify-content:flex-end}
 .box.oro .tit{font-size:clamp(2.6rem,5vw,5.2rem)}
 .box.oro p{max-width:380px;margin:16px 0 20px;font-weight:500}
@@ -337,8 +413,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .prodotto .ancora-prodotto{position:relative;left:auto;top:auto;transform:none;width:64vw;margin:24px auto 44px}
   .prodotto .contatore,.prodotto .dx{position:static;width:auto;text-align:left;margin-top:22px}
   .strato h2{font-size:17vw;white-space:normal;display:flex;flex-direction:column;align-items:center;line-height:.9;text-align:center}
-  .strato h2 span{width:56vw;height:56vw;margin:2vh 0}
-  .strato .ancora-strato{width:56vw}
+  .strato h2 .vuoto-strato{width:56vw;height:56vw;margin:2vh 0}
+  .strato .ancora-strato{width:88%}
   .collezione .testa{flex-wrap:wrap;justify-content:flex-start;gap:6px 14px}
   .collezione .testa h2{white-space:nowrap;font-size:13vw}
   .collezione .testa svg{width:9vw}
@@ -347,6 +423,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .mostra.giro .polaroid{order:0}
   .mostra{padding:9vh 0}
   .mostre-griglia{grid-template-columns:1fr}
+  .prenota>.wrap{grid-template-columns:minmax(0,1fr)}
+  .colonna-vassoio{position:static;scroll-margin-top:70px}
+  .barra-vassoio{display:block;position:fixed;left:var(--gut);right:var(--gut);bottom:14px;z-index:80;background:var(--scuro);color:var(--burro);border-radius:999px;padding:14px;font-family:var(--titolo);font-weight:800;letter-spacing:.08em;text-transform:uppercase;transform:translateY(140%);transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px -10px rgba(42,31,24,.6)}
+  .barra-vassoio.su{transform:none}
   .polaroid{height:420px}
   .storia-eroe .dx{min-height:56vh}
   .storia-eroe .sx{padding-top:120px;padding-bottom:6vh}
@@ -365,6 +445,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .card.larga .vetrina img{width:62%;height:84%}
   .card .vetrina .sigla{left:10px;top:8px;font-size:.75rem}
   .card .piede{padding:9px 10px;gap:6px}
+  .testata .prenota-pill{padding:8px 11px}
+  .scelte{gap:10px}
+  .scegli .t{padding:8px 10px 0}
+  .scegli b{font-size:1.2rem}
+  .passo{padding:8px 10px 10px}
+  .passo button{width:34px;height:34px}
   .mostra-card{grid-template-columns:1fr}
   .mostra-card .foto{min-height:0;aspect-ratio:4/3}
   .mostra-card .t{padding:18px}
@@ -385,6 +471,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .piede-sito .gioco-tit small{letter-spacing:.18em}
 }
 .solo-tocco{display:none}
+html:not(.tocco) .piede-sito .gioco-tit{display:none}           /* su computer si gioca e basta, la scritta serve solo da telefono */
 html.tocco .solo-mouse{display:none} html.tocco .solo-tocco{display:inline}
 html.tocco .piede-sito .gioco-tit{pointer-events:auto;z-index:5;left:var(--gut);right:var(--gut)}
 html.tocco .piede-sito .gioco-tit .interruttore{cursor:pointer;padding:10px 20px;border:1.5px solid rgba(242,210,139,.5);border-radius:999px;background:rgba(42,31,24,.6)}
