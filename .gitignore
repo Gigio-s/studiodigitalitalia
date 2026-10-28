@@ -22,6 +22,8 @@ template-preventivo.html
 
 # ── Documenti e fogli di lavoro (lead, preventivi, PDF) ──
 *.pdf
+# Eccezione: menu PDF della demo Lello v2 (serve il download)
+!Bar e locali/Pizzeria da Lello costabissara/demo v2/assets/menu-pizzeria-da-lello.pdf
 *.xlsx
 Lead_*.xlsx
 
