@@ -644,3 +644,6 @@ h1 em{font:400 1.18em/1 'Yellowtail',cursive;letter-spacing:0;padding-right:.08e
   .hdr-logo img{height:32px;width:auto}
   .hdr .ico-btn{width:40px;height:40px}
 }
+
+/* scheda pizza aperta su desktop: centrata nello spazio sotto l'header anche sugli schermi alti (28/10/2026) */
+@media (min-width:981px){ .wheel.is-open .wh-stage{padding-top:clamp(0px,calc(100vh - 782px),68px)} }

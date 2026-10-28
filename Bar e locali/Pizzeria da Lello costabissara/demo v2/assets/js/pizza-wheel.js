@@ -213,7 +213,15 @@ Wheel.prototype.open=function(i){
   this.stage.setAttribute('aria-hidden','false');
   this.fill(p,i);
   var sec=this.root.closest('section'), mob=window.matchMedia('(max-width:980px)').matches;
-  if(sec && (mob || sec.getBoundingClientRect().top<-40)) window.scrollTo({top:sec.getBoundingClientRect().top+window.pageYOffset,behavior:mob?'auto':'smooth'});
+  if(sec && mob) window.scrollTo({top:sec.getBoundingClientRect().top+window.pageYOffset,behavior:'auto'});
+  else if(sec){
+    /* desktop: la scheda aperta (pizza + ingredienti) si centra nello spazio visibile sotto l'header */
+    var a=this.move.getBoundingClientRect(), b=this.root.querySelector('.wh-right').getBoundingClientRect();
+    var hd=document.querySelector('.hdr'), h=hd?hd.offsetHeight:0, top=Math.min(a.top,b.top), bot=Math.max(a.bottom,b.bottom);
+    var vis=window.innerHeight-h, y=(bot-top<=vis-24) ? window.pageYOffset+(top+bot)/2-(h+vis/2) : window.pageYOffset+top-h-12;
+    y=Math.max(0,y);
+    if(Math.abs(y-window.pageYOffset)>8) window.scrollTo({top:y,behavior:'smooth'});
+  }
   var dst=this.move.getBoundingClientRect();
   var dx=(src.left+src.width/2)-(dst.left+dst.width/2), dy=(src.top+src.height/2)-(dst.top+dst.height/2), s=src.width/dst.width;
   if(reduced()){ this.busy=false; return; }
