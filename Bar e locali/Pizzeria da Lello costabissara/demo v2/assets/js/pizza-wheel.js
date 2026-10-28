@@ -36,7 +36,7 @@ function Wheel(root){
       '<div class="wh-right" aria-live="polite">'+
         '<span class="wh-cat"></span><h2 class="wh-name"></h2><em class="tbc wh-tbc">(nome da confermare)</em><p class="wh-frase"></p>'+
         '<ol class="wh-ing"></ol>'+
-        '<div class="wh-foot"><span class="wh-price"></span><a class="btn btn-red" href="https://www.octotable.com/book/restaurant/420578/welcome" target="_blank" rel="noopener">Prenota e assaggiala</a></div>'+
+        '<div class="wh-foot"><span class="wh-price"></span><a class="btn btn-red" href="https://www.octotable.com/book/restaurant/420578/welcome" target="_blank" rel="noopener">Prenota</a></div>'+
       '</div>'+
       '<div class="wh-nav">'+
         '<button class="wh-back"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Tutte le pizze</button>'+
