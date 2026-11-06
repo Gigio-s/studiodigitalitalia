@@ -1,0 +1,41 @@
+# Pizzeria da Lello - impostazioni Netlify (02/11/2026)
+# Nessuna build: il sito e' HTML statico nella radice del repo.
+[build]
+  publish = "."
+
+# Cache (aggiornato 05/11/2026): immagini, video, PDF, CSS e JS vengono ricontrollati a ogni visita (risposta 304 veloce se non cambiati),
+# cosi' ogni modifica pubblicata si vede subito. I font non cambiano mai: restano in memoria 1 anno.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/assets/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Sicurezza di base
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

@@ -24,6 +24,7 @@ template-preventivo.html
 *.pdf
 # Eccezione: menu PDF della demo Lello v2 (serve il download)
 !Bar e locali/Pizzeria da Lello costabissara/demo v2/assets/menu-pizzeria-da-lello.pdf
+!Bar e locali/Pizzeria da Lello costabissara/demo-sito-grafica-nuova/assets/menu-pizzeria-da-lello.pdf
 *.xlsx
 Lead_*.xlsx
 
@@ -41,6 +42,8 @@ Lead_*.xlsx
 # Eccezione: i video della demo VINCI servono online
 !vinci-vicenza-demo/assets/*.mp4
 !vinci-vicenza-demo/foto e video insta/hf_20261001_102510_48e886c4-79fc-4c6f-a8b0-32506fb8e7c4.mp4
+# Eccezione: reel della demo Lello grafica nuova
+!Bar e locali/Pizzeria da Lello costabissara/demo-sito-grafica-nuova/assets/video/reel/*.mp4
 webdesign/
 
 # ── Progetti clienti interni ──
