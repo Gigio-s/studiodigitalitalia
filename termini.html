@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Termini e Condizioni di Servizio - Studio Digital Italia</title>
   <!-- Security -->
@@ -10,213 +10,84 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
   <meta name="description" content="Termini e condizioni di servizio di Studio Digital Italia. Scopri come lavoriamo, cosa offriamo e cosa non promettiamo." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://studiodigitalitalia.it/termini.html" />
-  <link rel="icon" type="image/jpeg" href="assets/loghi/logo-solo-foto.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --dark:   #1E1F24;
-      --gold:   #B8966A;
-      --cream:  #F8F5EE;
-      --white:  #FFFFFF;
-      --text:   #1A1C22;
-      --muted:  #6E6860;
-      --border: #DDD8CE;
-      --radius: 6px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; }
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
-
-    /* NAVBAR */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--dark);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6%; height: 64px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-    .logo img { height: 38px; width: auto; }
-    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #fff; letter-spacing: .3px; }
-    .logo-text span { color: var(--gold); }
-    .btn-nav {
-      border: 1px solid rgba(184,150,106,.5); color: var(--gold);
-      padding: .5rem 1.2rem; border-radius: var(--radius);
-      font-weight: 600; font-size: .85rem;
-      text-decoration: none; transition: all .2s;
-    }
-    .btn-nav:hover { background: var(--gold); color: var(--dark); }
-
-    /* CONTENT */
-    .page-wrap {
-      max-width: 800px; margin: 0 auto;
-      padding: 110px 6% 80px;
-    }
-
-    .page-label {
-      font-size: .72rem; font-weight: 700; color: var(--gold);
-      letter-spacing: 1.8px; text-transform: uppercase;
-      display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem;
-    }
-    .page-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
-
-    h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: .5rem; line-height: 1.2; }
-
-    .last-update {
-      font-size: .82rem; color: var(--muted); margin-bottom: 3rem;
-      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
-    }
-
-    .toc {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.4rem 1.6rem; margin-bottom: 3rem;
-    }
-    .toc-title { font-size: .72rem; font-weight: 700; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
-    .toc ol { padding-left: 1.2rem; }
-    .toc li { font-size: .88rem; margin-bottom: .4rem; }
-    .toc a { color: var(--gold); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
-
-    .terms-section { margin-bottom: 2.8rem; scroll-margin-top: 80px; }
-    .terms-section h2 {
-      font-size: 1.3rem; margin-bottom: 1rem;
-      padding-bottom: .6rem; border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .terms-section h3 {
-      font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 700;
-      margin: 1.4rem 0 .5rem; color: var(--dark);
-    }
-    .terms-section p { font-size: .93rem; color: var(--text); margin-bottom: .9rem; line-height: 1.75; }
-    .terms-section ul, .terms-section ol { padding-left: 1.4rem; margin-bottom: .9rem; }
-    .terms-section li { font-size: .93rem; color: var(--text); margin-bottom: .4rem; line-height: 1.6; }
-    .terms-section a { color: var(--gold); text-decoration: underline; }
-
-    .highlight-box {
-      background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold);
-      border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 1.2rem;
-      font-size: .9rem; line-height: 1.65;
-    }
-    .highlight-box strong { color: var(--dark); }
-
-    .nota-box {
-      background: #fff8ee; border: 1px solid #e8d9b8; border-left: 3px solid var(--gold);
-      border-radius: var(--radius); padding: 1rem 1.3rem; margin-bottom: 1.2rem;
-      font-size: .88rem; color: #5a4a2e;
-    }
-
-    /* FOOTER */
-    footer { background: var(--dark); padding: 32px 6%; text-align: center; }
-    footer p { color: rgba(255,255,255,.3); font-size: .8rem; line-height: 1.8; }
-    footer a { color: var(--gold); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      .page-wrap { padding: 90px 5% 60px; }
-      nav { padding: 0 5%; }
-    }
-  
-    /* ── COOKIE NOTICE ── */
-    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
-       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
-    #cookie-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-      background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
-      padding: 1rem 6%;
-      display: none; align-items: center; justify-content: space-between;
-      gap: 1.5rem; flex-wrap: wrap;
-      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
-    }
-    #cookie-bar.show { display: flex; }
-    #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
-    #cookie-bar a { color: #B8966A; text-decoration: underline; }
-    #cookie-bar .cookie-btn {
-      background: #B8966A; color: #1E1F24;
-      border: none; padding: .55rem 1.4rem; border-radius: 6px;
-      font-family: inherit; font-size: .83rem; font-weight: 700;
-      cursor: pointer; white-space: nowrap; transition: background .2s;
-    }
-    #cookie-bar .cookie-btn:hover { background: #9D7D57; }
-    @media (max-width: 600px) {
-      #cookie-bar { padding: 1rem 5%; flex-direction: column; align-items: stretch; }
-      #cookie-bar .cookie-btn { text-align: center; }
-    }
-  </style>
-<style id="sdi-footer-standard">
-  footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
-  footer .footer-inner {
-    max-width: 1160px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 2.5rem;
-    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
-  }
-  footer .footer-brand { min-width: 0; }
-  footer .footer-logo { margin-bottom: .8rem; }
-  footer .footer-logo img { height: 56px; width: auto; filter: none; opacity: 1; }
-  footer .footer-tagline { font-size: .84rem; color: rgba(255,255,255,.35); line-height: 1.7; margin: 0; }
-  footer .footer-col h4 { font-family: inherit; font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 1.2rem; }
-  footer .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
-  footer .footer-col ul li { margin: 0; }
-  footer .footer-col ul a { color: rgba(255,255,255,.45); text-decoration: none; font-size: .85rem; transition: color .2s; }
-  footer .footer-col ul a:hover { color: #fff; }
-  footer .footer-muted { color: rgba(255,255,255,.45); font-size: .85rem; }
-  footer .footer-bottom {
-    max-width: 1160px; margin: 0 auto; padding-top: 1.5rem;
-    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-    font-size: .78rem; color: rgba(255,255,255,.2);
-  }
-  footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
-  footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
-  footer .footer-cta { display: inline-block; margin-top: 1.3rem; color: var(--gold, #B8966A); text-decoration: none; font-size: .82rem; font-weight: 600; transition: color .2s; }
-  footer .footer-cta:hover { color: #fff; }
-  footer .footer-role { display: block; font-size: .7rem; color: rgba(255,255,255,.3); margin-top: .1rem; }
-  @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-  @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
+  <link rel="canonical" href="https://studiodigitalitalia.it/termini.html" /><style>
+.lg-wrap{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start;padding:8px 0 70px}
+.lg-toc{position:sticky;top:96px;padding:18px;border-radius:16px;border:1px solid var(--line2);background:#fff}
+.lg-toc b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+.lg-toc ol{list-style:none;counter-reset:t;display:grid;gap:2px}
+.lg-toc li{counter-increment:t}
+.lg-toc a{display:block;padding:6px 8px;border-radius:8px;font-size:.84rem;color:var(--ink2);text-decoration:none}
+.lg-toc a::before{content:counter(t) ". ";color:var(--accent);font-weight:700}
+.lg-toc a:hover{background:var(--field);color:var(--ink)}
+.lg{max-width:760px}
+.lg-sec{padding:26px 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+.lg-sec:first-child{padding-top:0}
+.lg h2{font-family:var(--head);font-size:1.35rem;letter-spacing:-.01em;margin-bottom:12px}
+.lg h3{font-size:1rem;margin:16px 0 6px}
+.lg p,.lg li{font-size:.98rem;line-height:1.65;color:var(--ink2)}
+.lg p+p{margin-top:10px}
+.lg ul,.lg ol.in{margin:10px 0 10px 20px;display:grid;gap:6px}
+.lg a{color:var(--accent)}
+.lg-box{margin:12px 0;padding:16px 18px;border-radius:14px;background:rgba(0,153,255,.07);border-left:3px solid var(--accent);font-size:.95rem;line-height:1.6;color:var(--ink2)}
+.lg-box.nota{background:#fff7e6;border-left-color:#e69500}
+.lg table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+.lg th,.lg td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.lg th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.lg-upd{font-size:.86rem;color:var(--muted);margin-top:10px}
+.lg-wrap>*{min-width:0}
+@media(max-width:900px){.lg-wrap{grid-template-columns:minmax(0,1fr);gap:20px}.lg-toc{position:static}.lg table{display:block;overflow-x:auto}}
 </style>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="assets/img/logo-sdi.png">
+<link rel="preload" href="assets/fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/sdi.css">
 </head>
-<body>
-
-<nav>
-  <a href="index.html" class="logo">
-    <img src="assets/loghi/logo-solo-foto.jpg" alt="Studio Digital Italia" />
-    <span class="logo-text">Studio<span> Digital</span> Italia</span>
-  </a>
-  <a href="index.html" class="btn-nav">← Torna al sito</a>
-</nav>
-
-<div class="page-wrap">
-  <div class="page-label">Documento legale</div>
-  <h1>Termini e Condizioni<br/>di Servizio</h1>
-  <p class="last-update">Ultimo aggiornamento: 29 maggio 2026 - Studio Digital Italia (titolare: Luca Ramacciato)</p>
-
-  <!-- INDICE -->
-  <div class="toc">
-    <div class="toc-title">Indice</div>
-    <ol>
-      <li><a href="#chi-siamo">Chi siamo e cosa facciamo</a></li>
-      <li><a href="#cosa-non">Cosa NON promettiamo</a></li>
-      <li><a href="#formule">Le formule di servizio</a></li>
-      <li><a href="#avvio">Avvio del progetto e materiali</a></li>
-      <li><a href="#pagamenti">Pagamenti e prezzi</a></li>
-      <li><a href="#consegna">Consegna e proprietà del sito</a></li>
-      <li><a href="#gestione">Gestione continuativa e manutenzione mensile</a></li>
-      <li><a href="#responsabilita">Responsabilità e limitazioni</a></li>
-      <li><a href="#disdetta">Disdetta e recesso</a></li>
-      <li><a href="#proprieta">Proprietà intellettuale</a></li>
-      <li><a href="#modifiche">Modifiche ai termini</a></li>
-      <li><a href="#contatti">Contatti e foro competente</a></li>
-    </ol>
+<body data-pal="sky" data-st="mod">
+<svg class="bg-logos" aria-hidden="true" focusable="false"><defs>
+<filter id="bgw" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>
+<pattern id="bgp" width="300" height="300" patternUnits="userSpaceOnUse"><image href="assets/img/logo-sdi.png" x="40" y="40" width="70" height="70" filter="url(#bgw)"/><image href="assets/img/logo-sdi.png" x="190" y="190" width="70" height="70" filter="url(#bgw)"/></pattern>
+<mask id="bgm"><rect width="100%" height="100%" fill="url(#bgp)"/></mask>
+<linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0099FF" stop-opacity=".13"/><stop offset=".55" stop-color="#4fb4ff" stop-opacity=".07"/><stop offset="1" stop-color="#0099FF" stop-opacity=".03"/></linearGradient>
+</defs><rect width="100%" height="100%" fill="url(#bgg)" mask="url(#bgm)"/></svg>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="l">
+      <a href="index.html" class="logo logo-img"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a>
+      <nav class="links"><a href="settori.html">Settori</a><a href="portfolio.html">Portfolio</a><a href="pacchetti.html">Pacchetti</a><a href="faq.html">FAQ</a><a href="chi-siamo.html">Chi siamo</a></nav>
+    </div>
+    <div class="r">
+      <a href="area-plus.html" class="btn btn-cli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Area clienti</a>
+      <a href="area-riservata.html" class="btn btn-light">Area demo</a>
+      <a href="index.html#contatti" class="btn btn-dark">Preventivo</a>
+      <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i></button>
+    </div>
   </div>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a class="ml" href="settori.html">Settori</a><a class="ml" href="portfolio.html">Portfolio</a><a class="ml" href="pacchetti.html">Pacchetti</a><a class="ml" href="faq.html">FAQ</a><a class="ml" href="chi-siamo.html">Chi siamo</a><a class="ml" href="area-plus.html">Area clienti</a>
+  <div class="mcta"><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a><a href="area-riservata.html" class="btn btn-dark">Area demo</a></div>
+</div>
+<div class="mbar"><a href="area-riservata.html" class="btn btn-dark">Area demo</a><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a></div>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> / Termini</div>
+    <div class="eyebrow rv">Documento legale</div>
+    <h1 class="rv d1">Termini e <em>condizioni</em></h1>
+    <p class="lg-upd rv d2">Ultimo aggiornamento: 16 novembre 2026 - Studio Digital Italia (titolare: Luca Ramacciato)</p>
+  </div>
+</section>
+<section class="block" style="padding-top:12px">
+  <div class="wrap lg-wrap"><aside class="lg-toc"><b>Indice</b><ol><li><a href="#chi-siamo">Chi siamo e cosa facciamo</a></li><li><a href="#cosa-non">Cosa NON promettiamo</a></li><li><a href="#formule">I pacchetti di servizio</a></li><li><a href="#avvio">Avvio del progetto e materiali</a></li><li><a href="#pagamenti">Pagamenti e prezzi</a></li><li><a href="#consegna">Consegna e proprietà del sito</a></li><li><a href="#gestione">Gestione continuativa e manutenzione mensile</a></li><li><a href="#responsabilita">Responsabilità e limitazioni</a></li><li><a href="#disdetta">Disdetta e recesso</a></li><li><a href="#proprieta">Proprietà intellettuale</a></li><li><a href="#modifiche">Modifiche ai presenti termini</a></li><li><a href="#contatti">Contatti e foro competente</a></li></ol></aside><div class="lg">
+  
 
-  <!-- 1. CHI SIAMO -->
-  <div class="terms-section" id="chi-siamo">
+  
+  
+
+  
+  <section class="lg-sec" id="chi-siamo">
     <h2>1. Chi siamo e cosa facciamo</h2>
-    <div class="highlight-box">
+    <div class="lg-box">
       <strong>Studio Digital Italia</strong> è uno studio operativo che costruisce strumenti digitali concreti per imprese, artigiani, attività locali e professionisti.<br/><br/>
       Titolare: Luca Ramacciato - P.IVA: 04400570240<br/>
       Sede operativa: Provincia di Vicenza, Italia<br/>
@@ -232,10 +103,8 @@
       <li>Servizi aggiuntivi di SEO locale, copywriting e supporto operativo</li>
     </ul>
     <p>L'accettazione di un preventivo scritto, il versamento dell'acconto o l'inizio dei lavori costituisce accettazione integrale dei presenti Termini e Condizioni di Servizio.</p>
-  </div>
-
-  <!-- 2. COSA NON -->
-  <div class="terms-section" id="cosa-non">
+  </section>
+<section class="lg-sec" id="cosa-non">
     <h2>2. Cosa NON promettiamo</h2>
     <p>Studio Digital Italia si distingue chiaramente da agenzie di marketing tradizionali. È importante che il cliente comprenda sin dall'inizio cosa non è compreso nei nostri servizi e cosa non rientra nella nostra filosofia.</p>
 
@@ -249,24 +118,22 @@
       <li>Sponsorizzazioni, influencer marketing o campagne virali</li>
     </ul>
 
-    <div class="nota-box">
+    <div class="lg-box nota">
       <strong>Nota importante:</strong> Il posizionamento organico sui motori di ricerca (SEO) è un processo graduale che dipende da molti fattori esterni al nostro controllo, tra cui la concorrenza nel settore, l'aggiornamento degli algoritmi di Google e la qualità dei contenuti nel tempo. Includiamo pratiche SEO corrette in tutti i nostri siti, ma non garantiamo posizioni specifiche né tempi certi di indicizzazione.
     </div>
 
     <h3>Cosa costruiamo invece</h3>
     <p>Il nostro obiettivo è creare le basi digitali corrette per permettere a un'attività di esistere online in modo professionale, ordinato e credibile. Questo include: sito web professionale, presenza Google curata, comunicazione chiara e coerente.</p>
-  </div>
-
-  <!-- 3. FORMULE -->
-  <div class="terms-section" id="formule">
+  </section>
+<section class="lg-sec" id="formule">
     <h2>3. I pacchetti di servizio</h2>
     <p>Studio Digital Italia opera attraverso tre pacchetti di realizzazione, tutti a corrispettivo una tantum:</p>
 
     <h3>Sito Base</h3>
-    <p>Studio Digital Italia realizza un sito web da 1 a 4 pagine, imposta struttura e contenuti, include l'ottimizzazione SEO locale di base e il collegamento a Google Maps e WhatsApp, e consegna il progetto completo pronto all'utilizzo insieme a tutti gli accessi. Corrispettivo: 900 € una tantum, salvo diverso preventivo scritto.</p>
+    <p>Studio Digital Italia realizza un sito web fino a 5 pagine, imposta struttura e contenuti, include l'ottimizzazione SEO locale di base e il collegamento a Google Maps e WhatsApp, e consegna il progetto completo pronto all'utilizzo insieme a tutti gli accessi. Corrispettivo: 1.200 € una tantum, salvo diverso preventivo scritto.</p>
 
     <h3>Sito Pro</h3>
-    <p>Comprende quanto previsto dal Sito Base ed estende il progetto fino a 8 pagine con design realizzato su misura, ottimizzazione SEO locale avanzata, configurazione del profilo Google Business e flussi di contatto avanzati. Corrispettivo: 1.800 € una tantum, salvo diverso preventivo scritto.</p>
+    <p>Comprende quanto previsto dal Sito Base ed estende il progetto con pagine extra e sezioni su misura, ottimizzazione SEO locale avanzata, configurazione del profilo Google Business e flussi di contatto avanzati. Corrispettivo: 1.800 € una tantum, salvo diverso preventivo scritto.</p>
 
     <h3>Su misura</h3>
     <p>Progetti destinati ad aziende medio-grandi ed enti: portali complessi, aree riservate, versioni multilingua, integrazioni con gestionali o CRM ed eventuale e-commerce. Il corrispettivo è definito da preventivo scritto specifico, redatto dopo un'analisi gratuita delle esigenze e accettato dal cliente.</p>
@@ -276,10 +143,8 @@
 
     <h3>Servizi aggiuntivi e manutenzione</h3>
     <p>Tutti i pacchetti possono essere integrati con servizi opzionali (manutenzione e gestione mensile, Google Business, gestione social, SEO locale, landing page, restyling). Ogni servizio aggiuntivo è regolato da preventivo scritto separato accettato dal cliente. I servizi a canone mensile sono dovuti a partire dalla data di pubblicazione del sito online (go-live), sono rinnovabili automaticamente di mese in mese e disdicibili con preavviso scritto di 30 giorni.</p>
-  </div>
-
-  <!-- 4. AVVIO -->
-  <div class="terms-section" id="avvio">
+  </section>
+<section class="lg-sec" id="avvio">
     <h2>4. Avvio del progetto e materiali</h2>
     <p>Il progetto si avvia formalmente al ricevimento dell'acconto e dei materiali necessari forniti dal cliente (testi, immagini, loghi, informazioni sull'attività).</p>
     <p>Il cliente si impegna a:</p>
@@ -290,10 +155,8 @@
     </ul>
     <p>Studio Digital Italia non è responsabile di ritardi causati da mancato o tardivo invio dei materiali da parte del cliente. I tempi indicati (es. "online in 7 giorni") si intendono dalla data di ricezione di tutti i materiali necessari.</p>
     <p>Su richiesta e a fronte di corrispettivo aggiuntivo, Studio Digital Italia può occuparsi della stesura dei testi (copywriting base) e della selezione di immagini libere da copyright.</p>
-  </div>
-
-  <!-- 5. PAGAMENTI -->
-  <div class="terms-section" id="pagamenti">
+  </section>
+<section class="lg-sec" id="pagamenti">
     <h2>5. Pagamenti e prezzi</h2>
     <p>I prezzi indicati sul sito sono indicativi e soggetti a preventivo personalizzato. Il preventivo accettato dal cliente costituisce il prezzo definitivo del progetto.</p>
 
@@ -315,10 +178,8 @@
 
     <h3>Rimborsi</h3>
     <p>L'acconto versato all'avvio del progetto non è rimborsabile in caso di rinuncia del cliente dopo l'inizio dei lavori. In caso di inadempimento di Studio Digital Italia, il cliente ha diritto alla restituzione delle somme versate per le attività non completate.</p>
-  </div>
-
-  <!-- 6. CONSEGNA -->
-  <div class="terms-section" id="consegna">
+  </section>
+<section class="lg-sec" id="consegna">
     <h2>6. Consegna e proprietà del sito</h2>
     <p>Alla consegna del sito, e in ogni caso al termine di un eventuale rapporto di gestione continuativa, Studio Digital Italia consegna al cliente tutti gli accessi necessari: pannello di controllo, credenziali hosting, accesso al dominio.</p>
 
@@ -330,10 +191,8 @@
 
     <h3>Hosting e dominio</h3>
     <p>Il dominio e l'hosting possono essere intestati direttamente al cliente o gestiti da Studio Digital Italia e trasferiti alla consegna, secondo quanto concordato nel preventivo. I costi annuali di rinnovo dominio e hosting sono sempre a carico del cliente.</p>
-  </div>
-
-  <!-- 7. GESTIONE -->
-  <div class="terms-section" id="gestione">
+  </section>
+<section class="lg-sec" id="gestione">
     <h2>7. Gestione continuativa e manutenzione mensile</h2>
     <p>Il servizio di gestione mensile include le attività ordinarie indicate nel preventivo (aggiornamenti contenuti, manutenzione, backup, supporto). Non include:</p>
     <ul>
@@ -346,10 +205,8 @@
 
     <h3>Livello di servizio</h3>
     <p>Studio Digital Italia si impegna a rispondere alle richieste del cliente entro 24 ore lavorative e a intervenire su segnalazioni urgenti (sito non raggiungibile, errori critici) entro il primo giorno lavorativo successivo alla segnalazione.</p>
-  </div>
-
-  <!-- 8. RESPONSABILITÀ -->
-  <div class="terms-section" id="responsabilita">
+  </section>
+<section class="lg-sec" id="responsabilita">
     <h2>8. Responsabilità e limitazioni</h2>
 
     <h3>Responsabilità del cliente</h3>
@@ -367,10 +224,8 @@
 
     <h3>Forza maggiore</h3>
     <p>Studio Digital Italia non è responsabile di ritardi o mancata esecuzione causati da eventi fuori dal proprio controllo (guasti di provider, interruzioni internet, calamità, eventi straordinari).</p>
-  </div>
-
-  <!-- 9. DISDETTA -->
-  <div class="terms-section" id="disdetta">
+  </section>
+<section class="lg-sec" id="disdetta">
     <h2>9. Disdetta e recesso</h2>
 
     <h3>Realizzazione sito - Recesso prima della consegna</h3>
@@ -381,102 +236,41 @@
 
     <h3>Disdetta da parte di Studio Digital Italia</h3>
     <p>Studio Digital Italia si riserva il diritto di recedere dal contratto con preavviso scritto di 30 giorni, o immediatamente in caso di comportamento scorretto, contenuti illegali o mancato pagamento reiterato. In caso di recesso da parte di Studio Digital Italia senza giusta causa, verranno rimborsate le somme pagate anticipatamente per servizi non ancora erogati.</p>
-  </div>
-
-  <!-- 10. PROPRIETÀ INTELLETTUALE -->
-  <div class="terms-section" id="proprieta">
+  </section>
+<section class="lg-sec" id="proprieta">
     <h2>10. Proprietà intellettuale</h2>
     <p>Studio Digital Italia si riserva il diritto di inserire nei siti realizzati, in posizione non invasiva (es. footer), un discreto riferimento al proprio studio ("Realizzato da Studio Digital Italia"), salvo esplicita richiesta contraria del cliente formulata al momento dell'incarico.</p>
     <p>Studio Digital Italia può utilizzare il sito realizzato come portfolio o riferimento commerciale, mostrando screenshot o link al sito finito, salvo diverso accordo scritto con il cliente.</p>
     <p>I contenuti forniti dal cliente (testi, immagini, loghi, marchi) rimangono di esclusiva proprietà del cliente. Studio Digital Italia non acquista alcun diritto su tali materiali.</p>
-  </div>
-
-  <!-- 11. MODIFICHE -->
-  <div class="terms-section" id="modifiche">
+  </section>
+<section class="lg-sec" id="modifiche">
     <h2>11. Modifiche ai presenti termini</h2>
     <p>Studio Digital Italia si riserva il diritto di aggiornare i presenti Termini e Condizioni in qualsiasi momento. La versione aggiornata sarà pubblicata su questa pagina con indicazione della data di modifica. I contratti già in essere al momento della modifica restano regolati dalla versione dei Termini vigente alla data di sottoscrizione, salvo diverso accordo scritto.</p>
-  </div>
-
-  <!-- 12. CONTATTI -->
-  <div class="terms-section" id="contatti">
+  </section>
+<section class="lg-sec" id="contatti">
     <h2>12. Contatti e foro competente</h2>
-    <div class="highlight-box">
+    <div class="lg-box">
       Per qualsiasi questione relativa ai presenti Termini scrivi a:<br/>
       <strong>info@studiodigitalitalia.it</strong> - Tel: <strong>327 773 7115</strong><br/><br/>
       Studio Digital Italia - Titolare: Luca Ramacciato<br/>
       P.IVA: 04400570240 - Sede operativa: Provincia di Vicenza, Italia
     </div>
     <p>I presenti Termini e Condizioni sono regolati dalla legge italiana. Per qualsiasi controversia derivante dall'interpretazione o dall'esecuzione del contratto, le parti concordano di tentare in primo luogo una composizione amichevole. In assenza di accordo, il foro competente è quello del domicilio del titolare di Studio Digital Italia, salvo diversa disposizione inderogabile di legge a tutela del consumatore.</p>
-  </div>
-
-</div>
-
+  </section>
+</div></div>
+</section>
+</main>
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
-      <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
-      <a href="index.html#contatti" class="footer-cta">Richiedi un preventivo gratuito &rarr;</a>
+  <div class="wrap">
+    <div class="ft">
+      <div><a href="index.html" class="logo logo-img logo-ft"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a><p>Siti web e SEO locale per le imprese di Vicenza e provincia.</p></div>
+      <div><h5>Sito</h5><ul><li><a href="settori.html">Settori</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pacchetti.html">Pacchetti</a></li><li><a href="index.html#studio">Componi il tuo sito</a></li></ul></div>
+      <div><h5>Info</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="termini.html">Termini</a></li></ul></div>
+      <div><h5>Contatti</h5><ul><li><a href="mailto:luca@studiodigitalitalia.it">Email</a></li><li><a href="area-riservata.html">Area demo</a></li><li><a href="area-plus.html">Area clienti</a></li><li>Vicenza (VI)</li></ul></div>
     </div>
-    <div class="footer-col">
-      <h4>Servizi</h4>
-      <ul>
-        <li><a href="pacchetti.html">Siti web</a></li>
-        <li><a href="pacchetti.html">Google Business</a></li>
-        <li><a href="pacchetti.html">Gestione sito</a></li>
-        <li><a href="settori.html">Siti per settore</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Azienda</h4>
-      <ul>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="index.html#come-funziona">Come funziona</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="termini.html">Termini di Servizio</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contatti</h4>
-      <ul>
-        <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
-        <li><a href="tel:+393515854466">351 585 4466</a><span class="footer-role">Lorenzo &middot; preventivi e nuovi progetti</span></li>
-        <li><a href="tel:+393277737115">327 773 7115</a><span class="footer-role">Luca &middot; assistenza clienti</span></li>
-        <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
-        <li><span class="footer-muted">P.IVA 04400570240</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Studio Digital Italia</span>
-    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a></span>
+    <div class="fb"><span>© 2026 Studio Digital Italia · P.IVA 04400570240</span></div>
   </div>
 </footer>
-
-<!-- COOKIE NOTICE -->
-<div id="cookie-bar">
-  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
-    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
-  </p>
-  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
-</div>
-<script>
-  // Cookie banner - il consenso vale per tutto il sito (chiave sdi_cookie_ok)
-  function dismissCookieBar() {
-    var b = document.getElementById('cookie-bar');
-    if (b) b.classList.remove('show');
-    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    var accettato = false;
-    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
-    if (!accettato) {
-      var b = document.getElementById('cookie-bar');
-      if (b) b.classList.add('show');
-    }
-  });
-</script>
-<script src="chat-widget.js" defer></script>
+<script src="assets/js/sdi.js"></script>
 </body>
 </html>

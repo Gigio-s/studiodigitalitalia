@@ -6,7 +6,7 @@
   <!-- ══ HOMEPAGE ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   <!-- ══ PACCHETTI & PREZZI ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/pacchetti.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -22,7 +22,7 @@
   <!-- ══ PORTFOLIO ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/portfolio.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,7 +30,7 @@
   <!-- ══ HUB SETTORI ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/settori.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +38,7 @@
   <!-- ══ LANDING SETTORE - SITI WEB PER B&B ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/siti-web-bnb.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,7 +46,7 @@
   <!-- ══ LANDING SETTORE - SITI WEB PER ONORANZE FUNEBRI ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/siti-web-onoranze-funebri.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,7 +54,7 @@
   <!-- ══ LANDING SETTORE - SITI WEB PER AGENZIE IMMOBILIARI ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/siti-web-agenzie-immobiliari.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   <!-- ══ LANDING SETTORE - SITI WEB PER AUTOFFICINE ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/siti-web-autofficine.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -70,7 +70,7 @@
   <!-- ══ FAQ ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/faq.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -78,7 +78,7 @@
   <!-- CHI SIAMO -->
   <url>
     <loc>https://studiodigitalitalia.it/chi-siamo.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -86,7 +86,7 @@
   <!-- ══ DEMO PUBBLICA - B&B Dimora dei Colli (esempio di portfolio) ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/dimora-dei-colli-demo/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -94,7 +94,7 @@
   <!-- ══ DEMO PUBBLICA - Onoranze Funebri Serafin (esempio di portfolio) ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/onoranze-funebri-serafin-demo/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -102,7 +102,7 @@
   <!-- ══ DEMO PUBBLICA - Casaviva Immobiliare (esempio di portfolio) ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/casaviva-immobiliare-demo/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -110,7 +110,7 @@
   <!-- ══ DEMO PUBBLICA - Autofficina Meridiana (esempio di portfolio) ══ -->
   <url>
     <loc>https://studiodigitalitalia.it/officina-meridiana-demo/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

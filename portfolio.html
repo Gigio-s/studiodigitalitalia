@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio Siti Web - Studio Digital Italia | Esempi per Ogni Settore</title>
   <!-- Security -->
@@ -9,19 +9,15 @@
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
-
   <!-- ── SEO ── -->
   <meta name="description" content="Guarda i siti web che abbiamo realizzato: B&amp;B e strutture ricettive, ristoranti, idraulici, dentisti, barbieri, studi professionali, negozi e molto altro. Demo navigabili e siti reali online, con prenotazione diretta." />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="author" content="Studio Digital Italia" />
   <meta name="keywords" content="portfolio siti web, sito web B&amp;B, sito web per B&amp;B, sito web struttura ricettiva, sito web affitti brevi, sito web agriturismo, sito web hotel, prenotazione diretta B&amp;B, esempi siti web piccole imprese, sito web ristorante esempio, sito web idraulico, sito web dentista, sito web barbiere, sito web artigiano, creazione siti web Vicenza, siti web Italia" />
   <link rel="canonical" href="https://studiodigitalitalia.it/portfolio.html" />
-
   <!-- ── GEO ── -->
   <meta name="geo.region" content="IT" />
   <meta name="geo.placename" content="Vicenza, Italia" />
   <meta name="language" content="Italian" />
-
   <!-- ── OPEN GRAPH ── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://studiodigitalitalia.it/portfolio.html" />
@@ -30,7 +26,6 @@
   <meta property="og:image" content="https://studiodigitalitalia.it/assets/loghi/logo-completo.jpg" />
   <meta property="og:site_name" content="Studio Digital Italia" />
   <meta property="og:locale" content="it_IT" />
-
   <!-- ── SCHEMA.ORG ── -->
   <script type="application/ld+json">
   {
@@ -56,914 +51,143 @@
     }
   }
   </script>
-
-  <link rel="icon" type="image/jpeg" href="assets/loghi/logo-solo-foto.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --dark:    #1E1F24;
-      --dark-2:  #272829;
-      --gold:    #B8966A;
-      --gold-d:  #9D7D57;
-      --gold-l:  #D4B48A;
-      --cream:   #F8F5EE;
-      --cream-d: #F0ECE3;
-      --white:   #FFFFFF;
-      --text:    #1A1C22;
-      --muted:   #6E6860;
-      --border:  #DDD8CE;
-      --radius:  6px;
-      --shadow:  0 2px 24px rgba(26,28,34,.07);
-    }
-
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--dark);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6%; height: 64px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-    .logo img { height: 38px; width: auto; }
-    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); letter-spacing: .3px; }
-    .logo-text span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links { list-style: none; }
-    .nav-links li { display: inline; }
-    .nav-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .btn-nav {
-      border: 1px solid rgba(184,150,106,.5); color: var(--gold);
-      padding: .5rem 1.2rem; border-radius: var(--radius);
-      font-weight: 600; font-size: .85rem; text-decoration: none; transition: all .2s;
-    }
-    .btn-nav:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); border-radius: 2px; }
-
-    /* ── HERO ── */
-    .hero-port {
-      background: var(--dark);
-      padding: 120px 6% 80px;
-      position: relative; overflow: hidden;
-    }
-    .hero-port::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(184,150,106,.07) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-port-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: .6rem;
-      color: var(--gold); font-size: .78rem; font-weight: 600;
-      letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 1.4rem;
-    }
-    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
-    .hero-port h1 {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      color: var(--white); line-height: 1.15; margin-bottom: 1.2rem;
-    }
-    .hero-port h1 em { font-style: italic; color: var(--gold); }
-    .hero-port p {
-      font-size: 1rem; color: rgba(255,255,255,.5);
-      max-width: 560px; line-height: 1.75; margin-bottom: 2rem;
-    }
-    .hero-stats {
-      display: flex; gap: 2.5rem;
-      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 2rem;
-    }
-    .hero-stat strong { display: block; font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--white); line-height: 1; }
-    .hero-stat span { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: .2rem; display: block; }
-
-    /* ── SEO INTRO ── */
-    .seo-intro {
-      background: var(--white);
-      padding: 60px 6%;
-      border-bottom: 1px solid var(--border);
-    }
-    .seo-intro-inner { max-width: 1160px; margin: 0 auto; }
-    .seo-intro h2 { font-size: 1.4rem; margin-bottom: .8rem; }
-    .seo-intro p { font-size: .93rem; color: var(--muted); line-height: 1.8; max-width: 780px; }
-
-    /* ── SECTION ── */
-    section { padding: 80px 6%; }
-    .section-inner { max-width: 1160px; margin: 0 auto; }
-    .label-line { display: flex; align-items: center; gap: .8rem; margin-bottom: .8rem; }
-    .label-line::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
-    .label-text { font-size: .72rem; font-weight: 700; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
-    .section-title { font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.2; margin-bottom: .8rem; }
-    .section-sub { font-size: .95rem; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 3rem; }
-
-    /* ── FILTRO SETTORI ── */
-    .filter-bar {
-      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem;
-    }
-    .filter-btn {
-      background: transparent; border: 1px solid var(--border);
-      color: var(--muted); font-size: .8rem; font-weight: 600;
-      padding: .4rem 1rem; border-radius: 50px; cursor: pointer;
-      transition: all .2s; font-family: 'Inter', sans-serif;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--gold); border-color: var(--gold);
-      color: var(--dark);
-    }
-
-    /* ── CARD GRIGLIA ── */
-    .port-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-    }
-    .port-card {
-      border-radius: 12px; overflow: hidden;
-      background: var(--dark-2);
-      transition: transform .3s ease, box-shadow .3s ease;
-      text-decoration: none; display: block;
-    }
-    .port-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.25); }
-
-    /* ── CAROSELLO SITI ONLINE ── */
-    .siti-carousel { position: relative; margin-top: 2.2rem; }
-    .siti-track {
-      display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory;
-      scroll-behavior: smooth; padding: 1rem max(1rem, calc((100% - 360px) / 2));
-      scrollbar-width: none; -ms-overflow-style: none;
-    }
-    .siti-track::-webkit-scrollbar { display: none; }
-    .siti-track > * {
-      flex: 0 0 360px; max-width: 360px; scroll-snap-align: center;
-      border-radius: 12px; overflow: hidden;
-      transition: transform .45s ease, opacity .45s ease, box-shadow .45s ease;
-      transform: scale(.86); opacity: .4;
-    }
-    .siti-track > *.is-active {
-      transform: scale(1); opacity: 1; box-shadow: 0 18px 50px rgba(0,0,0,.4);
-    }
-    .siti-nav {
-      position: absolute; top: 50%; transform: translateY(-50%); z-index: 6;
-      width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
-      background: var(--gold); color: #fff; font-size: 1.7rem; line-height: 1;
-      display: flex; align-items: center; justify-content: center; padding-bottom: 3px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.35); transition: transform .15s, background .15s;
-    }
-    .siti-nav:hover { transform: translateY(-50%) scale(1.08); background: #9D7D57; }
-    .siti-nav.prev { left: 4px; }
-    .siti-nav.next { right: 4px; }
-    .siti-dots { display: flex; gap: .5rem; justify-content: center; margin-top: 1.4rem; }
-    .siti-dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: rgba(255,255,255,.25); transition: all .2s; }
-    .siti-dot.active { background: var(--gold); width: 22px; border-radius: 5px; }
-    @media (max-width: 760px) {
-      .siti-track > * { flex-basis: 80vw; max-width: 80vw; }
-      .siti-track { padding-inline: 10vw; }
-      .siti-nav { display: none; }
-    }
-    .port-thumb {
-      height: 220px;
-      position: relative;
-      background-size: cover;
-      background-position: top center;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 1.2rem;
-    }
-    .port-thumb .overlay {
-      position: absolute; inset: 0;
-      background: rgba(184,150,106,.15);
-      opacity: 0; transition: opacity .3s;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .port-card:hover .overlay { opacity: 1; }
-    .overlay-cta {
-      background: var(--gold); color: var(--dark);
-      font-size: .8rem; font-weight: 700; padding: .5rem 1.2rem;
-      border-radius: 4px; letter-spacing: .2px;
-    }
-    .port-badge-real {
-      position: absolute; top: .9rem; right: .9rem;
-      background: var(--gold); color: var(--dark);
-      font-size: .62rem; font-weight: 800; padding: .2rem .6rem;
-      border-radius: 3px; letter-spacing: .5px; text-transform: uppercase;
-    }
-    .port-badge-demo {
-      position: absolute; top: .9rem; right: .9rem;
-      background: rgba(255,255,255,.12); color: rgba(255,255,255,.7);
-      font-size: .62rem; font-weight: 700; padding: .2rem .6rem;
-      border-radius: 3px; letter-spacing: .5px; text-transform: uppercase;
-      backdrop-filter: blur(4px);
-    }
-    .port-tag {
-      display: inline-block; background: rgba(255,255,255,.1);
-      color: rgba(255,255,255,.7); font-size: .62rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      padding: .18rem .5rem; border-radius: 3px; margin-bottom: .35rem;
-    }
-    .port-name { color: var(--white); font-size: 1rem; font-weight: 600; }
-    .port-sub { color: rgba(255,255,255,.4); font-size: .78rem; margin-top: .1rem; }
-    .port-foot {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: .9rem 1.2rem;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .port-foot-tech { font-size: .78rem; color: rgba(255,255,255,.3); }
-    .port-foot-link { font-size: .8rem; color: var(--gold); font-weight: 600; }
-
-    /* Colori thumb */
-    .rist   { background: linear-gradient(160deg, #2d1b69, #0f0a1e); }
-    .idraul { background: linear-gradient(160deg, #0c3547, #061520); }
-    .salon  { background: linear-gradient(160deg, #3d0922, #1a0410); }
-    .artig  { background: linear-gradient(160deg, #0a2e1c, #041208); }
-    .dent   { background: linear-gradient(160deg, #0c2e2b, #041514); }
-    .edil   { background: linear-gradient(160deg, #1a1f0a, #080a03); }
-    .barb   { background: linear-gradient(160deg, #1a1005, #080500); }
-    .affitti{ background: linear-gradient(160deg, #0a1a2e, #030810); }
-    .trasl  { background: linear-gradient(160deg, #0d2137, #050e1a); }
-    .assoc  { background: linear-gradient(160deg, #0a2414, #030d07); }
-
-    /* ── SETTORI CTA ── */
-    .settori-section { background: var(--cream-d); }
-    .settori-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1rem; margin-top: 3rem;
-    }
-    .settore-chip {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1rem 1.2rem;
-      font-size: .88rem; font-weight: 600; color: var(--text);
-      text-align: center; transition: all .2s; cursor: default;
-    }
-    .settore-chip:hover { border-color: var(--gold); color: var(--gold-d); }
-    .settore-chip span { display: block; font-size: 1.3rem; margin-bottom: .3rem; }
-
-    /* ── PERCHE SECTION ── */
-    .perche-strip {
-      background: var(--dark);
-      padding: 70px 6%;
-    }
-    .perche-strip-inner { max-width: 1160px; margin: 0 auto; }
-    .perche-strip .section-title { color: var(--white); }
-    .perche-strip .section-sub { color: rgba(255,255,255,.45); }
-    .perche-cols {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem; margin-top: 3rem;
-    }
-    .perche-item { }
-    .perche-num { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: rgba(255,255,255,.1); line-height: 1; margin-bottom: .8rem; }
-    .perche-item h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: .4rem; font-family: 'Inter', sans-serif; }
-    .perche-item p { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.7; }
-
-    /* ── CTA FINALE ── */
-    .cta-section {
-      background: var(--gold);
-      padding: 80px 6%; text-align: center;
-    }
-    .cta-section h2 { font-size: clamp(1.6rem, 2.5vw, 2.4rem); color: var(--dark); margin-bottom: 1rem; }
-    .cta-section p { font-size: .97rem; color: rgba(26,28,34,.65); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .btn-dark {
-      background: var(--dark); color: var(--white);
-      padding: .9rem 2.2rem; border-radius: var(--radius);
-      font-weight: 700; font-size: .95rem; text-decoration: none;
-      display: inline-block; transition: all .2s; margin: .3rem;
-    }
-    .btn-dark:hover { background: #000; transform: translateY(-1px); }
-    .btn-outline-dark {
-      border: 2px solid rgba(26,28,34,.3); color: var(--dark);
-      padding: .9rem 2.2rem; border-radius: var(--radius);
-      font-weight: 600; font-size: .95rem; text-decoration: none;
-      display: inline-block; transition: all .2s; margin: .3rem;
-    }
-    .btn-outline-dark:hover { border-color: var(--dark); background: rgba(26,28,34,.08); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark); border-top: 1px solid rgba(255,255,255,.06);
-      padding: 50px 6% 30px;
-    }
-    .footer-inner {
-      max-width: 1160px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: flex-start;
-      flex-wrap: wrap; gap: 2rem;
-    }
-    .footer-logo img { height: 48px; width: auto; margin-bottom: .5rem; }
-    .footer-tagline { font-size: .83rem; color: rgba(255,255,255,.3); line-height: 1.6; }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { font-size: .82rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.2); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; }
-
-    /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .port-grid { grid-template-columns: repeat(2, 1fr); }
-      .settori-grid { grid-template-columns: repeat(2, 1fr); }
-      .perche-cols { grid-template-columns: 1fr; gap: 2rem; }
-      .btn-nav { display: none; }
-      .nav-links { display: none; flex-direction: column; }
-      .nav-links.open {
-        display: flex; position: absolute; top: 64px; left: 0; right: 0;
-        background: var(--dark); padding: 1.5rem 6%; gap: 1.2rem;
-        border-top: 1px solid rgba(255,255,255,.06); z-index: 999;
-        list-style: none;
-      }
-      .hamburger { display: flex; }
-    }
-    @media (max-width: 600px) {
-      .port-grid { grid-template-columns: 1fr; }
-      .settori-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-      section { padding: 60px 5%; }
-      nav { padding: 0 5%; }
-      .hero-port { padding: 90px 5% 50px; }
-      .seo-intro { padding: 40px 5%; }
-      .cta-section .btn-wrap { flex-direction: column; align-items: stretch; gap: .8rem; }
-    }
-  
-    /* ── COOKIE NOTICE ── */
-    /* Nascosto di default: lo mostra il JS solo se manca il consenso.
-       Evita il lampeggio del banner e non dipende dalla posizione dello script. */
-    #cookie-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-      background: #1E1F24; border-top: 1px solid rgba(255,255,255,.1);
-      padding: 1rem 6%;
-      display: none; align-items: center; justify-content: space-between;
-      gap: 1.5rem; flex-wrap: wrap;
-      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
-    }
-    #cookie-bar.show { display: flex; }
-    #cookie-bar p { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; flex: 1; min-width: 200px; }
-    #cookie-bar a { color: #B8966A; text-decoration: underline; }
-    #cookie-bar .cookie-btn {
-      background: #B8966A; color: #1E1F24;
-      border: none; padding: .55rem 1.4rem; border-radius: 6px;
-      font-family: inherit; font-size: .83rem; font-weight: 700;
-      cursor: pointer; white-space: nowrap; transition: background .2s;
-    }
-    #cookie-bar .cookie-btn:hover { background: #9D7D57; }
-    @media (max-width: 600px) {
-      #cookie-bar { padding: 1rem 5%; flex-direction: column; align-items: stretch; }
-      #cookie-bar .cookie-btn { text-align: center; }
-    }
-  </style>
-<style id="sdi-footer-standard">
-  footer { background: var(--dark, #1E1F24); padding: 60px 6% 32px; }
-  footer .footer-inner {
-    max-width: 1160px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 2.5rem;
-    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left;
-  }
-  footer .footer-brand { min-width: 0; }
-  footer .footer-logo { margin-bottom: .8rem; }
-  footer .footer-logo img { height: 56px; width: auto; filter: none; opacity: 1; }
-  footer .footer-tagline { font-size: .84rem; color: rgba(255,255,255,.35); line-height: 1.7; margin: 0; }
-  footer .footer-col h4 { font-family: inherit; font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 1.2rem; }
-  footer .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
-  footer .footer-col ul li { margin: 0; }
-  footer .footer-col ul a { color: rgba(255,255,255,.45); text-decoration: none; font-size: .85rem; transition: color .2s; }
-  footer .footer-col ul a:hover { color: #fff; }
-  footer .footer-muted { color: rgba(255,255,255,.45); font-size: .85rem; }
-  footer .footer-bottom {
-    max-width: 1160px; margin: 0 auto; padding-top: 1.5rem;
-    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-    font-size: .78rem; color: rgba(255,255,255,.2);
-  }
-  footer .footer-bottom-link { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
-  footer .footer-bottom-link:hover { color: var(--gold, #B8966A); }
-  footer .footer-cta { display: inline-block; margin-top: 1.3rem; color: var(--gold, #B8966A); text-decoration: none; font-size: .82rem; font-weight: 600; transition: color .2s; }
-  footer .footer-cta:hover { color: #fff; }
-  footer .footer-role { display: block; font-size: .7rem; color: rgba(255,255,255,.3); margin-top: .1rem; }
-  @media (max-width: 960px) { footer .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-  @media (max-width: 560px) { footer .footer-inner { grid-template-columns: 1fr; } footer .footer-bottom { flex-direction: column; gap: .5rem; } }
-</style>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="icon" type="image/png" href="assets/img/logo-sdi.png">
+<link rel="preload" href="assets/fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/sdi.css">
 </head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="logo">
-    <img src="assets/loghi/logo-solo-foto.jpg" alt="Studio Digital Italia" />
-    <span class="logo-text">Studio<span> Digital</span> Italia</span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#problema">Il problema</a></li>
-    <li><a href="index.html#come-funziona">Come funziona</a></li>
-    <li><a href="settori.html">Settori</a></li>
-    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-    <li><a href="pacchetti.html">Pacchetti &amp; Prezzi</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-  </ul>
-  <a href="area-riservata.html" class="btn-nav">Area riservata</a>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- HERO -->
-<section class="hero-port">
-  <div class="hero-port-inner">
-    <div class="hero-eyebrow">Portfolio</div>
-    <h1>Siti web realizzati<br/>per ogni <em>settore</em></h1>
-    <p>Ogni attività è diversa - e ogni sito che realizziamo è su misura. Naviga gli esempi, esplora i siti reali dei nostri clienti, e scopri come potrebbe essere il tuo.</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <strong>5</strong>
-        <span>demo navigabili</span>
-      </div>
-      <div class="hero-stat">
-        <strong>5</strong>
-        <span>siti reali online</span>
-      </div>
-      <div class="hero-stat">
-        <strong>7</strong>
-        <span>giorni di consegna</span>
-      </div>
-      <div class="hero-stat">
-        <strong>100%</strong>
-        <span>made in Italia</span>
-      </div>
+<body data-pal="sky" data-st="mod">
+<svg class="bg-logos" aria-hidden="true" focusable="false"><defs>
+<filter id="bgw" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>
+<pattern id="bgp" width="300" height="300" patternUnits="userSpaceOnUse"><image href="assets/img/logo-sdi.png" x="40" y="40" width="70" height="70" filter="url(#bgw)"/><image href="assets/img/logo-sdi.png" x="190" y="190" width="70" height="70" filter="url(#bgw)"/></pattern>
+<mask id="bgm"><rect width="100%" height="100%" fill="url(#bgp)"/></mask>
+<linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0099FF" stop-opacity=".13"/><stop offset=".55" stop-color="#4fb4ff" stop-opacity=".07"/><stop offset="1" stop-color="#0099FF" stop-opacity=".03"/></linearGradient>
+</defs><rect width="100%" height="100%" fill="url(#bgg)" mask="url(#bgm)"/></svg>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="l">
+      <a href="index.html" class="logo logo-img"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a>
+      <nav class="links"><a href="settori.html">Settori</a><a href="portfolio.html" aria-current="page" style="color:var(--accent)">Portfolio</a><a href="pacchetti.html">Pacchetti</a><a href="faq.html">FAQ</a><a href="chi-siamo.html">Chi siamo</a></nav>
+    </div>
+    <div class="r">
+      <a href="area-plus.html" class="btn btn-cli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Area clienti</a>
+      <a href="area-riservata.html" class="btn btn-light">Area demo</a>
+      <a href="index.html#contatti" class="btn btn-dark">Preventivo</a>
+      <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i></button>
     </div>
   </div>
-</section>
-
-<!-- SEO INTRO (nascosto visivamente ma utile per Google) -->
-<div class="seo-intro">
-  <div class="seo-intro-inner">
-    <h2>Esempi reali di siti web per piccole imprese italiane</h2>
-    <p>
-      Studio Digital Italia realizza siti web professionali per artigiani, ristoranti, studi medici, negozi, barbieri, imprese edili, affitti brevi e molto altro. Ogni demo qui sotto è un esempio navigabile e realistico di come potrebbe apparire il sito della tua attività. Lavoriamo con imprese di Vicenza, Padova, Verona e tutta Italia - online in 7 giorni lavorativi, SEO incluso.
-    </p>
-  </div>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a class="ml" href="settori.html">Settori</a><a class="ml" href="portfolio.html">Portfolio</a><a class="ml" href="pacchetti.html">Pacchetti</a><a class="ml" href="faq.html">FAQ</a><a class="ml" href="chi-siamo.html">Chi siamo</a><a class="ml" href="area-plus.html">Area clienti</a>
+  <div class="mcta"><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a><a href="area-riservata.html" class="btn btn-dark">Area demo</a></div>
 </div>
+<div class="mbar"><a href="area-riservata.html" class="btn btn-dark">Area demo</a><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a></div>
+<main>
 
-<!-- SITI REALI -->
-<section style="background: var(--dark); padding: 80px 6%;">
-  <div class="section-inner">
-    <div class="fade-in">
-      <div class="label-line"><span class="label-text">Clienti reali</span></div>
-      <h2 class="section-title" style="color:var(--white);">Siti attivi e online</h2>
-      <p class="section-sub">Clienti che ci hanno affidato la loro presenza digitale. Siti funzionanti, indicizzati su Google e aggiornati.</p>
-    </div>
-    <div class="port-grid">
-      <a href="https://www.reteparcopace.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb assoc" style="background-image: linear-gradient(to bottom, rgba(10,36,20,.1) 0%, rgba(10,36,20,.78) 60%, rgba(10,36,20,.96) 100%), url('assets/anteprime/preview%20reteparcopace.png'); background-size: cover; background-position: top center;">
-          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
-          <div class="port-badge-real">✦ Sito reale</div>
-          <span class="port-tag">Associazioni</span>
-          <div class="port-name">Rete Parco Pace</div>
-          <div class="port-sub">Associazione culturale - Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Gestione sito + aggiornamenti contenuti</span>
-          <span class="port-foot-link">Visita il sito →</span>
-        </div>
-      </a>
-      <a href="https://autoscuolegasparellavicenza.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(8,16,28,.1) 0%, rgba(8,16,28,.78) 60%, rgba(8,16,28,.96) 100%), url('assets/anteprime/Anteprima%20Autoscuole%20Gasparella.png'); background-size: cover; background-position: top center;">
-          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
-          <div class="port-badge-real">✦ Sito reale</div>
-          <span class="port-tag">Autoscuola</span>
-          <div class="port-name">Autoscuole Gasparella</div>
-          <div class="port-sub">Patenti e formazione - Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Sito web + prenotazione online</span>
-          <span class="port-foot-link">Visita il sito →</span>
-        </div>
-      </a>
-      <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb trasl" style="background-image: linear-gradient(to bottom, rgba(5,14,26,.1) 0%, rgba(5,14,26,.78) 60%, rgba(5,14,26,.96) 100%), url('assets/anteprime/preview%20l2%20traslochi.png'); background-size: cover; background-position: top center;">
-          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
-          <div class="port-badge-real">✦ Sito reale</div>
-          <span class="port-tag">Servizi</span>
-          <div class="port-name">L2 Traslochi</div>
-          <div class="port-sub">Traslochi &amp; Sgomberi - Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">WordPress + preventivo online</span>
-          <span class="port-foot-link">Visita il sito →</span>
-        </div>
-      </a>
-      <a href="https://www.ramacciatovintage.it" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb vintage" style="background-image: linear-gradient(to bottom, rgba(26,18,8,.1) 0%, rgba(26,18,8,.78) 60%, rgba(26,18,8,.96) 100%), url('assets/anteprime/anteprima%20ramacciato%20vintage.png'); background-size: cover; background-position: top center;">
-          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
-          <div class="port-badge-real">✦ Sito reale</div>
-          <span class="port-tag">Vintage &amp; Usato</span>
-          <div class="port-name">Ramacciato Vintage</div>
-          <div class="port-sub">Vintage &amp; Collezionismo</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">E-commerce + catalogo prodotti</span>
-          <span class="port-foot-link">Visita il sito →</span>
-        </div>
-      </a>
-      <a href="https://deadpeopleactivity.com" target="_blank" rel="noopener" class="port-card">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(12,6,10,.1) 0%, rgba(12,6,10,.78) 60%, rgba(12,6,10,.96) 100%), url('assets/anteprime/Anteprima%20Deadpeopleactivity.png'); background-size: cover; background-position: top center;">
-          <div class="overlay"><span class="overlay-cta">Visita il sito →</span></div>
-          <div class="port-badge-real">✦ Sito reale</div>
-          <span class="port-tag">Musica</span>
-          <div class="port-name">Dead People Activity</div>
-          <div class="port-sub">Network musicale europeo</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Piattaforma multilingua + store + community</span>
-          <span class="port-foot-link">Visita il sito →</span>
-        </div>
-      </a>
-    </div>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> / Portfolio</div>
+    <div class="eyebrow rv">Portfolio</div>
+    <h1 class="rv d1">Casi studio, <em>dal vivo</em></h1>
+    <p class="rv d2">Tre progetti raccontati dall'inizio: da dove partivano, cosa abbiamo costruito, come ci siamo arrivati e cosa sta succedendo adesso.</p>
+    <div class="cs-nav rv d2"><a href="#gasparella">Autoscuole Gasparella</a><a href="#lello">Pizzeria da Lello</a><a href="#l2">L2 Traslochi</a><a href="#wordpress">WordPress o HTML?</a></div>
   </div>
 </section>
-
-<!-- DEMO NAVIGABILI -->
-<section style="background: var(--cream); padding: 80px 6%;">
-  <div class="section-inner">
-    <div class="fade-in">
-      <div class="label-line"><span class="label-text">Demo navigabili</span></div>
-      <h2 class="section-title">Esplora gli esempi per settore</h2>
-      <p class="section-sub">Ogni demo è un sito completo e navigabile - clicca per vedere come apparirebbe il sito della tua attività.</p>
-    </div>
-
-    <div class="demo-nota fade-in" style="max-width:760px; margin:1.5rem auto 2.5rem; padding:1rem 1.4rem; background:var(--white); border-left:3px solid var(--gold); border-radius:8px; box-shadow:0 6px 22px rgba(26,28,34,.06);">
-      <p style="margin:0; font-size:.92rem; line-height:1.6; color:var(--dark);">Queste demo nascono da progetti reali sviluppati per nostri clienti. In alcuni casi il cliente non ha completato il percorso, in altri ha scelto una formula o un sito diverso: le lasciamo online come esempi concreti e navigabili del lavoro che facciamo.</p>
-    </div>
-
-    <div class="siti-carousel">
-      <button class="siti-nav prev" aria-label="Demo precedente">‹</button>
-      <div class="siti-track" id="demo-grid">
-
-      <!-- Dimora dei Colli - B&B (demo navigabile completa) -->
-      <a href="siti-web-bnb.html" class="port-card is-active" data-cat="turismo">
-        <div class="port-thumb bnb" style="background-image: linear-gradient(to bottom, rgba(20,30,24,.05) 0%, rgba(20,30,24,.6) 58%, rgba(20,30,24,.95) 100%), url('assets/anteprime/anteprima%20dimora%20dei%20colli.png'); background-size: cover; background-position: center;">
-          <div class="port-badge-demo">Demo</div>
-          <span class="port-tag">Turismo &amp; B&amp;B</span>
-          <div class="port-name">Dimora dei Colli</div>
-          <div class="port-sub">Boutique B&amp;B - Colli Berici, Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Sito multi-pagina + prenotazione diretta</span>
-          <span class="port-foot-link">Vedi demo →</span>
-        </div>
-      </a>
-
-      <!-- Masseria Radice - Agriturismo (demo navigabile completa) -->
-      <a href="siti-web-bnb.html" class="port-card" data-cat="turismo">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(24,25,20,.05) 0%, rgba(24,25,20,.6) 58%, rgba(24,25,20,.95) 100%), url('assets/anteprime/anteprima%20masseria.png'); background-size: cover; background-position: center;">
-          <div class="port-badge-demo">Demo</div>
-          <span class="port-tag">Turismo &amp; Agriturismo</span>
-          <div class="port-name">Masseria Radice</div>
-          <div class="port-sub">Agriturismo biologico - Valle d'Itria, Puglia</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Sito multi-pagina + prenotazione, ristorante, esperienze &amp; shop</span>
-          <span class="port-foot-link">Vedi demo →</span>
-        </div>
-      </a>
-
-      <!-- Onoranze Funebri Serafin - Onoranze funebri (demo navigabile completa) -->
-      <a href="siti-web-onoranze-funebri.html" class="port-card" data-cat="onoranze">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(44,40,35,.05) 0%, rgba(44,40,35,.6) 58%, rgba(44,40,35,.95) 100%), url('assets/anteprime/Anteprima%20onoranze%20funebri.png'); background-size: cover; background-position: center;">
-          <div class="port-badge-demo">Demo</div>
-          <span class="port-tag">Onoranze funebri</span>
-          <div class="port-name">Onoranze Funebri Serafin</div>
-          <div class="port-sub">Impresa funebre familiare - Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Sito multi-pagina + necrologi online &amp; gestionale</span>
-          <span class="port-foot-link">Vedi demo →</span>
-        </div>
-      </a>
-
-      <!-- Casaviva Immobiliare - Agenzie immobiliari (demo navigabile completa) -->
-      <a href="siti-web-agenzie-immobiliari.html" class="port-card" data-cat="immobiliare">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(20,20,24,.05) 0%, rgba(20,20,24,.6) 58%, rgba(20,20,24,.95) 100%), url('assets/anteprime/anteprima%20progetto%20agenzia.png'); background-size: cover; background-position: center;">
-          <div class="port-badge-demo">Demo</div>
-          <span class="port-tag">Agenzie immobiliari</span>
-          <div class="port-name">Casaviva Immobiliare</div>
-          <div class="port-sub">Nuova costruzione - Sandrigo (VI)</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Scheda immobile + video, planimetrie &amp; richiesta visita</span>
-          <span class="port-foot-link">Vedi demo →</span>
-        </div>
-      </a>
-
-      <!-- Autofficina Meridiana - Autofficine (demo navigabile completa) -->
-      <a href="siti-web-autofficine.html" class="port-card" data-cat="autofficine">
-        <div class="port-thumb" style="background-image: linear-gradient(to bottom, rgba(20,20,24,.05) 0%, rgba(20,20,24,.6) 58%, rgba(20,20,24,.95) 100%), url('assets/anteprime/anteprima%20autofficine.png'); background-size: cover; background-position: center;">
-          <div class="port-badge-demo">Demo</div>
-          <span class="port-tag">Autofficine</span>
-          <div class="port-name">Autofficina Meridiana</div>
-          <div class="port-sub">Officina multimarca - Vicenza</div>
-        </div>
-        <div class="port-foot">
-          <span class="port-foot-tech">Sito multi-reparto + prenotazione intervento online</span>
-          <span class="port-foot-link">Vedi demo →</span>
-        </div>
-      </a>
-
-      <!-- Ristorante -->
-
-      <!-- Idraulico -->
-
-      <!-- Studio Commercialisti -->
-
-      <!-- Ottica / Negozio -->
-
-      <!-- Dentista -->
-
-      <!-- Edilizia -->
-
-      <!-- Barbiere -->
-
-
-      </div>
-      <button class="siti-nav next" aria-label="Demo successiva">›</button>
-      <div class="siti-dots"></div>
-    </div>
+<section style="padding-top:30px">
+  <div class="wrap cs-wrap">
+    <article class="cs rv" id="gasparella">
+  <div class="cs-head">
+    <a href="https://autoscuolegasparellavicenza.it" target="_blank" rel="noopener" class="cs-shot"><div class="look ph " style="background:url('assets/foto-home/sito-gasparella.webp') top center/cover no-repeat,#dfe9f3"></div></a>
+    <div class="cs-title"><span class="tag">Caso studio · Autoscuola</span><h2>Autoscuole Gasparella</h2><div class="where">8 sedi in provincia di Vicenza, dal 1977</div><p>Un'autoscuola storica con tante sedi e tante pratiche da gestire: serviva un sito che lavorasse anche al posto della segreteria.</p>
+      <a href="https://autoscuolegasparellavicenza.it" target="_blank" rel="noopener" class="btn btn-dark">Visita autoscuolegasparellavicenza.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>Il punto di partenza</h3><p>Il vecchio sito in WordPress era lento, poco curato su telefono e con le pagine legali incomplete: privacy policy solo di nome e nessun avviso cookie. Le informazioni sulle 8 sedi erano sparse e i corsi andavano chiesti al telefono.</p></div>
+    <div class="cs-box"><h3>Cosa abbiamo costruito</h3><ul class="cs-list"><li>Sito nuovo in HTML, veloce e sicuro, con tutte le patenti e i servizi</li><li>Prenotazione online di corsi e visite mediche, con caricamento documenti protetto</li><li>Gestionale su misura: corsi, date, posti esauriti, orari e chiusure delle sedi li aggiorna l'autoscuola da sola</li><li>Area riservata per la segreteria, pagina recensioni per ogni sede</li><li>Privacy, cookie e termini in regola, SEO locale per ogni comune</li></ul></div>
+  </div>
+  <div class="cs-box wide"><h3>Il processo</h3><ol class="cs-steps"><li><b>Analisi</b><span>Problemi del sito vecchio, obiettivi, sedi e servizi da mettere in primo piano.</span></li><li><b>Prima versione</b><span>Struttura, grafica e contenuti, partendo dalle pagine più cercate.</span></li><li><b>Revisioni</b><span>Diverse versioni prima della definitiva, con le correzioni dell'autoscuola anche via audio e video.</span></li><li><b>Online</b><span>Pubblicazione, dominio, certificato SSL, Search Console.</span></li><li><b>Evoluzione</b><span>Prenotazioni, gestionale, ottimizzazione immagini: il sito cresce con l'attività.</span></li></ol></div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>I dati</h3><div class="cs-kpis"><div><b>190</b><span>clic da Google in 4 settimane</span></div><div><b>4.891</b><span>volte mostrato nei risultati</span></div><div><b>~2°</b><span>posizione media per "autoscuola Gasparella + comune"</span></div><div><b>-98%</b><span>peso delle immagini: da 90 MB a 1,5 MB</span></div></div><p class="cs-note">Dati Google Search Console, 23 settembre - 20 ottobre 2026.</p></div>
+    <div class="cs-box"><h3>Perché serve</h3><ul class="cs-why"><li><b>Prenotare online</b> toglie telefonate alla segreteria e porta iscrizioni anche fuori orario.</li><li><b>Il gestionale</b> evita di dipendere da noi per ogni data o orario cambiato.</li><li><b>La SEO per comune</b> fa uscire la sede giusta a chi cerca nella sua zona.</li><li><b>Le pagine legali</b> proteggono l'autoscuola: raccogliere documenti senza regole è un rischio.</li></ul></div>
+  </div>
+  <div class="cs-plus"><b>Il vantaggio di essere seguiti</b><span>Il sito non è finito il giorno della pubblicazione: ogni mese aggiungiamo quello che serve all'autoscuola, dalle visite mediche alla pagina recensioni.</span></div>
+</article>
+    <article class="cs rv" id="lello">
+  <div class="cs-head">
+    <a href="https://www.pizzeriadalello.it" target="_blank" rel="noopener" class="cs-shot"><div class="look ph " style="background:url('assets/foto-home/sito-lello.webp') top center/cover no-repeat,#dfe9f3"></div></a>
+    <div class="cs-title"><span class="tag">Caso studio · Ristorazione</span><h2>Pizzeria da Lello - Le Fornaci</h2><div class="where">Pizzeria napoletana a Costabissara (VI)</div><p>Una pizzeria con un menu lungo e tanti clienti fissi: il sito doveva far venire fame e far prenotare in due tocchi.</p>
+      <a href="https://www.pizzeriadalello.it" target="_blank" rel="noopener" class="btn btn-dark">Visita pizzeriadalello.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>Il punto di partenza</h3><p>Il sito precedente era poco aggiornato: menu sfogliabile datato, nessun pulsante per prenotare, cookie non in regola. Il dominio era registrato altrove e difficile da gestire.</p></div>
+    <div class="cs-box"><h3>Cosa abbiamo costruito</h3><ul class="cs-list"><li>Ruota delle pizze con 69 prodotti, filtri per ingredienti e ricerca</li><li>Prenotazione del tavolo collegata al sistema già usato dal locale</li><li>Menu in due versioni, per il sito e da stampare, più PDF da telefono</li><li>Grafica illustrata in stile Napoli, coerente con logo e Instagram</li><li>Dominio recuperato e messo in sicurezza, sito veloce con HTTPS</li></ul></div>
+  </div>
+  <div class="cs-box wide"><h3>Il processo</h3><ol class="cs-steps"><li><b>Demo</b><span>Prima demo costruita partendo dallo stile del locale e da Instagram.</span></li><li><b>Scelta</b><span>Il cliente sceglie tra più versioni la base da sviluppare.</span></li><li><b>Revisioni</b><span>Il sito online è la quarta revisione: ogni giro ha migliorato menu, foto e prenotazione.</span></li><li><b>Online</b><span>Dominio trasferito, pubblicazione e HTTPS, novembre 2026.</span></li><li><b>Gestione</b><span>Aggiornamento di menu, prezzi e foto quando serve.</span></li></ol></div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>I dati</h3><div class="cs-kpis"><div><b>69</b><span>pizze consultabili con foto e ingredienti</span></div><div><b>4</b><span>revisioni prima della versione definitiva</span></div><div><b>2</b><span>versioni del menu, sito e stampa</span></div><div><b>In arrivo</b><span>dati di prenotazioni e visite</span></div></div><p class="cs-note">Il sito è online da novembre 2026: i numeri su visite e prenotazioni arriveranno con i primi report mensili.</p></div>
+    <div class="cs-box"><h3>Perché serve</h3><ul class="cs-why"><li><b>Il menu interattivo</b> fa scegliere prima di arrivare e mette in vetrina tutta l'offerta.</li><li><b>Prenotare dal sito</b> porta tavoli anche quando il telefono è occupato in servizio.</li><li><b>Uno stile riconoscibile</b> fa capire subito che è la pizzeria che conosci da Instagram.</li><li><b>Il dominio in regola</b> evita di perdere il sito per una scadenza dimenticata.</li></ul></div>
+  </div>
+  <div class="cs-plus"><b>Il vantaggio di essere seguiti</b><span>Quattro revisioni senza costi a sorpresa: si lavora finché il sito non è quello giusto, poi si aggiorna menu e prezzi ogni volta che cambiano.</span></div>
+</article>
+    <article class="cs rv" id="l2">
+  <div class="cs-head">
+    <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="cs-shot"><div class="look ph " style="background:url('assets/foto-home/sito-l2.webp') top center/cover no-repeat,#dfe9f3"></div></a>
+    <div class="cs-title"><span class="tag">Caso studio · Servizi per la casa</span><h2>L2 Traslochi</h2><div class="where">Traslochi, sgomberi, pittura e pulizie - Vicenza e provincia</div><p>Un'impresa di servizi che vive di richieste veloci: il sito deve trasformare chi cerca "trasloco Vicenza" in un preventivo.</p>
+      <a href="https://www.l2traslochi.it" target="_blank" rel="noopener" class="btn btn-dark">Visita l2traslochi.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>Il punto di partenza</h3><p>Servivano pagine chiare per servizi molto diversi tra loro e un modo rapido per chiedere un preventivo, con la possibilità di aggiornare testi e foto dei lavori in autonomia.</p></div>
+    <div class="cs-box"><h3>Cosa abbiamo costruito</h3><ul class="cs-list"><li>Sito in WordPress, aggiornabile in autonomia</li><li>Pagine dedicate per traslochi, sgomberi, pittura e pulizie</li><li>Preventivo rapido e contatto diretto su WhatsApp in primo piano</li><li>Messaggi chiari: risposta in giornata, preventivo gratuito, zona servita</li><li>Struttura pronta per crescere con il futuro marchio L2 Servizi</li></ul></div>
+  </div>
+  <div class="cs-box wide"><h3>Il processo</h3><ol class="cs-steps"><li><b>Servizi</b><span>Elenco dei servizi e delle zone servite, priorità al preventivo.</span></li><li><b>Struttura</b><span>Una pagina per servizio, pensata per le ricerche locali.</span></li><li><b>WordPress</b><span>Scelto per poter aggiornare testi e foto senza sviluppatore.</span></li><li><b>Online</b><span>Pubblicazione, contatti e WhatsApp collegati.</span></li><li><b>Crescita</b><span>Il sito evolverà con il passaggio al marchio L2 Servizi.</span></li></ol></div>
+  <div class="cs-grid">
+    <div class="cs-box"><h3>I dati</h3><div class="cs-kpis"><div><b>4</b><span>servizi con pagina dedicata</span></div><div><b>1 tocco</b><span>per scrivere su WhatsApp</span></div><div><b>In arrivo</b><span>richieste di preventivo dal sito</span></div></div><p class="cs-note">Report su visite e richieste in preparazione.</p></div>
+    <div class="cs-box"><h3>Perché serve</h3><ul class="cs-why"><li><b>Una pagina per servizio</b> fa trovare la ditta a chi cerca proprio quel lavoro, non solo "traslochi".</li><li><b>WhatsApp in primo piano</b> è il modo in cui i clienti di questo settore preferiscono scrivere.</li><li><b>WordPress</b> permette di caricare da soli le foto dei lavori fatti.</li></ul></div>
+  </div>
+  <div class="cs-plus"><b>Il vantaggio di essere seguiti</b><span>Abbiamo scelto lo strumento in base all'uso: qui serviva autonomia sui contenuti, quindi WordPress. Più sotto spieghiamo quando conviene e quando no.</span></div>
+</article>
+    <p class="cs-more rv">Vuoi sapere di più su uno di questi progetti? Scrivici a <a href="mailto:lorenzo@studiodigitalitalia.it">lorenzo@studiodigitalitalia.it</a>.</p>
   </div>
 </section>
-
-<!-- SETTORI COPERTI -->
-<section class="settori-section" style="padding: 80px 6%;">
-  <div class="section-inner">
-    <div class="fade-in">
-      <div class="label-line"><span class="label-text">Settori</span></div>
-      <h2 class="section-title">Realizziamo siti per ogni tipo di attività</h2>
-      <p class="section-sub">Non hai trovato il tuo settore? Non importa - lavoriamo con qualsiasi tipo di impresa. Contattaci per un preventivo su misura.</p>
-    </div>
-    <div class="settori-grid fade-in">
-      <div class="settore-chip"><span>🍕</span>Ristoranti &amp; Bar</div>
-      <div class="settore-chip"><span>🔧</span>Artigiani &amp; Idraulici</div>
-      <div class="settore-chip"><span>🏗️</span>Imprese Edili</div>
-      <div class="settore-chip"><span>🦷</span>Studi Medici</div>
-      <div class="settore-chip"><span>✂️</span>Barbieri &amp; Parrucchieri</div>
-      <div class="settore-chip"><span>🛍️</span>Negozi &amp; Retail</div>
-      <div class="settore-chip"><span>🏠</span>Affitti Brevi &amp; B&amp;B</div>
-      <div class="settore-chip"><span>📊</span>Professionisti &amp; Studi</div>
-    </div>
-    <p class="section-sub fade-in" style="margin-top:1.6rem;">Gestisci un B&amp;B, un agriturismo o un affitto breve? <a href="siti-web-bnb.html" style="color:var(--gold-d); font-weight:600;">Scopri i siti web per strutture ricettive con prenotazione diretta →</a></p>
+<section id="wordpress" class="alt">
+  <div class="wrap">
+    <div class="shead rv"><div><div class="eyebrow">WordPress o HTML?</div><h2>Lo strumento giusto per ogni sito</h2><p class="lead">Gasparella è passata da WordPress a HTML, L2 Traslochi è nata in WordPress. Non c'è una scelta migliore in assoluto: dipende da come userai il sito.</p></div></div>
+    <div class="rv" style="overflow-x:auto"><table class="ctable cs-vs">
+      <thead><tr><th></th><th>HTML su misura</th><th>WordPress</th></tr></thead>
+      <tbody>
+        <tr><th>Velocità</th><td><b class="ok">Massima</b>: pagine leggere, servite da rete veloce.</td><td><b class="mid">Buona</b> se curato, rallenta con temi e plugin pesanti.</td></tr>
+        <tr><th>Sicurezza</th><td><b class="ok">Altissima</b>: niente login pubblico, niente plugin da attaccare.</td><td><b class="mid">Da curare</b>: aggiornamenti continui di core, tema e plugin.</td></tr>
+        <tr><th>Modifiche in autonomia</th><td><b class="mid">Le facciamo noi</b>, oppure con un gestionale su misura come per Gasparella.</td><td><b class="ok">Facili</b>: testi, foto e articoli da pannello.</td></tr>
+        <tr><th>Manutenzione</th><td><b class="ok">Minima</b>: non c'è niente da aggiornare.</td><td><b class="mid">Regolare</b>: backup e aggiornamenti periodici.</td></tr>
+        <tr><th>Costi di gestione</th><td><b class="ok">Bassi</b>: hosting economico o gratuito.</td><td><b class="mid">Medi</b>: hosting dedicato e, spesso, plugin a pagamento.</td></tr>
+        <tr><th>Design</th><td><b class="ok">Libero</b>: ogni dettaglio su misura.</td><td><b class="mid">Legato al tema</b>, personalizzabile entro certi limiti.</td></tr>
+        <tr><th>Quando conviene</th><td>Siti vetrina, prenotazioni, attività locali che vogliono un sito veloce e senza pensieri.</td><td>Blog, tanti contenuti aggiornati spesso, e-commerce standard, chi vuole fare da sé.</td></tr>
+      </tbody></table></div>
+    <p class="cs-note rv" style="margin-top:14px">Di base costruiamo in HTML. Se ti serve gestire i contenuti da solo, usiamo WordPress o un pannello su misura: lo decidiamo insieme prima del preventivo.</p>
   </div>
 </section>
-
-<!-- PERCHE NOI -->
-<section class="perche-strip">
-  <div class="perche-strip-inner">
-    <div class="fade-in">
-      <div class="label-line"><span class="label-text">Perché sceglierci</span></div>
-      <h2 class="section-title">Quello che trovi in ogni sito che realizziamo</h2>
-    </div>
-    <div class="perche-cols">
-      <div class="perche-item fade-in">
-        <div class="perche-num">01</div>
-        <h3>Design su misura per il settore</h3>
-        <p>Non usiamo template generici. Ogni sito è progettato per comunicare nel modo giusto ai clienti di quella specifica attività.</p>
-      </div>
-      <div class="perche-item fade-in">
-        <div class="perche-num">02</div>
-        <h3>SEO locale incluso</h3>
-        <p>Ogni sito è ottimizzato per comparire su Google nelle ricerche locali. Dal titolo al codice, tutto è pensato per essere trovato.</p>
-      </div>
-      <div class="perche-item fade-in">
-        <div class="perche-num">03</div>
-        <h3>Online in 7 giorni</h3>
-        <p>Dalla firma del preventivo al go-live: 7 giorni lavorativi. Nessuna attesa, nessun ritardo senza motivo.</p>
-      </div>
-    </div>
+<section>
+  <div class="wrap">
+    <div class="shead rv"><div><div class="eyebrow">Altri siti online</div><h2>Altri clienti attivi</h2></div></div>
+    <div class="cards c3"><a class="card rv" href="https://www.reteparcopace.it" target="_blank" rel="noopener"><span class="tag">ONLINE</span><div class="look ph " style="background:url('assets/foto-home/sito-reteparcopace.webp') top center/cover no-repeat,#dfe9f3"></div><h3>Rete Parco Pace</h3><p>Associazione - Vicenza. Gestione e aggiornamento del sito.</p><div class="chips"><span>Associazioni</span></div></a><a class="card rv" href="https://www.ramacciatovintage.it" target="_blank" rel="noopener"><span class="tag">ONLINE</span><div class="look ph " style="background:url('assets/foto-home/sito-vintage.webp') top center/cover no-repeat,#dfe9f3"></div><h3>Ramacciato Vintage</h3><p>Vintage e collezionismo. E-commerce e catalogo prodotti.</p><div class="chips"><span>Vintage</span></div></a><a class="card rv" href="https://deadpeopleactivity.com" target="_blank" rel="noopener"><span class="tag">ONLINE</span><div class="look ph " style="background:url('assets/foto-home/sito-dpa.webp') top center/cover no-repeat,#dfe9f3"></div><h3>Dead People Activity</h3><p>Network musicale europeo. Piattaforma multilingua, store e community.</p><div class="chips"><span>Musica</span></div></a></div>
+    <p class="cs-note rv" style="margin-top:18px">Cerchi un esempio per il tuo settore? Le demo sono nell'<a href="area-riservata.html">area demo</a>.</p>
   </div>
 </section>
+<section style="padding-top:20px"><div class="wrap"><div class="endcta rv"><h2>Il prossimo caso studio può essere il tuo</h2><p>Raccontaci la tua attività: ti diciamo cosa farebbe la differenza, con un preventivo gratuito.</p>
+<div class="cta-row"><a href="index.html#contatti" class="btn btn-light btn-lg">Preventivo gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="pacchetti.html" class="btn btn-dark btn-lg">Vedi i pacchetti</a></div></div></div></section>
 
-<!-- VS BUILDER -->
-<section style="background:#16171b; padding:80px 6%;">
-  <div class="section-inner">
-    <div class="fade-in" style="text-align:center; margin-bottom:3.5rem;">
-      <div style="display:flex;align-items:center;gap:.8rem;justify-content:center;margin-bottom:.8rem;">
-        <span style="font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:1.8px;text-transform:uppercase;">La verità sui builder</span>
-      </div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--white);line-height:1.2;margin-bottom:.9rem;">"Faccio il sito da solo<br/>con uno di quei costruttori online"</h2>
-      <p style="font-size:.95rem;color:rgba(255,255,255,.45);max-width:540px;margin:0 auto;line-height:1.75;">Ci siamo passati tutti. Ma c'è qualcosa che le piattaforme fai-da-te non ti dicono prima di iniziare.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;">
-      <!-- Colonna BAD -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:2rem;" class="fade-in">
-        <div style="display:flex;align-items:center;gap:.7rem;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08);">
-          <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.25);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:rgba(255,100,100,.7);flex-shrink:0;">✕</span>
-          Costruttore automatico
-        </div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:1.2rem;">
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Sembra gratis, non lo è.</strong> Abbonamento mensile, dominio, plugin premium, app extra: alla fine si spende più di un sito professionale - ogni anno.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Il tuo sito è uguale a mille altri.</strong> I template sono condivisi. Il tuo concorrente usa lo stesso layout, gli stessi colori, la stessa struttura.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Google non ti trova.</strong> Il codice automatico è pesante e mal strutturato. Le piattaforme fai-da-te sono penalizzate nei risultati di ricerca locali.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Non è tuo.</strong> Se smetti di pagare l'abbonamento, il sito sparisce. Stai affittando, non comprando.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Ci perdi settimane.</strong> Tra layout, testi, immagini e configurazioni - è un lavoro vero. E il risultato finale si vede.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(255,100,100,.6);">✕</span>
-            <div><strong style="color:rgba(255,255,255,.6);">Nessuno ti aiuta davvero.</strong> Il supporto è automatizzato, lento e spesso in inglese. Sei solo davanti a un problema tecnico.</div>
-          </li>
-        </ul>
-      </div>
-      <!-- Colonna GOOD -->
-      <div style="background:rgba(184,150,106,.06);border:1px solid rgba(184,150,106,.25);border-radius:12px;padding:2rem;" class="fade-in">
-        <div style="display:flex;align-items:center;gap:.7rem;font-size:.82rem;font-weight:700;color:var(--gold);letter-spacing:.5px;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(184,150,106,.15);">
-          <span style="width:28px;height:28px;border-radius:50%;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.4);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold);flex-shrink:0;">✦</span>
-          Studio Digital Italia
-        </div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:1.2rem;">
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Prezzo unico e trasparente.</strong> Sai esattamente quanto spendi. Nessun abbonamento a sorpresa, nessun costo nascosto dopo la consegna.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Sito su misura per la tua attività.</strong> Design, testi e struttura pensati per il tuo settore e i tuoi clienti - non un template uguale a tutti.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">SEO locale incluso fin da subito.</strong> Ottimizziamo ogni pagina per farti trovare su Google nelle ricerche della tua zona e del tuo settore.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Il sito è tuo, per sempre.</strong> Ti consegniamo tutti gli accessi. Puoi tenerlo con noi o gestirlo in autonomia - senza dipendere da nessuna piattaforma.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Online in 7 giorni lavorativi.</strong> Tu ci mandi i materiali, noi facciamo tutto il resto. Zero tutorial, zero perdita di tempo.</div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:.9rem;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;">
-            <span style="width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background:rgba(184,150,106,.2);border:1px solid rgba(184,150,106,.35);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);">✦</span>
-            <div><strong style="color:var(--white);">Una persona reale sempre disponibile.</strong> Risposta entro 24 ore, supporto in italiano, qualcuno che conosce già la tua attività.</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="fade-in" style="text-align:center;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);">
-      <p style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:1.5rem;">La differenza tra un sito che lavora per te e uno che esiste soltanto.</p>
-      <a href="index.html#contatti" style="background:var(--gold);color:var(--dark);padding:.85rem 2rem;border-radius:6px;font-weight:700;font-size:.9rem;text-decoration:none;">Richiedi il tuo preventivo gratuito →</a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINALE -->
-<section class="cta-section">
-  <h2>Il tuo settore non c'è ancora?<br/>Crealo insieme a noi.</h2>
-  <p>Ogni sito è realizzato su misura. Raccontaci la tua attività e ti mostreremo come potrebbe apparire online.</p>
-  <a href="index.html#contatti" class="btn-dark">Richiedi preventivo gratuito →</a>
-  <a href="pacchetti.html" class="btn-outline-dark">Vedi i pacchetti</a>
-</section>
-
-<!-- FOOTER -->
+</main>
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><img src="assets/loghi/logo-completo.jpg" alt="Studio Digital Italia - Siti web a Vicenza" /></div>
-      <div class="footer-tagline">Siti web professionali per piccole imprese<br/>di Vicenza e provincia. Online in 7 giorni.</div>
-      <a href="index.html#contatti" class="footer-cta">Richiedi un preventivo gratuito &rarr;</a>
+  <div class="wrap">
+    <div class="ft">
+      <div><a href="index.html" class="logo logo-img logo-ft"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a><p>Siti web e SEO locale per le imprese di Vicenza e provincia.</p></div>
+      <div><h5>Sito</h5><ul><li><a href="settori.html">Settori</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pacchetti.html">Pacchetti</a></li><li><a href="index.html#studio">Componi il tuo sito</a></li></ul></div>
+      <div><h5>Info</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="termini.html">Termini</a></li></ul></div>
+      <div><h5>Contatti</h5><ul><li><a href="mailto:luca@studiodigitalitalia.it">Email</a></li><li><a href="area-riservata.html">Area demo</a></li><li><a href="area-plus.html">Area clienti</a></li><li>Vicenza (VI)</li></ul></div>
     </div>
-    <div class="footer-col">
-      <h4>Servizi</h4>
-      <ul>
-        <li><a href="pacchetti.html">Siti web</a></li>
-        <li><a href="pacchetti.html">Google Business</a></li>
-        <li><a href="pacchetti.html">Gestione sito</a></li>
-        <li><a href="settori.html">Siti per settore</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Azienda</h4>
-      <ul>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="index.html#come-funziona">Come funziona</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="termini.html">Termini di Servizio</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contatti</h4>
-      <ul>
-        <li><a href="mailto:info@studiodigitalitalia.it">info@studiodigitalitalia.it</a></li>
-        <li><a href="tel:+393515854466">351 585 4466</a><span class="footer-role">Lorenzo &middot; preventivi e nuovi progetti</span></li>
-        <li><a href="tel:+393277737115">327 773 7115</a><span class="footer-role">Luca &middot; assistenza clienti</span></li>
-        <li><span class="footer-muted">Provincia di Vicenza, Italia</span></li>
-        <li><span class="footer-muted">P.IVA 04400570240</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Studio Digital Italia</span>
-    <span><a href="privacy.html" class="footer-bottom-link">Privacy Policy</a> · <a href="termini.html" class="footer-bottom-link">Termini di Servizio</a></span>
+    <div class="fb"><span>© 2026 Studio Digital Italia · P.IVA 04400570240</span></div>
   </div>
 </footer>
-
-<script>
-  // Cookie banner - il consenso vale per tutto il sito (chiave sdi_cookie_ok)
-  function dismissCookieBar() {
-    var b = document.getElementById('cookie-bar');
-    if (b) b.classList.remove('show');
-    try { localStorage.setItem('sdi_cookie_ok', '1'); } catch(e) {}
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    var accettato = false;
-    try { accettato = !!localStorage.getItem('sdi_cookie_ok'); } catch(e) {}
-    if (!accettato) {
-      var b = document.getElementById('cookie-bar');
-      if (b) b.classList.add('show');
-    }
-  });
-// Hamburger menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
-  });
-}
-// Fade-in
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-// Filter
-function filterPortfolio(btn, cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.port-card').forEach(card => {
-    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-  });
-}
-</script>
-
-<!-- COOKIE NOTICE -->
-<div id="cookie-bar">
-  <p>Questo sito utilizza cookie tecnici per il corretto funzionamento. Nessun cookie di profilazione o tracciamento.
-    <a href="privacy.html">Leggi la Privacy &amp; Cookie Policy →</a>
-  </p>
-  <button class="cookie-btn" onclick="dismissCookieBar()">Accetto</button>
-</div>
-<!-- Caroselli (siti online + demo) -->
-<script>
-(function(){
-  function setup(carousel){
-    var track=carousel.querySelector('.siti-track'); if(!track) return;
-    var all=[].slice.call(track.children);
-    var dotsWrap=carousel.querySelector('.siti-dots');
-    var prev=carousel.querySelector('.siti-nav.prev');
-    var next=carousel.querySelector('.siti-nav.next');
-    var dots=[], timer=null, paused=false, pt=null;
-    function visible(){ return all.filter(function(c){ return c.offsetParent!==null; }); }
-    function buildDots(){
-      if(!dotsWrap) return; dotsWrap.innerHTML=''; dots=[];
-      visible().forEach(function(_,i){ var d=document.createElement('button'); d.type='button'; d.className='siti-dot'; d.setAttribute('aria-label','Vai a '+(i+1)); d.addEventListener('click',function(){ pauseFor(); goTo(i); }); dotsWrap.appendChild(d); dots.push(d); });
-    }
-    function centerActive(){
-      var vis=visible(); if(!vis.length) return 0;
-      var mid=track.scrollLeft+track.clientWidth/2, best=0, bd=Infinity;
-      vis.forEach(function(c,i){ var cc=c.offsetLeft+c.offsetWidth/2, dd=Math.abs(cc-mid); if(dd<bd){bd=dd;best=i;} });
-      all.forEach(function(c){ c.classList.remove('is-active'); });
-      vis[best].classList.add('is-active');
-      dots.forEach(function(d,i){ d.classList.toggle('active', i===best); });
-      return best;
-    }
-    function goTo(i){ var vis=visible(); if(!vis.length) return; i=(i+vis.length)%vis.length; var c=vis[i]; track.scrollTo({ left:c.offsetLeft-(track.clientWidth-c.offsetWidth)/2, behavior:'smooth' }); }
-    function play(){ if(timer) return; timer=setInterval(function(){ if(paused||document.hidden) return; goTo(centerActive()+1); }, 4200); }
-    function pauseFor(){ paused=true; clearTimeout(pt); pt=setTimeout(function(){ paused=false; }, 8000); }
-    prev&&prev.addEventListener('click',function(){ pauseFor(); goTo(centerActive()-1); });
-    next&&next.addEventListener('click',function(){ pauseFor(); goTo(centerActive()+1); });
-    var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(centerActive); },{passive:true});
-    carousel.addEventListener('mouseenter',function(){ paused=true; });
-    carousel.addEventListener('mouseleave',function(){ paused=false; });
-    track.addEventListener('touchstart',function(){ pauseFor(); },{passive:true});
-    buildDots(); centerActive(); goTo(0); play();
-  }
-  function init(){ document.querySelectorAll('.siti-carousel').forEach(setup); }
-  if(document.readyState!=='loading') init(); else window.addEventListener('DOMContentLoaded', init);
-})();
-</script>
-<script src="chat-widget.js" defer></script>
+<script src="assets/js/sdi.js"></script>
 </body>
 </html>

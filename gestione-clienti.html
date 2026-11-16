@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestione area clienti - Studio Digital Italia</title>
+
+<style>
+.mbar{display:none!important}
+[hidden]{display:none!important}
+.ar-hero{padding:130px 0 46px}
+.ar-hero h1{max-width:20ch}
+.ar-tabs{display:inline-flex;gap:4px;padding:4px;margin-top:26px;border-radius:999px;background:#fff;border:1px solid var(--line2)}
+.ar-tabs a{padding:9px 18px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--ink2)}
+.ar-tabs a.on{background:var(--accent);color:#fff}
+.ar-sec{padding:30px 0 48px}
+.ar-card{background:#fff;border:1px solid var(--line2);border-radius:var(--r2);padding:26px}
+.ar-card h2,.ar-card h3{font-family:var(--head);font-weight:700;letter-spacing:-.01em}
+.ar-card h2{font-size:1.45rem;margin-bottom:6px}
+.ar-card h3{font-size:1.1rem;margin-bottom:4px}
+.ar-muted{color:var(--muted);font-size:.9rem}
+.ar-gate{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+.ar-points{list-style:none;display:grid;gap:14px;margin-top:8px}
+.ar-points li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:var(--ink2)}
+.ar-points li b{flex:0 0 30px;height:30px;border-radius:50%;background:rgba(0,153,255,.1);color:var(--accent);display:grid;place-items:center;font-size:.8rem}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.fgrid .full{grid-column:1/-1}
+.fld label{display:block;font-size:.78rem;font-weight:600;color:var(--ink2);margin-bottom:5px}
+.fld input,.fld select,.fld textarea{width:100%;font:inherit;font-size:.95rem;padding:11px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--field);color:var(--ink);outline:none;transition:.15s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px rgba(0,153,255,.15)}
+.fld textarea{resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted);grid-column:1/-1}
+.chk input{margin-top:3px;accent-color:var(--accent)}
+.chk a{color:var(--accent);text-decoration:underline}
+.btn-main{display:flex;width:100%;justify-content:center;align-items:center;gap:8px;padding:14px;border:0;border-radius:12px;background:var(--accent);color:#fff;font:inherit;font-weight:700;font-size:.98rem;cursor:pointer;transition:.2s}
+.btn-main:hover{filter:brightness(1.07)}
+.btn-main:disabled{opacity:.6;cursor:wait}
+.btn-sm{display:inline-flex;justify-content:center;align-items:center;gap:6px;padding:9px 12px;border-radius:9px;border:1px solid var(--line2);background:#fff;color:var(--ink);font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s;text-align:center}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-sm.pri:hover{filter:brightness(1.07);color:#fff}
+.btn-sm.dis{opacity:.55;pointer-events:none}
+.form-msg{font-size:.85rem;margin-top:10px;min-height:1em}
+.form-msg.err{color:#d23b3b}.form-msg.ok{color:#118a4a}
+.ar-alt{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);display:grid;gap:6px}
+.ar-alt a,.ar-alt button{color:var(--accent);font-weight:600;background:none;border:0;font:inherit;cursor:pointer;padding:0;text-align:left}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ar-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.ar-bar h2{font-family:var(--head);font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em}
+.ar-bar h2 em{font-style:normal;color:var(--accent)}
+.ar-chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}
+.ar-chip{padding:8px 13px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink2);cursor:pointer}
+.ar-chip .n{margin-left:6px;color:var(--muted);font-weight:500}
+.ar-chip.on{background:var(--ink);border-color:var(--ink);color:#fff}.ar-chip.on .n{color:rgba(255,255,255,.6)}
+.ar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mc{background:#fff;border:1px solid var(--line2);border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.mc.sel{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,153,255,.15)}
+.mc .th{position:relative;aspect-ratio:16/10;background:#e8f2fb center/cover no-repeat}
+.mc .th.top{background-position:top center}
+.mc .th .ini{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--head);font-size:2.6rem;font-weight:700;color:var(--accent);background:radial-gradient(70% 80% at 30% 20%,rgba(0,153,255,.18),transparent),#eef6fd}
+.mc .mtag{position:absolute;left:12px;top:12px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:#fff;color:var(--ink)}
+.mc .mtag.reale{background:var(--accent);color:#fff}
+.mc .mtag.rich{background:var(--ink);color:#fff}
+.mc .bd{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.mc h3{font-family:var(--head);font-size:1.08rem}
+.mc .sb{font-size:.84rem;color:var(--muted)}
+.mc .ft{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.mc .ft span{font-size:.72rem;padding:4px 8px;border-radius:999px;background:var(--field);color:var(--ink2)}
+.mc .ac{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.conf{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.cg{margin-bottom:26px}
+.cg h3{font-family:var(--head);font-size:1.1rem;display:flex;gap:10px;align-items:center}
+.cg h3 .num{font-size:.75rem;color:var(--accent);font-weight:700}
+.cg .hint{font-size:.85rem;color:var(--muted);margin:4px 0 12px}
+.mpill{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;border-radius:12px;border:1px solid var(--line2);background:#fff;flex-wrap:wrap}
+.mpill b{display:block;font-family:var(--head)}
+.mpill select{font:inherit;font-size:.85rem;padding:8px;border-radius:8px;border:1px solid var(--line2);background:var(--field);max-width:100%}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pack{position:relative;display:flex;flex-direction:column;gap:4px;padding:16px 14px;border-radius:12px;border:1px solid var(--line2);background:#fff;cursor:pointer}
+.pack input{position:absolute;opacity:0}
+.pack:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,153,255,.15)}
+.pack .pt{font-family:var(--head);font-weight:700}
+.pack .pd{font-size:.78rem;color:var(--muted);line-height:1.4}
+.pack .star{position:absolute;top:-9px;right:10px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:var(--accent);color:#fff;padding:3px 7px;border-radius:999px}
+.svcs{display:grid;gap:8px}
+.svc{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--line2);background:#fff}
+.svc.on{border-color:var(--accent);background:rgba(0,153,255,.04)}
+.svc .st{font-weight:600;font-size:.92rem;display:block}
+.svc .sd{font-size:.8rem;color:var(--muted)}
+.svc .inc{font-size:.75rem;font-weight:700;color:#118a4a;white-space:nowrap}
+.btn-add{flex:0 0 auto;padding:8px 12px;border-radius:9px;border:1px solid var(--accent);background:#fff;color:var(--accent);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;min-width:96px}
+.svc.on .btn-add{background:var(--accent);color:#fff}
+.sum{position:sticky;top:90px}
+.sum ul{list-style:none;margin:14px 0;display:grid;gap:8px}
+.sum li{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.88rem;padding:9px 0;border-bottom:1px dashed var(--line2)}
+.sum li .grp{display:block;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.sum li button{border:0;background:none;font-size:1.2rem;color:var(--muted);cursor:pointer}
+.sum li.inc span:last-child{font-size:.75rem;color:#118a4a;font-weight:700}
+.sum .empty{color:var(--muted);font-size:.85rem;border:0}
+.sum .mdl{font-family:var(--head);font-size:1.15rem;font-weight:700}
+.recap{font-size:.86rem;padding:12px;border-radius:10px;background:var(--field);margin:10px 0 4px}
+.done{text-align:center;padding:20px 0}
+.done .ref{font-family:var(--mono);font-size:.85rem;color:var(--accent);margin:8px 0}
+/* area clienti */
+.cli-gate{max-width:520px;margin:0 auto}
+.code-in{font-family:var(--mono)!important;letter-spacing:.12em;text-transform:uppercase;text-align:center;font-size:1.1rem!important}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:#fff;border:1px solid var(--line2);border-radius:var(--r2);padding:18px}
+.kpi span{font-size:.78rem;color:var(--muted);display:block}
+.kpi b{display:block;font-family:var(--head);font-size:2rem;line-height:1.1;margin:6px 0 4px}
+.kpi i{font-style:normal;font-size:.78rem;font-weight:700}
+.up{color:#118a4a}.down{color:#d23b3b}.flat{color:var(--muted)}
+.dgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:18px}
+.chart{width:100%;height:auto;display:block;margin-top:14px}
+.chart text{font-size:12px;fill:var(--muted);font-family:var(--sans)}
+.chart .bar{fill:rgba(0,153,255,.25)}.chart .bar.last{fill:var(--accent)}
+.chart .lbl{font-weight:700;fill:var(--ink)}
+.sel-m{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.sel-m button{padding:6px 10px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-size:.76rem;font-weight:600;cursor:pointer;color:var(--ink2)}
+.sel-m button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.scad{list-style:none;display:grid;gap:10px;margin-top:14px}
+.scad li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:12px 14px;border-radius:12px;background:var(--field)}
+.scad li b{font-size:.92rem}
+.scad li small{color:var(--muted);font-size:.78rem;grid-column:1}
+.scad li .pill{grid-row:1/3;grid-column:2;align-self:center;font-size:.72rem;font-weight:700;padding:5px 9px;border-radius:999px;white-space:nowrap;text-align:center}
+.pill.ok{background:rgba(17,138,74,.12);color:#118a4a}.pill.soon{background:rgba(230,150,0,.15);color:#a66a00}.pill.late{background:rgba(210,59,59,.12);color:#d23b3b}
+.pill .d{display:block;font-weight:500;font-size:.68rem;opacity:.85}
+.inc-tag{display:inline-block;margin-left:6px;font-size:.66rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.tbl{width:100%;border-collapse:collapse;margin-top:12px;font-size:.88rem}
+.tbl th,.tbl td{padding:10px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.tbl-wrap{overflow-x:auto}
+.empty-box{padding:22px;border-radius:12px;background:var(--field);color:var(--muted);font-size:.9rem;margin-top:14px}
+.site-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px;padding:14px;border-radius:12px;background:var(--field)}
+.site-row b{font-family:var(--head)}
+.es-banner{padding:12px 16px;border-radius:12px;background:rgba(230,150,0,.12);color:#8a5a00;font-size:.88rem;margin-bottom:18px}
+.adm{margin-top:28px;border:1px dashed var(--line2);border-radius:var(--r2);padding:18px;background:#fff}
+.adm summary{cursor:pointer;font-weight:700}
+.adm textarea.out{font-family:var(--mono);font-size:.75rem}
+.adm p{font-size:.8rem;color:var(--muted);margin-top:8px}
+.adm-sel{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.adm-sel select{font:inherit;font-size:.85rem;padding:8px;border-radius:8px;border:1px solid var(--line2)}
+.ar-grid.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:980px){.ar-grid{grid-template-columns:repeat(2,1fr)}.conf,.dgrid{grid-template-columns:1fr}.sum{position:static}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.ar-hero{padding:104px 0 30px}.ar-gate{grid-template-columns:1fr;gap:26px}.ar-sec{padding:20px 0 40px}.ar-card{padding:20px}}
+@media(max-width:620px){.ar-grid,.ar-grid.g2,.packs{grid-template-columns:1fr}.ar-chips{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.ar-chip{flex:0 0 auto}.tbl{min-width:600px}.tbl td:first-child{white-space:nowrap}.chart text{font-size:16px}.fgrid{grid-template-columns:1fr}.kpi b{font-size:1.6rem}.kpi{padding:14px}.ar-tabs{display:flex}.ar-tabs a{flex:1;text-align:center;padding:9px 10px}.svc{flex-wrap:wrap}.btn-add{width:100%}}
+@media print{.nav,.mnav,footer,.ar-hero,#catalogo,.conf>div:first-child,#againBtn{display:none!important}.sum{position:static}}
+
+/* area clienti: in arrivo */
+.soon-card{max-width:720px;margin:0 auto;text-align:left}
+.soon-b{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:5px 10px;border-radius:999px;margin-bottom:12px}
+.soon-card h2{font-family:var(--head);font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;margin-bottom:8px}
+.soon-l{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
+.soon-l li{padding:14px;border-radius:12px;background:var(--field);display:grid;gap:3px}
+.soon-l b{font-size:.92rem}.soon-l span{font-size:.82rem;color:var(--muted)}
+.soon-a{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+@media(max-width:620px){.soon-l{grid-template-columns:1fr}.soon-a{grid-template-columns:1fr}.soon-a .btn-sm{width:100%}}
+/* area clienti: schede e sezioni */
+.dtabs{display:flex;gap:6px;margin:0 0 18px;overflow-x:auto;scrollbar-width:none;padding:2px 0;scroll-margin-top:90px}
+.dtabs::-webkit-scrollbar{display:none}
+.dtabs button{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-weight:600;font-size:.88rem;color:var(--ink2);cursor:pointer}
+.dtabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dtabs b{background:var(--accent);color:#fff;border-radius:999px;font-size:.7rem;padding:1px 7px;line-height:1.5}
+.gla{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.gla-c{display:grid;gap:3px;text-align:left;padding:16px 18px;border-radius:16px;border:1px solid var(--line2);background:#fff;font:inherit;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.gla-c:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(0,153,255,.1)}
+.gla-c span{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:var(--muted)}
+.gla-c b{font-family:var(--head);font-size:1.08rem;color:var(--ink)}
+.gla-c small{font-size:.82rem;color:var(--accent);font-weight:600}
+.rep-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.rep-m{display:flex;gap:6px;overflow-x:auto;margin:14px 0 16px;scrollbar-width:none}
+.rep-m::-webkit-scrollbar{display:none}
+.rep-m button{flex:0 0 auto;min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink2);cursor:pointer;text-transform:capitalize}
+.rep-m button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rep-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.rep-k{padding:14px;border-radius:12px;background:var(--field);display:grid;gap:4px}
+.rep-k span{font-size:.76rem;color:var(--muted)}
+.rep-k b{font-family:var(--head);font-size:1.5rem;letter-spacing:-.02em}
+.rep-k i{font-style:normal;font-size:.74rem;font-weight:600}
+.rep-k i.up{color:#16a34a}.rep-k i.down{color:#d23b3b}.rep-k i.flat{color:var(--muted)}
+.rep-note{margin-top:16px;padding:16px 18px;border-radius:12px;background:rgba(0,153,255,.07);border-left:3px solid var(--accent)}
+.rep-note h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:6px}
+.rep-note p{font-size:.95rem;line-height:1.55;color:var(--ink2)}
+.rq-grid{grid-template-columns:1fr 1.2fr}
+.rq-list,.dc-list{list-style:none;display:grid;gap:10px;margin-top:14px}
+.rq{padding:14px;border-radius:12px;background:var(--field)}
+.rq-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.rq-t{font-size:.76rem;color:var(--muted);font-weight:600}
+.rq p{font-size:.92rem;color:var(--ink);white-space:pre-wrap}
+.rst{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.st-ricevuta{background:#e9edf3;color:#46505e}.st-in-lavoro{background:#fef3c7;color:#92400e}.st-fatta{background:#dcfce7;color:#166534}
+.rq-ans{margin-top:10px;padding:10px 12px;border-radius:10px;background:#fff;font-size:.88rem;color:var(--ink2)}
+.rq-ans b{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:3px}
+.dc{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:var(--field)}
+.dc-empty{display:block}
+.dc-ic{width:46px;height:46px;border-radius:10px;background:#fff;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.72rem;color:var(--accent)}
+.dc b{display:block;font-size:.92rem}.dc small{font-size:.78rem;color:var(--muted)}
+.xs-head{margin-bottom:16px}.xs-head h3{font-family:var(--head);font-size:1.3rem;margin-bottom:4px}
+.xs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.xs{display:flex;flex-direction:column;gap:8px;padding:20px;border-radius:18px;border:1px solid var(--line2);background:#fff}
+.xs-ic{width:42px;height:42px;border-radius:12px;background:rgba(0,153,255,.1);color:var(--accent);display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:.85rem}
+.xs h3{font-family:var(--head);font-size:1.05rem}
+.xs p{font-size:.88rem;color:var(--muted);line-height:1.5;flex:1}
+.xs-f{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:10px;border-top:1px solid var(--line)}
+.xs-f b{font-family:var(--head);font-size:.98rem}
+.tl-ic{font-size:1.25rem}
+.tl-t{font-size:.76rem;font-weight:600;color:var(--muted)}
+@media(max-width:980px){.gla{grid-template-columns:1fr 1fr 1fr}.rep-grid{grid-template-columns:repeat(3,1fr)}.xs-grid{grid-template-columns:1fr 1fr}.rq-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.dtabs{margin-right:-24px;padding-right:24px}.gla{grid-template-columns:1fr;gap:10px}.gla-c{padding:14px 16px}.rep-grid{grid-template-columns:1fr 1fr}.rep-k b{font-size:1.3rem}.xs-grid{grid-template-columns:1fr}.dc{grid-template-columns:40px 1fr;gap:4px 12px;padding:12px}.dc-ic{width:40px;height:40px;grid-row:1/3;align-self:start}.dc>.btn-sm{grid-column:2;justify-self:start;min-height:40px;padding:8px 16px;margin-top:6px}.rep-k:last-child:nth-child(odd){grid-column:1/-1}.rep-k i{font-size:.7rem}.rep-head .btn-sm{width:100%}}
+@media print{body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
+</style><style>
+.mbar{display:none!important}[hidden]{display:none!important}
+.g-wrap{padding:110px 0 60px}
+.g-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.g-head h1{font-family:var(--head);font-size:1.9rem}
+.gtabs{display:flex;gap:6px}.gtab{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-weight:600;font-size:.86rem;cursor:pointer}
+.gtab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gtab b{margin-left:6px;color:var(--accent)}
+.g-grid{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+.gl{display:grid;gap:8px}
+.gi{display:block;text-align:left;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line2);background:#fff;font:inherit;cursor:pointer}
+.gi b{display:block;font-size:.92rem}.gi span{font-size:.74rem;color:var(--muted)}
+.gi.on{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,153,255,.15)}.gi.off{opacity:.55}
+.gcode{margin:14px 0;padding:16px;border-radius:12px;background:rgba(0,153,255,.08);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.gcode code{font-family:var(--mono);font-size:1.3rem;font-weight:700;letter-spacing:.06em}
+.gcode small{display:block;color:var(--muted);font-size:.78rem}
+.gr{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding:14px;border-radius:12px;border:1px solid var(--line2);background:#fff;margin-bottom:8px}
+.gtp{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#e9edf3;color:#46505e;margin-left:4px}.gtp-servizio{background:rgba(0,153,255,.12);color:#0077cc}.gtp-domanda{background:#fef3c7;color:#92400e}
+.gr-edit{display:grid;grid-template-columns:140px 1fr auto;gap:8px;margin-top:10px;align-items:start}.gr-edit select,.gr-edit textarea{font:inherit;font-size:16px;padding:9px 10px;border-radius:10px;border:1px solid var(--line2);background:var(--field)}
+@media(max-width:620px){.gr-edit{grid-template-columns:1fr}}
+.gr p{margin-top:6px;font-size:.92rem;color:var(--ink2);white-space:pre-wrap}.gr.done{opacity:.55}
+.gact{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chk2{display:flex;gap:8px;align-items:center;font-size:.88rem}
+.fld .hint{font-size:.74rem;color:var(--muted);margin-top:4px}
+@media(max-width:820px){.g-grid{grid-template-columns:1fr}}
+</style>
+<meta name="robots" content="noindex, nofollow, noarchive"><!-- pagina interna: noindex sempre -->
+<link rel="icon" type="image/png" href="assets/img/logo-sdi.png">
+<link rel="preload" href="assets/fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/sdi.css">
+</head>
+<body data-pal="sky" data-st="mod">
+<svg class="bg-logos" aria-hidden="true" focusable="false"><defs>
+<filter id="bgw" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>
+<pattern id="bgp" width="300" height="300" patternUnits="userSpaceOnUse"><image href="assets/img/logo-sdi.png" x="40" y="40" width="70" height="70" filter="url(#bgw)"/><image href="assets/img/logo-sdi.png" x="190" y="190" width="70" height="70" filter="url(#bgw)"/></pattern>
+<mask id="bgm"><rect width="100%" height="100%" fill="url(#bgp)"/></mask>
+<linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0099FF" stop-opacity=".13"/><stop offset=".55" stop-color="#4fb4ff" stop-opacity=".07"/><stop offset="1" stop-color="#0099FF" stop-opacity=".03"/></linearGradient>
+</defs><rect width="100%" height="100%" fill="url(#bgg)" mask="url(#bgm)"/></svg>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="l">
+      <a href="index.html" class="logo logo-img"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a>
+      <nav class="links"><a href="settori.html">Settori</a><a href="portfolio.html">Portfolio</a><a href="pacchetti.html">Pacchetti</a><a href="faq.html">FAQ</a><a href="chi-siamo.html">Chi siamo</a></nav>
+    </div>
+    <div class="r">
+      <a href="area-plus.html" class="btn btn-cli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Area clienti</a>
+      <a href="area-riservata.html" class="btn btn-light">Area demo</a>
+      <a href="index.html#contatti" class="btn btn-dark">Preventivo</a>
+      <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a class="ml" href="settori.html">Settori</a><a class="ml" href="portfolio.html">Portfolio</a><a class="ml" href="pacchetti.html">Pacchetti</a><a class="ml" href="faq.html">FAQ</a><a class="ml" href="chi-siamo.html">Chi siamo</a><a class="ml" href="area-plus.html">Area clienti</a>
+  <div class="mcta"><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a><a href="area-riservata.html" class="btn btn-dark">Area demo</a></div>
+</div>
+<div class="mbar"><a href="area-riservata.html" class="btn btn-dark">Area demo</a><a href="index.html#contatti" class="btn btn-light">Preventivo gratuito</a></div>
+<main>
+
+<section class="g-wrap"><div class="wrap">
+  <div id="glogin" class="ar-card cli-gate">
+    <h2>Gestione area clienti</h2><p class="ar-muted">Accesso riservato a Studio Digital Italia.</p>
+    <form id="gform"><div class="fld" style="margin-top:14px"><input id="g_adm" class="code-in" type="password" autocomplete="off" placeholder="CODICE INTERNO" aria-label="Codice interno"></div>
+    <div style="margin-top:12px"><button class="btn-main" type="submit">Entra</button></div><p class="form-msg" id="gloginmsg"></p></form>
+  </div>
+  <div id="gapp" hidden>
+    <div class="g-head"><h1>Gestione area clienti</h1><div class="gtabs"><button class="gtab on" data-t="c">Clienti</button><button class="gtab" data-t="r">Richieste<b id="rcount"></b></button><button class="btn-sm" id="gout">Esci</button></div></div>
+    <p class="form-msg" id="gmsg"></p>
+    <div id="pclienti" class="g-grid">
+      <div><button class="btn-main" id="gnew" style="margin-bottom:10px">+ Nuovo cliente</button><div class="gl" id="glist"></div></div>
+      <div class="ar-card">
+        <h2 id="gtitle">Nuovo cliente</h2>
+        <div class="gcode" id="gcode" hidden><div><small>Codice di accesso del cliente: copialo ora e mandalo al cliente, poi non sarà più visibile.</small><code id="gcodev"></code></div><button class="btn-sm pri" id="gcopy" type="button">Copia</button></div>
+        <div class="fgrid">
+          <div class="fld"><label for="g_nome">Nome del cliente *</label><input id="g_nome" placeholder="Es. Pizzeria da Lello"></div>
+          <div class="fld"><label for="g_sito">Indirizzo del sito</label><input id="g_sito" placeholder="https://..."></div>
+          <div class="fld"><label for="g_piano">Piano attivo</label><input id="g_piano" placeholder="Es. Manutenzione Pro"></div>
+          <div class="fld"><label>&nbsp;</label><label class="chk2"><input type="checkbox" id="g_attivo" checked> Accesso attivo</label></div>
+          <div class="fld full"><label for="g_scad">Scadenze, una per riga: Voce | AAAA-MM-GG | nota | incluso (si/no)</label><textarea id="g_scad" rows="4" placeholder="Manutenzione annuale | 2027-01-15 | Piano Pro | no&#10;Dominio rossi.it | 2027-03-02 | Rinnovo automatico | si"></textarea></div>
+          <div class="fld full"><label for="g_an">Report mensili, un mese per riga: AAAA-MM | visite | visitatori unici | contatti | visualizzazioni Google | chiamate | commento</label><textarea id="g_an" rows="5" placeholder="2026-10 | 734 | 528 | 41 | 2105 | 46 | Miglior mese da quando il sito è online..."></textarea><div class="hint">Aggiungi una riga ogni mese. Chiamate e commento sono facoltativi: il commento appare nel report del cliente.</div></div>
+          <div class="fld full"><label for="g_doc">Documenti, uno per riga: Tipo | Titolo | AAAA-MM-GG | link | nota</label><textarea id="g_doc" rows="4" placeholder="Preventivo | Preventivo N. 6.26 | 2026-10-02 | https://drive.google.com/... | Accettato&#10;Fattura | Fattura 3/2026 - acconto | 2026-10-05 | https://drive.google.com/... | Pagata"></textarea><div class="hint">Tipi: Preventivo, Contratto, Fattura, Guida, Altro. Link Drive condiviso come "chiunque abbia il link".</div></div>
+          <div class="fld full"><label for="g_tool">Strumenti, uno per riga: Nome | descrizione | link | Online o Download</label><textarea id="g_tool" rows="3" placeholder="Ritaglia documenti | Ritaglia foto di patenti e moduli | https://... | Online&#10;Comprimi foto | Programma per Windows | https://drive.google.com/... | Download"></textarea></div>
+          <div class="fld full"><label for="g_demo">Demo, una per riga: Nome | link | immagine (facoltativa)</label><textarea id="g_demo" rows="3" placeholder="Nuovo sito | https://... | assets/foto-home/sito-lello.webp"></textarea></div>
+          <div class="fld full"><label for="g_note">Note interne (il cliente non le vede)</label><textarea id="g_note" rows="2"></textarea></div>
+        </div>
+        <div class="gact"><button class="btn-main" id="gsave" type="button" style="width:auto;padding:12px 20px">Salva</button>
+          <span id="gextra" class="gact" style="margin:0"><button class="btn-sm" id="gnewcode" type="button">Genera nuovo codice</button><button class="btn-sm" id="gdel" type="button" style="color:#d23b3b">Elimina cliente</button></span></div>
+      </div>
+    </div>
+    <div id="prich" hidden><div id="grich"></div></div>
+  </div>
+</div></section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><a href="index.html" class="logo logo-img logo-ft"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a><p>Siti web e SEO locale per le imprese di Vicenza e provincia.</p></div>
+      <div><h5>Sito</h5><ul><li><a href="settori.html">Settori</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pacchetti.html">Pacchetti</a></li><li><a href="index.html#studio">Componi il tuo sito</a></li></ul></div>
+      <div><h5>Info</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="termini.html">Termini</a></li></ul></div>
+      <div><h5>Contatti</h5><ul><li><a href="mailto:luca@studiodigitalitalia.it">Email</a></li><li><a href="area-riservata.html">Area demo</a></li><li><a href="area-plus.html">Area clienti</a></li><li>Vicenza (VI)</li></ul></div>
+    </div>
+    <div class="fb"><span>© 2026 Studio Digital Italia · P.IVA 04400570240</span></div>
+  </div>
+</footer>
+<script src="assets/js/sdi.js"></script>
+<script>
+const API = 'https://vdwuradyigrqbtkblzzk.supabase.co/functions/v1/area-clienti';
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let ADM = '', CLIENTI = [], RICH = [], SEL = null;
+async function call(body){
+  const r = await fetch(API, { method:'POST', headers:{ 'Content-Type':'application/json', 'x-admin-code': ADM }, body: JSON.stringify(body) });
+  let j = {}; try { j = await r.json(); } catch(e){}
+  if (r.status === 401) { logout(); throw new Error('Codice interno non valido'); }
+  if (!r.ok) throw new Error(j.error || ('Errore ' + r.status));
+  return j;
+}
+const lines = s => s.split('\n').map(x => x.trim()).filter(Boolean);
+const dt = v => v ? new Date(v).toLocaleString('it-IT', { day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit' }) : 'mai';
+function flash(t, err){ const m = $('#gmsg'); m.className = 'form-msg ' + (err ? 'err' : 'ok'); m.textContent = t; clearTimeout(flash.t); flash.t = setTimeout(() => m.textContent = '', 4000); }
+
+async function load(){
+  const j = await call({ azione:'lista' });
+  CLIENTI = j.clienti || []; RICH = j.richieste || [];
+  renderList(); renderRich();
+  if (SEL) { const c = CLIENTI.find(x => x.id === SEL); c ? edit(c) : newForm(); }
+}
+function renderList(){
+  $('#glist').innerHTML = CLIENTI.length ? CLIENTI.map(c => `<button class="gi ${c.id===SEL?'on':''} ${c.attivo?'':'off'}" data-id="${c.id}"><b>${esc(c.nome)}</b><span>${c.attivo ? 'Ultimo accesso: ' + dt(c.ultimo_accesso) : 'Disattivato'}</span></button>`).join('') : '<p class="ar-muted">Nessun cliente. Crea il primo.</p>';
+  $('#glist').querySelectorAll('.gi').forEach(b => b.onclick = () => { SEL = b.dataset.id; edit(CLIENTI.find(x => x.id === SEL)); renderList(); });
+  const n = RICH.filter(r => r.stato !== 'fatta').length;
+  $('#rcount').textContent = n ? n : '';
+}
+function renderRich(){
+  const nome = id => (CLIENTI.find(c => c.id === id) || {}).nome || '-';
+  const TP = { modifica:'Modifica', servizio:'Servizio extra', domanda:'Domanda' };
+  const st = r => r.stato === 'nuova' ? 'ricevuta' : (r.stato || 'ricevuta');
+  $('#grich').innerHTML = RICH.length ? RICH.map(r => `<div class="gr ${st(r)==='fatta'?'done':''}"><div style="flex:1;min-width:0"><b>${esc(nome(r.cliente_id))}</b> <span class="gtp gtp-${r.tipo||'modifica'}">${TP[r.tipo] || 'Modifica'}</span> <span class="ar-muted">${dt(r.il)} · ${esc(r.urgenza || 'Normale')}</span><p>${esc(r.testo)}</p>
+    <div class="gr-edit"><select data-st="${r.id}">${['ricevuta','in lavoro','fatta'].map(x => `<option value="${x}" ${st(r)===x?'selected':''}>${x.charAt(0).toUpperCase()+x.slice(1)}</option>`).join('')}</select><textarea data-ans="${r.id}" rows="2" placeholder="Risposta per il cliente (la vede nella sua area)">${esc(r.risposta || '')}</textarea><button class="btn-sm pri" data-save="${r.id}">Salva</button></div></div></div>`).join('') : '<p class="ar-muted">Nessuna richiesta.</p>';
+  $('#grich').querySelectorAll('[data-save]').forEach(b => b.onclick = async () => {
+    const id = b.dataset.save;
+    try { await call({ azione:'richiesta_stato', id:+id, stato: $(`[data-st="${id}"]`).value, risposta: $(`[data-ans="${id}"]`).value.trim() }); await load(); flash('Richiesta aggiornata.'); } catch(e){ flash(e.message, true); }
+  });
+}
+function newForm(){
+  SEL = null; $('#gtitle').textContent = 'Nuovo cliente';
+  ['g_nome','g_sito','g_piano','g_note','g_demo','g_scad','g_an','g_doc','g_tool'].forEach(i => $('#' + i).value = '');
+  $('#g_attivo').checked = true; $('#gcode').hidden = true; $('#gextra').hidden = true; $('#gsave').textContent = 'Crea cliente e genera il codice';
+  renderList();
+}
+function edit(c){
+  $('#gtitle').textContent = c.nome; $('#gcode').hidden = true; $('#gextra').hidden = false; $('#gsave').textContent = 'Salva modifiche';
+  $('#g_nome').value = c.nome || ''; $('#g_sito').value = c.sito || ''; $('#g_piano').value = c.piano || ''; $('#g_note').value = c.note || '';
+  $('#g_attivo').checked = !!c.attivo;
+  $('#g_demo').value = (c.demo || []).map(d => [d.nome, d.url || '', d.img || ''].join(' | ')).join('\n');
+  $('#g_scad').value = (c.scadenze || []).map(x => [x.voce, x.data, x.nota || '', x.incluso ? 'si' : 'no'].join(' | ')).join('\n');
+  $('#g_an').value = (c.analytics || []).map(a => [a.mese, a.visite, a.utenti, a.contatti, a.maps, a.chiamate == null ? '' : a.chiamate, a.nota || ''].join(' | ').replace(/( \| )+$/, '')).join('\n');
+  $('#g_tool').value = (c.strumenti || []).map(t => [t.nome, t.desc || '', t.url || '', t.tipo || 'Online'].join(' | ')).join('\n');
+  $('#g_doc').value = (c.documenti || []).map(d => [d.tipo, d.titolo, d.data || '', d.url || '', d.nota || ''].join(' | ')).join('\n');
+}
+function collect(){
+  const demo = lines($('#g_demo').value).map((r,i) => { const [nome, url, img] = r.split('|').map(x => (x || '').trim()); return { id:'d' + (i+1), nome, url, img, sub:'La tua demo personalizzata', feat:['Demo su misura'] }; });
+  const scadenze = lines($('#g_scad').value).map(r => { const [voce, data, nota, inc] = r.split('|').map(x => (x || '').trim()); return { voce, data, nota, incluso:/^s/i.test(inc || '') }; });
+  const bad = scadenze.find(x => !/^\d{4}-\d{2}-\d{2}$/.test(x.data)); if (bad) throw new Error('Data non valida in "' + bad.voce + '": usa AAAA-MM-GG');
+  const analytics = lines($('#g_an').value).map(r => { const p = r.split('|').map(x => (x || '').trim()); const [mese, v, u, c, m, ch] = p; const o = { mese, visite:+v||0, utenti:+u||0, contatti:+c||0, maps:+m||0 }; if (ch !== undefined && ch !== '') o.chiamate = +ch||0; const nota = p.slice(6).join(' | ').trim(); if (nota) o.nota = nota; return o; });
+  const documenti = lines($('#g_doc').value).map(r => { const p = r.split('|').map(x => (x || '').trim()); return { tipo: p[0] || 'Altro', titolo: p[1] || p[0], data: p[2] || '', url: p[3] || '', nota: p.slice(4).join(' | ') }; });
+  const strumenti = lines($('#g_tool').value).map(r => { const p = r.split('|').map(x => (x || '').trim()); return { nome: p[0], desc: p[1] || '', url: p[2] || '', tipo: /^d/i.test(p[3] || '') ? 'Download' : 'Online' }; });
+  const badD = documenti.find(d => d.data && !/^\d{4}-\d{2}-\d{2}$/.test(d.data)); if (badD) throw new Error('Data non valida nel documento "' + badD.titolo + '": usa AAAA-MM-GG');
+  const badM = analytics.find(a => !/^\d{4}-\d{2}$/.test(a.mese)); if (badM) throw new Error('Mese non valido "' + badM.mese + '": usa AAAA-MM');
+  const nome = $('#g_nome').value.trim(); if (!nome) throw new Error('Scrivi il nome del cliente');
+  return { nome, sito:$('#g_sito').value.trim(), piano:$('#g_piano').value.trim(), note:$('#g_note').value.trim(), attivo:$('#g_attivo').checked, demo, scadenze, analytics, documenti, strumenti };
+}
+function showCode(c){ $('#gcode').hidden = false; $('#gcodev').textContent = c; }
+$('#gsave').onclick = async () => {
+  try {
+    const d = collect();
+    if (!SEL) { const j = await call(Object.assign({ azione:'crea' }, d)); SEL = j.id; await load(); showCode(j.codice); flash('Cliente creato. Copia il codice: non lo vedrai più.'); }
+    else { await call(Object.assign({ azione:'aggiorna', id:SEL }, d)); await load(); flash('Salvato.'); }
+  } catch(e){ flash(e.message, true); }
+};
+$('#gnewcode').onclick = async () => { if (!SEL || !confirm('Il codice attuale smetterà di funzionare. Continuare?')) return; try { const j = await call({ azione:'nuovo_codice', id:SEL }); showCode(j.codice); flash('Nuovo codice generato.'); } catch(e){ flash(e.message, true); } };
+$('#gdel').onclick = async () => { if (!SEL || !confirm('Eliminare definitivamente il cliente e le sue richieste?')) return; try { await call({ azione:'elimina', id:SEL }); SEL = null; await load(); newForm(); flash('Cliente eliminato.'); } catch(e){ flash(e.message, true); } };
+$('#gcopy').onclick = () => { navigator.clipboard.writeText($('#gcodev').textContent).then(() => flash('Codice copiato.')); };
+$('#gnew').onclick = newForm;
+document.querySelectorAll('.gtab').forEach(t => t.onclick = () => { document.querySelectorAll('.gtab').forEach(x => x.classList.toggle('on', x === t)); $('#pclienti').hidden = t.dataset.t !== 'c'; $('#prich').hidden = t.dataset.t !== 'r'; });
+function logout(){ try { sessionStorage.removeItem('sdi_adm'); } catch(e){} ADM = ''; $('#gapp').hidden = true; $('#glogin').hidden = false; }
+$('#gout').onclick = logout;
+$('#gform').onsubmit = async e => {
+  e.preventDefault(); ADM = $('#g_adm').value.trim().toUpperCase(); const m = $('#gloginmsg'); m.textContent = '';
+  try { await load(); try { sessionStorage.setItem('sdi_adm', ADM); } catch(e){} $('#glogin').hidden = true; $('#gapp').hidden = false; newForm(); }
+  catch(err){ m.className = 'form-msg err'; m.textContent = err.message; }
+};
+(async () => { let s = null; try { s = sessionStorage.getItem('sdi_adm'); } catch(e){} if (s) { ADM = s; try { await load(); $('#glogin').hidden = true; $('#gapp').hidden = false; newForm(); } catch(e){} } })();
+</script>
+</body>
+</html>
