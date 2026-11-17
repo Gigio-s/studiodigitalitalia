@@ -1,13 +1,10 @@
-# robots.txt — Studio Digital Italia
+# robots.txt - Studio Digital Italia
 # Dominio ufficiale: https://studiodigitalitalia.it
 
 User-agent: *
 Allow: /
 
-# Blocca file interni non pubblici
-Disallow: /gestione-operativa-studiodigital.html
-Disallow: /area-riservata.html
-Disallow: /area-plus.html
+# Aree riservate (area demo, area clienti, gestionale) e pagine legali hanno il meta "noindex":
+# non le blocchiamo qui, cosi' Google legge il noindex e non le mostra nei risultati.
 
-# Sitemap
 Sitemap: https://studiodigitalitalia.it/sitemap.xml
