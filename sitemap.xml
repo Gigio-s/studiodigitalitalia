@@ -118,4 +118,10 @@
   <!-- Escluse intenzionalmente (noindex): privacy.html, termini.html,
        le vecchie demo single-page e le pagine legali/prenota della demo Dimora. -->
 
+  <url>
+    <loc>https://studiodigitalitalia.it/realizzazione-siti-web-vicenza.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
