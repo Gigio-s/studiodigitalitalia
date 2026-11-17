@@ -548,12 +548,12 @@ const CFG = {
     { id:'l2', nome:'L2 Traslochi', settore:'servizi', tipo:'reale', sub:'Traslochi e sgomberi, Vicenza', img:'assets/foto-home/sito-l2.webp', top:1, url:'https://www.l2traslochi.it', pacchetto:'base', servizi:[], feat:['Preventivo online','Servizi','WhatsApp'] },
     { id:'vintage', nome:'Ramacciato Vintage', settore:'negozi', tipo:'reale', sub:'Vintage e collezionismo', img:'assets/foto-home/sito-vintage.webp', top:1, url:'https://www.ramacciatovintage.it', pacchetto:'misura', servizi:['ecommerce','catalogo'], feat:['E-commerce','Catalogo prodotti'] },
     { id:'dpa', nome:'Dead People Activity', settore:'altro', tipo:'reale', sub:'Network musicale europeo', img:'assets/foto-home/sito-dpa.webp', top:1, url:'https://deadpeopleactivity.com', pacchetto:'misura', servizi:['lingua','ecommerce','blog'], feat:['Multilingua','Store','Community'] },
-    { id:'pizzeria', nome:'Pizzeria e ristorante', settore:'ristorazione', tipo:'richiesta', sub:'Menu interattivo e prenotazioni', img:'assets/foto-home/lello-pizze.webp', url:'', pacchetto:'pro', servizi:['catalogo','prenota'], feat:['Menu animato','Ricerca ingredienti','Prenotazione'] },
-    { id:'bar', nome:'Cocktail bar e aperitivo', settore:'ristorazione', tipo:'richiesta', sub:'Bar, caffetterie, locali serali', img:'', url:'', pacchetto:'pro', servizi:['catalogo','prenota'], feat:['Menu a schede','Eventi','Prenota tavolo'] },
-    { id:'pasticceria', nome:'Pasticceria e panetteria', settore:'ristorazione', tipo:'richiesta', sub:'Vetrina prodotti e ordini', img:'assets/foto-home/vinci-sfoglia.webp', url:'', pacchetto:'pro', servizi:['catalogo'], feat:['Vetrina prodotti','Ordini per eventi','Orari'] },
-    { id:'caldaie', nome:'Assistenza caldaie', settore:'servizi', tipo:'richiesta', sub:'Idraulici, caldaie, climatizzazione', img:'', url:'', pacchetto:'base', servizi:[], feat:['Richiesta intervento','Zone servite','Marchi assistiti'] },
-    { id:'architetto', nome:'Studio di architettura', settore:'professioni', tipo:'richiesta', sub:'Architetti, geometri, studi tecnici', img:'', url:'', pacchetto:'pro', servizi:['catalogo'], feat:['Portfolio progetti','Studio','Contatti'] },
-    { id:'tattoo', nome:'Studio tattoo', settore:'altro', tipo:'richiesta', sub:'Tatuatori e piercing', img:'', url:'', pacchetto:'pro', servizi:['prenota'], feat:['Hero interattiva','Portfolio artisti','Prenota consulenza'] }
+    { id:'pizzeria', nome:'Pizzeria e ristorante', settore:'ristorazione', tipo:'reale', sub:'Pizzeria da Lello, Costabissara', img:'assets/foto-home/sito-lello.webp', top:1, url:'https://www.pizzeriadalello.it', pacchetto:'pro', servizi:['catalogo','prenota'], feat:['Menu animato','Ricerca ingredienti','Prenotazione'] },
+    { id:'bar', nome:'Cocktail bar e aperitivo', settore:'ristorazione', tipo:'demo', sub:'Bar, caffetterie, locali serali', img:'Bar e locali/Il classico costabissara/demo-sito-2/assets/img/locale.jpg', url:'Bar e locali/Il classico costabissara/demo-sito-2/index.html', pacchetto:'pro', servizi:['catalogo','prenota'], feat:['Menu a schede','Eventi','Prenota tavolo'] },
+    { id:'pasticceria', nome:'Pasticceria e panetteria', settore:'ristorazione', tipo:'demo', sub:'Vetrina prodotti e ordini', img:'assets/foto-home/sito-vinci.webp', top:1, url:'vinci-vicenza-demo-2/index.html', pacchetto:'pro', servizi:['catalogo'], feat:['Vetrina prodotti','Ordini per eventi','Orari'] },
+    { id:'caldaie', nome:'Assistenza caldaie', settore:'servizi', tipo:'demo', sub:'Idraulici, caldaie, climatizzazione', img:'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=70', url:'atc-gas-demo/index.html', pacchetto:'base', servizi:[], feat:['Richiesta intervento','Zone servite','Marchi assistiti'] },
+    { id:'architetto', nome:'Studio di architettura', settore:'professioni', tipo:'demo', sub:'Architetti, geometri, studi tecnici', img:'atelier-quota-demo/logo-completo.jpg', url:'atelier-quota-demo/index.html', pacchetto:'pro', servizi:['catalogo'], feat:['Portfolio progetti','Studio','Contatti'] },
+    { id:'tattoo', nome:'Studio tattoo', settore:'altro', tipo:'demo', sub:'Tatuatori e piercing', img:'tattoo-demo/assets/img/site-hero.jpg', url:'tattoo-demo/index.html', pacchetto:'pro', servizi:['prenota'], feat:['Hero interattiva','Portfolio artisti','Prenota consulenza'] }
   ]
 };
 
@@ -653,9 +653,10 @@ async function enterCode(raw, quiet){
   const b = $('#codeBtn'); b.disabled = true;
   let r; try { r = await tryCode(raw); } catch(e){ r = { err:'Connessione non riuscita. Riprova tra poco.' }; }
   b.disabled = false;
-  if (r.admin) { ADMK = r.k; ses.set('sdi_demo_k', r.k); USER = { admin:true, k:r.k, nome:'Luca', attivita:'Interno' }; openArea(!quiet); renderInt(r.lista); return; }
+  if (r.admin) { ADMK = r.k; store.set('sdi_demo_adm', r.k); USER = { admin:true, k:r.k, nome:'Luca', attivita:'Interno' }; openArea(!quiet); renderInt(r.lista); return; }
   if (r.prospect) { PCODE = r.k; ses.set('sdi_demo_k', r.k); showProp(r.prospect, !quiet); return; }
   if (r.cliente) { msg.className = 'form-msg err'; msg.innerHTML = 'Questo è un codice dell\'area clienti: <a href="area-plus.html">entra da qui</a>.'; return; }
+  if (/^ADMIN-/.test(normCode(raw))) store.del('sdi_demo_adm');
   if (!quiet) { msg.className = 'form-msg err'; msg.textContent = r.err; } else { $('#codeBox').hidden = false; $('#g_code').value = normCode(raw); }
 }
 $('#codeBtn').addEventListener('click', () => enterCode($('#g_code').value));
@@ -725,7 +726,7 @@ function openArea(scroll){
   renderChips(first); renderConfig();
   if (scroll) document.getElementById('area').scrollIntoView({ behavior:'smooth' });
 }
-$('#btnOut').onclick = () => { store.del('sdi_demo_user'); ses.del('sdi_demo_k'); location.href = location.pathname; };
+$('#btnOut').onclick = () => { store.del('sdi_demo_user'); store.del('sdi_demo_adm'); ses.del('sdi_demo_k'); location.href = location.pathname; };
 
 /* ---------- CATALOGO ---------- */
 function card(m){
@@ -830,7 +831,7 @@ $('#againBtn').addEventListener('click', () => { $('#sendForm').hidden = false; 
 (async () => {
   const qs = new URLSearchParams(location.search);
   if (qs.has('preview')) { let d = null; try { d = JSON.parse(localStorage.getItem('sdi_preview_p') || 'null'); } catch(e){} if (d) { $('#prBar').hidden = false; showProp(d, false, true); return; } }
-  const k = qs.get('codice') || ses.get('sdi_demo_k');
+  const k = qs.get('codice') || store.get('sdi_demo_adm') || ses.get('sdi_demo_k');
   if (k) { await enterCode(k, true); if (!$('#prop').hidden || !$('#area').hidden) return; }
   const saved = store.get('sdi_demo_user');
   if (!saved) return;

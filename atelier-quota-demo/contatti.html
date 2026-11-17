@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/gate.js?v=1"></script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Contatti — Atelier Quota, studio di architettura a Vicenza</title>
+  <meta name="description" content="Contatta Atelier Quota a Vicenza: indirizzo, email, telefono e modulo. Raccontaci il tuo progetto o avvia il brief. Recapiti dimostrativi da sostituire.">
+  <link rel="canonical" href="https://www.atelierquota.example/contatti.html">
+  <meta property="og:type" content="website"><meta property="og:title" content="Contatti — Atelier Quota">
+  <meta property="og:description" content="Recapiti e modulo di contatto dello studio.">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-nav="contatti" data-base="">
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header id="site-header"></header>
+  <main id="main">
+    <nav class="breadcrumb wrap" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Contatti</li></ol></nav>
+    <header class="page-hero wrap">
+      <span class="eyebrow">Contatti</span>
+      <h1>Parliamo del tuo progetto.</h1>
+      <p class="lead">Per una richiesta più strutturata puoi <a href="avvia-progetto.html" class="link-arrow">avviare il brief</a>. Per un primo contatto, usa il modulo qui sotto o i recapiti dello studio.</p>
+    </header>
+
+    <section class="section wrap"><div class="grid cols-2" style="gap:3rem">
+      <div class="stack-lg">
+        <div><h2 class="serif" style="font-size:var(--step-2)">Recapiti</h2>
+          <p class="notice" style="margin-top:1rem"><strong>Recapiti dimostrativi</strong> — SOSTITUIRE PRIMA DELLA PUBBLICAZIONE.</p>
+        </div>
+        <dl class="tech-sheet">
+          <div class="row"><dt>Indirizzo</dt><dd>Contrà della Quota 27, 36100 Vicenza (VI)</dd></div>
+          <div class="row"><dt>Email</dt><dd><a href="mailto:studio@atelierquota.example">studio@atelierquota.example</a></dd></div>
+          <div class="row"><dt>Telefono</dt><dd><a href="tel:+390444000000">+39 0444 000 000</a></dd></div>
+          <div class="row"><dt>PEC</dt><dd>atelierquota@pec.example</dd></div>
+          <div class="row"><dt>Orari</dt><dd>Lun–Ven 9:00–13:00 / 14:30–18:00</dd></div>
+        </dl>
+        <div>
+          <h3 class="serif" style="font-size:var(--step-1);margin-bottom:.5rem">Come raggiungerci</h3>
+          <p class="muted">In centro storico a Vicenza. Parcheggi pubblici nelle vicinanze; stazione FS a circa 10 minuti a piedi; fermate autobus urbane nei pressi.</p>
+        </div>
+        <figure>
+          <div class="media"><div class="ph tone-ink ratio-16-9" role="img" aria-label="Mappa statica dimostrativa della sede">
+            <span class="ph-tag">Mappa statica · placeholder</span></div></div>
+          <figcaption>Mappa dimostrativa. In produzione: mappa statica o incorporata solo dopo consenso cookie (vedi README). <a class="link-arrow" href="#" onclick="window.trackEvent&&trackEvent('map_click',{});return false;">Apri indicazioni</a></figcaption>
+        </figure>
+        <div><h3 class="serif" style="font-size:var(--step-1);margin-bottom:.5rem">Social</h3>
+          <p class="muted"><a href="#" rel="noopener noreferrer">Instagram</a> · <a href="#" rel="noopener noreferrer">LinkedIn</a> — profili dimostrativi.</p></div>
+      </div>
+
+      <div>
+        <h2 class="serif" style="font-size:var(--step-2);margin-bottom:1.5rem">Scrivici</h2>
+        <form id="contact-form" novalidate>
+          <div class="field"><label for="c-name">Nome <span class="req">*</span></label><input id="c-name" name="name" autocomplete="name" required><span class="error-msg" aria-live="polite"></span></div>
+          <div class="field"><label for="c-email">Email <span class="req">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required><span class="error-msg" aria-live="polite"></span></div>
+          <div class="field"><label for="c-phone">Telefono <span class="hint">(facoltativo)</span></label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="c-subject">Oggetto</label>
+            <select id="c-subject" name="subject">
+              <option>Nuovo progetto</option><option>Ristrutturazione</option><option>Interior design</option>
+              <option>Studio di fattibilità</option><option>Direzione lavori</option><option>Altro</option>
+            </select></div>
+          <div class="field"><label for="c-message">Messaggio <span class="req">*</span></label><textarea id="c-message" name="message" required></textarea><span class="error-msg" aria-live="polite"></span></div>
+          <div class="field"><label class="consent"><input id="c-consent" type="checkbox" name="consent" required>
+            <span>Ho letto la <a href="privacy.html">privacy policy</a> e acconsento al trattamento dei dati per essere ricontattato. <span class="req">*</span></span></label>
+            <span class="error-msg" aria-live="polite"></span></div>
+          <button class="btn btn--primary" type="submit">Invia messaggio <span class="arrow">→</span></button>
+          <p id="contact-status" class="form-status" tabindex="-1" hidden></p>
+        </form>
+      </div>
+    </div></section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

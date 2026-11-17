@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Atelier Quota">
+  <line x1="3" y1="27" x2="29" y2="27" stroke="#171816" stroke-width="1.4"/>
+  <line x1="3" y1="27" x2="3" y2="5" stroke="#171816" stroke-width="1.4"/>
+  <path d="M3 27 L16 8 L29 27" fill="none" stroke="#171816" stroke-width="1.4"/>
+  <circle cx="16" cy="8" r="1.6" fill="#9a5e45"/>
+  <line x1="16" y1="8" x2="16" y2="27" stroke="#171816" stroke-width="0.8" stroke-dasharray="2 2"/>
+</svg>

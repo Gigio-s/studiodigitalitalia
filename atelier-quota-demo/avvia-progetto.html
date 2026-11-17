@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/gate.js?v=1"></script>
+  <title>Avvia un progetto — Brief con Atelier Quota</title>
+  <meta name="description" content="Compila il brief di Atelier Quota: pochi passaggi per raccontarci immobile, obiettivi, fase, budget orientativo e tempistiche. Demo: nessun dato viene trasmesso.">
+  <link rel="canonical" href="https://www.atelierquota.example/avvia-progetto.html">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website"><meta property="og:title" content="Avvia un progetto — Atelier Quota">
+  <meta property="og:description" content="Un brief chiaro per una richiesta chiara.">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .brief-progress{height:4px;background:var(--stone-light);border-radius:2px;overflow:hidden;margin-bottom:.6rem}
+    #brief-progress-bar{height:100%;background:var(--clay);width:11%;transition:width .35s var(--ease)}
+    .brief-step{max-width:760px}
+    .brief-step legend{font-family:var(--font-serif);font-size:var(--step-2);margin-bottom:.5rem;padding:0}
+    .brief-step fieldset{border:none;padding:0;margin:0}
+    .brief-nav{display:flex;gap:1rem;align-items:center;margin-top:2rem;max-width:760px}
+    .brief-nav .spacer{flex:1}
+  </style>
+</head>
+<body data-nav="" data-base="">
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header id="site-header"></header>
+  <main id="main">
+    <nav class="breadcrumb wrap" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Avvia un progetto</li></ol></nav>
+    <header class="page-hero wrap">
+      <span class="eyebrow">Brief</span>
+      <h1>Raccontaci il progetto.</h1>
+      <p class="lead">Pochi passaggi per aiutarci a capire se possiamo essere lo studio giusto. Le risposte restano salvate su questo dispositivo finché non le cancelli.</p>
+      <p class="notice" style="margin-top:1rem"><strong>Demo:</strong> questo brief non trasmette dati. Vedi il README per collegare un backend o un CRM.</p>
+    </header>
+
+    <section class="section--tight wrap">
+      <div class="brief-progress"><div id="brief-progress-bar"></div></div>
+      <p id="brief-progress-label" class="hint" aria-live="polite"></p>
+      <p id="brief-live" class="sr-only" role="status" aria-live="polite"></p>
+
+      <form id="brief" novalidate>
+        <!-- 1 -->
+        <section class="brief-step" data-title="Tipo di progetto"><fieldset>
+          <legend>Che tipo di progetto è?</legend>
+          <div class="option-grid" role="group" aria-label="Tipo di progetto">
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Ristrutturazione" required> Ristrutturazione</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Nuova abitazione"> Nuova abitazione</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Ampliamento"> Ampliamento</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Interior design"> Interior design</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Recupero"> Recupero</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Attività commerciale"> Attività commerciale</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Ufficio"> Ufficio</label>
+            <label class="option-tile"><input type="radio" name="tipo-progetto" value="Altro"> Altro</label>
+          </div><span class="error-msg" aria-live="polite"></span>
+        </fieldset></section>
+
+        <!-- 2 -->
+        <section class="brief-step" data-title="L'immobile" hidden><fieldset>
+          <legend>Parlaci dell'immobile</legend>
+          <div class="field"><label for="b-loc">Località <span class="req">*</span></label><input id="b-loc" name="immobile-localita" required></div>
+          <div class="field"><label for="b-tip">Tipologia</label>
+            <select id="b-tip" name="immobile-tipologia"><option value="">—</option><option>Appartamento</option><option>Casa indipendente</option><option>Villetta a schiera</option><option>Rustico / edificio rurale</option><option>Locale commerciale</option><option>Ufficio</option><option>Altro</option></select></div>
+          <div class="field"><label for="b-sup">Superficie indicativa (m²)</label><input id="b-sup" name="immobile-superficie" inputmode="numeric" placeholder="es. 120"></div>
+          <div class="field"><span style="font-weight:600;font-size:.82rem">Proprietà</span>
+            <div class="option-grid" style="margin-top:.4rem">
+              <label class="option-tile"><input type="radio" name="immobile-proprieta" value="acquistata"> Già acquistata</label>
+              <label class="option-tile"><input type="radio" name="immobile-proprieta" value="in-acquisto"> In fase di acquisto</label>
+              <label class="option-tile"><input type="radio" name="immobile-proprieta" value="valutazione"> Sto valutando</label>
+            </div></div>
+          <div class="field"><label for="b-stato">Stato attuale</label><input id="b-stato" name="immobile-stato" placeholder="es. da ristrutturare, abitabile, al grezzo…"></div>
+          <div class="field"><span style="font-weight:600;font-size:.82rem">Hai documentazione (planimetrie, visure)?</span>
+            <div class="option-grid" style="margin-top:.4rem">
+              <label class="option-tile"><input type="radio" name="immobile-docs" value="si"> Sì</label>
+              <label class="option-tile"><input type="radio" name="immobile-docs" value="parziale"> In parte</label>
+              <label class="option-tile"><input type="radio" name="immobile-docs" value="no"> No</label>
+            </div></div>
+        </fieldset></section>
+
+        <!-- 3 -->
+        <section class="brief-step" data-title="Obiettivi" hidden><fieldset>
+          <legend>Cosa vorresti ottenere?</legend>
+          <div class="field"><label for="b-prob">Cosa non funziona oggi</label><textarea id="b-prob" name="obiettivi-problema" placeholder="es. poca luce, spazi frammentati…"></textarea></div>
+          <div class="field"><label for="b-ris">Cosa vorresti ottenere <span class="req">*</span></label><textarea id="b-ris" name="obiettivi-risultato" required placeholder="es. una zona giorno aperta e luminosa…"></textarea></div>
+          <div class="field"><label for="b-amb">Ambienti interessati</label><input id="b-amb" name="obiettivi-ambienti" placeholder="es. cucina, bagni, zona giorno"></div>
+          <div class="field"><span style="font-weight:600;font-size:.82rem">Esigenze particolari</span>
+            <div class="option-grid" style="margin-top:.4rem">
+              <label class="option-tile"><input type="checkbox" name="obiettivi-extra" value="Accessibilità"> Accessibilità</label>
+              <label class="option-tile"><input type="checkbox" name="obiettivi-extra" value="Efficienza energetica"> Efficienza energetica</label>
+              <label class="option-tile"><input type="checkbox" name="obiettivi-extra" value="Conservazione elementi esistenti"> Conservare elementi esistenti</label>
+            </div></div>
+        </fieldset></section>
+
+        <!-- 4 -->
+        <section class="brief-step" data-title="Fase attuale" hidden><fieldset>
+          <legend>In che fase ti trovi?</legend>
+          <div class="option-grid" role="group" aria-label="Fase attuale">
+            <label class="option-tile"><input type="radio" name="fase" value="Prima idea"> Prima idea</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Sto valutando un acquisto"> Sto valutando un acquisto</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Immobile già acquistato"> Immobile già acquistato</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Ho già disegni"> Ho già disegni</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Ho già una pratica"> Ho già una pratica</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Impresa già scelta"> Impresa già scelta</label>
+            <label class="option-tile"><input type="radio" name="fase" value="Lavori già iniziati"> Lavori già iniziati</label>
+          </div>
+        </fieldset></section>
+
+        <!-- 5 -->
+        <section class="brief-step" data-title="Budget lavori" hidden><fieldset>
+          <legend>Budget orientativo per i lavori</legend>
+          <p class="hint" style="margin-bottom:1rem">Il budget indicato riguarda orientativamente lavori, forniture e interventi, e non costituisce un preventivo dello studio.</p>
+          <div class="option-grid" role="group" aria-label="Budget lavori">
+            <label class="option-tile"><input type="radio" name="budget" value="Fino a 50.000 €"> Fino a 50.000 €</label>
+            <label class="option-tile"><input type="radio" name="budget" value="50.000–100.000 €"> 50.000–100.000 €</label>
+            <label class="option-tile"><input type="radio" name="budget" value="100.000–250.000 €"> 100.000–250.000 €</label>
+            <label class="option-tile"><input type="radio" name="budget" value="250.000–500.000 €"> 250.000–500.000 €</label>
+            <label class="option-tile"><input type="radio" name="budget" value="Oltre 500.000 €"> Oltre 500.000 €</label>
+            <label class="option-tile"><input type="radio" name="budget" value="da-definire"> Da definire</label>
+          </div>
+        </fieldset></section>
+
+        <!-- 6 -->
+        <section class="brief-step" data-title="Tempistiche" hidden><fieldset>
+          <legend>Quando vorresti iniziare?</legend>
+          <div class="option-grid" role="group" aria-label="Tempistiche">
+            <label class="option-tile"><input type="radio" name="tempistiche" value="Entro sei mesi"> Entro sei mesi</label>
+            <label class="option-tile"><input type="radio" name="tempistiche" value="Sei–dodici mesi"> Sei–dodici mesi</label>
+            <label class="option-tile"><input type="radio" name="tempistiche" value="Uno–due anni"> Uno–due anni</label>
+            <label class="option-tile"><input type="radio" name="tempistiche" value="senza-scadenza"> Senza scadenza definita</label>
+          </div>
+        </fieldset></section>
+
+        <!-- 7 -->
+        <section class="brief-step" data-title="Servizi richiesti" hidden><fieldset>
+          <legend>Di cosa avresti bisogno?</legend>
+          <div class="option-grid" role="group" aria-label="Servizi richiesti">
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Studio di fattibilità"> Studio di fattibilità</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Progetto architettonico"> Progetto architettonico</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Interior design"> Interior design</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Pratiche"> Pratiche</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Progetto esecutivo"> Progetto esecutivo</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Direzione lavori"> Direzione lavori</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Supporto scelta impresa"> Supporto scelta impresa</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Arredi"> Arredi</label>
+            <label class="option-tile"><input type="checkbox" name="servizi" value="Da definire insieme"> Da definire insieme</label>
+          </div>
+        </fieldset></section>
+
+        <!-- 8 -->
+        <section class="brief-step" data-title="Contatti" hidden><fieldset>
+          <legend>Come possiamo ricontattarti?</legend>
+          <div class="field"><label for="b-nome">Nome <span class="req">*</span></label><input id="b-nome" name="nome" autocomplete="name" required></div>
+          <div class="field"><label for="b-email">Email <span class="req">*</span></label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="b-tel">Telefono</label><input id="b-tel" name="telefono" type="tel" autocomplete="tel"></div>
+          <div class="field"><span style="font-weight:600;font-size:.82rem">Modalità preferita</span>
+            <div class="option-grid" style="margin-top:.4rem">
+              <label class="option-tile"><input type="radio" name="contatto-modalita" value="Email"> Email</label>
+              <label class="option-tile"><input type="radio" name="contatto-modalita" value="Telefono"> Telefono</label>
+              <label class="option-tile"><input type="radio" name="contatto-modalita" value="Indifferente"> Indifferente</label>
+            </div></div>
+          <div class="field"><label for="b-fascia">Fascia oraria preferita</label>
+            <select id="b-fascia" name="contatto-fascia"><option value="">—</option><option>Mattina</option><option>Pomeriggio</option><option>Sera</option></select></div>
+          <div class="field"><label class="consent"><input type="checkbox" name="consenso" value="si" required>
+            <span>Ho letto la <a href="privacy.html">privacy policy</a> e acconsento a essere ricontattato. <span class="req">*</span></span></label><span class="error-msg" aria-live="polite"></span></div>
+        </fieldset></section>
+
+        <!-- 9 riepilogo -->
+        <section class="brief-step" data-title="Riepilogo" hidden><fieldset>
+          <legend>Riepilogo</legend>
+          <p class="hint" style="margin-bottom:1rem">Controlla le risposte. Usa “Modifica” per tornare a un passaggio.</p>
+          <div id="brief-summary"></div>
+          <div class="btn-row" style="margin:1rem 0">
+            <button type="button" class="chip" data-goto="0">Modifica progetto</button>
+            <button type="button" class="chip" data-goto="1">Modifica immobile</button>
+            <button type="button" class="chip" data-goto="4">Modifica budget</button>
+            <button type="button" class="chip" data-goto="7">Modifica contatti</button>
+          </div>
+          <div id="brief-readiness" class="callout" style="margin-top:1.5rem"></div>
+        </fieldset></section>
+
+        <div class="brief-nav">
+          <button type="button" class="btn btn--ghost" id="brief-prev" hidden>← Indietro</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--primary" id="brief-next">Avanti →</button>
+          <button type="submit" class="btn btn--primary" id="brief-submit" hidden>Invia il brief →</button>
+        </div>
+      </form>
+
+      <div id="brief-confirm" class="callout center" hidden style="margin-top:2rem">
+        <span class="demo-badge">Demo</span>
+        <h2 class="serif" style="margin:.5rem 0">Grazie, abbiamo ricevuto il tuo brief.</h2>
+        <p class="muted">Questa è una demo: il brief non è stato trasmesso. In produzione verrà inviato allo studio o a un CRM (vedi README).</p>
+        <div class="btn-row" style="justify-content:center;margin-top:1rem">
+          <a class="btn btn--primary" href="index.html">Torna alla home</a>
+          <a class="btn btn--ghost" href="progetti.html">Vedi i progetti</a>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem"><button type="button" class="link-arrow" id="brief-clear">Cancella i dati salvati</button></p>
+    </section>
+  </main>
+
+  <div class="sticky-cta" aria-hidden="true">
+    <span>Brief in corso</span>
+    <button class="btn btn--light" type="button" onclick="document.getElementById('brief-next')&&document.getElementById('brief-next').scrollIntoView({behavior:'smooth'})">Continua</button>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/brief.js"></script>
+</body>
+</html>

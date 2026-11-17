@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/gate.js?v=1"></script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Progetti — Portfolio di Atelier Quota, architettura a Vicenza</title>
+  <meta name="description" content="Il portfolio dimostrativo di Atelier Quota: ristrutturazioni, nuove abitazioni, recuperi, interni, uffici e hospitality a Vicenza e in Veneto. Filtra per tipologia, servizio, stato e località.">
+  <link rel="canonical" href="https://www.atelierquota.example/progetti.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Progetti — Atelier Quota">
+  <meta property="og:description" content="Portfolio di architettura e interni a Vicenza e in Veneto.">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-nav="progetti" data-base="">
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <nav class="breadcrumb wrap" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Progetti</li></ol></nav>
+
+    <header class="page-hero wrap">
+      <span class="eyebrow">Portfolio · <span id="pf-total"></span></span>
+      <h1>Progetti</h1>
+      <p class="lead">Una selezione dimostrativa di lavori tra Vicenza, la provincia, Padova e il Veneto. Ogni scheda racconta il problema di partenza e la soluzione adottata.</p>
+    </header>
+
+    <section class="wrap section--tight">
+      <div class="filters" aria-label="Filtri progetti">
+        <div class="filter-bar">
+          <div class="filter-group"><span>Tipologia</span><div class="chip-row" role="group" aria-label="Filtra per tipologia">
+            <button class="chip" data-facet="type" data-value="">Tutte</button>
+            <button class="chip" data-facet="type" data-value="residenziale">Residenziale</button>
+            <button class="chip" data-facet="type" data-value="appartamenti">Appartamenti</button>
+            <button class="chip" data-facet="type" data-value="nuove-costruzioni">Nuove costruzioni</button>
+            <button class="chip" data-facet="type" data-value="recupero">Recupero</button>
+            <button class="chip" data-facet="type" data-value="uffici">Uffici</button>
+            <button class="chip" data-facet="type" data-value="retail">Retail</button>
+            <button class="chip" data-facet="type" data-value="hospitality">Hospitality</button>
+          </div></div>
+        </div>
+        <div class="filter-bar">
+          <div class="filter-group"><span>Servizio</span><div class="chip-row" role="group" aria-label="Filtra per servizio">
+            <button class="chip" data-facet="services" data-value="">Tutti</button>
+            <button class="chip" data-facet="services" data-value="architettura">Architettura</button>
+            <button class="chip" data-facet="services" data-value="interior">Interior design</button>
+            <button class="chip" data-facet="services" data-value="restauro">Restauro</button>
+            <button class="chip" data-facet="services" data-value="direzione-lavori">Direzione lavori</button>
+            <button class="chip" data-facet="services" data-value="arredi">Arredi su misura</button>
+          </div></div>
+          <div class="filter-group"><span>Stato</span><div class="chip-row" role="group" aria-label="Filtra per stato">
+            <button class="chip" data-facet="status" data-value="">Tutti</button>
+            <button class="chip" data-facet="status" data-value="realizzato">Realizzato</button>
+            <button class="chip" data-facet="status" data-value="in-cantiere">In cantiere</button>
+            <button class="chip" data-facet="status" data-value="progetto">Progetto</button>
+          </div></div>
+          <div class="filter-group"><span>Località</span><div class="chip-row" role="group" aria-label="Filtra per località">
+            <button class="chip" data-facet="area" data-value="">Tutte</button>
+            <button class="chip" data-facet="area" data-value="vicenza">Vicenza</button>
+            <button class="chip" data-facet="area" data-value="provincia">Provincia</button>
+            <button class="chip" data-facet="area" data-value="padova">Padova</button>
+            <button class="chip" data-facet="area" data-value="verona">Verona</button>
+          </div></div>
+        </div>
+        <div class="filter-tools">
+          <div class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <label class="sr-only" for="portfolio-search">Cerca nei progetti</label>
+            <input type="search" id="portfolio-search" placeholder="Cerca per nome o luogo…">
+          </div>
+          <div style="display:flex;gap:1rem;align-items:center">
+            <label class="sr-only" for="portfolio-sort">Ordina</label>
+            <select class="sort" id="portfolio-sort">
+              <option value="num">Ordine studio</option>
+              <option value="year-desc">Anno (recenti)</option>
+              <option value="year-asc">Anno (meno recenti)</option>
+              <option value="name">Nome (A–Z)</option>
+            </select>
+            <span class="result-count" id="result-count" aria-live="polite"></span>
+            <button class="chip" id="filter-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="portfolio-grid" class="project-grid" aria-live="polite" aria-busy="false"></div>
+      <div id="no-results" class="no-results hide"><p>Nessun progetto corrisponde ai filtri selezionati.</p><button class="btn btn--ghost" onclick="document.getElementById('filter-reset').click()">Azzera i filtri</button></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/data/projects-data.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",function(){var t=document.getElementById("pf-total");if(t&&window.AQ_PROJECTS)t.textContent=AQ_PROJECTS.length+" progetti";});</script>
+</body>
+</html>

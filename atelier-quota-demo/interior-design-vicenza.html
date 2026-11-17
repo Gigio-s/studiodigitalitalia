@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/gate.js?v=1"></script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Interior design a Vicenza — interni su misura | Atelier Quota</title>
+  <meta name="description" content="Interior design a Vicenza: progettazione completa degli interni, illuminazione, materiali, arredi su misura e fornitori. Per appartamenti, uffici e attività commerciali.">
+  <link rel="canonical" href="https://www.atelierquota.example/interior-design-vicenza.html">
+  <meta property="og:type" content="website"><meta property="og:title" content="Interior design a Vicenza — Atelier Quota">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-nav="" data-base="">
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header id="site-header"></header>
+  <main id="main">
+    <nav class="breadcrumb wrap" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Interior design a Vicenza</li></ol></nav>
+    <header class="page-hero wrap">
+      <span class="eyebrow">Interni · Vicenza</span>
+      <h1>Interni su misura, coordinati fino al dettaglio.</h1>
+      <p class="lead">Un interno riuscito è un insieme di scelte coordinate: spazio, luce, materiali e arredi che parlano la stessa lingua. A Vicenza progettiamo interni per case, uffici e attività.</p>
+      <div class="btn-row"><a class="btn btn--primary" href="avvia-progetto.html">Avvia il brief <span class="arrow">→</span></a><a class="btn btn--ghost" href="servizi/interior-design.html">Il servizio</a></div>
+    </header>
+
+    <section class="section wrap"><div class="grid cols-2">
+      <div class="stack"><span class="eyebrow">Cosa comprende</span><h2 class="serif">Progettazione completa</h2>
+        <ul class="check-list">
+          <li>Distribuzione e layout degli ambienti</li>
+          <li>Progetto illuminotecnico</li>
+          <li>Selezione di materiali e finiture</li>
+          <li>Arredi su misura e falegnameria</li>
+          <li>Coordinamento con i fornitori</li>
+        </ul>
+      </div>
+      <div class="stack"><span class="eyebrow">Per chi</span><h2 class="serif">Appartamenti, uffici, attività</h2>
+        <p class="muted">Che si tratti di un appartamento da rendere più vivibile, di un ufficio da riorganizzare o di un locale con una sua identità, l'approccio è lo stesso: partire dall'uso reale dello spazio.</p>
+        <p class="muted">L'interior può essere un incarico a sé o parte di una ristrutturazione più ampia.</p>
+      </div>
+    </div></section>
+
+    <section class="section section--paper-light wrap"><div class="grid cols-3">
+      <div class="callout"><h3 class="serif" style="font-size:var(--step-1)">Luce</h3><p class="muted">Naturale e artificiale progettate insieme: cambiano la percezione di ogni ambiente.</p></div>
+      <div class="callout"><h3 class="serif" style="font-size:var(--step-1)">Materiali</h3><p class="muted">Pochi materiali, scelti per durare e invecchiare bene, invece di molti effetti.</p></div>
+      <div class="callout"><h3 class="serif" style="font-size:var(--step-1)">Arredi</h3><p class="muted">Su misura quando servono a risolvere lo spazio, coordinati con i fornitori giusti.</p></div>
+    </div></section>
+
+    <section class="section wrap"><div class="section-head"><span class="eyebrow">Progetti</span><h2 class="serif">Interni e spazi di lavoro</h2></div>
+      <div id="local-grid" class="project-grid"></div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/data/projects-data.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",function(){
+    var l=(window.AQ_PROJECTS||[]).filter(function(p){return p.services.indexOf("interior")!==-1||p.services.indexOf("arredi")!==-1;});
+    AQ.renderAll("local-grid", l);
+  });</script>
+</body>
+</html>

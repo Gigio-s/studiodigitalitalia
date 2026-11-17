@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ATC Gas — Assistenza, Manutenzione e Installazione Caldaie a Vicenza</title>
+<meta name="description" content="A.T.C. Gas S.r.l. — Centro Assistenza Autorizzato BAXI e Brötje a Vicenza. Assistenza e riparazione caldaie, manutenzione e controllo fumi, vendita e installazione di nuovi impianti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14235f;
+  --navy-2:#1d3aa8;
+  --blue:#2456d6;
+  --red:#e4342b;
+  --red-d:#c31f18;
+  --ink:#1a2233;
+  --muted:#5c6a86;
+  --line:#e6eaf3;
+  --bg:#ffffff;
+  --bg-soft:#f4f7fc;
+  --shadow:0 18px 45px -22px rgba(20,35,95,.45);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+h1,h2,h3,.display{font-family:'Barlow Condensed',sans-serif;line-height:1.04;letter-spacing:.2px}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2.4px;font-weight:600;color:var(--red);font-size:.95rem}
+.section{padding:84px 0}
+.section h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:700;color:var(--navy)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:640px}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;transition:.2s;cursor:pointer;border:2px solid transparent;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#0e1a49;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-outline{background:#fff;color:var(--navy);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* ---------- TOP BAR ---------- */
+.topbar{background:var(--navy);color:#dfe6fb;font-size:.86rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem 0;flex-wrap:wrap}
+.topbar a{display:inline-flex;align-items:center;gap:.4rem}
+.topbar .tb-right{display:flex;gap:1.4rem;flex-wrap:wrap}
+.topbar svg{width:15px;height:15px;fill:var(--red)}
+
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.7rem}
+.logo{display:flex;align-items:baseline;font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:.9}
+.logo .atc{font-size:2.2rem;color:var(--navy);letter-spacing:-1px;position:relative}
+.logo .flame{color:var(--red);font-size:2.2rem}
+.logo .gas{display:flex;flex-direction:column;font-size:.62rem;font-weight:600;letter-spacing:2px;color:var(--navy);margin-left:.35rem;transform:translateY(2px)}
+.brand small{display:block;font-size:.7rem;color:var(--muted);letter-spacing:.3px;font-family:'Inter';font-weight:500;margin-top:2px}
+.menu{display:flex;gap:1.5rem;font-weight:500;font-size:.97rem}
+.menu a{color:var(--ink);padding:.3rem 0;position:relative}
+.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:.25s}
+.menu a:hover{color:var(--navy)}
+.menu a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:.8rem}
+.nav-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;color:var(--navy);display:flex;align-items:center;gap:.45rem}
+.nav-phone svg{width:20px;height:20px;fill:var(--red)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:26px;height:3px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;color:#fff;overflow:hidden;background:linear-gradient(120deg,#0f1c4d 0%,#16276b 46%,#1d3aa8 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=70') center/cover;opacity:.16;mix-blend-mode:luminosity}
+.hero::after{content:"";position:absolute;right:-8%;top:-20%;width:520px;height:520px;background:radial-gradient(circle,rgba(228,52,43,.38),transparent 62%);filter:blur(10px)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:82px 0 92px}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.3rem);font-weight:700;margin:.7rem 0 1rem}
+.hero h1 span{color:#ffd0cb}
+.hero p{font-size:1.15rem;color:#d6ddf5;max-width:520px}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero-trust{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.18)}
+.hero-trust div{display:flex;flex-direction:column}
+.hero-trust b{font-family:'Barlow Condensed';font-size:1.9rem;color:#fff;font-weight:700;line-height:1}
+.hero-trust small{color:#b9c4ea;font-size:.82rem;margin-top:3px}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:1.6rem;backdrop-filter:blur(6px)}
+.hero-card h3{font-size:1.6rem;color:#fff;font-weight:700}
+.hero-card p{font-size:.95rem;color:#cdd6f2;margin:.4rem 0 1.1rem}
+.mini-form{display:grid;gap:.6rem}
+.mini-form input,.mini-form select{width:100%;padding:.75rem .9rem;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.95);color:var(--ink);font-size:.95rem;font-family:inherit}
+.mini-form .btn{justify-content:center;margin-top:.2rem}
+.badge-auth{position:absolute;z-index:3;right:calc(4% );bottom:20px;background:#fff;color:var(--navy);border-radius:12px;padding:.5rem .9rem;font-size:.78rem;font-weight:600;box-shadow:var(--shadow);display:none}
+
+/* ---------- SERVIZI ---------- */
+.head-center{text-align:center;max-width:680px;margin:0 auto 3rem}
+.head-center .lead{margin:.7rem auto 0}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.serv{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.serv:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.serv-img{height:180px;background-size:cover;background-position:center;position:relative}
+.serv-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,28,77,.55))}
+.serv-ico{position:absolute;left:16px;bottom:-22px;z-index:2;width:52px;height:52px;border-radius:12px;background:var(--red);display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(228,52,43,.6)}
+.serv-ico svg{width:26px;height:26px;fill:#fff}
+.serv-body{padding:2rem 1.5rem 1.6rem}
+.serv-body h3{font-size:1.5rem;color:var(--navy);font-weight:700}
+.serv-body p{color:var(--muted);font-size:.96rem;margin:.5rem 0 1rem}
+.serv-body ul{list-style:none;display:grid;gap:.4rem;margin-bottom:1.1rem}
+.serv-body li{font-size:.9rem;color:var(--ink);display:flex;gap:.5rem;align-items:flex-start}
+.serv-body li svg{width:16px;height:16px;fill:var(--red);flex:none;margin-top:4px}
+.serv-link{margin-top:auto;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:.4rem;font-size:.95rem}
+.serv-link svg{width:16px;height:16px;fill:var(--red);transition:.2s}
+.serv:hover .serv-link svg{transform:translateX(4px)}
+
+/* ---------- WHY ---------- */
+.why{background:var(--bg-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.6rem;display:flex;gap:1rem;align-items:flex-start}
+.why-ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;flex:none}
+.why-ico svg{width:24px;height:24px;fill:#fff}
+.why-card h3{font-size:1.25rem;color:var(--navy);font-weight:700;margin-bottom:.2rem}
+.why-card p{font-size:.9rem;color:var(--muted)}
+
+/* ---------- BRANDS ---------- */
+.brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.brands .wrap{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:36px 0}
+.brands .bt{text-align:center;margin-right:1rem}
+.brands .bt small{display:block;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.brands .bt b{font-family:'Barlow Condensed';font-size:1.1rem;color:var(--navy);font-weight:700}
+.brand-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;padding:.5rem 1.3rem;border-radius:10px;font-size:1.9rem;display:flex;align-items:center;gap:.5rem}
+.badge-baxi{background:var(--navy);color:#fff}
+.badge-brotje{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.badge-brotje .dot{width:16px;height:16px;border-radius:50%;background:var(--red);display:inline-block}
+
+/* ---------- ABOUT ---------- */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);position:relative;min-height:380px;background:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=70') center/cover}
+.about-img .exp{position:absolute;left:20px;bottom:20px;background:var(--red);color:#fff;border-radius:14px;padding:1rem 1.3rem;box-shadow:var(--shadow)}
+.about-img .exp b{font-family:'Barlow Condensed';font-size:2.6rem;line-height:1;font-weight:700;display:block}
+.about-img .exp small{font-size:.8rem}
+.about h2{margin-bottom:1rem}
+.about p{color:var(--muted);margin-bottom:1rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.6rem}
+.stat{background:var(--bg-soft);border-radius:12px;padding:1rem;text-align:center}
+.stat b{font-family:'Barlow Condensed';font-size:2.2rem;color:var(--navy);font-weight:700;display:block;line-height:1}
+.stat small{font-size:.8rem;color:var(--muted)}
+
+/* ---------- REVIEWS ---------- */
+.reviews{background:linear-gradient(120deg,#0f1c4d,#1d3aa8);color:#fff}
+.reviews h2{color:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.6rem}
+.rev{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:1.5rem}
+.rev .stars{color:#ffc531;letter-spacing:2px;margin-bottom:.6rem}
+.rev p{font-size:.95rem;color:#e4e9fb}
+.rev .who{margin-top:1rem;font-weight:600;font-size:.9rem;color:#fff}
+.rev .who small{display:block;font-weight:400;color:#b9c4ea;font-size:.8rem}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2.6rem}
+.form{display:grid;gap:.9rem}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form label{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:.25rem;display:block}
+.form input,.form select,.form textarea{width:100%;padding:.8rem .95rem;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;color:var(--ink);background:#fff}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(36,86,214,.12)}
+.form textarea{min-height:120px;resize:vertical}
+.form .btn{justify-content:center}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.ci{display:flex;gap:1rem;align-items:flex-start;background:var(--bg-soft);border-radius:12px;padding:1.1rem 1.2rem}
+.ci .ico{width:44px;height:44px;border-radius:11px;background:var(--navy);display:grid;place-items:center;flex:none}
+.ci .ico svg{width:22px;height:22px;fill:#fff}
+.ci h4{font-size:1.05rem;color:var(--navy);font-family:'Barlow Condensed';font-weight:700}
+.ci p{font-size:.92rem;color:var(--muted)}
+.ci a{color:var(--navy);font-weight:600}
+.map{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-top:.4rem;min-height:220px}
+.map iframe{width:100%;height:100%;min-height:220px;border:0;display:block}
+
+/* ---------- FOOTER ---------- */
+footer{background:#0e1a49;color:#c3cdec;padding:60px 0 26px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:2rem}
+footer h4{color:#fff;font-family:'Barlow Condensed';font-size:1.2rem;letter-spacing:1px;margin-bottom:1rem;font-weight:600}
+footer ul{list-style:none;display:grid;gap:.5rem}
+footer a:hover{color:#fff}
+.foot-logo .logo .atc,.foot-logo .logo .flame{color:#fff}
+.foot-logo .logo .gas{color:#fff}
+.foot-logo p{margin-top:.8rem;color:#9fabd4;font-size:.88rem;max-width:280px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2.4rem;padding-top:1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:#8493c4}
+.foot-bottom a{color:#b7c1e6}
+.credit{color:#ffd0cb}
+
+/* floating call */
+.fab{position:fixed;left:18px;bottom:18px;z-index:80;background:var(--red);color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(228,52,43,.7);animation:pulse 2.4s infinite}
+.fab svg{width:26px;height:26px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(228,52,43,.5)}70%{box-shadow:0 0 0 16px rgba(228,52,43,0)}100%{box-shadow:0 0 0 0 rgba(228,52,43,0)}}
+
+.demo-ribbon{position:fixed;top:12px;left:-42px;transform:rotate(-45deg);background:var(--red);color:#fff;font-family:'Barlow Condensed';font-weight:600;letter-spacing:2px;font-size:.72rem;padding:5px 52px;z-index:90;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);pointer-events:none;text-transform:uppercase}
+
+/* ===== CHATBOT ===== */
+.atc-launch{position:fixed;right:18px;bottom:18px;z-index:95;display:flex;align-items:center;gap:.5rem;background:var(--navy);color:#fff;border:0;cursor:pointer;padding:.7rem 1.1rem .7rem .85rem;border-radius:999px;box-shadow:0 12px 30px -8px rgba(20,35,95,.6);font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem}
+.atc-launch:hover{background:#0e1a49}
+.atc-launch>span:first-child{position:relative;display:flex}
+.atc-launch svg{width:24px;height:24px;fill:#fff}
+.atc-launch .dot{position:absolute;top:-3px;right:-3px;width:13px;height:13px;background:#3ad07a;border:2px solid var(--navy);border-radius:50%}
+.atc-panel{position:fixed;right:18px;bottom:84px;z-index:96;width:min(370px,calc(100vw - 36px));height:min(540px,calc(100vh - 120px));background:#fff;border-radius:18px;box-shadow:0 30px 70px -20px rgba(20,35,95,.5);display:flex;flex-direction:column;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(16px) scale(.98);transition:.22s;border:1px solid var(--line)}
+.atc-panel.open{opacity:1;visibility:visible;transform:none}
+.atc-h{background:linear-gradient(120deg,var(--navy),#1d3aa8);color:#fff;padding:1rem 1.1rem;display:flex;align-items:center;gap:.7rem}
+.atc-h .av{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none}
+.atc-h .av svg{width:22px;height:22px;fill:#fff}
+.atc-h b{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;display:block;line-height:1.1}
+.atc-h small{font-size:.74rem;color:#cdd6f2;display:flex;align-items:center;gap:.35rem}
+.atc-h small::before{content:"";width:8px;height:8px;border-radius:50%;background:#3ad07a;display:inline-block}
+.atc-h .x{margin-left:auto;background:none;border:0;color:#fff;cursor:pointer;font-size:1.5rem;line-height:1;opacity:.85}
+.atc-body{flex:1;overflow-y:auto;padding:1rem;background:var(--bg-soft);display:flex;flex-direction:column;gap:.55rem}
+.atc-msg{max-width:86%;padding:.7rem .9rem;border-radius:14px;font-size:.9rem;line-height:1.5;white-space:pre-line}
+.atc-bot{background:#fff;border:1px solid var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.atc-user{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.atc-chips{display:flex;flex-wrap:wrap;gap:.4rem;align-self:flex-start;max-width:94%}
+.atc-chip{background:#fff;border:1px solid #c9d4ec;color:var(--navy);border-radius:999px;padding:.45rem .8rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s;font-family:inherit}
+.atc-chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.atc-foot{border-top:1px solid var(--line);padding:.6rem;display:flex;gap:.5rem;background:#fff}
+.atc-foot input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-size:.9rem;font-family:inherit}
+.atc-foot button{background:var(--red);border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.atc-foot button svg{width:20px;height:20px;fill:#fff}
+@media(max-width:600px){.atc-launch>span:nth-child(2){display:none}.atc-launch{padding:.85rem;border-radius:50%}}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;padding:56px 0 64px}
+  .about .wrap{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .serv-grid,.why-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .menu,.nav-phone{display:none}
+  .burger{display:flex}
+  .menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;padding:1rem 6%;box-shadow:var(--shadow);gap:.4rem}
+  .menu.open a{padding:.6rem 0;border-bottom:1px solid var(--line)}
+}
+@media(max-width:600px){
+  .serv-grid,.why-grid,.rev-grid,.foot-grid,.stats,.form .row{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .topbar .tb-right{display:none}
+}
+
+/* ===== PANNELLO EXTRA / ADD-ON (demo navigabile) ===== */
+.addon-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:97;background:linear-gradient(180deg,var(--red),var(--red-d));color:#fff;border:0;cursor:pointer;padding:16px 9px;border-radius:12px 0 0 12px;box-shadow:-6px 0 22px -8px rgba(0,0,0,.45);writing-mode:vertical-rl;text-orientation:mixed;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;font-size:1.02rem;display:flex;align-items:center;gap:.45rem}
+.addon-tab svg{width:17px;height:17px;fill:#fff}
+.addon-tab .pill{position:absolute;top:-9px;left:-9px;background:#fff;color:var(--red);min-width:23px;height:23px;padding:0 5px;border-radius:999px;font-size:.76rem;font-family:'Inter',sans-serif;font-weight:700;display:none;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.3);writing-mode:horizontal-tb}
+.addon-tab .pill.show{display:flex}
+.addon-ov{position:fixed;inset:0;background:rgba(15,28,77,.45);z-index:98;opacity:0;visibility:hidden;transition:.25s;backdrop-filter:blur(1px)}
+.addon-ov.open{opacity:1;visibility:visible}
+.addon-panel{position:fixed;top:0;right:0;height:100%;width:min(400px,93vw);background:var(--bg-soft);z-index:99;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.addon-panel.open{transform:none}
+.addon-head{position:relative;background:linear-gradient(120deg,var(--navy),#1d3aa8);color:#fff;padding:1.4rem 1.4rem 1.3rem}
+.addon-head .eye{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:2px;font-size:.72rem;color:#ffd0cb;font-weight:600}
+.addon-head h3{font-family:'Barlow Condensed';font-size:1.75rem;font-weight:700;line-height:1.05;margin-top:.2rem}
+.addon-head p{font-size:.85rem;color:#cdd6f2;margin-top:.35rem}
+.addon-head .x{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,.16);border:0;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.25rem;line-height:1;cursor:pointer}
+.addon-head .x:hover{background:rgba(255,255,255,.28)}
+.addon-list{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.8rem}
+.addon-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;transition:.2s}
+.addon-card.sel{border-color:var(--red);box-shadow:0 0 0 2px rgba(228,52,43,.15)}
+.addon-card .ac-top{display:flex;gap:.7rem;align-items:center}
+.addon-card .ac-ico{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;flex:none}
+.addon-card .ac-ico svg{width:21px;height:21px;fill:#fff}
+.addon-card h4{font-size:1.16rem;font-family:'Barlow Condensed';color:var(--navy);font-weight:700;line-height:1.1;flex:1}
+.addon-card .price{font-size:.8rem;font-weight:700;color:var(--red);white-space:nowrap}
+.addon-card .why{font-size:.85rem;color:var(--muted);margin:.6rem 0 .75rem}
+.addon-card .why b{color:var(--ink)}
+.addon-add{width:100%;border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:.52rem;font-weight:600;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.15s}
+.addon-add:hover{background:var(--navy);color:#fff}
+.addon-card.sel .addon-add{background:var(--red);border-color:var(--red);color:#fff}
+.addon-foot{border-top:1px solid var(--line);background:#fff;padding:1rem 1.2rem}
+.addon-foot .cnt{font-size:.9rem;color:var(--ink);margin-bottom:.6rem}
+.addon-foot .cnt b{color:var(--red)}
+.addon-foot .btn{width:100%;justify-content:center}
+@media(max-width:600px){.addon-tab{font-size:.88rem;padding:13px 8px}}
+.addon-sec{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:.82rem;font-weight:700;color:var(--navy);padding:.5rem .2rem .2rem;display:flex;align-items:center;gap:.6rem;margin-top:.2rem}
+.addon-sec::after{content:'';flex:1;height:1px;background:var(--line)}
+.addon-sec.canone{color:var(--red)}
+.addon-sec.canone::after{background:#f3c9c6}
+.addon-incl{text-align:center;font-size:.83rem;font-weight:700;color:var(--red);background:#fff5f4;border:1px solid #f3c9c6;border-radius:999px;padding:.5rem}
+
+.addon-card.manut{border-color:var(--red);background:#fff8f7}
+.addon-card.manut h4{color:var(--red)}
+/* ===== MODALE RIEPILOGO STUDIO DIGITAL ===== */
+.sdi-ov{position:fixed;inset:0;background:rgba(15,28,77,.55);z-index:100;opacity:0;visibility:hidden;transition:.2s}
+.sdi-ov.open{opacity:1;visibility:visible}
+.sdi-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-46%);width:min(420px,92vw);max-height:86vh;overflow:auto;background:#fff;border-radius:16px;z-index:101;box-shadow:0 40px 90px -20px rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:.22s}
+.sdi-modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%)}
+.sdi-m-head{position:relative;background:#14235f;color:#fff;padding:1.4rem 1.5rem;border-bottom:3px solid #B8966A}
+.sdi-brand{font-family:'Barlow Condensed',sans-serif;font-size:1.65rem;font-weight:700;line-height:1}
+.sdi-brand span{color:#B8966A}
+.sdi-sub{font-size:.82rem;color:#cdd6f2;margin-top:.2rem}
+.sdi-x{position:absolute;top:.9rem;right:.9rem;background:rgba(255,255,255,.15);border:0;color:#fff;width:30px;height:30px;border-radius:50%;font-size:1.2rem;line-height:1;cursor:pointer}
+.sdi-m-body{padding:1.2rem 1.5rem}
+.sdi-m-body h4{font-family:'Barlow Condensed',sans-serif;color:var(--navy);font-size:1.15rem;margin-bottom:.7rem}
+.sdi-list{list-style:none;display:grid;gap:.5rem}
+.sdi-list li{font-size:.92rem;color:var(--ink);padding-left:1.5rem;position:relative}
+.sdi-list li::before{content:'✓';position:absolute;left:0;color:var(--red);font-weight:700}
+.sdi-empty{font-size:.9rem;color:var(--muted)}
+.sdi-m-foot{border-top:1px solid var(--line);padding:1.1rem 1.5rem;background:var(--bg-soft);border-radius:0 0 16px 16px}
+.sdi-m-foot .lbl{font-size:.8rem;color:var(--muted);margin-bottom:.5rem}
+.sdi-m-foot a{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;color:#14235f;font-size:1rem;margin-bottom:.35rem}
+.sdi-m-foot a svg{width:17px;height:17px;fill:var(--red)}
+
+</style>
+</head>
+<body>
+<div class="demo-ribbon">Demo</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Viale Riviera Berica 341, Vicenza</a>
+    </div>
+    <div class="tb-right">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 1.6.9 3.4 2 5 1.4 2 3.6 4.4 5 6 1.4-1.6 3.6-4 5-6 1.1-1.6 2-3.4 2-5a7 7 0 00-7-7z"/></svg> Lun–Ven 8:00–18:00</a>
+      <a href="tel:0444240370"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg> 0444 240370</a>
+      <a href="mailto:info@atcgas.it"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6.5V8l8 4.5L20 8V6.5L12 11z"/></svg> info@atcgas.it</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="logo"><span class="atc">AT</span><span class="flame">C</span><span class="gas"><span>GAS</span></span></span>
+      <small>Centro Assistenza Autorizzato</small>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#servizi">Servizi</a>
+      <a href="#perche">Perché noi</a>
+      <a href="#marchi">Marchi</a>
+      <a href="#azienda">Azienda</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:0444240370" class="nav-phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>0444 240370</a>
+      <a href="#contatti" class="btn btn-red">Richiedi assistenza</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Assistenza caldaie a Vicenza dal 1998</span>
+      <h1>La tua caldaia in <span>mani sicure</span></h1>
+      <p>A.T.C. Gas è il Centro Assistenza Autorizzato <strong>BAXI</strong> e <strong>Brötje</strong> di Vicenza. Assistenza, manutenzione e installazione di caldaie e impianti termici, con tecnici certificati e interventi rapidi.</p>
+      <div class="hero-cta">
+        <a href="#contatti" class="btn btn-red">Prenota un intervento</a>
+        <a href="tel:0444240370" class="btn btn-ghost"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>Chiama ora</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>25+</b><small>Anni di esperienza</small></div>
+        <div><b>10.000+</b><small>Interventi eseguiti</small></div>
+        <div><b>2</b><small>Marchi ufficiali autorizzati</small></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Richiesta rapida</h3>
+      <p>Compila e ti richiamiamo per fissare l'intervento.</p>
+      <form class="mini-form" onsubmit="return demoSubmit(event)">
+        <input type="text" placeholder="Nome e cognome" required>
+        <input type="tel" placeholder="Telefono" required>
+        <select required>
+          <option value="">Di cosa hai bisogno?</option>
+          <option>Riparazione / guasto</option>
+          <option>Manutenzione / controllo fumi</option>
+          <option>Nuova caldaia / preventivo</option>
+        </select>
+        <button type="submit" class="btn btn-red">Invia richiesta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+<section class="section" id="servizi">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="eyebrow">I nostri servizi</span>
+      <h2>Tutto per la tua caldaia, in un unico centro</h2>
+      <p class="lead">Dall'emergenza alla manutenzione programmata fino alla sostituzione dell'impianto: un solo interlocutore di fiducia per la tua caldaia.</p>
+    </div>
+    <div class="serv-grid">
+
+      <article class="serv">
+        <div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=70')">
+          <div class="serv-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.2 5.2L3 18l3 3 6.5-6.5a4 4 0 005.2-5.2l-2.5 2.5-2.1-.4-.4-2.1z"/></svg></div>
+        </div>
+        <div class="serv-body">
+          <h3>Assistenza e riparazione</h3>
+          <p>Caldaia che non parte, non scalda o va in blocco? Interveniamo velocemente con ricambi originali.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Diagnosi e riparazione guasti</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Ricambi originali BAXI e Brötje</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Interventi rapidi in tutta la provincia</li>
+          </ul>
+          <a href="#contatti" class="serv-link">Richiedi intervento <svg viewBox="0 0 24 24"><path d="M4 11h12l-5-5 1.4-1.4L20 12l-7.6 7.4L11 18l5-5H4z"/></svg></a>
+        </div>
+      </article>
+
+      <article class="serv">
+        <div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=70')">
+          <div class="serv-ico"><svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 1112 8.5a3.5 3.5 0 010 7zm7.4-2.5l2-1.6-2-3.4-2.4 1a7.4 7.4 0 00-1.7-1l-.4-2.5H10l-.4 2.5c-.6.2-1.2.6-1.7 1l-2.4-1-2 3.4 2 1.6a7.6 7.6 0 000 2l-2 1.6 2 3.4 2.4-1c.5.4 1.1.7 1.7 1l.4 2.5h4l.4-2.5c.6-.3 1.2-.6 1.7-1l2.4 1 2-3.4-2-1.6a7.6 7.6 0 000-2z"/></svg></div>
+        </div>
+        <div class="serv-body">
+          <h3>Manutenzione e controllo fumi</h3>
+          <p>Manutenzione periodica e analisi di combustione per una caldaia sicura, efficiente e a norma di legge.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Manutenzione ordinaria e bollino</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Controllo fumi e rilascio rapportino</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Contratti di manutenzione su misura</li>
+          </ul>
+          <a href="#contatti" class="serv-link">Prenota la manutenzione <svg viewBox="0 0 24 24"><path d="M4 11h12l-5-5 1.4-1.4L20 12l-7.6 7.4L11 18l5-5H4z"/></svg></a>
+        </div>
+      </article>
+
+      <article class="serv">
+        <div class="serv-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=70')">
+          <div class="serv-ico"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12h-6v-7H9v7z"/></svg></div>
+        </div>
+        <div class="serv-body">
+          <h3>Vendita e installazione</h3>
+          <p>Sostituzione della vecchia caldaia con modelli a condensazione ad alta efficienza, con accesso alle detrazioni fiscali.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Caldaie a condensazione BAXI e Brötje</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Sopralluogo e preventivo gratuito</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Supporto pratiche e detrazioni fiscali</li>
+          </ul>
+          <a href="#contatti" class="serv-link">Chiedi un preventivo <svg viewBox="0 0 24 24"><path d="M4 11h12l-5-5 1.4-1.4L20 12l-7.6 7.4L11 18l5-5H4z"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="perche">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="eyebrow">Perché scegliere ATC Gas</span>
+      <h2>Un centro assistenza di cui fidarsi</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V5l-9-4zm-1 15l-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10z"/></svg></div><div><h3>Centro autorizzato</h3><p>Tecnici certificati e riconosciuti ufficialmente da BAXI e Brötje.</p></div></div>
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.4l4 2.3-1 1.7-5-2.9V7h2z"/></svg></div><div><h3>Interventi rapidi</h3><p>Rispondiamo in tempi brevi, soprattutto quando la caldaia si ferma.</p></div></div>
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M20 7h-4V5a3 3 0 00-3-3h-2a3 3 0 00-3 3v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zm-9-2a1 1 0 011-1h2a1 1 0 011 1v2h-4z"/></svg></div><div><h3>Ricambi originali</h3><p>Solo componenti originali per garanzia e durata dell'impianto.</p></div></div>
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M3 13h2l3 6 4-14 3 8h5v2h-6l-2-5-4 13-4-8H3z"/></svg></div><div><h3>Sicurezza a norma</h3><p>Controllo fumi e documentazione in regola con la normativa vigente.</p></div></div>
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M12 1l3 5 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 7l6-1z"/></svg></div><div><h3>Clienti soddisfatti</h3><p>Migliaia di famiglie e aziende del vicentino si affidano a noi.</p></div></div>
+      <div class="why-card"><div class="why-ico"><svg viewBox="0 0 24 24"><path d="M7 15h10v2H7zm0-4h10v2H7zm0-4h7v2H7zm12-4H5a2 2 0 00-2 2v16l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg></div><div><h3>Preventivi chiari</h3><p>Costi trasparenti concordati prima dell'intervento, senza sorprese.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands" id="marchi">
+  <div class="wrap">
+    <div class="bt"><small>Centro Assistenza</small><b>Autorizzato</b></div>
+    <div class="brand-badge badge-baxi">BAXI</div>
+    <div class="brand-badge badge-brotje"><span class="dot"></span>BRÖTJE</div>
+    <div class="bt"><small>Ricambi</small><b>Originali garantiti</b></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="azienda">
+  <div class="wrap">
+    <div class="about-img">
+      <div class="exp"><b>25+</b><small>anni al tuo fianco</small></div>
+    </div>
+    <div>
+      <span class="eyebrow">Chi siamo</span>
+      <h2>Professionisti del calore a Vicenza</h2>
+      <p>A.T.C. Gas S.r.l. si occupa da oltre vent'anni di assistenza, manutenzione e installazione di caldaie e impianti termici a Vicenza e provincia. La nostra squadra di tecnici specializzati è Centro Assistenza Autorizzato per i marchi BAXI e Brötje.</p>
+      <p>Lavoriamo con serietà e competenza per garantire ai nostri clienti — privati, condomini e aziende — impianti sicuri, efficienti e sempre a norma, con un rapporto diretto e di fiducia.</p>
+      <div class="stats">
+        <div class="stat"><b>25+</b><small>anni di attività</small></div>
+        <div class="stat"><b>10k+</b><small>interventi</small></div>
+        <div class="stat"><b>2</b><small>marchi ufficiali</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="eyebrow" style="color:#ffd0cb">Dicono di noi</span>
+      <h2>La fiducia dei nostri clienti</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>"Caldaia in blocco di sabato, mi hanno risposto subito e risolto in giornata. Tecnici preparati e gentili."</p><div class="who">Marco B.<small>Vicenza</small></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Da anni faccio la manutenzione con loro. Puntuali, precisi e con prezzi onesti. Consigliatissimi."</p><div class="who">Laura T.<small>Altavilla Vicentina</small></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Ho sostituito la vecchia caldaia con una nuova a condensazione. Preventivo chiaro e lavoro impeccabile."</p><div class="who">Giuseppe M.<small>Creazzo</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contatti">
+  <div class="wrap">
+    <div class="head-center">
+      <span class="eyebrow">Contatti</span>
+      <h2>Richiedi assistenza o un preventivo</h2>
+      <p class="lead">Scrivici o chiamaci: ti rispondiamo e fissiamo insieme l'intervento più adatto.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="form" onsubmit="return demoSubmit(event)">
+        <div class="row">
+          <div><label>Nome e cognome</label><input type="text" required></div>
+          <div><label>Telefono</label><input type="tel" required></div>
+        </div>
+        <div class="row">
+          <div><label>Email</label><input type="email"></div>
+          <div><label>Tipo di richiesta</label>
+            <select required>
+              <option value="">Seleziona…</option>
+              <option>Riparazione / guasto</option>
+              <option>Manutenzione / controllo fumi</option>
+              <option>Nuova caldaia / preventivo</option>
+              <option>Altro</option>
+            </select>
+          </div>
+        </div>
+        <div><label>Messaggio</label><textarea placeholder="Descrivi il problema o la richiesta…"></textarea></div>
+        <button type="submit" class="btn btn-red">Invia richiesta</button>
+        <small style="color:var(--muted);font-size:.8rem">Inviando accetti il trattamento dei dati secondo la Privacy Policy.</small>
+      </form>
+      <div class="contact-info">
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></div><div><h4>Dove siamo</h4><p>Viale Riviera Berica, 341<br>36100 Vicenza (VI)</p></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg></div><div><h4>Telefono</h4><p><a href="tel:0444240370">0444 240370</a></p></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6.5V8l8 4.5L20 8V6.5L12 11z"/></svg></div><div><h4>Email</h4><p><a href="mailto:info@atcgas.it">info@atcgas.it</a></p></div></div>
+        <div class="map">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=Viale%20Riviera%20Berica%20341%20Vicenza&output=embed" title="Mappa ATC Gas Vicenza"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo">
+        <span class="logo"><span class="atc">AT</span><span class="flame">C</span><span class="gas" style="color:#fff"><span>GAS</span></span></span>
+        <p>Centro Assistenza Autorizzato BAXI e Brötje. Assistenza, manutenzione e installazione caldaie a Vicenza e provincia.</p>
+      </div>
+      <div>
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="#servizi">Assistenza e riparazione</a></li>
+          <li><a href="#servizi">Manutenzione e controllo fumi</a></li>
+          <li><a href="#servizi">Vendita e installazione</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Azienda</h4>
+        <ul>
+          <li><a href="#azienda">Chi siamo</a></li>
+          <li><a href="#perche">Perché noi</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li>Viale Riviera Berica 341, Vicenza</li>
+          <li><a href="tel:0444240370">0444 240370</a></li>
+          <li><a href="mailto:info@atcgas.it">info@atcgas.it</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 A.T.C. Gas S.r.l. — P.IVA 0000000000 · <a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+      <span class="credit">Sito dimostrativo realizzato da Studio Digital Italia</span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:0444240370" class="fab" aria-label="Chiama ATC Gas"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg></a>
+
+<script>
+// mobile menu
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger&&burger.addEventListener('click',function(){menu.classList.toggle('open')});
+menu&&menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+// demo form
+function demoSubmit(e){e.preventDefault();alert('Grazie! Questa è una demo: nel sito reale la richiesta verrebbe inviata ad ATC Gas.');e.target.reset();return false;}
+
+/* ===== PROTEZIONE DEMO ===== */
+(function(){
+  var ATC={protect:true};
+  if(!ATC.protect)return;
+  document.addEventListener('contextmenu',function(e){e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('selectstart',function(e){var t=e.target.tagName;if(t!=='INPUT'&&t!=='TEXTAREA')e.preventDefault();});
+  document.addEventListener('copy',function(e){e.preventDefault();});
+  document.addEventListener('keydown',function(e){
+    if(e.keyCode===123){e.preventDefault();return false;} // F12
+    if(e.ctrlKey&&e.shiftKey&&[73,74,67].indexOf(e.keyCode)>-1){e.preventDefault();return false;} // Ctrl+Shift+I/J/C
+    if(e.ctrlKey&&[85,83].indexOf(e.keyCode)>-1){e.preventDefault();return false;} // Ctrl+U / Ctrl+S
+  });
+  console.log('%cDemo riservata — Studio Digital Italia','color:#e4342b;font-size:16px;font-weight:bold');
+})();
+
+/* ============ CHATBOT ASSISTENTE ATC GAS ============ */
+(function(){
+  var TEL='0444240370';
+  var L={ass:'#servizi',man:'#servizi',inst:'#servizi',con:'#contatti',req:'#contatti'};
+  var wrap=document.createElement('div');wrap.className='atc-chat';
+  wrap.innerHTML=''
+   +'<button class="atc-launch" id="atcLaunch" aria-label="Assistente virtuale"><span><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zM7 9h10v2H7zm0 4h7v2H7z"/></svg><span class="dot"></span></span><span>Assistente</span></button>'
+   +'<div class="atc-panel" id="atcPanel">'
+   +'<div class="atc-h"><div class="av"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v1a5 5 0 01-10 0V7a5 5 0 015-5zm-7 19a7 7 0 0114 0v1H5z"/></svg></div>'
+   +'<div><b>Assistente ATC Gas</b><small>Online · ti guido nel sito</small></div><button class="x" id="atcX" aria-label="Chiudi">&times;</button></div>'
+   +'<div class="atc-body" id="atcBody"></div>'
+   +'<div class="atc-foot"><input id="atcInput" placeholder="Scrivi un messaggio…" autocomplete="off"><button id="atcSend" aria-label="Invia"><svg viewBox="0 0 24 24"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg></button></div>'
+   +'</div>';
+  document.body.appendChild(wrap);
+  var panel=document.getElementById('atcPanel'),body=document.getElementById('atcBody'),input=document.getElementById('atcInput');
+  var opened=false;
+  function scroll(){body.scrollTop=body.scrollHeight;}
+  function user(t){var d=document.createElement('div');d.className='atc-msg atc-user';d.textContent=t;body.appendChild(d);scroll();}
+  function bot(html,chips){
+    var d=document.createElement('div');d.className='atc-msg atc-bot';d.innerHTML=html;body.appendChild(d);
+    if(chips&&chips.length){var c=document.createElement('div');c.className='atc-chips';
+      chips.forEach(function(ch){var b=document.createElement('button');b.className='atc-chip';b.textContent=ch.l;b.onclick=function(){chip(ch);};c.appendChild(b);});
+      body.appendChild(c);}
+    scroll();
+  }
+  function chip(ch){
+    if(ch.t){topic(ch.t,ch.l);}
+    else if(ch.href){user(ch.l);
+      if(ch.href.charAt(0)==='#'){var el=document.querySelector(ch.href);if(el)el.scrollIntoView({behavior:'smooth'});setTimeout(function(){bot('Ti ho portato alla sezione giusta 👍 Posso aiutarti con altro?');},300);}
+      else{bot('Apro la pagina… ⏳');setTimeout(function(){location.href=ch.href;},350);}
+    }
+    else if(ch.tel){user(ch.l);location.href='tel:'+TEL;}
+    else if(ch.mail){user(ch.l);location.href='mailto:info@atcgas.it';}
+  }
+  var MAIN=[{l:'🔧 Assistenza / guasto',t:'ass'},{l:'🛠️ Manutenzione',t:'man'},{l:'🔥 Nuova caldaia',t:'inst'},{l:'📍 Dove siamo e orari',t:'info'},{l:'📞 Contatti',t:'con'}];
+  function topic(t,label){
+    if(label)user(label);
+    setTimeout(function(){
+      if(t==='ass')bot('Se la caldaia è in blocco o non scalda, interveniamo rapidamente con ricambi originali BAXI e Brötje. 🔧',[{l:'📞 Chiama 0444 240370',tel:1},{l:"Vai ai servizi",href:L.ass},{l:'Richiedi intervento',href:L.req}]);
+      else if(t==='man')bot('Ci occupiamo di manutenzione periodica, controllo fumi e bollino: la tua caldaia sicura, efficiente e a norma. 🛠️',[{l:'Vedi i servizi',href:L.man},{l:'Prenota',href:L.req},{l:'📞 Chiama',tel:1}]);
+      else if(t==='inst')bot('Sostituiamo la vecchia caldaia con modelli a condensazione ad alta efficienza: sopralluogo e preventivo gratuiti, con supporto alle detrazioni fiscali. 🔥',[{l:'Vedi i servizi',href:L.inst},{l:'Chiedi preventivo',href:L.req}]);
+      else if(t==='info')bot('📍 Viale Riviera Berica 341, Vicenza\n🕒 Lun–Ven 8:00–18:00 · Sab 8:00–12:00',[{l:'Vai ai Contatti',href:L.con},{l:'📞 Chiama',tel:1}]);
+      else if(t==='con')bot('Puoi contattarci così:\n📞 0444 240370\n✉️ info@atcgas.it',[{l:'📞 Chiama ora',tel:1},{l:'✉️ Email',mail:1},{l:'Modulo richiesta',href:L.req}]);
+      else if(t==='cost')bot('Il costo dipende dal tipo di intervento, ma il preventivo è sempre concordato prima, senza sorprese. Vuoi parlarne con noi?',[{l:'📞 Chiama',tel:1},{l:'Richiedi preventivo',href:L.req}]);
+      else bot('Posso aiutarti con: assistenza guasti, manutenzione, nuova caldaia, orari o contatti. 👇',MAIN);
+    },260);
+  }
+  function answer(txt){
+    var s=txt.toLowerCase();
+    if(/guast|blocc|non scald|acqua cald|ripar|perde|perdit|pression|accend/.test(s))return topic('ass');
+    if(/manuten|fumi|bollino|revis|controllo/.test(s))return topic('man');
+    if(/installa|nuova caldaia|sostitu|condensazion|cambiar/.test(s))return topic('inst');
+    if(/preventiv/.test(s))return topic('inst');
+    if(/prezz|cost|quanto|tariff/.test(s))return topic('cost');
+    if(/dove|indirizz|orari|apert|quando|sede|mappa/.test(s))return topic('info');
+    if(/contatt|telefon|numero|chiam|email|mail|scriv/.test(s))return topic('con');
+    if(/grazie/.test(s))return setTimeout(function(){bot('Di nulla! 😊 Sono qui se ti serve altro.',MAIN);},260);
+    if(/ciao|salve|buongiorno|buonasera|ehi/.test(s))return setTimeout(function(){bot('Ciao! 👋 Come posso aiutarti?',MAIN);},260);
+    setTimeout(function(){bot('Non sono sicuro di aver capito 🤔. Posso aiutarti con questi temi:',MAIN);},260);
+  }
+  function send(){var v=input.value.trim();if(!v)return;user(v);input.value='';answer(v);}
+  document.getElementById('atcSend').onclick=send;
+  input.addEventListener('keydown',function(e){if(e.key==='Enter')send();});
+  document.getElementById('atcLaunch').onclick=function(){panel.classList.toggle('open');if(!opened){opened=true;setTimeout(function(){bot("Ciao! 👋 Sono l'assistente virtuale di ATC Gas. Come posso aiutarti?",MAIN);},220);}};
+  document.getElementById('atcX').onclick=function(){panel.classList.remove('open');};
+})();
+</script>
+
+<!-- ===== PANNELLO EXTRA / ADD-ON ===== -->
+<button class="addon-tab" id="addonTab" aria-label="Extra per il sito"><span class="pill" id="adPill"></span><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg> Potenzia il sito</button>
+<div class="addon-ov" id="addonOv"></div>
+<aside class="addon-panel" id="addonPanel" aria-label="Extra opzionali per il sito">
+  <div class="addon-head">
+    <button class="x" id="addonX" aria-label="Chiudi">&times;</button>
+    <span class="eye">Extra e servizi</span>
+    <h3>Potenzia il tuo sito</h3>
+    <p>Componenti aggiuntivi che puoi inserire nel sito base, con il motivo per cui aiutano la tua attività.</p>
+  </div>
+  <div class="addon-list">
+
+    <div class="addon-sec">Extra su richiesta</div>
+
+    <div class="addon-card" data-name="Pagine dedicate per servizio">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4zm0 6h10v10H4zm12 0h4v4h-4zm0 6h4v4h-4z"/></svg></div><h4>Pagine dedicate per servizio</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> una pagina per Assistenza, Manutenzione e Installazione moltiplica le parole chiave e ti fa comparire su più ricerche locali di Google (passi da vetrina a sito multipagina completo).</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Google Business + Maps">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></div><h4>Google Business + Maps</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> comparire nella mappa e nel riquadro Google è spesso il primo posto dove i clienti ti cercano quando hanno la caldaia guasta.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Recensioni Google in tempo reale">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1z"/></svg></div><h4>Recensioni Google live</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> mostrare le recensioni vere e aggiornate dei clienti è la prova che convince chi ancora non ti conosce a sceglierti.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Preventivatore nuova caldaia">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm0 4v2h10V6zm0 4v2h4v-2zm6 0v2h4v-2z"/></svg></div><h4>Preventivatore caldaia</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> chi valuta la sostituzione della caldaia compila i dati e ti arriva un contatto già interessato, pronto per il preventivo.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Blog / Consigli utili">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v3H4zm0 5h16v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg></div><h4>Blog / Consigli utili</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> articoli come "ogni quanto fare la manutenzione" o "bonus caldaia" portano visite da Google e ti fanno percepire come l'esperto della zona.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Pagina Lavora con noi">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z"/></svg></div><h4>Pagina "Lavora con noi"</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> raccogli candidature di tecnici direttamente dal sito, utile quando cerchi personale senza passare da annunci a pagamento.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Versione multilingua">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-2.5a15 15 0 00-1.1-3.2A8 8 0 0118.9 8zM12 4c.7 1 1.3 2.4 1.7 4h-3.4C10.7 6.4 11.3 5 12 4zM4.3 14a8 8 0 010-4h2.9a17 17 0 000 4zm.8 2h2.5c.3 1.2.7 2.3 1.1 3.2A8 8 0 015.1 16zm2.5-8H5.1a8 8 0 013.6-3.2C8.3 5.7 7.9 6.8 7.6 8zM12 20c-.7-1-1.3-2.4-1.7-4h3.4c-.4 1.6-1 3-1.7 4zm2.4-6H9.6a15 15 0 010-4h4.8a15 15 0 010 4zm.5 5.2c.4-.9.8-2 1.1-3.2h2.5a8 8 0 01-3.6 3.2zM16.8 14a17 17 0 000-4h2.9a8 8 0 010 4z"/></svg></div><h4>Versione multilingua</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> intercetti i clienti stranieri della zona offrendo il sito anche in inglese (o altra lingua).</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Assistente AI evoluto">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zM7 9h10v2H7zm0 4h7v2H7z"/></svg></div><h4>Assistente AI evoluto</h4><span class="price">su richiesta</span></div>
+      <p class="why"><b>Perché:</b> un chatbot che risponde a domande libere (non solo pulsanti), come un vero addetto disponibile 24 ore su 24. Richiede un piccolo servizio dedicato.</p>
+      <button class="addon-add">+ Aggiungi al sito</button>
+    </div>
+
+    <div class="addon-sec canone">Manutenzione sito</div>
+
+    <div class="addon-card manut" data-name="Manutenzione mensile del sito">
+      <div class="ac-top"><div class="ac-ico" style="background:linear-gradient(135deg,var(--red),var(--red-d))"><svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 1112 8.5a3.5 3.5 0 010 7zm7.4-2.5l2-1.6-2-3.4-2.4 1a7.4 7.4 0 00-1.7-1l-.4-2.5H10l-.4 2.5c-.6.2-1.2.6-1.7 1l-2.4-1-2 3.4 2 1.6a7.6 7.6 0 000 2l-2 1.6 2 3.4 2.4-1c.5.4 1.1.7 1.7 1l.4 2.5h4l.4-2.5c.6-.3 1.2-.6 1.7-1l2.4 1 2-3.4-2-1.6a7.6 7.6 0 000-2z"/></svg></div><h4>Manutenzione mensile del sito</h4><span class="price">opzionale</span></div>
+      <p class="why"><b>Cosa include:</b> aggiornamenti tecnici, sicurezza e backup, monitoraggio, supporto e le voci qui sotto (prenotazioni, WhatsApp, dominio e hosting). Gratis fino a dicembre 2026.</p>
+      <button class="addon-add" data-on="✓ Manutenzione aggiunta" data-off="+ Aggiungi manutenzione sito">+ Aggiungi manutenzione sito</button>
+    </div>
+
+    <div class="addon-card" data-name="Prenotazione appuntamenti online">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2H9V2zm12 8H5v10h14zM7 12h5v5H7z"/></svg></div><h4>Prenotazione online</h4><span class="price">incluso</span></div>
+      <p class="why"><b>Perché:</b> il cliente prenota l'intervento da solo, 24 ore su 24, e tu ricevi meno telefonate e ordini già organizzati (gestionale incluso nella manutenzione con prenotazioni).</p>
+      <div class="addon-incl">✓ Incluso nella manutenzione</div>
+    </div>
+
+    <div class="addon-card" data-name="Pulsante WhatsApp diretto">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0112 4zm4.3 10.6c-.2.5-1.1 1-1.6 1s-1.2.2-3.3-.9-3.4-3-3.5-3.2-1-1.3-1-2.4.6-1.6.8-1.8.4-.3.6-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6s.6 1 1.3 1.6c.9.8 1.6 1 1.9 1.2s.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.3s0 .6-.1 1z"/></svg></div><h4>Pulsante WhatsApp</h4><span class="price">incluso</span></div>
+      <p class="why"><b>Perché:</b> molti clienti preferiscono scrivere invece di chiamare: abbassi la barriera e ricevi più richieste di contatto.</p>
+      <div class="addon-incl">✓ Incluso nella manutenzione</div>
+    </div>
+
+    <div class="addon-card" data-name="Dominio e hosting">
+      <div class="ac-top"><div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm0 8h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4a1 1 0 011-1zm3-5.5a1 1 0 100 2 1 1 0 000-2zm0 8a1 1 0 100 2 1 1 0 000-2z"/></svg></div><h4>Dominio e hosting</h4><span class="price">incluso</span></div>
+      <p class="why"><b>Perché:</b> il tuo indirizzo .it, lo spazio dove vive il sito e il certificato di sicurezza (SSL) sono sempre compresi nella manutenzione: nessun costo separato da gestire.</p>
+      <div class="addon-incl">✓ Incluso nella manutenzione</div>
+    </div>
+
+  </div>
+  <div class="addon-foot">
+    <div class="cnt">Extra selezionati: <b id="adCount">0</b></div>
+    <a href="#contatti" class="btn btn-red addon-cta">Chiedi info sugli extra</a>
+  </div>
+</aside>
+
+<!-- MODALE RIEPILOGO -->
+<div class="sdi-ov" id="sdiOv"></div>
+<div class="sdi-modal" id="sdiModal" role="dialog" aria-label="Riepilogo richiesta">
+  <div class="sdi-m-head">
+    <button class="sdi-x" id="sdiX" aria-label="Chiudi">&times;</button>
+    <div class="sdi-brand">Studio <span>Digital Italia</span></div>
+    <div class="sdi-sub">Riepilogo della tua richiesta</div>
+  </div>
+  <div class="sdi-m-body">
+    <h4>Elementi selezionati</h4>
+    <ul class="sdi-list" id="sdiList"></ul>
+    <p class="sdi-empty" id="sdiEmpty">Non hai ancora selezionato nessun elemento. Chiudi questa finestra, scegli gli extra o la manutenzione che ti interessano e riapri il riepilogo.</p>
+  </div>
+  <div class="sdi-m-foot">
+    <div class="lbl">Per informazioni e preventivo, contattaci:</div>
+    <a href="mailto:lorenzo@studiodigitalitalia.it"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6.5V8l8 4.5L20 8V6.5L12 11z"/></svg>lorenzo@studiodigitalitalia.it</a>
+    <a href="tel:3515854466"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>351 585 4466</a>
+  </div>
+</div>
+<script>
+(function(){
+  var tab=document.getElementById('addonTab'),ov=document.getElementById('addonOv'),pan=document.getElementById('addonPanel');
+  function open(){pan.classList.add('open');ov.classList.add('open');}
+  function close(){pan.classList.remove('open');ov.classList.remove('open');}
+  tab.addEventListener('click',open);
+  ov.addEventListener('click',close);
+  document.getElementById('addonX').addEventListener('click',close);
+  var cnt=0,pill=document.getElementById('adPill');
+  document.querySelectorAll('.addon-add').forEach(function(b){
+    b.addEventListener('click',function(){
+      var card=b.closest('.addon-card');
+      card.classList.toggle('sel');
+      var on=b.getAttribute('data-on')||'✓ Aggiunto', off=b.getAttribute('data-off')||'+ Aggiungi al sito';
+      if(card.classList.contains('sel')){b.textContent=on;cnt++;}
+      else{b.textContent=off;cnt--;}
+      document.getElementById('adCount').textContent=cnt;
+      if(cnt>0){pill.textContent=cnt;pill.classList.add('show');}else{pill.classList.remove('show');}
+    });
+  });
+  // riepilogo modale
+  var modal=document.getElementById('sdiModal'),mov=document.getElementById('sdiOv');
+  function closeModal(){modal.classList.remove('open');mov.classList.remove('open');}
+  document.querySelector('.addon-cta').addEventListener('click',function(e){
+    e.preventDefault();
+    var sel=document.querySelectorAll('.addon-card.sel');
+    var ul=document.getElementById('sdiList');ul.innerHTML='';
+    document.getElementById('sdiEmpty').style.display=sel.length?'none':'block';
+    sel.forEach(function(c){var li=document.createElement('li');li.textContent=c.getAttribute('data-name');ul.appendChild(li);});
+    modal.classList.add('open');mov.classList.add('open');
+  });
+  document.getElementById('sdiX').addEventListener('click',closeModal);
+  mov.addEventListener('click',closeModal);
+})();
+</script>
+
+</body>
+</html>

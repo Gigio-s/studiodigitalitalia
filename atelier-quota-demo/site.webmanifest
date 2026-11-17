@@ -1,0 +1,14 @@
+{
+  "name": "Atelier Quota",
+  "short_name": "Atelier Quota",
+  "description": "Studio di architettura e interni a Vicenza (demo).",
+  "lang": "it-IT",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f2efe8",
+  "theme_color": "#f2efe8",
+  "icons": [
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

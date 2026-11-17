@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/js/gate.js?v=1"></script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Journal — Guide e articoli su ristrutturazione e progetto | Atelier Quota</title>
+  <meta name="description" content="Articoli utili prima di iniziare un progetto: come prepararsi a una ristrutturazione, tempi, studio di fattibilità, scelta dell'architetto e budget. A cura di Atelier Quota, Vicenza.">
+  <link rel="canonical" href="https://www.atelierquota.example/journal.html">
+  <meta property="og:type" content="website"><meta property="og:title" content="Journal — Atelier Quota">
+  <meta property="og:description" content="Guide chiare per orientarsi prima di un progetto.">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-nav="journal" data-base="">
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <header id="site-header"></header>
+  <main id="main">
+    <nav class="breadcrumb wrap" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Journal</li></ol></nav>
+    <header class="page-hero wrap">
+      <span class="eyebrow">Journal</span>
+      <h1>Capire prima di decidere.</h1>
+      <p class="lead">Guide chiare per orientarsi prima di iniziare: cosa preparare, quanto tempo serve, come costruire un budget realistico. Contenuti informativi, non consulenza definitiva.</p>
+    </header>
+    <section class="section wrap">
+      <div class="callout" style="margin-bottom:2.5rem"><div class="grid cols-2" style="align-items:center;gap:1.5rem">
+        <div><span class="demo-badge">Risorsa gratuita</span><h2 class="serif" style="font-size:var(--step-2);margin:.5rem 0">Guida alla ristrutturazione</h2>
+          <p class="muted">Una guida completa e stampabile: obiettivi, documenti, budget, tempistiche, cantiere e materiali.</p></div>
+        <div class="btn-row"><a class="btn btn--primary" href="guida-ristrutturazione.html">Apri la guida <span class="arrow">→</span></a></div>
+      </div></div>
+      <div id="journal-list" class="related-grid"></div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/data/articles-data.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",function(){
+    var el=document.getElementById("journal-list");
+    if(el&&window.AQ_ARTICLES)el.innerHTML=AQ_ARTICLES.map(function(a){
+      var d=new Date(a.date).toLocaleDateString("it-IT",{year:"numeric",month:"long",day:"numeric"});
+      return '<article class="project-card"><a href="articoli/'+a.slug+'.html">'+
+        '<div class="media ratio-3-2"><div class="ph tone-clay ratio-3-2" role="img" aria-label="'+AQ.esc(a.title)+'"><span class="ph-tag">Journal</span></div></div>'+
+        '<div class="pc-meta"><span>'+d+'</span><span>'+AQ.esc(a.readingTime)+'</span></div>'+
+        '<h3 style="font-size:var(--step-1)">'+AQ.esc(a.title)+'</h3>'+
+        '<p>'+AQ.esc(a.excerpt)+'</p><span class="link-arrow" style="margin-top:.75rem">Leggi <span aria-hidden="true">→</span></span></a></article>';}).join("");
+  });</script>
+</body>
+</html>

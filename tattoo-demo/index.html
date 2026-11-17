@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>NERO — Tattoo Studio · Demo Studio Digital Italia</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;overflow:hidden;background:#0d0d0d;
+    font-family:'Helvetica Neue',Arial,sans-serif;color:#fff;
+    overscroll-behavior:none;-webkit-tap-highlight-color:transparent;
+    user-select:none;-webkit-user-select:none;}
+  html.active-intro{cursor:none;}
+
+  #hero{position:relative;width:100vw;height:100dvh;height:100vh;overflow:hidden;touch-action:none;}
+
+  /* z1: scena SUCCESSIVA (sotto) — z2: scena CORRENTE su canvas (si gratta) */
+  #reveal{position:absolute;inset:0;z-index:1;background:#0d0d0d center/cover no-repeat;}
+  #cover{position:absolute;inset:0;z-index:2;touch-action:none;}
+  /* vignettatura unica sopra entrambe → look coerente */
+  #vignette{position:absolute;inset:0;z-index:3;pointer-events:none;
+    background:linear-gradient(90deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.28) 42%, transparent 66%),
+               linear-gradient(0deg, rgba(0,0,0,.55) 0%, transparent 34%);}
+
+  .claim{position:absolute;left:6vw;top:50%;transform:translateY(-50%);max-width:48%;z-index:4;}
+  .claim-inner{opacity:0;transform:translateY(18px);
+    transition:opacity .55s ease, transform .6s cubic-bezier(.22,.61,.36,1);}
+  .claim .kicker{font-size:.85rem;letter-spacing:.35em;text-transform:uppercase;opacity:.8;margin-bottom:14px;}
+  .claim h1{font-size:clamp(2.4rem,6.5vw,6rem);font-weight:900;line-height:.92;
+    letter-spacing:-.02em;text-transform:uppercase;text-shadow:0 6px 30px rgba(0,0,0,.7);}
+  .claim h1 span{color:#e63946;}
+  .claim p{margin-top:18px;font-size:clamp(1rem,1.6vw,1.3rem);opacity:.9;font-weight:300;max-width:32ch;}
+  .claim a{display:inline-block;margin-top:30px;background:#e63946;color:#fff;text-decoration:none;
+    padding:16px 34px;border-radius:40px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.85rem;cursor:pointer;}
+
+  #hint{position:absolute;right:6vw;top:50%;transform:translateY(-50%);z-index:4;
+    font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75;
+    text-align:center;pointer-events:none;transition:opacity .5s;max-width:22ch;}
+
+  #cur{position:fixed;top:0;left:0;z-index:6;width:120px;height:120px;margin:-60px 0 0 -60px;
+    border-radius:50%;border:2px solid rgba(255,255,255,.9);background:rgba(230,57,70,.10);
+    display:flex;align-items:center;justify-content:center;pointer-events:none;
+    font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-align:center;
+    color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.4);will-change:transform;}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;
+    justify-content:space-between;padding:26px 6vw;mix-blend-mode:difference;}
+  header .brand{font-weight:900;font-size:1.4rem;letter-spacing:.25em;}
+  header nav a{color:#fff;text-decoration:none;margin-left:28px;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;opacity:.85;}
+
+  .skip{position:fixed;bottom:26px;right:6vw;z-index:6;background:rgba(255,255,255,.15);color:#fff;
+    border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:40px;font-weight:700;
+    font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(4px);}
+  .dots{position:fixed;bottom:30px;left:6vw;z-index:6;display:flex;gap:10px;}
+  .dots span{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.35);transition:background .3s;}
+  .dots span.on{background:#e63946;}
+  .credit{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);z-index:6;font-size:.66rem;letter-spacing:.05em;opacity:.4;}
+  @media(max-width:768px){
+    .claim{max-width:88%;left:6vw;}
+    .claim h1{font-size:clamp(2.2rem,10vw,4rem);}
+    .claim p{font-size:1rem;max-width:26ch;}
+    header{padding:18px 6vw;}
+    header .brand{font-size:1.1rem;letter-spacing:.2em;}
+    header nav{display:none;}
+    #hint{right:auto;left:50%;top:auto;bottom:96px;transform:translateX(-50%);
+      font-size:.8rem;letter-spacing:.08em;}
+    .skip{bottom:20px;right:5vw;}
+    .dots{bottom:24px;left:5vw;}
+    .credit{font-size:.6rem;padding:0 10px;text-align:center;}
+  }
+  /* su touch il cursore-bolla non serve (sta sotto al dito) */
+  @media(pointer:coarse){ #cur{display:none;} html.active-intro{cursor:auto;} }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">NERO</div>
+    <nav><a href="#">Artisti</a><a href="#">Gallery</a><a href="#">Stili</a><a href="#">Contatti</a></nav>
+  </header>
+
+  <section id="hero">
+    <div id="reveal"></div>
+    <canvas id="cover"></canvas>
+    <div id="vignette"></div>
+    <div class="claim" id="claim"><div class="claim-inner" id="claimInner"></div></div>
+    <div id="hint">Passa il cursore<br>per scoprire</div>
+  </section>
+
+  <div id="cur">Spazzola!</div>
+  <div class="dots" id="dots"></div>
+  <button class="skip" id="skip">Salta intro</button>
+  <div class="credit">Demo · Studio Digital Italia · timing da marvis.com</div>
+
+<script>
+/* Parametri di feel presi dal codice reale di Marvis:
+   pennello 200/100px · soglia 0.45/0.55 · pausa 250ms · wipe 700ms · + HOLD per guardare la foto */
+const isMobile = matchMedia('(max-width:768px)').matches;
+const SIZE = isMobile ? 100 : 200;
+const COMPLETE_RATIO = isMobile ? 0.55 : 0.45;
+const CLEAR_DELAY = 120;   // ms: il wipe parte quasi subito dopo la soglia
+const HOLD = 1400;         // ms: pausa per leggere/guardare (il testo è già visibile)
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+const IMG='https://d8j0ntlcm91z4.cloudfront.net/user_3Fp93g3AABsPKODQxzIxBVAjWHa/';
+// Ogni scena si gratta per rivelare la successiva. L'ultima è l'arrivo (il "sito").
+const scenes=[
+  { file:'hf_20260813_104103_a16fa931-77a1-4ccb-837c-9be2cc00bb59.png', label:'Spazzola!',
+    html:`<div class="kicker">Nero · Vicenza</div><h1>La tua pelle,<br><span>la nostra arte</span></h1>
+          <p>Studio di tatuaggi custom. Fine-line, blackwork, realistico.</p>` },
+  { file:'hf_20260813_104106_db86aa9d-e503-4cbe-b91c-252ec2f594c4.png', label:'Ancora!',
+    html:`<div class="kicker">L'artigianato</div><h1>Ogni linea,<br><span>un dettaglio</span></h1>
+          <p>Progettiamo con te il disegno prima di toccare la pelle.</p>` },
+  { file:'hf_20260813_104103_066a41cf-d565-4b78-a204-6950fc3b1b16.png', label:'',
+    html:`<div class="kicker">Iniziamo</div><h1>Prendi<br><span>appuntamento</span></h1>
+          <p>Prima consulenza gratuita, in studio o online.</p><a href="#">Entra nel sito</a>`, final:true },
+];
+
+const canvas=document.getElementById('cover'), ctx=canvas.getContext('2d');
+const cur=document.getElementById('cur'), reveal=document.getElementById('reveal');
+const claim=document.getElementById('claim'), dotsEl=document.getElementById('dots');
+const claimInner=document.getElementById('claimInner');
+const hint=document.getElementById('hint');
+
+// --- cross-fade dei testi ---
+function hideClaim(){ claimInner.style.opacity='0'; claimInner.style.transform='translateY(-18px)'; }
+function setClaim(html){
+  claimInner.style.transition='none';
+  claimInner.style.opacity='0'; claimInner.style.transform='translateY(18px)';
+  claimInner.innerHTML=html;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    claimInner.style.transition='';
+    claimInner.style.opacity='1'; claimInner.style.transform='translateY(0)';
+  }));
+}
+let idx=0, busy=false, cw=0, ch=0, tick=0, last=null;
+let pointer={x:innerWidth/2,y:innerHeight/2,down:false};
+
+document.documentElement.classList.add('active-intro');
+
+// preload immagini
+const imgs = scenes.map(s=>{ const i=new Image(); i.src=IMG+s.file; return i; });
+scenes.forEach(()=>dotsEl.appendChild(document.createElement('span')));
+function paintDots(){[...dotsEl.children].forEach((d,i)=>d.classList.toggle('on',i===idx));}
+
+// maschera invisibile per misurare il grattato (evita il problema CORS del canvas con foto esterne)
+const MW=160, MH=96;
+const mask=document.createElement('canvas'); mask.width=MW; mask.height=MH;
+const mctx=mask.getContext('2d');
+function resetMask(){ mctx.globalCompositeOperation='source-over'; mctx.fillStyle='#000'; mctx.fillRect(0,0,MW,MH); }
+function fraction(){
+  const d=mctx.getImageData(0,0,MW,MH).data; let clear=0;
+  for(let i=3;i<d.length;i+=4) if(d[i]<128) clear++;
+  return clear/(MW*MH);
+}
+
+function drawCover(img){
+  ctx.globalCompositeOperation='source-over';
+  ctx.clearRect(0,0,cw,ch);
+  const iw=img.naturalWidth||1600, ih=img.naturalHeight||1000;
+  const ir=iw/ih, cr=cw/ch; let dw,dh;
+  if(ir>cr){ dh=ch; dw=ch*ir; } else { dw=cw; dh=cw/ir; }
+  ctx.drawImage(img,(cw-dw)/2,(ch-dh)/2,dw,dh);
+}
+function paintCurrent(){
+  const img=imgs[idx];
+  if(img.complete && img.naturalWidth) drawCover(img);
+  else img.onload=()=>{ if(idx<scenes.length) drawCover(imgs[idx]); };
+}
+
+const hero=document.getElementById('hero');
+function sizeCanvas(){
+  const nw=hero.clientWidth||innerWidth, nh=hero.clientHeight||innerHeight;
+  // no-op se la dimensione non è cambiata (evita di azzerare lo scratch quando la barra URL mobile appare/scompare)
+  if(Math.round(nw*dpr)===canvas.width && Math.round(nh*dpr)===canvas.height) return;
+  cw=nw; ch=nh;
+  canvas.width=Math.round(cw*dpr); canvas.height=Math.round(ch*dpr);
+  canvas.style.width=cw+'px'; canvas.style.height=ch+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  paintCurrent();
+}
+addEventListener('resize',sizeCanvas);
+addEventListener('orientationchange',()=>setTimeout(sizeCanvas,200));
+if(window.visualViewport) visualViewport.addEventListener('resize',sizeCanvas);
+
+// hint adatto al tipo di dispositivo
+if(matchMedia('(pointer:coarse)').matches) hint.innerHTML='Tocca e trascina<br>per scoprire';
+
+function loadLayer(i){
+  idx=i;
+  // sotto: la scena successiva (o l'ultima immagine se siamo alla fine)
+  const nextFile = scenes[i+1] ? scenes[i+1].file : scenes[i].file;
+  reveal.style.backgroundImage="url('"+IMG+nextFile+"')";
+  reveal.style.backgroundSize='cover'; reveal.style.backgroundPosition='center';
+  paintCurrent();                 // foto corrente sul canvas
+  setClaim(scenes[i].html);       // testo della scena corrente (fade-in)
+  cur.textContent=scenes[i].label||'';
+  paintDots(); resetMask(); last=null; tick=0; busy=false;
+}
+
+// erosione: display (foto) + maschera (misura)
+function erase(x,y){
+  ctx.globalCompositeOperation='destination-out';
+  ctx.lineCap='round'; ctx.lineJoin='round'; ctx.lineWidth=SIZE;
+  if(last){ ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(x,y); ctx.stroke(); }
+  ctx.beginPath(); ctx.arc(x,y,SIZE/2,0,Math.PI*2); ctx.fill();
+  // stessa erosione sulla maschera (scala ridotta)
+  const sx=MW/cw, sy=MH/ch, lw=SIZE*sx;
+  mctx.globalCompositeOperation='destination-out';
+  mctx.lineCap='round'; mctx.lineJoin='round'; mctx.lineWidth=lw;
+  if(last){ mctx.beginPath(); mctx.moveTo(last.x*sx,last.y*sy); mctx.lineTo(x*sx,y*sy); mctx.stroke(); }
+  mctx.beginPath(); mctx.arc(x*sx,y*sy,lw/2,0,Math.PI*2); mctx.fill();
+  last={x,y};
+}
+
+// wipe automatico: cerchio che si espande dal centro (come Marvis)
+function clearCircle(cb){
+  const start=performance.now(), dur=600, maxR=Math.hypot(cw,ch);
+  function step(now){
+    const p=Math.min((now-start)/dur,1), r=maxR*(1-Math.pow(1-p,3));
+    ctx.globalCompositeOperation='destination-out';
+    ctx.beginPath(); ctx.arc(cw/2,ch/2,r,0,Math.PI*2); ctx.fill();
+    if(p<1) requestAnimationFrame(step); else cb&&cb();
+  }
+  requestAnimationFrame(step);
+}
+
+function finishSite(){
+  canvas.style.display='none'; cur.style.display='none';
+  document.getElementById('skip').style.display='none';
+  document.documentElement.classList.remove('active-intro');
+}
+
+// ridisegna la scena corrente sul canvas (swap invisibile) e prepara quella sotto
+function prepareNextLayer(i){
+  const nextFile = scenes[i+1] ? scenes[i+1].file : scenes[i].file;
+  reveal.style.backgroundImage="url('"+IMG+nextFile+"')";
+  paintCurrent();
+  cur.textContent=scenes[i].label||'';
+  resetMask(); last=null; tick=0; busy=false;
+}
+function complete(){
+  busy=true;
+  hideClaim();                        // il testo corrente sfuma appena finisci di grattare
+  setTimeout(()=>{
+    clearCircle(()=>{                  // wipe finito → la foto successiva è visibile
+      idx=idx+1; paintDots();
+      setClaim(scenes[idx].html);      // il nuovo testo entra IN SYNC con la foto rivelata
+      if(idx>=scenes.length-1){ finishSite(); return; }  // era l'arrivo (sito)
+      setTimeout(()=>prepareNextLayer(idx), HOLD);        // pausa per leggere, poi swap invisibile
+    });
+  }, CLEAR_DELAY);
+}
+
+// loop cursore + scratch
+function frame(){
+  cur.style.transform='translate('+pointer.x+'px,'+pointer.y+'px) scale('+(pointer.down?0.82:1)+')';
+  if(pointer.down && !busy){
+    if(hint.style.opacity!=='0') hint.style.opacity='0';
+    erase(pointer.x,pointer.y);
+    if(++tick%6===0 && fraction()>=COMPLETE_RATIO) complete();
+  } else last=null;
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+addEventListener('pointermove',e=>{pointer.x=e.clientX;pointer.y=e.clientY;pointer.down=true;},{passive:true});
+addEventListener('pointerdown',e=>{pointer.x=e.clientX;pointer.y=e.clientY;pointer.down=true;},{passive:true});
+addEventListener('pointerup',()=>{pointer.down=false;},{passive:true});
+addEventListener('pointercancel',()=>{pointer.down=false;},{passive:true});
+addEventListener('pointerleave',()=>{pointer.down=false;if(!busy)cur.style.opacity='0';});
+addEventListener('pointerenter',()=>{if(!busy)cur.style.opacity='1';});
+
+document.getElementById('skip').addEventListener('click',()=>{
+  busy=true;
+  reveal.style.backgroundImage="url('"+IMG+scenes[scenes.length-1].file+"')";
+  clearCircle(()=>{ idx=scenes.length-1; paintDots(); setClaim(scenes[idx].html); finishSite(); });
+});
+
+sizeCanvas(); loadLayer(0);
+</script>
+</body>
+</html>
