@@ -151,6 +151,46 @@
 @media(max-width:620px){.ar-grid,.ar-grid.g2,.packs{grid-template-columns:1fr}.ar-chips{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.ar-chip{flex:0 0 auto}.tbl{min-width:600px}.tbl td:first-child{white-space:nowrap}.chart text{font-size:16px}.fgrid{grid-template-columns:1fr}.kpi b{font-size:1.6rem}.kpi{padding:14px}.ar-tabs{display:flex}.ar-tabs a{flex:1;text-align:center;padding:9px 10px}.svc{flex-wrap:wrap}.btn-add{width:100%}}
 @media print{.nav,.mnav,footer,.ar-hero,#catalogo,.conf>div:first-child,#againBtn{display:none!important}.sum{position:static}}
 
+/* area clienti: statistiche Google */
+.gs-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:4px 9px;border-radius:999px;margin-bottom:8px}
+.gs-info{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin:8px 0 2px}
+.gs-info::before{content:"i";flex:0 0 18px;height:18px;border-radius:50%;background:rgba(0,153,255,.12);color:var(--accent);font-weight:700;font-size:.72rem;display:grid;place-items:center;font-style:italic}
+.gs-k{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gs-k .rep-k small{font-size:.72rem;color:var(--muted);line-height:1.35}
+.gs-box{margin-top:16px;padding:14px;border-radius:14px;border:1px solid var(--line2);background:#fff}
+.gs-bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.gs-bh .sel-m{margin:0}
+.gs-bh .sel-m em{font-style:normal;opacity:.6;font-size:.75em;margin-left:2px}
+.gs-ch{position:relative}
+.gs-ch svg.lc{width:100%;height:auto;display:block;touch-action:pan-y}
+.lc .gl{stroke:var(--line2);stroke-dasharray:3 4}
+.lc text{font-size:11px;fill:var(--muted);font-family:var(--body,inherit)}
+.lc .ar{fill:rgba(0,153,255,.12)}
+.lc .ln{fill:none;stroke:#0099FF;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.lc .cur{stroke:rgba(20,20,22,.25);stroke-width:1}
+.lc .dot{fill:#fff;stroke:#0099FF;stroke-width:2.5}
+.gs-ch .tip[hidden]{display:none}
+.gs-ch .tip{position:absolute;top:0;transform:translateX(-50%);background:#141416;color:#fff;border-radius:10px;padding:8px 10px;font-size:.76rem;display:grid;gap:2px;pointer-events:none;min-width:130px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:2}
+.gs-ch .tip b{font-weight:600;text-transform:capitalize;margin-bottom:2px}
+.gs-ch .tip span{opacity:.7}.gs-ch .tip span.on{opacity:1;color:#7cc8ff;font-weight:600}
+.gs-q{width:100%;font:inherit;font-size:16px;padding:10px 14px;border-radius:12px;border:1px solid var(--line2);background:var(--field);margin:6px 0 10px}
+.gs-t th{cursor:pointer;user-select:none;white-space:nowrap}
+.gs-t th.srt::after{content:" \2193";color:var(--accent)}.gs-t th.srt.asc::after{content:" \2191"}
+.gs-t td:first-child{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs-t td:not(:first-child),.gs-t th:not(:first-child){text-align:right}
+@media(max-width:620px){#gaT.many th:nth-child(n+5),#gaT.many td:nth-child(n+5){display:none}}
+.gs-more{margin-top:10px}
+.gs-modal{position:fixed;inset:0;z-index:200;background:rgba(10,14,20,.55);backdrop-filter:blur(4px);display:grid;place-items:center;padding:24px}
+.gs-modal[hidden]{display:none}
+.gs-mc{position:relative;width:min(1180px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:20px;padding:26px}
+.gs-mc h3{font-family:var(--head);font-size:1.3rem;margin-bottom:4px;padding-right:40px}
+.gs-mc .sel-m{margin:14px 0 6px}
+.gs-mc .gs-t td:first-child{max-width:none;white-space:normal}
+.gs-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);background:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+@media(max-width:980px){.gs-k{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tbl.gs-t{min-width:0}.gs-t td:first-child{white-space:normal;word-break:break-word;max-width:none!important}.gs-t th:nth-child(4),.gs-t td:nth-child(4){display:none}.gs-t th,.gs-t td{padding:9px 5px;font-size:.82rem}.gs-t th{letter-spacing:0;font-size:.6rem}.gs-box .tbl-wrap{overflow-x:auto}.gs-box{padding:12px 10px}.gs-k .rep-k small{display:none}.gs-mc{padding:20px 14px;border-radius:16px}.gs-modal{padding:10px}.gs-t td:first-child{max-width:150px}}
+/* anteprima dal gestionale */
+.prev-bar{position:fixed;left:0;right:0;bottom:0;z-index:300;box-shadow:0 -8px 24px rgba(0,0,0,.2);background:#141416;color:#fff;padding:12px 18px;font-size:.88rem;text-align:center;line-height:1.5}.prev-bar b{color:#7cc8ff}.prev-bar button{margin-left:10px;background:#fff;color:#141416;border:0;border-radius:999px;padding:6px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer}
 /* area clienti: in arrivo */
 .soon-card{max-width:720px;margin:0 auto;text-align:left}
 .soon-b{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:5px 10px;border-radius:999px;margin-bottom:12px}
@@ -212,7 +252,7 @@
 .tl-t{font-size:.76rem;font-weight:600;color:var(--muted)}
 @media(max-width:980px){.gla{grid-template-columns:1fr 1fr 1fr}.rep-grid{grid-template-columns:repeat(3,1fr)}.xs-grid{grid-template-columns:1fr 1fr}.rq-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.dtabs{margin-right:-24px;padding-right:24px}.gla{grid-template-columns:1fr;gap:10px}.gla-c{padding:14px 16px}.rep-grid{grid-template-columns:1fr 1fr}.rep-k b{font-size:1.3rem}.xs-grid{grid-template-columns:1fr}.dc{grid-template-columns:40px 1fr;gap:4px 12px;padding:12px}.dc-ic{width:40px;height:40px;grid-row:1/3;align-self:start}.dc>.btn-sm{grid-column:2;justify-self:start;min-height:40px;padding:8px 16px;margin-top:6px}.rep-k:last-child:nth-child(odd){grid-column:1/-1}.rep-k i{font-size:.7rem}.rep-head .btn-sm{width:100%}}
-@media print{body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
+@media print{body.print-ga *{visibility:hidden!important}body.print-ga #gaCard,body.print-ga #gaCard *{visibility:visible!important}body.print-ga #gaCard{position:absolute;left:0;top:0;width:100%;border:0}body.print-ga .noprint,body.print-ga .ga-x,body.print-ga .gs-q,body.print-ga .gs-more{display:none!important}body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"><!-- area riservata: noindex da tenere anche dopo la pubblicazione -->
 <link rel="icon" type="image/png" href="assets/img/logo-sdi.png">
@@ -256,22 +296,6 @@
   </div>
 </section>
 
-<section class="ar-sec" id="soon" hidden>
-  <div class="wrap">
-    <div class="ar-card soon-card rv">
-      <span class="soon-b">In arrivo</span>
-      <h2>La nuova area clienti sta per aprire</h2>
-      <p class="ar-muted">Stiamo preparando il pannello dove ogni cliente trova il suo sito sotto controllo. Ti mandiamo il codice personale appena è pronta.</p>
-      <ul class="soon-l">
-        <li><b>Report mensili</b><span>Visite, contatti e chiamate, con il nostro commento</span></li>
-        <li><b>Richieste</b><span>Chiedi una modifica e segui a che punto è</span></li>
-        <li><b>Scadenze</b><span>Dominio, manutenzione e rinnovi sempre sott'occhio</span></li>
-        <li><b>Documenti e strumenti</b><span>Preventivi, fatture e programmi utili, sempre a portata di mano</span></li>
-      </ul>
-      <div class="soon-a"><button class="btn-main" type="button" id="soonEs">Guarda un'area di esempio</button><a class="btn-sm" href="https://wa.me/393515854466?text=Ciao%2C%20sono%20gi%C3%A0%20cliente%2C%20ho%20bisogno%20di%20una%20mano" target="_blank" rel="noopener">Sei già cliente? Scrivici</a></div>
-    </div>
-  </div>
-</section>
 
 <section class="ar-sec" id="gate">
   <div class="wrap ar-gate">

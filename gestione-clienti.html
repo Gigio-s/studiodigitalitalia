@@ -147,6 +147,46 @@
 @media(max-width:620px){.ar-grid,.ar-grid.g2,.packs{grid-template-columns:1fr}.ar-chips{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.ar-chip{flex:0 0 auto}.tbl{min-width:600px}.tbl td:first-child{white-space:nowrap}.chart text{font-size:16px}.fgrid{grid-template-columns:1fr}.kpi b{font-size:1.6rem}.kpi{padding:14px}.ar-tabs{display:flex}.ar-tabs a{flex:1;text-align:center;padding:9px 10px}.svc{flex-wrap:wrap}.btn-add{width:100%}}
 @media print{.nav,.mnav,footer,.ar-hero,#catalogo,.conf>div:first-child,#againBtn{display:none!important}.sum{position:static}}
 
+/* area clienti: statistiche Google */
+.gs-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:4px 9px;border-radius:999px;margin-bottom:8px}
+.gs-info{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin:8px 0 2px}
+.gs-info::before{content:"i";flex:0 0 18px;height:18px;border-radius:50%;background:rgba(0,153,255,.12);color:var(--accent);font-weight:700;font-size:.72rem;display:grid;place-items:center;font-style:italic}
+.gs-k{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gs-k .rep-k small{font-size:.72rem;color:var(--muted);line-height:1.35}
+.gs-box{margin-top:16px;padding:14px;border-radius:14px;border:1px solid var(--line2);background:#fff}
+.gs-bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.gs-bh .sel-m{margin:0}
+.gs-bh .sel-m em{font-style:normal;opacity:.6;font-size:.75em;margin-left:2px}
+.gs-ch{position:relative}
+.gs-ch svg.lc{width:100%;height:auto;display:block;touch-action:pan-y}
+.lc .gl{stroke:var(--line2);stroke-dasharray:3 4}
+.lc text{font-size:11px;fill:var(--muted);font-family:var(--body,inherit)}
+.lc .ar{fill:rgba(0,153,255,.12)}
+.lc .ln{fill:none;stroke:#0099FF;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.lc .cur{stroke:rgba(20,20,22,.25);stroke-width:1}
+.lc .dot{fill:#fff;stroke:#0099FF;stroke-width:2.5}
+.gs-ch .tip[hidden]{display:none}
+.gs-ch .tip{position:absolute;top:0;transform:translateX(-50%);background:#141416;color:#fff;border-radius:10px;padding:8px 10px;font-size:.76rem;display:grid;gap:2px;pointer-events:none;min-width:130px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:2}
+.gs-ch .tip b{font-weight:600;text-transform:capitalize;margin-bottom:2px}
+.gs-ch .tip span{opacity:.7}.gs-ch .tip span.on{opacity:1;color:#7cc8ff;font-weight:600}
+.gs-q{width:100%;font:inherit;font-size:16px;padding:10px 14px;border-radius:12px;border:1px solid var(--line2);background:var(--field);margin:6px 0 10px}
+.gs-t th{cursor:pointer;user-select:none;white-space:nowrap}
+.gs-t th.srt::after{content:" \2193";color:var(--accent)}.gs-t th.srt.asc::after{content:" \2191"}
+.gs-t td:first-child{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs-t td:not(:first-child),.gs-t th:not(:first-child){text-align:right}
+@media(max-width:620px){#gaT.many th:nth-child(n+5),#gaT.many td:nth-child(n+5){display:none}}
+.gs-more{margin-top:10px}
+.gs-modal{position:fixed;inset:0;z-index:200;background:rgba(10,14,20,.55);backdrop-filter:blur(4px);display:grid;place-items:center;padding:24px}
+.gs-modal[hidden]{display:none}
+.gs-mc{position:relative;width:min(1180px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:20px;padding:26px}
+.gs-mc h3{font-family:var(--head);font-size:1.3rem;margin-bottom:4px;padding-right:40px}
+.gs-mc .sel-m{margin:14px 0 6px}
+.gs-mc .gs-t td:first-child{max-width:none;white-space:normal}
+.gs-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);background:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+@media(max-width:980px){.gs-k{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tbl.gs-t{min-width:0}.gs-t td:first-child{white-space:normal;word-break:break-word;max-width:none!important}.gs-t th:nth-child(4),.gs-t td:nth-child(4){display:none}.gs-t th,.gs-t td{padding:9px 5px;font-size:.82rem}.gs-t th{letter-spacing:0;font-size:.6rem}.gs-box .tbl-wrap{overflow-x:auto}.gs-box{padding:12px 10px}.gs-k .rep-k small{display:none}.gs-mc{padding:20px 14px;border-radius:16px}.gs-modal{padding:10px}.gs-t td:first-child{max-width:150px}}
+/* anteprima dal gestionale */
+.prev-bar{position:fixed;left:0;right:0;bottom:0;z-index:300;box-shadow:0 -8px 24px rgba(0,0,0,.2);background:#141416;color:#fff;padding:12px 18px;font-size:.88rem;text-align:center;line-height:1.5}.prev-bar b{color:#7cc8ff}.prev-bar button{margin-left:10px;background:#fff;color:#141416;border:0;border-radius:999px;padding:6px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer}
 /* area clienti: in arrivo */
 .soon-card{max-width:720px;margin:0 auto;text-align:left}
 .soon-b{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:5px 10px;border-radius:999px;margin-bottom:12px}
@@ -208,7 +248,7 @@
 .tl-t{font-size:.76rem;font-weight:600;color:var(--muted)}
 @media(max-width:980px){.gla{grid-template-columns:1fr 1fr 1fr}.rep-grid{grid-template-columns:repeat(3,1fr)}.xs-grid{grid-template-columns:1fr 1fr}.rq-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.dtabs{margin-right:-24px;padding-right:24px}.gla{grid-template-columns:1fr;gap:10px}.gla-c{padding:14px 16px}.rep-grid{grid-template-columns:1fr 1fr}.rep-k b{font-size:1.3rem}.xs-grid{grid-template-columns:1fr}.dc{grid-template-columns:40px 1fr;gap:4px 12px;padding:12px}.dc-ic{width:40px;height:40px;grid-row:1/3;align-self:start}.dc>.btn-sm{grid-column:2;justify-self:start;min-height:40px;padding:8px 16px;margin-top:6px}.rep-k:last-child:nth-child(odd){grid-column:1/-1}.rep-k i{font-size:.7rem}.rep-head .btn-sm{width:100%}}
-@media print{body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
+@media print{body.print-ga *{visibility:hidden!important}body.print-ga #gaCard,body.print-ga #gaCard *{visibility:visible!important}body.print-ga #gaCard{position:absolute;left:0;top:0;width:100%;border:0}body.print-ga .noprint,body.print-ga .ga-x,body.print-ga .gs-q,body.print-ga .gs-more{display:none!important}body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
 </style><style>
 .mbar{display:none!important}[hidden]{display:none!important}
 .g-wrap{padding:110px 0 60px}
@@ -229,6 +269,12 @@
 .gtp{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#e9edf3;color:#46505e;margin-left:4px}.gtp-servizio{background:rgba(0,153,255,.12);color:#0077cc}.gtp-domanda{background:#fef3c7;color:#92400e}
 .gr-edit{display:grid;grid-template-columns:140px 1fr auto;gap:8px;margin-top:10px;align-items:start}.gr-edit select,.gr-edit textarea{font:inherit;font-size:16px;padding:9px 10px;border-radius:10px;border:1px solid var(--line2);background:var(--field)}
 @media(max-width:620px){.gr-edit{grid-template-columns:1fr}}
+.g-sec{padding:14px;border-radius:14px;background:var(--field)}
+.g-up{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:4px 0 8px}.g-up .hint{margin:0;flex:1;min-width:200px}
+.gdirty{margin:14px 0 0;padding:10px 14px;border-radius:12px;background:#fff7e6;border:1px solid #f5d38a;color:#7a4b00;font-size:.88rem;font-weight:600}
+.gspunti{margin-top:10px;padding:12px 14px;border-radius:12px;background:#fff;border:1px dashed #f0b44c}.gsp-t{display:block;font-size:.8rem;color:#9a5b00;margin-bottom:6px}.gspunti ul{margin:0 0 0 18px;display:grid;gap:6px}.gspunti li{font-size:.85rem;line-height:1.45}
+.ga-i textarea{width:100%;margin-top:8px;font:inherit;font-size:16px;padding:8px 10px;border-radius:10px;border:1px solid var(--line2);background:var(--field)}
+.gsc-i{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:#fff;margin-top:6px}.gsc-i b{display:block;font-size:.9rem}.gsc-i small{font-size:.78rem;color:var(--muted)}
 .gr p{margin-top:6px;font-size:.92rem;color:var(--ink2);white-space:pre-wrap}.gr.done{opacity:.55}
 .gact{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .chk2{display:flex;gap:8px;align-items:center;font-size:.88rem}
@@ -289,12 +335,24 @@
           <div class="fld"><label>&nbsp;</label><label class="chk2"><input type="checkbox" id="g_attivo" checked> Accesso attivo</label></div>
           <div class="fld full"><label for="g_scad">Scadenze, una per riga: Voce | AAAA-MM-GG | nota | incluso (si/no)</label><textarea id="g_scad" rows="4" placeholder="Manutenzione annuale | 2027-01-15 | Piano Pro | no&#10;Dominio rossi.it | 2027-03-02 | Rinnovo automatico | si"></textarea></div>
           <div class="fld full"><label for="g_an">Report mensili, un mese per riga: AAAA-MM | visite | visitatori unici | contatti | visualizzazioni Google | chiamate | commento</label><textarea id="g_an" rows="5" placeholder="2026-10 | 734 | 528 | 41 | 2105 | 46 | Miglior mese da quando il sito è online..."></textarea><div class="hint">Aggiungi una riga ogni mese. Chiamate e commento sono facoltativi: il commento appare nel report del cliente.</div></div>
-          <div class="fld full"><label for="g_doc">Documenti, uno per riga: Tipo | Titolo | AAAA-MM-GG | link | nota</label><textarea id="g_doc" rows="4" placeholder="Preventivo | Preventivo N. 6.26 | 2026-10-02 | https://drive.google.com/... | Accettato&#10;Fattura | Fattura 3/2026 - acconto | 2026-10-05 | https://drive.google.com/... | Pagata"></textarea><div class="hint">Tipi: Preventivo, Contratto, Fattura, Guida, Altro. Link Drive condiviso come "chiunque abbia il link".</div></div>
-          <div class="fld full"><label for="g_tool">Strumenti, uno per riga: Nome | descrizione | link | Online o Download</label><textarea id="g_tool" rows="3" placeholder="Ritaglia documenti | Ritaglia foto di patenti e moduli | https://... | Online&#10;Comprimi foto | Programma per Windows | https://drive.google.com/... | Download"></textarea></div>
+          <div class="fld full g-sec"><label>Report mensile Google Analytics</label>
+            <div class="g-up"><button class="btn-sm pri" id="b_ga" type="button">Carica report Analytics</button><input type="file" id="up_ga" accept=".csv,.zip" multiple hidden><span class="hint">Google Analytics &gt; Rapporti &gt; scegli il mese &gt; icona Condividi &gt; Scarica file &gt; Scarica CSV. Puoi caricare più CSV insieme (panoramica, pagine, acquisizione).</span></div>
+            <div id="gaList"></div></div>
+          <div class="fld full g-sec"><label>Statistiche Google (Search Console)</label>
+            <div class="g-up"><button class="btn-sm pri" id="b_gsc" type="button">Carica export Search Console</button><input type="file" id="up_gsc" accept=".zip,.csv" multiple hidden><span class="hint">Search Console &gt; Risultati di ricerca &gt; Esporta &gt; Scarica CSV. Carica lo .zip così com'è: grafici e tabelle si creano da soli.</span></div>
+            <div id="gscList"></div>
+            <div class="gspunti" id="gspunti" hidden></div></div>
+          <div class="fld full"><label for="g_doc">Documenti, uno per riga: Tipo | Titolo | AAAA-MM-GG | file o link | nota</label>
+            <div class="g-up"><button class="btn-sm pri" id="b_doc" type="button">Carica file</button><input type="file" id="up_doc" multiple hidden><span class="hint">Il file va nel tuo spazio privato e il cliente lo scarica dalla sua area. Fino a 50 MB.</span></div>
+            <textarea id="g_doc" rows="4" placeholder="Fattura | Fattura 3/2026 - acconto | 2026-10-05 | file:... | Pagata&#10;Guida | Come aggiornare il sito | 2026-10-05 | https://... |"></textarea><div class="hint">Tipi: Preventivo, Contratto, Fattura, Guida, Altro.</div></div>
+          <div class="fld full"><label for="g_tool">Strumenti, uno per riga: Nome | descrizione | file o link | Online o Download</label>
+            <div class="g-up"><button class="btn-sm pri" id="b_tool" type="button">Carica file</button><input type="file" id="up_tool" multiple hidden><span class="hint">Programmi fino a 50 MB. Più grandi (es. FirmaTool 88 MB): link Drive condiviso.</span></div>
+            <textarea id="g_tool" rows="3" placeholder="FirmaTool | Sistema le firme dei clienti | https://drive.google.com/... | Download"></textarea></div>
           <div class="fld full"><label for="g_demo">Demo, una per riga: Nome | link | immagine (facoltativa)</label><textarea id="g_demo" rows="3" placeholder="Nuovo sito | https://... | assets/foto-home/sito-lello.webp"></textarea></div>
           <div class="fld full"><label for="g_note">Note interne (il cliente non le vede)</label><textarea id="g_note" rows="2"></textarea></div>
         </div>
-        <div class="gact"><button class="btn-main" id="gsave" type="button" style="width:auto;padding:12px 20px">Salva</button>
+        <div class="gdirty" id="gdirty" hidden>Ci sono modifiche non ancora pubblicate: guarda l'anteprima, poi premi Pubblica.</div>
+        <div class="gact"><button class="btn-sm" id="gprev" type="button">Anteprima pagina cliente</button><button class="btn-main" id="gsave" type="button" style="width:auto;padding:12px 20px">Salva</button>
           <span id="gextra" class="gact" style="margin:0"><button class="btn-sm" id="gnewcode" type="button">Genera nuovo codice</button><button class="btn-sm" id="gdel" type="button" style="color:#d23b3b">Elimina cliente</button></span></div>
       </div>
     </div>
@@ -319,7 +377,7 @@
 const API = 'https://vdwuradyigrqbtkblzzk.supabase.co/functions/v1/area-clienti';
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let ADM = '', CLIENTI = [], RICH = [], SEL = null;
+let ADM = '', CLIENTI = [], RICH = [], SEL = null, GSC = [], GA = [];
 async function call(body){
   const r = await fetch(API, { method:'POST', headers:{ 'Content-Type':'application/json', 'x-admin-code': ADM }, body: JSON.stringify(body) });
   let j = {}; try { j = await r.json(); } catch(e){}
@@ -358,10 +416,11 @@ function newForm(){
   SEL = null; $('#gtitle').textContent = 'Nuovo cliente';
   ['g_nome','g_sito','g_piano','g_note','g_demo','g_scad','g_an','g_doc','g_tool'].forEach(i => $('#' + i).value = '');
   $('#g_attivo').checked = true; $('#gcode').hidden = true; $('#gextra').hidden = true; $('#gsave').textContent = 'Crea cliente e genera il codice';
+  GSC = []; renderGsc(); renderSpunti(); GA = []; renderGa(); dirty(false);
   renderList();
 }
 function edit(c){
-  $('#gtitle').textContent = c.nome; $('#gcode').hidden = true; $('#gextra').hidden = false; $('#gsave').textContent = 'Salva modifiche';
+  $('#gtitle').textContent = c.nome; $('#gcode').hidden = true; $('#gextra').hidden = false; $('#gsave').textContent = 'Pubblica sulla pagina del cliente'; dirty(false);
   $('#g_nome').value = c.nome || ''; $('#g_sito').value = c.sito || ''; $('#g_piano').value = c.piano || ''; $('#g_note').value = c.note || '';
   $('#g_attivo').checked = !!c.attivo;
   $('#g_demo').value = (c.demo || []).map(d => [d.nome, d.url || '', d.img || ''].join(' | ')).join('\n');
@@ -369,6 +428,8 @@ function edit(c){
   $('#g_an').value = (c.analytics || []).map(a => [a.mese, a.visite, a.utenti, a.contatti, a.maps, a.chiamate == null ? '' : a.chiamate, a.nota || ''].join(' | ').replace(/( \| )+$/, '')).join('\n');
   $('#g_tool').value = (c.strumenti || []).map(t => [t.nome, t.desc || '', t.url || '', t.tipo || 'Online'].join(' | ')).join('\n');
   $('#g_doc').value = (c.documenti || []).map(d => [d.tipo, d.titolo, d.data || '', d.url || '', d.nota || ''].join(' | ')).join('\n');
+  GSC = (c.gsc || []).map(x => Object.assign({}, x)); renderGsc(); renderSpunti();
+  GA = (c.ga || []).map(x => Object.assign({}, x)); renderGa();
 }
 function collect(){
   const demo = lines($('#g_demo').value).map((r,i) => { const [nome, url, img] = r.split('|').map(x => (x || '').trim()); return { id:'d' + (i+1), nome, url, img, sub:'La tua demo personalizzata', feat:['Demo su misura'] }; });
@@ -380,14 +441,273 @@ function collect(){
   const badD = documenti.find(d => d.data && !/^\d{4}-\d{2}-\d{2}$/.test(d.data)); if (badD) throw new Error('Data non valida nel documento "' + badD.titolo + '": usa AAAA-MM-GG');
   const badM = analytics.find(a => !/^\d{4}-\d{2}$/.test(a.mese)); if (badM) throw new Error('Mese non valido "' + badM.mese + '": usa AAAA-MM');
   const nome = $('#g_nome').value.trim(); if (!nome) throw new Error('Scrivi il nome del cliente');
-  return { nome, sito:$('#g_sito').value.trim(), piano:$('#g_piano').value.trim(), note:$('#g_note').value.trim(), attivo:$('#g_attivo').checked, demo, scadenze, analytics, documenti, strumenti };
+  return { nome, sito:$('#g_sito').value.trim(), piano:$('#g_piano').value.trim(), note:$('#g_note').value.trim(), attivo:$('#g_attivo').checked, demo, scadenze, analytics, documenti, strumenti, gsc: GSC, ga: GA };
 }
+/* ---------- file caricati (Supabase Storage) ---------- */
+async function upFile(file, cartella){
+  if (!SEL) throw new Error('Salva prima il cliente, poi carica i file');
+  if (file.size > 50 * 1024 * 1024) throw new Error('"' + file.name + '" supera 50 MB: caricalo su Drive e incolla il link condiviso');
+  const j = await call({ azione:'upload_url', id:SEL, cartella, nome:file.name });
+  const fd = new FormData(); fd.append('cacheControl', '3600'); fd.append('', file);
+  const r = await fetch(j.url, { method:'PUT', body:fd, headers:{ 'x-upsert':'true' } });
+  if (!r.ok) throw new Error('Caricamento di "' + file.name + '" non riuscito (' + r.status + ')');
+  return 'file:' + j.path;
+}
+const baseName = n => n.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim();
+function addLine(id, line){ const t = $('#' + id); t.value = (t.value.trim() ? t.value.trim() + '\n' : '') + line; }
+async function upMany(input, cartella, fmtLine){
+  const files = Array.from(input.files || []); input.value = '';
+  if (!files.length) return;
+  const btn = $(cartella === 'strumenti' ? '#b_tool' : '#b_doc'); btn.disabled = true;
+  try {
+    for (const f of files) { btn.textContent = 'Carico ' + f.name + '...'; addLine(cartella === 'strumenti' ? 'g_tool' : 'g_doc', fmtLine(f, await upFile(f, cartella))); }
+    dirty(true); flash(files.length + (files.length > 1 ? ' file pronti' : ' file pronto') + ': controlla l\'anteprima e premi Pubblica.');
+  } catch(e){ flash(e.message, true); }
+  btn.disabled = false; btn.textContent = 'Carica file';
+}
+const oggi = () => new Date().toISOString().slice(0, 10);
+$('#b_doc').onclick = () => $('#up_doc').click();
+$('#b_tool').onclick = () => $('#up_tool').click();
+$('#up_doc').onchange = e => upMany(e.target, 'documenti', (f, ref) => ['Documento', baseName(f.name), oggi(), ref, ''].join(' | '));
+$('#up_tool').onchange = e => upMany(e.target, 'strumenti', (f, ref) => [baseName(f.name), 'Descrizione dello strumento', ref, 'Download'].join(' | '));
+
+/* ---------- Search Console: import dei file esportati ---------- */
+function csvParse(t){
+  const R = []; let row = [], f = '', q = false;
+  for (let i = 0; i < t.length; i++) {
+    const ch = t[i];
+    if (q) { if (ch === '"') { if (t[i+1] === '"') { f += '"'; i++; } else q = false; } else f += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === ',') { row.push(f); f = ''; }
+    else if (ch === '\n' || ch === '\r') { if (ch === '\r' && t[i+1] === '\n') i++; row.push(f); R.push(row); row = []; f = ''; }
+    else f += ch;
+  }
+  if (f !== '' || row.length) { row.push(f); R.push(row); }
+  return R.filter(r => r.some(x => x.trim() !== ''));
+}
+function num(v){
+  v = String(v == null ? '' : v).replace('%', '').replace(/\s/g, '');
+  if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(v)) v = v.replace(/\./g, '').replace(',', '.');
+  else v = v.replace(',', '.');
+  const n = parseFloat(v); return isFinite(n) ? n : 0;
+}
+function loadZip(){
+  return window.JSZip ? Promise.resolve() : new Promise((ok, ko) => { const s = document.createElement('script'); s.src = 'assets/js/jszip.min.js'; s.onload = ok; s.onerror = () => ko(new Error('Non riesco ad aprire lo .zip: estrai i CSV e caricali')); document.head.appendChild(s); });
+}
+async function readGsc(files){
+  const ent = [];
+  for (const f of files) {
+    if (/\.zip$/i.test(f.name)) { await loadZip(); const z = await JSZip.loadAsync(f); for (const n of Object.keys(z.files)) if (/\.csv$/i.test(n) && !z.files[n].dir) ent.push([n, await z.files[n].async('string')]); }
+    else ent.push([f.name, await f.text()]);
+  }
+  const g = { giorni:[], query:[], pagine:[], paesi:[], disp:[], label:'' };
+  const riga = r => [String(r[0]).trim(), num(r[1]), num(r[2]), num(r[3]), num(r[4])];
+  for (const [, t] of ent) {
+    const R = csvParse(t.replace(/^\uFEFF/, '')); if (!R.length) continue;
+    const h = String(R[0][0] || '').trim().toLowerCase(), rows = R.slice(1).filter(r => r.length >= 5);
+    if (h === 'data' || h === 'date') g.giorni = rows.map(riga).filter(r => /^\d{4}-\d{2}-\d{2}$/.test(r[0])).sort((a,b) => a[0].localeCompare(b[0]));
+    else if (/query|ricerc/.test(h)) g.query = rows.map(riga);
+    else if (/pagin|page/.test(h)) g.pagine = rows.map(riga);
+    else if (/paes|countr/.test(h)) g.paesi = rows.map(riga);
+    else if (/dispositiv|device/.test(h)) g.disp = rows.map(riga);
+    else if (/filt/.test(h)) { const d = R.find(r => /^(data|date)$/i.test(String(r[0]).trim())); if (d) g.label = String(d[1] || '').trim(); }
+  }
+  // periodo esatto dal filtro data (es. "1 set 2026-30 set 2026"), anche se il sito è online da metà mese
+  const MM = { gen:1, jan:1, feb:2, mar:3, apr:4, mag:5, may:5, giu:6, jun:6, lug:7, jul:7, ago:8, aug:8, set:9, sep:9, ott:10, oct:10, nov:11, dic:12, dec:12 };
+  const fm = g.label.toLowerCase().match(/(\d{1,2})\s+([a-z]{3})[a-z.]*\s+(\d{4})\s*-\s*(\d{1,2})\s+([a-z]{3})[a-z.]*\s+(\d{4})/);
+  const pd = (d, m, y) => MM[m] ? y + '-' + String(MM[m]).padStart(2, '0') + '-' + String(d).padStart(2, '0') : '';
+  if (!g.giorni.length && !g.query.length) throw new Error('Non trovo i dati di Search Console: carica lo .zip esportato oppure i CSV (Grafico, Query, Pagine...)');
+  const src = g.giorni.length ? g.giorni : g.query;
+  const c = src.reduce((s, r) => s + r[1], 0), i = src.reduce((s, r) => s + r[2], 0);
+  const pos = i ? src.reduce((s, r) => s + r[4] * r[2], 0) / i : 0;
+  g.tot = { c, i, ctr: i ? +(c / i * 100).toFixed(2) : 0, p: +pos.toFixed(1) };
+  g.dal = g.giorni.length ? g.giorni[0][0] : oggi(); g.al = g.giorni.length ? g.giorni[g.giorni.length - 1][0] : oggi();
+  if (fm && pd(fm[1], fm[2], fm[3]) && pd(fm[4], fm[5], fm[6])) { g.dal = pd(fm[1], fm[2], fm[3]); g.al = pd(fm[4], fm[5], fm[6]); }
+  g.nota = '';
+  g.giorni = g.giorni.map(r => [r[0], r[1], r[2], r[4]]);
+  g.query = g.query.slice(0, 1000); g.pagine = g.pagine.slice(0, 500); g.paesi = g.paesi.slice(0, 60);
+  g.caricato = oggi(); g.id = 'g' + Date.now();
+  return g;
+}
+const dIt = d => d ? new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day:'numeric', month:'short', year:'numeric' }) : '';
+function renderGsc(){
+  const L = GSC.slice().sort((a,b) => String(b.al).localeCompare(String(a.al)));
+  $('#gscList').innerHTML = L.length ? L.map(g => `<div class="gsc-i ga-i"><div style="flex:1;min-width:0"><b>${dIt(g.dal)} - ${dIt(g.al)}</b><small>${(g.tot.c||0).toLocaleString('it-IT')} clic · ${(g.tot.i||0).toLocaleString('it-IT')} impressioni · ${g.query.length} ricerche · ${g.pagine.length} pagine${g.label ? ' · ' + esc(g.label) : ''}</small></div><textarea data-gnota="${g.id}" rows="2" placeholder="Il tuo commento per il cliente su questo periodo (facoltativo)">${esc(g.nota || '')}</textarea></div><button class="btn-sm" data-gdel="${g.id}" type="button">Togli</button></div>`).join('') : '<p class="ar-muted" style="font-size:.85rem">Nessun periodo caricato.</p>';
+  $('#gscList').querySelectorAll('[data-gnota]').forEach(t => t.oninput = () => { const g = GSC.find(x => x.id === t.dataset.gnota); if (g) g.nota = t.value; dirty(true); });
+  $('#gscList').querySelectorAll('[data-gdel]').forEach(b => b.onclick = () => { GSC = GSC.filter(x => x.id !== b.dataset.gdel); renderGsc(); renderSpunti(); dirty(true); flash('Periodo tolto: premi Pubblica per confermare.'); });
+}
+$('#b_gsc').onclick = () => $('#up_gsc').click();
+$('#up_gsc').onchange = async e => {
+  const files = Array.from(e.target.files || []); e.target.value = ''; if (!files.length) return;
+  try {
+    const g = await readGsc(files);
+    const old = GSC.find(x => x.dal === g.dal && x.al === g.al); if (old && old.nota) g.nota = old.nota;
+    GSC = GSC.filter(x => !(x.dal === g.dal && x.al === g.al)); GSC.push(g); GSC.sort((a,b) => String(b.al).localeCompare(String(a.al))); GSC = GSC.slice(0, 24);
+    renderGsc();
+    if (!g.nota) g.nota = commentoGsc(g, GSC.filter(x => x.al < g.dal).sort((a,b) => String(b.al).localeCompare(String(a.al)))[0]);
+    renderGsc(); renderSpunti(); dirty(true);
+    flash('Search Console ' + dIt(g.dal) + ' - ' + dIt(g.al) + ' elaborato, commento scritto in automatico. Controlla l\'anteprima e premi Pubblica.');
+  } catch(err){ flash(err.message, true); }
+};
+
+/* ---------- Google Analytics 4: import del report mensile (CSV) ---------- */
+const isoD = v => /^\d{8}$/.test(v) ? v.slice(0,4) + '-' + v.slice(4,6) + '-' + v.slice(6,8) : v;
+const addD = (iso, n) => { const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+const GA_NOMI = [[/pagin|page|schermat|screen|percorso|path/i, 'Pagine'], [/canal|channel|sorgente|source|mezzo|medium|referr/i, 'Da dove arrivano'], [/paes|country/i, 'Paesi'], [/citt|city/i, 'Città'], [/dispositiv|device|piattaforma|platform/i, 'Dispositivi'], [/evento|event/i, 'Azioni sul sito'], [/lingua|language/i, 'Lingue'], [/et[aà]|age|sesso|gender/i, 'Pubblico']];
+function gaParseText(text, out){
+  let cur = null, last = '';
+  for (const ln of text.replace(/^﻿/, '').split(/\r?\n/)) {
+    if (ln.startsWith('#')) {
+      const t = ln.replace(/^#\s?/, '').trim();
+      const a = t.match(/^(Data di inizio|Start date)\s*:\s*(\d{8})/i), b = t.match(/^(Data di fine|End date)\s*:\s*(\d{8})/i);
+      if (a) out.dal = isoD(a[2]); else if (b) out.al = isoD(b[2]); else if (t && !/^-+$/.test(t) && !/^(account|propriet|property)/i.test(t)) last = t;
+      cur = null; continue;
+    }
+    if (!ln.trim()) { cur = null; continue; }
+    const row = csvParse(ln)[0] || [];
+    if (!cur) { cur = { titolo:last, col:row.map(x => x.trim()), righe:[] }; out.blocchi.push(cur); }
+    else cur.righe.push(row);
+  }
+}
+async function readGa(files){
+  const out = { blocchi:[], dal:'', al:'' };
+  for (const f of files) {
+    if (/\.zip$/i.test(f.name)) { await loadZip(); const z = await JSZip.loadAsync(f); for (const n of Object.keys(z.files)) if (/\.csv$/i.test(n) && !z.files[n].dir) gaParseText(await z.files[n].async('string'), out); }
+    else gaParseText(await f.text(), out);
+  }
+  if (!out.blocchi.length) throw new Error('Non trovo dati nel file: scarica il report da Google Analytics come CSV');
+  const giorni = {}, metriche = [], tabelle = [];
+  for (const b of out.blocchi) {
+    if (!b.col.length || !b.righe.length) continue;
+    const k = b.col[0].toLowerCase();
+    if (/^(ennesimo giorno|nth day|data|date|giorno|day)$/.test(k)) {
+      b.righe.forEach(r => {
+        let d = String(r[0]).trim();
+        if (/^\d{8}$/.test(d)) d = isoD(d); else if (/^\d{1,4}$/.test(d) && out.dal) d = addD(out.dal, +d); else if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return;
+        giorni[d] = giorni[d] || {};
+        b.col.slice(1).forEach((m, i) => { giorni[d][m] = num(r[i + 1]); if (!metriche.includes(m)) metriche.push(m); });
+      });
+    } else {
+      const nome = (GA_NOMI.find(([re]) => re.test(b.col[0])) || [0, b.col[0]])[1];
+      const righe = b.righe.filter(r => String(r[0]).trim() !== '').map(r => [String(r[0]).trim()].concat(r.slice(1, b.col.length).map(num)));
+      const same = tabelle.find(t => t.col[0] === b.col[0]);
+      if (same) { // stessa dimensione con altre metriche: unisco le colonne
+        const nuove = b.col.slice(1).filter(c => !same.col.includes(c)), idx = nuove.map(c => b.col.indexOf(c));
+        same.col = same.col.concat(nuove);
+        same.righe.forEach(r => { const o = righe.find(x => x[0] === r[0]); idx.forEach(i => r.push(o ? o[i] : 0)); });
+      } else tabelle.push({ nome, col:b.col.slice(0, Math.max(2, b.righe[0].length)), righe:righe.slice(0, 500) });
+    }
+  }
+  const dd = Object.keys(giorni).sort();
+  const dal = out.dal || dd[0] || oggi(), al = out.al || dd[dd.length - 1] || oggi();
+  const tot = {}; metriche.forEach(m => tot[m] = dd.reduce((s, d) => s + (giorni[d][m] || 0), 0));
+  if (!dd.length && !tabelle.length) throw new Error('Il file non contiene tabelle di Google Analytics riconoscibili');
+  return { id:'a' + Date.now(), mese:dal.slice(0, 7), dal, al, caricato:oggi(), metriche, tot, giorni: dd.map(d => [d].concat(metriche.map(m => giorni[d][m] || 0))), tabelle, nota:'' };
+}
+function renderGa(){
+  const L = GA.slice().sort((a,b) => String(b.dal).localeCompare(String(a.dal)));
+  $('#gaList').innerHTML = L.length ? L.map(g => `<div class="gsc-i ga-i"><div style="flex:1;min-width:0"><b>${dIt(g.dal)} - ${dIt(g.al)}</b><small>${g.metriche.map(m => m + ': ' + Math.round(g.tot[m]).toLocaleString('it-IT')).join(' · ') || 'Senza dati giornalieri'} · ${g.tabelle.map(t => t.nome).join(', ')}</small>
+    <textarea data-ganota="${g.id}" rows="2" placeholder="Il tuo commento per il cliente su questo mese (facoltativo)">${esc(g.nota || '')}</textarea></div><button class="btn-sm" data-gadel="${g.id}" type="button">Togli</button></div>`).join('') : '<p class="ar-muted" style="font-size:.85rem">Nessun report caricato.</p>';
+  $('#gaList').querySelectorAll('[data-gadel]').forEach(b => b.onclick = () => { GA = GA.filter(x => x.id !== b.dataset.gadel); renderGa(); dirty(true); flash('Report tolto: premi Pubblica per confermare.'); });
+  $('#gaList').querySelectorAll('[data-ganota]').forEach(t => t.oninput = () => { const g = GA.find(x => x.id === t.dataset.ganota); if (g) g.nota = t.value; dirty(true); });
+}
+$('#b_ga').onclick = () => $('#up_ga').click();
+$('#up_ga').onchange = async e => {
+  const files = Array.from(e.target.files || []); e.target.value = ''; if (!files.length) return;
+  try {
+    const g = await readGa(files);
+    const oldA = GA.find(x => x.dal === g.dal && x.al === g.al); if (oldA && oldA.nota) g.nota = oldA.nota;
+    GA = GA.filter(x => !(x.dal === g.dal && x.al === g.al)); GA.push(g); GA.sort((a,b) => String(b.dal).localeCompare(String(a.dal))); GA = GA.slice(0, 36);
+    renderGa();
+    if (!g.nota) g.nota = commentoGa(g, GA.filter(x => x.al < g.dal).sort((a,b) => String(b.al).localeCompare(String(a.al)))[0]);
+    renderGa(); dirty(true);
+    flash('Report Analytics ' + dIt(g.dal) + ' - ' + dIt(g.al) + ' elaborato, commento scritto in automatico. Controlla l\'anteprima e premi Pubblica.');
+  } catch(err){ flash(err.message, true); }
+};
+
+/* ---------- commenti automatici (modificabili) ---------- */
+const nIt = v => Math.round(v).toLocaleString('it-IT');
+const ilPc = n => (/^(8|11|1$)/.test(String(n)) ? "L'" : 'Il ') + n + '%';
+const dec = v => (Math.round(v * 10) / 10).toLocaleString('it-IT');
+const MESI_N = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+const meseDi = g => { const a = g.dal.slice(0, 7), b = g.al.slice(0, 7); return a === b ? MESI_N[+a.slice(5) - 1] : 'questo periodo'; };
+const giorniMese = d => new Date(+d.slice(0, 4), +d.slice(5, 7), 0).getDate();
+function var100(a, b){ if (!b) return null; return Math.round((a - b) / b * 100); }
+function commentoGsc(g, p){
+  const t = g.tot, n = (g.giorni || []).length, parz = n && n < giorniMese(g.dal) - 3 && g.giorni[0][0] > g.dal;
+  let s = parz ? `Il sito è online su Google dal ${new Date(g.giorni[0][0] + 'T12:00:00').getDate()} ${meseDi(g)}: in ${n} giorni ` : `A ${meseDi(g)} `;
+  s += `${nIt(t.c)} persone sono entrate nel sito da Google e il sito è comparso ${nIt(t.i)} volte nei risultati di ricerca`;
+  if (p && p.tot && (p.giorni || []).length && n) {
+    const v = var100(t.c / n, p.tot.c / p.giorni.length);
+    if (v !== null && Math.abs(v) >= 3) s += v > 0 ? `, con il ${v}% di visite in più al giorno rispetto al mese prima` : `, con il ${-v}% di visite in meno al giorno rispetto al mese prima`;
+  }
+  s += '. ';
+  const pos = t.p;
+  s += `La posizione media è ${dec(pos)}` + (pos <= 10 ? ', cioè in prima pagina' : '');
+  if (p && p.tot && p.tot.p) { const d = Math.round((p.tot.p - pos) * 10) / 10; if (d >= .2) s += `, in miglioramento rispetto a ${dec(p.tot.p)}`; else if (d <= -.2) s += `, in leggero calo rispetto a ${dec(p.tot.p)}`; }
+  s += '. ';
+  const top = (g.query || []).slice().sort((a, b) => b[1] - a[1] || b[2] - a[2]).filter(q => q[1] > 0).slice(0, 3).map(q => '"' + q[0] + '"');
+  if (top.length) s += `Le ricerche che portano più visite sono ${top.length > 1 ? top.slice(0, -1).join(', ') + ' e ' + top[top.length - 1] : top[0]}. `;
+  const mob = (g.disp || []).find(d => /mobile|cellulare|smartphone/i.test(d[0])), tot = (g.disp || []).reduce((a, d) => a + d[2], 0);
+  if (mob && tot) { const pc = Math.round(mob[2] / tot * 100); if (pc >= 50) s += `${ilPc(pc)} di chi vi trova cerca da smartphone.`; }
+  return s.trim();
+}
+const CANALI = { 'organic search':'ricerche su Google', 'direct':'accesso diretto (indirizzo scritto o salvato)', 'organic social':'social', 'referral':'link da altri siti', 'paid search':'annunci a pagamento', 'unassigned':'fonti non classificate', 'email':'email', 'organic maps':'Google Maps' };
+function commentoGa(g, p){
+  const m = g.metriche, t = g.tot;
+  const u = m.find(x => /utenti attivi|active users|^utenti$|^users$/i.test(x)), v = m.find(x => /visualizzazioni|views/i.test(x)), se = m.find(x => /sessioni|sessions/i.test(x));
+  let s = `A ${meseDi(g)} `;
+  const parti = [];
+  if (u) parti.push(`${nIt(t[u])} utenti`); else if (se) parti.push(`${nIt(t[se])} sessioni`);
+  if (v) parti.push(`${nIt(t[v])} pagine viste`);
+  s += parti.length ? 'il sito ha avuto ' + parti.join(' e ') : 'ecco i dati del sito';
+  const k = u || se || v;
+  if (k && p && p.tot && p.tot[k] != null) { const vv = var100(t[k], p.tot[k]); if (vv !== null && Math.abs(vv) >= 3) s += vv > 0 ? `, il ${vv}% in più rispetto al mese prima` : `, il ${-vv}% in meno rispetto al mese prima`; }
+  s += '. ';
+  const can = (g.tabelle || []).find(x => x.nome === 'Da dove arrivano');
+  if (can && can.righe.length) { const r = can.righe.slice().sort((a, b) => b[1] - a[1])[0], tot = can.righe.reduce((a, x) => a + (+x[1] || 0), 0); const pc = tot ? Math.round(r[1] / tot * 100) : 0; s += `Le visite arrivano soprattutto da ${CANALI[String(r[0]).toLowerCase()] || r[0]}${pc ? ' (' + pc + '%)' : ''}. `; }
+  const pag = (g.tabelle || []).find(x => x.nome === 'Pagine');
+  if (pag && pag.righe.length) { const r = pag.righe.slice().sort((a, b) => b[1] - a[1]); s += `La pagina più vista è "${r[0][0]}"${r[1] ? ', seguita da "' + r[1][0] + '"' : ''}. `; }
+  const dis = (g.tabelle || []).find(x => x.nome === 'Dispositivi');
+  if (dis && dis.righe.length) { const mob = dis.righe.find(r => /mobile/i.test(r[0])), tot = dis.righe.reduce((a, r) => a + (+r[1] || 0), 0); if (mob && tot) s += `${ilPc(Math.round(mob[1] / tot * 100))} delle visite arriva da smartphone.`; }
+  return s.trim();
+}
+/* ---------- spunti interni automatici (solo pannello, mai al cliente) ---------- */
+function renderSpunti(){
+  const box = $('#gspunti'); if (!box) return;
+  const g = GSC.slice().sort((a,b) => String(b.al).localeCompare(String(a.al)))[0];
+  if (!g) { box.hidden = true; return; }
+  const out = [];
+  (g.pagine || []).filter(r => r[2] >= 300 && r[3] < 1.5).sort((a,b) => b[2] - a[2]).slice(0, 4).forEach(r => out.push(`Pagina <b>${esc(r[0].replace(/^https?:\/\/[^/]+/, '') || '/')}</b>: ${nIt(r[2])} impressioni ma CTR ${dec(r[3])}% (posizione ${dec(r[4])}). Migliorare title e description.`));
+  (g.query || []).filter(r => r[4] >= 6 && r[4] <= 20 && r[2] >= 20).sort((a,b) => b[2] - a[2]).slice(0, 4).forEach(r => out.push(`Ricerca <b>"${esc(r[0])}"</b>: ${nIt(r[2])} impressioni in posizione ${dec(r[4])}. Con un contenuto dedicato può salire in prima posizione.`));
+  const urls = (g.pagine || []).map(r => r[0]), dup = urls.filter(u => !/\.html$/.test(u) && !/\/$/.test(u) && urls.includes(u + '.html'));
+  if (dup.length) out.push(`Pagine indicizzate due volte, con e senza .html: <b>${dup.map(u => esc(u.replace(/^https?:\/\/[^/]+/, ''))).join(', ')}</b>. Controllare redirect e canonical.`);
+  const gen = (g.query || []).filter(r => /vicino a me|near me/i.test(r[0]) && r[2] >= 10);
+  if (gen.length) out.push(`Ricerche "vicino a me" (${gen.map(r => nIt(r[2])).reduce((a, b) => a + ', ' + b)} impressioni): conta molto la scheda Google Business aggiornata.`);
+  box.hidden = false;
+  box.innerHTML = `<b class="gsp-t">Spunti per noi dall'ultimo mese (il cliente non li vede)</b>` + (out.length ? '<ul>' + out.map(x => `<li>${x}</li>`).join('') + '</ul>' : '<p class="ar-muted">Niente di urgente da segnalare.</p>');
+}
+/* ---------- modifiche non pubblicate + anteprima ---------- */
+function dirty(on){ $('#gdirty').hidden = !on; }
+$('#gprev').onclick = () => {
+  try {
+    const d = collect();
+    const prev = Object.assign({ cliente: d.nome, richieste: (CLIENTI.find(c => c.id === SEL) ? RICH.filter(r => r.cliente_id === SEL) : []), anteprima: true }, d);
+    prev.documenti = (prev.documenti || []).map(x => String(x.url || '').startsWith('file:') ? Object.assign({}, x, { url:'', file:true }) : x);
+    prev.strumenti = (prev.strumenti || []).map(x => String(x.url || '').startsWith('file:') ? Object.assign({}, x, { url:'', file:true }) : x);
+    localStorage.setItem('sdi_preview', JSON.stringify(prev));
+    window.open('area-plus.html?preview=1', '_blank');
+  } catch(e){ flash(e.message, true); }
+};
+['g_nome','g_sito','g_piano','g_note','g_demo','g_scad','g_an','g_doc','g_tool'].forEach(i => $('#' + i).addEventListener('input', () => dirty(true)));
+
 function showCode(c){ $('#gcode').hidden = false; $('#gcodev').textContent = c; }
 $('#gsave').onclick = async () => {
   try {
     const d = collect();
     if (!SEL) { const j = await call(Object.assign({ azione:'crea' }, d)); SEL = j.id; await load(); showCode(j.codice); flash('Cliente creato. Copia il codice: non lo vedrai più.'); }
-    else { await call(Object.assign({ azione:'aggiorna', id:SEL }, d)); await load(); flash('Salvato.'); }
+    else { await call(Object.assign({ azione:'aggiorna', id:SEL }, d)); await load(); flash('Pubblicato: il cliente vede già le modifiche.'); }
+    dirty(false);
   } catch(e){ flash(e.message, true); }
 };
 $('#gnewcode').onclick = async () => { if (!SEL || !confirm('Il codice attuale smetterà di funzionare. Continuare?')) return; try { const j = await call({ azione:'nuovo_codice', id:SEL }); showCode(j.codice); flash('Nuovo codice generato.'); } catch(e){ flash(e.message, true); } };

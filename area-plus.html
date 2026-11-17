@@ -151,6 +151,46 @@
 @media(max-width:620px){.ar-grid,.ar-grid.g2,.packs{grid-template-columns:1fr}.ar-chips{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.ar-chip{flex:0 0 auto}.tbl{min-width:600px}.tbl td:first-child{white-space:nowrap}.chart text{font-size:16px}.fgrid{grid-template-columns:1fr}.kpi b{font-size:1.6rem}.kpi{padding:14px}.ar-tabs{display:flex}.ar-tabs a{flex:1;text-align:center;padding:9px 10px}.svc{flex-wrap:wrap}.btn-add{width:100%}}
 @media print{.nav,.mnav,footer,.ar-hero,#catalogo,.conf>div:first-child,#againBtn{display:none!important}.sum{position:static}}
 
+/* area clienti: statistiche Google */
+.gs-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:4px 9px;border-radius:999px;margin-bottom:8px}
+.gs-info{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin:8px 0 2px}
+.gs-info::before{content:"i";flex:0 0 18px;height:18px;border-radius:50%;background:rgba(0,153,255,.12);color:var(--accent);font-weight:700;font-size:.72rem;display:grid;place-items:center;font-style:italic}
+.gs-k{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gs-k .rep-k small{font-size:.72rem;color:var(--muted);line-height:1.35}
+.gs-box{margin-top:16px;padding:14px;border-radius:14px;border:1px solid var(--line2);background:#fff}
+.gs-bh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.gs-bh .sel-m{margin:0}
+.gs-bh .sel-m em{font-style:normal;opacity:.6;font-size:.75em;margin-left:2px}
+.gs-ch{position:relative}
+.gs-ch svg.lc{width:100%;height:auto;display:block;touch-action:pan-y}
+.lc .gl{stroke:var(--line2);stroke-dasharray:3 4}
+.lc text{font-size:11px;fill:var(--muted);font-family:var(--body,inherit)}
+.lc .ar{fill:rgba(0,153,255,.12)}
+.lc .ln{fill:none;stroke:#0099FF;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.lc .cur{stroke:rgba(20,20,22,.25);stroke-width:1}
+.lc .dot{fill:#fff;stroke:#0099FF;stroke-width:2.5}
+.gs-ch .tip[hidden]{display:none}
+.gs-ch .tip{position:absolute;top:0;transform:translateX(-50%);background:#141416;color:#fff;border-radius:10px;padding:8px 10px;font-size:.76rem;display:grid;gap:2px;pointer-events:none;min-width:130px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:2}
+.gs-ch .tip b{font-weight:600;text-transform:capitalize;margin-bottom:2px}
+.gs-ch .tip span{opacity:.7}.gs-ch .tip span.on{opacity:1;color:#7cc8ff;font-weight:600}
+.gs-q{width:100%;font:inherit;font-size:16px;padding:10px 14px;border-radius:12px;border:1px solid var(--line2);background:var(--field);margin:6px 0 10px}
+.gs-t th{cursor:pointer;user-select:none;white-space:nowrap}
+.gs-t th.srt::after{content:" \2193";color:var(--accent)}.gs-t th.srt.asc::after{content:" \2191"}
+.gs-t td:first-child{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs-t td:not(:first-child),.gs-t th:not(:first-child){text-align:right}
+@media(max-width:620px){#gaT.many th:nth-child(n+5),#gaT.many td:nth-child(n+5){display:none}}
+.gs-more{margin-top:10px}
+.gs-modal{position:fixed;inset:0;z-index:200;background:rgba(10,14,20,.55);backdrop-filter:blur(4px);display:grid;place-items:center;padding:24px}
+.gs-modal[hidden]{display:none}
+.gs-mc{position:relative;width:min(1180px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:20px;padding:26px}
+.gs-mc h3{font-family:var(--head);font-size:1.3rem;margin-bottom:4px;padding-right:40px}
+.gs-mc .sel-m{margin:14px 0 6px}
+.gs-mc .gs-t td:first-child{max-width:none;white-space:normal}
+.gs-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);background:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+@media(max-width:980px){.gs-k{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tbl.gs-t{min-width:0}.gs-t td:first-child{white-space:normal;word-break:break-word;max-width:none!important}.gs-t th:nth-child(4),.gs-t td:nth-child(4){display:none}.gs-t th,.gs-t td{padding:9px 5px;font-size:.82rem}.gs-t th{letter-spacing:0;font-size:.6rem}.gs-box .tbl-wrap{overflow-x:auto}.gs-box{padding:12px 10px}.gs-k .rep-k small{display:none}.gs-mc{padding:20px 14px;border-radius:16px}.gs-modal{padding:10px}.gs-t td:first-child{max-width:150px}}
+/* anteprima dal gestionale */
+.prev-bar{position:fixed;left:0;right:0;bottom:0;z-index:300;box-shadow:0 -8px 24px rgba(0,0,0,.2);background:#141416;color:#fff;padding:12px 18px;font-size:.88rem;text-align:center;line-height:1.5}.prev-bar b{color:#7cc8ff}.prev-bar button{margin-left:10px;background:#fff;color:#141416;border:0;border-radius:999px;padding:6px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer}
 /* area clienti: in arrivo */
 .soon-card{max-width:720px;margin:0 auto;text-align:left}
 .soon-b{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(0,153,255,.1);padding:5px 10px;border-radius:999px;margin-bottom:12px}
@@ -212,7 +252,7 @@
 .tl-t{font-size:.76rem;font-weight:600;color:var(--muted)}
 @media(max-width:980px){.gla{grid-template-columns:1fr 1fr 1fr}.rep-grid{grid-template-columns:repeat(3,1fr)}.xs-grid{grid-template-columns:1fr 1fr}.rq-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.dtabs{margin-right:-24px;padding-right:24px}.gla{grid-template-columns:1fr;gap:10px}.gla-c{padding:14px 16px}.rep-grid{grid-template-columns:1fr 1fr}.rep-k b{font-size:1.3rem}.xs-grid{grid-template-columns:1fr}.dc{grid-template-columns:40px 1fr;gap:4px 12px;padding:12px}.dc-ic{width:40px;height:40px;grid-row:1/3;align-self:start}.dc>.btn-sm{grid-column:2;justify-self:start;min-height:40px;padding:8px 16px;margin-top:6px}.rep-k:last-child:nth-child(odd){grid-column:1/-1}.rep-k i{font-size:.7rem}.rep-head .btn-sm{width:100%}}
-@media print{body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
+@media print{body.print-ga *{visibility:hidden!important}body.print-ga #gaCard,body.print-ga #gaCard *{visibility:visible!important}body.print-ga #gaCard{position:absolute;left:0;top:0;width:100%;border:0}body.print-ga .noprint,body.print-ga .ga-x,body.print-ga .gs-q,body.print-ga .gs-more{display:none!important}body.print-rep *{visibility:hidden!important}body.print-rep #repCard,body.print-rep #repCard *{visibility:visible!important}body.print-rep #repCard{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}body.print-rep .noprint{display:none!important}body.print-rep .bg-logos{display:none}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"><!-- area riservata: noindex da tenere anche dopo la pubblicazione -->
 <link rel="icon" type="image/png" href="assets/img/logo-sdi.png">
@@ -256,6 +296,7 @@
   </div>
 </section>
 
+<div class="prev-bar" id="prevBar" hidden><b>Anteprima</b> della pagina di <span id="prevName"></span>: il cliente vede questi dati solo dopo che premi <b>Pubblica</b> nel gestionale. <button type="button" onclick="window.close()">Chiudi anteprima</button></div>
 <section class="ar-sec" id="soon" hidden>
   <div class="wrap">
     <div class="ar-card soon-card rv">
@@ -300,7 +341,7 @@
     </div>
     <nav class="dtabs" id="dtabs" role="tablist" aria-label="Sezioni area clienti">
       <button data-t="panoramica" role="tab" class="on">Panoramica</button>
-      <button data-t="report" role="tab">Report mensili</button>
+      <button data-t="report" role="tab">Statistiche</button>
       <button data-t="richieste" role="tab">Richieste <b id="tbRq" hidden></b></button>
       <button data-t="documenti" role="tab">Documenti</button>
       <button data-t="strumenti" role="tab">Strumenti</button>
@@ -312,7 +353,7 @@
       <div class="gla" id="gla"></div>
       <div class="dgrid">
         <div class="ar-card">
-          <h3>Andamento mensile</h3><p class="ar-muted">Ultimi 12 mesi. I dati li carichiamo noi a inizio mese da Google Analytics, Search Console e Google Business.</p>
+          <h3>Andamento</h3><p class="ar-muted">I dati li carichiamo noi da Google: il dettaglio completo è nella scheda <a href="#" data-go="report">Statistiche</a>.</p>
           <div id="perfBox"><div class="sel-m" id="selM"></div><div id="chartBox"></div></div>
           <div class="empty-box" id="perfEmpty" hidden>Le prime statistiche arrivano alla fine del primo mese online.</div>
         </div>
@@ -329,8 +370,42 @@
     </div>
 
     <div class="dpane" data-p="report" hidden>
-      <div class="empty-box" id="repEmpty" hidden>Il primo report arriva alla fine del primo mese online.</div>
-      <div class="ar-card" id="repCard">
+      <div class="empty-box" id="repEmpty" hidden>Le prime statistiche arrivano alla fine del primo mese online.</div>
+      <div class="ar-card gs" id="gaCard" hidden>
+        <div class="rep-head"><div><span class="gs-tag">Google Analytics</span><h3 id="gaTitle"></h3><p class="ar-muted" id="gaSub"></p></div><button class="btn-sm noprint" type="button" onclick="document.body.classList.add('print-ga');window.print();setTimeout(()=>document.body.classList.remove('print-ga'),500)">Stampa o salva PDF</button></div>
+        <p class="gs-info">Aggiornato ogni mese: nella prima settimana carichiamo i dati del mese precedente.</p>
+        <div class="rep-m" id="gaM"></div>
+        <div class="gs-k" id="gaK"></div>
+        <div class="rep-note" id="gaNote" hidden></div>
+        <div class="gs-box" id="gaChBox">
+          <div class="gs-bh"><div class="sel-m" id="gaMet"></div><button class="btn-sm ga-x" type="button" data-x="chart">Espandi</button></div>
+          <div class="gs-ch" id="gaChart"></div>
+        </div>
+        <div class="gs-box" id="gaTbBox">
+          <div class="gs-bh"><div class="sel-m" id="gaTab"></div><button class="btn-sm ga-x" type="button" data-x="table">Espandi</button></div>
+          <input class="gs-q" id="gaQ" type="search" placeholder="Cerca una parola..." aria-label="Cerca nella tabella">
+          <div class="tbl-wrap"><table class="tbl gs-t" id="gaT"></table></div>
+          <button class="btn-sm gs-more" id="gaMore" type="button"></button>
+        </div>
+      </div>
+      <div class="ar-card gs" id="gsCard" hidden style="margin-top:18px">
+        <div class="rep-head"><div><span class="gs-tag">Google Search</span><h3 id="gsTitle"></h3><p class="ar-muted" id="gsSub"></p></div></div>
+        <p class="gs-info">Aggiornato ogni mese: nella prima settimana carichiamo i dati del mese precedente.</p>
+        <div class="rep-m" id="gsM"></div>
+        <div class="gs-k" id="gsK"></div>
+        <div class="rep-note" id="gsNote" hidden></div>
+        <div class="gs-box">
+          <div class="gs-bh"><div class="sel-m" id="gsMet"></div><button class="btn-sm gs-x" type="button" data-x="chart">Espandi</button></div>
+          <div class="gs-ch" id="gsChart"></div>
+        </div>
+        <div class="gs-box">
+          <div class="gs-bh"><div class="sel-m" id="gsTab"></div><button class="btn-sm gs-x" type="button" data-x="table">Espandi</button></div>
+          <input class="gs-q" id="gsQ" type="search" placeholder="Cerca una parola..." aria-label="Cerca nella tabella">
+          <div class="tbl-wrap"><table class="tbl gs-t" id="gsT"></table></div>
+          <button class="btn-sm gs-more" id="gsMore" type="button"></button>
+        </div>
+      </div>
+      <div class="ar-card" id="repCard" style="margin-top:18px">
         <div class="rep-head"><div><h3 id="repTitle"></h3><p class="ar-muted" id="repSub"></p></div><button class="btn-sm noprint" id="repPrint" type="button">Stampa o salva PDF</button></div>
         <div class="rep-m noprint" id="repM"></div>
         <div class="rep-grid" id="repGrid"></div>
@@ -377,6 +452,7 @@
       <div class="xs-grid" id="xsGrid"></div>
       <p class="form-msg" id="xsMsg" role="alert"></p>
     </div>
+    <div class="gs-modal" id="gsModal" hidden role="dialog" aria-modal="true" aria-label="Vista estesa"><div class="gs-mc"><button class="gs-close" id="gsClose" type="button" aria-label="Chiudi">&times;</button><div id="gsMB"></div></div></div>
 
   </div>
 </section>
@@ -402,9 +478,9 @@ const CFG = {
   web3formsKey: '914e01eb-8c00-4420-9d4e-87762a6558c6',
   whatsapp: '393515854466',
   // false = pagina 'in arrivo' (accesso con codice solo da ?anteprima). Mettere true quando Supabase e' aggiornato
-  aperta: false,
+  aperta: true,
   // Area di esempio pubblica (codice ESEMPIO): dati inventati, nessuna chiamata al server
-  esempio: {"cliente": "Bar Esempio (dati di esempio)", "sito": "https://studiodigitalitalia.it", "piano": "Manutenzione Pro", "demo": [{"id": "es-1", "nome": "Bar Esempio: nuovo sito", "sub": "La tua demo personalizzata", "url": "masseria-radice-demo/index.html", "img": "assets/foto-home/sito-masseria.webp", "pacchetto": "pro", "servizi": [], "feat": ["Menu", "Prenotazioni"]}], "scadenze": [{"voce": "Manutenzione annuale", "data": "2027-01-15", "nota": "Rinnovo del piano Manutenzione Pro", "incluso": false}, {"voce": "Dominio barsesempio.it", "data": "2027-03-02", "nota": "Rinnovo automatico", "incluso": true}, {"voce": "Certificato SSL", "data": "2026-12-20", "nota": "Rinnovo automatico", "incluso": true}, {"voce": "Google Business Profile", "data": "2026-12-01", "nota": "Verifica annuale della scheda", "incluso": true}], "analytics": [{"mese": "2026-05", "visite": 412, "utenti": 301, "contatti": 18, "maps": 1240, "chiamate": 22}, {"mese": "2026-06", "visite": 486, "utenti": 352, "contatti": 22, "maps": 1410, "chiamate": 27}, {"mese": "2026-07", "visite": 590, "utenti": 431, "contatti": 29, "maps": 1730, "chiamate": 35}, {"mese": "2026-08", "visite": 548, "utenti": 402, "contatti": 25, "maps": 1655, "chiamate": 31, "nota": "Agosto più lento per le ferie, ma le chiamate da Google Maps restano alte. Abbiamo aggiornato gli orari estivi sulla scheda."}, {"mese": "2026-09", "visite": 671, "utenti": 489, "contatti": 34, "maps": 1920, "chiamate": 40, "nota": "Ripresa forte dopo l'estate. La pagina del menu è la più vista: abbiamo spostato il pulsante Prenota più in alto."}, {"mese": "2026-10", "visite": 734, "utenti": 528, "contatti": 41, "maps": 2105, "chiamate": 46, "nota": "Miglior mese da quando il sito è online. Le ricerche \"bar vicino a me\" in zona portano il 38% delle visite. Prossimo passo: 10 foto nuove sulla scheda Google."}], "documenti": [{"tipo": "Preventivo", "titolo": "Preventivo N. 4.26 - Sito e manutenzione", "data": "2026-04-10", "url": "", "nota": "Accettato"}, {"tipo": "Contratto", "titolo": "Accordo di manutenzione", "data": "2026-04-15", "url": "", "nota": "Firmato da entrambi"}, {"tipo": "Fattura", "titolo": "Fattura 12/2026 - acconto", "data": "2026-04-16", "url": "", "nota": "Pagata"}, {"tipo": "Fattura", "titolo": "Fattura 15/2026 - saldo", "data": "2026-05-02", "url": "", "nota": "Pagata"}, {"tipo": "Guida", "titolo": "Come chiederci una modifica", "data": "2026-05-02", "url": "", "nota": "PDF di 2 pagine"}], "strumenti": [{"nome": "Ritaglia documenti", "desc": "Ritaglia e raddrizza foto di patenti, carte d'identità e moduli, pronti da caricare.", "url": "", "tipo": "Online"}, {"nome": "Comprimi foto", "desc": "Riduce il peso delle foto prima di mandarle o caricarle sul sito, senza perdere qualità.", "url": "", "tipo": "Download"}, {"nome": "Unisci PDF", "desc": "Mette più scansioni in un solo PDF, nell'ordine che scegli.", "url": "", "tipo": "Online"}], "richieste": [{"id": 3, "tipo": "servizio", "testo": "Mi interessa: SEO locale", "urgenza": "Normale", "stato": "ricevuta", "risposta": "", "il": "2026-11-10T09:12:00"}, {"id": 2, "tipo": "modifica", "testo": "Aggiungere il menu di Natale con i prezzi nuovi", "urgenza": "Entro 48 ore", "stato": "in lavoro", "risposta": "Ricevuto il PDF, lo mettiamo online entro giovedì.", "il": "2026-11-06T17:40:00"}, {"id": 1, "tipo": "modifica", "testo": "Aggiornare gli orari di novembre", "urgenza": "Normale", "stato": "fatta", "risposta": "Fatto: orari aggiornati sul sito e su Google.", "il": "2026-10-29T10:05:00"}], "esempio": true},
+  esempio: {"cliente": "Bar Esempio (dati di esempio)", "sito": "https://studiodigitalitalia.it", "piano": "Manutenzione Pro", "demo": [{"id": "es-1", "nome": "Bar Esempio: nuovo sito", "sub": "La tua demo personalizzata", "url": "masseria-radice-demo/index.html", "img": "assets/foto-home/sito-masseria.webp", "pacchetto": "pro", "servizi": [], "feat": ["Menu", "Prenotazioni"]}], "scadenze": [{"voce": "Manutenzione annuale", "data": "2027-01-15", "nota": "Rinnovo del piano Manutenzione Pro", "incluso": false}, {"voce": "Dominio barsesempio.it", "data": "2027-03-02", "nota": "Rinnovo automatico", "incluso": true}, {"voce": "Certificato SSL", "data": "2026-12-20", "nota": "Rinnovo automatico", "incluso": true}, {"voce": "Google Business Profile", "data": "2026-12-01", "nota": "Verifica annuale della scheda", "incluso": true}], "analytics": [{"mese": "2026-05", "visite": 412, "utenti": 301, "contatti": 18, "maps": 1240, "chiamate": 22}, {"mese": "2026-06", "visite": 486, "utenti": 352, "contatti": 22, "maps": 1410, "chiamate": 27}, {"mese": "2026-07", "visite": 590, "utenti": 431, "contatti": 29, "maps": 1730, "chiamate": 35}, {"mese": "2026-08", "visite": 548, "utenti": 402, "contatti": 25, "maps": 1655, "chiamate": 31, "nota": "Agosto più lento per le ferie, ma le chiamate da Google Maps restano alte. Abbiamo aggiornato gli orari estivi sulla scheda."}, {"mese": "2026-09", "visite": 671, "utenti": 489, "contatti": 34, "maps": 1920, "chiamate": 40, "nota": "Ripresa forte dopo l'estate. La pagina del menu è la più vista: abbiamo spostato il pulsante Prenota più in alto."}, {"mese": "2026-10", "visite": 734, "utenti": 528, "contatti": 41, "maps": 2105, "chiamate": 46, "nota": "Miglior mese da quando il sito è online. Le ricerche \"bar vicino a me\" in zona portano il 38% delle visite. Prossimo passo: 10 foto nuove sulla scheda Google."}], "documenti": [{"tipo": "Preventivo", "titolo": "Preventivo N. 4.26 - Sito e manutenzione", "data": "2026-04-10", "url": "", "nota": "Accettato"}, {"tipo": "Contratto", "titolo": "Accordo di manutenzione", "data": "2026-04-15", "url": "", "nota": "Firmato da entrambi"}, {"tipo": "Fattura", "titolo": "Fattura 12/2026 - acconto", "data": "2026-04-16", "url": "", "nota": "Pagata"}, {"tipo": "Fattura", "titolo": "Fattura 15/2026 - saldo", "data": "2026-05-02", "url": "", "nota": "Pagata"}, {"tipo": "Guida", "titolo": "Come chiederci una modifica", "data": "2026-05-02", "url": "", "nota": "PDF di 2 pagine"}], "ga": [{"id": "a10", "mese": "2026-10", "dal": "2026-10-01", "al": "2026-10-31", "caricato": "2026-11-02", "metriche": ["Utenti attivi", "Nuovi utenti", "Sessioni", "Visualizzazioni"], "tot": {"Utenti attivi": 1455, "Nuovi utenti": 975, "Sessioni": 1950, "Visualizzazioni": 4498}, "giorni": [["2026-10-01", 51, 34, 68, 158], ["2026-10-02", 53, 36, 71, 164], ["2026-10-03", 45, 30, 60, 139], ["2026-10-04", 38, 25, 51, 117], ["2026-10-05", 52, 35, 70, 161], ["2026-10-06", 53, 36, 71, 164], ["2026-10-07", 45, 30, 60, 139], ["2026-10-08", 52, 35, 70, 161], ["2026-10-09", 54, 36, 72, 167], ["2026-10-10", 43, 29, 58, 133], ["2026-10-11", 32, 21, 43, 99], ["2026-10-12", 47, 31, 63, 145], ["2026-10-13", 43, 29, 58, 133], ["2026-10-14", 58, 39, 78, 179], ["2026-10-15", 56, 38, 75, 173], ["2026-10-16", 42, 28, 56, 130], ["2026-10-17", 46, 31, 62, 142], ["2026-10-18", 46, 31, 62, 142], ["2026-10-19", 55, 37, 74, 170], ["2026-10-20", 54, 36, 72, 167], ["2026-10-21", 44, 29, 59, 136], ["2026-10-22", 41, 27, 55, 127], ["2026-10-23", 52, 35, 70, 161], ["2026-10-24", 32, 21, 43, 99], ["2026-10-25", 34, 23, 45, 105], ["2026-10-26", 46, 31, 62, 142], ["2026-10-27", 42, 28, 56, 130], ["2026-10-28", 51, 34, 68, 158], ["2026-10-29", 50, 34, 67, 155], ["2026-10-30", 59, 40, 79, 182], ["2026-10-31", 39, 26, 52, 120]], "nota": "Ottobre chiude con il 12% di visite in più. Quasi 6 visitatori su 10 arrivano da Google: la scheda Maps aggiornata sta funzionando. A novembre aggiungiamo il menu di Natale in home.", "tabelle": [{"nome": "Da dove arrivano", "col": ["Gruppo di canali", "Sessioni", "Utenti attivi"], "righe": [["Organic Search", 1180, 760], ["Direct", 420, 310], ["Organic Social", 180, 150], ["Referral", 60, 48]]}, {"nome": "Pagine", "col": ["Titolo pagina", "Visualizzazioni", "Utenti attivi"], "righe": [["Home", 1800, 900], ["Menu", 950, 520], ["Prenota un tavolo", 420, 260], ["Contatti", 380, 300], ["Eventi", 140, 110]]}, {"nome": "Dispositivi", "col": ["Categoria dispositivo", "Utenti attivi"], "righe": [["mobile", 860], ["desktop", 300], ["tablet", 20]]}]}, {"id": "a9", "mese": "2026-09", "dal": "2026-09-01", "al": "2026-09-30", "caricato": "2026-10-02", "metriche": ["Utenti attivi", "Nuovi utenti", "Sessioni", "Visualizzazioni"], "tot": {"Utenti attivi": 1295, "Nuovi utenti": 866, "Sessioni": 1732, "Visualizzazioni": 4002}, "giorni": [["2026-09-01", 48, 32, 64, 148], ["2026-09-02", 45, 30, 60, 139], ["2026-09-03", 48, 32, 64, 148], ["2026-09-04", 45, 30, 60, 139], ["2026-09-05", 31, 21, 41, 96], ["2026-09-06", 41, 27, 55, 127], ["2026-09-07", 55, 37, 74, 170], ["2026-09-08", 52, 35, 70, 161], ["2026-09-09", 49, 33, 66, 151], ["2026-09-10", 42, 28, 56, 130], ["2026-09-11", 41, 27, 55, 127], ["2026-09-12", 31, 21, 41, 96], ["2026-09-13", 28, 19, 37, 86], ["2026-09-14", 50, 34, 67, 155], ["2026-09-15", 44, 29, 59, 136], ["2026-09-16", 52, 35, 70, 161], ["2026-09-17", 43, 29, 58, 133], ["2026-09-18", 54, 36, 72, 167], ["2026-09-19", 39, 26, 52, 120], ["2026-09-20", 27, 18, 36, 83], ["2026-09-21", 40, 27, 54, 124], ["2026-09-22", 53, 36, 71, 164], ["2026-09-23", 45, 30, 60, 139], ["2026-09-24", 54, 36, 72, 167], ["2026-09-25", 44, 29, 59, 136], ["2026-09-26", 28, 19, 37, 86], ["2026-09-27", 36, 24, 48, 111], ["2026-09-28", 51, 34, 68, 158], ["2026-09-29", 41, 27, 55, 127], ["2026-09-30", 38, 25, 51, 117]], "nota": "", "tabelle": [{"nome": "Da dove arrivano", "col": ["Gruppo di canali", "Sessioni", "Utenti attivi"], "righe": [["Organic Search", 1180, 760], ["Direct", 420, 310], ["Organic Social", 180, 150], ["Referral", 60, 48]]}, {"nome": "Pagine", "col": ["Titolo pagina", "Visualizzazioni", "Utenti attivi"], "righe": [["Home", 1800, 900], ["Menu", 950, 520], ["Prenota un tavolo", 420, 260], ["Contatti", 380, 300], ["Eventi", 140, 110]]}, {"nome": "Dispositivi", "col": ["Categoria dispositivo", "Utenti attivi"], "righe": [["mobile", 860], ["desktop", 300], ["tablet", 20]]}]}], "gsc": [{"id": "g2", "dal": "2026-10-20", "al": "2026-11-16", "label": "Ultimi 28 giorni", "caricato": "2026-11-17", "tot": {"c": 142, "i": 3458, "ctr": 4.11, "p": 8.7}, "giorni": [["2026-10-20", 3, 100, 8.6], ["2026-10-21", 4, 136, 8.8], ["2026-10-22", 7, 122, 10.3], ["2026-10-23", 5, 139, 8.7], ["2026-10-24", 5, 86, 10.8], ["2026-10-25", 2, 80, 7.9], ["2026-10-26", 5, 111, 9.4], ["2026-10-27", 3, 114, 8.7], ["2026-10-28", 6, 120, 10.8], ["2026-10-29", 6, 138, 9.5], ["2026-10-30", 4, 139, 10.6], ["2026-10-31", 7, 109, 10.2], ["2026-11-01", 4, 95, 7.4], ["2026-11-02", 4, 140, 7.3], ["2026-11-03", 4, 119, 8.4], ["2026-11-04", 3, 111, 7.6], ["2026-11-05", 5, 115, 7.1], ["2026-11-06", 8, 159, 7.6], ["2026-11-07", 4, 94, 8.5], ["2026-11-08", 5, 89, 11.0], ["2026-11-09", 6, 140, 7.3], ["2026-11-10", 5, 120, 8.1], ["2026-11-11", 5, 163, 7.1], ["2026-11-12", 8, 171, 7.6], ["2026-11-13", 4, 149, 9.1], ["2026-11-14", 8, 132, 9.8], ["2026-11-15", 4, 101, 7.7], ["2026-11-16", 8, 166, 10.1]], "query": [["bar vicino a me", 44, 702, 6.23, 8.1], ["colazione centro vicenza", 25, 391, 6.47, 4.2], ["nome del bar vicenza", 70, 207, 33.89, 1.1], ["aperitivo vicenza", 16, 483, 3.33, 9.8], ["brunch domenica vicenza", 10, 299, 3.46, 7.4], ["bar con dehors vicenza", 7, 172, 4.0, 6.2], ["caffè specialty vicenza", 6, 113, 5.1, 5.5], ["bar aperto domenica", 5, 356, 1.29, 12.3], ["cornetti artigianali vicenza", 3, 89, 3.9, 8.8], ["dove fare colazione vicenza", 3, 218, 1.58, 11.0], ["bar piazza dei signori", 2, 74, 3.12, 6.9], ["spritz vicenza centro", 2, 161, 1.43, 14.2]], "pagine": [["https://www.esempio-bar.it/", 120, 2900, 4.14, 6.2], ["https://www.esempio-bar.it/menu.html", 58, 1400, 4.14, 7.9], ["https://www.esempio-bar.it/contatti.html", 21, 520, 4.04, 8.4], ["https://www.esempio-bar.it/eventi.html", 9, 310, 2.9, 11.2]], "paesi": [["Italia", 190, 4900, 3.88, 7.6], ["Svizzera", 4, 90, 4.4, 9.1], ["Germania", 2, 60, 3.3, 12.0]], "disp": [["Dispositivo mobile", 150, 3600, 4.17, 7.1], ["Computer", 44, 1350, 3.26, 9.0], ["Tablet", 2, 40, 5.0, 8.2]]}, {"id": "g1", "dal": "2026-09-22", "al": "2026-10-19", "label": "Ultimi 28 giorni", "caricato": "2026-10-20", "tot": {"c": 124, "i": 2813, "ctr": 4.41, "p": 9.1}, "giorni": [["2026-09-22", 3, 88, 9.6], ["2026-09-23", 4, 79, 8.5], ["2026-09-24", 4, 80, 7.1], ["2026-09-25", 3, 95, 7.4], ["2026-09-26", 4, 72, 7.5], ["2026-09-27", 3, 67, 10.8], ["2026-09-28", 4, 105, 10.9], ["2026-09-29", 5, 84, 8.2], ["2026-09-30", 3, 89, 8.2], ["2026-10-01", 4, 119, 9.3], ["2026-10-02", 5, 112, 9.2], ["2026-10-03", 2, 66, 7.8], ["2026-10-04", 4, 87, 8.3], ["2026-10-05", 5, 114, 8.2], ["2026-10-06", 7, 124, 8.0], ["2026-10-07", 5, 116, 10.5], ["2026-10-08", 5, 124, 10.9], ["2026-10-09", 4, 97, 10.0], ["2026-10-10", 3, 75, 7.2], ["2026-10-11", 5, 94, 9.3], ["2026-10-12", 5, 136, 9.8], ["2026-10-13", 6, 124, 8.8], ["2026-10-14", 9, 137, 8.9], ["2026-10-15", 4, 130, 9.8], ["2026-10-16", 9, 131, 10.3], ["2026-10-17", 3, 85, 9.7], ["2026-10-18", 3, 76, 7.7], ["2026-10-19", 3, 107, 10.1]], "query": [["bar vicino a me", 38, 610, 6.23, 8.1], ["colazione centro vicenza", 22, 340, 6.47, 4.2], ["nome del bar vicenza", 61, 180, 33.89, 1.1], ["aperitivo vicenza", 14, 420, 3.33, 9.8], ["brunch domenica vicenza", 9, 260, 3.46, 7.4], ["bar con dehors vicenza", 6, 150, 4.0, 6.2], ["caffè specialty vicenza", 5, 98, 5.1, 5.5], ["bar aperto domenica", 4, 310, 1.29, 12.3], ["cornetti artigianali vicenza", 3, 77, 3.9, 8.8], ["dove fare colazione vicenza", 3, 190, 1.58, 11.0], ["bar piazza dei signori", 2, 64, 3.12, 6.9], ["spritz vicenza centro", 2, 140, 1.43, 14.2]], "pagine": [["https://www.esempio-bar.it/", 120, 2900, 4.14, 6.2], ["https://www.esempio-bar.it/menu.html", 58, 1400, 4.14, 7.9], ["https://www.esempio-bar.it/contatti.html", 21, 520, 4.04, 8.4], ["https://www.esempio-bar.it/eventi.html", 9, 310, 2.9, 11.2]], "paesi": [["Italia", 160, 4100, 3.9, 7.9]], "disp": [["Dispositivo mobile", 125, 3000, 4.17, 7.4], ["Computer", 38, 1150, 3.3, 9.3]]}], "strumenti": [{"nome": "Ritaglia documenti", "desc": "Ritaglia e raddrizza foto di patenti, carte d'identità e moduli, pronti da caricare.", "url": "", "tipo": "Online"}, {"nome": "Comprimi foto", "desc": "Riduce il peso delle foto prima di mandarle o caricarle sul sito, senza perdere qualità.", "url": "", "tipo": "Download"}, {"nome": "Unisci PDF", "desc": "Mette più scansioni in un solo PDF, nell'ordine che scegli.", "url": "", "tipo": "Online"}], "richieste": [{"id": 3, "tipo": "servizio", "testo": "Mi interessa: SEO locale", "urgenza": "Normale", "stato": "ricevuta", "risposta": "", "il": "2026-11-10T09:12:00"}, {"id": 2, "tipo": "modifica", "testo": "Aggiungere il menu di Natale con i prezzi nuovi", "urgenza": "Entro 48 ore", "stato": "in lavoro", "risposta": "Ricevuto il PDF, lo mettiamo online entro giovedì.", "il": "2026-11-06T17:40:00"}, {"id": 1, "tipo": "modifica", "testo": "Aggiornare gli orari di novembre", "urgenza": "Normale", "stato": "fatta", "risposta": "Fatto: orari aggiornati sul sito e su Google.", "il": "2026-10-29T10:05:00"}], "esempio": true},
   // Servizi extra: prezzi dal listino (scheda Notion), IVA esclusa
   servizi: [
     { id:'gbp',      nome:'Google Business Profile', txt:'Creazione e ottimizzazione della scheda su Google Maps: categorie, foto, orari, servizi.', prezzo:'130 €', ic:'G' },
@@ -512,6 +588,7 @@ function setTab(t, scroll){
   document.querySelectorAll('#dtabs button').forEach(b => { const on = b.dataset.t === t; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
   document.querySelectorAll('.dpane').forEach(p => p.hidden = p.dataset.p !== t);
   const btn = document.querySelector('#dtabs button.on'); if (btn) btn.scrollIntoView({ block:'nearest', inline:'center' });
+  if (DATA) requestAnimationFrame(() => { if (t === 'report') { renderGa(); renderGs(); } if (t === 'panoramica') renderOverview(); });
   if (scroll) document.getElementById('dtabs').scrollIntoView({ behavior:'smooth', block:'start' });
 }
 document.querySelectorAll('#dtabs button').forEach(b => b.onclick = () => setTab(b.dataset.t));
@@ -550,12 +627,28 @@ function renderOverview(){
   if (last) {
     $('#kpis').innerHTML = KPI.map(([k,l]) => `<div class="kpi"><span>${l}</span><b>${fmt(last[k])}</b>${delta(+last[k], prev ? +prev[k] : null)}</div>`).join('');
     $('#perfBox').hidden = false; $('#perfEmpty').hidden = true; renderChart();
-  } else { $('#kpis').innerHTML = ''; $('#perfBox').hidden = true; $('#perfEmpty').hidden = false; }
+  } else if (gaList().length && gaList()[0].metriche.length) {
+    const A = gaList(), g = A[0], gp = A[1], MET = gaMET(g);
+    $('#upd').textContent = 'Report di ' + gaMesi(g);
+    $('#kpis').innerHTML = g.metriche.slice(0, 4).map(m => `<div class="kpi"><span>${esc(gaNome(m))}</span><b>${gaFmt(m)(g.tot[m] || 0)}</b>${gp && gp.tot[m] != null ? gsDelta(g.tot[m], gp.tot[m], false).replace('sul periodo prima', 'sul mese prima') : '<i class="flat">primo mese</i>'}</div>`).join('');
+    $('#perfBox').hidden = false; $('#perfEmpty').hidden = true;
+    $('#selM').innerHTML = g.metriche.map((m, i) => `<button class="${i === GA_MET ? 'on' : ''}" data-k="${i}">${esc(gaNome(m))}</button>`).join('');
+    $('#selM').querySelectorAll('button').forEach(b => b.onclick = () => { GA_MET = +b.dataset.k; renderOverview(); });
+    if (GA_MET >= g.metriche.length) GA_MET = 0;
+    requestAnimationFrame(() => drawChart($('#chartBox'), gaDays(g), 'm' + GA_MET, false, MET));
+  } else {
+    const G = gsList(), g = G[0], gp = G[1];
+    if (g) {
+      $('#upd').textContent = 'Ricerche Google: ' + gaMesi(g).toLowerCase();
+      $('#kpis').innerHTML = [['c','Clic da Google'],['i','Impressioni su Google'],['ctr','CTR'],['p','Posizione media']].map(([k,l]) => `<div class="kpi"><span>${l}</span><b>${GSMET[k][1](g.tot[k] || 0)}</b>${gsDeltaG(g, gp, k)}</div>`).join('');
+      $('#perfBox').hidden = false; $('#selM').innerHTML = ''; $('#perfEmpty').hidden = true; const days = gsDays(g); requestAnimationFrame(() => drawChart($('#chartBox'), days, 'c'));
+    } else { $('#kpis').innerHTML = ''; $('#perfBox').hidden = true; $('#perfEmpty').hidden = false; }
+  }
   // colpo d'occhio
   const sc = (D.scadenze || []).slice().sort((a,b) => a.data.localeCompare(b.data));
   const nx = sc.find(x => giorni(x.data) >= 0) || null, op = openRq().length;
   $('#gla').innerHTML = `
-    <button class="gla-c" data-go="report"><span>Ultimo report</span><b>${last ? meseLbl(last.mese) : 'In arrivo'}</b><small>${last ? (last.nota ? 'Con il nostro commento' : 'Numeri del mese') : 'Arriva a fine del primo mese'}</small></button>
+    <button class="gla-c" data-go="report"><span>Statistiche</span><b>${gsList().length ? 'Google: ' + fmt(gsList()[0].tot.c) + ' clic' : last ? meseLbl(last.mese) : 'In arrivo'}</b><small>${gsList().length ? gaMesi(gsList()[0]) : last ? (last.nota ? 'Con il nostro commento' : 'Numeri del mese') : 'Arrivano a fine del primo mese'}</small></button>
     <button class="gla-c" data-go="richieste"><span>Richieste aperte</span><b>${op ? op : 'Nessuna'}</b><small>${op ? 'Vedi a che punto sono' : 'Chiedici una modifica'}</small></button>
     <button class="gla-c" data-go="panoramica" data-scroll="scad"><span>Prossima scadenza</span><b>${nx ? esc(nx.voce) : 'Nessuna'}</b><small>${nx ? 'Il ' + dataIt(nx.data) : 'Tutto in regola'}</small></button>`;
   const sb = $('#gla').querySelector('[data-scroll]'); if (sb) sb.onclick = e => { e.stopPropagation(); document.getElementById('scadCard').scrollIntoView({ behavior:'smooth', block:'center' }); };
@@ -576,8 +669,10 @@ function renderOverview(){
 
 /* ---------- report mensili ---------- */
 function renderReport(){
-  const an = months();
-  $('#repEmpty').hidden = !!an.length; $('#repCard').hidden = !an.length; $('#storico').hidden = !an.length;
+  const an = months(), hasG = gsList().length + gaList().length;
+  renderGa(); renderGs();
+  $('#repEmpty').hidden = !!an.length || !!hasG; $('#repCard').hidden = !an.length; $('#storico').hidden = !an.length;
+  $('#repCard').style.marginTop = hasG ? '18px' : '0';
   if (!an.length) return;
   if (!REP_M || !an.find(r => r.mese === REP_M)) REP_M = an[an.length-1].mese;
   $('#repM').innerHTML = an.slice().reverse().map(r => `<button class="${r.mese===REP_M?'on':''}" data-m="${r.mese}">${meseLbl(r.mese)}</button>`).join('');
@@ -592,6 +687,200 @@ function renderReport(){
 }
 $('#repPrint').onclick = () => { document.body.classList.add('print-rep'); window.print(); setTimeout(() => document.body.classList.remove('print-rep'), 500); };
 
+/* ---------- Google Search Console ---------- */
+const gsList = () => (DATA.gsc || []).slice().sort((a,b) => String(b.al).localeCompare(String(a.al)));
+let GS_I = 0, GS_MET = 'c', GS_TAB = 'query', GS_SORT = [1, -1], GS_Q = '', GS_ALL = false;
+const f1 = v => (Math.round(v * 10) / 10).toLocaleString('it-IT', { minimumFractionDigits:1, maximumFractionDigits:1 });
+const GSMET = { c:['Clic', fmt], i:['Impressioni', fmt], ctr:['CTR', v => f1(v) + '%'], p:['Posizione media', f1] };
+const GSTAB = { query:['Ricerche','Ricerca'], pagine:['Pagine','Pagina'], paesi:['Paesi','Paese'], disp:['Dispositivi','Dispositivo'] };
+const gsDays = g => (g.giorni || []).map(r => ({ d:r[0], c:r[1], i:r[2], ctr: r[2] ? r[1] / r[2] * 100 : 0, p:r[3] }));
+const dCorta = d => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day:'numeric', month:'short' });
+function gsDelta(cur, prev, lowerBetter){
+  if (prev == null || !prev) return '<i class="flat">primo periodo</i>';
+  const d = Math.round((cur - prev) / prev * 100);
+  if (!d) return '<i class="flat">stabile</i>';
+  const good = lowerBetter ? d < 0 : d > 0;
+  return `<i class="${good ? 'up' : 'down'}">${d > 0 ? '+' : ''}${d}% sul periodo prima</i>`;
+}
+// confronto col periodo prima: clic e impressioni come media al giorno se i periodi hanno durate diverse
+function gsDeltaG(g, prev, k){
+  if (!prev || !prev.tot) return '<i class="flat">primo periodo</i>';
+  let a = g.tot[k] || 0, b = prev.tot[k] || 0;
+  const na = (g.giorni || []).length, nb = (prev.giorni || []).length;
+  if ((k === 'c' || k === 'i') && na && nb && na !== nb) { a = a / na; b = b / nb; return gsDelta(a, b, false).replace('sul periodo prima', 'al giorno sul mese prima'); }
+  return gsDelta(a, b, k === 'p').replace('sul periodo prima', 'sul mese prima');
+}
+function lineChart(days, key, W, H, MET){
+  MET = MET || GSMET;
+  if (!days.length) return '<div class="empty-box">Nessun dato giornaliero in questo periodo.</div>';
+  const pl = 44, pr = 14, pt = 18, pb = 30, n = days.length, vals = days.map(x => x[key]);
+  let mx = Math.max(...vals), mn = key === 'p' ? Math.min(...vals) : 0; if (mx === mn) mx = mn + 1;
+  const X = i => pl + (n === 1 ? (W - pl - pr) / 2 : i * (W - pl - pr) / (n - 1));
+  const Y = v => key === 'p' ? pt + (v - mn) / (mx - mn) * (H - pt - pb) : H - pb - (v - mn) / (mx - mn) * (H - pt - pb);
+  const pts = days.map((x, i) => [X(i), Y(x[key])]);
+  const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  const base = key === 'p' ? pt : H - pb;
+  const area = line + ` L${pts[n-1][0].toFixed(1)} ${base} L${pts[0][0].toFixed(1)} ${base} Z`;
+  const ticks = [0, .5, 1].map(t => { const v = key === 'p' ? mn + t * (mx - mn) : mn + (1 - t) * (mx - mn); const y = pt + t * (H - pt - pb); return `<line class="gl" x1="${pl}" x2="${W - pr}" y1="${y}" y2="${y}"/><text class="yl" x="${pl - 8}" y="${y + 4}" text-anchor="end">${MET[key][1](v)}</text>`; }).join('');
+  const step = Math.max(1, Math.ceil(n / (W > 700 ? 10 : 5)));
+  const xl = days.map((x, i) => i % step === 0 || (i === n - 1 && (n - 1) % step > step / 2) ? `<text x="${X(i)}" y="${H - 8}" text-anchor="middle">${dCorta(x.d)}</text>` : '').join('');
+  return `<svg class="lc" viewBox="0 0 ${W} ${H}" data-n="${n}" data-pl="${pl}" data-pr="${pr}" role="img" aria-label="Andamento giornaliero: ${MET[key][0]}">${ticks}<path class="ar" d="${area}"/><path class="ln" d="${line}"/>${xl}<line class="cur" x1="0" x2="0" y1="${pt}" y2="${H - pb}" style="display:none"/><circle class="dot" r="4.5" style="display:none"/></svg><div class="tip" hidden></div>`;
+}
+function drawChart(box, days, key, big, MET){
+  const W = Math.max(280, Math.round(box.clientWidth || (big ? 1000 : 640))), H = big ? (W < 520 ? Math.round(W * .85) : Math.min(460, Math.round(W * .42))) : (W < 520 ? 210 : 260);
+  box.innerHTML = lineChart(days, key, W, H, MET); hookChart(box, days, key, MET);
+}
+function hookChart(box, days, key, MET){
+  MET = MET || GSMET;
+  const svg = box.querySelector('svg.lc'), tip = box.querySelector('.tip'); if (!svg) return;
+  const n = +svg.dataset.n, pl = +svg.dataset.pl, pr = +svg.dataset.pr, vb = svg.viewBox.baseVal;
+  const move = ev => {
+    const r = svg.getBoundingClientRect(), cx = ((ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left) / r.width * vb.width;
+    const i = Math.max(0, Math.min(n - 1, Math.round((cx - pl) / ((vb.width - pl - pr) / Math.max(1, n - 1)))));
+    const pts = svg.querySelector('.ln').getAttribute('d').split(/[ML]/).filter(Boolean).map(s => s.trim().split(' ').map(Number));
+    const [x, y] = pts[i], cur = svg.querySelector('.cur'), dot = svg.querySelector('.dot');
+    cur.setAttribute('x1', x); cur.setAttribute('x2', x); cur.style.display = ''; dot.setAttribute('cx', x); dot.setAttribute('cy', y); dot.style.display = '';
+    const d = days[i];
+    tip.innerHTML = `<b>${new Date(d.d + 'T12:00:00').toLocaleDateString('it-IT', { weekday:'short', day:'numeric', month:'long' })}</b>${Object.keys(MET).map(k => `<span class="${k === key ? 'on' : ''}">${MET[k][0]}: ${MET[k][1](d[k])}</span>`).join('')}`;
+    tip.hidden = false; const px = x / vb.width * r.width; tip.style.left = Math.min(Math.max(px, 70), r.width - 70) + 'px';
+  };
+  const out = () => { tip.hidden = true; svg.querySelector('.cur').style.display = 'none'; svg.querySelector('.dot').style.display = 'none'; };
+  svg.addEventListener('mousemove', move); svg.addEventListener('touchstart', move, { passive:true }); svg.addEventListener('touchmove', move, { passive:true }); svg.addEventListener('mouseleave', out);
+}
+function gsRows(g, all){
+  let R = (g[GS_TAB] || []).slice();
+  if (GS_Q) { const q = GS_Q.toLowerCase(); R = R.filter(r => String(r[0]).toLowerCase().includes(q)); }
+  const [col, dir] = GS_SORT; R.sort((a, b) => col === 0 ? dir * String(a[0]).localeCompare(String(b[0])) : dir * ((+a[col]) - (+b[col])));
+  return { tot: R.length, rows: all ? R : R.slice(0, 15) };
+}
+function gsTable(g, all){
+  const { tot, rows } = gsRows(g, all), sm = innerWidth < 620, H = [GSTAB[GS_TAB][1], 'Clic', sm ? 'Impr.' : 'Impressioni', 'CTR', sm ? 'Pos.' : 'Posizione'];
+  const nm = v => GS_TAB === 'pagine' ? String(v).replace(/^https?:\/\/(www\.)?[^/]+/, '') || '/' : v;
+  const head = '<tr>' + H.map((h, i) => `<th data-c="${i}" class="${GS_SORT[0] === i ? 'srt ' + (GS_SORT[1] > 0 ? 'asc' : 'desc') : ''}">${h}</th>`).join('') + '</tr>';
+  const body = rows.length ? rows.map(r => `<tr><td title="${esc(r[0])}">${esc(nm(r[0]))}</td><td>${fmt(r[1])}</td><td>${fmt(r[2])}</td><td>${f1(r[3])}%</td><td>${f1(r[4])}</td></tr>`).join('') : `<tr><td colspan="5" class="ar-muted">${GS_Q ? 'Nessun risultato per "' + esc(GS_Q) + '"' : 'Nessun dato'}</td></tr>`;
+  return { html: head + body, tot };
+}
+function bindSort(table, rerender){ table.querySelectorAll('th[data-c]').forEach(th => th.onclick = () => { const c = +th.dataset.c; GS_SORT = GS_SORT[0] === c ? [c, -GS_SORT[1]] : [c, c === 0 || c === 4 ? 1 : -1]; rerender(); }); }
+function renderGs(){
+  const L = gsList(); $('#gsCard').hidden = !L.length; if (!L.length) return;
+  if (GS_I >= L.length) GS_I = 0;
+  const g = L[GS_I], prev = L[GS_I + 1], t = g.tot || {}, pt = prev ? prev.tot : null;
+  $('#gsTitle').textContent = 'Ricerche Google: ' + gaMesi(g).toLowerCase().replace(/^./, c => c.toUpperCase());
+  $('#gsNote').hidden = !g.nota; $('#gsNote').innerHTML = g.nota ? `<h4>Il commento di Studio Digital Italia</h4><p>${esc(g.nota)}</p>` : '';
+  $('#gsSub').textContent = 'Come ti trovano le persone su Google: dati di Google Search Console' + (g.caricato ? ', aggiornati il ' + dataIt(g.caricato) : '') + '.';
+  $('#gsM').hidden = L.length < 2;
+  $('#gsM').innerHTML = L.map((x, i) => `<button class="${i === GS_I ? 'on' : ''}" data-i="${i}">${gaMesi(x)}</button>`).join('');
+  $('#gsM').querySelectorAll('button').forEach(b => b.onclick = () => { GS_I = +b.dataset.i; renderGs(); });
+  $('#gsK').innerHTML = [['c', 'Clic dal motore di ricerca', 'Persone entrate nel sito da Google'], ['i', 'Impressioni', 'Volte in cui il sito è comparso su Google'], ['ctr', 'CTR', 'Percentuale di chi vede il sito e clicca'], ['p', 'Posizione media', 'Più è bassa, più sei in alto']].map(([k, l, h]) =>
+    `<div class="rep-k" title="${h}"><span>${l}</span><b>${GSMET[k][1](t[k] || 0)}</b>${gsDeltaG(g, prev, k)}<small>${h}</small></div>`).join('');
+  $('#gsMet').innerHTML = Object.keys(GSMET).map(k => `<button class="${k === GS_MET ? 'on' : ''}" data-k="${k}">${GSMET[k][0]}</button>`).join('');
+  $('#gsMet').querySelectorAll('button').forEach(b => b.onclick = () => { GS_MET = b.dataset.k; renderGs(); });
+  const days = gsDays(g); drawChart($('#gsChart'), days, GS_MET);
+  const tabs = Object.keys(GSTAB).filter(k => (g[k] || []).length);
+  if (!tabs.includes(GS_TAB)) GS_TAB = tabs[0] || 'query';
+  $('#gsTab').innerHTML = tabs.map(k => `<button class="${k === GS_TAB ? 'on' : ''}" data-t="${k}">${GSTAB[k][0]} <em>${g[k].length}</em></button>`).join('');
+  $('#gsTab').querySelectorAll('button').forEach(b => b.onclick = () => { GS_TAB = b.dataset.t; GS_Q = ''; $('#gsQ').value = ''; GS_SORT = [1, -1]; renderGs(); });
+  const tb = gsTable(g, GS_ALL); $('#gsT').innerHTML = tb.html; bindSort($('#gsT'), renderGs);
+  $('#gsMore').hidden = tb.tot <= 15; $('#gsMore').textContent = GS_ALL ? 'Mostra meno' : 'Mostra tutte (' + tb.tot + ')';
+}
+let RZ; window.addEventListener('resize', () => { clearTimeout(RZ); RZ = setTimeout(() => { if (DATA && TAB === 'report') { renderGa(); renderGs(); } if (DATA && TAB === 'panoramica') renderOverview(); }, 200); });
+$('#gsQ').addEventListener('input', e => { GS_Q = e.target.value.trim(); renderGs(); });
+$('#gsMore').onclick = () => { GS_ALL = !GS_ALL; renderGs(); };
+function gsModal(kind){
+  const g = gsList()[GS_I]; if (!g) return;
+  const M = $('#gsModal'), B = $('#gsMB'); M.hidden = false; document.body.style.overflow = 'hidden';
+  const draw = () => {
+    if (kind === 'chart') {
+      const days = gsDays(g);
+      B.innerHTML = `<h3>${GSMET[GS_MET][0]} giorno per giorno</h3><p class="ar-muted">Dal ${dataIt(g.dal)} al ${dataIt(g.al)}. Passa sul grafico per i dettagli di ogni giorno.</p><div class="sel-m" id="mMet">${Object.keys(GSMET).map(k => `<button class="${k === GS_MET ? 'on' : ''}" data-k="${k}">${GSMET[k][0]}</button>`).join('')}</div><div class="gs-ch gs-chx" id="mCh"></div>`;
+      drawChart($('#mCh'), days, GS_MET, true);
+      B.querySelectorAll('#mMet button').forEach(b => b.onclick = () => { GS_MET = b.dataset.k; draw(); renderGs(); });
+    } else {
+      const tb = gsTable(g, true);
+      B.innerHTML = `<h3>${GSTAB[GS_TAB][0]}: tutte (${tb.tot})</h3><p class="ar-muted">Tocca il titolo di una colonna per ordinare.</p><input class="gs-q" id="mQ" type="search" placeholder="Cerca una parola..." value="${esc(GS_Q)}"><div class="tbl-wrap"><table class="tbl gs-t" id="mT">${tb.html}</table></div>`;
+      bindSort($('#mT'), () => { draw(); renderGs(); });
+      const q = $('#mQ'); q.oninput = () => { GS_Q = q.value.trim(); const t2 = gsTable(g, true); $('#mT').innerHTML = t2.html; bindSort($('#mT'), () => { draw(); renderGs(); }); renderGs(); };
+    }
+  };
+  draw();
+}
+document.querySelectorAll('.gs-x').forEach(b => b.onclick = () => gsModal(b.dataset.x));
+const gsClose = () => { $('#gsModal').hidden = true; document.body.style.overflow = ''; };
+$('#gsClose').onclick = gsClose;
+$('#gsModal').addEventListener('click', e => { if (e.target.id === 'gsModal') gsClose(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#gsModal').hidden) gsClose(); });
+
+/* ---------- Google Analytics: report mensili ---------- */
+const gaList = () => (DATA.ga || []).slice().sort((a,b) => String(b.dal).localeCompare(String(a.dal)));
+let GA_I = 0, GA_MET = 0, GA_TAB = 0, GA_SORT = [1, -1], GA_Q = '', GA_ALL = false;
+const GA_IT = { 'Active users':'Utenti attivi', 'New users':'Nuovi utenti', 'Sessions':'Sessioni', 'Views':'Visualizzazioni', 'Event count':'Eventi', 'Engaged sessions':'Sessioni con interazione', 'Key events':'Eventi chiave' };
+const gaNome = m => GA_IT[m] || m;
+const gaFmt = m => /durata|tempo|duration|time/i.test(m) ? (v => { v = Math.round(v); return v >= 60 ? Math.floor(v / 60) + 'm ' + (v % 60) + 's' : v + 's'; }) : /tasso|rate|frequenza|per utente|per sessione|per user|per session/i.test(m) ? f1 : fmt;
+const fineMese = d => { const x = new Date(d + 'T12:00:00'); x.setDate(x.getDate() + 1); return x.getDate() === 1; };
+const gaMesi = g => { const a = g.dal.slice(0, 7), b = g.al.slice(0, 7); const l = a === b && g.dal.endsWith('-01') && fineMese(g.al) ? meseLbl(a) : dCorta(g.dal) + ' - ' + dataIt(g.al); return l.charAt(0).toUpperCase() + l.slice(1); };
+function gaMET(g){ const o = {}; g.metriche.forEach((m, i) => o['m' + i] = [gaNome(m), gaFmt(m)]); return o; }
+const gaDays = g => g.giorni.map(r => { const o = { d:r[0] }; g.metriche.forEach((m, i) => o['m' + i] = r[i + 1]); return o; });
+function gaTable(t, all){
+  let R = t.righe.slice();
+  if (GA_Q) { const q = GA_Q.toLowerCase(); R = R.filter(r => String(r[0]).toLowerCase().includes(q)); }
+  const [c, d] = GA_SORT; R.sort((a, b) => c === 0 ? d * String(a[0]).localeCompare(String(b[0])) : d * ((+a[c] || 0) - (+b[c] || 0)));
+  const tot = R.length; if (!all) R = R.slice(0, 15);
+  const head = '<tr>' + t.col.map((h, i) => `<th data-c="${i}" class="${GA_SORT[0] === i ? 'srt ' + (GA_SORT[1] > 0 ? 'asc' : 'desc') : ''}">${esc(i ? gaNome(h) : h)}</th>`).join('') + '</tr>';
+  const body = R.length ? R.map(r => '<tr>' + t.col.map((h, i) => i ? `<td>${gaFmt(h)(+r[i] || 0)}</td>` : `<td title="${esc(r[0])}">${esc(r[0])}</td>`).join('') + '</tr>').join('') : `<tr><td colspan="${t.col.length}" class="ar-muted">Nessun risultato</td></tr>`;
+  return { html: head + body, tot };
+}
+function gaBindSort(tb, re){ tb.querySelectorAll('th[data-c]').forEach(th => th.onclick = () => { const c = +th.dataset.c; GA_SORT = GA_SORT[0] === c ? [c, -GA_SORT[1]] : [c, c ? -1 : 1]; re(); }); }
+function renderGa(){
+  const L = gaList(); $('#gaCard').hidden = !L.length; if (!L.length) return;
+  if (GA_I >= L.length) GA_I = 0;
+  const g = L[GA_I], p = L[GA_I + 1], MET = gaMET(g);
+  $('#gaTitle').textContent = 'Report di ' + gaMesi(g);
+  $('#gaSub').textContent = 'Visite al sito da tutte le fonti: dati di Google Analytics' + (g.caricato ? ', caricati il ' + dataIt(g.caricato) : '') + '.';
+  $('#gaM').hidden = L.length < 2;
+  $('#gaM').innerHTML = L.map((x, i) => `<button class="${i === GA_I ? 'on' : ''}" data-i="${i}">${gaMesi(x)}</button>`).join('');
+  $('#gaM').querySelectorAll('button').forEach(b => b.onclick = () => { GA_I = +b.dataset.i; GA_TAB = 0; GA_Q = ''; renderGa(); });
+  $('#gaK').innerHTML = g.metriche.slice(0, 4).map(m => `<div class="rep-k"><span>${esc(gaNome(m))}</span><b>${gaFmt(m)(g.tot[m] || 0)}</b>${p && p.tot[m] != null ? gsDelta(g.tot[m], p.tot[m], false).replace('sul periodo prima', 'sul mese prima') : '<i class="flat">primo mese</i>'}</div>`).join('');
+  $('#gaK').hidden = !g.metriche.length;
+  $('#gaNote').hidden = !g.nota; $('#gaNote').innerHTML = g.nota ? `<h4>Il commento di Studio Digital Italia</h4><p>${esc(g.nota)}</p>` : '';
+  const hasD = g.giorni.length && g.metriche.length; $('#gaChBox').hidden = !hasD;
+  if (hasD) {
+    if (GA_MET >= g.metriche.length) GA_MET = 0;
+    $('#gaMet').innerHTML = g.metriche.map((m, i) => `<button class="${i === GA_MET ? 'on' : ''}" data-k="${i}">${esc(gaNome(m))}</button>`).join('');
+    $('#gaMet').querySelectorAll('button').forEach(b => b.onclick = () => { GA_MET = +b.dataset.k; renderGa(); });
+    drawChart($('#gaChart'), gaDays(g), 'm' + GA_MET, false, MET);
+  }
+  $('#gaTbBox').hidden = !g.tabelle.length;
+  if (g.tabelle.length) {
+    if (GA_TAB >= g.tabelle.length) GA_TAB = 0;
+    $('#gaTab').innerHTML = g.tabelle.map((t, i) => `<button class="${i === GA_TAB ? 'on' : ''}" data-t="${i}">${esc(t.nome)} <em>${t.righe.length}</em></button>`).join('');
+    $('#gaTab').querySelectorAll('button').forEach(b => b.onclick = () => { GA_TAB = +b.dataset.t; GA_Q = ''; $('#gaQ').value = ''; GA_SORT = [1, -1]; renderGa(); });
+    const tb = gaTable(g.tabelle[GA_TAB], GA_ALL); $('#gaT').innerHTML = tb.html; gaBindSort($('#gaT'), renderGa);
+    $('#gaT').classList.toggle('many', g.tabelle[GA_TAB].col.length > 4);
+    $('#gaMore').hidden = tb.tot <= 15; $('#gaMore').textContent = GA_ALL ? 'Mostra meno' : 'Mostra tutte (' + tb.tot + ')';
+  }
+}
+$('#gaQ').addEventListener('input', e => { GA_Q = e.target.value.trim(); renderGa(); });
+$('#gaMore').onclick = () => { GA_ALL = !GA_ALL; renderGa(); };
+function gaModal(kind){
+  const g = gaList()[GA_I]; if (!g) return;
+  const M = $('#gsModal'), B = $('#gsMB'); M.hidden = false; document.body.style.overflow = 'hidden';
+  const MET = gaMET(g);
+  const draw = () => {
+    if (kind === 'chart') {
+      B.innerHTML = `<h3>${esc(gaNome(g.metriche[GA_MET]))} giorno per giorno</h3><p class="ar-muted">${gaMesi(g)}. Passa sul grafico per i dettagli di ogni giorno.</p><div class="sel-m" id="mMet">${g.metriche.map((m, i) => `<button class="${i === GA_MET ? 'on' : ''}" data-k="${i}">${esc(gaNome(m))}</button>`).join('')}</div><div class="gs-ch gs-chx" id="mCh"></div>`;
+      drawChart($('#mCh'), gaDays(g), 'm' + GA_MET, true, MET);
+      B.querySelectorAll('#mMet button').forEach(b => b.onclick = () => { GA_MET = +b.dataset.k; draw(); renderGa(); });
+    } else {
+      const t = g.tabelle[GA_TAB], tb = gaTable(t, true);
+      B.innerHTML = `<h3>${esc(t.nome)}: tutte (${tb.tot})</h3><p class="ar-muted">Tocca il titolo di una colonna per ordinare.</p><input class="gs-q" id="mQ" type="search" placeholder="Cerca una parola..." value="${esc(GA_Q)}"><div class="tbl-wrap"><table class="tbl gs-t" id="mT">${tb.html}</table></div>`;
+      gaBindSort($('#mT'), () => { draw(); renderGa(); });
+      const q = $('#mQ'); q.oninput = () => { GA_Q = q.value.trim(); const t2 = gaTable(t, true); $('#mT').innerHTML = t2.html; gaBindSort($('#mT'), () => { draw(); renderGa(); }); renderGa(); };
+    }
+  };
+  draw();
+}
+document.querySelectorAll('.ga-x').forEach(b => b.onclick = () => gaModal(b.dataset.x));
+
 /* ---------- richieste ---------- */
 function renderRich(){
   const R = DATA.richieste || [], op = openRq().length;
@@ -603,7 +892,7 @@ function renderRich(){
   }).join('') : '<li class="rq"><p class="ar-muted">Nessuna richiesta finora. Quando ce ne mandi una, qui vedi a che punto è.</p></li>';
 }
 async function sendReq(tipo, testo, urgenza){
-  if (DATA.esempio) {
+  if (DATA.esempio || DATA.anteprima) {
     DATA.richieste = DATA.richieste || [];
     DATA.richieste.unshift({ id: Date.now(), tipo, testo, urgenza, stato:'ricevuta', risposta:'', il: new Date().toISOString() });
     return { ok:true, esempio:true };
@@ -639,7 +928,7 @@ function renderDocs(){
   $('#docF').innerHTML = all.length > 2 ? tipi.map(t => `<button class="${t===DOC_F?'on':''}" data-f="${esc(t)}">${t === 'Tutti' ? 'Tutti' : esc(PL[t] || t)}</button>`).join('') : '';
   $('#docF').querySelectorAll('button').forEach(b => b.onclick = () => { DOC_F = b.dataset.f; renderDocs(); });
   const L = all.filter(d => DOC_F === 'Tutti' || (d.tipo || 'Altro') === DOC_F);
-  $('#docList').innerHTML = L.length ? L.map(d => `<li class="dc"><span class="dc-ic">${DOC_IC[d.tipo] || 'DOC'}</span><div><b>${esc(d.titolo)}</b><small>${esc(d.tipo || 'Documento')}${d.data ? ' · ' + dataIt(d.data) : ''}${d.nota ? ' · ' + esc(d.nota) : ''}</small></div>${d.url ? `<a class="btn-sm" href="${esc(d.url)}" target="_blank" rel="noopener">Apri</a>` : `<span class="btn-sm dis">${DATA.esempio ? 'Esempio' : 'In arrivo'}</span>`}</li>`).join('')
+  $('#docList').innerHTML = L.length ? L.map(d => `<li class="dc"><span class="dc-ic">${DOC_IC[d.tipo] || 'DOC'}</span><div><b>${esc(d.titolo)}</b><small>${esc(d.tipo || 'Documento')}${d.data ? ' · ' + dataIt(d.data) : ''}${d.nota ? ' · ' + esc(d.nota) : ''}</small></div>${d.url ? `<a class="btn-sm" href="${esc(d.url)}" target="_blank" rel="noopener" ${d.file ? 'download' : ''}>${d.file ? 'Scarica' : 'Apri'}</a>` : `<span class="btn-sm dis">${DATA.esempio ? 'Esempio' : 'In arrivo'}</span>`}</li>`).join('')
     : '<li class="dc dc-empty"><p class="ar-muted">Qui trovi preventivi, contratto, fatture e guide appena li carichiamo.</p></li>';
 }
 
@@ -678,13 +967,18 @@ function render(){
 
 /* ---------- AVVIO ---------- */
 const ANTEPRIMA = new URLSearchParams(location.search).has('anteprima');
-if (!CFG.aperta && !ANTEPRIMA) {
+const PREVIEW = new URLSearchParams(location.search).has('preview');
+if (PREVIEW) {
+  let d = null; try { d = JSON.parse(localStorage.getItem('sdi_preview') || 'null'); } catch(e){}
+  if (d) { DATA = d; CODE = 'ANTEPRIMA'; $('#soon').hidden = true; $('#prevBar').hidden = false; $('#prevName').textContent = d.cliente; show(false); }
+}
+if (!PREVIEW && !CFG.aperta && !ANTEPRIMA) {
   $('#gate').hidden = true; $('#soon').hidden = false;
   $('#soonEs').onclick = async () => { await openCode('ESEMPIO'); $('#soon').hidden = true; show(true); };
   $('#btnOut').onclick = () => { location.href = location.pathname; };
 }
 (async () => {
-  if (!CFG.aperta && !ANTEPRIMA) return;
+  if (PREVIEW || (!CFG.aperta && !ANTEPRIMA)) return;
   const qc = new URLSearchParams(location.search).get('codice');
   let saved = null; try { saved = sessionStorage.getItem('sdi_cli'); } catch(e){}
   if (qc) history.replaceState(null, '', location.pathname);
