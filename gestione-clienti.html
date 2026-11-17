@@ -8,12 +8,15 @@
 <style>
 .mbar{display:none!important}
 [hidden]{display:none!important}
-.ar-hero{padding:130px 0 46px}
-.ar-hero h1{max-width:20ch}
+.page-hero.ar-hero{padding:104px 0 18px}
+.page-hero.ar-hero h1{max-width:24ch;font-size:clamp(1.7rem,3.2vw,2.4rem);margin:8px 0 8px}
+.page-hero.ar-hero p{font-size:.98rem;max-width:62ch}
+.ar-hero .crumb{font-size:.78rem}
+body.in .ar-hero{padding:92px 0 4px}body.in .ar-hero p,body.in .ar-hero .eyebrow{display:none}body.in .ar-hero h1{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:6px 0 0}
 .ar-tabs{display:inline-flex;gap:4px;padding:4px;margin-top:26px;border-radius:999px;background:#fff;border:1px solid var(--line2)}
 .ar-tabs a{padding:9px 18px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--ink2)}
 .ar-tabs a.on{background:var(--accent);color:#fff}
-.ar-sec{padding:30px 0 48px}
+.ar-sec{padding:22px 0 48px}
 .ar-card{background:#fff;border:1px solid var(--line2);border-radius:var(--r2);padding:26px}
 .ar-card h2,.ar-card h3{font-family:var(--head);font-weight:700;letter-spacing:-.01em}
 .ar-card h2{font-size:1.45rem;margin-bottom:6px}
@@ -143,7 +146,7 @@
 .adm-sel select{font:inherit;font-size:.85rem;padding:8px;border-radius:8px;border:1px solid var(--line2)}
 .ar-grid.g2{grid-template-columns:repeat(2,1fr)}
 @media(max-width:980px){.ar-grid{grid-template-columns:repeat(2,1fr)}.conf,.dgrid{grid-template-columns:1fr}.sum{position:static}.kpis{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:820px){.ar-hero{padding:104px 0 30px}.ar-gate{grid-template-columns:1fr;gap:26px}.ar-sec{padding:20px 0 40px}.ar-card{padding:20px}}
+@media(max-width:820px){.page-hero.ar-hero{padding:88px 0 12px}body.in .ar-hero{padding:80px 0 0}.ar-gate{grid-template-columns:1fr;gap:26px}.ar-sec{padding:20px 0 40px}.ar-card{padding:20px}}
 @media(max-width:620px){.ar-grid,.ar-grid.g2,.packs{grid-template-columns:1fr}.ar-chips{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.ar-chip{flex:0 0 auto}.tbl{min-width:600px}.tbl td:first-child{white-space:nowrap}.chart text{font-size:16px}.fgrid{grid-template-columns:1fr}.kpi b{font-size:1.6rem}.kpi{padding:14px}.ar-tabs{display:flex}.ar-tabs a{flex:1;text-align:center;padding:9px 10px}.svc{flex-wrap:wrap}.btn-add{width:100%}}
 @media print{.nav,.mnav,footer,.ar-hero,#catalogo,.conf>div:first-child,#againBtn{display:none!important}.sum{position:static}}
 
