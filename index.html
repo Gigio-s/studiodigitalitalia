@@ -561,6 +561,16 @@ body.menu-open{overflow:hidden}
   .hero h1{font-size:2.05rem}
   .mosaic{gap:8px}
 }
+/* social nell'header */
+.nav .r .socials{display:flex;align-items:center;gap:4px;margin-right:2px}
+.nav .r .soc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;color:var(--ink2);transition:color .2s,background .2s}
+.nav .r .soc svg{width:16px;height:16px}
+.nav .r .soc:hover{color:var(--accent);background:rgba(0,0,0,.04)}
+.mnav .msoc{display:flex;gap:10px;margin:14px 0 4px}
+.mnav .msoc .soc{display:inline-flex;align-items:center;gap:8px;color:var(--ink2);font-weight:600;font-size:15px;text-decoration:none}
+.mnav .msoc .soc svg{width:18px;height:18px}
+@media (max-width:1000px){.nav .r .socials{display:none}}
+
 </style>
 </head>
 <body data-pal="sky" data-st="mod">
