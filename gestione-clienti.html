@@ -700,15 +700,21 @@ function renderSpunti(){
 }
 /* ---------- modifiche non pubblicate + anteprima ---------- */
 function dirty(on){ $('#gdirty').hidden = !on; }
-$('#gprev').onclick = () => {
+$('#gprev').onclick = async () => {
+  const w = window.open('', '_blank');
   try {
     const d = collect();
     const prev = Object.assign({ cliente: d.nome, richieste: (CLIENTI.find(c => c.id === SEL) ? RICH.filter(r => r.cliente_id === SEL) : []), anteprima: true }, d);
-    prev.documenti = (prev.documenti || []).map(x => String(x.url || '').startsWith('file:') ? Object.assign({}, x, { url:'', file:true }) : x);
-    prev.strumenti = (prev.strumenti || []).map(x => String(x.url || '').startsWith('file:') ? Object.assign({}, x, { url:'', file:true }) : x);
+    // i file caricati: link temporaneo (10 minuti) cosi' nell'anteprima si possono scaricare davvero
+    const firma = async L => Promise.all((L || []).map(async x => {
+      if (!String(x.url || '').startsWith('file:')) return x;
+      let url = ''; try { url = (await call({ azione:'file_link', path: x.url.slice(5) })).url || ''; } catch(e){}
+      return Object.assign({}, x, { url, file:true });
+    }));
+    prev.documenti = await firma(prev.documenti); prev.strumenti = await firma(prev.strumenti);
     localStorage.setItem('sdi_preview', JSON.stringify(prev));
-    window.open('area-plus.html?preview=1', '_blank');
-  } catch(e){ flash(e.message, true); }
+    if (w) w.location = 'area-plus.html?preview=1'; else window.open('area-plus.html?preview=1', '_blank');
+  } catch(e){ if (w) w.close(); flash(e.message, true); }
 };
 ['g_nome','g_sito','g_piano','g_note','g_demo','g_scad','g_doc','g_tool'].forEach(i => $('#' + i).addEventListener('input', () => dirty(true)));
 /* ---------- servizi extra del cliente ---------- */
