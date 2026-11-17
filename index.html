@@ -40,7 +40,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
+        "@type": "ProfessionalService", "sameAs": ["https://www.linkedin.com/company/studio-digital-italia/"],
         "@id": "https://studiodigitalitalia.it/#business",
         "name": "Studio Digital Italia",
         "description": "Creiamo siti web professionali per attività di Vicenza e provincia. Veloci, moderni, online in 7 giorni. SEO locale, Google Maps e supporto in italiano inclusi.",
@@ -325,6 +325,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .node.out{width:300px}
 .node.out .look{height:130px;border-radius:8px;margin-bottom:8px}
 .node{user-select:none;-webkit-user-select:none;touch-action:none;cursor:grab}
+@media(max-width:900px){.node{touch-action:auto;cursor:default}}
 .node.drag{cursor:grabbing;z-index:5;box-shadow:0 30px 60px -20px var(--shade)}
 .node.hub{width:250px}
 .node .q{display:flex;align-items:center;gap:7px;padding:8px 10px;border-radius:999px;background:var(--field);color:var(--ink);font-size:.76rem;margin-bottom:10px}
@@ -584,6 +585,7 @@ body.menu-open{overflow:hidden}
       </nav>
     </div>
     <div class="r">
+      <span class="socials"><a class="soc" href="https://www.linkedin.com/company/studio-digital-italia/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></span>
       <a href="area-plus.html" class="btn btn-cli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Area clienti</a>
       <a href="area-riservata.html" class="btn btn-light">Area demo</a>
       <a href="#contatti" class="btn btn-dark">Preventivo</a>
@@ -599,6 +601,7 @@ body.menu-open{overflow:hidden}
   <a class="ml" href="faq.html">FAQ</a>
   <a class="ml" href="chi-siamo.html">Chi siamo</a>
   <a class="ml" href="area-plus.html">Area clienti</a>
+  <div class="msoc"><a class="soc" href="https://www.linkedin.com/company/studio-digital-italia/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></div>
   <div class="mcta"><a href="#contatti" class="btn btn-light">Preventivo gratuito</a><a href="area-riservata.html" class="btn btn-dark">Area demo</a></div>
 </div>
 <div class="mbar"><a href="area-riservata.html" class="btn btn-dark">Area demo</a><a href="#contatti" class="btn btn-light">Preventivo gratuito</a></div>
@@ -625,7 +628,7 @@ body.menu-open{overflow:hidden}
         <h1 class="rv d1">Siti web che ti fanno trovare, in 7 giorni</h1>
       </div>
       <div class="side rv d2">
-        <p>Siti veloci e SEO locale per PMI, artigiani e professionisti di Vicenza e provincia.</p>
+        <p>Siti veloci e SEO locale per PMI, artigiani e professionisti di <a href="realizzazione-siti-web-vicenza.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Vicenza e provincia</a>.</p>
         <div class="cta">
           <a href="#contatti" class="btn btn-light btn-lg">Preventivo gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="area-riservata.html" class="btn btn-dark btn-lg">Guarda le demo</a>
@@ -735,7 +738,7 @@ body.menu-open{overflow:hidden}
       <div>
         <div class="eyebrow">Clienti attivi</div>
         <h2>Dai un'occhiata a chi già ci ha scelto</h2>
-        <p class="lead">Le attività che seguiamo oggi. Apri il sito e guardalo dal vivo.</p>
+        <p class="lead">Le attività che seguiamo oggi, quasi tutte in provincia di Vicenza. <a href="realizzazione-siti-web-vicenza.html" style="color:var(--accent);font-weight:600">Siti web a Vicenza →</a></p>
       </div>
       <a href="portfolio.html" class="btn btn-dark">Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -860,7 +863,7 @@ body.menu-open{overflow:hidden}
       <div><a href="#" class="logo logo-img logo-ft"><img src="assets/img/logo-sdi.png" alt=""><span>Studio Digital Italia</span></a><p>Siti web e SEO locale per le imprese di Vicenza e provincia.</p></div>
       <div><h5>Sito</h5><ul><li><a href="settori.html">Settori</a></li><li><a href="realizzazione-siti-web-vicenza.html">Siti web a Vicenza</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pacchetti.html">Pacchetti</a></li><li><a href="#studio">Componi il tuo sito</a></li></ul></div>
       <div><h5>Info</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="termini.html">Termini</a></li></ul></div>
-      <div><h5>Contatti</h5><ul><li><a href="mailto:luca@studiodigitalitalia.it">Email</a></li><li><a href="area-riservata.html">Area demo</a></li><li><a href="area-plus.html">Area clienti</a></li><li>Vicenza (VI)</li></ul></div>
+      <div><h5>Contatti</h5><ul><li><a href="mailto:luca@studiodigitalitalia.it">Email</a></li><li><a href="area-riservata.html">Area demo</a></li><li><a href="area-plus.html">Area clienti</a></li><li><a href="https://www.linkedin.com/company/studio-digital-italia/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="realizzazione-siti-web-vicenza.html">Vicenza (VI)</a></li></ul></div>
     </div>
     <div class="fb"><span>© 2026 Studio Digital Italia · P.IVA 04400570240</span></div>
   </div>
