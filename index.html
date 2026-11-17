@@ -53,7 +53,7 @@
         },
         "image": "https://studiodigitalitalia.it/assets/loghi/logo-completo.jpg",
         "email": "info@studiodigitalitalia.it",
-        "telephone": "+393277737115",
+        "telephone": "+393515854466",
         "vatID": "04400570240",
         "address": {
           "@type": "PostalAddress",
@@ -677,7 +677,7 @@ body.menu-open{overflow:hidden}
           <div class="k">Stima indicativa</div>
           <div class="v" id="eOne">1.200 €</div>
           <div class="m" id="eMon">+ 59 € / mese</div>
-          <div class="n" id="eNote">IVA esclusa. Preventivo scritto e numerato prima di iniziare.</div>
+          <div class="n" id="eNote">Prezzo finale, senza IVA (regime forfettario). Preventivo scritto e numerato prima di iniziare.</div>
           <a href="#contatti" class="btn btn-light">Richiedi questo preventivo</a>
         </div>
       </div>
@@ -785,7 +785,7 @@ body.menu-open{overflow:hidden}
   <div class="wrap center">
     <div class="eyebrow rv">Prezzi</div>
     <h2 class="rv d1" style="font-size:clamp(2rem,3.6vw,2.6rem);margin:12px auto 14px;max-width:16ch">Prezzi chiari. Il resto lo gestiamo noi.</h2>
-    <p class="lead rv d2" style="max-width:40ch">Prezzi forfettari, IVA esclusa. Il dominio e gli accessi restano sempre tuoi.</p>
+    <p class="lead rv d2" style="max-width:40ch">Prezzi finali, senza IVA (regime forfettario). Il dominio e gli accessi restano sempre tuoi.</p>
     <div class="toggle rv d2" id="ptg"><button class="on" data-p="siti">Siti</button><button data-p="man">Manutenzione <small>disdici quando vuoi</small></button></div>
   </div>
   <div class="wrap">
@@ -827,7 +827,7 @@ body.menu-open{overflow:hidden}
     <div class="rv"><div class="eyebrow">FAQ</div><h2>Domande giuste, risposte chiare.</h2></div>
     <div>
       <div class="qa rv"><h3>Quanto tempo serve per avere il sito online?</h3><p>Circa 7 giorni dal via, quando abbiamo testi, foto e accessi. Per i progetti su misura i tempi sono nel preventivo.</p></div>
-      <div class="qa rv"><h3>Come funziona il pagamento?</h3><p>50% all'avvio e 50% alla consegna, con bonifico. Prima di iniziare ricevi un preventivo scritto e numerato. I prezzi sono forfettari, IVA esclusa.</p></div>
+      <div class="qa rv"><h3>Come funziona il pagamento?</h3><p>50% all'avvio e 50% alla consegna, con bonifico. Prima di iniziare ricevi un preventivo scritto e numerato. I prezzi sono finali, senza IVA (regime forfettario).</p></div>
       <div class="qa rv"><h3>Il dominio e il sito restano miei?</h3><p>Sì. Dominio e accessi sono intestati a te: se un giorno cambi fornitore, porti via tutto.</p></div>
       <div class="qa rv"><h3>Serve per forza la manutenzione?</h3><p>No, è facoltativa e si disdice quando vuoi. Serve a tenere il sito aggiornato, sicuro e con backup, senza pensarci tu.</p></div>
       <div class="qa rv"><h3>Cos'è la SEO locale?</h3><p>Ottimizziamo sito e scheda Google per chi cerca vicino a te, comune per comune. Così arrivano contatti dal territorio, non traffico a caso.</p></div>
@@ -903,7 +903,7 @@ document.querySelectorAll('.tg').forEach(t=>t.onclick=()=>{st[t.dataset.k]=!st[t
 const fmt=(n,d=0)=>{const [i,f]=n.toFixed(d).split('.');return i.replace(/\B(?=(\d{3})+(?!\d))/g,'.')+(f?','+f:'')};
 const eur=n=>fmt(n)+' €';
 function calc(){
- let note='IVA esclusa. Preventivo scritto e numerato prima di iniziare.';
+ let note='Prezzo finale, senza IVA (regime forfettario). Preventivo scritto e numerato prima di iniziare.';
  if(st.pk==='base'&&st.pg>5){st.pk='pro';document.querySelectorAll('#pk button').forEach(x=>x.classList.toggle('on',x.dataset.v==='pro'));note='Oltre 5 pagine consigliamo il Sito Pro. '+note}
  $('pgOut').textContent=st.pg;
  let one=st.pk==='base'?1200:1800;
