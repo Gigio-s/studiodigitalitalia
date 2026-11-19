@@ -429,3 +429,9 @@ html{background:#24262B}
 body[data-pg="int"] main.nc > section.e404{padding:140px 0 70px}
 @media(max-width:820px){body[data-pg="int"] main.nc > section.e404{padding:110px 0 40px}}
 @media(max-width:820px){body[data-pg="int"] .logo-t{padding:11px 0;margin:-11px 0}body[data-pg="int"] .crumb a{display:inline-block;padding:10px 0;margin:-10px 0}}
+/* aree riservate: niente fascia chiara sotto l'header, pulsanti attivi nello stile del sito */
+body[data-pg="int"] main.nc > section.ar-hero,body[data-pg="int"] main.nc > section.page-hero.ar-hero{background:none}
+body[data-pg="int"] .dtabs button,body[data-pg="int"] .ar-chip,body[data-pg="int"] .rep-m button,body[data-pg="int"] .sel-m button,body[data-pg="int"] .gtab{background:transparent;border-color:rgba(255,255,255,.18);color:var(--ink2);border-radius:4px}
+body[data-pg="int"] .dtabs button:hover,body[data-pg="int"] .ar-chip:hover,body[data-pg="int"] .rep-m button:hover,body[data-pg="int"] .sel-m button:hover,body[data-pg="int"] .gtab:hover{border-color:rgba(255,255,255,.4);color:#FDFDFE}
+body[data-pg="int"] .dtabs button.on,body[data-pg="int"] .ar-chip.on,body[data-pg="int"] .rep-m button.on,body[data-pg="int"] .sel-m button.on,body[data-pg="int"] .gtab.on{background:rgba(0,153,255,.14);border-color:#0099FF;color:#FDFDFE}
+body[data-pg="int"] .mc .mtag.rich{background:#0099FF;color:#FDFDFE}
