@@ -1,4 +1,4 @@
-// Studio Digital Italia - script condiviso pagine interne
+// studio dgtl - script condiviso pagine interne
 (function(){
   var nav=document.getElementById('nav');
   if(nav){addEventListener('scroll',function(){nav.classList.toggle('sc',scrollY>30)},{passive:true});}
@@ -9,6 +9,8 @@
     b.onclick=function(){set(!document.body.classList.contains('menu-open'))};
     m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
     addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});}
+  var top=document.querySelector('.page-hero');
+  if(top&&window.IntersectionObserver){new IntersectionObserver(function(es){document.body.classList.toggle('mbar-top',es[0].isIntersecting)},{threshold:.25}).observe(top)}
   var end=document.querySelector('.endcta,.block.cta');
   if(end){new IntersectionObserver(function(es){document.body.classList.toggle('mbar-hide',es[0].isIntersecting)},{threshold:.2}).observe(end)}
   var t=document.getElementById('ptg');
