@@ -1,0 +1,120 @@
+/* Pizzeria da Lello - VESTE NATALIZIA, versioni A e B (19/11/2026)
+   Vale solo con <html data-stagione="natale">, messo da assets/js/natale.js (date, interruttore e versione li').
+   La prima parte vale per tutte e due; data-natale="a" o "b" sceglie la versione.
+   Cambia solo colori, immagini di sfondo e decorazioni: testi, menu e struttura restano quelli del sito. */
+html[data-stagione="natale"]{
+  --abete:#1F4D3A; --oro-n:#B8860B; --oro-chiaro:#E8C766;
+  --acc:var(--abete); --deco2:var(--abete); --basilico:var(--abete);
+  --fondo-alt:#FBF1E4;
+  --festone:repeating-linear-gradient(90deg,#B3261E 0 22px,#F5EBDD 22px 27px,#1F4D3A 27px 49px,#F5EBDD 49px 54px,#B8860B 54px 64px,#F5EBDD 64px 69px);
+}
+/* nastro festivo sotto la testata e sopra il footer */
+html[data-stagione="natale"] .hdr::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:5px;background:var(--festone);pointer-events:none}
+html[data-stagione="natale"] .ftr{border-top:6px solid transparent;border-image:var(--festone) 6}
+/* titoli: il corsivo rosso resta, la parola evidenziata prende una stellina dorata */
+html[data-stagione="natale"] .h2 em{position:relative}
+html[data-stagione="natale"] .sec:not(#prenota) .h2 em::after{content:"";position:absolute;top:-.32em;right:-.62em;width:.5em;height:.5em;background:var(--oro-n);-webkit-mask:url(../bg/natale/stella.svg) center/contain no-repeat;mask:url(../bg/natale/stella.svg) center/contain no-repeat;opacity:.85}
+html[data-stagione="natale"] #prenota .eyebrow{color:#fff}
+html[data-stagione="natale"] .eyebrow{color:var(--abete)}
+
+/* sfondi */
+html[data-stagione="natale"] .hero{background:linear-gradient(180deg,rgba(245,235,221,.5) 0%,rgba(245,235,221,.2) 45%,rgba(245,235,221,.5) 100%),url(../img/sfondi/natale-golfo.webp) center 62%/cover no-repeat,var(--nero)}
+html[data-stagione="natale"] #prenota,html[data-stagione="natale"] body[data-page="menu"] main > section.sec:last-of-type{background:linear-gradient(rgba(150,28,22,.84),rgba(150,28,22,.84)),url(../img/sfondi/natale-forno.webp) center 55%/cover no-repeat,var(--rosso)}
+@media (max-width:980px){
+  html[data-stagione="natale"] .hero{background-image:linear-gradient(180deg,rgba(245,235,221,.58) 0%,rgba(245,235,221,.3) 45%,rgba(245,235,221,.58) 100%),url(../img/sfondi/natale-golfo-m.webp);background-position:center,60% 70%}
+  html[data-stagione="natale"] #prenota,html[data-stagione="natale"] body[data-page="menu"] main > section.sec:last-of-type{background-image:linear-gradient(rgba(150,28,22,.84),rgba(150,28,22,.84)),url(../img/sfondi/natale-forno-m.webp)}
+}
+/* decorazioni a linea: in parte rosse, in parte verde abete, qualcuna oro */
+html[data-natale="a"] .deco-c3,html[data-natale="a"] .deco-c3n{background:var(--oro-n);opacity:.16}
+html[data-stagione="natale"] #prenota .deco,html[data-stagione="natale"] body[data-page="menu"] main > section.sec:last-of-type .deco{background:#fff;opacity:.14}
+
+
+/* ============ VERSIONE A: golfo innevato, ghirlande, palline, neve fitta ============ */
+html[data-natale="a"] .nb, html[data-natale="b"] .na{display:none!important}
+.na,.nb{pointer-events:none}
+/* neve */
+.neve{position:absolute;inset:0;z-index:0;overflow:hidden}
+.neve i{position:absolute;top:-20px;width:var(--s,6px);height:var(--s,6px);border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(110,130,160,.35),0 2px 6px rgba(70,80,110,.45);opacity:var(--o,.9);animation:nevica var(--d,12s) linear var(--r,0s) infinite}
+.neve i.f{border-radius:0;box-shadow:none;background:#9DB6D2;-webkit-mask:url(../bg/natale/fiocco.svg) center/contain no-repeat;mask:url(../bg/natale/fiocco.svg) center/contain no-repeat}
+@keyframes nevica{0%{transform:translate3d(0,-20px,0) rotate(0)}50%{transform:translate3d(var(--x,18px),50vh,0) rotate(160deg)}100%{transform:translate3d(0,105vh,0) rotate(320deg)}}
+/* ghirlanda dipinta appesa sotto la testata, sopra "Prenota" e sopra il footer */
+.ghirlanda{position:absolute;left:0;right:0;top:var(--hdr);height:clamp(58px,7.5vw,104px);z-index:2;background:url(../img/natale/ghirlanda.webp) center top/auto 100% repeat-x;filter:drop-shadow(0 4px 6px rgba(60,30,10,.18))}
+.ghirlanda-sec,.ghirlanda-ftr{top:-6px}
+.ghirlanda-ftr{height:clamp(48px,6vw,84px)}
+html[data-natale="a"] .ftr{position:relative}
+html[data-natale="a"] .hero{padding-top:calc(var(--hdr) + clamp(58px,7.5vw,104px) - 10px)}
+/* neve posata in fondo alla hero */
+.cumulo{position:absolute;left:0;right:0;bottom:-1px;height:clamp(16px,2.6vw,34px);z-index:1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 40' preserveAspectRatio='none'%3E%3Cpath d='M0 22C40 6 80 30 130 16S220 4 270 20 360 30 410 14 520 8 600 22V40H0Z' fill='%23fff'/%3E%3C/svg%3E") bottom/600px 100% repeat-x;filter:drop-shadow(0 -2px 3px rgba(120,90,60,.18))}
+/* palline appese ai lati */
+.appese{position:absolute;inset:0;z-index:1;overflow:hidden}
+.pend{position:absolute;top:calc(var(--hdr) + 20px);width:var(--w,30px);transform-origin:50% 0;animation:dondola var(--t,4s) ease-in-out var(--dl,0s) infinite alternate}
+.pend::before{content:"";display:block;width:1.5px;height:var(--l,60px);margin:0 auto;background:linear-gradient(#C9A227,rgba(140,100,40,.7))}
+.pend svg{display:block;width:100%;height:auto;margin-top:-1px;filter:drop-shadow(0 3px 4px rgba(60,30,10,.25))}
+.appese-sec .pend{top:0}
+@keyframes dondola{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+/* rametto dipinto negli angoli alti delle sezioni */
+.rametto{position:absolute;top:0;width:clamp(96px,13vw,190px);aspect-ratio:420/413;z-index:0;background:url(../img/natale/rametto.webp) left top/contain no-repeat;opacity:.95}
+.rametto-l{left:0}
+.rametto-r{right:0;transform:scaleX(-1)}
+@media (max-width:700px){
+  .ghirlanda{height:46px}
+  html[data-natale="a"] .hero{padding-top:calc(var(--hdr) + 40px)}
+  .pend{top:calc(var(--hdr) + 14px)}
+  .appese-sec .pend::before{height:min(var(--l),30px)}
+  .appese-sec .pend{width:16px}
+  .rametto{width:78px;opacity:.9}
+  .ghirlanda-ftr,.ghirlanda-sec{height:40px}
+}
+
+/* ============ VERSIONE B: vicolo dei presepi, notte blu e oro, lucine e stelle ============ */
+html[data-natale="b"]{
+  --notte:#1C2A48; --acc:var(--notte); --deco2:var(--notte); --basilico:var(--oro-n);
+  --festone:repeating-linear-gradient(90deg,#1C2A48 0 18px,#F5EBDD 18px 22px,#B8860B 22px 30px,#F5EBDD 30px 34px,#B3261E 34px 52px,#F5EBDD 52px 56px,#B8860B 56px 64px,#F5EBDD 64px 68px);
+}
+html[data-natale="b"] .eyebrow{color:var(--oro-n)}
+html[data-natale="b"] #prenota .eyebrow{color:var(--oro-chiaro)}
+html[data-natale="b"] .deco-c3n{background:var(--oro-n);opacity:.2}
+html[data-natale="b"] .hero{background:radial-gradient(ellipse 34% 38% at 50% 34%,rgba(245,235,221,.72),rgba(245,235,221,0) 100%),linear-gradient(180deg,rgba(245,235,221,.42) 0%,rgba(245,235,221,.12) 45%,rgba(245,235,221,.55) 100%),url(../img/sfondi/natale-b-vicolo.webp) center 60%/cover no-repeat,var(--nero)}
+html[data-natale="b"] #prenota,html[data-natale="b"] body[data-page="menu"] main > section.sec:last-of-type{background:linear-gradient(rgba(28,42,72,.86),rgba(28,42,72,.82)),url(../img/sfondi/natale-b-tavola.webp) center 60%/cover no-repeat,var(--notte)}
+@media (max-width:980px){
+  html[data-natale="b"] .hero{background-image:linear-gradient(180deg,rgba(245,235,221,.5) 0%,rgba(245,235,221,.22) 45%,rgba(245,235,221,.6) 100%),url(../img/sfondi/natale-b-vicolo-m.webp);background-position:center,center 60%}
+  html[data-natale="b"] #prenota,html[data-natale="b"] body[data-page="menu"] main > section.sec:last-of-type{background-image:linear-gradient(rgba(28,42,72,.86),rgba(28,42,72,.82)),url(../img/sfondi/natale-b-tavola-m.webp)}
+}
+html[data-natale="b"] #prenota .deco,html[data-natale="b"] body[data-page="menu"] main > section.sec:last-of-type .deco{background:var(--oro-chiaro);opacity:.16}
+html[data-natale="b"] .sec:not(#prenota) .h2 em::after{background:var(--oro-n);opacity:1}
+html[data-natale="b"] .ftr{background:#1C2A48}
+/* lucine su un filo */
+.lucine{position:absolute;left:0;right:0;top:var(--hdr);height:40px;z-index:2}
+.lucine-sec{top:0}
+.lucine .filo{position:absolute;inset:0;width:100%;height:40px}
+.lucine b{position:absolute;width:9px;height:13px;margin-left:-4.5px;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;background:var(--c);box-shadow:0 0 8px 2px var(--c);animation:brilla 1.8s ease-in-out var(--dl,0s) infinite alternate}
+.lucine b::before{content:"";position:absolute;left:2px;top:-3px;width:5px;height:4px;border-radius:1px;background:#4A3B2A}
+#prenota .lucine .filo path{stroke:#E8C766;stroke-opacity:.6}
+@keyframes brilla{from{opacity:.55;box-shadow:0 0 3px 0 var(--c)}to{opacity:1;box-shadow:0 0 12px 3px var(--c)}}
+html[data-natale="b"] .hero{padding-top:calc(var(--hdr) + 54px)}
+/* stelline che brillano e una cometa che passa */
+.stelle{position:absolute;inset:0;z-index:0;overflow:hidden}
+.stelle i{position:absolute;width:var(--s,9px);height:var(--s,9px);background:#C9A227;filter:drop-shadow(0 0 3px rgba(255,220,120,.9));-webkit-mask:url(../bg/natale/stella.svg) center/contain no-repeat;mask:url(../bg/natale/stella.svg) center/contain no-repeat;animation:luccica var(--d,3s) ease-in-out var(--dl,0s) infinite}
+@keyframes luccica{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+.cometa{position:absolute;top:14%;left:-20%;width:170px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,rgba(232,199,102,.85),#fff);filter:drop-shadow(0 0 6px rgba(255,220,120,.9));transform:rotate(14deg);animation:cometa 14s linear 2s infinite}
+.cometa::after{content:"";position:absolute;right:-6px;top:-5px;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px rgba(255,225,140,.9)}
+@keyframes cometa{0%{left:-20%;opacity:0}3%{opacity:1}22%{left:110%;opacity:0}100%{left:110%;opacity:0}}
+@media (max-width:700px){
+  .lucine b{width:7px;height:10px;margin-left:-3.5px}
+  html[data-natale="b"] .hero{padding-top:calc(var(--hdr) + 34px)}
+  .cometa{width:100px}
+}
+@media (prefers-reduced-motion:reduce){.neve,.cometa{display:none}.pend,.lucine b,.stelle i{animation:none}}
+@media print{.neve,.appese,.lucine,.stelle,.ghirlanda,.nat-sel{display:none}}
+
+/* selettore A | B (solo in anteprima) */
+.nat-sel{position:fixed;left:14px;bottom:16px;z-index:300;display:flex;align-items:center;gap:4px;padding:5px 6px 5px 12px;border-radius:999px;background:rgba(23,20,21,.92);color:#F5EBDD;font:600 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.nat-sel span{margin-right:4px}
+.nat-sel button{all:unset;cursor:pointer;min-width:30px;height:30px;border-radius:999px;text-align:center;line-height:30px;font-weight:700}
+.nat-sel button[aria-pressed="true"]{background:#B3261E;color:#fff}
+@media (max-width:980px){.nat-sel{bottom:calc(76px + env(safe-area-inset-bottom));left:8px;font-size:10px;padding:3px 4px 3px 9px}.nat-sel button{min-width:26px;height:26px;line-height:26px}}
+/* nella demo per il cliente: in alto al centro, piu grande, sopra il banner dei cookie */
+.nat-sel.nat-sel-demo{left:50%;bottom:auto;top:calc(var(--hdr) + 12px);transform:translateX(-50%);font-size:13px;padding:6px 7px 6px 16px;white-space:nowrap}
+.nat-sel.nat-sel-demo button{min-width:38px;height:34px;line-height:34px;font-size:14px}
+@media (max-width:980px){.nat-sel.nat-sel-demo{top:calc(var(--hdr) + 8px);bottom:auto;left:50%;font-size:11px}}
+@media (max-width:700px){html.nat-demo[data-natale="a"] .hero{padding-top:calc(var(--hdr) + 92px)}html.nat-demo[data-natale="b"] .hero{padding-top:calc(var(--hdr) + 70px)}}
