@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Corsi online &amp; Libro — Mamma Modello Base</title>
+<meta name="description" content="Corsi online e il libro di Paola Torrieri. Acquista e accedi subito ai contenuti nell'area riservata. Attestato di partecipazione incluso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="demo-banner">Shop <strong>dimostrativo</strong>: l'acquisto è simulato e sblocca l'area riservata in questa sessione. In produzione si collega al pagamento reale (Stripe) con accesso via email.</div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img class="logo" src="https://mammamodellobase.it/wp-content/uploads/sites/97/yootheme/cache/5b/logo2023-Paola-Torrieri-e1733138250480-5b669603.png" alt="Mamma Modello Base"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="servizi.html">Servizi</a></li>
+      <li><a href="corsi.html" class="active">Corsi &amp; Libro</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="prenota.html" class="btn btn-sm">Prenota</a>
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Corsi &amp; Libro</p>
+    <h1>Porta il percorso a casa con te</h1>
+    <p class="breadcrumb">Home / Corsi &amp; Libro</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="cards fade">
+      <!-- Corso 1 -->
+      <article class="card">
+        <div class="card-img"><img src="https://mammamodellobase.it/wp-content/uploads/sites/97/2024/12/annie-spratt-4-4WPFLVhAY-unsplash-Paola-Torrieri-scaled.jpg" alt="Corso intelligenza emotiva"></div>
+        <div class="card-body">
+          <span class="badge">Offerta lancio</span>
+          <h3>Corso — Intelligenza Emotiva</h3>
+          <p>Video-lezioni per riconoscere e gestire le emozioni. 🎁 In regalo il <strong>Libro Paola Torrieri in PDF</strong> nella cartella Google Drive riservata.</p>
+          <p class="price"><span class="old">€ 97</span> € 69</p>
+          <button class="btn btn-blush btn-sm" onclick="buyProduct('Corso — Intelligenza Emotiva','69')">Acquista e accedi</button>
+        </div>
+      </article>
+      <!-- Corso 2 -->
+      <article class="card">
+        <div class="card-img"><img src="https://mammamodellobase.it/wp-content/uploads/sites/97/2024/12/sincerely-media-Lt_rFkfGnjU-unsplash-Paola-Torrieri-scaled.jpg" alt="Corso psicoaromaterapia"></div>
+        <div class="card-body">
+          <span class="badge">Libro in regalo</span>
+          <h3>Corso — Psicoaromaterapia</h3>
+          <p>L'uso consapevole degli oli essenziali per il benessere emotivo. 🎁 In regalo il <strong>Libro Paola Torrieri in PDF</strong> nella cartella Google Drive riservata.</p>
+          <p class="price">€ 79</p>
+          <button class="btn btn-blush btn-sm" onclick="buyProduct('Corso — Psicoaromaterapia (libro incluso)','79')">Acquista e accedi</button>
+        </div>
+      </article>
+    </div>
+
+    <p class="center" style="margin-top:26px;color:var(--taupe)">🎁 <strong>Il Libro Paola Torrieri in PDF è incluso in regalo con ogni corso</strong> — l'accesso avviene tramite la cartella Google Drive riservata dopo l'acquisto.</p>
+  </div>
+</section>
+
+<!-- RESERVED AREA -->
+<section class="bg-ivory">
+  <div class="wrap narrow">
+    <div class="center fade"><p class="eyebrow">Area riservata</p><h2>I tuoi contenuti</h2></div>
+
+    <!-- Locked -->
+    <div id="locked-msg" class="locked fade">
+      <div class="lock">🔒</div>
+      <p>Quest'area si sblocca dopo l'acquisto. Scegli un corso qui sopra per ricevere l'accesso alla cartella Google Drive con il libro in PDF.</p>
+    </div>
+
+    <!-- Unlocked (hidden until purchase) -->
+    <div id="reserved-area" style="display:none">
+      <p class="center" style="color:var(--sage-deep);font-weight:700">✓ Accesso attivo — grazie per l'acquisto!</p>
+
+      <!-- Google Drive book access -->
+      <div class="drive-access">
+        <div class="drive-cover">📕</div>
+        <div class="drive-info">
+          <span class="badge">Google Drive · PDF</span>
+          <h3>Libro Paola Torrieri</h3>
+          <p>Il tuo libro è pronto. Aprilo online o scaricalo dalla cartella Google Drive riservata al tuo acquisto.</p>
+          <!-- ⚠️ DEMO: sostituire questi due link con il vero link di condivisione Google Drive del PDF -->
+          <a href="https://drive.google.com/drive/folders/ID-CARTELLA-DA-INSERIRE" target="_blank" rel="noopener" class="btn btn-blush">Apri su Google Drive</a>
+          <a href="https://drive.google.com/drive/folders/ID-CARTELLA-DA-INSERIRE" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-left:8px">Scarica il PDF</a>
+        </div>
+      </div>
+
+      <p class="center" style="font-size:.82rem;color:var(--muted);margin-top:22px">Nella demo l'accesso si apre subito. In produzione, dopo il pagamento, il link alla cartella Drive viene inviato automaticamente via email all'acquirente.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Mamma Modello Base</h4>
+      <p style="font-size:.92rem">Counseling, psicoaromaterapia e percorsi di crescita personale. A Vicenza, presso il Centro Ines, e online.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/paola.torrieri/" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.facebook.com/MammaModelloBase" target="_blank" rel="noopener">FB</a>
+        <a href="https://www.youtube.com/@mammamodellobase" target="_blank" rel="noopener">YT</a>
+        <a href="https://www.linkedin.com/in/paola-torrieri-217496117/" target="_blank" rel="noopener">in</a>
+      </div>
+    </div>
+    <div><h4>Menu</h4><ul><li><a href="chi-sono.html">Chi sono</a></li><li><a href="servizi.html">Servizi</a></li><li><a href="corsi.html">Corsi &amp; Libro</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div><h4>Contatti</h4><ul><li><a href="tel:+393474184718">+39 347 4184718</a></li><li><a href="https://wa.me/393474184718" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:dott.p.torrieri@gmail.com">Email</a></li><li>Vicenza &amp; Online</li></ul></div>
+    <div><h4>Orari</h4><ul><li>Lun – Ven: 10:00 – 18:00</li><li>Sab: 10:00 – 12:00</li><li>Dom: chiuso</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>P.IVA 04103580249 — © 2026 Mamma Modello Base</span>
+    <span class="demo-tag">Demo · Studio Digital Italia</span>
+  </div>
+</footer>
+
+<!-- Buy modal (checkout simulato) -->
+<div class="modal-overlay" id="buy-modal">
+  <div class="modal">
+    <button class="close" onclick="closeModal(this)">×</button>
+    <h3>Completa l'acquisto</h3>
+    <p id="buy-modal-text" style="color:var(--rose);font-family:var(--serif);font-size:1.3rem"></p>
+    <input type="email" placeholder="La tua email">
+    <input type="text" placeholder="Numero carta (demo)">
+    <button class="btn btn-blush" style="width:100%;margin-top:10px" onclick="confirmBuy()">Paga ora</button>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:12px">Checkout dimostrativo — nessun pagamento reale.</p>
+  </div>
+</div>
+
+<!-- Access modal -->
+<div class="modal-overlay" id="access-modal">
+  <div class="modal">
+    <button class="close" onclick="closeModal(this)">×</button>
+    <div class="ok">✓</div>
+    <h3>Accesso sbloccato!</h3>
+    <p>Trovi il tuo <strong>Libro Paola Torrieri in PDF</strong> nell'area riservata qui sotto, nella cartella Google Drive. In produzione il link arriva via email dopo il pagamento.</p>
+    <button class="btn" onclick="closeModal(this)">Vai al libro</button>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

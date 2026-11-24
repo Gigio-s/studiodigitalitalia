@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Prenota una consulenza — Mamma Modello Base</title>
+<meta name="description" content="Prenota online la tua consulenza con Paola Torrieri: scegli il servizio, il giorno e l'orario tra le disponibilità. A Vicenza o online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="demo-banner">Prenotazione <strong>dimostrativa</strong>: gli slot sono di esempio. In produzione si collega al calendario reale con pagamento e conferma automatica via email.</div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img class="logo" src="https://mammamodellobase.it/wp-content/uploads/sites/97/yootheme/cache/5b/logo2023-Paola-Torrieri-e1733138250480-5b669603.png" alt="Mamma Modello Base"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="servizi.html">Servizi</a></li>
+      <li><a href="corsi.html">Corsi &amp; Libro</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="prenota.html" class="btn btn-sm active">Prenota</a>
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Prenotazioni</p>
+    <h1>Scegli il tuo appuntamento</h1>
+    <p class="breadcrumb">Home / Prenota</p>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="booking fade">
+      <!-- Panel -->
+      <div class="book-panel">
+        <h3 style="margin-top:0">1. Il tuo percorso</h3>
+        <label for="bk-service">Tipo di consulenza</label>
+        <select id="bk-service">
+          <option>Consulenza di counseling</option>
+          <option>Psicoaromaterapia</option>
+          <option>Percorso genitori / coppie</option>
+          <option>Supporto adolescenti</option>
+          <option>Tutor dell'apprendimento</option>
+          <option>Consulenza introduttiva (gratuita)</option>
+        </select>
+        <label for="bk-mode">Modalità</label>
+        <select id="bk-mode">
+          <option>In studio — Vicenza</option>
+          <option>Online (video)</option>
+        </select>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--line)">
+          <p style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:6px">Riepilogo</p>
+          <p id="bk-summary" style="color:var(--taupe);min-height:48px">Seleziona un orario disponibile →</p>
+          <button id="bk-confirm" class="btn" style="width:100%" disabled>Conferma prenotazione</button>
+        </div>
+      </div>
+
+      <!-- Week grid -->
+      <div>
+        <h3 style="margin-top:0">2. Disponibilità — settimana dal 10 al 14 agosto</h3>
+        <div class="week">
+          <div class="day">
+            <h4>Lun<span class="date">10</span></h4>
+            <button class="slot" data-day="Lunedì 10 ago">10:00</button>
+            <button class="slot" data-day="Lunedì 10 ago">11:30</button>
+            <button class="slot" disabled>15:00</button>
+            <button class="slot" data-day="Lunedì 10 ago">16:30</button>
+          </div>
+          <div class="day">
+            <h4>Mar<span class="date">11</span></h4>
+            <button class="slot" disabled>10:00</button>
+            <button class="slot" data-day="Martedì 11 ago">11:30</button>
+            <button class="slot" data-day="Martedì 11 ago">14:00</button>
+            <button class="slot" data-day="Martedì 11 ago">17:00</button>
+          </div>
+          <div class="day">
+            <h4>Mer<span class="date">12</span></h4>
+            <button class="slot" data-day="Mercoledì 12 ago">09:30</button>
+            <button class="slot" disabled>11:00</button>
+            <button class="slot" disabled>15:00</button>
+            <button class="slot" data-day="Mercoledì 12 ago">16:30</button>
+          </div>
+          <div class="day">
+            <h4>Gio<span class="date">13</span></h4>
+            <button class="slot" data-day="Giovedì 13 ago">10:00</button>
+            <button class="slot" data-day="Giovedì 13 ago">12:00</button>
+            <button class="slot" data-day="Giovedì 13 ago">15:30</button>
+            <button class="slot" disabled>17:00</button>
+          </div>
+          <div class="day">
+            <h4>Ven<span class="date">14</span></h4>
+            <button class="slot" data-day="Venerdì 14 ago">10:00</button>
+            <button class="slot" disabled>11:30</button>
+            <button class="slot" data-day="Venerdì 14 ago">14:30</button>
+            <button class="slot" data-day="Venerdì 14 ago">16:00</button>
+          </div>
+        </div>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:18px">Gli orari barrati sono già occupati. Sabato su richiesta (10:00–12:00). Ogni consulenza dura circa 60 minuti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm bg-blush">
+  <div class="wrap center fade">
+    <h2>Preferisci il calendario diretto?</h2>
+    <p>Puoi prenotare anche tramite Calendly, in totale autonomia.</p>
+    <a href="https://calendly.com/dott-p-torrieri" target="_blank" rel="noopener" class="btn btn-outline">Apri Calendly</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Mamma Modello Base</h4>
+      <p style="font-size:.92rem">Counseling, psicoaromaterapia e percorsi di crescita personale. A Vicenza, presso il Centro Ines, e online.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/paola.torrieri/" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.facebook.com/MammaModelloBase" target="_blank" rel="noopener">FB</a>
+        <a href="https://www.youtube.com/@mammamodellobase" target="_blank" rel="noopener">YT</a>
+        <a href="https://www.linkedin.com/in/paola-torrieri-217496117/" target="_blank" rel="noopener">in</a>
+      </div>
+    </div>
+    <div><h4>Menu</h4><ul><li><a href="chi-sono.html">Chi sono</a></li><li><a href="servizi.html">Servizi</a></li><li><a href="corsi.html">Corsi &amp; Libro</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div><h4>Contatti</h4><ul><li><a href="tel:+393474184718">+39 347 4184718</a></li><li><a href="https://wa.me/393474184718" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:dott.p.torrieri@gmail.com">Email</a></li><li>Vicenza &amp; Online</li></ul></div>
+    <div><h4>Orari</h4><ul><li>Lun – Ven: 10:00 – 18:00</li><li>Sab: 10:00 – 12:00</li><li>Dom: chiuso</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>P.IVA 04103580249 — © 2026 Mamma Modello Base</span>
+    <span class="demo-tag">Demo · Studio Digital Italia</span>
+  </div>
+</footer>
+
+<!-- Booking modal -->
+<div class="modal-overlay" id="bk-modal">
+  <div class="modal">
+    <button class="close" onclick="closeModal(this)">×</button>
+    <div class="ok">✓</div>
+    <h3>Prenotazione confermata</h3>
+    <p id="bk-modal-text"></p>
+    <p style="font-size:.85rem;color:var(--muted)">Azione dimostrativa. In produzione ricevi conferma via email/WhatsApp e l'orario viene bloccato nel calendario.</p>
+    <button class="btn" onclick="closeModal(this)">Perfetto</button>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
