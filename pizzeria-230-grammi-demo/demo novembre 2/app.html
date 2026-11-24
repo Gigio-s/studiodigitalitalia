@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it" data-t="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>L'app di 230 grammi - anteprima | Demo</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-230-quadrato.jpg">
+<script>(function(){var v=(location.search.match(/[?&]v=([1-3])/)||[])[1];try{v=v||localStorage.getItem("g230b-v")}catch(e){}if(v)document.documentElement.setAttribute("data-t",v)})();</script>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#prova"><span class="bd"><img src="assets/img/logo-230.png" alt=""></span><span><b>L'app di 230 grammi</b><small>Anteprima riservata</small></span></a>
+  <nav aria-label="Sezioni"><a href="#prova">Prova l'app</a><a href="#come">Come funziona</a><a href="#design">Design</a><a href="#conviene">Perché conviene</a><a href="#costi">Costi</a></nav>
+  <div class="tsel" role="group" aria-label="Stile"><button type="button" data-t="1">Gourmet</button><button type="button" data-t="2">Pop</button><button type="button" data-t="3">Street</button></div>
+  <button class="close" type="button" id="closeApp" aria-label="Chiudi anteprima">✕</button>
+</header>
+
+<main>
+<!-- ============ PROVA ============ -->
+<section class="sec hero" id="prova">
+  <div class="wrap hgrid">
+    <div class="intro">
+      <span class="k">La vostra app, il vostro marchio</span>
+      <h1>Asporto, consegna a casa e carta fedeltà. Senza commissioni.</h1>
+      <p class="lead">Provatela qui: scegliete le pizze, ritiro o consegna a casa, l'orario e confermate. L'ordine arriva subito sul tablet della cucina.</p>
+      <div class="seg" role="group" aria-label="Vista"><button type="button" data-view="cliente" aria-pressed="true">Vista cliente</button><button type="button" data-view="cucina" aria-pressed="false">Vista cucina</button></div>
+      <ul class="tips">
+        <li>Tocca una pizza e scegli l'impasto</li>
+        <li>Nel carrello scegli l'orario: le fasce piene sono bloccate</li>
+        <li>Conferma e guarda l'ordine arrivare in cucina</li>
+      </ul>
+      <p class="note">Menu e prezzi di esempio.</p>
+    </div>
+
+    <div class="stagebox">
+      <!-- TELEFONO CLIENTE -->
+      <div class="phone" id="phone">
+        <div class="ap" id="ap">
+          <div class="ap-bar"><span>20:41</span><span>●●● 5G</span></div>
+          <div class="ap-scroll" id="apScroll">
+
+            <section class="scr on" data-s="home">
+              <div class="ap-head"><span class="bd sm"><img src="assets/img/logo-230.png" alt=""></span><div><small>Buonasera</small><b>Mario</b></div></div>
+              <div class="ap-card brand">
+                <div><b>Carta 230</b><small><span data-stamps>7</span> timbri su 10</small></div>
+                <div class="ring"><span data-stamps>7</span>/10</div>
+              </div>
+              <button class="ap-cta" type="button" data-go="menu">Ordina ora</button>
+              <div class="ap-card live" id="liveCard" hidden><div><b>Ordine #<span data-num>128</span></b><small data-stato>Ricevuto dalla pizzeria</small></div><button type="button" data-go="ordine">Segui</button></div>
+              <div class="ap-row-t">Pizza del mese</div>
+              <div class="ap-promo"><img src="assets/img/pizze/mortadella.webp" alt=""><div><b>Mortadella e pistacchio</b><small>Su impasto napoletano</small></div></div>
+              <div class="ap-row-t">Oggi</div>
+              <div class="ap-card"><div><b>Aperti 18:00 - 22:00</b><small>Via Sebastiano Caboto 26, Vicenza</small></div></div>
+            </section>
+
+            <section class="scr" data-s="menu">
+              <div class="ap-title">Menu <small>prezzi di esempio</small></div>
+              <div class="chips" id="cats"></div>
+              <div id="list"></div>
+            </section>
+
+            <section class="scr" data-s="carrello">
+              <div class="ap-title">Il tuo ordine</div>
+              <div id="cartList"></div>
+              <div class="ap-row-t">Come lo vuoi</div>
+              <div class="pay" id="mode"><button type="button" data-mode="ritiro" aria-pressed="true">Ritiro al banco</button><button type="button" data-mode="consegna" aria-pressed="false">Consegna a casa</button></div>
+              <div class="ap-card" id="addr" hidden style="margin-top:8px"><div><b>Via Roma 10, Vicenza</b><small>Zona servita · consegna € 2,50 (esempio)</small></div></div>
+              <div class="ap-row-t" id="slotT">Orario di ritiro</div>
+              <div class="slots" id="slots"></div>
+              <div class="ap-row-t">Pagamento</div>
+              <div class="pay"><button type="button" data-pay="ritiro" aria-pressed="true" id="payLater">Al ritiro</button><button type="button" data-pay="online" aria-pressed="false">Online</button></div>
+              <div class="tot"><span>Totale</span><b id="tot">€ 0,00</b></div>
+              <button class="ap-cta" type="button" id="confirm">Conferma ordine</button>
+              <p class="ap-small">Prima della conferma: allergeni visibili su ogni prodotto e condizioni di vendita.</p>
+            </section>
+
+            <section class="scr" data-s="ordine">
+              <div class="ap-title">Ordine #<span data-num>128</span></div>
+              <div class="ap-card"><div><b><span id="modeLbl">Ritiro alle</span> <span id="oraRitiro">20:00</span></b><small id="modeAddr">Via Sebastiano Caboto 26</small></div></div>
+              <ol class="track" id="track"><li class="on">Ricevuto</li><li>In preparazione</li><li>Pronto da ritirare</li><li>Ritirato</li></ol>
+              <p class="ap-small" id="trackNote">La pizzeria ha ricevuto il tuo ordine. Ti avvisiamo quando è pronto.</p>
+              <div class="ap-card brand"><div><b>+1 timbro</b><small>Si aggiunge alla carta a ordine completato</small></div></div>
+            </section>
+
+            <section class="scr" data-s="carta">
+              <div class="ap-title">Carta 230</div>
+              <div class="fc">
+                <div class="qr" aria-hidden="true"><i></i></div>
+                <b>Mario R.</b><small>Mostra il QR al banco per i timbri anche sugli ordini al telefono</small>
+                <div class="st" id="stampGrid"></div>
+                <small><span data-left>3</span> timbri alla pizza omaggio</small>
+              </div>
+              <div class="ap-row-t">Movimenti</div>
+              <div class="mov"><span>12/11 · Ordine #104</span><b>+1</b></div>
+              <div class="mov"><span>05/11 · Ordine #097</span><b>+2</b></div>
+              <div class="mov"><span>28/10 · Al banco</span><b>+1</b></div>
+            </section>
+
+            <section class="scr" data-s="profilo">
+              <div class="ap-title">Profilo</div>
+              <div class="mov"><span>Mario Rossi</span><small>mario@email.it</small></div>
+              <label class="sw"><span>Notifiche ordine pronto</span><input type="checkbox" checked></label>
+              <label class="sw"><span>Offerte e novità (facoltativo)</span><input type="checkbox"></label>
+              <div class="mov"><span>Privacy e condizioni di vendita</span><b>›</b></div>
+              <div class="mov"><span>Regolamento Carta 230</span><b>›</b></div>
+              <div class="mov danger"><span>Elimina account</span><b>›</b></div>
+            </section>
+
+          </div>
+          <nav class="tabs" aria-label="Schermate app">
+            <button type="button" data-go="home" aria-current="page">⌂<small>Home</small></button>
+            <button type="button" data-go="menu">☰<small>Menu</small></button>
+            <button type="button" data-go="carrello">🛒<small>Ordine</small><i class="badge" id="badge" hidden>0</i></button>
+            <button type="button" data-go="carta">★<small>Carta</small></button>
+            <button type="button" data-go="profilo">◉<small>Profilo</small></button>
+          </nav>
+          <div class="sheet" id="sheet" aria-hidden="true">
+            <div class="sh">
+              <img id="shImg" src="" alt="">
+              <b id="shName"></b><small id="shDesc"></small>
+              <div class="ap-row-t">Impasto</div>
+              <div class="pay" id="shDough"><button type="button" data-d="Classico" aria-pressed="true">Classico</button><button type="button" data-d="Napoletano" aria-pressed="false">Napoletano +€ 1,50</button></div>
+              <p class="ap-small" id="shAll"></p>
+              <button class="ap-cta" type="button" id="shAdd">Aggiungi</button>
+              <button class="sh-x" type="button" id="shX">Annulla</button>
+            </div>
+          </div>
+          <div class="ap-toast" id="apToast"></div>
+        </div>
+      </div>
+
+      <!-- TABLET CUCINA -->
+      <div class="tablet" id="tablet" hidden>
+        <div class="kb">
+          <div class="kh"><b>Cucina · 230 grammi</b><span>Fascia 20:00 · <i id="cap">6</i>/12 pizze</span><label class="sw inl"><span>Pausa ordini</span><input type="checkbox" id="pausa"></label></div>
+          <div class="kcols">
+            <div><h4>Nuovi</h4><div id="kNew"></div></div>
+            <div><h4>In preparazione</h4><div id="kPrep"><div class="ko"><b>#126 · 19:45</b><small>2 × Margherita (napoletano)<br>1 × Crocchè<br>🛵 Consegna: Viale Milano</small><button type="button" disabled>In forno</button></div></div></div>
+            <div><h4>Pronti</h4><div id="kReady"><div class="ko"><b>#125 · 19:30</b><small>1 × Diavola (classico)<br>Ritiro al banco</small><button type="button" disabled>Attesa ritiro</button></div></div></div>
+          </div>
+          <p class="ap-small">Il tablet suona quando arriva un ordine. Si può anche stampare la comanda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COME FUNZIONA ============ -->
+<section class="sec alt" id="come">
+  <div class="wrap">
+    <span class="k">Come funziona</span>
+    <h2>Semplice per il cliente, comodo per la cucina.</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Per il cliente</h3>
+        <ol class="steps">
+          <li><b>Apre l'app</b> dal sito, dalla scheda Google, da Instagram o dal QR sul cartone. Si installa sul telefono con un tocco, senza passare dagli store.</li>
+          <li><b>Sceglie le pizze</b> e l'impasto, classico o napoletano, con gli allergeni sempre visibili.</li>
+          <li><b>Sceglie ritiro o consegna a casa</b> e l'orario: vede solo le fasce libere, così il forno non si ingolfa e la pizza arriva calda.</li>
+          <li><b>Paga alla consegna, al ritiro o online</b> e accumula i timbri della Carta 230.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Per la pizzeria</h3>
+        <ol class="steps">
+          <li><b>L'ordine arriva sul tablet</b> con un avviso sonoro, già diviso per fascia oraria.</li>
+          <li><b>Il forno non si ingolfa</b>: decidete voi quante pizze al massimo per ogni quarto d'ora.</li>
+          <li><b>Un tocco su "Pronto"</b> e il cliente riceve la notifica.</li>
+          <li><b>Menu, prezzi e orari li cambiate voi</b>: finita la bufala? Un interruttore e sparisce dal menu.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESIGN ============ -->
+<section class="sec" id="design">
+  <div class="wrap">
+    <span class="k">Design</span>
+    <h2>L'app veste come il vostro sito.</h2>
+    <p class="lead">Colori, caratteri e stile seguono la versione del sito che sceglierete. Ecco la schermata principale nei tre stili.</p>
+    <div class="trio">
+      <figure data-t="1"><div class="mini"><div class="mh"><span class="bd sm"><img src="assets/img/logo-230.png" alt=""></span><b>Buonasera, Mario</b></div><div class="mc brand"><b>Carta 230</b><small>7 timbri su 10</small></div><div class="mcta">Ordina ora</div><div class="mimg"><img src="assets/img/pizze/margherita.webp" alt=""></div><div class="mt">Il menu</div></div><figcaption>Gourmet</figcaption></figure>
+      <figure data-t="2"><div class="mini"><div class="mh"><span class="bd sm"><img src="assets/img/logo-230.png" alt=""></span><b>Buonasera, Mario</b></div><div class="mc brand"><b>Carta 230</b><small>7 timbri su 10</small></div><div class="mcta">Ordina ora</div><div class="mimg"><img src="assets/img/pizze/diavola.webp" alt=""></div><div class="mt">Il menu</div></div><figcaption>Pop</figcaption></figure>
+      <figure data-t="3"><div class="mini"><div class="mh"><span class="bd sm"><img src="assets/img/logo-230.png" alt=""></span><b>Buonasera, Mario</b></div><div class="mc brand"><b>Carta 230</b><small>7 timbri su 10</small></div><div class="mcta">Ordina ora</div><div class="mimg"><img src="assets/img/pizze/capricciosa.webp" alt=""></div><div class="mt">Il menu</div></div><figcaption>Street</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERCHE CONVIENE ============ -->
+<section class="sec alt" id="conviene">
+  <div class="wrap">
+    <span class="k">Perché conviene</span>
+    <h2>Ogni ordine che passa dall'app resta a voi.</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th></th><th>App 230 grammi</th><th>Deliveroo / Glovo</th></tr></thead>
+        <tbody>
+          <tr><td>Commissione sull'ordine</td><td class="good">Nessuna</td><td class="bad">Di solito tra il 22% e il 35%</td></tr>
+          <tr><td>Costo del pagamento</td><td>Alla consegna o al ritiro: come oggi. Online: circa 1,5% + 0,25 €</td><td>Compreso nella commissione</td></tr>
+          <tr><td>Quando incassate</td><td class="good">Subito (contanti o POS) o in pochi giorni</td><td>Ogni 1-2 settimane</td></tr>
+          <tr><td>Dati e contatti dei clienti</td><td class="good">Vostri</td><td class="bad">Della piattaforma</td></tr>
+          <tr><td>Carta fedeltà</td><td class="good">Vostra, con i vostri premi</td><td class="bad">Non disponibile</td></tr>
+          <tr><td>Marchio in primo piano</td><td class="good">Solo 230 grammi</td><td>In mezzo ad altre pizzerie</td></tr>
+          <tr><td>Consegna a domicilio</td><td class="good">Sì, con il vostro fattorino, nella zona e negli orari che decidete voi</td><td>Sì, con i loro rider</td></tr>
+          <tr><td>Costo della consegna al cliente</td><td class="good">Lo decidete voi (anche gratis sopra una soglia)</td><td>Lo decide la piattaforma</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Si può partire tenendo anche le piattaforme come vetrina per i nuovi clienti, e intanto portare sull'app, con la Carta 230, chi ordina già da voi.</p>
+
+    <div class="calc card">
+      <h3>Quanto risparmiate</h3>
+      <div class="cgrid">
+        <label>Ordini al mese spostati dalle piattaforme all'app <output id="oOut">150</output><input type="range" id="oIn" min="10" max="400" step="10" value="150"></label>
+        <label>Scontrino medio <output id="sOut">20 €</output><input type="range" id="sIn" min="10" max="50" step="1" value="20"></label>
+        <label>Commissione della piattaforma <output id="cOut">30%</output><input type="range" id="cIn" min="15" max="35" step="1" value="30"></label>
+      </div>
+      <div class="res">
+        <div><small>Risparmio per ordine</small><b id="rOrd">€ 5,20</b></div>
+        <div><small>Al mese</small><b id="rMese">€ 780</b></div>
+        <div class="hl"><small>All'anno</small><b id="rAnno">€ 9.360</b></div>
+      </div>
+      <p class="note">Calcolo: commissione evitata meno costo del pagamento online (1,5% + 0,25 €) meno il costo stimato del premio fedeltà (circa 0,25 € a ordine). Sugli ordini a domicilio va tolto anche il costo del vostro fattorino, in parte coperto dal costo di consegna pagato dal cliente. Valori indicativi da verificare con i vostri dati reali.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSTI ============ -->
+<section class="sec" id="costi">
+  <div class="wrap">
+    <span class="k">Costi e commissioni</span>
+    <h2>Tutto chiaro, nessuna sorpresa.</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Voce</th><th>Costo indicativo</th><th>Quando</th></tr></thead>
+        <tbody>
+          <tr><td>Pagamento alla consegna o al ritiro</td><td>Come oggi (contanti o POS portatile)</td><td>Sempre disponibile</td></tr>
+          <tr><td>Pagamento online con carta, Apple Pay, Google Pay</td><td>circa 1,5% + 0,25 € a ordine, nessun canone</td><td>Se lo attivate</td></tr>
+          <tr><td>Satispay</td><td>0 € sotto i 10 €, circa 0,95% sopra (tariffe negozio, da verificare per l'online)</td><td>Se lo attivate</td></tr>
+          <tr><td>Server, dominio, email automatiche</td><td>circa 25-40 € al mese</td><td>Compresi nel canone</td></tr>
+          <tr><td>Tablet per la cucina</td><td>circa 150-250 € una tantum</td><td>Se non ne avete già uno</td></tr>
+          <tr><td>Stampante per le comande</td><td>circa 200-350 € una tantum</td><td>Facoltativa</td></tr>
+          <tr><td>SMS</td><td>pochi centesimi a messaggio</td><td>Facoltativi: usiamo notifiche ed email gratuite</td></tr>
+          <tr><td>Pubblicazione su App Store e Google Play</td><td>99 $ all'anno (Apple) + 25 $ una tantum (Google)</td><td>Solo se volete l'app anche negli store</td></tr>
+          <tr><td>Fattorino per le consegne</td><td>Costo vostro (dipendente o collaboratore), come per ogni consegna fatta in proprio</td><td>Solo per gli ordini a domicilio</td></tr>
+          <tr><td>Realizzazione e assistenza Studio Digital Italia</td><td>Da preventivo</td><td>Sito + app + carta fedeltà</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:28px">
+      <div class="card"><h3>Ci pensiamo noi</h3><p>Privacy e consensi, condizioni di vendita, regolamento della carta fedeltà, allergeni visibili prima dell'ordine, sicurezza dei pagamenti (gestita da Stripe, nessun dato di carta sui nostri server).</p></div>
+      <div class="card"><h3>Da verificare con il vostro commercialista</h3><p>Come registrare gli ordini pagati online (in genere rientrano nel commercio elettronico, con regole semplificate sullo scontrino).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt end">
+  <div class="wrap">
+    <h2>Pronti a provarla sul serio?</h2>
+    <p class="lead">Partiamo dalla versione base: ordini con ritiro e consegna, schermo cucina e Carta 230. Poi pagamenti online, notifiche e store.</p>
+    <a class="btn" href="#prova">Torna alla prova</a>
+  </div>
+</section>
+</main>
+
+<p class="foot">Anteprima Studio Digital Italia · funzioni simulate, menu e prezzi di esempio, immagini illustrative</p>
+<script src="assets/app.js"></script>
+</body>
+</html>
