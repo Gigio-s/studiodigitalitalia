@@ -496,10 +496,15 @@ function renderRich(){
   const TP = { modifica:'Modifica', servizio:'Servizio extra', domanda:'Domanda' };
   const st = r => r.stato === 'nuova' ? 'ricevuta' : (r.stato || 'ricevuta');
   $('#grich').innerHTML = RICH.length ? RICH.map(r => `<div class="gr ${st(r)==='fatta'?'done':''}"><div style="flex:1;min-width:0"><b>${esc(nome(r.cliente_id))}</b> <span class="gtp gtp-${r.urgenza === 'Sondaggio' ? 'servizio' : (r.tipo||'modifica')}">${r.urgenza === 'Sondaggio' ? 'Sondaggio' : (TP[r.tipo] || 'Modifica')}</span> <span class="ar-muted">${dt(r.il)} · ${esc(r.urgenza || 'Normale')}</span><p>${esc(r.testo)}</p>
-    <div class="gr-edit"><select data-st="${r.id}">${['ricevuta','in lavoro','fatta'].map(x => `<option value="${x}" ${st(r)===x?'selected':''}>${x.charAt(0).toUpperCase()+x.slice(1)}</option>`).join('')}</select><textarea data-ans="${r.id}" rows="2" placeholder="Risposta per il cliente (la vede nella sua area)">${esc(r.risposta || '')}</textarea><button class="btn-sm pri" data-save="${r.id}">Salva</button></div></div></div>`).join('') : '<p class="ar-muted">Nessuna richiesta.</p>';
+    <div class="gr-edit"><select data-st="${r.id}">${['ricevuta','in lavoro','fatta'].map(x => `<option value="${x}" ${st(r)===x?'selected':''}>${x.charAt(0).toUpperCase()+x.slice(1)}</option>`).join('')}</select><textarea data-ans="${r.id}" rows="2" placeholder="Risposta per il cliente (la vede nella sua area)">${esc(r.risposta || '')}</textarea><button class="btn-sm pri" data-save="${r.id}">Salva</button><button class="btn-sm" data-del="${r.id}" style="color:#d23b3b">Elimina</button></div></div></div>`).join('') : '<p class="ar-muted">Nessuna richiesta.</p>';
   $('#grich').querySelectorAll('[data-save]').forEach(b => b.onclick = async () => {
     const id = b.dataset.save;
     try { await call({ azione:'richiesta_stato', id:+id, stato: $(`[data-st="${id}"]`).value, risposta: $(`[data-ans="${id}"]`).value.trim() }); await load(); flash('Richiesta aggiornata.'); } catch(e){ flash(e.message, true); }
+  });
+  $('#grich').querySelectorAll('[data-del]').forEach(b => b.onclick = async () => {
+    if (!confirm('Eliminare definitivamente questa richiesta? Non si potra recuperare.')) return;
+    const id = b.dataset.del;
+    try { await call({ azione:'richiesta_elimina', id:+id }); await load(); flash('Richiesta eliminata.'); } catch(e){ flash(e.message, true); }
   });
 }
 function newForm(){
